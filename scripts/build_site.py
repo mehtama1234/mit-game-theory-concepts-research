@@ -186,8 +186,8 @@ def build_lecture_detail(lecture, ev_by_id, concept_by_id):
         for concept in concepts
     )
     evidence_blocks = "".join(evidence_row(record, "../") for record in records)
-    mistake_notes = " ".join(concept["student_trap"] for concept in concepts) if concepts else "The main mistake is to watch the lecture as an isolated topic instead of asking what modeling pressure it adds to the course sequence."
-    math_notes = " ".join(concept["why_math_has_to_exist"] for concept in concepts) if concepts else "The mathematical role is sequence context: this lecture prepares later formal tools even when the current evidence map has fewer direct anchors."
+    concept_mistake_notes = " ".join(concept["student_trap"] for concept in concepts)
+    concept_math_notes = " ".join(concept["why_math_has_to_exist"] for concept in concepts)
     recognition_notes = " ".join(concept["recognize_in_new_work"] for concept in concepts) if concepts else "In later work, recognize this lecture by asking where the same strategic pressure returns under a different name."
     body = f"""<section class="page-head">
   <p class="eyebrow">Lecture {lecture["playlist_index"]} · {themes}</p>
@@ -196,18 +196,22 @@ def build_lecture_detail(lecture, ev_by_id, concept_by_id):
   <p><a class="button" href="{esc(lecture["youtube_url"])}">Open YouTube lecture</a></p>
 </section>
 {flow("Lecture Study Map", [
-    ("Problem", lecture["first_principles_role"]),
+    ("Problem", lecture["argument_arc"]),
     ("Watch", lecture["what_to_watch_for"]),
-    ("Math", math_notes),
+    ("Math", lecture["math_entry_point"]),
     ("Evidence", lecture["coverage_note"]),
 ], "lecture-flow")}
 <section class="treatment">
   <h2>What This Lecture Teaches</h2>
-  <p>{esc(lecture["first_principles_role"])}</p>
+  <p>{esc(lecture["argument_arc"])}</p>
   <h2>Where The Math Enters</h2>
-  <p>{esc(math_notes)}</p>
+  <p>{esc(lecture["math_entry_point"])}</p>
+  {f'<p>{esc(concept_math_notes)}</p>' if concept_math_notes else ''}
+  <h2>Worked Mini-Example</h2>
+  <p>{esc(lecture["worked_mini_example"])}</p>
   <h2>Mistakes To Avoid</h2>
-  <p>{esc(mistake_notes)}</p>
+  <p>{esc(lecture["common_failure"])}</p>
+  {f'<p>{esc(concept_mistake_notes)}</p>' if concept_mistake_notes else ''}
   <h2>How To Recognize This Later</h2>
   <p>{esc(recognition_notes)}</p>
   <p class="chips">{concept_links or '<span class="chip muted">No direct concept anchors yet</span>'}</p>

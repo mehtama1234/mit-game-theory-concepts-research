@@ -154,6 +154,9 @@ def main() -> int:
     for lecture, count in zip(lectures, lecture_words):
         if count < 30:
             errors.append(f"lecture {lecture['id']} has shallow path treatment: {count} words")
+        treatment_count = words(" ".join(str(lecture.get(field, "")) for field in ["argument_arc", "math_entry_point", "worked_mini_example", "common_failure"]))
+        if treatment_count < 90:
+            errors.append(f"lecture {lecture['id']} has shallow hand-authored treatment: {treatment_count} words")
     lecture_page_words = []
     for lecture in lectures:
         path = SITE / "lectures" / f"{lecture['id']}.html"
@@ -165,7 +168,7 @@ def main() -> int:
         lecture_page_words.append(detail_words)
         if detail_words < 450:
             errors.append(f"lecture detail page {lecture['id']} is shallow: {detail_words} words")
-        for heading in ["What This Lecture Teaches", "Where The Math Enters", "Mistakes To Avoid", "How To Recognize This Later", "Transcript Evidence Chain"]:
+        for heading in ["What This Lecture Teaches", "Where The Math Enters", "Worked Mini-Example", "Mistakes To Avoid", "How To Recognize This Later", "Transcript Evidence Chain"]:
             if heading not in text:
                 errors.append(f"lecture detail page {lecture['id']} missing heading: {heading}")
 

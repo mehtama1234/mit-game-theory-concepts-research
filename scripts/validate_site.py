@@ -32,10 +32,13 @@ def main() -> int:
             errors.append(f"missing lecture anchor: {lecture['id']}")
         if not lecture.get("first_principles_role") or not lecture.get("what_to_watch_for"):
             errors.append(f"lecture missing treatment: {lecture['id']}")
+        for key in ["argument_arc", "math_entry_point", "worked_mini_example", "common_failure"]:
+            if not lecture.get(key):
+                errors.append(f"lecture missing {key}: {lecture['id']}")
         detail = SITE / "lectures" / f"{lecture['id']}.html"
         if detail.exists():
             text = detail.read_text(encoding="utf-8")
-            for heading in ["What This Lecture Teaches", "Where The Math Enters", "Mistakes To Avoid", "Transcript Evidence Chain"]:
+            for heading in ["What This Lecture Teaches", "Where The Math Enters", "Worked Mini-Example", "Mistakes To Avoid", "Transcript Evidence Chain"]:
                 if heading not in text:
                     errors.append(f"lecture page {lecture['id']} missing heading: {heading}")
             for ev_id in lecture["evidence_ids"]:

@@ -1,0 +1,152 @@
+{
+  "Introduction to Individual Decision-Making": {
+    "argument_arc": "The lecture starts before game theory: a player cannot reason strategically until the model says what that player prefers. It builds from ranked outcomes to utility numbers and then to risky choices, so later payoff tables are not arbitrary decoration.",
+    "math_entry_point": "The math enters as representation. A preference ordering becomes a utility function, and uncertain outcomes become expected utility. The point is not to measure happiness; it is to make comparisons precise enough for later strategic checks.",
+    "worked_mini_example": "If someone chooses between a sure payment and a lottery, the model needs more than a list of outcomes. It needs a rule for comparing risk, so the lecture turns probability-weighted consequences into a choice object.",
+    "common_failure": "The easy mistake is to treat utility as a psychological substance. In this course, utility is a compact ranking device that lets later game models compute what a player would rather do."
+  },
+  "Representation of Games": {
+    "argument_arc": "The lecture asks how a messy interaction becomes an object that can be solved. It separates players, actions, strategies, histories, information, and payoffs, then shows why tables and trees reveal different parts of the same strategic situation.",
+    "math_entry_point": "The math enters through the game form. A strategic-form table compresses simultaneous choices; an extensive-form tree exposes order, histories, and information. The representation chooses which constraints the later solution concept can see.",
+    "worked_mini_example": "A threat may look persuasive in a payoff table because the table hides timing. Draw the same situation as a tree and the later player may not want to carry out the threat after the history arrives.",
+    "common_failure": "The mistake is to think representation is bookkeeping. It is a modeling claim. If the form hides timing or information, the equilibrium calculation can be exact and still answer the wrong question."
+  },
+  "Dominance": {
+    "argument_arc": "The lecture introduces the first disciplined way to simplify a game. Instead of guessing what players believe, it asks whether one strategy is worse than another across the relevant possibilities and can therefore be removed.",
+    "math_entry_point": "The math enters as an inequality across contingencies. A strategy is dominated when another strategy gives at least as much payoff in every relevant case and more in some case.",
+    "worked_mini_example": "If one restaurant location earns less than another no matter what a rival does, the worse location can be removed before doing any equilibrium reasoning. The deletion comes from comparison, not intuition.",
+    "common_failure": "The mistake is to delete strategies because they seem unlikely. Dominance is stronger: it requires a payoff comparison that survives all opponent actions covered by the model."
+  },
+  "Rationalizability": {
+    "argument_arc": "The lecture relaxes pure deletion and asks which strategies can be justified by some coherent belief about others. It turns the question from 'is this always bad?' to 'could this be optimal under a defensible belief?'",
+    "math_entry_point": "The math enters through best responses to beliefs. A strategy survives if there is a belief over others' actions that makes it payoff-maximizing for the player.",
+    "worked_mini_example": "A move that is not dominant may still be rationalizable if a player reasonably expects the rival to choose a particular action. The model asks whether some belief can make the move optimal.",
+    "common_failure": "The mistake is to confuse rationalizable with predicted. Rationalizability says a move can be justified; equilibrium will later require everyone's justifications to fit together."
+  },
+  "Nash Equilibrium": {
+    "argument_arc": "The lecture closes the loop created by best responses. A proposed outcome must survive each player asking, given what the others do, whether changing alone would improve their payoff.",
+    "math_entry_point": "The math enters as mutual best response. For every player, the chosen action or strategy must lie in that player's best-response set against the other players' choices.",
+    "worked_mini_example": "Two firms may each like a different price in isolation. A Nash check asks whether either firm would cut or raise price after seeing the rival's chosen price held fixed.",
+    "common_failure": "The mistake is to read equilibrium as good, fair, or socially desirable. Nash only says no single player has a profitable one-person deviation."
+  },
+  "Imperfect Competition": {
+    "argument_arc": "The lecture turns markets into games. It starts from demand, monopoly markup, and market power, then asks what changes when more than one firm can affect price, quantity, and profit.",
+    "math_entry_point": "The math enters through firm profit functions and best-response curves. A firm's profit depends on its own choice, rival choices, market demand, and cost, so optimization becomes strategic.",
+    "worked_mini_example": "Two sellers of bottled water choose quantities. If one produces more, total quantity rises and price may fall. The other seller's best quantity is therefore tied to the first seller's choice.",
+    "common_failure": "The mistake is to treat imperfect competition as monopoly with extra names. The core idea is interaction: each firm has some power, but rivals make that power strategically constrained."
+  },
+  "Zero-Sum Games": {
+    "argument_arc": "The lecture studies exact conflict, where one player's gain is the other's loss. This special structure makes security reasoning natural: each player asks how to protect against the opponent's best attack.",
+    "math_entry_point": "The math enters through maxmin, minimax, and mixed strategies. The player compares worst-case payoffs and may randomize to avoid being exploited by a predictable action.",
+    "worked_mini_example": "In matching pennies, choosing heads every time can be exploited. Randomizing evenly makes the opponent unable to target a fixed pattern, which gives the player a security value.",
+    "common_failure": "The mistake is to apply zero-sum intuition everywhere. Many economic games mix conflict with shared surplus, future cooperation, or side effects, so exact-opposition logic may overstate rivalry."
+  },
+  "Backward Induction": {
+    "argument_arc": "The lecture reverses the natural storytelling order. Instead of starting at the first move, it solves the last decision first and uses that continuation value to judge earlier choices.",
+    "math_entry_point": "The math enters as recursive value assignment. At each decision node, the player chooses the branch with the best continuation payoff, and that value is passed backward through the tree.",
+    "worked_mini_example": "If a seller threatens to reject a future offer but would accept once that future node arrives, the threat should not shape earlier play. Solving backward exposes that problem.",
+    "common_failure": "The mistake is to believe every announced future action. Backward induction asks whether the action will still be optimal when the future decision actually has to be made."
+  },
+  "Negotiation": {
+    "argument_arc": "The lecture treats bargaining as surplus division under timing pressure. Offers, rejection, patience, and outside options are not personality traits; they become payoff consequences inside a dynamic game.",
+    "math_entry_point": "The math enters through continuation values and discounting. Waiting can shrink payoffs, so an offer is judged against what each side expects from rejecting and continuing.",
+    "worked_mini_example": "A buyer and seller can split value today or wait for another offer tomorrow. If waiting is costly, the side that can credibly wait longer may receive a larger share.",
+    "common_failure": "The mistake is to explain bargaining power as confidence or stubbornness. The model asks what each side can get by refusing now and moving to the next bargaining stage."
+  },
+  "Subgame-Perfect Nash Equilibrium": {
+    "argument_arc": "The lecture repairs Nash for dynamic settings. It requires strategies to remain equilibrium behavior after every proper subgame, so threats and promises must be credible at the histories where they matter.",
+    "math_entry_point": "The math enters by applying Nash equilibrium inside each subgame. A full strategy profile must pass the no-deviation test not only at the start but after relevant histories.",
+    "worked_mini_example": "A firm may threaten a price war after entry. Subgame perfection asks whether the price war would actually be profitable once entry has happened, not whether it scares entrants beforehand.",
+    "common_failure": "The mistake is to check only the opening node. A dynamic prediction can look stable initially while relying on later behavior no player would want to carry out."
+  },
+  "One-Shot Deviation Principle and Bargaining": {
+    "argument_arc": "The lecture gives a practical way to check dynamic optimality and then applies it to bargaining. Instead of comparing every possible strategy change, it asks whether a single local deviation can improve the continuation payoff.",
+    "math_entry_point": "The math enters as a local deviation test under the theorem's conditions. If no profitable one-shot deviation exists at any history, the strategy can pass the dynamic optimality check.",
+    "worked_mini_example": "In an alternating-offer bargain, ask whether a player would gain by rejecting just this offer or changing just this proposal while leaving future behavior fixed.",
+    "common_failure": "The mistake is to use the one-shot test without checking the environment. The shortcut is powerful because theorem conditions make local deviations informative, not because all strategy changes are always local."
+  },
+  "Finitely Repeated Games": {
+    "argument_arc": "The lecture shows how a known endpoint can undermine cooperation. Even many repeated rounds may unravel if everyone knows the last round has no future punishment left.",
+    "math_entry_point": "The math enters through backward induction over periods. The last stage is solved first; if cooperation fails there, the same logic can roll backward into earlier stages.",
+    "worked_mini_example": "Two firms might want to keep prices high for ten rounds, but in round ten there is no later punishment. If round ten unravels, round nine loses its punishment threat too.",
+    "common_failure": "The mistake is to think repetition alone creates cooperation. The future must still have disciplinary force, and a known last round can remove that force."
+  },
+  "Infinitely Repeated Games": {
+    "argument_arc": "The lecture removes the known final period and makes the future a possible enforcement device. Cooperation can survive when the discounted loss from punishment outweighs today's temptation.",
+    "math_entry_point": "The math enters through discounted payoff sums and incentive constraints. A player compares the one-period deviation gain against the present value of future punishment.",
+    "worked_mini_example": "A firm can cut price today and steal customers, but rivals may punish with low prices afterward. Cooperation works only if the firm values future profit enough.",
+    "common_failure": "The mistake is to say indefinite repetition creates trust by itself. The lecture's claim is an inequality: patience and punishment must make deviation unattractive."
+  },
+  "Folk Theorem": {
+    "argument_arc": "The lecture expands the set of sustainable outcomes in patient repeated games. It teaches possibility and multiplicity: many payoff patterns can be stable when punishments and patience are strong enough.",
+    "math_entry_point": "The math enters through feasible payoffs, individual rationality, discount factors, and punishment constructions. The theorem characterizes a set rather than one unique prediction.",
+    "worked_mini_example": "If players can reward and punish across a long relationship, they may sustain many different divisions of surplus, not just the one-shot Nash outcome.",
+    "common_failure": "The mistake is to treat the folk theorem as a prediction that cooperation happens. It often says many things can happen, which raises a new selection problem."
+  },
+  "Implicit Cartels": {
+    "argument_arc": "The lecture applies repeated-game logic to firms that may keep prices high without an explicit enforceable contract. The strategic question is whether future punishment can discipline today's undercutting.",
+    "math_entry_point": "The math enters as a cartel incentive constraint. Collusive profit today plus future cooperation is compared with the one-time cheating gain plus future punishment profit.",
+    "worked_mini_example": "A gas station could cut price and win customers today. If nearby stations respond with a price war, the discounted future loss may make quiet high pricing self-enforcing.",
+    "common_failure": "The mistake is to infer explicit agreement from high prices alone. The model explains an incentive mechanism; real antitrust claims require evidence about communication, monitoring, and market conditions."
+  },
+  "Bayesian Games": {
+    "argument_arc": "The lecture begins the incomplete-information part of the course. It introduces types and priors so hidden values, costs, beliefs, or payoff states become part of the game rather than vague uncertainty.",
+    "math_entry_point": "The math enters through type spaces and probability distributions. A strategy can become a rule from types to actions, and payoffs are evaluated in expectation over unknown types.",
+    "worked_mini_example": "A bidder knows their own value but not a rival's value. The model represents the bidder's value as a type and the rival's unknown value through a prior distribution.",
+    "common_failure": "The mistake is to say players are uncertain and leave it there. Bayesian games force the model to name what is hidden, who knows it, and what probabilities others assign."
+  },
+  "Bayesian Nash Equilibrium: Applications": {
+    "argument_arc": "The lecture uses incomplete-information representation to solve applied games. Equilibrium is now a plan for each type, and each type must be optimizing against beliefs about other types.",
+    "math_entry_point": "The math enters through expected-payoff best responses for type-contingent strategies. Each type asks whether its assigned action maximizes expected utility given the strategy rules of others.",
+    "worked_mini_example": "In a first-price auction, a low-value bidder and high-value bidder follow different bidding rules. Bayesian Nash checks the incentive of each value type, not only the average bidder.",
+    "common_failure": "The mistake is to check one action per player. With private information, the strategy is a function from types to actions, and each type needs its own deviation check."
+  },
+  "Auctions": {
+    "argument_arc": "The lecture turns private values into strategic bids. Allocation and payment rules shape whether bidders reveal, shade, or distort their values, so the rules themselves become the object of analysis.",
+    "math_entry_point": "The math enters through allocation rules, payment rules, values, bids, and expected payoffs. A bidder compares the chance of winning with the surplus left after payment.",
+    "worked_mini_example": "In a first-price auction, bidding your full value may win but leaves no surplus. The bidder shades the bid because winning is useful only when the price is below value.",
+    "common_failure": "The mistake is to think bids are transparent reports of value. A bid is a strategic action created by the auction format's payment consequences."
+  },
+  "Revenue Equivalence": {
+    "argument_arc": "The lecture asks when different auction formats become equivalent from the seller's revenue perspective. It teaches that surface rules can differ while expected payments line up under strong assumptions.",
+    "math_entry_point": "The math enters through expected payment functions and allocation probabilities. Under the theorem's conditions, payment differences are pinned down by the same allocation rule and boundary condition.",
+    "worked_mini_example": "A first-price auction and second-price auction feel different to bidders, but if the same type wins with the same probability and assumptions hold, expected revenue can match.",
+    "common_failure": "The mistake is to remember only the equivalence. The theorem is also a list of conditions; changing risk attitudes, values, symmetry, or allocation rules can break it."
+  },
+  "Ad Auctions": {
+    "argument_arc": "The lecture moves auction theory into platform markets. The object being allocated is attention or expected clicks across positions, so bids interact with ranking, quality, and click probabilities.",
+    "math_entry_point": "The math enters through position values, click-through rates, bids, quality adjustments, and payment rules. A platform ranks ads by a score rather than by value alone.",
+    "worked_mini_example": "An advertiser may value a click highly but have a low expected click rate. The platform's rule must decide whether that advertiser deserves a top slot compared with a more clickable ad.",
+    "common_failure": "The mistake is to treat ad auctions as ordinary object auctions. The platform allocates probabilistic attention, and the mechanism must account for user response as well as advertiser bids."
+  },
+  "Perfect Bayesian Equilibrium": {
+    "argument_arc": "The lecture combines time with hidden information. Strategies must be sequentially rational, and beliefs must be specified and updated where possible, because histories can reveal private information.",
+    "math_entry_point": "The math enters as a strategy profile plus a belief system. At each information set, actions must be optimal given beliefs, and beliefs must follow Bayes' rule on path.",
+    "worked_mini_example": "After observing a price or signal, a buyer forms a belief about seller type and chooses whether to buy. PBE checks both the seller's signal and the buyer's belief-driven response.",
+    "common_failure": "The mistake is to solve only strategies and treat beliefs as commentary. In PBE, beliefs are part of the equilibrium object."
+  },
+  "Signaling": {
+    "argument_arc": "The lecture studies how a privately informed sender can affect a receiver's beliefs through observable action. The action is informative only when types have different incentives to imitate it.",
+    "math_entry_point": "The math enters through sender types, signal choices, receiver beliefs, receiver actions, and incentive constraints that stop one type from profitably mimicking another.",
+    "worked_mini_example": "Education can signal ability if high-ability workers find education less costly or more worthwhile. If low-ability workers would copy the same education level, the signal pools rather than separates.",
+    "common_failure": "The mistake is to think costly automatically means informative. A signal works only if the wrong type does not want to imitate it under the receiver's response."
+  },
+  "Bargaining with Incomplete Information": {
+    "argument_arc": "The lecture revisits bargaining after adding hidden values, costs, or quality. Complete information predicted immediate agreement when gains from trade exist; hidden information can create screening, delay, disagreement, or adverse selection.",
+    "math_entry_point": "The math enters through types, participation constraints, posted prices, posterior beliefs, and selected pools of participants. The payoff calculation must account for who accepts, not only what price is posted.",
+    "worked_mini_example": "An insurer posts a price. The buyers who accept may be the people with the highest expected costs, so raising the price can worsen the pool rather than simply increase revenue per buyer.",
+    "common_failure": "The mistake is to reason from the original average population. Screening changes the composition of participants, so the relevant average after the offer may be very different."
+  },
+  "Cheap Talk": {
+    "argument_arc": "The lecture removes signal cost and asks what communication can still do. Messages are costless and nonbinding, so credibility must come from preference alignment and receiver response.",
+    "math_entry_point": "The math enters through sender types or states, message rules, receiver actions, and incentive constraints that make truthful or partially informative messages self-enforcing.",
+    "worked_mini_example": "An advisor can recommend an action. If the advisor and decision maker want similar outcomes, the message may guide action; if interests conflict sharply, every type may send the same persuasive message.",
+    "common_failure": "The mistake is to say cheap talk is always useless or always informative. The lecture's answer is conditional: speech works when incentives make the receiver's interpretation defensible."
+  },
+  "Common Knowledge": {
+    "argument_arc": "The lecture climbs from private knowledge to shared higher-order knowledge. Coordination may require not only that everyone knows a fact, but that everyone knows that everyone knows it, and so on.",
+    "math_entry_point": "The math enters through recursive knowledge operators. Starting with an event, the model repeatedly applies the idea that everyone knows the event and everyone knows that others know it.",
+    "worked_mini_example": "If every firm privately hears a rule change, each may still wonder whether others heard it. A public announcement can change behavior because it also tells everyone that others heard it.",
+    "common_failure": "The mistake is to treat true, known, and common knowledge as identical. Strategic coordination can depend on the publicness and higher-order structure of knowledge."
+  }
+}

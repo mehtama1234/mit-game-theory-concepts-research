@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
+OVERRIDES = ROOT / "analysis/editorial-overrides"
 
 ROLE_BY_TITLE = {
     "Introduction to Individual Decision-Making": {
@@ -116,6 +117,13 @@ def load(path: str) -> Any:
     return json.loads((ROOT / path).read_text(encoding="utf-8"))
 
 
+def load_overrides(name: str) -> dict[str, Any]:
+    path = OVERRIDES / name
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def lecture_key(title: str) -> str:
     return title.split(": ", 1)[-1]
 
@@ -139,6 +147,7 @@ def main() -> None:
     concepts = load("analysis/concepts/concept-atlas.json")
     evidence = load("analysis/evidence/evidence-ledger.json")
     themes = load("analysis/themes/theme-map.json")
+    lecture_overrides = load_overrides("lectures.json")
     concept_by_id = {concept["id"]: concept for concept in concepts}
     theme_by_id = {theme["id"]: theme for theme in themes}
     evidence_by_title: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -162,6 +171,9 @@ def main() -> None:
             "first_principles_role": "Connects course concepts to transcript-backed game-theory reasoning.",
             "what_to_watch_for": "Watch how the lecture changes the modeling object or the incentive check.",
         })
+        treatment = lecture_overrides.get(key)
+        if treatment is None:
+            raise ValueError(f"missing hand-crafted lecture treatment for {key}")
         lecture_path.append({
             "id": f"lecture-{row['playlist_index']:02d}",
             "playlist_index": row["playlist_index"],
@@ -187,6 +199,10 @@ def main() -> None:
                 for theme_id in theme_ids
             ],
             "coverage_note": coverage_note(len(records), len(concept_ids)),
+            "argument_arc": treatment["argument_arc"],
+            "math_entry_point": treatment["math_entry_point"],
+            "worked_mini_example": treatment["worked_mini_example"],
+            "common_failure": treatment["common_failure"],
         })
 
     out = ROOT / "analysis/lectures/lecture-path.json"
