@@ -278,6 +278,36 @@ def main() -> int:
             errors.append(f"cross index missing subtheme links for {concept['id']}")
         if len(linked_evidence) != len(concept.get("course_evidence_ids", [])):
             errors.append(f"cross index missing evidence links for {concept['id']}")
+    limits_html = (SITE / "limits.html").read_text(encoding="utf-8") if (SITE / "limits.html").exists() else ""
+    limit_concept_cards = 0
+    limit_theme_cards = 0
+    limit_derivation_cards = 0
+    limit_words = []
+    for concept in concepts:
+        if f'id="limit-{concept["id"]}"' in limits_html:
+            limit_concept_cards += 1
+        else:
+            errors.append(f"limits page missing concept card: {concept['id']}")
+        if f'href="concepts/{concept["id"]}.html"' not in limits_html:
+            errors.append(f"limits page missing concept link: {concept['id']}")
+        text = " ".join(str(concept.get(field, "")) for field in ["common_misunderstanding", "student_trap", "course_boundary_note", "what_breaks_without_it"])
+        limit_words.append(words(text))
+        if words(text) < 75:
+            errors.append(f"concept {concept['id']} has shallow combined limit treatment")
+    for theme in themes:
+        if f'id="theme-limit-{theme["id"]}"' in limits_html:
+            limit_theme_cards += 1
+        else:
+            errors.append(f"limits page missing theme card: {theme['id']}")
+        if f'href="themes.html#{theme["id"]}"' not in limits_html:
+            errors.append(f"limits page missing theme link: {theme['id']}")
+    for derivation in derivations:
+        if f'id="derivation-limit-{derivation["id"]}"' in limits_html:
+            limit_derivation_cards += 1
+        else:
+            errors.append(f"limits page missing derivation card: {derivation['id']}")
+        if f'href="primitives.html#{derivation["id"]}"' not in limits_html:
+            errors.append(f"limits page missing derivation link: {derivation['id']}")
     families_html = (SITE / "families.html").read_text(encoding="utf-8") if (SITE / "families.html").exists() else ""
     family_concept_links = 0
     family_primitive_links = 0
@@ -434,6 +464,10 @@ def main() -> int:
         f"- Cross-index subtheme links: {cross_subtheme_links}",
         f"- Cross-index primitive links: {cross_primitive_links}",
         f"- Cross-index evidence links: {cross_evidence_links}",
+        f"- Limits concept cards: {limit_concept_cards}",
+        f"- Limits theme cards: {limit_theme_cards}",
+        f"- Limits derivation cards: {limit_derivation_cards}",
+        f"- Limits concept words: min {min(limit_words) if limit_words else 0}, max {max(limit_words) if limit_words else 0}",
         f"- Evidence records with transcript teaching notes: {len(deep_evidence)}",
         f"- Evidence concept backlinks: {evidence_concept_backlinks}",
         f"- Evidence subtheme backlinks: {evidence_subtheme_backlinks}",

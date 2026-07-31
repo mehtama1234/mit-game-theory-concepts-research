@@ -34,6 +34,10 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Cross-index subtheme links: 33
 - Cross-index primitive links: 47
 - Cross-index evidence links: 66
+- Limits concept cards: 33
+- Limits theme cards: 8
+- Limits derivation cards: 9
+- Limits concept words: min 111, max 201
 - Evidence records with transcript teaching notes: 66
 - Evidence concept backlinks: 66
 - Evidence subtheme backlinks: 66
@@ -44,7 +48,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Supplemental lecture evidence records: 8
 - Lectures below 2 total evidence anchors: 0
 - Lecture path treatment words: min 30, max 50
-- Lecture detail page words: min 1341, max 5296
+- Lecture detail page words: min 1348, max 5303
 - Errors: 0
 
 ## Lowest Concept Depth

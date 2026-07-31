@@ -37,6 +37,7 @@ def page(title: str, body: str, active: str = "", depth: int = 0) -> str:
         ("index.html", "Overview", "overview"),
         ("study-route.html", "Study Route", "study-route"),
         ("cross-reference.html", "Cross Index", "cross-reference"),
+        ("limits.html", "Limits", "limits"),
         ("lectures.html", "Lectures", "lectures"),
         ("concepts.html", "Concepts", "concepts"),
         ("themes.html", "Themes", "themes"),
@@ -208,6 +209,7 @@ def build_index(concepts, themes, evidence, lectures):
 <section><h2>The Big Throughline</h2><p>Game theory studies situations where choosing well means reasoning about other choosers. Equilibrium, credibility, beliefs, auctions, signaling, and common knowledge are different answers to the same pressure: my best move depends on what others do, know, want, and expect.</p></section>
 <section><h2>Use The Study Route</h2><p>The route map gives a compact path through the course: choice, representation, equilibrium, time, information, and design.</p><p><a class="button" href="study-route.html">Open the study route</a></p></section>
 <section><h2>Find A Concept By Pressure</h2><p>The cross index lets a reader jump from an everyday problem to the relevant concept, lecture, primitive, subtheme, and evidence record.</p><p><a class="button" href="cross-reference.html">Open the cross index</a></p></section>
+<section><h2>Check The Limits</h2><p>The limits page collects common misunderstandings, student traps, and places where an analogy stops working.</p><p><a class="button" href="limits.html">Open limits and traps</a></p></section>
 <section><h2>Start With The Course Path</h2><p>The lecture path follows the MIT sequence while linking each session to atlas concepts and transcript evidence.</p><p><a class="button" href="lectures.html">Open the lecture path</a></p></section>
 <section><h2>Start With Concepts</h2><div class="grid">{''.join(concept_card(c, evidence_map(evidence)) for c in concepts[:6])}</div><p><a class="button" href="concepts.html">Open the full atlas</a></p></section>"""
     write(SITE / "index.html", page("Overview", body, "overview"))
@@ -296,6 +298,41 @@ def build_cross_reference(concepts, themes, subthemes, primitives, lectures, evi
 </article>""")
     body = '<section class="page-head"><h1>Cross Index</h1><p>Every concept indexed by the problem pressure it answers, with direct jumps into lectures, subthemes, primitives, and transcript evidence.</p></section>' + "".join(rows)
     write(SITE / "cross-reference.html", page("Cross Index", body, "cross-reference"))
+
+
+def build_limits(concepts, themes, derivations):
+    concept_cards = []
+    for concept in concepts:
+        concept_cards.append(f"""<article class="wide-card limit-card" id="limit-{esc(concept["id"])}">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/{esc(concept["id"])}.html">{esc(concept["name"])}</a></h2>
+  <p><strong>Common misunderstanding:</strong> {esc(concept["common_misunderstanding"])}</p>
+  <p><strong>Student trap:</strong> {esc(concept["student_trap"])}</p>
+  <p><strong>Where the idea stops working:</strong> {esc(concept["course_boundary_note"])}</p>
+  <p><strong>What breaks without it:</strong> {esc(concept["what_breaks_without_it"])}</p>
+</article>""")
+    theme_cards = []
+    for theme in themes:
+        theme_cards.append(f"""<article class="wide-card limit-card" id="theme-limit-{esc(theme["id"])}">
+  <p class="eyebrow">Theme limit</p>
+  <h2><a href="themes.html#{esc(theme["id"])}">{esc(theme["name"])}</a></h2>
+  <p><strong>Where the analogy breaks:</strong> {esc(theme["where_analogy_breaks"])}</p>
+</article>""")
+    derivation_cards = []
+    for derivation in derivations:
+        derivation_cards.append(f"""<article class="wide-card limit-card" id="derivation-limit-{esc(derivation["id"])}">
+  <p class="eyebrow">Equation misread</p>
+  <h2><a href="primitives.html#{esc(derivation["id"])}">{esc(derivation["title"])}</a></h2>
+  <p><strong>Common misread:</strong> {esc(derivation["common_misread"])}</p>
+</article>""")
+    body = f"""<section class="page-head">
+  <h1>Limits And Traps</h1>
+  <p>A reader-facing guardrail against overgeneralizing the course machinery. These are the places where the concept, theme, or equation can be precise and still be misused.</p>
+</section>
+<section><h2>Concept-Level Traps</h2>{''.join(concept_cards)}</section>
+<section><h2>Theme-Level Boundaries</h2>{''.join(theme_cards)}</section>
+<section><h2>Equation Misreads</h2>{''.join(derivation_cards)}</section>"""
+    write(SITE / "limits.html", page("Limits And Traps", body, "limits"))
 
 
 def lecture_filename(lecture: dict[str, Any]) -> str:
@@ -637,6 +674,7 @@ def main():
     build_index(concepts, themes, evidence, lectures)
     build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_by_id)
     build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence)
+    build_limits(concepts, themes, derivations)
     build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id)
     build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examples)
     build_themes(themes, subthemes, concepts)

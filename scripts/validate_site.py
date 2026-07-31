@@ -42,7 +42,8 @@ def main() -> int:
         for ev_id in lecture.get("evidence_ids", [])
     }
     supplemental_ids = {record["id"] for record in supplemental}
-    required = [SITE / name for name in ["index.html", "study-route.html", "cross-reference.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
+    themes = json.loads((ROOT / "analysis/themes/theme-map.json").read_text(encoding="utf-8"))
+    required = [SITE / name for name in ["index.html", "study-route.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
     required.extend(SITE / "lectures" / f"{lecture['id']}.html" for lecture in lectures)
     for path in required:
@@ -55,11 +56,14 @@ def main() -> int:
     families_html = (SITE / "families.html").read_text(encoding="utf-8") if (SITE / "families.html").exists() else ""
     route_html = (SITE / "study-route.html").read_text(encoding="utf-8") if (SITE / "study-route.html").exists() else ""
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
+    limits_html = (SITE / "limits.html").read_text(encoding="utf-8") if (SITE / "limits.html").exists() else ""
     index_html = (SITE / "index.html").read_text(encoding="utf-8") if (SITE / "index.html").exists() else ""
     if 'href="study-route.html"' not in index_html:
         errors.append("index page missing study route link")
     if 'href="cross-reference.html"' not in index_html:
         errors.append("index page missing cross-reference link")
+    if 'href="limits.html"' not in index_html:
+        errors.append("index page missing limits link")
     subthemes_by_concept: dict[str, list[dict]] = {}
     for subtheme in subthemes:
         for concept_id in subtheme.get("concepts", []):
@@ -119,6 +123,31 @@ def main() -> int:
         for primitive_id in concept.get("mathematical_primitives", []):
             if primitive_id in primitive_by_id and f'href="primitives.html#{primitive_id}"' not in cross_html:
                 errors.append(f"cross index missing primitive link: {concept['id']} -> {primitive_id}")
+    for concept in concepts:
+        if f'id="limit-{concept["id"]}"' not in limits_html:
+            errors.append(f"limits page missing concept limit card: {concept['id']}")
+        if f'href="concepts/{concept["id"]}.html"' not in limits_html:
+            errors.append(f"limits page missing concept link: {concept['id']}")
+        for field in ["common_misunderstanding", "student_trap", "course_boundary_note", "what_breaks_without_it"]:
+            value = concept.get(field, "")
+            if words(value) < 12:
+                errors.append(f"concept {concept['id']} has shallow limit field: {field}")
+            elif html.escape(value, quote=True) not in limits_html:
+                errors.append(f"limits page missing {field}: {concept['id']}")
+    for theme in themes:
+        if f'id="theme-limit-{theme["id"]}"' not in limits_html:
+            errors.append(f"limits page missing theme limit card: {theme['id']}")
+        if f'href="themes.html#{theme["id"]}"' not in limits_html:
+            errors.append(f"limits page missing theme link: {theme['id']}")
+        if html.escape(theme["where_analogy_breaks"], quote=True) not in limits_html:
+            errors.append(f"limits page missing theme boundary: {theme['id']}")
+    for derivation in derivations:
+        if f'id="derivation-limit-{derivation["id"]}"' not in limits_html:
+            errors.append(f"limits page missing derivation limit card: {derivation['id']}")
+        if f'href="primitives.html#{derivation["id"]}"' not in limits_html:
+            errors.append(f"limits page missing derivation link: {derivation['id']}")
+        if html.escape(derivation["common_misread"], quote=True) not in limits_html:
+            errors.append(f"limits page missing derivation misread: {derivation['id']}")
     for lecture in lectures:
         if f'id="{lecture["id"]}"' not in lectures_html:
             errors.append(f"missing lecture anchor: {lecture['id']}")
