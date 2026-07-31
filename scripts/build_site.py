@@ -35,6 +35,7 @@ def page(title: str, body: str, active: str = "", depth: int = 0) -> str:
     prefix = "../" * depth
     nav = [
         ("index.html", "Overview", "overview"),
+        ("study-route.html", "Study Route", "study-route"),
         ("lectures.html", "Lectures", "lectures"),
         ("concepts.html", "Concepts", "concepts"),
         ("themes.html", "Themes", "themes"),
@@ -204,9 +205,48 @@ def build_index(concepts, themes, evidence, lectures):
   <aside class="stats"><strong>{len(lectures)}</strong><span>lectures</span><strong>{len(concepts)}</strong><span>concepts</span><strong>{len(evidence)}</strong><span>evidence records</span></aside>
 </section>
 <section><h2>The Big Throughline</h2><p>Game theory studies situations where choosing well means reasoning about other choosers. Equilibrium, credibility, beliefs, auctions, signaling, and common knowledge are different answers to the same pressure: my best move depends on what others do, know, want, and expect.</p></section>
+<section><h2>Use The Study Route</h2><p>The route map gives a compact path through the course: choice, representation, equilibrium, time, information, and design.</p><p><a class="button" href="study-route.html">Open the study route</a></p></section>
 <section><h2>Start With The Course Path</h2><p>The lecture path follows the MIT sequence while linking each session to atlas concepts and transcript evidence.</p><p><a class="button" href="lectures.html">Open the lecture path</a></p></section>
 <section><h2>Start With Concepts</h2><div class="grid">{''.join(concept_card(c, evidence_map(evidence)) for c in concepts[:6])}</div><p><a class="button" href="concepts.html">Open the full atlas</a></p></section>"""
     write(SITE / "index.html", page("Overview", body, "overview"))
+
+
+def build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_by_id):
+    cards = []
+    for item in route:
+        lecture_links = "".join(
+            f'<a class="chip" href="lectures/{esc(lecture_id)}.html">{esc(lecture_by_id[lecture_id]["title"])}</a>'
+            for lecture_id in item.get("lectures", [])
+            if lecture_id in lecture_by_id
+        )
+        concept_links = "".join(
+            f'<a class="chip" href="concepts/{esc(concept_id)}.html">{esc(concept_by_id[concept_id]["name"])}</a>'
+            for concept_id in item.get("concepts", [])
+            if concept_id in concept_by_id
+        )
+        primitive_links = "".join(
+            f'<a class="chip" href="primitives.html#{esc(primitive_id)}">{esc(primitive_by_id[primitive_id]["name"])}</a>'
+            for primitive_id in item.get("primitives", [])
+            if primitive_id in primitive_by_id
+        )
+        evidence_links = "".join(
+            f'<li><a href="evidence.html#{esc(ev_id)}">{esc(ev_id)}</a>: {esc(ev_by_id[ev_id]["video_title"])}</li>'
+            for ev_id in item.get("evidence", [])
+            if ev_id in ev_by_id
+        )
+        cards.append(f"""<article class="wide-card route-card" id="{esc(item["id"])}">
+  <p class="eyebrow">Study route</p>
+  <h2>{esc(item["title"])}</h2>
+  <p><strong>Reader question:</strong> {esc(item["reader_question"])}</p>
+  <p><strong>Plain-language goal:</strong> {esc(item["plain_language_goal"])}</p>
+  <h3>Lectures</h3><p class="chips">{lecture_links}</p>
+  <h3>Concepts</h3><p class="chips">{concept_links}</p>
+  <h3>Primitives</h3><p class="chips">{primitive_links}</p>
+  <h3>Evidence Checkpoints</h3><ul class="evidence-list">{evidence_links}</ul>
+  <h3>Checkpoint</h3><p>{esc(item["checkpoint"])}</p>
+</article>""")
+    body = '<section class="page-head"><h1>Study Route</h1><p>A compact path through the course, from first choice primitives to evidence-backed strategic reasoning.</p></section>' + "".join(cards)
+    write(SITE / "study-route.html", page("Study Route", body, "study-route"))
 
 
 def lecture_filename(lecture: dict[str, Any]) -> str:
@@ -534,15 +574,19 @@ def main():
     primitives = load("analysis/throughlines/primitives.json")
     derivations = load("analysis/throughlines/derivations.json")
     families = load("analysis/throughlines/method-families.json")
+    route = load("analysis/throughlines/study-route.json")
     lectures = load("analysis/lectures/lecture-path.json")
     equation_notes = load_optional("analysis/editorial-overrides/equation-walkthrough-notes.json", {})
     worked_examples = load_optional("analysis/editorial-overrides/worked-example-cards.json", {})
     ev_by_id = evidence_map(evidence)
     concept_by_id = concept_map(concepts)
+    lecture_by_id = {lecture["id"]: lecture for lecture in lectures}
+    primitive_by_id = {primitive["id"]: primitive for primitive in primitives}
     subtheme_by_id = subtheme_map(subthemes)
     lecture_by_evidence_id = lecture_evidence_map(lectures)
     deriv_by_id = derivation_map(derivations)
     build_index(concepts, themes, evidence, lectures)
+    build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_by_id)
     build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id)
     build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examples)
     build_themes(themes, subthemes, concepts)

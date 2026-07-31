@@ -1,0 +1,193 @@
+[
+  {
+    "id": "route-choice",
+    "title": "Start With Choice Before Strategy",
+    "reader_question": "What does a player want before anyone else enters the story?",
+    "plain_language_goal": "Learn why preferences, utility, and expected utility are the measuring tools underneath every later payoff table.",
+    "lectures": [
+      "lecture-01",
+      "lecture-02"
+    ],
+    "concepts": [
+      "preferences",
+      "utility",
+      "expected_utility"
+    ],
+    "primitives": [
+      "preference",
+      "belief"
+    ],
+    "evidence": [
+      "ev-preferences-01",
+      "ev-utility-01",
+      "ev-expected_utility-01"
+    ],
+    "checkpoint": "You should be able to explain why a payoff number is not raw happiness and why uncertainty requires weighting possible outcomes before choosing."
+  },
+  {
+    "id": "route-representation",
+    "title": "Represent The Strategic Situation",
+    "reader_question": "What object keeps everyone's choices, timing, and payoffs visible?",
+    "plain_language_goal": "Move from one-person choice to game representation: tables for simultaneous dependence, trees for time and information.",
+    "lectures": [
+      "lecture-02",
+      "lecture-03",
+      "lecture-04"
+    ],
+    "concepts": [
+      "strategic_form_games",
+      "extensive_form_games",
+      "dominance",
+      "iterated_deletion",
+      "rationalizability"
+    ],
+    "primitives": [
+      "payoff_mapping",
+      "pruning",
+      "belief"
+    ],
+    "evidence": [
+      "ev-strategic_form_games-01",
+      "ev-extensive_form_games-01",
+      "ev-dominance-01",
+      "ev-rationalizability-01"
+    ],
+    "checkpoint": "You should be able to say why judging one action alone is usually wrong, and when an action can be removed before equilibrium is solved."
+  },
+  {
+    "id": "route-equilibrium",
+    "title": "Make Predictions Survive Deviations",
+    "reader_question": "Can each player look at the proposed outcome and still want to stay put?",
+    "plain_language_goal": "Understand equilibrium as a mutual consistency test, then see why conflict and randomization require sharper versions of the same idea.",
+    "lectures": [
+      "lecture-05",
+      "lecture-07"
+    ],
+    "concepts": [
+      "best_response",
+      "nash_equilibrium",
+      "mixed_strategies",
+      "zero_sum_games",
+      "minimax"
+    ],
+    "primitives": [
+      "best_response",
+      "mutual_consistency"
+    ],
+    "evidence": [
+      "ev-best_response-01",
+      "ev-nash_equilibrium-01",
+      "ev-mixed_strategies-01",
+      "ev-minimax-01"
+    ],
+    "checkpoint": "You should be able to distinguish a stable prediction from a good social outcome, and explain why randomization can be strategic rather than confused."
+  },
+  {
+    "id": "route-time",
+    "title": "Test Time, Threats, And Patience",
+    "reader_question": "Will a promised future action still make sense when the future arrives?",
+    "plain_language_goal": "Use backward reasoning, subgame checks, bargaining logic, and repeated-game discipline to separate credible plans from empty announcements.",
+    "lectures": [
+      "lecture-08",
+      "lecture-09",
+      "lecture-10",
+      "lecture-11",
+      "lecture-12",
+      "lecture-13",
+      "lecture-14",
+      "lecture-15"
+    ],
+    "concepts": [
+      "backward_induction",
+      "subgame_perfection",
+      "one_shot_deviation",
+      "bargaining",
+      "finitely_repeated_games",
+      "infinitely_repeated_games",
+      "folk_theorem",
+      "implicit_cartels"
+    ],
+    "primitives": [
+      "backward_recursion",
+      "discounting",
+      "payoff_mapping"
+    ],
+    "evidence": [
+      "ev-backward_induction-01",
+      "ev-subgame_perfection-01",
+      "ev-bargaining-01",
+      "ev-infinitely_repeated_games-01",
+      "ev-implicit_cartels-01"
+    ],
+    "checkpoint": "You should be able to explain why a known last round can unravel cooperation, and why an indefinite future can sometimes discipline today's temptation."
+  },
+  {
+    "id": "route-information",
+    "title": "Reason With Hidden Information",
+    "reader_question": "What changes when players know different values, costs, types, histories, or facts that other players cannot directly see?",
+    "plain_language_goal": "Track types, beliefs, updating, signaling, cheap talk, and common knowledge without treating beliefs as arbitrary story glue.",
+    "lectures": [
+      "lecture-16",
+      "lecture-17",
+      "lecture-21",
+      "lecture-22",
+      "lecture-24",
+      "lecture-25"
+    ],
+    "concepts": [
+      "bayesian_games",
+      "types_and_beliefs",
+      "bayesian_nash_equilibrium",
+      "perfect_bayesian_equilibrium",
+      "signaling",
+      "cheap_talk",
+      "common_knowledge"
+    ],
+    "primitives": [
+      "belief",
+      "incentive_compatibility",
+      "knowledge_recursion"
+    ],
+    "evidence": [
+      "ev-bayesian_games-01",
+      "ev-bayesian_nash_equilibrium-01",
+      "ev-perfect_bayesian_equilibrium-01",
+      "ev-signaling-01",
+      "ev-common_knowledge-01"
+    ],
+    "checkpoint": "You should be able to explain why the same visible action can mean different things depending on type, cost, belief updating, and publicness."
+  },
+  {
+    "id": "route-design",
+    "title": "Read Rules As Incentive Machines",
+    "reader_question": "How do auction and market rules change what strategic people choose?",
+    "plain_language_goal": "See mechanism and auction topics as design problems: the rule must make the desired behavior privately sensible.",
+    "lectures": [
+      "lecture-06",
+      "lecture-18",
+      "lecture-19",
+      "lecture-20",
+      "lecture-23"
+    ],
+    "concepts": [
+      "imperfect_competition",
+      "screening_and_adverse_selection",
+      "auctions",
+      "revenue_equivalence",
+      "ad_auctions"
+    ],
+    "primitives": [
+      "payoff_mapping",
+      "incentive_compatibility",
+      "belief"
+    ],
+    "evidence": [
+      "ev-imperfect_competition-01",
+      "ev-screening_and_adverse_selection-01",
+      "ev-auctions-01",
+      "ev-revenue_equivalence-01",
+      "ev-ad_auctions-01"
+    ],
+    "checkpoint": "You should be able to ask, for any rule, what a participant can gain by shading, hiding, misreporting, entering, or leaving."
+  }
+]

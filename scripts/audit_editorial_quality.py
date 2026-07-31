@@ -102,6 +102,7 @@ def main() -> int:
     primitives = json.loads((ROOT / "analysis/throughlines/primitives.json").read_text(encoding="utf-8"))
     derivations = json.loads((ROOT / "analysis/throughlines/derivations.json").read_text(encoding="utf-8"))
     families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
+    route = json.loads((ROOT / "analysis/throughlines/study-route.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
@@ -215,6 +216,33 @@ def main() -> int:
             errors.append(f"primitive {primitive['id']} missing concept backlinks")
     derivation_words = [words(" ".join(str(d.get(f, "")) for f in ["everyday_setup", "equation", "symbol_by_symbol", "why_it_matters", "common_misread"]) + " " + " ".join(d.get("derivation_steps", []))) for d in derivations]
     family_words = [words(" ".join(str(f.get(k, "")) for k in ["family_problem", "first_principles_pattern", "mathematical_signature", "why_family_matters", "family_walkthrough", "where_analogy_breaks", "lecture_evidence_chain", "paper_family_treatment"])) for f in families]
+    route_html = (SITE / "study-route.html").read_text(encoding="utf-8") if (SITE / "study-route.html").exists() else ""
+    route_words = [words(" ".join(str(item.get(k, "")) for k in ["reader_question", "plain_language_goal", "checkpoint"])) for item in route]
+    route_lecture_links = 0
+    route_concept_links = 0
+    route_primitive_links = 0
+    route_evidence_links = 0
+    for item in route:
+        if f'id="{item["id"]}"' not in route_html:
+            errors.append(f"study route {item['id']} not rendered")
+        linked_lectures = [lid for lid in item.get("lectures", []) if f'href="lectures/{lid}.html"' in route_html]
+        linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in route_html]
+        linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in route_html]
+        linked_evidence = [eid for eid in item.get("evidence", []) if f'href="evidence.html#{eid}"' in route_html]
+        route_lecture_links += len(linked_lectures)
+        route_concept_links += len(linked_concepts)
+        route_primitive_links += len(linked_primitives)
+        route_evidence_links += len(linked_evidence)
+        if words(" ".join(str(item.get(k, "")) for k in ["reader_question", "plain_language_goal", "checkpoint"])) < 35:
+            errors.append(f"study route {item['id']} has shallow orientation text")
+        if len(linked_lectures) != len(item.get("lectures", [])):
+            errors.append(f"study route {item['id']} missing lecture links")
+        if len(linked_concepts) != len(item.get("concepts", [])):
+            errors.append(f"study route {item['id']} missing concept links")
+        if len(linked_primitives) != len(item.get("primitives", [])):
+            errors.append(f"study route {item['id']} missing primitive links")
+        if len(linked_evidence) != len(item.get("evidence", [])):
+            errors.append(f"study route {item['id']} missing evidence links")
     families_html = (SITE / "families.html").read_text(encoding="utf-8") if (SITE / "families.html").exists() else ""
     family_concept_links = 0
     family_primitive_links = 0
@@ -360,6 +388,12 @@ def main() -> int:
         f"- Method-family concept links: {family_concept_links}",
         f"- Method-family primitive links: {family_primitive_links}",
         f"- Method-family evidence links: {family_evidence_links}",
+        f"- Study route cards: {len(route)}",
+        f"- Study route words: min {min(route_words) if route_words else 0}, max {max(route_words) if route_words else 0}",
+        f"- Study route lecture links: {route_lecture_links}",
+        f"- Study route concept links: {route_concept_links}",
+        f"- Study route primitive links: {route_primitive_links}",
+        f"- Study route evidence links: {route_evidence_links}",
         f"- Evidence records with transcript teaching notes: {len(deep_evidence)}",
         f"- Evidence concept backlinks: {evidence_concept_backlinks}",
         f"- Evidence subtheme backlinks: {evidence_subtheme_backlinks}",

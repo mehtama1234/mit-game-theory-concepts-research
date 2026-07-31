@@ -28,17 +28,21 @@ def main() -> int:
     primitives = json.loads((ROOT / "analysis/throughlines/primitives.json").read_text(encoding="utf-8"))
     derivations = json.loads((ROOT / "analysis/throughlines/derivations.json").read_text(encoding="utf-8"))
     families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
+    route = json.loads((ROOT / "analysis/throughlines/study-route.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
     deriv_by_id = {derivation["id"]: derivation for derivation in derivations}
+    primitive_by_id = {primitive["id"]: primitive for primitive in primitives}
+    ev_by_id = {record["id"]: record for record in evidence}
+    lecture_by_id = {lecture["id"]: lecture for lecture in lectures}
     lecture_by_evidence_id = {
         ev_id: lecture
         for lecture in lectures
         for ev_id in lecture.get("evidence_ids", [])
     }
     supplemental_ids = {record["id"] for record in supplemental}
-    required = [SITE / name for name in ["index.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
+    required = [SITE / name for name in ["index.html", "study-route.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
     required.extend(SITE / "lectures" / f"{lecture['id']}.html" for lecture in lectures)
     for path in required:
@@ -49,8 +53,40 @@ def main() -> int:
     lectures_html = (SITE / "lectures.html").read_text(encoding="utf-8") if (SITE / "lectures.html").exists() else ""
     themes_html = (SITE / "themes.html").read_text(encoding="utf-8") if (SITE / "themes.html").exists() else ""
     families_html = (SITE / "families.html").read_text(encoding="utf-8") if (SITE / "families.html").exists() else ""
+    route_html = (SITE / "study-route.html").read_text(encoding="utf-8") if (SITE / "study-route.html").exists() else ""
+    index_html = (SITE / "index.html").read_text(encoding="utf-8") if (SITE / "index.html").exists() else ""
+    if 'href="study-route.html"' not in index_html:
+        errors.append("index page missing study route link")
     if len(lectures) != 25:
         errors.append(f"expected 25 lectures, found {len(lectures)}")
+    for item in route:
+        if f'id="{item["id"]}"' not in route_html:
+            errors.append(f"study route item not rendered: {item['id']}")
+        for field in ["reader_question", "plain_language_goal", "checkpoint"]:
+            if words(item.get(field, "")) < 10:
+                errors.append(f"study route {item['id']} has shallow {field}")
+            elif html.escape(item[field], quote=True) not in route_html:
+                errors.append(f"study route {item['id']} {field} not rendered")
+        for lecture_id in item.get("lectures", []):
+            if lecture_id not in lecture_by_id:
+                errors.append(f"study route {item['id']} references missing lecture: {lecture_id}")
+            elif f'href="lectures/{lecture_id}.html"' not in route_html:
+                errors.append(f"study route {item['id']} missing lecture link: {lecture_id}")
+        for concept_id in item.get("concepts", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"study route {item['id']} references missing concept: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in route_html:
+                errors.append(f"study route {item['id']} missing concept link: {concept_id}")
+        for primitive_id in item.get("primitives", []):
+            if primitive_id not in primitive_by_id:
+                errors.append(f"study route {item['id']} references missing primitive: {primitive_id}")
+            elif f'href="primitives.html#{primitive_id}"' not in route_html:
+                errors.append(f"study route {item['id']} missing primitive link: {primitive_id}")
+        for ev_id in item.get("evidence", []):
+            if ev_id not in ev_by_id:
+                errors.append(f"study route {item['id']} references missing evidence: {ev_id}")
+            elif f'href="evidence.html#{ev_id}"' not in route_html:
+                errors.append(f"study route {item['id']} missing evidence link: {ev_id}")
     for lecture in lectures:
         if f'id="{lecture["id"]}"' not in lectures_html:
             errors.append(f"missing lecture anchor: {lecture['id']}")
