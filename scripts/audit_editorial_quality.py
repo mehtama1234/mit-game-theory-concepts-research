@@ -112,6 +112,14 @@ def main() -> int:
     for ev in evidence:
         for cid in ev["supports_concepts"]:
             ev_by_concept.setdefault(cid, []).append(ev["id"])
+    subthemes_by_concept: dict[str, list[dict[str, Any]]] = {}
+    for subtheme in subthemes:
+        for concept_id in subtheme.get("concepts", []):
+            subthemes_by_concept.setdefault(concept_id, []).append(subtheme)
+    lectures_by_concept: dict[str, list[dict[str, Any]]] = {}
+    for lecture in lectures:
+        for concept in lecture.get("concepts", []):
+            lectures_by_concept.setdefault(concept["id"], []).append(lecture)
     lecture_by_evidence_id = {
         ev_id: lecture
         for lecture in lectures
@@ -243,6 +251,33 @@ def main() -> int:
             errors.append(f"study route {item['id']} missing primitive links")
         if len(linked_evidence) != len(item.get("evidence", [])):
             errors.append(f"study route {item['id']} missing evidence links")
+    cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
+    cross_concept_cards = 0
+    cross_lecture_links = 0
+    cross_subtheme_links = 0
+    cross_primitive_links = 0
+    cross_evidence_links = 0
+    for concept in concepts:
+        if f'id="xref-{concept["id"]}"' in cross_html:
+            cross_concept_cards += 1
+        else:
+            errors.append(f"cross index missing concept card: {concept['id']}")
+        if f'href="concepts/{concept["id"]}.html"' not in cross_html:
+            errors.append(f"cross index missing concept page link: {concept['id']}")
+        linked_lectures = [lecture["id"] for lecture in lectures_by_concept.get(concept["id"], []) if f'href="lectures/{lecture["id"]}.html"' in cross_html]
+        linked_subthemes = [subtheme["id"] for subtheme in subthemes_by_concept.get(concept["id"], []) if f'href="themes.html#{subtheme["id"]}"' in cross_html]
+        linked_primitives = [pid for pid in concept.get("mathematical_primitives", []) if f'href="primitives.html#{pid}"' in cross_html]
+        linked_evidence = [eid for eid in concept.get("course_evidence_ids", []) if f'href="evidence.html#{eid}"' in cross_html]
+        cross_lecture_links += len(linked_lectures)
+        cross_subtheme_links += len(linked_subthemes)
+        cross_primitive_links += len(linked_primitives)
+        cross_evidence_links += len(linked_evidence)
+        if len(linked_lectures) != len(lectures_by_concept.get(concept["id"], [])):
+            errors.append(f"cross index missing lecture links for {concept['id']}")
+        if len(linked_subthemes) != len(subthemes_by_concept.get(concept["id"], [])):
+            errors.append(f"cross index missing subtheme links for {concept['id']}")
+        if len(linked_evidence) != len(concept.get("course_evidence_ids", [])):
+            errors.append(f"cross index missing evidence links for {concept['id']}")
     families_html = (SITE / "families.html").read_text(encoding="utf-8") if (SITE / "families.html").exists() else ""
     family_concept_links = 0
     family_primitive_links = 0
@@ -394,6 +429,11 @@ def main() -> int:
         f"- Study route concept links: {route_concept_links}",
         f"- Study route primitive links: {route_primitive_links}",
         f"- Study route evidence links: {route_evidence_links}",
+        f"- Cross-index concept cards: {cross_concept_cards}",
+        f"- Cross-index lecture links: {cross_lecture_links}",
+        f"- Cross-index subtheme links: {cross_subtheme_links}",
+        f"- Cross-index primitive links: {cross_primitive_links}",
+        f"- Cross-index evidence links: {cross_evidence_links}",
         f"- Evidence records with transcript teaching notes: {len(deep_evidence)}",
         f"- Evidence concept backlinks: {evidence_concept_backlinks}",
         f"- Evidence subtheme backlinks: {evidence_subtheme_backlinks}",

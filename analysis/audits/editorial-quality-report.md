@@ -29,6 +29,11 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Study route concept links: 33
 - Study route primitive links: 16
 - Study route evidence links: 26
+- Cross-index concept cards: 33
+- Cross-index lecture links: 60
+- Cross-index subtheme links: 33
+- Cross-index primitive links: 47
+- Cross-index evidence links: 66
 - Evidence records with transcript teaching notes: 66
 - Evidence concept backlinks: 66
 - Evidence subtheme backlinks: 66
@@ -39,7 +44,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Supplemental lecture evidence records: 8
 - Lectures below 2 total evidence anchors: 0
 - Lecture path treatment words: min 30, max 50
-- Lecture detail page words: min 1332, max 5287
+- Lecture detail page words: min 1341, max 5296
 - Errors: 0
 
 ## Lowest Concept Depth

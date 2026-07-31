@@ -36,6 +36,7 @@ def page(title: str, body: str, active: str = "", depth: int = 0) -> str:
     nav = [
         ("index.html", "Overview", "overview"),
         ("study-route.html", "Study Route", "study-route"),
+        ("cross-reference.html", "Cross Index", "cross-reference"),
         ("lectures.html", "Lectures", "lectures"),
         ("concepts.html", "Concepts", "concepts"),
         ("themes.html", "Themes", "themes"),
@@ -206,6 +207,7 @@ def build_index(concepts, themes, evidence, lectures):
 </section>
 <section><h2>The Big Throughline</h2><p>Game theory studies situations where choosing well means reasoning about other choosers. Equilibrium, credibility, beliefs, auctions, signaling, and common knowledge are different answers to the same pressure: my best move depends on what others do, know, want, and expect.</p></section>
 <section><h2>Use The Study Route</h2><p>The route map gives a compact path through the course: choice, representation, equilibrium, time, information, and design.</p><p><a class="button" href="study-route.html">Open the study route</a></p></section>
+<section><h2>Find A Concept By Pressure</h2><p>The cross index lets a reader jump from an everyday problem to the relevant concept, lecture, primitive, subtheme, and evidence record.</p><p><a class="button" href="cross-reference.html">Open the cross index</a></p></section>
 <section><h2>Start With The Course Path</h2><p>The lecture path follows the MIT sequence while linking each session to atlas concepts and transcript evidence.</p><p><a class="button" href="lectures.html">Open the lecture path</a></p></section>
 <section><h2>Start With Concepts</h2><div class="grid">{''.join(concept_card(c, evidence_map(evidence)) for c in concepts[:6])}</div><p><a class="button" href="concepts.html">Open the full atlas</a></p></section>"""
     write(SITE / "index.html", page("Overview", body, "overview"))
@@ -247,6 +249,53 @@ def build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_b
 </article>""")
     body = '<section class="page-head"><h1>Study Route</h1><p>A compact path through the course, from first choice primitives to evidence-backed strategic reasoning.</p></section>' + "".join(cards)
     write(SITE / "study-route.html", page("Study Route", body, "study-route"))
+
+
+def build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence):
+    theme_by_id = {theme["id"]: theme for theme in themes}
+    subthemes_by_concept: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for subtheme in subthemes:
+        for concept_id in subtheme.get("concepts", []):
+            subthemes_by_concept[concept_id].append(subtheme)
+    primitive_by_id = {primitive["id"]: primitive for primitive in primitives}
+    lectures_by_concept: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for lecture in lectures:
+        for concept in lecture.get("concepts", []):
+            lectures_by_concept[concept["id"]].append(lecture)
+    ev_by_id = evidence_map(evidence)
+    rows = []
+    for concept in concepts:
+        theme = theme_by_id.get(concept["theme_id"], {"name": concept["theme_id"]})
+        lecture_links = "".join(
+            f'<a class="chip" href="lectures/{esc(lecture["id"])}.html">{esc(lecture["title"])}</a>'
+            for lecture in lectures_by_concept.get(concept["id"], [])
+        )
+        subtheme_links = "".join(
+            f'<a class="chip" href="themes.html#{esc(subtheme["id"])}">{esc(subtheme["name"])}</a>'
+            for subtheme in subthemes_by_concept.get(concept["id"], [])
+        )
+        primitive_links = "".join(
+            f'<a class="chip" href="primitives.html#{esc(primitive_id)}">{esc(primitive_by_id[primitive_id]["name"])}</a>'
+            for primitive_id in concept.get("mathematical_primitives", [])
+            if primitive_id in primitive_by_id
+        )
+        evidence_links = "".join(
+            f'<a class="chip" href="evidence.html#{esc(ev_id)}">{esc(ev_id)}</a>'
+            for ev_id in concept.get("course_evidence_ids", [])
+            if ev_id in ev_by_id
+        )
+        rows.append(f"""<article class="wide-card xref-card" id="xref-{esc(concept["id"])}">
+  <p class="eyebrow">{esc(theme["name"])}</p>
+  <h2><a href="concepts/{esc(concept["id"])}.html">{esc(concept["name"])}</a></h2>
+  <p><strong>Problem pressure:</strong> {esc(concept["everyday_problem"])}</p>
+  <p><strong>Mathematical handle:</strong> {esc(concept["mathematical_object"])}</p>
+  <h3>Lectures</h3><p class="chips">{lecture_links}</p>
+  <h3>Subthemes</h3><p class="chips">{subtheme_links}</p>
+  <h3>Primitives</h3><p class="chips">{primitive_links}</p>
+  <h3>Evidence</h3><p class="chips">{evidence_links}</p>
+</article>""")
+    body = '<section class="page-head"><h1>Cross Index</h1><p>Every concept indexed by the problem pressure it answers, with direct jumps into lectures, subthemes, primitives, and transcript evidence.</p></section>' + "".join(rows)
+    write(SITE / "cross-reference.html", page("Cross Index", body, "cross-reference"))
 
 
 def lecture_filename(lecture: dict[str, Any]) -> str:
@@ -587,6 +636,7 @@ def main():
     deriv_by_id = derivation_map(derivations)
     build_index(concepts, themes, evidence, lectures)
     build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_by_id)
+    build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence)
     build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id)
     build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examples)
     build_themes(themes, subthemes, concepts)

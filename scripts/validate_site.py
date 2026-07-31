@@ -42,7 +42,7 @@ def main() -> int:
         for ev_id in lecture.get("evidence_ids", [])
     }
     supplemental_ids = {record["id"] for record in supplemental}
-    required = [SITE / name for name in ["index.html", "study-route.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
+    required = [SITE / name for name in ["index.html", "study-route.html", "cross-reference.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
     required.extend(SITE / "lectures" / f"{lecture['id']}.html" for lecture in lectures)
     for path in required:
@@ -54,9 +54,20 @@ def main() -> int:
     themes_html = (SITE / "themes.html").read_text(encoding="utf-8") if (SITE / "themes.html").exists() else ""
     families_html = (SITE / "families.html").read_text(encoding="utf-8") if (SITE / "families.html").exists() else ""
     route_html = (SITE / "study-route.html").read_text(encoding="utf-8") if (SITE / "study-route.html").exists() else ""
+    cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     index_html = (SITE / "index.html").read_text(encoding="utf-8") if (SITE / "index.html").exists() else ""
     if 'href="study-route.html"' not in index_html:
         errors.append("index page missing study route link")
+    if 'href="cross-reference.html"' not in index_html:
+        errors.append("index page missing cross-reference link")
+    subthemes_by_concept: dict[str, list[dict]] = {}
+    for subtheme in subthemes:
+        for concept_id in subtheme.get("concepts", []):
+            subthemes_by_concept.setdefault(concept_id, []).append(subtheme)
+    lectures_by_concept: dict[str, list[dict]] = {}
+    for lecture in lectures:
+        for concept in lecture.get("concepts", []):
+            lectures_by_concept.setdefault(concept["id"], []).append(lecture)
     if len(lectures) != 25:
         errors.append(f"expected 25 lectures, found {len(lectures)}")
     for item in route:
@@ -87,6 +98,27 @@ def main() -> int:
                 errors.append(f"study route {item['id']} references missing evidence: {ev_id}")
             elif f'href="evidence.html#{ev_id}"' not in route_html:
                 errors.append(f"study route {item['id']} missing evidence link: {ev_id}")
+    for concept in concepts:
+        if f'id="xref-{concept["id"]}"' not in cross_html:
+            errors.append(f"cross index missing concept anchor: {concept['id']}")
+        if f'href="concepts/{concept["id"]}.html"' not in cross_html:
+            errors.append(f"cross index missing concept link: {concept['id']}")
+        if html.escape(concept["everyday_problem"], quote=True) not in cross_html:
+            errors.append(f"cross index missing problem pressure: {concept['id']}")
+        if html.escape(concept["mathematical_object"], quote=True) not in cross_html:
+            errors.append(f"cross index missing mathematical handle: {concept['id']}")
+        for ev_id in concept.get("course_evidence_ids", []):
+            if f'href="evidence.html#{ev_id}"' not in cross_html:
+                errors.append(f"cross index missing evidence link: {concept['id']} -> {ev_id}")
+        for lecture in lectures_by_concept.get(concept["id"], []):
+            if f'href="lectures/{lecture["id"]}.html"' not in cross_html:
+                errors.append(f"cross index missing lecture link: {concept['id']} -> {lecture['id']}")
+        for subtheme in subthemes_by_concept.get(concept["id"], []):
+            if f'href="themes.html#{subtheme["id"]}"' not in cross_html:
+                errors.append(f"cross index missing subtheme link: {concept['id']} -> {subtheme['id']}")
+        for primitive_id in concept.get("mathematical_primitives", []):
+            if primitive_id in primitive_by_id and f'href="primitives.html#{primitive_id}"' not in cross_html:
+                errors.append(f"cross index missing primitive link: {concept['id']} -> {primitive_id}")
     for lecture in lectures:
         if f'id="{lecture["id"]}"' not in lectures_html:
             errors.append(f"missing lecture anchor: {lecture['id']}")
