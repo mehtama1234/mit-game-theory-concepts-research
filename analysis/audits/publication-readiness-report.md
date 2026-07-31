@@ -6,7 +6,7 @@ This report records local readiness evidence. Remote publication is verified by 
 
 ```text
 $ git log -1 --oneline
-13ac0ae Link MIT primitives back to concepts
+2c0882b Render MIT subtheme study cards
 
 $ git remote -v
 origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (fetch)
