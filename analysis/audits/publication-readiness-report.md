@@ -6,7 +6,7 @@ This report records local readiness evidence. Remote publication is verified by 
 
 ```text
 $ git log -1 --oneline
-3d25086 Add MIT lecture argument arcs
+aeffcf3 Add MIT supplemental lecture evidence
 
 $ git remote -v
 origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (fetch)
@@ -24,6 +24,7 @@ origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (pus
 - Subthemes: 10
 - Evidence records: 66
 - Lecture path entries: 25
+- Supplemental lecture evidence records: 8
 - Evidence records queued for review: 0
 - Mathematical primitives: 10
 - Method families: 3
