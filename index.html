@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overview · MIT Game Theory Concept Lab</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">MIT Game Theory Concept Lab</a>
+    <nav><a class="active" href="index.html">Overview</a><a class="" href="concepts.html">Concepts</a><a class="" href="themes.html">Themes</a><a class="" href="families.html">Method Families</a><a class="" href="primitives.html">Primitives</a><a class="" href="evidence.html">Evidence</a></nav>
+  </header>
+  <main><section class="hero">
+  <div>
+    <p class="eyebrow">Transcript-backed first-principles research</p>
+    <h1>Understand game theory as a small set of ideas about choice, incentives, beliefs, time, rules, and knowledge.</h1>
+    <p class="lead">This lab turns MIT 14.12's 25 lectures into a connected concept atlas. It starts with ordinary strategic problems, then introduces the math only when the idea needs it.</p>
+  </div>
+  <aside class="stats"><strong>31</strong><span>concepts</span><strong>8</strong><span>themes</span><strong>62</strong><span>evidence records</span></aside>
+</section>
+<section><h2>The Big Throughline</h2><p>Game theory studies situations where choosing well means reasoning about other choosers. Equilibrium, credibility, beliefs, auctions, signaling, and common knowledge are different answers to the same pressure: my best move depends on what others do, know, want, and expect.</p></section>
+<section><h2>Start With Concepts</h2><div class="grid"><article class="concept-card" id="preferences">
+  <p class="eyebrow">choice and payoff</p>
+  <h3><a href="concepts/preferences.html">Preferences</a></h3>
+  <p class="definition">A way to say which outcomes a person ranks above others.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is that before we talk about strategy, we need a way to say what one person is trying to get. A person may like one outcome more than another even when dollars, risk, effort, and timing are mixed together.</dd>
+    <dt>Math</dt><dd>A preference relation ranks outcomes, often represented by a utility function u(x). The useful relation is `x preferred to y means u(x) &gt; u(y).`. In plain language: x and y are possible outcomes; u assigns each outcome a number; the larger number records the option the person ranks higher.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-preferences-01">ev-preferences-01</a>: Lecture 1: Introduction to Individual Decision-Making</li><li><a href="evidence.html#ev-preferences-02">ev-preferences-02</a>: Lecture 2: Representation of Games</li></ul>
+</article><article class="concept-card" id="utility">
+  <p class="eyebrow">choice and payoff</p>
+  <h3><a href="concepts/utility.html">Utility</a></h3>
+  <p class="definition">A numerical representation of what someone is trying to get.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is that rankings are awkward to compute with. A payoff table, expected value, or equilibrium check needs numbers, not only verbal statements like this outcome is preferred.</dd>
+    <dt>Math</dt><dd>A preference relation ranks outcomes, often represented by a utility function u(x). The useful relation is `x preferred to y means u(x) &gt; u(y).`. In plain language: x and y are possible outcomes; u assigns each outcome a number; the larger number records the option the person ranks higher.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-utility-01">ev-utility-01</a>: Lecture 1: Introduction to Individual Decision-Making</li><li><a href="evidence.html#ev-utility-02">ev-utility-02</a>: Lecture 2: Representation of Games</li></ul>
+</article><article class="concept-card" id="expected_utility">
+  <p class="eyebrow">choice and payoff</p>
+  <h3><a href="concepts/expected_utility.html">Expected Utility</a></h3>
+  <p class="definition">Averaging possible payoffs by how likely they are.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is choosing when the outcome is uncertain: a bid might win or lose, a risky action might pay off or fail, and a type may be one of several possibilities.</dd>
+    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-expected_utility-01">ev-expected_utility-01</a>: Lecture 1: Introduction to Individual Decision-Making</li><li><a href="evidence.html#ev-expected_utility-02">ev-expected_utility-02</a>: Lecture 16: Bayesian Games</li></ul>
+</article><article class="concept-card" id="strategic_form_games">
+  <p class="eyebrow">strategic dependence</p>
+  <h3><a href="concepts/strategic_form_games.html">Strategic Form Games</a></h3>
+  <p class="definition">A compact table of players, actions, and payoffs chosen at the same time.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is representing a situation where everyone chooses without first seeing the others&#x27; choices, yet everyone&#x27;s payoff depends on the whole combination.</dd>
+    <dt>Math</dt><dd>A payoff function u_i(a_i, a_-i) maps everyone&#x27;s actions to player i&#x27;s payoff. The useful relation is `u_i(a_i, a_-i).`. In plain language: i is one player; a_i is that player&#x27;s action; a_-i means everyone else&#x27;s actions; u_i is the payoff assigned to the whole action profile.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-strategic_form_games-01">ev-strategic_form_games-01</a>: Lecture 2: Representation of Games</li><li><a href="evidence.html#ev-strategic_form_games-02">ev-strategic_form_games-02</a>: Lecture 1: Introduction to Individual Decision-Making</li></ul>
+</article><article class="concept-card" id="extensive_form_games">
+  <p class="eyebrow">time and credibility</p>
+  <h3><a href="concepts/extensive_form_games.html">Extensive Form Games</a></h3>
+  <p class="definition">A game drawn as a tree so timing and information can be represented.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is that some games unfold over time. A later choice can depend on an earlier choice, and some players may know more about the history than others.</dd>
+    <dt>Math</dt><dd>Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-extensive_form_games-01">ev-extensive_form_games-01</a>: Lecture 2: Representation of Games</li><li><a href="evidence.html#ev-extensive_form_games-02">ev-extensive_form_games-02</a>: Lecture 8: Backward Induction</li></ul>
+</article><article class="concept-card" id="dominance">
+  <p class="eyebrow">strategic dependence</p>
+  <h3><a href="concepts/dominance.html">Dominance</a></h3>
+  <p class="definition">A way to rule out choices that are never better than another choice.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is that some choices are plainly bad no matter what the other side does. Keeping them in the analysis can distract from the strategic choices that actually need thought.</dd>
+    <dt>Math</dt><dd>Dominance compares one strategy against another across possible opponent choices. The useful relation is `s dominates t if u_i(s, a_-i) &gt;= u_i(t, a_-i) for all a_-i, with strict inequality somewhere.`. In plain language: The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-dominance-01">ev-dominance-01</a>: Lecture 3: Dominance</li><li><a href="evidence.html#ev-dominance-02">ev-dominance-02</a>: Lecture 4: Rationalizability</li></ul>
+</article></div><p><a class="button" href="concepts.html">Open the full atlas</a></p></section></main>
+</body>
+</html>
