@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import html as html_lib
 import re
 from pathlib import Path
 
@@ -101,6 +102,7 @@ def main() -> int:
     primitives = json.loads((ROOT / "analysis/throughlines/primitives.json").read_text(encoding="utf-8"))
     derivations = json.loads((ROOT / "analysis/throughlines/derivations.json").read_text(encoding="utf-8"))
     families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
+    equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
     deriv_by_id = {derivation["id"]: derivation for derivation in derivations}
 
@@ -111,6 +113,7 @@ def main() -> int:
 
     rows = []
     concept_pages_with_derivations = 0
+    equation_note_words = []
     for concept in concepts:
         count = words(" ".join(str(concept.get(field, "")) for field in CONCEPT_FIELDS))
         ev_count = len(ev_by_concept.get(concept["id"], []))
@@ -126,6 +129,14 @@ def main() -> int:
         linked_derivations = [derivation_id for derivation_id in expected_derivations if f'href="../primitives.html#{derivation_id}"' in html]
         if expected_derivations and not linked_derivations:
             errors.append(f"concept {concept['id']} has no linked equation walkthrough")
+        if expected_derivations:
+            note = equation_notes.get(concept["id"], "")
+            note_words = words(note)
+            equation_note_words.append(note_words)
+            if note_words < 24:
+                errors.append(f"concept {concept['id']} has shallow equation walkthrough note: {note_words} words")
+            if note and html_lib.escape(note, quote=True) not in html:
+                errors.append(f"concept {concept['id']} equation walkthrough note not rendered")
         if linked_derivations:
             concept_pages_with_derivations += 1
         rows.append((concept["id"], count, ev_count))
@@ -246,6 +257,7 @@ def main() -> int:
         f"- Primitive treatment words: min {min(primitive_words)}, max {max(primitive_words)}",
         f"- Derivation-card words: min {min(derivation_words) if derivation_words else 0}, max {max(derivation_words) if derivation_words else 0}",
         f"- Concept pages with derivation links: {concept_pages_with_derivations}",
+        f"- Concept equation note words: min {min(equation_note_words) if equation_note_words else 0}, max {max(equation_note_words) if equation_note_words else 0}",
         f"- Lecture pages with derivation links: {lecture_pages_with_derivations}",
         f"- Method-family treatment words: min {min(family_words)}, max {max(family_words)}",
         f"- Evidence records with transcript teaching notes: {len(deep_evidence)}",

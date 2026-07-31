@@ -17,6 +17,11 @@ def load(path: str) -> Any:
     return json.loads((ROOT / path).read_text(encoding="utf-8"))
 
 
+def load_optional(path: str, default: Any) -> Any:
+    full_path = ROOT / path
+    return json.loads(full_path.read_text(encoding="utf-8")) if full_path.exists() else default
+
+
 def esc(value: Any) -> str:
     return html.escape(str(value), quote=True)
 
@@ -277,7 +282,7 @@ def build_lecture_detail(lecture, ev_by_id, concept_by_id, deriv_by_id):
     write(SITE / "lectures" / lecture_filename(lecture), page(lecture["title"], body, "lectures", depth=1))
 
 
-def build_concepts(concepts, evidence, deriv_by_id):
+def build_concepts(concepts, evidence, deriv_by_id, equation_notes):
     ev_by_id = evidence_map(evidence)
     concept_ids = {c["id"] for c in concepts}
     body = f'<section class="page-head"><h1>Concept Atlas</h1><p>Each page explains the strategic pressure, the mathematical object, what breaks without it, and transcript evidence.</p></section><section class="grid">{"".join(concept_card(c, ev_by_id) for c in concepts)}</section>'
@@ -291,6 +296,7 @@ def build_concepts(concepts, evidence, deriv_by_id):
         ev_html = "".join(evidence_row(ev_by_id[ev_id], "../") for ev_id in concept["course_evidence_ids"])
         deriv_ids = concept_derivation_ids(concept, deriv_by_id)
         deriv_html = derivation_links(deriv_ids, deriv_by_id, "../")
+        equation_note = equation_notes.get(concept["id"], "")
         diagram = flow("First-Principles Map", [
             ("Problem", concept["everyday_problem"]),
             ("Constraint", concept["first_principles_reason"]),
@@ -316,7 +322,7 @@ def build_concepts(concepts, evidence, deriv_by_id):
         treatment = "".join(f"<h2>{esc(h)}</h2><p>{esc(text)}</p>" for h, text in sections)
         body = f"""<section class="page-head"><p class="eyebrow">{esc(concept['theme_id']).replace('_', ' ')}</p><h1>{esc(concept['name'])}</h1><p>{esc(concept['plain_language_definition'])}</p></section>
 {diagram}
-<section class="treatment">{treatment}<h2>Equation Walkthroughs</h2><p class="chips">{deriv_html or '<span class="chip muted">No direct derivation cards yet</span>'}</p><p class="chips">{related}</p></section>
+<section class="treatment">{treatment}<h2>Equation Walkthroughs</h2>{f'<p>{esc(equation_note)}</p>' if equation_note else ''}<p class="chips">{deriv_html or '<span class="chip muted">No direct derivation cards yet</span>'}</p><p class="chips">{related}</p></section>
 <section><h2>Transcript Evidence</h2><div class="evidence-stack">{ev_html}</div></section>"""
         write(SITE / "concepts" / f"{concept['id']}.html", page(concept["name"], body, "concepts", depth=1))
 
@@ -424,12 +430,13 @@ def main():
     derivations = load("analysis/throughlines/derivations.json")
     families = load("analysis/throughlines/method-families.json")
     lectures = load("analysis/lectures/lecture-path.json")
+    equation_notes = load_optional("analysis/editorial-overrides/equation-walkthrough-notes.json", {})
     ev_by_id = evidence_map(evidence)
     concept_by_id = concept_map(concepts)
     deriv_by_id = derivation_map(derivations)
     build_index(concepts, themes, evidence, lectures)
     build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id)
-    build_concepts(concepts, evidence, deriv_by_id)
+    build_concepts(concepts, evidence, deriv_by_id, equation_notes)
     build_themes(themes, subthemes, concepts)
     build_primitives(primitives, derivations)
     build_families(families)

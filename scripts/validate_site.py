@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import html
 import re
 import sys
 from pathlib import Path
@@ -13,6 +14,10 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
 
 
+def words(text: str) -> int:
+    return len(re.findall(r"\b\w+\b", text))
+
+
 def main() -> int:
     errors: list[str] = []
     concepts = json.loads((ROOT / "analysis/concepts/concept-atlas.json").read_text(encoding="utf-8"))
@@ -20,6 +25,7 @@ def main() -> int:
     lectures = json.loads((ROOT / "analysis/lectures/lecture-path.json").read_text(encoding="utf-8"))
     supplemental = json.loads((ROOT / "analysis/lectures/lecture-evidence.json").read_text(encoding="utf-8"))
     derivations = json.loads((ROOT / "analysis/throughlines/derivations.json").read_text(encoding="utf-8"))
+    equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
     deriv_by_id = {derivation["id"]: derivation for derivation in derivations}
     supplemental_ids = {record["id"] for record in supplemental}
@@ -80,7 +86,14 @@ def main() -> int:
             errors.append(f"concept page missing diagram: {concept['id']}")
         if "Equation Walkthroughs" not in text:
             errors.append(f"concept page missing derivation section: {concept['id']}")
-        for derivation_id in expected_derivation_ids_for_concept(concept, deriv_by_id):
+        expected_derivations = expected_derivation_ids_for_concept(concept, deriv_by_id)
+        if expected_derivations:
+            note = equation_notes.get(concept["id"], "")
+            if words(note) < 24:
+                errors.append(f"concept {concept['id']} missing substantial equation walkthrough note")
+            elif html.escape(note, quote=True) not in text:
+                errors.append(f"concept {concept['id']} equation walkthrough note not rendered")
+        for derivation_id in expected_derivations:
             if f'href="../primitives.html#{derivation_id}"' not in text:
                 errors.append(f"concept page {concept['id']} missing derivation link: {derivation_id}")
         if "Transcript Evidence" not in text:
