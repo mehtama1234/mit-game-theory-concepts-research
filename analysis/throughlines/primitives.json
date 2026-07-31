@@ -13,8 +13,11 @@
       "utility",
       "expected_utility"
     ],
-    "everyday_setup": "A way to say which outcome a person would rather have.",
-    "course_appearances": "Appears in: preferences, utility, expected_utility."
+    "everyday_setup": "Imagine choosing between two concrete outcomes: more money with more risk, less money with less risk, agreement now, or a chance of a better agreement later. Preference is the ordered list hiding behind that choice.",
+    "course_appearances": "Preferences appear first in the opening choice lecture, then reappear whenever payoffs, utilities, outside options, bidder values, or expected utilities are used as inputs to strategic reasoning.",
+    "plain_language_principle": "Preference is the course’s way of saying that a person can compare outcomes before any strategic machinery starts. The primitive matters because a game cannot explain choice unless there is some stable sense in which one outcome is better for that player than another.",
+    "why_it_matters": "It makes later payoff comparisons meaningful without forcing the course to measure inner happiness directly. The math only needs the ranking behavior that is relevant for choice.",
+    "misuse_warning": "The common misuse is treating the utility representation as a literal psychological ruler. In this course, different numerical representations can describe the same ordering unless uncertainty or expected utility requires stronger comparisons."
   },
   {
     "id": "payoff_mapping",
@@ -30,8 +33,11 @@
       "bargaining",
       "ad_auctions"
     ],
-    "everyday_setup": "A table that says what each person gets from each combination of choices.",
-    "course_appearances": "Appears in: strategic_form_games, bargaining, ad_auctions."
+    "everyday_setup": "A firm’s profit depends on its own price and a rival’s price; a bargainer’s payoff depends on both the offer and the response; an auction payoff depends on the bid, rivals’ bids, value, and payment rule.",
+    "course_appearances": "Payoff mapping appears in strategic-form games, extensive-form games, bargaining, ad auctions, and any lecture that asks whether a deviation changes a player’s payoff.",
+    "plain_language_principle": "Payoff mapping says that one person’s result is produced by the whole situation, not by that person’s action alone. A game table or tree is a compact machine that turns everyone’s choices into each player’s consequence.",
+    "why_it_matters": "It prevents the analyst from evaluating actions as isolated moves. Once the payoff map is written down, best responses, dominance, equilibrium, and mechanism design have something precise to inspect.",
+    "misuse_warning": "A payoff map can smuggle in the conclusion if the modeler omits costs, outside options, information, or future consequences. The table is only as honest as the situation it represents."
   },
   {
     "id": "best_response",
@@ -46,8 +52,11 @@
       "best_response",
       "minimax"
     ],
-    "everyday_setup": "The choice that works best given what someone believes others will do.",
-    "course_appearances": "Appears in: best_response, minimax."
+    "everyday_setup": "If a rival sets a high price, one response may be best; if the rival cuts price, another response may be best. The action is not universally good; it is good against a specified situation.",
+    "course_appearances": "Best response appears in rationalizability, Nash equilibrium, mixed strategies, minimax reasoning, Bayesian Nash equilibrium, and the deviation checks behind dynamic concepts.",
+    "plain_language_principle": "Best response is the one-player optimization step inside game theory, but in everyday words it means: given what I think the others are doing, what should I do?",
+    "why_it_matters": "It is the local test behind nearly every solution concept. Equilibrium is built by making many best-response checks hold at the same time.",
+    "misuse_warning": "The misuse is naming a best response without naming the belief, opponent action, or information condition. That hides the actual assumption doing the work."
   },
   {
     "id": "mutual_consistency",
@@ -66,8 +75,11 @@
       "folk_theorem",
       "bayesian_nash_equilibrium"
     ],
-    "everyday_setup": "A situation where each person's plan makes sense given everyone else's plan.",
-    "course_appearances": "Appears in: nash_equilibrium, mixed_strategies, zero_sum_games, subgame_perfection, folk_theorem, bayesian_nash_equilibrium."
+    "everyday_setup": "A traffic merge, price competition, or bidding situation can sound stable until one participant notices a better move. Mutual consistency means that no participant has that private reason to switch.",
+    "course_appearances": "Mutual consistency appears in Nash equilibrium, mixed strategies, zero-sum games, subgame perfection, infinitely repeated games, folk theorem logic, and Bayesian Nash equilibrium.",
+    "plain_language_principle": "Mutual consistency turns a collection of individual choices into a stable strategic prediction. Everyone’s plan has to make sense given everyone else’s plan.",
+    "why_it_matters": "It is the reason equilibrium is a disciplined prediction rather than a story. The concept asks every player to audit the proposed outcome from their own incentive point of view.",
+    "misuse_warning": "The misuse is reading equilibrium as good, fair, optimal for society, or morally desirable. It only says that unilateral deviation is not profitable under the modeled conditions."
   },
   {
     "id": "pruning",
@@ -82,8 +94,11 @@
       "dominance",
       "iterated_deletion"
     ],
-    "everyday_setup": "Remove choices that are never worth taking, then reason with the smaller problem.",
-    "course_appearances": "Appears in: dominance, iterated_deletion."
+    "everyday_setup": "If one route is slower no matter what traffic does, or one bid is worse no matter how rivals bid, a careful decision-maker should not keep treating it as live.",
+    "course_appearances": "Pruning appears in dominance, iterated deletion, rationalizability, and as background for equilibrium reasoning because eliminated strategies cannot be serious best responses.",
+    "plain_language_principle": "Pruning removes actions that cannot be justified before solving the whole game. It is the mathematical version of clearing away choices that are never worth taking.",
+    "why_it_matters": "It reduces strategic clutter and teaches students that not every listed action deserves equal attention. It also shows how rationality assumptions can have observable consequences before equilibrium is imposed.",
+    "misuse_warning": "The misuse is deleting too aggressively, especially with weak dominance or when beliefs matter. A deletion rule can change the remaining game, so the strength and order of the rule must be explicit."
   },
   {
     "id": "backward_recursion",
@@ -102,8 +117,11 @@
       "finitely_repeated_games",
       "perfect_bayesian_equilibrium"
     ],
-    "everyday_setup": "Solve the future first, then use that answer to decide what should happen earlier.",
-    "course_appearances": "Appears in: extensive_form_games, backward_induction, subgame_perfection, one_shot_deviation, finitely_repeated_games, perfect_bayesian_equilibrium."
+    "everyday_setup": "A threat to punish later is persuasive only if punishment will still be worth doing later. A buyer’s current offer depends on what both sides expect at the next bargaining step.",
+    "course_appearances": "Backward recursion appears in extensive-form games, backward induction, subgame perfection, one-shot deviation, bargaining, finitely repeated games, and perfect Bayesian equilibrium.",
+    "plain_language_principle": "Backward recursion says that later incentives determine earlier meaning. To understand a promise or threat now, solve what the player will want when the promised moment arrives.",
+    "why_it_matters": "It gives sequential games their discipline. Instead of accepting announced plans, the course tests each continuation point and pulls those continuation values back to the start.",
+    "misuse_warning": "The misuse is solving backward through a tree that leaves out information, uncertainty, or renegotiation. Backward logic is powerful only after the tree is an honest representation."
   },
   {
     "id": "discounting",
@@ -120,8 +138,11 @@
       "folk_theorem",
       "implicit_cartels"
     ],
-    "everyday_setup": "Future rewards count, but usually count less than rewards right now.",
-    "course_appearances": "Appears in: bargaining, infinitely_repeated_games, folk_theorem, implicit_cartels."
+    "everyday_setup": "A firm may avoid undercutting today if it values future high prices enough. A bargainer may accept less now if waiting is costly or reject now if future surplus is valuable.",
+    "course_appearances": "Discounting appears in bargaining, infinitely repeated games, folk theorem arguments, implicit cartels, and the repeated-game parts of cooperation.",
+    "plain_language_principle": "Discounting is the course’s way to compare now with later. Future payoffs matter, but the discount factor says how much weight the future has relative to the present.",
+    "why_it_matters": "It turns patience into a mathematical object. The survival of cooperation often depends on whether discounted future punishment is larger than immediate temptation.",
+    "misuse_warning": "The misuse is treating future discipline as automatic. If players are impatient, cannot observe cheating, or know the game ends, the discounting inequality can fail."
   },
   {
     "id": "belief",
@@ -144,8 +165,11 @@
       "signaling",
       "cheap_talk"
     ],
-    "everyday_setup": "A probability story about what kind of situation or opponent you are facing.",
-    "course_appearances": "Appears in: expected_utility, rationalizability, mixed_strategies, bayesian_games, types_and_beliefs, bayesian_nash_equilibrium, auctions, perfect_bayesian_equilibrium, signaling, cheap_talk."
+    "everyday_setup": "A bidder estimates rivals’ values, a receiver estimates a sender’s type, and a player in a Bayesian game estimates which payoff situation they are facing.",
+    "course_appearances": "Belief appears in expected utility, rationalizability, mixed strategies, Bayesian games, types and beliefs, Bayesian Nash equilibrium, auctions, PBE, signaling, and cheap talk.",
+    "plain_language_principle": "Belief is a probability story about hidden facts. It lets a player choose while admitting that they do not know the opponent’s type, value, history, or information.",
+    "why_it_matters": "It keeps uncertainty inside the model instead of pretending it away. Once beliefs are explicit, the course can ask whether actions are optimal under those beliefs and whether observations should update them.",
+    "misuse_warning": "The misuse is using beliefs as arbitrary story glue. In dynamic games especially, beliefs must be tied to information, Bayes rule where possible, and the incentives that produced observed behavior."
   },
   {
     "id": "incentive_compatibility",
@@ -164,8 +188,11 @@
       "signaling",
       "cheap_talk"
     ],
-    "everyday_setup": "Design rules so people want to reveal or do what the rule needs them to reveal or do.",
-    "course_appearances": "Appears in: implicit_cartels, auctions, revenue_equivalence, ad_auctions, signaling, cheap_talk."
+    "everyday_setup": "A bidder may shade a bid, a sender may lie, a firm may cheat on a cartel, and a platform participant may respond to ranking rules. The question is whether the rules make the intended action the best move.",
+    "course_appearances": "Incentive compatibility appears in implicit cartels, auctions, revenue equivalence, ad auctions, signaling, and cheap talk, with related logic in folk-theorem punishment constraints.",
+    "plain_language_principle": "Incentive compatibility asks whether the rule makes desired behavior privately worthwhile. A mechanism cannot simply request honesty, cooperation, or truthful bidding; it must make those actions attractive.",
+    "why_it_matters": "It is the design version of game theory. Instead of assuming people do what the designer wants, the course checks whether strategic self-interest leads there.",
+    "misuse_warning": "The misuse is designing by intention rather than incentives. If misreporting, deviation, or manipulation pays more, the mechanism fails no matter how elegant the rule looks."
   },
   {
     "id": "knowledge_recursion",
@@ -179,7 +206,10 @@
     "concepts_in_atlas": [
       "common_knowledge"
     ],
-    "everyday_setup": "Not only knowing a fact, but knowing that others know it, and so on.",
-    "course_appearances": "Appears in: common_knowledge."
+    "everyday_setup": "A public announcement can coordinate people because each person knows that everyone else heard it. A private message may give the same fact to one person without creating that shared confidence.",
+    "course_appearances": "Knowledge recursion appears most directly in common knowledge, and indirectly in iterated deletion, rationalizability, equilibrium selection, and communication because players reason about others’ reasoning.",
+    "plain_language_principle": "Knowledge recursion captures the difference between a fact being true, people knowing it, and people knowing that others know it. Coordination often needs the higher levels, not just the first one.",
+    "why_it_matters": "It explains why publicness can be strategically powerful. Some outcomes require not only information but shared awareness that the information is shared.",
+    "misuse_warning": "The misuse is treating widespread knowledge as common knowledge. If players are unsure whether others saw the same fact, the recursive chain can break and coordination may fail."
   }
 ]

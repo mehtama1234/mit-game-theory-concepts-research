@@ -50,6 +50,11 @@ FORBIDDEN = [
     "mini-example: suppose two firms, bidders, negotiators, or speakers face each other",
     "look for the same pressure: someone chooses under strategic dependence",
     "as a label to memorize",
+    "the important lecture move is that the instructor is not merely naming",
+    "it also helps separate transcript evidence from atlas synthesis",
+    "not a lecture label",
+    "the mathematical spine is built from primitives such as",
+    "evidence comes from the listed concept pages",
 ]
 
 
@@ -90,10 +95,32 @@ def main() -> int:
         if phrase in site_text:
             errors.append(f"published site contains forbidden phrase: {phrase}")
 
-    theme_words = [words(" ".join(str(t.get(f, "")) for f in ["big_picture", "cross_course_argument", "mathematical_spine", "where_analogy_breaks", "lecture_evidence_chain"])) for t in themes]
+    theme_words = [words(" ".join(str(t.get(f, "")) for f in ["big_picture", "why_this_theme_matters", "cross_course_argument", "mathematical_spine", "where_analogy_breaks", "lecture_evidence_chain"])) for t in themes]
     subtheme_words = [words(" ".join(str(s.get(f, "")) for f in ["everyday_problem", "hidden_principle", "mathematical_lever", "why_it_matters", "first_principles_walkthrough", "cross_links_and_limits"])) for s in subthemes]
-    primitive_words = [words(" ".join(str(p.get(f, "")) for f in ["everyday_setup", "formal_object", "symbol_explanation", "course_appearances", "misuse_failure"])) for p in primitives]
-    family_words = [words(" ".join(str(f.get(k, "")) for k in ["family_walkthrough", "where_analogy_breaks", "lecture_evidence_chain", "paper_family_treatment"])) for f in families]
+    primitive_words = [words(" ".join(str(p.get(f, "")) for f in ["everyday_setup", "plain_language_principle", "formal_object", "symbol_explanation", "course_appearances", "why_it_matters", "misuse_warning"])) for p in primitives]
+    family_words = [words(" ".join(str(f.get(k, "")) for k in ["family_problem", "first_principles_pattern", "mathematical_signature", "why_family_matters", "family_walkthrough", "where_analogy_breaks", "lecture_evidence_chain", "paper_family_treatment"])) for f in families]
+
+    for theme, count in zip(themes, theme_words):
+        if count < 180:
+            errors.append(f"theme {theme['id']} has low synthesis depth: {count} words")
+    for subtheme, count in zip(subthemes, subtheme_words):
+        if count < 180:
+            errors.append(f"subtheme {subtheme['id']} has low synthesis depth: {count} words")
+    for primitive, count in zip(primitives, primitive_words):
+        if count < 140:
+            errors.append(f"primitive {primitive['id']} has low synthesis depth: {count} words")
+    for family, count in zip(families, family_words):
+        if count < 180:
+            errors.append(f"method family {family['id']} has low synthesis depth: {count} words")
+
+    for field in ["lecture_argument", "why_span_matters", "conceptual_payload"]:
+        seen: dict[str, list[str]] = {}
+        for record in evidence:
+            value = str(record.get(field, "")).strip()
+            seen.setdefault(value, []).append(record["id"])
+        for value, ids in seen.items():
+            if value and len(ids) > 1:
+                errors.append(f"evidence {field} repeated across records: {', '.join(ids[:4])}")
 
     lines = [
         "# Editorial Quality Report",

@@ -33,7 +33,7 @@ def main() -> int:
     lines = [
         "# Publication Readiness Report",
         "",
-        "This report separates proven local readiness from any future GitHub publishing step.",
+        "This report records local readiness evidence. Remote publication is verified by the final git status and push result.",
         "",
         "## Audit-Time Git Checkpoint",
         "",
@@ -70,7 +70,7 @@ def main() -> int:
         "- Evidence discipline: every concept has two transcript evidence records with local transcript windows and YouTube links.",
         "- Generic-template guard: validators reject the original template phrases in generated concept prose and published HTML.",
         "- Reader-facing site: proven by static generation, link validation, evidence-anchor validation, diagrams, and screenshot render audit.",
-        "- Push/deploy: not attempted unless explicitly requested.",
+        "- Remote sync: verified outside this report by `git status --short --branch`, `git log -1 --oneline`, and the push result.",
         "",
         "## Browser Tooling",
         "",
@@ -79,7 +79,7 @@ def main() -> int:
         "",
         "## Current Conclusion",
         "",
-        "Local research/build readiness is strong for a first committed pass. Further editorial passes can deepen individual lecture arguments, but the repo now contains a real transcript-backed, hand-overridden first-principles game-theory lab rather than a template-only scaffold.",
+        "Local research/build readiness is stronger than the first committed pass: the atlas now has hand-authored synthesis for themes, subthemes, primitives, method families, and evidence payloads, with validators that reject the older generic patterns.",
         "",
     ]
     REPORT.parent.mkdir(parents=True, exist_ok=True)

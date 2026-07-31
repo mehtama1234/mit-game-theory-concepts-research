@@ -28,6 +28,6 @@ The course starts with individual choice, moves to simultaneous games, then adds
 
 ## Method Families
 
-- **Equilibrium Family**: This family turns strategic dependence into a stability test.
-- **Information And Belief Family**: This family explains how private information and messages affect strategy.
-- **Mechanism And Auction Family**: This family treats game theory as design for markets and institutions.
+- **Equilibrium Family**: Equilibrium methods turn strategic dependence into a stability test.
+- **Information And Belief Family**: Information methods explain how private facts, beliefs, and messages affect strategy.
+- **Mechanism And Auction Family**: Mechanism methods treat game theory as design for markets and institutions.

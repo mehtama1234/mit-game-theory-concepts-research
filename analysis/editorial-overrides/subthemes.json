@@ -1,455 +1,102 @@
-[
-  {
-    "id": "ranking_outcomes",
-    "parent_theme": "choice_and_payoff",
-    "name": "Ranking Outcomes",
-    "concepts": [
-      "preferences",
-      "utility",
-      "expected_utility"
-    ],
+{
+  "ranking_outcomes": {
     "everyday_problem": "Before anyone can solve a game, the model has to know what counts as better or worse for each person. The everyday version is simple: if a student chooses between two schedules, or a bidder chooses between money and an object, the model needs a consistent ranking of those outcomes before strategy can enter.",
     "hidden_principle": "The hidden principle is representability. Preferences are qualitative rankings, but game theory often needs a number that preserves those rankings so the course can compare actions, lotteries, and expected payoffs.",
     "mathematical_lever": "The lever is a utility representation and, under uncertainty, an expected-utility average. The number is useful because it lets later concepts ask whether one action gives a higher payoff than another under the same strategic conditions.",
     "why_it_matters": "This subtheme prevents a common mistake: treating payoffs as arbitrary table decorations. They are the compressed statement of what each player is trying to achieve, and every equilibrium or auction result depends on them.",
-    "examples_from_courses": [
-      {
-        "concept": "preferences",
-        "evidence_id": "ev-preferences-01",
-        "video_title": "Lecture 1: Introduction to Individual Decision-Making"
-      },
-      {
-        "concept": "utility",
-        "evidence_id": "ev-utility-01",
-        "video_title": "Lecture 1: Introduction to Individual Decision-Making"
-      },
-      {
-        "concept": "expected_utility",
-        "evidence_id": "ev-expected_utility-01",
-        "video_title": "Lecture 1: Introduction to Individual Decision-Making"
-      }
-    ],
-    "connected_concepts": [
-      "expected_utility",
-      "mixed_strategies",
-      "preferences",
-      "rationalizability",
-      "utility"
-    ],
     "first_principles_walkthrough": "Start with ordinary preference: which outcome would the person choose if both were available? Then ask whether the ranking is consistent enough to be represented by a utility number. If chance enters, average the utility of each possible outcome by its probability rather than pretending uncertainty has disappeared.",
     "cross_links_and_limits": "The same payoff ranking reappears in best response, bargaining, auctions, and Bayesian games. The limit is that ordinal preference and expected utility do different jobs; risk comparisons require more structure than a simple ranked list.",
     "lecture_evidence_chain": "The preference, utility, and expected-utility evidence records anchor this subtheme in the opening lecture sequence, where the course builds the choice machinery used later.",
     "recognize_in_new_work": "When a paper introduces values, rewards, costs, outside options, or welfare, ask what preference ranking those numbers represent and whether the later argument needs ordinal or cardinal structure."
   },
-  {
-    "id": "tables_and_trees",
-    "parent_theme": "strategic_dependence",
-    "name": "Tables, Trees, And Strategic Dependence",
-    "concepts": [
-      "strategic_form_games",
-      "extensive_form_games"
-    ],
+  "tables_and_trees": {
     "everyday_problem": "A social situation can be confusing because everyone’s outcome is created by several people at once. The course therefore needs pictures that keep the players, actions, timing, and payoffs visible.",
     "hidden_principle": "The hidden principle is representation discipline. A payoff table is good when timing can be ignored; a tree is needed when the order of moves or information at a decision point changes what a player can condition on.",
     "mathematical_lever": "The lever is the mapping from action profiles or histories to payoffs. Strategic form compresses simultaneous choices into profiles; extensive form expands the situation into nodes, branches, histories, and information sets.",
     "why_it_matters": "The representation often decides which solution concept is even meaningful. Dominance in a matrix, backward induction in a tree, and PBE in an information structure are not interchangeable visual styles.",
-    "examples_from_courses": [
-      {
-        "concept": "strategic_form_games",
-        "evidence_id": "ev-strategic_form_games-01",
-        "video_title": "Lecture 2: Representation of Games"
-      },
-      {
-        "concept": "extensive_form_games",
-        "evidence_id": "ev-extensive_form_games-01",
-        "video_title": "Lecture 2: Representation of Games"
-      }
-    ],
-    "connected_concepts": [
-      "ad_auctions",
-      "backward_induction",
-      "bargaining",
-      "dominance",
-      "iterated_deletion",
-      "one_shot_deviation",
-      "rationalizability",
-      "subgame_perfection"
-    ],
     "first_principles_walkthrough": "Ask whether players choose once without seeing each other, or whether someone observes, waits, or moves later. If timing has no strategic content, use the table. If later choices depend on earlier histories, draw the tree and preserve what each player knows at each node.",
     "cross_links_and_limits": "Tables connect to dominance and Nash equilibrium. Trees connect to backward induction, subgame perfection, bargaining, and PBE. The analogy breaks when a table hides a threat or a tree pretends players know histories they cannot observe.",
     "lecture_evidence_chain": "The strategic-form and extensive-form records support this subtheme directly. Later time-and-information records show why the early representational choice keeps mattering.",
     "recognize_in_new_work": "When reading a new model, inspect the representation first. Before trusting the theorem, ask what timing, observation, or payoff dependence the chosen representation has silently included or excluded."
   },
-  {
-    "id": "eliminating_bad_moves",
-    "parent_theme": "strategic_dependence",
-    "name": "Eliminating Bad Moves",
-    "concepts": [
-      "dominance",
-      "iterated_deletion",
-      "rationalizability"
-    ],
+  "eliminating_bad_moves": {
     "everyday_problem": "Some games are cluttered with actions that no careful player would use. The everyday problem is how to remove obviously bad possibilities without already knowing exactly what everyone else will do.",
     "hidden_principle": "The hidden principle is belief-free versus belief-based pruning. Dominance removes a move because another move beats it across opponent actions; rationalizability keeps a move if some defensible belief could make it optimal.",
     "mathematical_lever": "The lever is comparison across opponent actions. Strict dominance checks an inequality in every relevant column or contingency, while iterated deletion repeats that comparison after earlier deletions shrink the game.",
     "why_it_matters": "This subtheme teaches a lighter form of reasoning before full equilibrium. It shows that some behavior can be ruled out by internal inconsistency, but it also warns that deletion rules can depend on how strong the dominance notion is.",
-    "examples_from_courses": [
-      {
-        "concept": "dominance",
-        "evidence_id": "ev-dominance-01",
-        "video_title": "Lecture 3: Dominance"
-      },
-      {
-        "concept": "iterated_deletion",
-        "evidence_id": "ev-iterated_deletion-01",
-        "video_title": "Lecture 3: Dominance"
-      },
-      {
-        "concept": "rationalizability",
-        "evidence_id": "ev-rationalizability-01",
-        "video_title": "Lecture 4: Rationalizability"
-      }
-    ],
-    "connected_concepts": [
-      "bayesian_games",
-      "dominance",
-      "expected_utility",
-      "iterated_deletion",
-      "mixed_strategies",
-      "rationalizability",
-      "strategic_form_games"
-    ],
     "first_principles_walkthrough": "List one player’s possible actions. Compare two of them while holding each possible opponent action fixed. If one action is never worse and sometimes better, the inferior action has no strategic defense. After removing it, repeat the question because the strategic environment has changed.",
     "cross_links_and_limits": "Pruning connects backward to payoff tables and forward to Nash equilibrium. It also connects to common knowledge because repeated deletion assumes players understand rationality and understand that others understand it. Weak dominance is the limit case where deletion order and interpretation can matter.",
     "lecture_evidence_chain": "Dominance and iterated-deletion records anchor the mechanical pruning. Rationalizability records show where the course shifts from deleting bad moves to asking what beliefs can support surviving moves.",
     "recognize_in_new_work": "Look for arguments that say a strategy is never used, cannot survive rationality, or is eliminated before equilibrium analysis. Then check whether the deletion is strict, weak, iterative, or belief-based."
   },
-  {
-    "id": "stable_predictions",
-    "parent_theme": "equilibrium_reasoning",
-    "name": "Stable Predictions",
-    "concepts": [
-      "best_response",
-      "nash_equilibrium",
-      "mixed_strategies"
-    ],
+  "stable_predictions": {
     "everyday_problem": "A strategic prediction is fragile if one person can look at it and say, given what everyone else is doing, I should switch. The everyday problem is finding a forecast that survives that private check.",
     "hidden_principle": "The hidden principle is mutual consistency. Each player’s action must be understandable as a best response to the others, so the prediction is held together by everyone’s incentives at once.",
     "mathematical_lever": "The lever is the best-response condition. Nash equilibrium applies it to all players simultaneously; mixed strategies add probability weights when no fixed pure action can be stable.",
     "why_it_matters": "This subtheme is the central bridge from story to prediction. It lets the course reject outcomes that sound plausible but contain a profitable one-person deviation.",
-    "examples_from_courses": [
-      {
-        "concept": "best_response",
-        "evidence_id": "ev-best_response-01",
-        "video_title": "Lecture 4: Rationalizability"
-      },
-      {
-        "concept": "nash_equilibrium",
-        "evidence_id": "ev-nash_equilibrium-01",
-        "video_title": "Lecture 5: Nash Equilibrium"
-      },
-      {
-        "concept": "mixed_strategies",
-        "evidence_id": "ev-mixed_strategies-01",
-        "video_title": "Lecture 5: Nash Equilibrium"
-      }
-    ],
-    "connected_concepts": [
-      "best_response",
-      "expected_utility",
-      "minimax",
-      "mixed_strategies",
-      "nash_equilibrium",
-      "rationalizability",
-      "zero_sum_games"
-    ],
     "first_principles_walkthrough": "First freeze what everyone else is doing. Ask what one player would choose. Do the same for each player. If the proposed profile passes every one of those checks, it is stable in the Nash sense; if not, the story has not earned prediction status.",
     "cross_links_and_limits": "Stable prediction connects to dominance because dominated moves cannot be best responses. It connects to subgame perfection and Bayesian Nash when timing or hidden information changes what best response means. Stability still does not imply efficiency or fairness.",
     "lecture_evidence_chain": "Best-response, Nash, and mixed-strategy records support the progression from one-player response to mutual consistency and then to randomization as a stability device.",
     "recognize_in_new_work": "When a model claims an outcome, ask what deviation each participant has. If the paper never checks that question, it may be describing a desired outcome rather than an equilibrium."
   },
-  {
-    "id": "conflict_and_security",
-    "parent_theme": "equilibrium_reasoning",
-    "name": "Conflict And Security",
-    "concepts": [
-      "zero_sum_games",
-      "minimax"
-    ],
+  "conflict_and_security": {
     "everyday_problem": "In pure conflict, doing well means preparing for an opponent who benefits from your loss. The everyday problem is choosing a plan when the other side is actively trying to exploit it.",
     "hidden_principle": "The hidden principle is security under hostile response. A player should evaluate a move by the worst consequence an opponent can force, not by a friendly or average response.",
     "mathematical_lever": "The lever is maximin/minimax comparison. One side chooses the action or mixture with the best worst-case payoff, while the other side chooses the response that makes that payoff as small as possible.",
     "why_it_matters": "This subtheme clarifies a special but powerful case of equilibrium. In zero-sum games, strategic stability, value, and protection against exploitation line up more cleanly than in general games.",
-    "examples_from_courses": [
-      {
-        "concept": "zero_sum_games",
-        "evidence_id": "ev-zero_sum_games-01",
-        "video_title": "Lecture 7: Zero-Sum Games"
-      },
-      {
-        "concept": "minimax",
-        "evidence_id": "ev-minimax-01",
-        "video_title": "Lecture 7: Zero-Sum Games"
-      }
-    ],
-    "connected_concepts": [
-      "best_response",
-      "minimax",
-      "mixed_strategies",
-      "nash_equilibrium",
-      "zero_sum_games"
-    ],
     "first_principles_walkthrough": "Imagine announcing a plan to an adversary. For each plan, mark the worst payoff the adversary can force on you. Then choose the plan whose worst case is least damaging. Mixed strategies enter when predictability itself becomes exploitable.",
     "cross_links_and_limits": "Conflict-and-security connects to mixed strategies and best response. The limit is that many economic games are not zero-sum: cooperation, side payments, future interaction, or market design can make the security logic incomplete.",
     "lecture_evidence_chain": "Zero-sum and minimax records support this subtheme. Mixed-strategy evidence supplies the reason randomization can be protective in adversarial settings.",
     "recognize_in_new_work": "Look for language about value of a game, adversarial choice, robust guarantees, saddle points, or worst-case protection. Then check whether the setting is truly zero-sum or only being approximated that way."
   },
-  {
-    "id": "credible_time_paths",
-    "parent_theme": "time_and_credibility",
-    "name": "Credible Time Paths",
-    "concepts": [
-      "backward_induction",
-      "subgame_perfection",
-      "one_shot_deviation",
-      "bargaining"
-    ],
+  "credible_time_paths": {
     "everyday_problem": "Plans over time can fail because the person who promised a later action may not want to carry it out later. The everyday problem is separating real threats and promises from empty announcements.",
     "hidden_principle": "The hidden principle is sequential rationality. A plan must make sense not only at the start, but after every history where a player has to act.",
     "mathematical_lever": "The lever is backward recursion through a game tree. Terminal outcomes give values to final nodes; those values are pulled backward so earlier choices reflect credible later behavior.",
     "why_it_matters": "This subtheme explains why timing changes game theory. A Nash equilibrium can rest on a threat that would never be used, while subgame perfection and one-shot deviation tests remove those unstable time paths.",
-    "examples_from_courses": [
-      {
-        "concept": "backward_induction",
-        "evidence_id": "ev-backward_induction-01",
-        "video_title": "Lecture 8: Backward Induction"
-      },
-      {
-        "concept": "subgame_perfection",
-        "evidence_id": "ev-subgame_perfection-01",
-        "video_title": "Lecture 10: Subgame-Perfect Nash Equilibrium"
-      },
-      {
-        "concept": "one_shot_deviation",
-        "evidence_id": "ev-one_shot_deviation-01",
-        "video_title": "Lecture 11: One-Shot Deviation Principle and Bargaining"
-      },
-      {
-        "concept": "bargaining",
-        "evidence_id": "ev-bargaining-01",
-        "video_title": "Lecture 9: Negotiation"
-      }
-    ],
-    "connected_concepts": [
-      "backward_induction",
-      "bargaining",
-      "extensive_form_games",
-      "infinitely_repeated_games",
-      "nash_equilibrium",
-      "one_shot_deviation",
-      "strategic_form_games",
-      "subgame_perfection"
-    ],
     "first_principles_walkthrough": "Draw the last real decision first. Ask what the player would do there. Replace that part of the tree with its value, then move one step earlier. Continue until the start of the game inherits only choices that later players would actually want to carry out.",
     "cross_links_and_limits": "Credible time paths connect to bargaining because delay changes outside options and surplus division. They connect to repeated games because punishment must remain credible. They break when beliefs, hidden information, or renegotiation change the continuation values.",
     "lecture_evidence_chain": "Backward-induction, subgame-perfection, one-shot-deviation, and bargaining records support the core logic. Extensive-form evidence supplies the tree representation that makes the logic possible.",
     "recognize_in_new_work": "When a model contains threats, contracts, offers, punishments, or staged moves, inspect the continuation incentives. A prediction that only works at the initial node is not enough."
   },
-  {
-    "id": "future_as_discipline",
-    "parent_theme": "repetition_and_cooperation",
-    "name": "The Future As Discipline",
-    "concepts": [
-      "finitely_repeated_games",
-      "infinitely_repeated_games",
-      "folk_theorem",
-      "implicit_cartels"
-    ],
+  "future_as_discipline": {
     "everyday_problem": "People may want to cooperate, but a one-time temptation can be stronger than goodwill. The everyday problem is when tomorrow’s consequences can make today’s cooperation rational.",
     "hidden_principle": "The hidden principle is intertemporal incentive compatibility. Cooperation survives only if the discounted value of keeping the relationship outweighs the current gain from cheating.",
     "mathematical_lever": "The lever is a comparison between deviation gain and discounted punishment loss. Finite horizons often unravel because the final round has no future discipline; infinite or uncertain horizons can support trigger strategies.",
     "why_it_matters": "This subtheme explains how repeated play changes the set of possible outcomes. It is the course’s bridge from prisoner-dilemma-style failure to sustained cooperation, collusion, and folk-theorem multiplicity.",
-    "examples_from_courses": [
-      {
-        "concept": "finitely_repeated_games",
-        "evidence_id": "ev-finitely_repeated_games-01",
-        "video_title": "Lecture 12: Finitely Repeated Games"
-      },
-      {
-        "concept": "infinitely_repeated_games",
-        "evidence_id": "ev-infinitely_repeated_games-01",
-        "video_title": "Lecture 13: Infinitely Repeated Games"
-      },
-      {
-        "concept": "folk_theorem",
-        "evidence_id": "ev-folk_theorem-01",
-        "video_title": "Lecture 14: Folk Theorem"
-      },
-      {
-        "concept": "implicit_cartels",
-        "evidence_id": "ev-implicit_cartels-01",
-        "video_title": "Lecture 15: Implicit Cartels"
-      }
-    ],
-    "connected_concepts": [
-      "backward_induction",
-      "bargaining",
-      "extensive_form_games",
-      "finitely_repeated_games",
-      "folk_theorem",
-      "implicit_cartels",
-      "infinitely_repeated_games",
-      "mixed_strategies",
-      "nash_equilibrium",
-      "subgame_perfection",
-      "zero_sum_games"
-    ],
     "first_principles_walkthrough": "Find the one-period gain from cheating. Then compute what the player loses if future partners punish that cheating. If the future loss, after discounting, is larger than the immediate gain, cooperation can be self-enforcing.",
     "cross_links_and_limits": "The future-as-discipline connects to credibility, because punishments must be worth carrying out, and to mechanisms, because repeated markets can generate informal rules. It breaks with impatience, poor monitoring, known final periods, or weak punishment capacity.",
     "lecture_evidence_chain": "Finite repetition, infinite repetition, folk theorem, and implicit cartel records support the progression from unraveling to future-enforced cooperation.",
     "recognize_in_new_work": "Look for discount factors, trigger strategies, repeated relationships, reputational incentives, or punishment paths. Then ask whether the future is strong and observable enough to discipline the present."
   },
-  {
-    "id": "hidden_types",
-    "parent_theme": "private_information",
-    "name": "Hidden Types And Beliefs",
-    "concepts": [
-      "bayesian_games",
-      "types_and_beliefs",
-      "bayesian_nash_equilibrium",
-      "perfect_bayesian_equilibrium"
-    ],
+  "hidden_types": {
     "everyday_problem": "One side often knows something the other side cares about. A bidder knows her value, a worker knows ability, a sender knows type, or a player knows a private signal. The problem is how to reason before those facts are publicly known.",
     "hidden_principle": "The hidden principle is conditioning behavior on possible worlds. The model must say what types might exist, what each player believes about them, and what each type would choose.",
     "mathematical_lever": "The lever is expected payoff over types, plus Bayes-consistent updating in dynamic settings. A strategy is no longer one action; it can be a plan that tells each type what to do.",
     "why_it_matters": "This subtheme is what prevents private-information games from collapsing into complete-information fiction. It lets the course analyze auctions, signaling, reputation, and dynamic belief revision.",
-    "examples_from_courses": [
-      {
-        "concept": "bayesian_games",
-        "evidence_id": "ev-bayesian_games-01",
-        "video_title": "Lecture 16: Bayesian Games"
-      },
-      {
-        "concept": "types_and_beliefs",
-        "evidence_id": "ev-types_and_beliefs-01",
-        "video_title": "Lecture 16: Bayesian Games"
-      },
-      {
-        "concept": "bayesian_nash_equilibrium",
-        "evidence_id": "ev-bayesian_nash_equilibrium-01",
-        "video_title": "Lecture 17: Bayesian Nash Equilibrium: Applications"
-      },
-      {
-        "concept": "perfect_bayesian_equilibrium",
-        "evidence_id": "ev-perfect_bayesian_equilibrium-01",
-        "video_title": "Lecture 21: Perfect Bayesian Equilibrium"
-      }
-    ],
-    "connected_concepts": [
-      "bayesian_games",
-      "bayesian_nash_equilibrium",
-      "expected_utility",
-      "extensive_form_games",
-      "mixed_strategies",
-      "nash_equilibrium",
-      "perfect_bayesian_equilibrium",
-      "rationalizability",
-      "types_and_beliefs"
-    ],
     "first_principles_walkthrough": "List the hidden facts. Assign probabilities to them. For each type, ask which action gives the best expected payoff given beliefs about others. If actions are observed later, update beliefs when possible and check whether future behavior remains rational.",
     "cross_links_and_limits": "Hidden types connect to auctions through private values, to signaling through type-dependent messages, and to PBE through updated beliefs. The limit is that off-path beliefs and assumed priors can carry heavy modeling weight.",
     "lecture_evidence_chain": "Bayesian-game, types-and-beliefs, Bayesian-Nash, and PBE records support this subtheme’s move from static private information to dynamic belief consistency.",
     "recognize_in_new_work": "Look for types, priors, posteriors, private values, signals, or strategies indexed by hidden states. Then ask whether beliefs are disciplined by information or simply chosen to support the conclusion."
   },
-  {
-    "id": "rules_for_bidding",
-    "parent_theme": "mechanisms_and_markets",
-    "name": "Rules For Bidding",
-    "concepts": [
-      "auctions",
-      "revenue_equivalence",
-      "ad_auctions"
-    ],
+  "rules_for_bidding": {
     "everyday_problem": "A seller, platform, or institution has to allocate scarce objects when participants know their own values and can shade what they reveal. The everyday problem is designing rules that still work when people act strategically.",
     "hidden_principle": "The hidden principle is rule-induced incentives. A bid is not just a number; it is a response to the payment rule, allocation rule, beliefs about rivals, and sometimes quality or position effects.",
     "mathematical_lever": "The lever is incentive compatibility and expected payment. Auction models compare how rules map bids and values into allocation probabilities and payments, then ask whether truthful or shaded bidding is optimal.",
     "why_it_matters": "This subtheme turns game theory into market engineering. It explains why small rule changes can alter bidding behavior, seller revenue, efficiency, and platform outcomes.",
-    "examples_from_courses": [
-      {
-        "concept": "auctions",
-        "evidence_id": "ev-auctions-01",
-        "video_title": "Lecture 18: Auctions"
-      },
-      {
-        "concept": "revenue_equivalence",
-        "evidence_id": "ev-revenue_equivalence-01",
-        "video_title": "Lecture 19: Revenue Equivalence"
-      },
-      {
-        "concept": "ad_auctions",
-        "evidence_id": "ev-ad_auctions-01",
-        "video_title": "Lecture 20: Ad Auctions"
-      }
-    ],
-    "connected_concepts": [
-      "ad_auctions",
-      "auctions",
-      "bargaining",
-      "expected_utility",
-      "implicit_cartels",
-      "mixed_strategies",
-      "rationalizability",
-      "revenue_equivalence",
-      "signaling",
-      "strategic_form_games"
-    ],
     "first_principles_walkthrough": "Write the object being allocated, each bidder’s private value, the allocation rule, and the payment rule. Then stand in one bidder’s shoes and ask what bid maximizes payoff given beliefs about others and the consequences of winning.",
     "cross_links_and_limits": "Rules for bidding connect to hidden types because values are private, and to stable prediction because bidding strategies must be equilibrium behavior. Revenue equivalence breaks when its assumptions fail; ad auctions add platform-specific constraints beyond textbook single-object auctions.",
     "lecture_evidence_chain": "Auction, revenue-equivalence, and ad-auction records support the progression from basic bidding rules to equivalence results and sponsored-search design.",
     "recognize_in_new_work": "Look for allocation rules, payment rules, bidding functions, reserve prices, quality scores, click probabilities, or truthful-reporting claims. Then check the incentive constraint that makes the rule work."
   },
-  {
-    "id": "messages_and_shared_awareness",
-    "parent_theme": "communication_and_knowledge",
-    "name": "Messages And Shared Awareness",
-    "concepts": [
-      "signaling",
-      "cheap_talk",
-      "common_knowledge"
-    ],
+  "messages_and_shared_awareness": {
     "everyday_problem": "People talk, signal, announce, and observe public facts, but not every message should be believed and not every public fact coordinates action. The everyday problem is knowing when information actually changes behavior.",
     "hidden_principle": "The hidden principle is belief movement under incentives. Communication matters when it changes what receivers believe, and credibility depends on whether senders of different types would want to send different messages.",
     "mathematical_lever": "The lever is a belief system plus incentive constraints. Signaling uses costly or type-dependent actions; cheap talk uses payoff alignment; common knowledge uses repeated knowledge operators rather than ordinary private awareness.",
     "why_it_matters": "This subtheme explains the strategic life of information. It covers why education can signal ability, why advice may or may not persuade, and why coordination can require everyone to know that everyone else knows.",
-    "examples_from_courses": [
-      {
-        "concept": "signaling",
-        "evidence_id": "ev-signaling-01",
-        "video_title": "Lecture 22: Signaling"
-      },
-      {
-        "concept": "cheap_talk",
-        "evidence_id": "ev-cheap_talk-01",
-        "video_title": "Lecture 24: Cheap Talk"
-      },
-      {
-        "concept": "common_knowledge",
-        "evidence_id": "ev-common_knowledge-01",
-        "video_title": "Lecture 25: Common Knowledge"
-      }
-    ],
-    "connected_concepts": [
-      "cheap_talk",
-      "common_knowledge",
-      "expected_utility",
-      "implicit_cartels",
-      "mixed_strategies",
-      "rationalizability",
-      "signaling"
-    ],
     "first_principles_walkthrough": "Ask what the sender knows, what the receiver sees, what each type would prefer the receiver to believe, and whether the message or action is costly enough to separate types. For public facts, ask whether the fact is merely observed or mutually and repeatedly known.",
     "cross_links_and_limits": "Messages connect to hidden types and mechanisms through incentive compatibility. Common knowledge connects back to equilibrium because players may need shared awareness to coordinate on a strategy. The analogy breaks if costless talk is treated like costly signaling.",
     "lecture_evidence_chain": "Signaling, cheap-talk, and common-knowledge records support this subtheme, with signaling carrying type revelation, cheap talk carrying incentive-aligned persuasion, and common knowledge carrying coordination through higher-order awareness.",
     "recognize_in_new_work": "Look for messages, signals, announcements, disclosure, persuasion, public information, or higher-order belief claims. Then ask what incentive makes the information credible and who knows that others received it."
   }
-]
+}

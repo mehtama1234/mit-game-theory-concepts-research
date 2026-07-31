@@ -31,10 +31,15 @@ def main() -> int:
         "Mini-example: suppose two firms, bidders, negotiators, or speakers face each other",
         "look for the same pressure: someone chooses under strategic dependence",
         "as a label to memorize",
+        "not a lecture label",
+        "The mathematical spine is built from primitives such as",
+        "Evidence comes from the listed concept pages",
     ]
     forbidden_evidence = [
         "the course treats",
         "as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do",
+        "The important lecture move is that the instructor is not merely naming",
+        "It also helps separate transcript evidence from atlas synthesis",
     ]
 
     concept_ids = {c["id"] for c in concepts}
@@ -73,7 +78,7 @@ def main() -> int:
         for sub_id in theme.get("subthemes", []):
             if sub_id not in subtheme_ids:
                 errors.append(f"theme {theme['id']} references missing subtheme {sub_id}")
-        if words(" ".join(str(theme.get(f, "")) for f in ["big_picture", "cross_course_argument", "mathematical_spine", "where_analogy_breaks"])) < 55:
+        if words(" ".join(str(theme.get(f, "")) for f in ["big_picture", "why_this_theme_matters", "cross_course_argument", "mathematical_spine", "where_analogy_breaks", "lecture_evidence_chain"])) < 180:
             errors.append(f"theme {theme['id']} is shallow")
 
     for subtheme in subthemes:
@@ -81,6 +86,8 @@ def main() -> int:
             errors.append(f"subtheme {subtheme['id']} missing parent theme")
         if not subtheme.get("examples_from_courses"):
             errors.append(f"subtheme {subtheme['id']} has no examples")
+        if words(" ".join(str(subtheme.get(f, "")) for f in ["everyday_problem", "hidden_principle", "mathematical_lever", "why_it_matters", "first_principles_walkthrough", "cross_links_and_limits"])) < 180:
+            errors.append(f"subtheme {subtheme['id']} is shallow")
 
     for record in evidence:
         for phrase in forbidden_evidence:
@@ -105,16 +112,29 @@ def main() -> int:
             if sub_id not in subtheme_ids:
                 errors.append(f"evidence {record['id']} missing subtheme {sub_id}")
 
+    for field in ["lecture_argument", "why_span_matters", "conceptual_payload"]:
+        seen: dict[str, list[str]] = {}
+        for record in evidence:
+            value = str(record.get(field, "")).strip()
+            seen.setdefault(value, []).append(record["id"])
+        for value, ids in seen.items():
+            if value and len(ids) > 1:
+                errors.append(f"evidence {field} repeated across records: {', '.join(ids[:4])}")
+
     for primitive in primitives:
         if not primitive.get("concepts_in_atlas"):
             errors.append(f"primitive {primitive['id']} unused")
         for field in ["formal_object", "useful_equation", "symbol_explanation", "misuse_failure"]:
             if not primitive.get(field):
                 errors.append(f"primitive {primitive['id']} missing {field}")
+        if words(" ".join(str(primitive.get(f, "")) for f in ["everyday_setup", "plain_language_principle", "formal_object", "symbol_explanation", "course_appearances", "why_it_matters", "misuse_warning"])) < 140:
+            errors.append(f"primitive {primitive['id']} is shallow")
 
     for family in families:
         if not family.get("course_evidence_ids"):
             errors.append(f"family {family['id']} has no evidence")
+        if words(" ".join(str(family.get(f, "")) for f in ["family_problem", "first_principles_pattern", "mathematical_signature", "why_family_matters", "family_walkthrough", "where_analogy_breaks", "lecture_evidence_chain", "paper_family_treatment"])) < 180:
+            errors.append(f"family {family['id']} is shallow")
 
     if errors:
         print("\n".join(errors), file=sys.stderr)

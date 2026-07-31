@@ -1,0 +1,35 @@
+{
+  "equilibrium_family": {
+    "family_problem": "The family exists because strategic predictions are circular: what I should do depends on what you do, while what you should do depends on what I do. The method family looks for points where those expectations close on themselves.",
+    "first_principles_pattern": "Freeze everyone else, find one player’s best response, then require the same kind of check for every player or every relevant history/type. The family grows by repairing the basic check when time, randomization, or private information makes the simple version too weak.",
+    "mathematical_signature": "Best-response correspondences, fixed-point logic, deviation inequalities, mixed probabilities that make opponents indifferent, and refinements that require optimality in subgames or for every type.",
+    "why_family_matters": "This is the central prediction engine of the course. It teaches that a model must survive the question each participant asks alone: given what I believe others will do, do I want to change?",
+    "family_walkthrough": "Start with a proposed outcome. Audit one player at a time. If someone can gain by changing while others stay fixed, the proposal is not stable. If the game has time, repeat the audit after every history. If the game has hidden information, repeat it for every type under the relevant beliefs.",
+    "where_analogy_breaks": "Nash equilibrium is too coarse for dynamic threats and too silent about belief updating in private-information histories. The family is unified by deviation checks, but each member adds conditions for a different modeling pressure.",
+    "lecture_evidence_chain": "Nash evidence anchors mutual best response; mixed-strategy evidence shows why randomization can be necessary; subgame-perfection and PBE evidence show why later histories and beliefs demand stronger tests.",
+    "paper_family_treatment": "When reading a paper in this family, ask what counts as a deviation, what information the deviator has, and which histories or types must pass the test. The solution concept is usually the paper’s answer to those questions.",
+    "plain_language_family_summary": "Equilibrium methods turn strategic dependence into a stability test."
+  },
+  "information_family": {
+    "family_problem": "Information and belief methods are needed because players do not always share the same facts. A model has to track hidden types, private signals, messages, and the beliefs formed from them.",
+    "first_principles_pattern": "List the possible worlds, assign beliefs over them, let each type choose, then ask whether observed actions or messages should change beliefs. Communication concepts enter when actions are informative because different types have different incentives.",
+    "mathematical_signature": "Probability distributions over types, expected payoff sums, Bayes-rule updates on observed paths, separating and pooling conditions, and higher-order knowledge statements when public awareness matters.",
+    "why_family_matters": "It keeps the course honest about uncertainty. Without this family, auctions, signaling, cheap talk, and PBE would pretend that everyone knows the same values and motives.",
+    "family_walkthrough": "Begin by asking what each participant knows that others do not. Translate that hidden fact into a type or state. Then ask what each type wants the receiver or opponent to believe, and whether the action observed is consistent with those incentives.",
+    "where_analogy_breaks": "Belief-based models can become too flexible if off-path beliefs or priors are chosen casually. A signaling result also does not transfer to cheap talk unless the credibility mechanism is rechecked.",
+    "lecture_evidence_chain": "Bayesian-game and type evidence support hidden information; Bayesian-Nash evidence supports type-contingent best response; signaling, cheap-talk, and common-knowledge evidence support the communication and public-awareness extensions.",
+    "paper_family_treatment": "For papers in this family, identify the hidden variable first. Then inspect how beliefs are formed, whether messages are costly or cheap, and which incentive constraints prevent misleading behavior.",
+    "plain_language_family_summary": "Information methods explain how private facts, beliefs, and messages affect strategy."
+  },
+  "mechanism_family": {
+    "family_problem": "Mechanism and auction methods are needed because rules are not neutral containers. Participants react to the rule, and their reaction can either make the institution work or break it.",
+    "first_principles_pattern": "Specify the allocation rule, payment rule, information each participant holds, and the action space. Then check whether each participant’s best response under the rule produces the intended outcome.",
+    "mathematical_signature": "Allocation functions, payment functions, expected revenue expressions, incentive-compatibility inequalities, bidding strategies, reserve or position rules, and assumptions about values or distributions.",
+    "why_family_matters": "It shows game theory as engineering. Auctions and platforms are designed environments, so the central question is not only what equilibrium occurs but what rule creates useful incentives.",
+    "family_walkthrough": "Write down what the designer controls and what participants privately know. For each possible report or bid, compute what the participant gets. A rule is credible only if the desired report or bid is at least as attractive as manipulation.",
+    "where_analogy_breaks": "Revenue equivalence and auction prescriptions are assumption-sensitive. Risk aversion, affiliated values, budgets, entry, platform quality scores, repeated interaction, or collusion can change the predicted behavior.",
+    "lecture_evidence_chain": "Auction records support private-value bidding; revenue-equivalence records support the theorem-level comparison of rules; ad-auction records support platform-specific mechanism design; cartel records show informal rule enforcement through repeated interaction.",
+    "paper_family_treatment": "When reading mechanism papers, separate the designer’s objective from participants’ incentives. Then audit the assumptions that make truthful reporting, efficient allocation, or revenue claims go through.",
+    "plain_language_family_summary": "Mechanism methods treat game theory as design for markets and institutions."
+  }
+}

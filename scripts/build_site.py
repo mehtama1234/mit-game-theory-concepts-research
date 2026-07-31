@@ -159,7 +159,15 @@ def build_themes(themes, subthemes, concepts):
             ("Evidence", theme["lecture_evidence_chain"]),
         ], "theme-flow")
         subs = "".join(f"<li><strong>{esc(s['name'])}</strong>: {', '.join(esc(names[c]) for c in s['concepts'])}</li>" for s in sub_by_theme[theme["id"]])
-        blocks.append(f'<article class="wide-card" id="{esc(theme["id"])}"><h2>{esc(theme["name"])}</h2><p>{esc(theme["big_picture"])}</p>{diagram}<ul>{subs}</ul></article>')
+        blocks.append(f"""<article class="wide-card" id="{esc(theme["id"])}">
+  <h2>{esc(theme["name"])}</h2>
+  <p>{esc(theme["big_picture"])}</p>
+  {diagram}
+  <h3>Why This Theme Matters</h3><p>{esc(theme["why_this_theme_matters"])}</p>
+  <h3>Cross-Course Argument</h3><p>{esc(theme["cross_course_argument"])}</p>
+  <h3>Lecture Evidence Chain</h3><p>{esc(theme["lecture_evidence_chain"])}</p>
+  <h3>Subthemes</h3><ul>{subs}</ul>
+</article>""")
     write(SITE / "themes.html", page("Themes", '<section class="page-head"><h1>Themes And Subthemes</h1></section>' + "".join(blocks), "themes"))
 
 
@@ -172,7 +180,15 @@ def build_primitives(primitives):
             ("Equation", primitive["useful_equation"]),
             ("Misuse", primitive["misuse_failure"]),
         ], "primitive-flow")
-        cards.append(f'<article class="wide-card" id="{esc(primitive["id"])}"><h2>{esc(primitive["name"])}</h2><p>{esc(primitive["plain_language"])}</p>{diagram}<p>{esc(primitive["symbol_explanation"])}</p></article>')
+        cards.append(f"""<article class="wide-card" id="{esc(primitive["id"])}">
+  <h2>{esc(primitive["name"])}</h2>
+  <p>{esc(primitive["plain_language"])}</p>
+  {diagram}
+  <h3>Plain-Language Principle</h3><p>{esc(primitive.get("plain_language_principle", primitive["why_it_exists"]))}</p>
+  <h3>Symbol By Symbol</h3><p>{esc(primitive["symbol_explanation"])}</p>
+  <h3>Where It Appears</h3><p>{esc(primitive["course_appearances"])}</p>
+  <h3>Why Misuse Breaks The Model</h3><p>{esc(primitive.get("misuse_warning", primitive["misuse_failure"]))}</p>
+</article>""")
     write(SITE / "primitives.html", page("Primitives", '<section class="page-head"><h1>Mathematical Primitives</h1></section>' + "".join(cards), "primitives"))
 
 
@@ -185,7 +201,15 @@ def build_families(families):
             ("Limit", family["where_analogy_breaks"]),
             ("Evidence", family["lecture_evidence_chain"]),
         ], "family-flow")
-        cards.append(f'<article class="wide-card" id="{esc(family["id"])}"><h2>{esc(family["name"])}</h2><p>{esc(family["plain_language_family_summary"])}</p>{diagram}<p>{esc(family["paper_family_treatment"])}</p></article>')
+        cards.append(f"""<article class="wide-card" id="{esc(family["id"])}">
+  <h2>{esc(family["name"])}</h2>
+  <p>{esc(family["plain_language_family_summary"])}</p>
+  {diagram}
+  <h3>Family Walkthrough</h3><p>{esc(family["family_walkthrough"])}</p>
+  <h3>Mathematical Signature</h3><p>{esc(family.get("mathematical_signature", ", ".join(family["mathematical_primitive"])))}</p>
+  <h3>Why This Family Matters</h3><p>{esc(family.get("why_family_matters", family["paper_family_treatment"]))}</p>
+  <h3>How To Read Papers In This Family</h3><p>{esc(family["paper_family_treatment"])}</p>
+</article>""")
     write(SITE / "families.html", page("Method Families", '<section class="page-head"><h1>Method Families</h1></section>' + "".join(cards), "families"))
 
 

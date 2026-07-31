@@ -305,7 +305,7 @@ def evidence_for(concept: dict[str, Any], index: list[dict[str, Any]]) -> list[d
                 "timestamp_start": win["timestamp_start"],
                 "timestamp_end": win["timestamp_end"],
                 "paraphrased_claim": f"The lecture gives transcript support for {concept['name']} as {concept['definition'].lower()}",
-                "lecture_argument": f"In {row['title']}, the course treats {concept['name']} as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+                "lecture_argument": f"In {row['title']}, the transcript window is a candidate anchor for {concept['name']} and needs editorial review before publication.",
                 "example_or_analogy": f"The useful everyday picture is: before naming {concept['name']}, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
                 "mathematical_claim": mathematical_principle(concept),
                 "caveat_or_warning": f"This evidence anchors the local course treatment of {concept['name']}; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
@@ -370,6 +370,10 @@ def build() -> None:
     index = load_index()
     concept_overrides = load_overrides("concepts.json")
     evidence_overrides = load_overrides("evidence.json")
+    theme_overrides = load_overrides("themes.json")
+    subtheme_overrides = load_overrides("subthemes.json")
+    primitive_overrides = load_overrides("primitives.json")
+    family_overrides = load_overrides("method-families.json")
     evidence: list[dict[str, Any]] = []
     evidence_by_concept: dict[str, list[str]] = defaultdict(list)
     concepts_out = []
@@ -393,58 +397,64 @@ def build() -> None:
 
     themes_out = []
     for theme in THEMES:
+        if theme["id"] not in theme_overrides:
+            raise ValueError(f"missing hand-crafted theme override for {theme['id']}")
         subtheme_ids = [s["id"] for s in SUBTHEMES if s["parent_theme"] == theme["id"]]
         concept_ids = [c["id"] for c in CONCEPTS if c["theme"] == theme["id"]]
-        themes_out.append(
-            {
-                **theme,
-                "subthemes": subtheme_ids,
-                "core_concepts": concept_ids,
-                "course_coverage": dict(coverage[theme["id"]]),
-                "cross_course_argument": f"{theme['name']} is not a lecture label. It is an argument about why the same strategic pressure reappears across several course topics.",
-                "mathematical_spine": f"The mathematical spine is built from primitives such as {', '.join(sorted({p for c in CONCEPTS if c['id'] in concept_ids for p in c['primitives']}))}.",
-                "where_analogy_breaks": "The analogy breaks when a tool that works for complete-information simultaneous choice is moved into timing, uncertainty, or communication without adding the missing structure.",
-                "lecture_evidence_chain": "Evidence comes from the listed concept pages and their transcript spans; theme prose is synthesis over those records.",
-            }
-        )
+        item = {
+            **theme,
+            "subthemes": subtheme_ids,
+            "core_concepts": concept_ids,
+            "course_coverage": dict(coverage[theme["id"]]),
+            "cross_course_argument": f"{theme['name']} connects several lectures through a shared strategic pressure.",
+            "mathematical_spine": f"Core primitives: {', '.join(sorted({p for c in CONCEPTS if c['id'] in concept_ids for p in c['primitives']}))}.",
+            "where_analogy_breaks": "The tool has to be rechecked whenever the information, timing, or institutional rule changes.",
+            "lecture_evidence_chain": "The listed concept evidence supplies the transcript anchors for this synthesis.",
+        }
+        item.update(theme_overrides[theme["id"]])
+        themes_out.append(item)
 
     subthemes_out = []
     for subtheme in SUBTHEMES:
-        subthemes_out.append(
-            {
-                **subtheme,
-                "everyday_problem": "The everyday problem is that strategic behavior must be read in context, not as a standalone action.",
-                "hidden_principle": "The hidden principle is that incentives, beliefs, timing, and information determine which explanation survives.",
-                "mathematical_lever": "The lever is the relevant payoff, belief, equilibrium, recursion, or incentive-compatibility object.",
-                "why_it_matters": "It matters because the subtheme gives a reusable way to recognize the same strategic shape in new applications.",
-                "examples_from_courses": [
-                    {
-                        "concept": cid,
-                        "evidence_id": evidence_by_concept[cid][0],
-                        "video_title": next(ev for ev in evidence if ev["id"] == evidence_by_concept[cid][0])["video_title"],
-                    }
-                    for cid in subtheme["concepts"]
-                    if evidence_by_concept[cid]
-                ],
-                "connected_concepts": sorted({r for cid in subtheme["concepts"] for r in related_concepts(next(c for c in CONCEPTS if c["id"] == cid))}),
-                "first_principles_walkthrough": "Start from the human situation, identify who knows what and who can respond, then introduce the formal object only as the shortest way to check that situation.",
-                "cross_links_and_limits": "The same primitive can reappear in another subtheme, but the application changes when information, time, or institutions change.",
-                "lecture_evidence_chain": "The examples point to transcript spans in the evidence ledger.",
-                "recognize_in_new_work": "Look for the underlying pressure rather than the vocabulary: dependence, uncertainty, credibility, repetition, or communication.",
-            }
-        )
+        if subtheme["id"] not in subtheme_overrides:
+            raise ValueError(f"missing hand-crafted subtheme override for {subtheme['id']}")
+        item = {
+            **subtheme,
+            "everyday_problem": "Strategic behavior has to be read inside the situation that gives it force.",
+            "hidden_principle": "Incentives, beliefs, timing, and information determine which explanation survives.",
+            "mathematical_lever": "The lever is the relevant payoff, belief, equilibrium, recursion, or incentive-compatibility object.",
+            "why_it_matters": "The subtheme gives a reusable way to recognize the same strategic shape in new applications.",
+            "examples_from_courses": [
+                {
+                    "concept": cid,
+                    "evidence_id": evidence_by_concept[cid][0],
+                    "video_title": next(ev for ev in evidence if ev["id"] == evidence_by_concept[cid][0])["video_title"],
+                }
+                for cid in subtheme["concepts"]
+                if evidence_by_concept[cid]
+            ],
+            "connected_concepts": sorted({r for cid in subtheme["concepts"] for r in related_concepts(next(c for c in CONCEPTS if c["id"] == cid))}),
+            "first_principles_walkthrough": "Start from the human situation, identify who knows what and who can respond, then introduce the formal object only as the shortest way to check that situation.",
+            "cross_links_and_limits": "The same primitive can reappear in another subtheme, but the application changes when information, time, or institutions change.",
+            "lecture_evidence_chain": "The examples point to transcript spans in the evidence ledger.",
+            "recognize_in_new_work": "Look for the underlying pressure before the vocabulary.",
+        }
+        item.update(subtheme_overrides[subtheme["id"]])
+        subthemes_out.append(item)
 
     primitives_out = []
     for primitive in PRIMITIVES:
+        if primitive["id"] not in primitive_overrides:
+            raise ValueError(f"missing hand-crafted primitive override for {primitive['id']}")
         concept_ids = [c["id"] for c in CONCEPTS if primitive["id"] in c["primitives"]]
-        primitives_out.append(
-            {
-                **primitive,
-                "concepts_in_atlas": concept_ids,
-                "everyday_setup": primitive["plain_language"],
-                "course_appearances": f"Appears in: {', '.join(concept_ids)}.",
-            }
-        )
+        item = {
+            **primitive,
+            "concepts_in_atlas": concept_ids,
+            "everyday_setup": primitive["plain_language"],
+            "course_appearances": f"Appears in: {', '.join(concept_ids)}.",
+        }
+        item.update(primitive_overrides[primitive["id"]])
+        primitives_out.append(item)
 
     families = [
         {
@@ -454,7 +464,7 @@ def build() -> None:
             "core_move": "Find mutually consistent plans where no one wants to move alone.",
             "mathematical_primitive": ["best_response", "mutual_consistency"],
             "concepts": ["best_response", "nash_equilibrium", "mixed_strategies", "subgame_perfection", "bayesian_nash_equilibrium", "perfect_bayesian_equilibrium"],
-            "plain_language_family_summary": "This family turns strategic dependence into a stability test.",
+            "plain_language_family_summary": "Equilibrium methods turn strategic dependence into a stability test.",
             "course_evidence_ids": [evidence_by_concept["nash_equilibrium"][0], evidence_by_concept["subgame_perfection"][0]],
             "family_walkthrough": "Ask what each player expects, then ask whether any single player would want to change.",
             "where_analogy_breaks": "Different equilibrium concepts are needed when time or private information enters.",
@@ -468,7 +478,7 @@ def build() -> None:
             "core_move": "Represent hidden facts as types and beliefs, then check incentives under those beliefs.",
             "mathematical_primitive": ["belief", "incentive_compatibility"],
             "concepts": ["bayesian_games", "types_and_beliefs", "signaling", "cheap_talk", "common_knowledge"],
-            "plain_language_family_summary": "This family explains how private information and messages affect strategy.",
+            "plain_language_family_summary": "Information methods explain how private facts, beliefs, and messages affect strategy.",
             "course_evidence_ids": [evidence_by_concept["bayesian_games"][0], evidence_by_concept["signaling"][0]],
             "family_walkthrough": "List what each side knows, what each side thinks others know, and what incentives make messages credible or not.",
             "where_analogy_breaks": "A message is not automatically evidence; it depends on the sender's incentive to lie or reveal.",
@@ -482,7 +492,7 @@ def build() -> None:
             "core_move": "Choose rules so private incentives produce the intended allocation or information revelation.",
             "mathematical_primitive": ["incentive_compatibility", "payoff_mapping"],
             "concepts": ["auctions", "revenue_equivalence", "ad_auctions", "implicit_cartels"],
-            "plain_language_family_summary": "This family treats game theory as design for markets and institutions.",
+            "plain_language_family_summary": "Mechanism methods treat game theory as design for markets and institutions.",
             "course_evidence_ids": [evidence_by_concept["auctions"][0], evidence_by_concept["ad_auctions"][0]],
             "family_walkthrough": "Write the rule, identify each participant's private information, then check what behavior the rule makes attractive.",
             "where_analogy_breaks": "Revenue or efficiency claims depend heavily on assumptions about values, risk, independence, and participation.",
@@ -490,6 +500,10 @@ def build() -> None:
             "paper_family_treatment": "Use this family for auction design, market design, and applied industrial organization papers.",
         },
     ]
+    for family in families:
+        if family["id"] not in family_overrides:
+            raise ValueError(f"missing hand-crafted method-family override for {family['id']}")
+        family.update(family_overrides[family["id"]])
 
     write_json(ROOT / "analysis/concepts/concept-atlas.json", concepts_out)
     write_json(ROOT / "analysis/themes/theme-map.json", themes_out)

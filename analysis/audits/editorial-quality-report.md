@@ -7,10 +7,10 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Concepts audited: 31
 - Concept teaching words: min 420, max 467
 - Evidence per concept: min 2, max 2
-- Theme treatment words: min 92, max 97
-- Subtheme treatment words: min 107, max 107
-- Primitive treatment words: min 59, max 79
-- Method-family treatment words: min 52, max 60
+- Theme treatment words: min 196, max 280
+- Subtheme treatment words: min 189, max 238
+- Primitive treatment words: min 155, max 207
+- Method-family treatment words: min 234, max 297
 - Errors: 0
 
 ## Lowest Concept Depth
