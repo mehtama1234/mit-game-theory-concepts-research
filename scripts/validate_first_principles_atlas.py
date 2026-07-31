@@ -17,6 +17,16 @@ def words(text: str) -> int:
     return len(re.findall(r"\b\w+\b", text))
 
 
+def repeated_adjacent_ngrams(text: str) -> int:
+    tokens = re.findall(r"\b\w+\b", text.lower())
+    repeats = 0
+    for width in range(2, 8):
+        for i in range(len(tokens) - (2 * width) + 1):
+            if tokens[i : i + width] == tokens[i + width : i + 2 * width]:
+                repeats += 1
+    return repeats
+
+
 def main() -> int:
     errors: list[str] = []
     concepts = load("analysis/concepts/concept-atlas.json")
@@ -114,6 +124,8 @@ def main() -> int:
             errors.append(f"evidence {record['id']} transcript missing")
         if words(record.get("local_transcript_window", "")) < 8:
             errors.append(f"evidence {record['id']} has weak window")
+        if repeated_adjacent_ngrams(record.get("local_transcript_window", "")):
+            errors.append(f"evidence {record['id']} has repeated caption overlap")
         if not record.get("matched_terms"):
             errors.append(f"evidence {record['id']} missing matched terms")
         for concept_id in record.get("supports_concepts", []):

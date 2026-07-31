@@ -78,6 +78,16 @@ def words(text: str) -> int:
     return len(re.findall(r"\b\w+\b", text))
 
 
+def repeated_adjacent_ngrams(text: str) -> int:
+    tokens = re.findall(r"\b\w+\b", text.lower())
+    repeats = 0
+    for width in range(2, 8):
+        for i in range(len(tokens) - (2 * width) + 1):
+            if tokens[i : i + width] == tokens[i + width : i + 2 * width]:
+                repeats += 1
+    return repeats
+
+
 def main() -> int:
     errors: list[str] = []
     concepts = json.loads((ROOT / "analysis/concepts/concept-atlas.json").read_text(encoding="utf-8"))
@@ -134,6 +144,9 @@ def main() -> int:
         errors.append(f"only {len(deep_evidence)} evidence records have transcript teaching notes")
     if weak_evidence:
         errors.append(f"{len(weak_evidence)} evidence records still marked weak")
+    overlap_records = [record for record in evidence if repeated_adjacent_ngrams(record.get("local_transcript_window", ""))]
+    if overlap_records:
+        errors.append(f"{len(overlap_records)} evidence windows contain repeated caption overlap")
 
     for theme, count in zip(themes, theme_words):
         if count < 180:
@@ -173,6 +186,7 @@ def main() -> int:
         f"- Method-family treatment words: min {min(family_words)}, max {max(family_words)}",
         f"- Evidence records with transcript teaching notes: {len(deep_evidence)}",
         f"- Evidence records still marked weak: {len(weak_evidence)}",
+        f"- Evidence windows with repeated caption overlap: {len(overlap_records)}",
         f"- Errors: {len(errors)}",
         "",
         "## Lowest Concept Depth",

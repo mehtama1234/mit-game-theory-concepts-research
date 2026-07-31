@@ -255,10 +255,42 @@ def hits(text: str, keywords: list[str]) -> int:
     return sum(len(re.findall(r"(?<![a-z0-9-])" + re.escape(k.lower()) + r"(?![a-z0-9-])", lower)) for k in keywords)
 
 
+def token_key(token: str) -> str:
+    return re.sub(r"(^[^a-z0-9]+|[^a-z0-9]+$)", "", token.lower())
+
+
+def clean_caption_overlap(text: str) -> str:
+    tokens = re.sub(r"\s+", " ", text).strip().split()
+    if not tokens:
+        return ""
+    changed = True
+    while changed:
+        changed = False
+        keys = [token_key(token) for token in tokens]
+        for width in range(min(10, len(tokens) // 2), 0, -1):
+            i = 0
+            cleaned: list[str] = []
+            while i < len(tokens):
+                if (
+                    i + 2 * width <= len(tokens)
+                    and keys[i : i + width] == keys[i + width : i + 2 * width]
+                    and any(keys[i : i + width])
+                ):
+                    cleaned.extend(tokens[i : i + width])
+                    i += 2 * width
+                    changed = True
+                else:
+                    cleaned.append(tokens[i])
+                    i += 1
+            tokens = cleaned
+            keys = [token_key(token) for token in tokens]
+    return " ".join(tokens)
+
+
 def window_for(row: dict[str, Any], concept: dict[str, Any]) -> dict[str, Any]:
     vtt_path = ROOT / row["raw_vtt"] if row.get("raw_vtt") else None
     if not vtt_path or not vtt_path.exists():
-        text = (ROOT / row["clean_txt"]).read_text(encoding="utf-8", errors="ignore")[:600]
+        text = clean_caption_overlap((ROOT / row["clean_txt"]).read_text(encoding="utf-8", errors="ignore")[:600])
         return {"timestamp_start": None, "timestamp_end": None, "window": text, "matched_terms": []}
     segments = parse_vtt(vtt_path)
     best = None
@@ -272,7 +304,7 @@ def window_for(row: dict[str, Any], concept: dict[str, Any]) -> dict[str, Any]:
         return {"timestamp_start": None, "timestamp_end": None, "window": "", "matched_terms": []}
     nearby = segments[max(0, best - 2) : min(len(segments), best + 4)]
     words = " ".join(seg["text"] for seg in nearby).split()
-    window = " ".join(words[:95]) + (" ..." if len(words) > 95 else "")
+    window = clean_caption_overlap(" ".join(words[:95])) + (" ..." if len(words) > 95 else "")
     lower_window = window.lower()
     terms = [term for term in concept["keywords"] if term.lower() in lower_window][:8]
     return {
@@ -382,6 +414,8 @@ def build() -> None:
             raise ValueError(f"missing hand-crafted concept override for {concept['id']}")
         records = evidence_for(concept, index)
         records = [record | evidence_overrides.get(record["id"], {}) for record in records]
+        for record in records:
+            record["local_transcript_window"] = clean_caption_overlap(record.get("local_transcript_window", ""))
         evidence.extend(records)
         evidence_by_concept[concept["id"]] = [record["id"] for record in records]
         base = {k: v for k, v in concept.items() if k not in {"keywords", "lectures", "theme", "primitives", "definition"}}

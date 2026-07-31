@@ -13,6 +13,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Method-family treatment words: min 234, max 297
 - Evidence records with transcript teaching notes: 62
 - Evidence records still marked weak: 0
+- Evidence windows with repeated caption overlap: 0
 - Errors: 0
 
 ## Lowest Concept Depth
