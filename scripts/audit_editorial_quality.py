@@ -175,6 +175,27 @@ def main() -> int:
 
     theme_words = [words(" ".join(str(t.get(f, "")) for f in ["big_picture", "why_this_theme_matters", "cross_course_argument", "mathematical_spine", "where_analogy_breaks", "lecture_evidence_chain"])) for t in themes]
     subtheme_words = [words(" ".join(str(s.get(f, "")) for f in ["everyday_problem", "hidden_principle", "mathematical_lever", "why_it_matters", "first_principles_walkthrough", "cross_links_and_limits"])) for s in subthemes]
+    themes_html = (SITE / "themes.html").read_text(encoding="utf-8") if (SITE / "themes.html").exists() else ""
+    rendered_subthemes = 0
+    subtheme_concept_links = 0
+    subtheme_evidence_links = 0
+    for subtheme in subthemes:
+        if f'id="{subtheme["id"]}"' in themes_html:
+            rendered_subthemes += 1
+        else:
+            errors.append(f"subtheme {subtheme['id']} not rendered on themes page")
+        for field in ["everyday_problem", "hidden_principle", "mathematical_lever", "why_it_matters", "first_principles_walkthrough", "cross_links_and_limits"]:
+            value = str(subtheme.get(field, ""))
+            if value and html_lib.escape(value, quote=True) not in themes_html:
+                errors.append(f"subtheme {subtheme['id']} {field} not rendered")
+        linked_concepts = [cid for cid in subtheme.get("concepts", []) if f'href="concepts/{cid}.html"' in themes_html]
+        linked_evidence = [example["evidence_id"] for example in subtheme.get("examples_from_courses", []) if f'href="evidence.html#{example["evidence_id"]}"' in themes_html]
+        subtheme_concept_links += len(linked_concepts)
+        subtheme_evidence_links += len(linked_evidence)
+        if len(linked_concepts) != len(subtheme.get("concepts", [])):
+            errors.append(f"subtheme {subtheme['id']} missing concept links")
+        if len(linked_evidence) != len(subtheme.get("examples_from_courses", [])):
+            errors.append(f"subtheme {subtheme['id']} missing evidence links")
     primitive_words = [words(" ".join(str(p.get(f, "")) for f in ["everyday_setup", "plain_language_principle", "formal_object", "symbol_explanation", "course_appearances", "why_it_matters", "misuse_warning"])) for p in primitives]
     primitives_html = (SITE / "primitives.html").read_text(encoding="utf-8") if (SITE / "primitives.html").exists() else ""
     primitive_backlinks = 0
@@ -283,6 +304,9 @@ def main() -> int:
         f"- Evidence per concept: min {min(r[2] for r in rows)}, max {max(r[2] for r in rows)}",
         f"- Theme treatment words: min {min(theme_words)}, max {max(theme_words)}",
         f"- Subtheme treatment words: min {min(subtheme_words)}, max {max(subtheme_words)}",
+        f"- Rendered subtheme study cards: {rendered_subthemes}",
+        f"- Subtheme concept links: {subtheme_concept_links}",
+        f"- Subtheme evidence links: {subtheme_evidence_links}",
         f"- Primitive treatment words: min {min(primitive_words)}, max {max(primitive_words)}",
         f"- Primitive-to-concept backlinks: {primitive_backlinks}",
         f"- Derivation-card words: min {min(derivation_words) if derivation_words else 0}, max {max(derivation_words) if derivation_words else 0}",

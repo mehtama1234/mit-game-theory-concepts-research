@@ -339,6 +339,7 @@ def build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examp
 
 
 def build_themes(themes, subthemes, concepts):
+    concept_by_id = {c["id"]: c for c in concepts}
     names = {c["id"]: c["name"] for c in concepts}
     sub_by_theme = defaultdict(list)
     for sub in subthemes:
@@ -351,7 +352,30 @@ def build_themes(themes, subthemes, concepts):
             ("Limit", theme["where_analogy_breaks"]),
             ("Evidence", theme["lecture_evidence_chain"]),
         ], "theme-flow")
-        subs = "".join(f"<li><strong>{esc(s['name'])}</strong>: {', '.join(esc(names[c]) for c in s['concepts'])}</li>" for s in sub_by_theme[theme["id"]])
+        subs = "".join(f"<li><a href=\"#{esc(s['id'])}\"><strong>{esc(s['name'])}</strong></a>: {', '.join(esc(names[c]) for c in s['concepts'])}</li>" for s in sub_by_theme[theme["id"]])
+        subtheme_cards = []
+        for subtheme in sub_by_theme[theme["id"]]:
+            concept_links = "".join(
+                f'<a class="chip" href="concepts/{esc(concept_id)}.html">{esc(concept_by_id[concept_id]["name"])}</a>'
+                for concept_id in subtheme["concepts"]
+                if concept_id in concept_by_id
+            )
+            evidence_notes = "".join(
+                f'<li>{esc(example["video_title"])}: <a href="evidence.html#{esc(example["evidence_id"])}">{esc(example["concept"]).replace("_", " ")}</a></li>'
+                for example in subtheme.get("examples_from_courses", [])
+            )
+            subtheme_cards.append(f"""<article class="wide-card subtheme-card" id="{esc(subtheme["id"])}">
+  <p class="eyebrow">Subtheme · {esc(theme["name"])}</p>
+  <h3>{esc(subtheme["name"])}</h3>
+  <p><strong>Everyday problem:</strong> {esc(subtheme["everyday_problem"])}</p>
+  <p><strong>Hidden principle:</strong> {esc(subtheme["hidden_principle"])}</p>
+  <p><strong>Mathematical lever:</strong> {esc(subtheme["mathematical_lever"])}</p>
+  <p><strong>Why it matters:</strong> {esc(subtheme["why_it_matters"])}</p>
+  <p><strong>First-principles walkthrough:</strong> {esc(subtheme["first_principles_walkthrough"])}</p>
+  <p><strong>Cross-links and limits:</strong> {esc(subtheme["cross_links_and_limits"])}</p>
+  <h4>Concept Pages</h4><p class="chips">{concept_links}</p>
+  <h4>Evidence Trail</h4><ul class="evidence-list">{evidence_notes}</ul>
+</article>""")
         blocks.append(f"""<article class="wide-card" id="{esc(theme["id"])}">
   <h2>{esc(theme["name"])}</h2>
   <p>{esc(theme["big_picture"])}</p>
@@ -360,6 +384,7 @@ def build_themes(themes, subthemes, concepts):
   <h3>Cross-Course Argument</h3><p>{esc(theme["cross_course_argument"])}</p>
   <h3>Lecture Evidence Chain</h3><p>{esc(theme["lecture_evidence_chain"])}</p>
   <h3>Subthemes</h3><ul>{subs}</ul>
+  <section class="subtheme-stack">{''.join(subtheme_cards)}</section>
 </article>""")
     write(SITE / "themes.html", page("Themes", '<section class="page-head"><h1>Themes And Subthemes</h1></section>' + "".join(blocks), "themes"))
 

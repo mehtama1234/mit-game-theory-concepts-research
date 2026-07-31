@@ -21,6 +21,7 @@ def words(text: str) -> int:
 def main() -> int:
     errors: list[str] = []
     concepts = json.loads((ROOT / "analysis/concepts/concept-atlas.json").read_text(encoding="utf-8"))
+    subthemes = json.loads((ROOT / "analysis/themes/subtheme-map.json").read_text(encoding="utf-8"))
     evidence = json.loads((ROOT / "analysis/evidence/evidence-ledger.json").read_text(encoding="utf-8"))
     lectures = json.loads((ROOT / "analysis/lectures/lecture-path.json").read_text(encoding="utf-8"))
     supplemental = json.loads((ROOT / "analysis/lectures/lecture-evidence.json").read_text(encoding="utf-8"))
@@ -40,6 +41,7 @@ def main() -> int:
     html_files = list(SITE.rglob("*.html"))
     evidence_html = (SITE / "evidence.html").read_text(encoding="utf-8") if (SITE / "evidence.html").exists() else ""
     lectures_html = (SITE / "lectures.html").read_text(encoding="utf-8") if (SITE / "lectures.html").exists() else ""
+    themes_html = (SITE / "themes.html").read_text(encoding="utf-8") if (SITE / "themes.html").exists() else ""
     if len(lectures) != 25:
         errors.append(f"expected 25 lectures, found {len(lectures)}")
     for lecture in lectures:
@@ -75,6 +77,26 @@ def main() -> int:
     for ev in evidence:
         if f'id="{ev["id"]}"' not in evidence_html:
             errors.append(f"missing evidence anchor: {ev['id']}")
+    for subtheme in subthemes:
+        if f'id="{subtheme["id"]}"' not in themes_html:
+            errors.append(f"missing subtheme anchor: {subtheme['id']}")
+        for heading in ["Everyday problem", "Hidden principle", "Mathematical lever", "Why it matters", "First-principles walkthrough", "Cross-links and limits", "Concept Pages", "Evidence Trail"]:
+            if heading not in themes_html:
+                errors.append(f"themes page missing subtheme heading: {heading}")
+        for field in ["everyday_problem", "hidden_principle", "mathematical_lever", "why_it_matters", "first_principles_walkthrough", "cross_links_and_limits"]:
+            value = subtheme.get(field, "")
+            if words(value) < 18:
+                errors.append(f"subtheme {subtheme['id']} has shallow {field}")
+            elif html.escape(value, quote=True) not in themes_html:
+                errors.append(f"subtheme {subtheme['id']} {field} not rendered")
+        for concept_id in subtheme.get("concepts", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"subtheme {subtheme['id']} references missing concept: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in themes_html:
+                errors.append(f"subtheme {subtheme['id']} missing concept link: {concept_id}")
+        for example in subtheme.get("examples_from_courses", []):
+            if f'href="evidence.html#{example["evidence_id"]}"' not in themes_html:
+                errors.append(f"subtheme {subtheme['id']} missing evidence link: {example['evidence_id']}")
     primitives_html = (SITE / "primitives.html").read_text(encoding="utf-8") if (SITE / "primitives.html").exists() else ""
     for primitive in primitives:
         if f'id="{primitive["id"]}"' not in primitives_html:
