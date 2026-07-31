@@ -12,6 +12,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Primitive treatment words: min 155, max 207
 - Method-family treatment words: min 234, max 297
 - Evidence records with transcript teaching notes: 62
+- Evidence records still marked weak: 0
 - Errors: 0
 
 ## Lowest Concept Depth

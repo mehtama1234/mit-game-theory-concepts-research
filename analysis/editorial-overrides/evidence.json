@@ -66,15 +66,26 @@
     "evidence_boundary": "The span supports reuse of probability-weighted reasoning in Bayesian games. It is a partial anchor for expected utility, not a standalone derivation of Bayesian Nash equilibrium."
   },
   "ev-strategic_form_games-01": {
-    "lecture_argument": "The lecture supports strategic form as the compact table used when players choose actions and payoffs depend on the full action profile In this specific anchor from Lecture 2: Representation of Games, the evidence role is definition and setup: it ties the transcript window to Strategic Form Games by showing where the lecture needs the idea to make the next strategic step intelligible.",
-    "example_or_analogy": "The example logic is a payoff matrix: one cell cannot be evaluated until both players choices determine which cell is reached.",
-    "conceptual_payload": "The payload is the setup move for Strategic Form Games: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
-    "why_span_matters": "This span matters because it is the first place strategic dependence becomes a mathematical object rather than a verbal story For Strategic Form Games, this record is anchor 01, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.",
+    "lecture_argument": "The representation lecture supports strategic form as the compact object built from strategy profiles and payoffs. The stronger anchor explicitly connects combinations of strategies to player payoffs, which is the normal-form object needed before dominance, best response, or Nash analysis can begin.",
+    "example_or_analogy": "The everyday picture is filling out the whole game table only after every player strategy has been specified; one player action alone is not enough to identify the payoff cell.",
+    "conceptual_payload": "The payload is that strategic form translates a game into strategy profiles and payoffs, giving later solution concepts a precise object to inspect.",
+    "why_span_matters": "This span replaces a weaker player/node anchor with direct transcript evidence about strategy profiles and strategic form representation.",
     "caveat_or_warning": "The transcript span supports the local course treatment; cross-theme claims are synthesis built from multiple evidence records.",
     "evidence_review_status": "hand_rewritten_concept_payload",
-    "confidence": "weak",
-    "transcript_teaching_note": "This representation anchor is imperfect but still useful because it names players as part of assigning structure to a game. The transcript window is actually tree-oriented, mentioning nodes, which shows the broader representation lecture building the ingredients of formal games. The teaching payload is that players are not background characters; they are assigned decision roles in the model.",
-    "evidence_boundary": "This is a weak-to-moderate support record for strategic form specifically because the local window leans toward extensive-form representation. It supports player specification more than payoff-matrix structure."
+    "confidence": "moderate",
+    "transcript_teaching_note": "This stronger span is direct strategic-form evidence. The instructor moves from combinations of strategies to payoff for a player, then names strategic form as the simple but careful representation. That is exactly the teaching step the concept page needs: strategic form is not just a table, it is a disciplined mapping from strategy profiles to payoffs.",
+    "evidence_boundary": "The span supports the strategy-profile and payoff structure of strategic form. It still does not list a complete payoff matrix in the local window, so worked matrix examples remain part of the broader lecture treatment.",
+    "video_title": "Lecture 2: Representation of Games",
+    "youtube_url": "https://www.youtube.com/watch?v=JAib42oAiKE",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/002-JAib42oAiKE-Lecture 2: Representation of Games.txt",
+    "timestamp_start": "00:54:17.520",
+    "timestamp_end": "00:54:29.880",
+    "matched_terms": [
+      "strategic form",
+      "strategy profile",
+      "strategies"
+    ],
+    "local_transcript_window": "going to be the payoff for player I from that combination of strategies? Or in other words, from that strategy profile. Strategic form, it is really simple, but you have to make sure you write down the right object before analyzing payoffs."
   },
   "ev-strategic_form_games-02": {
     "lecture_argument": "The companion transcript span supports strategic form as the compact table used when players choose actions and payoffs depend on the full action profile In this specific anchor from Lecture 1: Introduction to Individual Decision-Making, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Strategic Form Games by showing where the lecture needs the idea to make the next strategic step intelligible.",
@@ -132,15 +143,25 @@
     "evidence_boundary": "The span supports cross-lecture reuse more than it supports a fresh dominance definition. It should not be read as the only place where dominance is introduced; it shows the concept being carried into rationalizability."
   },
   "ev-iterated_deletion-01": {
-    "lecture_argument": "The evidence supports repeated elimination: after one dominated strategy is removed, the reduced game can reveal another action that now has no rational defense In this specific anchor from Lecture 3: Dominance, the evidence role is definition and setup: it ties the transcript window to Iterated Deletion by showing where the lecture needs the idea to make the next strategic step intelligible.",
-    "example_or_analogy": "The useful picture is cleaning a table in rounds; each deletion changes the strategic environment faced by the remaining choices.",
-    "conceptual_payload": "The payload is the setup move for Iterated Deletion: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
-    "why_span_matters": "This span matters because it connects dominance to recursive reasoning about what rational players know and rule out For Iterated Deletion, this record is anchor 01, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.",
+    "lecture_argument": "The rationalizability lecture directly supports iterated deletion by naming iterated elimination of strictly dominated strategies and presenting it as a formal procedure. This is stronger than a generic lecture-opening anchor because it ties the concept to the recursive deletion operation.",
+    "example_or_analogy": "The everyday picture is repeatedly crossing off choices that have lost their strategic defense, then checking the smaller game again because the remaining comparison has changed.",
+    "conceptual_payload": "The payload is the formal-procedure move: deletion is not one casual cleanup step, but an iterative algorithm over surviving strategies.",
+    "why_span_matters": "This span matters because it anchors the actual iterated-elimination language and replaces a weak placement-only record with direct evidence for the formal deletion procedure.",
     "caveat_or_warning": "The transcript span supports the local course treatment; cross-theme claims are synthesis built from multiple evidence records.",
     "evidence_review_status": "hand_rewritten_concept_payload",
-    "confidence": "weak",
-    "transcript_teaching_note": "This opening dominance anchor is mostly a lecture-framing record. The instructor says the course is starting to analyze games, which is where deletion and dominance tools enter. Its teaching use is to locate iterated deletion inside the transition from representing games to actively reasoning through them.",
-    "evidence_boundary": "This is weak evidence for iterated deletion specifically. It supports lecture placement, not the deletion procedure; stronger support comes from records about dominated strategies and rationality."
+    "confidence": "moderate",
+    "transcript_teaching_note": "This replacement anchor directly names iterated elimination of strictly dominated strategies and says a formal procedure needs notation. That is the lecture-depth point: students may see deletion in an example, but the course turns it into an algorithm whose output can be compared with rationalizability.",
+    "evidence_boundary": "The span supports the definition and procedural framing of iterated deletion. It does not show every deletion step in a complete example, so the detailed walk-through still comes from surrounding lecture material.",
+    "video_title": "Lecture 4: Rationalizability",
+    "youtube_url": "https://www.youtube.com/watch?v=ZdwIokL0P_U",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/004-ZdwIokL0P_U-Lecture 4: Rationalizability.txt",
+    "timestamp_start": "00:26:14.560",
+    "timestamp_end": "00:26:21.390",
+    "matched_terms": [
+      "iterated elimination",
+      "strictly dominated strategies"
+    ],
+    "local_transcript_window": "why we call it iterated elimination of strictly dominated strategies. To formally define this procedure, we need some notation, right? It was easy in this example to kind of work through, but the formal procedure needs a precise object."
   },
   "ev-iterated_deletion-02": {
     "lecture_argument": "The companion evidence supports repeated elimination: after one dominated strategy is removed, the reduced game can reveal another action that now has no rational defense In this specific anchor from Lecture 4: Rationalizability, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Iterated Deletion by showing where the lecture needs the idea to make the next strategic step intelligible.",
@@ -275,15 +296,27 @@
     "evidence_boundary": "The span supports minimax structure. It does not by itself solve a complete zero-sum game or prove a minimax theorem."
   },
   "ev-minimax-02": {
-    "lecture_argument": "The minimax lecture supports choosing by guarding against the opponent’s most damaging response, especially in zero-sum settings In this specific anchor from Lecture 6: Imperfect Competition, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Minimax by showing where the lecture needs the idea to make the next strategic step intelligible.",
-    "example_or_analogy": "The everyday example is making a plan after assuming the opponent will inspect it and attack its weakest point. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.",
-    "conceptual_payload": "The payload is the follow-through move for Minimax: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
-    "why_span_matters": "This second span matters because it connects best response to worst-case security rather than average-case optimism For Minimax, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.",
+    "lecture_argument": "The zero-sum lecture directly supports minimax through the theorem equating worst-case loss and worst-case gain. This is the game-theoretic minimax payload that the earlier imperfect-competition maximum anchor did not provide.",
+    "example_or_analogy": "The useful picture is two sides choosing protective mixed strategies until one player worst-case gain and the other player worst-case loss meet at the same value.",
+    "conceptual_payload": "The payload is the theorem-level equality behind minimax: in zero-sum games, adversarial protection can produce a shared value from opposite sides.",
+    "why_span_matters": "This span matters because it replaces a misleading non-game-theoretic maximum record with direct minimax theorem evidence about worst-case gain and loss.",
     "caveat_or_warning": "The transcript span supports the local course treatment; cross-theme claims are synthesis built from multiple evidence records.",
     "evidence_review_status": "hand_rewritten_concept_payload",
-    "confidence": "weak",
-    "transcript_teaching_note": "This imperfect-competition anchor is weak for minimax. It mentions taking a maximum of one minus P and zero, but that is a nonnegative demand expression rather than adversarial max-min reasoning. Its value is only as a reminder that max operators appear elsewhere with different meanings.",
-    "evidence_boundary": "This record should be treated as weak boundary evidence for minimax. It does not support the game-theoretic minimax concept and should not be used as a primary anchor."
+    "confidence": "moderate",
+    "transcript_teaching_note": "This is the stronger minimax anchor because the transcript explicitly names the minimax theorem and explains the equality between worst-case loss and worst-case gain. It supports the concept page’s claim that minimax is not generic pessimism; it is a zero-sum equality result linking the two players security calculations.",
+    "evidence_boundary": "The span supports the theorem statement and intuition. It does not include the proof or solve the example from scratch, so proof details remain outside this local evidence record.",
+    "video_title": "Lecture 7: Zero-Sum Games",
+    "youtube_url": "https://www.youtube.com/watch?v=CBCf8iWKFZY",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/007-CBCf8iWKFZY-Lecture 7: Zero-Sum Games.txt",
+    "timestamp_start": "01:01:05.640",
+    "timestamp_end": "01:01:14.070",
+    "matched_terms": [
+      "minimax",
+      "worst case",
+      "gain",
+      "loss"
+    ],
+    "local_transcript_window": "But now, we have an equality because of the minimax theorem. So, the minimax theorem tells us that the worst case loss from sigma two star must equal the worst case gain from sigma one star."
   },
   "ev-backward_induction-01": {
     "lecture_argument": "The backward-induction lecture supports solving sequential games from the final decision backward because later incentives determine earlier choices In this specific anchor from Lecture 8: Backward Induction, the evidence role is definition and setup: it ties the transcript window to Backward Induction by showing where the lecture needs the idea to make the next strategic step intelligible.",
@@ -429,15 +462,26 @@
     "evidence_boundary": "The span supports the discounting arithmetic behind repeated-payoff averages. It is not by itself the folk theorem statement; feasibility, individual rationality, and punishment incentives are additional theorem conditions."
   },
   "ev-folk_theorem-02": {
-    "lecture_argument": "The folk-theorem lecture supports the broad result that many feasible and individually rational payoffs can be sustained when players are patient enough In this specific anchor from Lecture 1: Introduction to Individual Decision-Making, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Folk Theorem by showing where the lecture needs the idea to make the next strategic step intelligible.",
-    "example_or_analogy": "The everyday picture is not one magic cooperative outcome, but a large menu of self-enforcing arrangements supported by credible future punishment. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.",
-    "conceptual_payload": "The payload is the follow-through move for Folk Theorem: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
-    "why_span_matters": "This second span matters because it warns that repeated games can create many equilibria, making prediction depend on institutions and history For Folk Theorem, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.",
+    "lecture_argument": "The folk-theorem lecture supports the theorem’s payoff-set conditions by distinguishing feasible payoffs from the subset that also satisfies individual rationality. That is far stronger evidence than an early notation-only delta span.",
+    "example_or_analogy": "The everyday picture is a menu of possible long-run deals: some deals cannot be produced at all, and some can be produced but would give a player too little to accept over punishment.",
+    "conceptual_payload": "The payload is the constraint-set move: the folk theorem is about feasible and individually rational payoff vectors, not an unconstrained claim that anything literally can happen.",
+    "why_span_matters": "This span matters because it anchors the folk theorem conditions directly and replaces a weak notation record with feasible and individually rational payoff language.",
     "caveat_or_warning": "The transcript span supports the local course treatment; cross-theme claims are synthesis built from multiple evidence records.",
     "evidence_review_status": "hand_rewritten_concept_payload",
-    "confidence": "weak",
-    "transcript_teaching_note": "This early notation anchor is weak but useful for mathematical continuity. The instructor says delta notation will be used throughout the course and warns students not to be scared by it. Later folk theorem work relies on delta as the weight on future payoffs, so this record anchors the notation before repeated games appear.",
-    "evidence_boundary": "This is weak support for the folk theorem itself. It supports delta notation, not the theorem’s feasibility, individual rationality, or punishment conditions."
+    "confidence": "moderate",
+    "transcript_teaching_note": "This replacement anchor captures the folk theorem’s central boundary. The transcript separates the feasible set from the part that also satisfies individual rationality. That lets the atlas explain the theorem honestly: repeated games can sustain many outcomes, but only inside constraints imposed by feasibility and each player fallback value.",
+    "evidence_boundary": "The span supports the feasible and individually rational payoff conditions. It does not by itself state the complete theorem or the punishment strategies, so those still rely on the rest of the folk-theorem lecture.",
+    "video_title": "Lecture 14: Folk Theorem",
+    "youtube_url": "https://www.youtube.com/watch?v=3ws34WgJKzk",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/014-3ws34WgJKzk-Lecture 14: Folk Theorem.txt",
+    "timestamp_start": "00:18:11.320",
+    "timestamp_end": "00:18:26.350",
+    "matched_terms": [
+      "feasible",
+      "individually rational",
+      "payoffs"
+    ],
+    "local_transcript_window": "often called the set of payoffs that are feasible and individually rational. The whole set is the feasible set. The dark set is the feasible set together with the constraint that the payoffs are individually rational."
   },
   "ev-implicit_cartels-01": {
     "lecture_argument": "The cartel lecture supports tacit collusion as repeated-game discipline: firms may keep prices high because cheating today risks future punishment In this specific anchor from Lecture 15: Implicit Cartels, the evidence role is definition and setup: it ties the transcript window to Implicit Cartels by showing where the lecture needs the idea to make the next strategic step intelligible.",
@@ -451,15 +495,27 @@
     "evidence_boundary": "The span supports application context for cartels. It does not by itself establish tacit collusion, repeated-game incentives, or price-war punishment."
   },
   "ev-implicit_cartels-02": {
-    "lecture_argument": "The cartel lecture supports tacit collusion as repeated-game discipline: firms may keep prices high because cheating today risks future punishment In this specific anchor from Lecture 1: Introduction to Individual Decision-Making, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Implicit Cartels by showing where the lecture needs the idea to make the next strategic step intelligible.",
-    "example_or_analogy": "The everyday example is a price cut that wins business now but may trigger a price war later. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.",
-    "conceptual_payload": "The payload is the follow-through move for Implicit Cartels: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
-    "why_span_matters": "This second span matters because it turns repeated-game math into a concrete market application with legal and economic stakes For Implicit Cartels, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.",
+    "lecture_argument": "The implicit-cartels lecture directly supports tacit cartel enforcement by explaining overproduction, punishment, and the self-enforcing requirement. This replaces a misleading preference-transitivity match on the word implicit.",
+    "example_or_analogy": "The everyday example is a firm producing too much today and rivals answering by producing more later, but the punishment works only if the rivals actually want to carry it out.",
+    "conceptual_payload": "The payload is self-enforcement: an implicit cartel needs punishment incentives inside the market because there may be no external contract or court enforcing cooperation.",
+    "why_span_matters": "This span matters because it anchors the repeated-game cartel mechanism directly and removes a false keyword-only support record about implicit preference assumptions.",
     "caveat_or_warning": "The transcript span supports the local course treatment; cross-theme claims are synthesis built from multiple evidence records.",
     "evidence_review_status": "hand_rewritten_concept_payload",
-    "confidence": "weak",
-    "transcript_teaching_note": "This record is weak for implicit cartels. The transcript uses the word implicit for an assumption in preference transitivity, not for cartel behavior. Its only value is to mark that the automatic keyword match was misleading and that the evidence should not be overclaimed.",
-    "evidence_boundary": "This should be treated as weak evidence and a review warning. It does not support implicit cartel theory; the cartel lecture anchor should carry the concept instead."
+    "confidence": "moderate",
+    "transcript_teaching_note": "This is the right second cartel anchor because it captures the mechanism rather than merely naming cartels. The transcript explains that overproduction must be punished and then immediately asks whether punishment is itself self-enforcing. That is the game-theory core of implicit cartels: the agreement survives only if both compliance and punishment satisfy incentives.",
+    "evidence_boundary": "The span supports the self-enforcing punishment mechanism. It does not by itself solve the cartel inequality or identify market data proving a cartel outside the model.",
+    "video_title": "Lecture 15: Implicit Cartels",
+    "youtube_url": "https://www.youtube.com/watch?v=9MtmH12aag4",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/015-9MtmH12aag4-Lecture 15: Implicit Cartels.txt",
+    "timestamp_start": "00:10:58.000",
+    "timestamp_end": "00:11:32.470",
+    "matched_terms": [
+      "implicit cartel",
+      "overproduce",
+      "punished",
+      "self-enforcing"
+    ],
+    "local_transcript_window": "if someone were to overproduce, they would be punished. Maybe by the other firms producing more as well to punish them. The problem is we have to make sure that this is self-enforcing. If someone overproduces, then they are going to be punished by another firm, but then we have to make sure that other firm is going to want to actually punish."
   },
   "ev-bayesian_games-01": {
     "lecture_argument": "The Bayesian-game lecture supports modeling hidden information by assigning players types and beliefs before strategies are chosen In this specific anchor from Lecture 16: Bayesian Games, the evidence role is definition and setup: it ties the transcript window to Bayesian Games by showing where the lecture needs the idea to make the next strategic step intelligible.",
@@ -627,15 +683,27 @@
     "evidence_boundary": "The span supports lecture framing and continuity. It is not a sufficient anchor for separating or pooling conditions by itself; those require later transcript spans where type incentives are compared."
   },
   "ev-signaling-02": {
-    "lecture_argument": "The signaling lecture supports costly or informative actions by privately informed senders as a way to move receiver beliefs In this specific anchor from Lecture 1: Introduction to Individual Decision-Making, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Signaling by showing where the lecture needs the idea to make the next strategic step intelligible.",
-    "example_or_analogy": "The everyday example is education, certification, or another action that may be easier for one type than another, making the action informative. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.",
-    "conceptual_payload": "The payload is the follow-through move for Signaling: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
-    "why_span_matters": "This second span matters because it explains communication through incentives: the signal works only if different types face different reasons to send it For Signaling, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.",
+    "lecture_argument": "The signaling lecture directly supports the sender-private-information-receiver structure: the receiver observes the sender action but not the private type. This replaces a weak sports receiver anchor from the introductory lecture.",
+    "example_or_analogy": "The everyday picture is an observer seeing an action such as education or certification and trying to infer the private quality that produced it.",
+    "conceptual_payload": "The payload is the asymmetric-information observation structure: actions are visible, types are hidden, and receiver beliefs turn the action into a signal.",
+    "why_span_matters": "This span matters because it gives direct signaling evidence for hidden type, observable sender action, and receiver inference, replacing a weak introductory receiver example.",
     "caveat_or_warning": "The transcript span supports the local course treatment; cross-theme claims are synthesis built from multiple evidence records.",
     "evidence_review_status": "hand_rewritten_concept_payload",
-    "confidence": "weak",
-    "transcript_teaching_note": "This individual decision anchor is indirect for signaling but useful for receiver dependence. The window says the best action depends on what the goalie or tennis receiver plans to do. That supports the broader idea that a receiver’s anticipated response changes the sender’s strategic action, which later signaling models formalize under hidden information.",
-    "evidence_boundary": "The span is weak for signaling specifically. It supports strategic dependence on a receiver, not costly type revelation or belief updating."
+    "confidence": "moderate",
+    "transcript_teaching_note": "This replacement anchor is directly about signaling. The transcript states the receiver sees the sender action but cannot observe the sender private information. That is the exact first-principles reason signaling models exist: observable behavior becomes evidence about something hidden, but only through beliefs and incentives.",
+    "evidence_boundary": "The span supports the basic signaling structure. It does not yet distinguish separating from pooling equilibria or check imitation incentives; those require later spans in the signaling lecture.",
+    "video_title": "Lecture 22: Signaling",
+    "youtube_url": "https://www.youtube.com/watch?v=H-wFpqnDrhs",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/022-H-wFpqnDrhs-Lecture 22: Signaling.txt",
+    "timestamp_start": "00:01:29.400",
+    "timestamp_end": "00:01:38.110",
+    "matched_terms": [
+      "sender",
+      "private information",
+      "receiver",
+      "action"
+    ],
+    "local_transcript_window": "they see what action the sender takes, but they cannot observe the private information that the sender has. And then based upon that, they are also going to form beliefs and choose a response."
   },
   "ev-cheap_talk-01": {
     "lecture_argument": "The cheap-talk lecture supports costless, nonbinding messages whose credibility depends on whether sender and receiver incentives are aligned enough In this specific anchor from Lecture 24: Cheap Talk, the evidence role is definition and setup: it ties the transcript window to Cheap Talk by showing where the lecture needs the idea to make the next strategic step intelligible.",
@@ -649,15 +717,26 @@
     "evidence_boundary": "This span supports the model setup, not the full credibility result. The payoff-alignment condition that makes cheap talk informative must be supported by later parts of the lecture or by synthesis from the concept page."
   },
   "ev-cheap_talk-02": {
-    "lecture_argument": "The cheap-talk lecture supports costless, nonbinding messages whose credibility depends on whether sender and receiver incentives are aligned enough In this specific anchor from Lecture 1: Introduction to Individual Decision-Making, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Cheap Talk by showing where the lecture needs the idea to make the next strategic step intelligible.",
-    "example_or_analogy": "The everyday picture is advice or an announcement that costs nothing to say, so the receiver must ask why the sender would tell the truth. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.",
-    "conceptual_payload": "The payload is the follow-through move for Cheap Talk: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
-    "why_span_matters": "This second span matters because it separates pure speech from costly signaling and forces the credibility question into the model For Cheap Talk, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.",
+    "lecture_argument": "The cheap-talk lecture directly supports the incentive-alignment boundary: if sender and receiver had the same preferences, communication would be easy. That is stronger than a generic receiver anchor because it explains why conflict of interest is the central cheap-talk problem.",
+    "example_or_analogy": "The everyday picture is an advisor and decision maker: advice is easy to trust when their goals line up, and strategically suspect when their goals diverge.",
+    "conceptual_payload": "The payload is payoff alignment. Cheap talk is not credible because words are beautiful; it can work when sender incentives make useful communication privately worthwhile.",
+    "why_span_matters": "This span matters because it anchors the credibility mechanism for cheap talk in preference alignment and incentives, replacing a weak generic receiver-response example.",
     "caveat_or_warning": "The transcript span supports the local course treatment; cross-theme claims are synthesis built from multiple evidence records.",
     "evidence_review_status": "hand_rewritten_concept_payload",
-    "confidence": "weak",
-    "transcript_teaching_note": "This anchor is indirect for cheap talk but useful for the receiver side of communication games. It shows that an action can depend on what a receiver is planning to do. Cheap talk later adds a sender message before the receiver acts, but this window only supports the receiver-response pressure.",
-    "evidence_boundary": "The span is weak for cheap talk specifically. It does not involve costless messages, sender incentives, or payoff-aligned communication. It should remain a weak support record: useful for receiver-response intuition, but not evidence for costless messages or truthful communication without the main cheap-talk lecture anchor."
+    "confidence": "moderate",
+    "transcript_teaching_note": "This replacement anchor directly supports cheap-talk credibility. The transcript says the problem would be easy if sender and receiver had the same preferences, which reveals the hidden engine of the model. Costless messages become hard to trust precisely when preferences diverge and the sender may prefer a distorted receiver action.",
+    "evidence_boundary": "The span supports the role of preference alignment in cheap talk. It does not derive babbling or partition equilibria, so those remain supported by other parts of the cheap-talk lecture.",
+    "video_title": "Lecture 24: Cheap Talk",
+    "youtube_url": "https://www.youtube.com/watch?v=SsdSpzJ-d7s",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/024-SsdSpzJ-d7s-Lecture 24: Cheap Talk.txt",
+    "timestamp_start": "00:18:16.800",
+    "timestamp_end": "00:18:22.310",
+    "matched_terms": [
+      "sender",
+      "receiver",
+      "same preferences"
+    ],
+    "local_transcript_window": "So now what about the sender? Well, if the sender and receiver had the same preferences, this would be a really easy problem. Of course, the advisor is going to want to tell the decision maker the useful information."
   },
   "ev-common_knowledge-01": {
     "lecture_argument": "The common-knowledge lecture supports the infinite hierarchy of shared awareness: everyone knows, everyone knows everyone knows, and the chain continues In this specific anchor from Lecture 25: Common Knowledge, the evidence role is definition and setup: it ties the transcript window to Common Knowledge by showing where the lecture needs the idea to make the next strategic step intelligible.",

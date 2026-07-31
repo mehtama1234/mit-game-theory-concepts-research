@@ -40,8 +40,8 @@
     "course_coverage": {
       "Lecture 2: Representation of Games": 1,
       "Lecture 1: Introduction to Individual Decision-Making": 2,
-      "Lecture 3: Dominance": 2,
-      "Lecture 4: Rationalizability": 3
+      "Lecture 3: Dominance": 1,
+      "Lecture 4: Rationalizability": 4
     },
     "cross_course_argument": "The strategic-form lecture makes dependence visible in a table. The extensive-form lecture shows that timing can be part of the dependence. Dominance and iterated deletion then ask whether some actions can be removed before equilibrium reasoning begins, while rationalizability asks what choices can still make sense under some belief about others.",
     "mathematical_spine": "The spine is a payoff map from action profiles to player-specific payoffs, plus pruning rules that compare one action against another across possible opponent actions. The math matters because it forces the analyst to say exactly which opponent moves make a strategy look good or bad.",
@@ -68,8 +68,7 @@
       "Lecture 4: Rationalizability": 1,
       "Lecture 5: Nash Equilibrium": 4,
       "Lecture 10: Subgame-Perfect Nash Equilibrium": 1,
-      "Lecture 7: Zero-Sum Games": 3,
-      "Lecture 6: Imperfect Competition": 1
+      "Lecture 7: Zero-Sum Games": 4
     },
     "cross_course_argument": "Best response supplies the one-player test. Nash makes all players pass that test at once. Mixed strategies show that stability may require deliberate randomness. Zero-sum and minimax sharpen the same idea under pure conflict, where protecting yourself against the opponent’s best attack becomes the prediction logic.",
     "mathematical_spine": "The spine is the best-response correspondence and the fixed point idea behind mutual consistency. In zero-sum settings the same pressure becomes maximin/minimax reasoning: choose a plan whose worst consequence is as strong as possible because the opponent’s gain is your loss.",
@@ -123,9 +122,8 @@
       "Lecture 8: Backward Induction": 1,
       "Lecture 13: Infinitely Repeated Games": 1,
       "Lecture 9: Negotiation": 1,
-      "Lecture 14: Folk Theorem": 1,
-      "Lecture 1: Introduction to Individual Decision-Making": 2,
-      "Lecture 15: Implicit Cartels": 1
+      "Lecture 14: Folk Theorem": 2,
+      "Lecture 15: Implicit Cartels": 2
     },
     "cross_course_argument": "Finite repetition shows the known-last-round problem: if nothing follows the final period, cooperation can unravel backward. Infinite repetition removes the fixed endpoint and lets trigger strategies work. The folk theorem shows how large the set of sustainable outcomes can become, while cartel applications translate the abstract logic into market behavior.",
     "mathematical_spine": "The spine is discounted continuation value. A player compares the one-time gain from cheating with the discounted stream lost after punishment. The inequality matters because cooperation is sustained only when future losses outweigh present temptation.",
@@ -197,9 +195,8 @@
       "common_knowledge"
     ],
     "course_coverage": {
-      "Lecture 22: Signaling": 1,
-      "Lecture 1: Introduction to Individual Decision-Making": 2,
-      "Lecture 24: Cheap Talk": 1,
+      "Lecture 22: Signaling": 2,
+      "Lecture 24: Cheap Talk": 2,
       "Lecture 25: Common Knowledge": 1,
       "Lecture 4: Rationalizability": 1
     },
