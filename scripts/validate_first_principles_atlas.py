@@ -124,7 +124,7 @@ def main() -> int:
                 errors.append(f"evidence {record['id']} missing subtheme {sub_id}")
 
     deep_evidence = [record for record in evidence if record.get("transcript_teaching_note") and record.get("evidence_boundary")]
-    if len(deep_evidence) < 13:
+    if len(deep_evidence) < len(evidence):
         errors.append(f"only {len(deep_evidence)} evidence records have transcript teaching notes")
 
     for field in [field for field in concept_fields if field != "mathematical_principle"]:

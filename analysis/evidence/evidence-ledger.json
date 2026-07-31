@@ -29,7 +29,9 @@
       "ranking_outcomes"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Preferences: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for Preferences: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This anchor is strong for the first-principles setup of preferences. The transcript repeatedly says the agent preferences must be specified, which is the modeling move before any payoff table or equilibrium can exist. The teaching payload is that choice theory begins by naming the ordering that the agent is assumed to maximize.",
+    "evidence_boundary": "The window supports preference specification and ordering. It does not prove completeness, transitivity, or representation by utility; those are broader conceptual steps handled in the concept treatment."
   },
   {
     "id": "ev-preferences-02",
@@ -61,7 +63,9 @@
       "ranking_outcomes"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Preferences: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Preferences: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This representation lecture anchor is useful because a student answer identifies the missing ingredient as preferences. That classroom moment reinforces that a game description is incomplete until the players rankings over consequences are named. The span shows preferences being reused as course machinery, not just introduced once in Lecture 1.",
+    "evidence_boundary": "The evidence supports the need for preferences in model specification. The local window is short and conversational, so it should not be treated as a formal axiom statement."
   },
   {
     "id": "ev-utility-01",
@@ -93,7 +97,9 @@
       "ranking_outcomes"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Utility: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for Utility: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This utility anchor matters because it distinguishes cardinal or von Neumann utility from ordinal utility. The lecture is pointing out that some later calculations require more than a simple ranking. That is the first-principles reason utility representations must be handled carefully: the kind of number needed depends on the decision environment.",
+    "evidence_boundary": "The span supports the ordinal/cardinal distinction. It is not a full construction of expected utility or utility representation, so the atlas should keep the broader explanation separate."
   },
   {
     "id": "ev-utility-02",
@@ -125,7 +131,9 @@
       "ranking_outcomes"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Utility: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Utility: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This second utility anchor shows expected utility being assigned to a strategy profile. That is a useful cross-lecture bridge: utility has become the numerical object used to evaluate strategic consequences. The transcript window supports the idea that utilities are not decorative; they are the quantities later strategy analysis computes with.",
+    "evidence_boundary": "The span supports utility as a computed payoff object in games. It does not by itself explain why the utility function is valid or how the expectations were derived."
   },
   {
     "id": "ev-expected_utility-01",
@@ -156,7 +164,9 @@
       "ranking_outcomes"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Expected Utility: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for Expected Utility: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This expected-utility anchor is strong because it explicitly describes a lottery with probability P and probability one minus P. The lecture is making uncertainty into a mathematical object. The teaching point is that a choice under risk is not evaluated by one consequence, but by a probability-weighted package of possible consequences.",
+    "evidence_boundary": "The span supports the lottery/probability setup. It does not contain the full expected-utility formula, but it gives the transcript basis for why probabilities must enter the payoff comparison."
   },
   {
     "id": "ev-expected_utility-02",
@@ -186,7 +196,9 @@
       "ranking_outcomes"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Expected Utility: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Expected Utility: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This Bayesian-games anchor shows the probability language reappearing when a type may be hard or deceptively hard. That reuse matters because expected utility is the arithmetic of choosing under hidden information. The player is not facing one known state; they are weighting possible states by probabilities before acting.",
+    "evidence_boundary": "The span supports reuse of probability-weighted reasoning in Bayesian games. It is a partial anchor for expected utility, not a standalone derivation of Bayesian Nash equilibrium."
   },
   {
     "id": "ev-strategic_form_games-01",
@@ -215,8 +227,10 @@
     "supports_subthemes": [
       "tables_and_trees"
     ],
-    "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Strategic Form Games: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "confidence": "weak",
+    "conceptual_payload": "The payload is the setup move for Strategic Form Games: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This representation anchor is imperfect but still useful because it names players as part of assigning structure to a game. The transcript window is actually tree-oriented, mentioning nodes, which shows the broader representation lecture building the ingredients of formal games. The teaching payload is that players are not background characters; they are assigned decision roles in the model.",
+    "evidence_boundary": "This is a weak-to-moderate support record for strategic form specifically because the local window leans toward extensive-form representation. It supports player specification more than payoff-matrix structure."
   },
   {
     "id": "ev-strategic_form_games-02",
@@ -246,7 +260,9 @@
       "tables_and_trees"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Strategic Form Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Strategic Form Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This second anchor is weak for strategic form but useful as a contrast. The window distinguishes beliefs about nature from beliefs about other players. That distinction helps explain why strategic-form games are different from one-person decision problems: once other players enter, beliefs and payoffs depend on strategic interaction rather than only exogenous uncertainty.",
+    "evidence_boundary": "The span should be marked as boundary evidence for strategic form. It supports the move from individual decision to strategic interaction, but not the full normal-form definition."
   },
   {
     "id": "ev-extensive_form_games-01",
@@ -277,7 +293,9 @@
       "tables_and_trees"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Extensive Form Games: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for Extensive Form Games: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This extensive-form anchor is strong because it uses node and history together. The transcript says that at one node nothing has happened and at another node the history is that player one chose C. That is the core teaching payload of a game tree: nodes are not just dots; they summarize histories of play.",
+    "evidence_boundary": "The span supports the history/node structure of extensive form. It does not by itself cover information sets or backward induction, so those claims require other evidence or synthesis."
   },
   {
     "id": "ev-extensive_form_games-02",
@@ -307,7 +325,9 @@
       "tables_and_trees"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Extensive Form Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Extensive Form Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This backward-induction lecture anchor supports extensive form through perfect-information nodes. The transcript says that when the model reaches a node, the player knows they are at that node and can compute optimal play. That is the bridge from representation to solving: the tree must encode what is known at each point.",
+    "evidence_boundary": "The span supports perfect-information extensive-form reasoning. It should not be generalized to imperfect-information trees where the player may not know which node has been reached."
   },
   {
     "id": "ev-dominance-01",
@@ -404,8 +424,10 @@
     "supports_subthemes": [
       "eliminating_bad_moves"
     ],
-    "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Iterated Deletion: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "confidence": "weak",
+    "conceptual_payload": "The payload is the setup move for Iterated Deletion: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This opening dominance anchor is mostly a lecture-framing record. The instructor says the course is starting to analyze games, which is where deletion and dominance tools enter. Its teaching use is to locate iterated deletion inside the transition from representing games to actively reasoning through them.",
+    "evidence_boundary": "This is weak evidence for iterated deletion specifically. It supports lecture placement, not the deletion procedure; stronger support comes from records about dominated strategies and rationality."
   },
   {
     "id": "ev-iterated_deletion-02",
@@ -435,7 +457,9 @@
       "eliminating_bad_moves"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Iterated Deletion: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Iterated Deletion: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This rationalizability anchor is much stronger: the transcript says players do not play strictly dominated strategies and know their opponents do not play them. That is the recursive idea behind deletion. The evidence shows how a dominance assumption becomes a higher-order reasoning process rather than a one-time cleanup step.",
+    "evidence_boundary": "The span supports the rationality logic behind deletion. It does not specify a full deletion sequence, so examples with actual strategy removal remain synthesis unless separately anchored."
   },
   {
     "id": "ev-rationalizability-01",
@@ -465,7 +489,9 @@
       "eliminating_bad_moves"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Rationalizability: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for Rationalizability: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This anchor directly supports rationalizability because it begins by recalling what a belief is: a belief about the strategies chosen by all other players. That is exactly the object rationalizability needs. A strategy survives when it can be a best response to some belief about others strategies.",
+    "evidence_boundary": "The span supports the belief component of rationalizability. It does not complete the best-response test inside the window, so it is evidence for one necessary ingredient rather than the whole concept."
   },
   {
     "id": "ev-rationalizability-02",
@@ -496,7 +522,9 @@
       "eliminating_bad_moves"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Rationalizability: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Rationalizability: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This early belief anchor is useful because it shows beliefs represented by a probability P in an individual decision example. The later rationalizability lecture generalizes that move from nature to other players. The teaching payload is that beliefs are probability objects used before the true state or opponent action is known.",
+    "evidence_boundary": "This is cross-topic support. It anchors belief representation, not rationalizability itself, so the connection to rationalizable strategies is synthesis across lectures."
   },
   {
     "id": "ev-best_response-01",
@@ -526,7 +554,9 @@
       "stable_predictions"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Best Response: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for Best Response: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This rationalizability anchor is very strong for best response. The transcript says the player must be playing a best response to some belief, and that this requirement imposes restriction. That is the first-principles point: belief alone is not enough; the action must be optimal under the belief.",
+    "evidence_boundary": "The span supports best response under beliefs. It does not require beliefs to be mutually consistent across players, so it should not be overread as Nash equilibrium evidence."
   },
   {
     "id": "ev-best_response-02",
@@ -556,7 +586,9 @@
       "stable_predictions"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Best Response: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Best Response: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This anchor supports best response by emphasizing optimal behavior given an explanation or given beliefs. It is useful because it separates rationalizability from equilibrium: the player has an optimizing explanation, but there is no requirement that everyone explanations line up.",
+    "evidence_boundary": "The span supports conditional optimality. It is not a full best-response calculation and does not identify a payoff-maximizing action in a concrete matrix."
   },
   {
     "id": "ev-nash_equilibrium-01",
@@ -654,7 +686,9 @@
       "stable_predictions"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Mixed Strategies: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for Mixed Strategies: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This Nash lecture anchor is strong because it explicitly identifies a mixed strategy and immediately glosses it as randomizing. The transcript shows the course introducing randomization as an answer to a strategic problem, not as accidental noise. That supports the page’s claim that a probability distribution can be a deliberate strategy.",
+    "evidence_boundary": "The span supports the basic meaning and use of mixed strategies. It does not derive equilibrium mixing probabilities or the indifference condition by itself."
   },
   {
     "id": "ev-mixed_strategies-02",
@@ -684,7 +718,9 @@
       "stable_predictions"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Mixed Strategies: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Mixed Strategies: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This zero-sum anchor supports the indifference logic behind mixing. The transcript mentions being indifferent between a sure amount and a lottery, which is the same expected-utility idea needed when mixed strategies make opponents indifferent. It helps connect randomization to utility comparison under risk.",
+    "evidence_boundary": "The span is indirect for mixed strategies because it is about lottery indifference. It supports the mathematical intuition, not a full mixed-equilibrium derivation."
   },
   {
     "id": "ev-zero_sum_games-01",
@@ -714,7 +750,9 @@
       "conflict_and_security"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Zero-Sum Games: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for Zero-Sum Games: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This zero-sum anchor is valuable because the instructor explicitly warns that many things are not zero-sum and that game theory moved beyond zero-sum games. That boundary is pedagogically important. It prevents students from treating every conflict as exact payoff opposition.",
+    "evidence_boundary": "The span supports the boundary of the concept more than the formal definition. It is evidence for when not to apply zero-sum reasoning."
   },
   {
     "id": "ev-zero_sum_games-02",
@@ -744,7 +782,9 @@
       "conflict_and_security"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Zero-Sum Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Zero-Sum Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This Nash lecture anchor gives the informal bridge into zero-sum games: whoever is losing wants to change behavior to win, and the instructor says this is zero-sum in the formal sense to be discussed later. It supports zero-sum as a special conflict structure introduced before the dedicated lecture.",
+    "evidence_boundary": "The span supports setup and preview. The formal payoff condition is not fully developed in this window, so detailed minimax implications come from later lecture material."
   },
   {
     "id": "ev-minimax-01",
@@ -775,7 +815,9 @@
       "conflict_and_security"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Minimax: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for Minimax: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This minimax anchor is strong because it states the nested maximum and minimum logic in ordinary words: one player chooses a strategy that makes the other loss as large as possible. The transcript window is exactly the adversarial optimization pattern the concept page explains.",
+    "evidence_boundary": "The span supports minimax structure. It does not by itself solve a complete zero-sum game or prove a minimax theorem."
   },
   {
     "id": "ev-minimax-02",
@@ -804,8 +846,10 @@
     "supports_subthemes": [
       "conflict_and_security"
     ],
-    "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Minimax: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "confidence": "weak",
+    "conceptual_payload": "The payload is the follow-through move for Minimax: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This imperfect-competition anchor is weak for minimax. It mentions taking a maximum of one minus P and zero, but that is a nonnegative demand expression rather than adversarial max-min reasoning. Its value is only as a reminder that max operators appear elsewhere with different meanings.",
+    "evidence_boundary": "This record should be treated as weak boundary evidence for minimax. It does not support the game-theoretic minimax concept and should not be used as a primary anchor."
   },
   {
     "id": "ev-backward_induction-01",
@@ -867,7 +911,9 @@
       "credible_time_paths"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Backward Induction: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Backward Induction: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This representation anchor supports backward induction by defining terminal nodes and decision nodes. Backward induction needs that distinction: terminal nodes provide payoffs, while decision nodes are where choices are made. The transcript is evidence for the tree structure that makes solving from the end possible.",
+    "evidence_boundary": "The span supports the ingredients of backward induction, not the solving procedure itself. It should be paired with Lecture 8 evidence for the actual backward-solving method."
   },
   {
     "id": "ev-subgame_perfection-01",
@@ -931,7 +977,9 @@
       "credible_time_paths"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Subgame-Perfect Nash Equilibrium: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Subgame-Perfect Nash Equilibrium: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This backward-induction anchor is strong for subgame perfection because it asks whether flooding the market is a credible threat if firm two loses money by doing it. That is the entire motivation for SPNE in plain language: threats matter only if carrying them out later is optimal.",
+    "evidence_boundary": "The span supports the credibility problem behind subgame perfection. It does not name SPNE in the window, but it supplies the economic reason the refinement is needed."
   },
   {
     "id": "ev-one_shot_deviation-01",
@@ -962,7 +1010,9 @@
       "credible_time_paths"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for One-Shot Deviation Principle: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for One-Shot Deviation Principle: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This anchor introduces the one-shot deviation principle as the key technical tool of the lecture. That phrasing is useful because it positions the principle as a verification method for dynamic strategies. The instructor’s promise to go into detail later marks this as setup evidence for the concept.",
+    "evidence_boundary": "The span supports lecture introduction and importance. It does not state the theorem conditions or demonstrate a deviation check. The local span names the tool and its role, but later transcript material is needed for the exact theorem statement, assumptions, and worked verification of a strategy profile."
   },
   {
     "id": "ev-one_shot_deviation-02",
@@ -992,7 +1042,9 @@
       "credible_time_paths"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for One-Shot Deviation Principle: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for One-Shot Deviation Principle: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This Nash lecture anchor defines profitable deviation in utility terms. That is important for one-shot deviation because a deviation is not merely a different action; it is a change that gives strictly higher utility. The record supports the payoff criterion used later in the dynamic shortcut.",
+    "evidence_boundary": "The span supports the meaning of profitable deviation. It is not specific to one-shot deviations in dynamic games, so it should be treated as prerequisite evidence."
   },
   {
     "id": "ev-bargaining-01",
@@ -1023,7 +1075,9 @@
       "credible_time_paths"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Bargaining: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for Bargaining: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This negotiation anchor gives the everyday setup for bargaining: two parties negotiate, one makes an offer, and the other responds. The transcript supports the concept’s plain-language foundation before any formal alternating-offer or surplus-division model is introduced.",
+    "evidence_boundary": "The span supports bargaining setup and offer-response structure. It does not yet specify payoffs, outside options, discounting, or equilibrium. The record should therefore be read as an everyday entry point into bargaining, not as evidence for a solved bargaining equilibrium or a particular division rule."
   },
   {
     "id": "ev-bargaining-02",
@@ -1055,7 +1109,9 @@
       "credible_time_paths"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Bargaining: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Bargaining: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This later bargaining anchor is stronger because it connects the last opportunity to negotiate with bargaining power. The transcript shows how timing changes leverage: whoever can make an offer in the final negotiation period may have power because no later round remains to correct the split.",
+    "evidence_boundary": "The span supports timing and bargaining power. It does not solve the full bargaining model, but it anchors why last-period structure matters."
   },
   {
     "id": "ev-finitely_repeated_games-01",
@@ -1086,7 +1142,9 @@
       "future_as_discipline"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Finitely Repeated Games: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for Finitely Repeated Games: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This finite repeated-games anchor is strong because it states the surprising result: in the finitely repeated game, the unique subgame-perfect Nash equilibrium is always the one-shot logic. That is the endpoint-unraveling lesson the concept page teaches.",
+    "evidence_boundary": "The span supports the finite-horizon result at a high level. It does not show the full backward-induction proof, so the proof remains synthesis from the lecture sequence."
   },
   {
     "id": "ev-finitely_repeated_games-02",
@@ -1116,7 +1174,9 @@
       "future_as_discipline"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Finitely Repeated Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Finitely Repeated Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This backward-induction anchor previews repeated games as a way to make threats credible. It is useful because it shows the course linking credibility failures in one-shot dynamic games to future repeated interaction. The repeated game is introduced as the later mechanism that may repair credibility.",
+    "evidence_boundary": "The span supports cross-lecture motivation. It is not a finite repeated-game theorem statement and should be treated as preview evidence."
   },
   {
     "id": "ev-infinitely_repeated_games-01",
@@ -1179,7 +1239,9 @@
       "future_as_discipline"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Infinitely Repeated Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Infinitely Repeated Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This negotiation anchor introduces delta as the discount factor, which is one of the central objects in infinite repetition. The transcript says each period is weighted, giving the intuitive reason future payoffs can be compared with current payoffs. That is the mathematical bridge from patience to incentive constraints.",
+    "evidence_boundary": "The span supports discount-factor interpretation. It does not itself distinguish finite from infinite repetition or prove cooperation, so those pieces need other anchors."
   },
   {
     "id": "ev-folk_theorem-01",
@@ -1240,8 +1302,10 @@
     "supports_subthemes": [
       "future_as_discipline"
     ],
-    "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Folk Theorem: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "confidence": "weak",
+    "conceptual_payload": "The payload is the follow-through move for Folk Theorem: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This early notation anchor is weak but useful for mathematical continuity. The instructor says delta notation will be used throughout the course and warns students not to be scared by it. Later folk theorem work relies on delta as the weight on future payoffs, so this record anchors the notation before repeated games appear.",
+    "evidence_boundary": "This is weak support for the folk theorem itself. It supports delta notation, not the theorem’s feasibility, individual rationality, or punishment conditions."
   },
   {
     "id": "ev-implicit_cartels-01",
@@ -1271,7 +1335,9 @@
       "future_as_discipline"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Implicit Cartels: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for Implicit Cartels: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This cartel lecture anchor introduces cartel examples using territorial division. Even though the example is not yet the formal repeated-price model, it grounds the lecture in the idea that cartels allocate markets and avoid direct competition. The teaching payload is that cartel behavior is strategic organization of competition.",
+    "evidence_boundary": "The span supports application context for cartels. It does not by itself establish tacit collusion, repeated-game incentives, or price-war punishment."
   },
   {
     "id": "ev-implicit_cartels-02",
@@ -1300,8 +1366,10 @@
     "supports_subthemes": [
       "future_as_discipline"
     ],
-    "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Implicit Cartels: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "confidence": "weak",
+    "conceptual_payload": "The payload is the follow-through move for Implicit Cartels: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This record is weak for implicit cartels. The transcript uses the word implicit for an assumption in preference transitivity, not for cartel behavior. Its only value is to mark that the automatic keyword match was misleading and that the evidence should not be overclaimed.",
+    "evidence_boundary": "This should be treated as weak evidence and a review warning. It does not support implicit cartel theory; the cartel lecture anchor should carry the concept instead."
   },
   {
     "id": "ev-bayesian_games-01",
@@ -1364,7 +1432,9 @@
       "hidden_types"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Bayesian Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Bayesian Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This representation anchor is useful because it says that if the game start is unknown, there must be some prior move that was not observed. That is the extensive-form intuition behind hidden information: uncertainty can be modeled as an unobserved earlier move by nature.",
+    "evidence_boundary": "The span supports prior/unobserved-move representation. It does not define a full Bayesian game with type-contingent strategies, but it explains where priors enter."
   },
   {
     "id": "ev-types_and_beliefs-01",
@@ -1395,7 +1465,9 @@
       "hidden_types"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Types And Beliefs: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for Types And Beliefs: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This anchor overlaps with Bayesian games because it is the clearest transcript window for types. The hard type and easy type show that a type is a hidden condition changing interpretation. The important teaching point is that type is not a label after the fact; it is part of the player’s strategic situation.",
+    "evidence_boundary": "The span supports type language strongly. It does not fully separate prior beliefs from types in this window, so belief mechanics need the companion Bayes-rule evidence."
   },
   {
     "id": "ev-types_and_beliefs-02",
@@ -1426,7 +1498,9 @@
       "hidden_types"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Types And Beliefs: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Types And Beliefs: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This PBE anchor is strong for beliefs because it says the belief is pinned down by Bayes rule. That is exactly the discipline the concept page needs: beliefs are not arbitrary whenever the observed path gives enough probability information to update them.",
+    "evidence_boundary": "The span supports Bayes-rule discipline for beliefs. It does not cover all off-path cases where Bayes rule may not pin beliefs down."
   },
   {
     "id": "ev-bayesian_nash_equilibrium-01",
@@ -1456,7 +1530,9 @@
       "hidden_types"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Bayesian Nash Equilibrium: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for Bayesian Nash Equilibrium: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This BNE applications anchor explicitly says the goal is solving for Bayes-Nash equilibrium. It is useful because it marks the transition from defining Bayesian games to computing equilibrium behavior under type uncertainty. The transcript also hints that the hard part is often the setup, which matches the concept page’s emphasis.",
+    "evidence_boundary": "The span supports lecture objective and BNE framing. It does not itself give the full equilibrium solution in the local window."
   },
   {
     "id": "ev-bayesian_nash_equilibrium-02",
@@ -1486,7 +1562,9 @@
       "hidden_types"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Bayesian Nash Equilibrium: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Bayesian Nash Equilibrium: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This representation anchor supports the expected-payoff arithmetic behind Bayesian Nash. The transcript combines utilities with one-half weights to produce each player’s expected payoff from a strategy profile. That is the calculation BNE uses once types or uncertainty enter.",
+    "evidence_boundary": "The span supports expected-payoff computation. It is prerequisite evidence for BNE rather than a direct BNE definition. It helps explain the arithmetic behind type-contingent optimization, but the Bayes-Nash equilibrium definition and fixed-point requirement come from the later BNE lecture."
   },
   {
     "id": "ev-auctions-01",
@@ -1550,7 +1628,9 @@
       "rules_for_bidding"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Auctions: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Auctions: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This early auction-like classroom anchor is useful as a behavioral setup: students discuss bids they were happy with or thought were mistakes. It grounds auctions in the practical experience of choosing a bid and then evaluating whether that bid was strategically good.",
+    "evidence_boundary": "The span supports bidding as an action and reflection on mistakes. It does not establish a formal auction mechanism, valuation model, or equilibrium bidding rule."
   },
   {
     "id": "ev-revenue_equivalence-01",
@@ -1580,7 +1660,9 @@
       "rules_for_bidding"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Revenue Equivalence: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for Revenue Equivalence: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This revenue-equivalence anchor is strong because it decomposes expected payment into probability of winning times expected payment conditional on winning. That is the kind of object revenue equivalence compares across auction formats. The teaching payload is that revenue is an expectation over strategic winning and payment events.",
+    "evidence_boundary": "The span supports expected-payment decomposition. It does not state the full revenue-equivalence theorem or its assumptions. It anchors the payment object that the theorem compares, while allocation assumptions, bidder symmetry, and boundary conditions require the surrounding revenue-equivalence lecture."
   },
   {
     "id": "ev-revenue_equivalence-02",
@@ -1610,7 +1692,9 @@
       "rules_for_bidding"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Revenue Equivalence: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Revenue Equivalence: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This auction anchor supports revenue equivalence by contrasting first-price and second-price auctions through the payment rule. The transcript says the difference is the payment rule, which is exactly why bidders alter strategies and why revenue comparison must account for equilibrium responses.",
+    "evidence_boundary": "The span supports the payment-rule contrast. It does not prove equivalence; it supplies one mechanism difference that the theorem later analyzes."
   },
   {
     "id": "ev-ad_auctions-01",
@@ -1641,7 +1725,9 @@
       "rules_for_bidding"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Ad Auctions: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for Ad Auctions: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This ad-auction anchor is strong because it raises pay per click and unpopular ads. That is a platform-design issue absent from simple auctions: the platform cares not just about bids but about clicks and ad relevance. The transcript captures why ranking ads is more than selling a slot to the highest bidder.",
+    "evidence_boundary": "The span supports click-based platform incentives. It does not specify the full scoring or pricing rule used in an ad auction."
   },
   {
     "id": "ev-ad_auctions-02",
@@ -1671,7 +1757,9 @@
       "rules_for_bidding"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Ad Auctions: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Ad Auctions: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This BNE applications anchor gives real-world context for ad auctions by mentioning ads on websites and management through Google and publishers. It supports the course’s move from abstract auction models to platform-mediated advertising markets. The note is application context rather than mechanism proof: it tells readers why ad auctions matter as an economic institution before the later ad-auction lecture adds click, rank, quality, and payment details.",
+    "evidence_boundary": "The span supports application context. It is not enough to anchor the ad-auction mechanism by itself because it does not discuss bids, clicks, quality, or pricing in this window."
   },
   {
     "id": "ev-perfect_bayesian_equilibrium-01",
@@ -1701,7 +1789,9 @@
       "hidden_types"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Perfect Bayesian Equilibrium: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept."
+    "conceptual_payload": "The payload is the setup move for Perfect Bayesian Equilibrium: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "transcript_teaching_note": "This PBE anchor explicitly names perfect Bayesian equilibrium and shows the term being assembled from perfect and Bayes. That matters pedagogically because the concept combines dynamic credibility with Bayesian belief discipline. The transcript marks PBE as a hybrid solution concept rather than a disconnected new label.",
+    "evidence_boundary": "The span supports naming and conceptual lineage. It does not state all PBE conditions in this window. It is evidence for why the name combines credibility and Bayesian reasoning, while the formal strategy-belief assessment and consistency requirements need the companion PBE/signaling anchors."
   },
   {
     "id": "ev-perfect_bayesian_equilibrium-02",
@@ -1731,7 +1821,9 @@
       "hidden_types"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Perfect Bayesian Equilibrium: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Perfect Bayesian Equilibrium: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This signaling lecture anchor is strong because it defines an assessment as a strategy profile together with a belief system. That is one of the clearest transcript supports for PBE: the equilibrium object must include what players do and what they believe after histories or signals.",
+    "evidence_boundary": "The span supports the strategy-plus-belief-system object. It does not alone verify sequential rationality or Bayes consistency for a particular signaling equilibrium."
   },
   {
     "id": "ev-signaling-01",
@@ -1793,8 +1885,10 @@
     "supports_subthemes": [
       "messages_and_shared_awareness"
     ],
-    "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Signaling: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "confidence": "weak",
+    "conceptual_payload": "The payload is the follow-through move for Signaling: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This individual decision anchor is indirect for signaling but useful for receiver dependence. The window says the best action depends on what the goalie or tennis receiver plans to do. That supports the broader idea that a receiver’s anticipated response changes the sender’s strategic action, which later signaling models formalize under hidden information.",
+    "evidence_boundary": "The span is weak for signaling specifically. It supports strategic dependence on a receiver, not costly type revelation or belief updating."
   },
   {
     "id": "ev-cheap_talk-01",
@@ -1856,8 +1950,10 @@
     "supports_subthemes": [
       "messages_and_shared_awareness"
     ],
-    "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Cheap Talk: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "confidence": "weak",
+    "conceptual_payload": "The payload is the follow-through move for Cheap Talk: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This anchor is indirect for cheap talk but useful for the receiver side of communication games. It shows that an action can depend on what a receiver is planning to do. Cheap talk later adds a sender message before the receiver acts, but this window only supports the receiver-response pressure.",
+    "evidence_boundary": "The span is weak for cheap talk specifically. It does not involve costless messages, sender incentives, or payoff-aligned communication. It should remain a weak support record: useful for receiver-response intuition, but not evidence for costless messages or truthful communication without the main cheap-talk lecture anchor."
   },
   {
     "id": "ev-common_knowledge-01",
@@ -1920,6 +2016,8 @@
       "messages_and_shared_awareness"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Common Knowledge: the companion span shows how the same idea is reused, bounded, or connected after the initial setup."
+    "conceptual_payload": "The payload is the follow-through move for Common Knowledge: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "transcript_teaching_note": "This rationalizability anchor is strong for the knowledge-recursion side of common knowledge. The transcript mentions higher-order knowledge of rationality and first-order knowledge of rationality. That is the same ladder of reasoning common knowledge formalizes, applied here to rationality assumptions.",
+    "evidence_boundary": "The span supports higher-order knowledge, not common knowledge of a particular public event. It should be used for the recursion primitive rather than a full coordination application."
   }
 ]
