@@ -121,6 +121,86 @@
   <h3>Symbol By Symbol</h3><p>E is the event; K means known by the players; repeated K&#x27;s represent higher-order knowledge.</p>
   <h3>Where It Appears</h3><p>Knowledge recursion appears most directly in common knowledge, and indirectly in iterated deletion, rationalizability, equilibrium selection, and communication because players reason about others’ reasoning.</p>
   <h3>Why Misuse Breaks The Model</h3><p>The misuse is treating widespread knowledge as common knowledge. If players are unsure whether others saw the same fact, the recursive chain can break and coordination may fail.</p>
+</article><section class="page-head"><h1>Derivation Cards</h1><p>Core equations unpacked as plain-language operations.</p></section><article class="wide-card derivation-card" id="expected_utility">
+  <p class="eyebrow">belief</p>
+  <h2>Expected Utility</h2>
+  <p>A player chooses before knowing which state of the world is true. Instead of pretending one state is certain, the model weighs each possible payoff by how likely that state seems.</p>
+  <blockquote>E[u(a, theta)] = sum_theta p(theta) u(a, theta)</blockquote>
+  <h3>Derivation In Plain English</h3>
+  <ol><li>List the possible hidden states, such as low value and high value.</li><li>Attach a probability to each state. These probabilities must add up to one.</li><li>Compute the payoff from the action in each state.</li><li>Multiply each payoff by its probability and add the pieces.</li></ol>
+  <h3>Symbol By Symbol</h3><p>a is the action being evaluated. theta is the unknown state or type. p(theta) is the probability of that state. u(a, theta) is the payoff if action a is chosen and theta is true. The summation adds the probability-weighted payoffs.</p>
+  <h3>Why This Relation Matters</h3><p>This is the bridge from uncertainty to choice. Bayesian games, auctions, and screening problems all need a way to compare actions before hidden information is revealed.</p>
+  <h3>Common Misread</h3><p>The formula is not saying the average state actually happens. It is a decision rule for choosing under uncertainty.</p>
+</article><article class="wide-card derivation-card" id="best_response">
+  <p class="eyebrow">best response</p>
+  <h2>Best Response</h2>
+  <p>A move is not good by itself. It is good against some belief or opponent action. Best response asks what player i should do after holding the rest of the situation fixed.</p>
+  <blockquote>BR_i(a_-i) = argmax_a u_i(a, a_-i)</blockquote>
+  <h3>Derivation In Plain English</h3>
+  <ol><li>Fix what the other players are doing.</li><li>Try each available action for player i.</li><li>Compute player i&#x27;s payoff for each candidate action.</li><li>Keep the action or actions with the highest payoff.</li></ol>
+  <h3>Symbol By Symbol</h3><p>BR_i is player i&#x27;s best-response set. a_-i means the actions of everyone except player i. argmax means the action that makes the payoff as large as possible. u_i is player i&#x27;s payoff function.</p>
+  <h3>Why This Relation Matters</h3><p>Best response is the local engine behind Nash equilibrium, rationalizability, mixed strategies, Bayesian Nash equilibrium, and many deviation checks.</p>
+  <h3>Common Misread</h3><p>A best response is always conditional. If the opponent action or belief changes, the best response may change too.</p>
+</article><article class="wide-card derivation-card" id="nash_equilibrium">
+  <p class="eyebrow">mutual consistency</p>
+  <h2>Nash Equilibrium</h2>
+  <p>A proposed prediction must survive every player asking whether they alone would rather switch. Nash equilibrium is the point where all those one-person checks pass at once.</p>
+  <blockquote>a_i in BR_i(a_-i) for every player i</blockquote>
+  <h3>Derivation In Plain English</h3>
+  <ol><li>Start with a proposed action profile.</li><li>For each player, hold the other players&#x27; actions fixed.</li><li>Check whether the player&#x27;s assigned action is a best response.</li><li>If every player passes the check, the profile is a Nash equilibrium.</li></ol>
+  <h3>Symbol By Symbol</h3><p>a_i is player i&#x27;s chosen action. a_-i is everyone else&#x27;s action. BR_i(a_-i) is the set of best responses against those other actions. The phrase for every player means no one is exempt from the deviation check.</p>
+  <h3>Why This Relation Matters</h3><p>It turns strategic prediction into a mutual consistency test. The result can be stable even when it is inefficient, unfair, or socially bad.</p>
+  <h3>Common Misread</h3><p>Equilibrium does not mean the best overall outcome. It means no single player wants to move alone under the modeled payoffs.</p>
+</article><article class="wide-card derivation-card" id="backward_induction">
+  <p class="eyebrow">backward recursion</p>
+  <h2>Backward Induction</h2>
+  <p>A threat or promise matters only if it will still be attractive later. Backward induction solves later choices first and uses them to interpret earlier choices.</p>
+  <blockquote>V(node) = max_action V(next node)</blockquote>
+  <h3>Derivation In Plain English</h3>
+  <ol><li>Go to the final decision points in the game tree.</li><li>At each final decision, choose the branch with the best payoff for the player moving there.</li><li>Replace that decision point with the value of the chosen continuation.</li><li>Move one step earlier and repeat until the start of the tree is reached.</li></ol>
+  <h3>Symbol By Symbol</h3><p>V(node) is the value of arriving at a decision point. max_action means choose the action with the highest continuation value. next node is the future decision point or outcome reached by that action.</p>
+  <h3>Why This Relation Matters</h3><p>It separates credible future behavior from empty threats. Dynamic games, bargaining, finite repetition, and subgame perfection all depend on this recursive logic.</p>
+  <h3>Common Misread</h3><p>Solving backward is only as good as the tree. If the tree leaves out information, renegotiation, or hidden types, the backward calculation can be precise but misleading.</p>
+</article><article class="wide-card derivation-card" id="discounted_sum">
+  <p class="eyebrow">discounting</p>
+  <h2>Discounted Payoff Sum</h2>
+  <p>Repeated interaction asks whether future consequences can discipline today&#x27;s temptation. The discount factor says how strongly the future counts today.</p>
+  <blockquote>U = u_0 + delta u_1 + delta^2 u_2 + ...</blockquote>
+  <h3>Derivation In Plain English</h3>
+  <ol><li>Write the payoff from the current period.</li><li>Write the payoff from each future period.</li><li>Multiply each future payoff by an extra power of delta for each step into the future.</li><li>Add current and discounted future payoffs into one present-value comparison.</li></ol>
+  <h3>Symbol By Symbol</h3><p>U is total discounted payoff. u_0 is payoff now. u_1 is next period&#x27;s payoff. delta is between zero and one and measures patience. delta squared means a payoff two periods away receives two rounds of discounting.</p>
+  <h3>Why This Relation Matters</h3><p>Cooperation, cartel discipline, and bargaining delay all depend on whether discounted future gains or losses outweigh current temptation.</p>
+  <h3>Common Misread</h3><p>The formula does not make future punishment automatically powerful. If delta is small, future consequences may barely matter.</p>
+</article><article class="wide-card derivation-card" id="bayes_rule">
+  <p class="eyebrow">belief</p>
+  <h2>Bayes Rule</h2>
+  <p>After observing an action or signal, a player revises what they believe about hidden type. Bayes rule is the bookkeeping that turns prior belief plus observed evidence into posterior belief.</p>
+  <blockquote>P(type | signal) = P(signal | type) P(type) / P(signal)</blockquote>
+  <h3>Derivation In Plain English</h3>
+  <ol><li>Start with the prior probability of the type.</li><li>Ask how likely the observed signal would be if that type were true.</li><li>Multiply prior probability by signal likelihood.</li><li>Normalize by the total probability of seeing that signal across all possible types.</li></ol>
+  <h3>Symbol By Symbol</h3><p>P(type | signal) is the updated belief after seeing the signal. P(signal | type) is how likely that signal is for that type. P(type) is the prior belief. P(signal) rescales all type weights so the updated probabilities add to one.</p>
+  <h3>Why This Relation Matters</h3><p>PBE, signaling, screening, and Bayesian games need beliefs that respond to observations rather than floating freely.</p>
+  <h3>Common Misread</h3><p>Bayes rule does not tell you off-path beliefs when the observed signal has zero probability under the proposed strategy. That is why dynamic information games need careful belief discipline.</p>
+</article><article class="wide-card derivation-card" id="auction_expected_payment">
+  <p class="eyebrow">incentive compatibility</p>
+  <h2>Auction Expected Payment</h2>
+  <p>A bidder does not only ask what they pay if they win. They also ask how likely the bid is to win. The expected payment combines those two pieces.</p>
+  <blockquote>expected payment = payment if win x probability of winning</blockquote>
+  <h3>Derivation In Plain English</h3>
+  <ol><li>Pick a bid.</li><li>Find what the bidder would pay if that bid wins under the auction rule.</li><li>Find the probability that this bid wins against rival bids.</li><li>Multiply the payment-if-win by the probability of winning.</li></ol>
+  <h3>Symbol By Symbol</h3><p>The payment-if-win comes from the auction format. The probability of winning comes from beliefs about rival bids or values. Their product is the average payment before knowing whether this bid wins.</p>
+  <h3>Why This Relation Matters</h3><p>Revenue equivalence, bid shading, first-price auctions, and ad auctions all require separating the price paid from the chance of paying it.</p>
+  <h3>Common Misread</h3><p>A higher bid can raise both the chance of winning and the payment made when winning. The bidder&#x27;s incentive depends on both effects, not one alone.</p>
+</article><article class="wide-card derivation-card" id="common_knowledge_recursion">
+  <p class="eyebrow">knowledge recursion</p>
+  <h2>Common Knowledge Recursion</h2>
+  <p>Coordination can require more than everyone privately knowing the same fact. Players may need to know that others know, and know that others know that others know.</p>
+  <blockquote>E, KE, KKE, KKKE, ...</blockquote>
+  <h3>Derivation In Plain English</h3>
+  <ol><li>Start with an event E.</li><li>Add the statement that everyone knows E.</li><li>Add the statement that everyone knows that everyone knows E.</li><li>Continue the chain without stopping at any finite level.</li></ol>
+  <h3>Symbol By Symbol</h3><p>E is the event. K is the knowledge operator. KE means everyone knows E. KKE means everyone knows that everyone knows E. The dots mean the chain continues indefinitely.</p>
+  <h3>Why This Relation Matters</h3><p>Public announcements, coordination, rationalizability, and equilibrium reasoning often depend on shared awareness rather than private information alone.</p>
+  <h3>Common Misread</h3><p>A fact being true or widely known is not enough. Common knowledge requires the recursive publicness that lets players reason about other players&#x27; reasoning.</p>
 </article></main>
 </body>
 </html>
