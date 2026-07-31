@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lecture 5: Nash Equilibrium · MIT Game Theory Concept Lab</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+    <nav><a class="" href="../index.html">Overview</a><a class="active" href="../lectures.html">Lectures</a><a class="" href="../concepts.html">Concepts</a><a class="" href="../themes.html">Themes</a><a class="" href="../families.html">Method Families</a><a class="" href="../primitives.html">Primitives</a><a class="" href="../evidence.html">Evidence</a></nav>
+  </header>
+  <main><section class="page-head">
+  <p class="eyebrow">Lecture 5 · Equilibrium As Mutual Consistency, Time, Threats, And Credibility</p>
+  <h1>Lecture 5: Nash Equilibrium</h1>
+  <p>Closes the best-response loop: every player must be choosing optimally given the others&#x27; choices.</p>
+  <p><a class="button" href="https://www.youtube.com/watch?v=ftCXguW2k4o">Open YouTube lecture</a></p>
+</section>
+<figure class="learning-diagram lecture-flow">
+  <figcaption>Lecture Study Map</figcaption>
+  <div class="flow-steps"><div class="flow-step"><span>Problem</span><p>Closes the best-response loop: every player must be choosing optimally given the others&#x27; choices.</p></div><div class="flow-step"><span>Watch</span><p>Watch for Nash being used as a stability test, not a welfare claim. The central question is whether anyone wants to deviate alone.</p></div><div class="flow-step"><span>Math</span><p>The mathematical object has to exist because “good strategy” is incomplete without a condition. The best-response set stores the actions that maximize payoff given a named opponent action or belief. It is the reusable local object behind equilibrium, auctions, and dynamic deviation checks. The mathematical object has to exist because strategic prediction is circular. Each player’s best action depends on the others’ actions, so the model needs a profile where all those conditional choices fit together. Nash equilibrium is the formal closure of the best-response loop. The mathematical object has to exist because pure actions cannot always carry stable predictions. A probability distribution over actions lets the player control predictability itself. The distribution becomes the strategy because it determines opponents’ expected payoffs before the random action is realized. The mathematical object has to exist because exact conflict has special structure. When one player’s payoff is the negative of the other’s, the model can collapse two objectives into one value seen from opposite sides. That structure justifies security and minimax tools that would be too strong in general games. The mathematical object has to exist because dynamic strategies are too large to compare naively. A local deviation test gives the course a finite, teachable way to verify optimality under the right assumptions. It turns the huge space of possible strategy changes into a sequence of one-history checks.</p></div><div class="flow-step"><span>Evidence</span><p>5 transcript evidence anchors connect this lecture to 5 atlas concepts.</p></div></div>
+</figure>
+<section class="treatment">
+  <h2>What This Lecture Teaches</h2>
+  <p>Closes the best-response loop: every player must be choosing optimally given the others&#x27; choices.</p>
+  <h2>Where The Math Enters</h2>
+  <p>The mathematical object has to exist because “good strategy” is incomplete without a condition. The best-response set stores the actions that maximize payoff given a named opponent action or belief. It is the reusable local object behind equilibrium, auctions, and dynamic deviation checks. The mathematical object has to exist because strategic prediction is circular. Each player’s best action depends on the others’ actions, so the model needs a profile where all those conditional choices fit together. Nash equilibrium is the formal closure of the best-response loop. The mathematical object has to exist because pure actions cannot always carry stable predictions. A probability distribution over actions lets the player control predictability itself. The distribution becomes the strategy because it determines opponents’ expected payoffs before the random action is realized. The mathematical object has to exist because exact conflict has special structure. When one player’s payoff is the negative of the other’s, the model can collapse two objectives into one value seen from opposite sides. That structure justifies security and minimax tools that would be too strong in general games. The mathematical object has to exist because dynamic strategies are too large to compare naively. A local deviation test gives the course a finite, teachable way to verify optimality under the right assumptions. It turns the huge space of possible strategy changes into a sequence of one-history checks.</p>
+  <h2>Mistakes To Avoid</h2>
+  <p>Students often get stuck by saying an action is rational without saying relative to what. The missing belief or opponent action is usually where the real assumption is hiding. Students often get stuck by importing the everyday meaning of equilibrium as balance or goodness. Nash equilibrium can be inefficient or ugly. Its claim is narrower: no single player wants to move alone. Students often get stuck by asking what the player “really” chooses. The answer is that the random device is part of the strategy; after it realizes an action, the distribution was still the planned commitment. Students often get stuck by calling any rivalry zero-sum. Many competitive economic settings still have joint gains, inefficiencies, or possibilities for collusion. Zero-sum is a payoff structure, not a mood. Students often get stuck by treating the principle as universally available. It depends on the structure of the dynamic game, so the shortcut must travel with its assumptions.</p>
+  <h2>How To Recognize This Later</h2>
+  <p>Look for arrows, reaction functions, or optimization steps that start with given the other player does X. Look for claims that a behavior pattern persists because no individual participant can gain by deviating alone. Look for indifference equations, randomized play, or models where predictable behavior would be punished. Look for adversarial models where maximizing my payoff is exactly minimizing yours. Look for dynamic incentive proofs that replace many possible deviations with a one-period deviation inequality.</p>
+  <p class="chips"><a class="chip" href="../concepts/best_response.html">Best Response</a><a class="chip" href="../concepts/nash_equilibrium.html">Nash Equilibrium</a><a class="chip" href="../concepts/mixed_strategies.html">Mixed Strategies</a><a class="chip" href="../concepts/zero_sum_games.html">Zero-Sum Games</a><a class="chip" href="../concepts/one_shot_deviation.html">One-Shot Deviation Principle</a></p>
+</section>
+<section>
+  <h2>Concepts In This Lecture</h2>
+  <article class="wide-card">
+  <h3>Best Response</h3>
+  <p><strong>Problem:</strong> The problem is that a strategy is not good in the abstract. It is good against a particular opponent action or belief.</p>
+  <p><strong>Mathematical handle:</strong> The object is the best-response set: all actions that maximize a player&#x27;s payoff given the other side&#x27;s action or belief.</p>
+  <p><strong>What breaks without it:</strong> Without best response, equilibrium would be a name without a test. The course could not check Nash profiles, bidding functions, mixed strategies, or type-contingent plans because each requires a player-level optimality calculation.</p>
+  <p><a href="../concepts/best_response.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>Nash Equilibrium</h3>
+  <p><strong>Problem:</strong> The problem is making a prediction that does not immediately fall apart when each participant asks, given what the others are doing, should I switch?</p>
+  <p><strong>Mathematical handle:</strong> The object is an action or strategy profile where every player&#x27;s choice is a best response to the others&#x27; choices.</p>
+  <p><strong>What breaks without it:</strong> Without Nash equilibrium, payoff tables would produce stories but not disciplined predictions. Any outcome could be proposed even if one participant has an obvious profitable deviation once everyone else behavior is named.</p>
+  <p><a href="../concepts/nash_equilibrium.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>Mixed Strategies</h3>
+  <p><strong>Problem:</strong> The problem is what to predict when choosing one pure action would make a player exploitable or when no pure-action equilibrium exists.</p>
+  <p><strong>Mathematical handle:</strong> The object is a probability distribution over pure strategies, often chosen so the other player has no strict favorite response.</p>
+  <p><strong>What breaks without it:</strong> Without mixed strategies, the course would falsely conclude that some games have no stable prediction simply because no pure action profile works. It would also miss why randomness can be chosen as discipline rather than noise.</p>
+  <p><a href="../concepts/mixed_strategies.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>Zero-Sum Games</h3>
+  <p><strong>Problem:</strong> The problem is pure conflict: one side&#x27;s gain is the other side&#x27;s loss, so cooperation or joint surplus is not the issue.</p>
+  <p><strong>Mathematical handle:</strong> The object is a payoff function where player two&#x27;s payoff is the negative of player one&#x27;s payoff.</p>
+  <p><strong>What breaks without it:</strong> Without the zero-sum distinction, students may apply adversarial security logic to games where cooperation or joint surplus exists. The course needs this special case precisely because its conclusions are sharper than in general games.</p>
+  <p><a href="../concepts/zero_sum_games.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>One-Shot Deviation Principle</h3>
+  <p><strong>Problem:</strong> The problem is checking a whole dynamic strategy can be exhausting because a strategy describes what to do after many histories.</p>
+  <p><strong>Mathematical handle:</strong> The object is a local deviation test: change one action at one history while leaving the continuation strategy fixed.</p>
+  <p><strong>What breaks without it:</strong> Without this principle, verifying repeated or dynamic equilibria can become intractable. Students may either skip deviation checks or drown in too many possible alternative histories.</p>
+  <p><a href="../concepts/one_shot_deviation.html">Open concept page</a></p>
+</article>
+</section>
+<section>
+  <h2>Transcript Evidence Chain</h2>
+  <div class="evidence-stack"><article class="evidence" id="ev-best_response-02">
+  <h3><a href="../evidence.html#ev-best_response-02">ev-best_response-02</a> 00:12:02.200</h3>
+  <p class="meta">Lecture 5: Nash Equilibrium · <a href="https://www.youtube.com/watch?v=ftCXguW2k4o">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The companion transcript span uses best response as the local decision test: fix what others do or what the player believes, then ask which action gives the highest payoff In this specific anchor from Lecture 5: Nash Equilibrium, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Best Response by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday case is choosing a move only after naming the rival move it is meant to answer; the same action can be good against one rival choice and bad against another. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the follow-through move for Best Response: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.</p>
+  <p><strong>Why this span matters:</strong> This second span matters because best response is the small calculation out of which Nash, mixed strategies, and Bayesian equilibrium are built For Best Response, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This anchor supports best response by emphasizing optimal behavior given an explanation or given beliefs. It is useful because it separates rationalizability from equilibrium: the player has an optimizing explanation, but there is no requirement that everyone explanations line up.</p>
+  <p><strong>Evidence boundary:</strong> The span supports conditional optimality. It is not a full best-response calculation and does not identify a payoff-maximizing action in a concrete matrix.</p>
+  <p><strong>Mathematical claim:</strong> BR_i(a_-i) is the set of actions for player i that maximize u_i given others&#x27; actions. The useful relation is `BR_i(a_-i) = argmax_a u_i(a, a_-i).`. In plain language: argmax means choose the action a that makes player i&#x27;s payoff as large as possible when others choose a_-i.</p>
+  <blockquote>So, rationalizability means you have an explanation, you&#x27;re behaving optimally given this explanation or given these beliefs, but there&#x27;s no requirement that</blockquote>
+</article><article class="evidence" id="ev-nash_equilibrium-01">
+  <h3><a href="../evidence.html#ev-nash_equilibrium-01">ev-nash_equilibrium-01</a> 00:43:54.360</h3>
+  <p class="meta">Lecture 5: Nash Equilibrium · <a href="https://www.youtube.com/watch?v=ftCXguW2k4o">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The Nash lecture supports equilibrium as mutual best response, where no player can gain by changing alone while the others keep their strategies fixed In this specific anchor from Lecture 5: Nash Equilibrium, the evidence role is definition and setup: it ties the transcript window to Nash Equilibrium by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The useful example is a proposed outcome that must be inspected from each player’s private incentive view, not from the analyst’s wish for coordination.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the setup move for Nash Equilibrium: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.</p>
+  <p><strong>Why this span matters:</strong> This span matters because it anchors equilibrium as stability under deviation, not as fairness, welfare, or social optimality For Nash Equilibrium, this record is anchor 01, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> The transcript window gives the core Nash payload in miniature: by definition, the proposed strategy must be a best response. The repeated phrase around Nash equilibrium and best response is exactly the local-to-global move the page teaches. A Nash profile is not a desirable social arrangement; it is a set of choices where each player’s local best-response condition is satisfied against the others.</p>
+  <p><strong>Evidence boundary:</strong> The anchor supports the formal definition and best-response connection. The short window does not by itself cover inefficiency, multiplicity, or refinements, so those broader claims stay in atlas synthesis.</p>
+  <p><strong>Mathematical claim:</strong> Equilibrium requires each strategy to be a best response to the others. The useful relation is `a_i in BR_i(a_-i) for every player i.`. In plain language: For each player i, their chosen action a_i must belong to the set of best responses against the other players&#x27; actions.</p>
+  <blockquote>Exactly right. So, by the definition of Nash equilibrium, let me explain this. By the definition of Nash equilibrium, we know that SI star is a best response</blockquote>
+</article><article class="evidence" id="ev-mixed_strategies-01">
+  <h3><a href="../evidence.html#ev-mixed_strategies-01">ev-mixed_strategies-01</a> 00:50:08.400</h3>
+  <p class="meta">Lecture 5: Nash Equilibrium · <a href="https://www.youtube.com/watch?v=ftCXguW2k4o">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The evidence supports mixed strategies as deliberate randomization used when predictable pure actions can be exploited or cannot jointly satisfy best response In this specific anchor from Lecture 5: Nash Equilibrium, the evidence role is definition and setup: it ties the transcript window to Mixed Strategies by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday picture is hiding a pattern in a competitive setting; probabilities become part of strategy because certainty would invite a targeted response.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the setup move for Mixed Strategies: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.</p>
+  <p><strong>Why this span matters:</strong> This span matters because it explains why randomness is a strategic object, not noise added after the model is solved For Mixed Strategies, this record is anchor 01, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This Nash lecture anchor is strong because it explicitly identifies a mixed strategy and immediately glosses it as randomizing. The transcript shows the course introducing randomization as an answer to a strategic problem, not as accidental noise. That supports the page’s claim that a probability distribution can be a deliberate strategy.</p>
+  <p><strong>Evidence boundary:</strong> The span supports the basic meaning and use of mixed strategies. It does not derive equilibrium mixing probabilities or the indifference condition by itself.</p>
+  <p><strong>Mathematical claim:</strong> A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</p>
+  <blockquote>use? Yeah? Mixed strategy. You&#x27;d use a mixed strategy, right? So, you you&#x27;d randomize and in this case, how do you think you</blockquote>
+</article><article class="evidence" id="ev-zero_sum_games-02">
+  <h3><a href="../evidence.html#ev-zero_sum_games-02">ev-zero_sum_games-02</a> 00:49:41.920</h3>
+  <p class="meta">Lecture 5: Nash Equilibrium · <a href="https://www.youtube.com/watch?v=ftCXguW2k4o">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The zero-sum lecture supports the special conflict case where one player’s gain is exactly the other player’s loss, sharpening equilibrium into value and security reasoning In this specific anchor from Lecture 5: Nash Equilibrium, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Zero-Sum Games by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The useful picture is a contest over a fixed pie: improving one side’s payoff mechanically worsens the other side’s payoff. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the follow-through move for Zero-Sum Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.</p>
+  <p><strong>Why this span matters:</strong> This second span matters because it marks where general game-theory intuition narrows into adversarial protection For Zero-Sum Games, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This Nash lecture anchor gives the informal bridge into zero-sum games: whoever is losing wants to change behavior to win, and the instructor says this is zero-sum in the formal sense to be discussed later. It supports zero-sum as a special conflict structure introduced before the dedicated lecture.</p>
+  <p><strong>Evidence boundary:</strong> The span supports setup and preview. The formal payoff condition is not fully developed in this window, so detailed minimax implications come from later lecture material.</p>
+  <p><strong>Mathematical claim:</strong> Equilibrium requires each strategy to be a best response to the others. The useful relation is `a_i in BR_i(a_-i) for every player i.`. In plain language: For each player i, their chosen action a_i must belong to the set of best responses against the other players&#x27; actions.</p>
+  <blockquote>and whoever&#x27;s losing would rather change their behavior so that they could win. This is a zero-sum game in the in a formal sense that we&#x27;ll talk about more</blockquote>
+</article><article class="evidence" id="ev-one_shot_deviation-02">
+  <h3><a href="../evidence.html#ev-one_shot_deviation-02">ev-one_shot_deviation-02</a> 00:19:36.159</h3>
+  <p class="meta">Lecture 5: Nash Equilibrium · <a href="https://www.youtube.com/watch?v=ftCXguW2k4o">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The companion transcript span supports the one-shot deviation principle as a shortcut for checking dynamic optimality one local change at a time under the theorem’s conditions In this specific anchor from Lecture 5: Nash Equilibrium, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to One-Shot Deviation Principle by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The useful picture is tugging one stitch in a long plan: if no single local change helps, the whole strategy can pass the dynamic check in the relevant class of games. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the follow-through move for One-Shot Deviation Principle: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.</p>
+  <p><strong>Why this span matters:</strong> This second span matters because it turns an overwhelming set of possible deviations into a manageable credibility test For One-Shot Deviation Principle, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This Nash lecture anchor defines profitable deviation in utility terms. That is important for one-shot deviation because a deviation is not merely a different action; it is a change that gives strictly higher utility. The record supports the payoff criterion used later in the dynamic shortcut.</p>
+  <p><strong>Evidence boundary:</strong> The span supports the meaning of profitable deviation. It is not specific to one-shot deviations in dynamic games, so it should be treated as prerequisite evidence.</p>
+  <p><strong>Mathematical claim:</strong> Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</p>
+  <blockquote>in the sense of a monetary payoff, but in the sense of utilities. So, a profitable deviation is a deviation that gives me a higher utility, a strictly</blockquote>
+</article></div>
+</section>
+<section class="wide-card">
+  <h2>Source Context</h2>
+  <p><strong>Transcript:</strong> raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/005-ftCXguW2k4o-Lecture 5: Nash Equilibrium.txt</p>
+  <p><strong>Words:</strong> 13,551 · <strong>Duration:</strong> 4767 seconds</p>
+</section></main>
+</body>
+</html>

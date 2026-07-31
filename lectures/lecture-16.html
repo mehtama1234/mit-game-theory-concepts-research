@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lecture 16: Bayesian Games · MIT Game Theory Concept Lab</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+    <nav><a class="" href="../index.html">Overview</a><a class="active" href="../lectures.html">Lectures</a><a class="" href="../concepts.html">Concepts</a><a class="" href="../themes.html">Themes</a><a class="" href="../families.html">Method Families</a><a class="" href="../primitives.html">Primitives</a><a class="" href="../evidence.html">Evidence</a></nav>
+  </header>
+  <main><section class="page-head">
+  <p class="eyebrow">Lecture 16 · Choice Under Tradeoffs, Private Information And Beliefs</p>
+  <h1>Lecture 16: Bayesian Games</h1>
+  <p>Introduces hidden types and priors so strategy can be modeled when players do not share the same information.</p>
+  <p><a class="button" href="https://www.youtube.com/watch?v=-6A59LiKUss">Open YouTube lecture</a></p>
+</section>
+<figure class="learning-diagram lecture-flow">
+  <figcaption>Lecture Study Map</figcaption>
+  <div class="flow-steps"><div class="flow-step"><span>Problem</span><p>Introduces hidden types and priors so strategy can be modeled when players do not share the same information.</p></div><div class="flow-step"><span>Watch</span><p>Watch the type space. The model&#x27;s quality depends on what private information is represented and what beliefs are assigned.</p></div><div class="flow-step"><span>Math</span><p>The mathematical object has to exist because uncertainty creates bundles of possible outcomes. A player choosing now cannot optimize separately in each future state; they need one comparison for the whole risky action. Expected utility is that comparison, built by weighting each consequence by the probability assigned before the outcome is known. The mathematical object has to exist because hidden information changes the identity of the decision problem. Types and priors let the model represent what each player knows privately and what others believe. Without them, private values and costs would be invisible to the equilibrium calculation. The mathematical object has to exist because uncertainty has two sides: the hidden state and someone’s probability over it. Types represent the state; beliefs represent the uncertainty. Keeping them separate lets the course analyze signaling, updating, and type-contingent strategy without confusing truth with perception. The mathematical object has to exist because ordinary average reasoning lies in selected populations. A cutoff, participation condition, or posterior distribution is needed to say who accepts, who rejects, and what the uninformed side should believe after observing that choice.</p></div><div class="flow-step"><span>Evidence</span><p>4 transcript evidence anchors connect this lecture to 4 atlas concepts.</p></div></div>
+</figure>
+<section class="treatment">
+  <h2>What This Lecture Teaches</h2>
+  <p>Introduces hidden types and priors so strategy can be modeled when players do not share the same information.</p>
+  <h2>Where The Math Enters</h2>
+  <p>The mathematical object has to exist because uncertainty creates bundles of possible outcomes. A player choosing now cannot optimize separately in each future state; they need one comparison for the whole risky action. Expected utility is that comparison, built by weighting each consequence by the probability assigned before the outcome is known. The mathematical object has to exist because hidden information changes the identity of the decision problem. Types and priors let the model represent what each player knows privately and what others believe. Without them, private values and costs would be invisible to the equilibrium calculation. The mathematical object has to exist because uncertainty has two sides: the hidden state and someone’s probability over it. Types represent the state; beliefs represent the uncertainty. Keeping them separate lets the course analyze signaling, updating, and type-contingent strategy without confusing truth with perception. The mathematical object has to exist because ordinary average reasoning lies in selected populations. A cutoff, participation condition, or posterior distribution is needed to say who accepts, who rejects, and what the uninformed side should believe after observing that choice.</p>
+  <h2>Mistakes To Avoid</h2>
+  <p>Students often get stuck by averaging dollar outcomes when the model needs utility outcomes, or by forgetting that the probabilities are beliefs from the player’s point of view rather than facts known after the uncertainty resolves. Students often get stuck by treating uncertainty as noise outside the model. In a Bayesian game, uncertainty is inside the model and has named objects: types, beliefs, strategies, and payoffs. Students often get stuck by saying “the player believes the type” as if belief and type were the same thing. One is the hidden state; the other is someone’s uncertain view of it. Students often get stuck by treating hidden information as just another probability. The lecture point is sharper: the action or price changes which hidden types remain in the game, so the probability distribution after participation is not the original distribution.</p>
+  <h2>How To Recognize This Later</h2>
+  <p>Look for private information, lotteries, risk, or unknown types where the model has to average payoffs across possible worlds. Look for models with types, priors, private values, costs, signals, or asymmetric information. Look for any model where behavior depends on values, costs, quality, or information that only one side observes. Look for models where an offer, price, contract, or test makes different hidden types sort themselves. If changing the rule changes the pool of participants, the screening/adverse-selection primitive is active.</p>
+  <p class="chips"><a class="chip" href="../concepts/expected_utility.html">Expected Utility</a><a class="chip" href="../concepts/bayesian_games.html">Bayesian Games</a><a class="chip" href="../concepts/types_and_beliefs.html">Types And Beliefs</a><a class="chip" href="../concepts/screening_and_adverse_selection.html">Screening And Adverse Selection</a></p>
+</section>
+<section>
+  <h2>Concepts In This Lecture</h2>
+  <article class="wide-card">
+  <h3>Expected Utility</h3>
+  <p><strong>Problem:</strong> The problem is choosing when the outcome is uncertain: a bid might win or lose, a risky action might pay off or fail, and a type may be one of several possibilities.</p>
+  <p><strong>Mathematical handle:</strong> The object is expected utility: utility in each possible state weighted by that state&#x27;s probability. It compresses a risky situation into one comparison number.</p>
+  <p><strong>What breaks without it:</strong> Without expected utility, Bayesian games and auctions would have no disciplined way to evaluate actions under unknown types or rival values. The model would either ignore risk or smuggle in an unspecified attitude toward it.</p>
+  <p><a href="../concepts/expected_utility.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>Bayesian Games</h3>
+  <p><strong>Problem:</strong> The problem is strategic choice when players do not know exactly who they are facing or what payoffs the other side has.</p>
+  <p><strong>Mathematical handle:</strong> The object is a game with types, priors over types, actions for each type, and payoff functions that may depend on type.</p>
+  <p><strong>What breaks without it:</strong> Without Bayesian games, the course would treat hidden values, costs, and motives as if everyone knew them. Auctions, signaling, and incomplete-information bargaining would collapse into misleading complete-information models.</p>
+  <p><a href="../concepts/bayesian_games.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>Types And Beliefs</h3>
+  <p><strong>Problem:</strong> The problem is keeping track of hidden facts and what players think those facts might be.</p>
+  <p><strong>Mathematical handle:</strong> The object is a type space plus probability beliefs over types or histories.</p>
+  <p><strong>What breaks without it:</strong> Without types and beliefs, private-information models would not say who knows what or how uncertainty enters payoffs. The analyst could not distinguish a high-value bidder from a low-value bidder or a receiver belief from sender truth.</p>
+  <p><a href="../concepts/types_and_beliefs.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>Screening And Adverse Selection</h3>
+  <p><strong>Problem:</strong> The problem is that a price or offer can change who shows up. A seller, insurer, or bargainer may set a rule thinking about an average customer, but the people who accept are not average; they are selected by the rule itself.</p>
+  <p><strong>Mathematical handle:</strong> The object is an expected payoff under a cutoff rule: a price or offer is accepted only by types for whom accepting is better than rejecting, so the distribution of accepted types changes with the price.</p>
+  <p><strong>What breaks without it:</strong> Without this concept, the course would predict trade whenever buyer value exceeds seller cost. It would miss the reason some trades fail: the terms that attract one type may drive away another or reveal information that changes future bargaining.</p>
+  <p><a href="../concepts/screening_and_adverse_selection.html">Open concept page</a></p>
+</article>
+</section>
+<section>
+  <h2>Transcript Evidence Chain</h2>
+  <div class="evidence-stack"><article class="evidence" id="ev-expected_utility-02">
+  <h3><a href="../evidence.html#ev-expected_utility-02">ev-expected_utility-02</a> 00:45:47.440</h3>
+  <p class="meta">Lecture 16: Bayesian Games · <a href="https://www.youtube.com/watch?v=-6A59LiKUss">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The companion transcript span uses uncertainty to motivate averaging utilities across possible outcomes by their probabilities instead of pretending the future is known In this specific anchor from Lecture 16: Bayesian Games, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Expected Utility by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday case is a lottery or risky choice where the player compares not one outcome but a probability-weighted bundle of outcomes. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the follow-through move for Expected Utility: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.</p>
+  <p><strong>Why this span matters:</strong> This second anchor matters because it shows the same probability-weighted comparison reappearing once hidden types and risky outcomes enter For Expected Utility, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This Bayesian-games anchor shows the probability language reappearing when a type may be hard or deceptively hard. That reuse matters because expected utility is the arithmetic of choosing under hidden information. The player is not facing one known state; they are weighting possible states by probabilities before acting.</p>
+  <p><strong>Evidence boundary:</strong> The span supports reuse of probability-weighted reasoning in Bayesian games. It is a partial anchor for expected utility, not a standalone derivation of Bayesian Nash equilibrium.</p>
+  <p><strong>Mathematical claim:</strong> A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</p>
+  <blockquote>that&#x27;s indicative of it being hard, indeed with probability Q, but with probability 1 minus Q, you know, it&#x27;s deceptively hard. It looks it&#x27;s actually</blockquote>
+</article><article class="evidence" id="ev-bayesian_games-01">
+  <h3><a href="../evidence.html#ev-bayesian_games-01">ev-bayesian_games-01</a> 00:47:09.880</h3>
+  <p class="meta">Lecture 16: Bayesian Games · <a href="https://www.youtube.com/watch?v=-6A59LiKUss">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The Bayesian-game lecture supports modeling hidden information by assigning players types and beliefs before strategies are chosen In this specific anchor from Lecture 16: Bayesian Games, the evidence role is definition and setup: it ties the transcript window to Bayesian Games by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday picture is a bidder or opponent whose value, cost, or motive is not directly visible, so the player chooses against a probability story.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the setup move for Bayesian Games: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.</p>
+  <p><strong>Why this span matters:</strong> This span matters because it introduces the private-information structure needed for auctions, signaling, and Bayesian equilibrium For Bayesian Games, this record is anchor 01, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> The anchor shows the type language doing real work. The hard type and easy type are not personality labels; they are the hidden states that change interpretation and payoff reasoning. The phrase interpretation is different is especially useful: Bayesian games change the meaning of a strategy because the same player slot can contain different privately known types.</p>
+  <p><strong>Evidence boundary:</strong> This evidence supports the type-space setup for Bayesian games. It does not specify the full prior or solve equilibrium in the window, so the atlas should not treat it as a complete Bayesian Nash calculation.</p>
+  <p><strong>Mathematical claim:</strong> A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</p>
+  <blockquote>interpretation is different. So we still have for player one two types, the hard type and the easy type. But now the hard type, we don&#x27;t mean you know for certain</blockquote>
+</article><article class="evidence" id="ev-types_and_beliefs-01">
+  <h3><a href="../evidence.html#ev-types_and_beliefs-01">ev-types_and_beliefs-01</a> 00:47:09.880</h3>
+  <p class="meta">Lecture 16: Bayesian Games · <a href="https://www.youtube.com/watch?v=-6A59LiKUss">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The evidence supports types as containers for private facts and beliefs as the probability weights other players place on those facts In this specific anchor from Lecture 16: Bayesian Games, the evidence role is definition and setup: it ties the transcript window to Types And Beliefs by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The useful picture is sorting possible opponents into hidden categories, then asking how likely each category is before choosing.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the setup move for Types And Beliefs: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.</p>
+  <p><strong>Why this span matters:</strong> This span matters because it separates the unknown fact itself from the belief another player holds about it For Types And Beliefs, this record is anchor 01, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This anchor overlaps with Bayesian games because it is the clearest transcript window for types. The hard type and easy type show that a type is a hidden condition changing interpretation. The important teaching point is that type is not a label after the fact; it is part of the player’s strategic situation.</p>
+  <p><strong>Evidence boundary:</strong> The span supports type language strongly. It does not fully separate prior beliefs from types in this window, so belief mechanics need the companion Bayes-rule evidence.</p>
+  <p><strong>Mathematical claim:</strong> A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</p>
+  <blockquote>interpretation is different. So we still have for player one two types, the hard type and the easy type. But now the hard type, we don&#x27;t mean you know for certain</blockquote>
+</article><article class="evidence" id="ev-screening_and_adverse_selection-01">
+  <h3><a href="../evidence.html#ev-screening_and_adverse_selection-01">ev-screening_and_adverse_selection-01</a> 00:33:36.560</h3>
+  <p class="meta">Lecture 16: Bayesian Games · <a href="https://www.youtube.com/watch?v=-6A59LiKUss">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The Bayesian-games lecture supports the type-space foundation needed for screening: hidden information is represented by player types and connected to beliefs through a prior.</p>
+  <p><strong>Example or analogy:</strong> The everyday picture is that the other side may be one of several kinds of participant, and the model needs a named object for those hidden kinds before it can ask how offers sort them.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the mathematical setup for later adverse selection. Types store hidden mental states or payoff-relevant facts; priors connect those types to the state of the world.</p>
+  <p><strong>Why this span matters:</strong> This span matters because screening and adverse selection are not just stories about bad markets. They depend on the Bayesian-game machinery that names hidden types before prices or offers select among them.</p>
+  <p><strong>Transcript teaching note:</strong> This anchor connects the new screening concept to the course&#x27;s earlier private-information machinery. The lecture introduces type as an abstract object capturing a player&#x27;s complete mental state and then adds a prior to connect types with the state of the world. That is exactly what the later screening model needs: before an offer can sort hidden participants, the model must say what hidden participant types exist and what the uninformed side believes about them.</p>
+  <p><strong>Evidence boundary:</strong> The evidence supports the type-space and prior foundation. It should not be used as evidence that adverse selection occurs in insurance or bargaining; that stronger claim is supported by the Lecture 23 anchor.</p>
+  <p><strong>Mathematical claim:</strong> A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</p>
+  <blockquote>Harsanyi&#x27;s key trick is to introduce this abstract object which we call a type. The type of a player is going to capture their complete mental state. What we&#x27;re missing here is the connection between the types and the state of the world, and we&#x27;re going to capture that with a prior.</blockquote>
+</article></div>
+</section>
+<section class="wide-card">
+  <h2>Source Context</h2>
+  <p><strong>Transcript:</strong> raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/016--6A59LiKUss-Lecture 16: Bayesian Games.txt</p>
+  <p><strong>Words:</strong> 13,970 · <strong>Duration:</strong> 4875 seconds</p>
+</section></main>
+</body>
+</html>

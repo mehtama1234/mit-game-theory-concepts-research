@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lecture 4: Rationalizability · MIT Game Theory Concept Lab</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+    <nav><a class="" href="../index.html">Overview</a><a class="active" href="../lectures.html">Lectures</a><a class="" href="../concepts.html">Concepts</a><a class="" href="../themes.html">Themes</a><a class="" href="../families.html">Method Families</a><a class="" href="../primitives.html">Primitives</a><a class="" href="../evidence.html">Evidence</a></nav>
+  </header>
+  <main><section class="page-head">
+  <p class="eyebrow">Lecture 4 · Strategic Dependence, Equilibrium As Mutual Consistency, Communication And Knowledge</p>
+  <h1>Lecture 4: Rationalizability</h1>
+  <p>Adds beliefs to pruning. A strategy can remain plausible if some coherent belief about others makes it a best response.</p>
+  <p><a class="button" href="https://www.youtube.com/watch?v=ZdwIokL0P_U">Open YouTube lecture</a></p>
+</section>
+<figure class="learning-diagram lecture-flow">
+  <figcaption>Lecture Study Map</figcaption>
+  <div class="flow-steps"><div class="flow-step"><span>Problem</span><p>Adds beliefs to pruning. A strategy can remain plausible if some coherent belief about others makes it a best response.</p></div><div class="flow-step"><span>Watch</span><p>Watch the course move from strict deletion to belief-supported survival. This is the bridge between dominance and equilibrium.</p></div><div class="flow-step"><span>Math</span><p>The mathematical object has to exist because some choices can be rejected without forecasting the opponent. The dominance comparison formalizes “no matter what they do” as a set of inequalities across contingencies. That makes deletion a proof about payoffs rather than a guess about likely behavior. The mathematical object has to exist because rationality can be layered. Once one impossible action is removed, the remaining problem changes, and new impossibilities can appear. Iterated deletion is the formal procedure that keeps track of that changing action set instead of relying on informal rounds of intuition. The mathematical object has to exist because plausible behavior depends on beliefs. A strategy can be reasonable even when it is not part of a Nash equilibrium, provided some coherent belief makes it optimal. Rationalizability formalizes that support relation between beliefs and best responses. The mathematical object has to exist because “good strategy” is incomplete without a condition. The best-response set stores the actions that maximize payoff given a named opponent action or belief. It is the reusable local object behind equilibrium, auctions, and dynamic deviation checks. The mathematical object has to exist because coordination can depend on levels of knowledge, not only on the fact itself. Recursive knowledge operators let the course distinguish private knowledge from public assurance. That distinction explains why announcements can move behavior when private messages cannot.</p></div><div class="flow-step"><span>Evidence</span><p>6 transcript evidence anchors connect this lecture to 5 atlas concepts.</p></div></div>
+</figure>
+<section class="treatment">
+  <h2>What This Lecture Teaches</h2>
+  <p>Adds beliefs to pruning. A strategy can remain plausible if some coherent belief about others makes it a best response.</p>
+  <h2>Where The Math Enters</h2>
+  <p>The mathematical object has to exist because some choices can be rejected without forecasting the opponent. The dominance comparison formalizes “no matter what they do” as a set of inequalities across contingencies. That makes deletion a proof about payoffs rather than a guess about likely behavior. The mathematical object has to exist because rationality can be layered. Once one impossible action is removed, the remaining problem changes, and new impossibilities can appear. Iterated deletion is the formal procedure that keeps track of that changing action set instead of relying on informal rounds of intuition. The mathematical object has to exist because plausible behavior depends on beliefs. A strategy can be reasonable even when it is not part of a Nash equilibrium, provided some coherent belief makes it optimal. Rationalizability formalizes that support relation between beliefs and best responses. The mathematical object has to exist because “good strategy” is incomplete without a condition. The best-response set stores the actions that maximize payoff given a named opponent action or belief. It is the reusable local object behind equilibrium, auctions, and dynamic deviation checks. The mathematical object has to exist because coordination can depend on levels of knowledge, not only on the fact itself. Recursive knowledge operators let the course distinguish private knowledge from public assurance. That distinction explains why announcements can move behavior when private messages cannot.</p>
+  <h2>Mistakes To Avoid</h2>
+  <p>Students often get stuck by deleting strategies that are merely unattractive under their favorite prediction. That is not dominance. A strategy that is bad against one opponent move but useful against another is belief-dependent, not dominated. Students often get stuck by treating the order of deletion and the type of dominance as harmless details. With weak dominance especially, those details can change what remains, so the lecture distinction matters. Students often get stuck because rationalizability feels permissive. It is permissive on purpose, but not empty: a strategy still has to be a best response to some belief, not just a move someone might randomly choose. Students often get stuck by saying an action is rational without saying relative to what. The missing belief or opponent action is usually where the real assumption is hiding. Students often get stuck because the infinite chain sounds philosophical. The course uses it for concrete coordination: people act differently when a fact is publicly shared than when each person only privately receives it.</p>
+  <h2>How To Recognize This Later</h2>
+  <p>Look for arguments that rule out actions before equilibrium is computed because one action is never a best answer. Look for step-by-step elimination arguments where rationality of others is used more than once. Look for models that want to separate impossible behavior from behavior that is merely one of several plausible responses. Look for arrows, reaction functions, or optimization steps that start with given the other player does X. Look for coordination failures, public announcements, or arguments that depend on what everyone knows about everyone else&#x27;s knowledge.</p>
+  <p class="chips"><a class="chip" href="../concepts/dominance.html">Dominance</a><a class="chip" href="../concepts/iterated_deletion.html">Iterated Deletion</a><a class="chip" href="../concepts/rationalizability.html">Rationalizability</a><a class="chip" href="../concepts/best_response.html">Best Response</a><a class="chip" href="../concepts/common_knowledge.html">Common Knowledge</a></p>
+</section>
+<section>
+  <h2>Concepts In This Lecture</h2>
+  <article class="wide-card">
+  <h3>Dominance</h3>
+  <p><strong>Problem:</strong> The problem is that some choices are plainly bad no matter what the other side does. Keeping them in the analysis can distract from the strategic choices that actually need thought.</p>
+  <p><strong>Mathematical handle:</strong> The object is a dominance comparison between two strategies across all possible actions by others.</p>
+  <p><strong>What breaks without it:</strong> Without dominance, every listed strategy would look equally alive even when some choices have no defensible reason to be played. The analysis would be noisier and less disciplined before equilibrium reasoning even begins.</p>
+  <p><a href="../concepts/dominance.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>Iterated Deletion</h3>
+  <p><strong>Problem:</strong> The problem is that once obviously bad moves are removed, new moves may become obviously bad in the smaller game.</p>
+  <p><strong>Mathematical handle:</strong> The object is a reduced game created by repeated dominance pruning.</p>
+  <p><strong>What breaks without it:</strong> Without iterated deletion, the course would miss how one round of reasoning changes the next. Some games reveal their strategic structure only after obviously dominated actions are removed and the remaining incentives are reconsidered.</p>
+  <p><a href="../concepts/iterated_deletion.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>Rationalizability</h3>
+  <p><strong>Problem:</strong> The problem is deciding which strategies can be defended as sensible without requiring everyone to land on one exact equilibrium.</p>
+  <p><strong>Mathematical handle:</strong> The object is a set of strategies that survive because each can be a best response to some belief about the other players&#x27; surviving strategies.</p>
+  <p><strong>What breaks without it:</strong> Without rationalizability, students may jump too quickly from dominance to Nash. They would miss the middle ground where a strategy survives because a player can hold a belief that makes it a best response.</p>
+  <p><a href="../concepts/rationalizability.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>Best Response</h3>
+  <p><strong>Problem:</strong> The problem is that a strategy is not good in the abstract. It is good against a particular opponent action or belief.</p>
+  <p><strong>Mathematical handle:</strong> The object is the best-response set: all actions that maximize a player&#x27;s payoff given the other side&#x27;s action or belief.</p>
+  <p><strong>What breaks without it:</strong> Without best response, equilibrium would be a name without a test. The course could not check Nash profiles, bidding functions, mixed strategies, or type-contingent plans because each requires a player-level optimality calculation.</p>
+  <p><a href="../concepts/best_response.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>Common Knowledge</h3>
+  <p><strong>Problem:</strong> The problem is that coordinated action may require more than everyone privately knowing a fact. People may also need to know that others know it, and know that others know that others know it.</p>
+  <p><strong>Mathematical handle:</strong> The object is an infinite hierarchy: the event is known, everyone knows it is known, everyone knows everyone knows it is known, and so on.</p>
+  <p><strong>What breaks without it:</strong> Without common knowledge, the course would miss higher-order uncertainty. Players might all know the same event, yet hesitate because they do not know whether others know, or whether others know that they know.</p>
+  <p><a href="../concepts/common_knowledge.html">Open concept page</a></p>
+</article>
+</section>
+<section>
+  <h2>Transcript Evidence Chain</h2>
+  <div class="evidence-stack"><article class="evidence" id="ev-dominance-02">
+  <h3><a href="../evidence.html#ev-dominance-02">ev-dominance-02</a> 00:03:44.720</h3>
+  <p class="meta">Lecture 4: Rationalizability · <a href="https://www.youtube.com/watch?v=ZdwIokL0P_U">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The dominance lecture compares strategies across possible opponent actions to identify moves that are never worth keeping In this specific anchor from Lecture 4: Rationalizability, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Dominance by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday analogy is discarding an option that is worse no matter what the other person does, before trying to forecast the entire game. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the follow-through move for Dominance: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.</p>
+  <p><strong>Why this span matters:</strong> This second span matters because it shows pruning as a first-principles operation rather than as a memorized deletion rule For Dominance, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This second anchor matters because the rationalizability lecture reuses dominance by mixed strategies as prior machinery. That reuse is pedagogically important: the course is showing that dominance is not a one-off deletion trick from Lecture 3, but a building block for asking which strategies can survive as rational responses once beliefs enter.</p>
+  <p><strong>Evidence boundary:</strong> The span supports cross-lecture reuse more than it supports a fresh dominance definition. It should not be read as the only place where dominance is introduced; it shows the concept being carried into rationalizability.</p>
+  <p><strong>Mathematical claim:</strong> Dominance compares one strategy against another across possible opponent choices. The useful relation is `s dominates t if u_i(s, a_-i) &gt;= u_i(t, a_-i) for all a_-i, with strict inequality somewhere.`. In plain language: The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.</p>
+  <blockquote>pure strategy. We had to consider strict dominance by mixed strategies. So if it&#x27;s strictly dominated by some mixed strategy. And what we showed last week is that</blockquote>
+</article><article class="evidence" id="ev-iterated_deletion-01">
+  <h3><a href="../evidence.html#ev-iterated_deletion-01">ev-iterated_deletion-01</a> 00:26:14.560</h3>
+  <p class="meta">Lecture 4: Rationalizability · <a href="https://www.youtube.com/watch?v=ZdwIokL0P_U">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The rationalizability lecture directly supports iterated deletion by naming iterated elimination of strictly dominated strategies and presenting it as a formal procedure. This is stronger than a generic lecture-opening anchor because it ties the concept to the recursive deletion operation.</p>
+  <p><strong>Example or analogy:</strong> The everyday picture is repeatedly crossing off choices that have lost their strategic defense, then checking the smaller game again because the remaining comparison has changed.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the formal-procedure move: deletion is not one casual cleanup step, but an iterative algorithm over surviving strategies.</p>
+  <p><strong>Why this span matters:</strong> This span matters because it anchors the actual iterated-elimination language and replaces a weak placement-only record with direct evidence for the formal deletion procedure.</p>
+  <p><strong>Transcript teaching note:</strong> This replacement anchor directly names iterated elimination of strictly dominated strategies and says a formal procedure needs notation. That is the lecture-depth point: students may see deletion in an example, but the course turns it into an algorithm whose output can be compared with rationalizability.</p>
+  <p><strong>Evidence boundary:</strong> The span supports the definition and procedural framing of iterated deletion. It does not show every deletion step in a complete example, so the detailed walk-through still comes from surrounding lecture material.</p>
+  <p><strong>Mathematical claim:</strong> Dominance compares one strategy against another across possible opponent choices. The useful relation is `s dominates t if u_i(s, a_-i) &gt;= u_i(t, a_-i) for all a_-i, with strict inequality somewhere.`. In plain language: The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.</p>
+  <blockquote>why we call it iterated elimination of strictly dominated strategies. To formally define this procedure, we need some notation, right? It was easy in this example to kind of work through, but the formal procedure needs a precise object.</blockquote>
+</article><article class="evidence" id="ev-iterated_deletion-02">
+  <h3><a href="../evidence.html#ev-iterated_deletion-02">ev-iterated_deletion-02</a> 00:24:15.720</h3>
+  <p class="meta">Lecture 4: Rationalizability · <a href="https://www.youtube.com/watch?v=ZdwIokL0P_U">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The companion evidence supports repeated elimination: after one dominated strategy is removed, the reduced game can reveal another action that now has no rational defense In this specific anchor from Lecture 4: Rationalizability, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Iterated Deletion by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The useful picture is cleaning a table in rounds; each deletion changes the strategic environment faced by the remaining choices. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the follow-through move for Iterated Deletion: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.</p>
+  <p><strong>Why this span matters:</strong> This second span matters because it connects dominance to recursive reasoning about what rational players know and rule out For Iterated Deletion, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This rationalizability anchor is much stronger: the transcript says players do not play strictly dominated strategies and know their opponents do not play them. That is the recursive idea behind deletion. The evidence shows how a dominance assumption becomes a higher-order reasoning process rather than a one-time cleanup step.</p>
+  <p><strong>Evidence boundary:</strong> The span supports the rationality logic behind deletion. It does not specify a full deletion sequence, so examples with actual strategy removal remain synthesis unless separately anchored.</p>
+  <p><strong>Mathematical claim:</strong> Dominance compares one strategy against another across possible opponent choices. The useful relation is `s dominates t if u_i(s, a_-i) &gt;= u_i(t, a_-i) for all a_-i, with strict inequality somewhere.`. In plain language: The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.</p>
+  <blockquote>really needed to use is that players don&#x27;t play strictly dominated strategies. They know their opponents don&#x27;t play</blockquote>
+</article><article class="evidence" id="ev-rationalizability-01">
+  <h3><a href="../evidence.html#ev-rationalizability-01">ev-rationalizability-01</a> 00:03:09.600</h3>
+  <p class="meta">Lecture 4: Rationalizability · <a href="https://www.youtube.com/watch?v=ZdwIokL0P_U">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The lecture evidence supports rationalizability as a belief-based survival test: a strategy remains possible if some coherent belief could make it optimal In this specific anchor from Lecture 4: Rationalizability, the evidence role is definition and setup: it ties the transcript window to Rationalizability by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday example is asking whether a move can be explained by some expectation about the other player, even if it is not part of a Nash equilibrium.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the setup move for Rationalizability: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.</p>
+  <p><strong>Why this span matters:</strong> This span matters because it separates pruning by dominance from keeping strategies alive through defensible beliefs For Rationalizability, this record is anchor 01, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This anchor directly supports rationalizability because it begins by recalling what a belief is: a belief about the strategies chosen by all other players. That is exactly the object rationalizability needs. A strategy survives when it can be a best response to some belief about others strategies.</p>
+  <p><strong>Evidence boundary:</strong> The span supports the belief component of rationalizability. It does not complete the best-response test inside the window, so it is evidence for one necessary ingredient rather than the whole concept.</p>
+  <p><strong>Mathematical claim:</strong> A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</p>
+  <blockquote>And let&#x27;s remember what a belief is. A belief that player I has is a belief about the strategies chosen by all of</blockquote>
+</article><article class="evidence" id="ev-best_response-01">
+  <h3><a href="../evidence.html#ev-best_response-01">ev-best_response-01</a> 00:05:41.880</h3>
+  <p class="meta">Lecture 4: Rationalizability · <a href="https://www.youtube.com/watch?v=ZdwIokL0P_U">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The lecture uses best response as the local decision test: fix what others do or what the player believes, then ask which action gives the highest payoff In this specific anchor from Lecture 4: Rationalizability, the evidence role is definition and setup: it ties the transcript window to Best Response by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday case is choosing a move only after naming the rival move it is meant to answer; the same action can be good against one rival choice and bad against another.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the setup move for Best Response: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.</p>
+  <p><strong>Why this span matters:</strong> This span matters because best response is the small calculation out of which Nash, mixed strategies, and Bayesian equilibrium are built For Best Response, this record is anchor 01, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This rationalizability anchor is very strong for best response. The transcript says the player must be playing a best response to some belief, and that this requirement imposes restriction. That is the first-principles point: belief alone is not enough; the action must be optimal under the belief.</p>
+  <p><strong>Evidence boundary:</strong> The span supports best response under beliefs. It does not require beliefs to be mutually consistent across players, so it should not be overread as Nash equilibrium evidence.</p>
+  <p><strong>Mathematical claim:</strong> BR_i(a_-i) is the set of actions for player i that maximize u_i given others&#x27; actions. The useful relation is `BR_i(a_-i) = argmax_a u_i(a, a_-i).`. In plain language: argmax means choose the action a that makes player i&#x27;s payoff as large as possible when others choose a_-i.</p>
+  <blockquote>And it&#x27;s restrictive in that the player must be playing a best response to some belief. So the best response part of it is what imposes some restriction.</blockquote>
+</article><article class="evidence" id="ev-common_knowledge-02">
+  <h3><a href="../evidence.html#ev-common_knowledge-02">ev-common_knowledge-02</a> 00:09:01.400</h3>
+  <p class="meta">Lecture 4: Rationalizability · <a href="https://www.youtube.com/watch?v=ZdwIokL0P_U">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The common-knowledge lecture supports the infinite hierarchy of shared awareness: everyone knows, everyone knows everyone knows, and the chain continues In this specific anchor from Lecture 4: Rationalizability, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Common Knowledge by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday example is a public announcement that not only informs each person but also tells each person that others were informed too. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the follow-through move for Common Knowledge: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.</p>
+  <p><strong>Why this span matters:</strong> This second span matters because coordination can fail when facts are known privately but not known to be shared For Common Knowledge, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This rationalizability anchor is strong for the knowledge-recursion side of common knowledge. The transcript mentions higher-order knowledge of rationality and first-order knowledge of rationality. That is the same ladder of reasoning common knowledge formalizes, applied here to rationality assumptions.</p>
+  <p><strong>Evidence boundary:</strong> The span supports higher-order knowledge, not common knowledge of a particular public event. It should be used for the recursion primitive rather than a full coordination application.</p>
+  <p><strong>Mathematical claim:</strong> Common knowledge means everyone knows, everyone knows everyone knows, and the chain continues. The useful relation is `E, KE, KKE, KKKE, ...`. In plain language: E is the event; K means known by the players; repeated K&#x27;s represent higher-order knowledge.</p>
+  <blockquote>reasoning that captures what&#x27;s often called higher order knowledge of rationality. So first order knowledge of rationality means I know other people are rational.</blockquote>
+</article></div>
+</section>
+<section class="wide-card">
+  <h2>Source Context</h2>
+  <p><strong>Transcript:</strong> raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/004-ZdwIokL0P_U-Lecture 4: Rationalizability.txt</p>
+  <p><strong>Words:</strong> 13,209 · <strong>Duration:</strong> 4910 seconds</p>
+</section></main>
+</body>
+</html>
