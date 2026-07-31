@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Limits And Traps · MIT Game Theory Concept Lab</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">MIT Game Theory Concept Lab</a>
+    <nav><a class="" href="index.html">Overview</a><a class="" href="study-route.html">Study Route</a><a class="" href="cross-reference.html">Cross Index</a><a class="active" href="limits.html">Limits</a><a class="" href="lectures.html">Lectures</a><a class="" href="concepts.html">Concepts</a><a class="" href="themes.html">Themes</a><a class="" href="families.html">Method Families</a><a class="" href="primitives.html">Primitives</a><a class="" href="evidence.html">Evidence</a></nav>
+  </header>
+  <main><section class="page-head">
+  <h1>Limits And Traps</h1>
+  <p>A reader-facing guardrail against overgeneralizing the course machinery. These are the places where the concept, theme, or equation can be precise and still be misused.</p>
+</section>
+<section><h2>Concept-Level Traps</h2><article class="wide-card limit-card" id="limit-preferences">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/preferences.html">Preferences</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to think preferences are emotions. In the course they are a disciplined choice ordering, not a psychological biography.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by asking whether the preference is realistic for every human mood. The course is doing a modeling move: it asks whether the relevant choices in the problem can be treated as stable enough for strategic analysis.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is that preferences describe rankings within the modeled choice problem; they do not explain where desires come from. If the lecture question is about persuasion, learning, or changing tastes, preference is only the starting input, not the full explanation.</p>
+  <p><strong>What breaks without it:</strong> Without preferences, a payoff table has no disciplined source. The analyst could assign numbers, but there would be no explanation of why a player ranks one result over another or why a later best-response calculation should be trusted.</p>
+</article><article class="wide-card limit-card" id="limit-utility">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/utility.html">Utility</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to treat utility units as physical units like inches. Utility usually represents order, and only specific setups justify stronger numerical claims.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by treating utility points like dollars or happiness units. Sometimes dollars enter utility, but utility itself is the model’s choice index, not necessarily a literal commodity.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is scale and interpretation. Utility can support payoff comparison inside the model, but it cannot automatically compare happiness across people or survive arbitrary changes when expected-utility structure is required.</p>
+  <p><strong>What breaks without it:</strong> Without utility, later algebra would float free from choice behavior. The course could say one outcome is preferred, but it could not easily compute expected payoffs, best responses, or surplus divisions.</p>
+</article><article class="wide-card limit-card" id="limit-expected_utility">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/expected_utility.html">Expected Utility</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to average dollars automatically. If people care about risk, the utility of money may not rise one-for-one with dollars.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by averaging dollar outcomes when the model needs utility outcomes, or by forgetting that the probabilities are beliefs from the player’s point of view rather than facts known after the uncertainty resolves.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary appears when probabilities or utility over risk are misspecified. Expected utility is a disciplined average, but it does not by itself prove the player has correct beliefs or risk-neutral attitudes.</p>
+  <p><strong>What breaks without it:</strong> Without expected utility, Bayesian games and auctions would have no disciplined way to evaluate actions under unknown types or rival values. The model would either ignore risk or smuggle in an unspecified attitude toward it.</p>
+</article><article class="wide-card limit-card" id="limit-strategic_form_games">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/strategic_form_games.html">Strategic Form Games</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to read one row or one column as if the other player were irrelevant. The whole point of the table is joint dependence.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by reading a row as if it has a single value. A row has several consequences, one for each possible opponent action, so a strategy cannot be judged until the contingency is named.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is timing and information. Strategic form is clean for simultaneous or reduced games, but it hides histories and observations unless those are folded into strategies with care.</p>
+  <p><strong>What breaks without it:</strong> Without strategic form, simultaneous games would remain verbal scenarios. Students could argue about incentives, but they would lack the structured object needed to compare rows, columns, and deviations cleanly.</p>
+</article><article class="wide-card limit-card" id="limit-extensive_form_games">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/extensive_form_games.html">Extensive Form Games</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to collapse every sequential game into a payoff matrix and lose the credibility problem.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by assuming a tree automatically means everyone observed every earlier move. Information sets matter because the same physical history and the same known history are not always the same thing.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is representational honesty. A tree can only support credible conclusions if its nodes, information sets, and payoffs capture what players actually know and can choose.</p>
+  <p><strong>What breaks without it:</strong> Without extensive form, the course could mistake a sequential conflict for a simultaneous one. That would hide credibility, information sets, and the fact that later choices can make earlier announcements meaningful or empty.</p>
+</article><article class="wide-card limit-card" id="limit-dominance">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/dominance.html">Dominance</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to delete a strategy because it feels unlikely. Dominance is a universal comparison, not a hunch.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by deleting strategies that are merely unattractive under their favorite prediction. That is not dominance. A strategy that is bad against one opponent move but useful against another is belief-dependent, not dominated.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is strength. Dominance is decisive when it applies, but many live strategies are not dominated. Those cases need beliefs, best responses, or equilibrium instead of more aggressive deletion.</p>
+  <p><strong>What breaks without it:</strong> Without dominance, every listed strategy would look equally alive even when some choices have no defensible reason to be played. The analysis would be noisier and less disciplined before equilibrium reasoning even begins.</p>
+</article><article class="wide-card limit-card" id="limit-iterated_deletion">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/iterated_deletion.html">Iterated Deletion</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to ignore whether the deletion uses strict or weak dominance. Weak deletion can depend on order and needs more care.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by treating the order of deletion and the type of dominance as harmless details. With weak dominance especially, those details can change what remains, so the lecture distinction matters.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is the deletion rule. Strict deletion has a different force than weak deletion, and common knowledge assumptions matter when interpreting many rounds of pruning. The boundary is why the lecture distinguishes the procedure from equilibrium selection. Surviving deletion means a strategy has not been ruled out by that rationality test; it does not mean the strategy will be played.</p>
+  <p><strong>What breaks without it:</strong> Without iterated deletion, the course would miss how one round of reasoning changes the next. Some games reveal their strategic structure only after obviously dominated actions are removed and the remaining incentives are reconsidered.</p>
+</article><article class="wide-card limit-card" id="limit-rationalizability">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/rationalizability.html">Rationalizability</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to treat rationalizable as meaning correct or predicted. It means defensible under some belief, not uniquely expected.</p>
+  <p><strong>Student trap:</strong> Students often get stuck because rationalizability feels permissive. It is permissive on purpose, but not empty: a strategy still has to be a best response to some belief, not just a move someone might randomly choose.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is mutual consistency. A rationalizable strategy may be defensible under some belief, but the beliefs across players may not fit together as an equilibrium.</p>
+  <p><strong>What breaks without it:</strong> Without rationalizability, students may jump too quickly from dominance to Nash. They would miss the middle ground where a strategy survives because a player can hold a belief that makes it a best response.</p>
+</article><article class="wide-card limit-card" id="limit-best_response">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/best_response.html">Best Response</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to ask whether an action is rational without saying against what belief.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by saying an action is rational without saying relative to what. The missing belief or opponent action is usually where the real assumption is hiding.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is the condition being held fixed. A best response tells the right action only after the opponent action, belief, type, or history has been named. This is why every later equilibrium check starts locally before making a global claim.</p>
+  <p><strong>What breaks without it:</strong> Without best response, equilibrium would be a name without a test. The course could not check Nash profiles, bidding functions, mixed strategies, or type-contingent plans because each requires a player-level optimality calculation.</p>
+</article><article class="wide-card limit-card" id="limit-nash_equilibrium">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/nash_equilibrium.html">Nash Equilibrium</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to hear equilibrium and think socially best. Nash can describe bad outcomes, including prisoner&#x27;s dilemma, because it is about unilateral incentives, not collective welfare.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by importing the everyday meaning of equilibrium as balance or goodness. Nash equilibrium can be inefficient or ugly. Its claim is narrower: no single player wants to move alone.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is one-person deviation from a fixed profile. Nash does not handle noncredible threats, belief updating, coalitional deviations, or welfare without extra structure.</p>
+  <p><strong>What breaks without it:</strong> Without Nash equilibrium, payoff tables would produce stories but not disciplined predictions. Any outcome could be proposed even if one participant has an obvious profitable deviation once everyone else behavior is named.</p>
+</article><article class="wide-card limit-card" id="limit-mixed_strategies">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/mixed_strategies.html">Mixed Strategies</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to think mixed strategy means confusion. In the model, randomization can be deliberate and exactly calculated.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by asking what the player “really” chooses. The answer is that the random device is part of the strategy; after it realizes an action, the distribution was still the planned commitment.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is interpretation and commitment. A mixed strategy is useful when randomization is credible and payoff-relevant, but not every observed frequency is an equilibrium mixture. The boundary is that the model predicts a distribution, not necessarily a visible sequence that looks random in a small sample. Interpreting observed play requires care about commitment, learning, and repeated sampling.</p>
+  <p><strong>What breaks without it:</strong> Without mixed strategies, the course would falsely conclude that some games have no stable prediction simply because no pure action profile works. It would also miss why randomness can be chosen as discipline rather than noise.</p>
+</article><article class="wide-card limit-card" id="limit-zero_sum_games">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/zero_sum_games.html">Zero-Sum Games</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to apply zero-sum intuition to bargaining or market games where joint gains are possible.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by calling any rivalry zero-sum. Many competitive economic settings still have joint gains, inefficiencies, or possibilities for collusion. Zero-sum is a payoff structure, not a mood.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is exact payoff opposition. If players can both gain, both lose, bargain, collude, or create surplus, zero-sum tools can distort the strategic picture. The boundary helps students avoid overusing adversarial language. A market competitor can hurt you and still not be in a zero-sum game if pricing, entry, innovation, or collusion changes total surplus.</p>
+  <p><strong>What breaks without it:</strong> Without the zero-sum distinction, students may apply adversarial security logic to games where cooperation or joint surplus exists. The course needs this special case precisely because its conclusions are sharper than in general games.</p>
+</article><article class="wide-card limit-card" id="limit-minimax">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/minimax.html">Minimax</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to use minimax as a general decision rule in games that are not zero-sum or not adversarial in that strict way.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by confusing minimax with pessimism. It is not a personality trait; it is the rational response to a modeled opponent whose payoff is opposed to yours.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is adversarial structure. Minimax is appropriate when the opponent is modeled as choosing to hurt your payoff; it can be too conservative in cooperative or incomplete-information settings. The boundary also explains why minimax is attractive in some technical fields but not a universal behavioral theory. It gives a guarantee under hostile response; it does not describe trust, learning, bargaining, or mutually beneficial adjustment.</p>
+  <p><strong>What breaks without it:</strong> Without minimax, the course could describe conflict but not the logic of protecting against exploitation. It would miss why randomization and worst-case evaluation can produce a stable value in zero-sum games.</p>
+</article><article class="wide-card limit-card" id="limit-backward_induction">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/backward_induction.html">Backward Induction</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to reason from the start while treating later threats as fixed facts.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by reading the tree chronologically. Players live forward, but the analyst solves backward because later incentives determine which earlier expectations are credible.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is the tree. Backward induction is only as good as the modeled histories, payoffs, and information. Hidden information or imperfect observation requires richer tools. The boundary becomes visible when real players have limited foresight or when the tree is not common knowledge. The course model assumes the relevant future choices are understood well enough to be folded backward.</p>
+  <p><strong>What breaks without it:</strong> Without backward induction, a game tree would be a picture of possible histories but not a method for evaluating them. The model could accept plans that later players would abandon once their decision node is reached.</p>
+</article><article class="wide-card limit-card" id="limit-subgame_perfection">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/subgame_perfection.html">Subgame-Perfect Nash Equilibrium</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to think any Nash equilibrium in a dynamic game is credible.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by ignoring histories that do not occur in equilibrium. Those histories are exactly where empty threats hide, so the course makes students inspect them.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is subgames. Some dynamic information problems do not have proper subgames at the histories where beliefs matter, which is why PBE enters later. This boundary is why the course later needs belief-based refinements. Some histories are inside clean subgames, but hidden-information histories can require the analyst to specify what players believe before optimal continuation play can even be evaluated. The refinement is small in wording but large in what behavior it rules out.</p>
+  <p><strong>What breaks without it:</strong> Without subgame perfection, dynamic models can rest on noncredible threats. A strategy profile may pass the initial Nash test only because it prescribes off-path behavior that nobody would actually choose later.</p>
+</article><article class="wide-card limit-card" id="limit-one_shot_deviation">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/one_shot_deviation.html">One-Shot Deviation Principle</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to use the shortcut without checking the assumptions that make local deviations enough.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by treating the principle as universally available. It depends on the structure of the dynamic game, so the shortcut must travel with its assumptions.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is the theorem conditions. The shortcut cannot be used blindly in every dynamic game; the structure must justify local checks standing in for global deviations. The boundary is also pedagogical: the principle is a theorem that saves work, not a license to ignore dynamic incentives. Students still need to know what histories and one-step deviations must be checked.</p>
+  <p><strong>What breaks without it:</strong> Without this principle, verifying repeated or dynamic equilibria can become intractable. Students may either skip deviation checks or drown in too many possible alternative histories.</p>
+</article><article class="wide-card limit-card" id="limit-bargaining">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/bargaining.html">Bargaining</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to treat bargaining power as a vague personality trait when the model usually locates it in patience, outside options, timing, or information.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by assuming the fair split is the predicted split. Game theory asks what division survives incentives, not what division sounds fair from outside the model.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is the source of bargaining power. If outside options, patience, information, or commitment are modeled wrongly, the predicted split can look precise while resting on fragile inputs. The boundary matters in applications because observed delay can come from strategic waiting, private information, transaction costs, or changing outside options. The bargaining model clarifies one mechanism, but the analyst still has to identify which pressure is active.</p>
+  <p><strong>What breaks without it:</strong> Without bargaining theory, the course could say agreement is efficient but not explain who gets what or why delay occurs. It would miss how threat points and waiting costs shape the split.</p>
+</article><article class="wide-card limit-card" id="limit-finitely_repeated_games">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/finitely_repeated_games.html">Finitely Repeated Games</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to assume repetition automatically creates cooperation. A known last round can destroy that logic.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by counting repetitions rather than asking whether the relationship has a strategic future at each date. Ten known rounds and an ongoing relationship are different objects.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is the known endpoint. The finite repeated-game unraveling logic changes when the horizon is uncertain, reputational types exist, or players cannot observe deviations. The classroom value of the finite case is that it blocks a lazy intuition about repetition. More rounds do not automatically mean more cooperation; what matters is whether each round still has a future consequence that can discipline current behavior. That backward pressure is the lecture’s main warning about finite horizons.</p>
+  <p><strong>What breaks without it:</strong> Without finite repetition, students might overgeneralize from ongoing relationships and assume history always disciplines behavior. The course needs the finite case to show why the endpoint is strategically powerful.</p>
+</article><article class="wide-card limit-card" id="limit-infinitely_repeated_games">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/infinitely_repeated_games.html">Infinitely Repeated Games</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to say infinite means literally forever. The model often means no known last round or a continuing relationship with future value.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by thinking infinite repetition guarantees cooperation. If players are impatient, cannot observe deviations, or cannot punish credibly, the cooperative path may fail.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is enforceability of the future. Infinite repetition does not help if punishment cannot be observed, is not credible, or is discounted too heavily. The lecture use is therefore conditional: first identify the continuation value, then ask whether the proposed punishment can actually be carried out. If either piece is missing, the phrase repeated relationship is not enough to support cooperation. The lecture also uses this topic to separate mathematical infinity from economic continuation. What matters for incentives is not a calendar that literally never ends, but the absence of a commonly known final moment at which punishment loses force.</p>
+  <p><strong>What breaks without it:</strong> Without infinite repetition, the course would lack the clean model where ongoing relationships sustain behavior that fails in a one-shot interaction. It would also miss why patience is a strategic parameter.</p>
+</article><article class="wide-card limit-card" id="limit-folk_theorem">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/folk_theorem.html">Folk Theorem</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to read the folk theorem as predicting one outcome. It often says many outcomes are possible, which is powerful but also less predictive.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by reading the folk theorem as “cooperation happens.” The deeper message is multiplicity: many outcomes can happen, so institutions and history may be needed to select one.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is prediction. The folk theorem shows many payoffs can be sustained; it does not by itself select which one will occur in a specific institution. The boundary is selection. The theorem tells the course that many outcomes can be made stable, but a real application still needs institutions, norms, history, or communication to explain why one equilibrium rather than another is chosen.</p>
+  <p><strong>What breaks without it:</strong> Without the folk theorem, students may think repeated games merely select one cooperative equilibrium. The theorem shows a much larger set of feasible, individually rational outcomes supported by punishment.</p>
+</article><article class="wide-card limit-card" id="limit-implicit_cartels">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/implicit_cartels.html">Implicit Cartels</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to assume high prices prove explicit agreement. Repeated-game incentives can sometimes generate similar outcomes without a formal contract.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by equating collusion with communication. The model can produce tacit collusion if prices, market shares, or other signals let firms detect and punish deviations.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is monitoring and legality. Tacit collusion requires that firms can detect deviations and respond; market noise, entry, and antitrust constraints can break the mechanism. In lecture terms, the important boundary is that the model is explaining an incentive mechanism, not proving that firms actually coordinated in any given market. Evidence about prices, demand shocks, communication, and monitoring would be needed before applying the concept outside the classroom example. The concept also depends on market observability. If firms cannot tell whether a low price came from cheating, demand noise, cost shocks, or a new entrant, punishment may be too blunt or too costly to sustain the cartel path.</p>
+  <p><strong>What breaks without it:</strong> Without the cartel application, repeated-game ideas could feel abstract. The course would miss how continuation values, monitoring, and punishment shape real pricing incentives and antitrust concerns.</p>
+</article><article class="wide-card limit-card" id="limit-imperfect_competition">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/imperfect_competition.html">Imperfect Competition</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to treat imperfect competition as just monopoly with more firms. The whole point is that each firm has some power but not complete power. The strategic object is the interaction among firms, not only the demand curve facing one seller.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by mixing up the market story with the strategic object. The story may be coffee shops, patents, or internet providers, but the object is the payoff map from firm choices to profits.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is model specification. Cournot and Bertrand are not universal laws of competition; they are different ways to represent what firms choose. The lecture itself flags this by contrasting quantity choice and price choice. In real markets, capacity constraints, product differentiation, search frictions, contracts, and regulation can change which representation fits. The concept is strongest when the analyst can defend why price, quantity, entry, or another action is the strategic variable.</p>
+  <p><strong>What breaks without it:</strong> Without this concept, the course could not explain why a firm may charge above cost, why price competition can be brutal, or why changing the modeling choice from quantity to price can change the prediction. Market behavior would be described as if firms either had no power or total power.</p>
+</article><article class="wide-card limit-card" id="limit-bayesian_games">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/bayesian_games.html">Bayesian Games</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to treat hidden information as random noise outside the game. In Bayesian games, the uncertainty is part of the strategic structure.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by treating uncertainty as noise outside the model. In a Bayesian game, uncertainty is inside the model and has named objects: types, beliefs, strategies, and payoffs.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is the type model. If the type space, priors, or payoff dependence are wrong, Bayesian equilibrium can be internally consistent but externally misleading. The lecture boundary also explains why the type space is a modeling choice. Too few types can erase important private information; too many can make the model flexible without adding insight. The useful type structure is the one that carries the strategic uncertainty actually driving behavior. The model’s usefulness depends on naming that hidden structure carefully.</p>
+  <p><strong>What breaks without it:</strong> Without Bayesian games, the course would treat hidden values, costs, and motives as if everyone knew them. Auctions, signaling, and incomplete-information bargaining would collapse into misleading complete-information models.</p>
+</article><article class="wide-card limit-card" id="limit-types_and_beliefs">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/types_and_beliefs.html">Types And Beliefs</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to blur type and action. A type is hidden information; an action is a choice that may reveal or conceal it.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by saying “the player believes the type” as if belief and type were the same thing. One is the hidden state; the other is someone’s uncertain view of it.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is discipline on beliefs. Beliefs are necessary, but they should come from priors, signals, observations, or equilibrium restrictions rather than being chosen to rescue any story. The lecture boundary is that beliefs should be inspectable. A model that can support any action by inventing a convenient belief has stopped explaining. The belief structure must connect to priors, information, or equilibrium restrictions.</p>
+  <p><strong>What breaks without it:</strong> Without types and beliefs, private-information models would not say who knows what or how uncertainty enters payoffs. The analyst could not distinguish a high-value bidder from a low-value bidder or a receiver belief from sender truth.</p>
+</article><article class="wide-card limit-card" id="limit-bayesian_nash_equilibrium">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/bayesian_nash_equilibrium.html">Bayesian Nash Equilibrium</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to look for one action per player. In Bayesian Nash, a strategy is a rule mapping types to actions.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by checking only the average player. Bayesian Nash is stricter: a proposed strategy can fail because one particular type wants to deviate, even if the pooled behavior looks reasonable.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is timing and updating. Bayesian Nash handles static type uncertainty, but dynamic signals and histories require belief systems such as PBE. The boundary is why Bayesian Nash is not the final word for signaling games. It handles plans by type before dynamic observations, but once actions reveal information over time, equilibrium must also discipline posterior beliefs. Each type receives its own incentive audit, not just the player as a whole.</p>
+  <p><strong>What breaks without it:</strong> Without Bayesian Nash, the course could define types and beliefs but not check whether type-contingent strategies hold together. A proposed bidding or action rule might fail for one hidden type even if it sounds plausible overall.</p>
+</article><article class="wide-card limit-card" id="limit-screening_and_adverse_selection">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/screening_and_adverse_selection.html">Screening And Adverse Selection</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to treat demand as only fewer people buying when price rises. In adverse selection, the identity of the buyers changes too, and that composition change can matter more than the number of buyers.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by treating hidden information as just another probability. The lecture point is sharper: the action or price changes which hidden types remain in the game, so the probability distribution after participation is not the original distribution.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is the source of selection. Not every failed trade is adverse selection; the mechanism requires hidden type information and terms that select different types differently. The evidence supports the screening/adverse-selection logic in the lecture&#x27;s buyer-seller and insurance examples. Broader claims about real insurance or legal bargaining require evidence about actual information, costs, offers, and participation.</p>
+  <p><strong>What breaks without it:</strong> Without this concept, the course would predict trade whenever buyer value exceeds seller cost. It would miss the reason some trades fail: the terms that attract one type may drive away another or reveal information that changes future bargaining.</p>
+</article><article class="wide-card limit-card" id="limit-auctions">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/auctions.html">Auctions</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to think the highest-value bidder automatically bids their value in every auction format.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by treating bids as direct value reports. In many auctions, bids are strategic actions distorted by payment rules, risk, competition, and beliefs about rivals.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is assumptions about values and bidders. Risk attitudes, budgets, common values, entry, collusion, and correlated information can all change bidding logic. The lecture boundary is especially important because auction predictions are assumption-sensitive. Changing the value environment, bidder risk, reserve price, or information structure can change whether truthful bidding, bid shading, or revenue comparisons survive. The auction rule and the bidder’s information must therefore be read together.</p>
+  <p><strong>What breaks without it:</strong> Without auction theory, the course would miss one of the clearest economic applications of incomplete-information games. It could not explain bid shading, truthful bidding in special formats, or why payment rules change behavior.</p>
+</article><article class="wide-card limit-card" id="limit-revenue_equivalence">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/revenue_equivalence.html">Revenue Equivalence</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to quote revenue equivalence without the assumptions. Change risk, affiliation, reserve prices, or asymmetry and the result can fail.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by comparing the rules while holding bids fixed. Equilibrium bids change with the auction format, and those strategic adjustments are exactly what the theorem accounts for.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is the theorem assumptions. Once values are affiliated, bidders are risk averse, reserve prices change, or allocation rules differ, equivalence may fail. The teaching payoff is that failure is informative. When revenue equivalence breaks, the reason usually points to a real economic force such as risk aversion, common values, entry, asymmetry, or a changed allocation rule. The theorem is a map of assumptions as much as a revenue result.</p>
+  <p><strong>What breaks without it:</strong> Without revenue equivalence, every auction comparison would be treated as an isolated case. The course would miss the deeper structure that makes some formats equivalent and the assumptions that make equivalence fragile.</p>
+</article><article class="wide-card limit-card" id="limit-ad_auctions">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/ad_auctions.html">Ad Auctions</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to treat ad auctions as ordinary one-object auctions. Position, click probability, and platform quality adjustments change the strategic object.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by seeing only bids. In sponsored search, the highest bid may not create the highest platform value if relevance and click probability differ.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is platform feedback. Click predictions, quality scores, user behavior, and repeated advertiser learning can make the simple auction model only a first approximation. The lecture boundary is that real platforms update predictions and rules over time. A static ad-auction model can explain the core incentive tradeoff, but platform learning and advertiser experimentation can add dynamics that the basic mechanism does not fully capture. The platform’s ranking formula becomes part of the strategic environment.</p>
+  <p><strong>What breaks without it:</strong> Without ad auctions, the course would leave mechanism design at textbook allocation. It would miss how online markets mix bidding strategy with measurement, ranking rules, and platform incentives.</p>
+</article><article class="wide-card limit-card" id="limit-perfect_bayesian_equilibrium">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/perfect_bayesian_equilibrium.html">Perfect Bayesian Equilibrium</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to focus only on strategies and forget beliefs. In hidden-information dynamic games, beliefs are part of the equilibrium object.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by solving the strategy profile and treating beliefs as commentary. In PBE, beliefs are part of the equilibrium data, especially because off-path beliefs can affect credibility.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is off-path freedom. PBE disciplines beliefs where Bayes rule applies, but unexpected histories can still leave multiple belief specifications and multiple equilibria. The practical reading rule is to inspect both halves of the candidate equilibrium. If the strategies look sensible but the beliefs are arbitrary, or the beliefs look plausible but the continuation actions are not optimal, the PBE claim has not been earned. Belief discipline is therefore not optional decoration. The lecture uses that discipline to keep inference and sequential choice tied together.</p>
+  <p><strong>What breaks without it:</strong> Without PBE, signaling and other dynamic asymmetric-information models could prescribe actions without explaining the beliefs that make those actions rational. Credibility would be separated from learning.</p>
+</article><article class="wide-card limit-card" id="limit-signaling">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/signaling.html">Signaling</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to assume any costly action is a signal. It signals only if costs and incentives differ across types in a way receivers can reason from.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by assuming costly means informative. A costly signal is informative only if the cost or benefit differs across types in the right direction.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is mimicry. A signal separates types only when the wrong type does not want to imitate; if imitation is cheap enough, pooling can destroy information. The boundary also forces an empirical question. If the real-world signal is education, certification, price, or warranty, the analyst still has to ask whether costs really differ by type in the direction the model requires. The signal must survive the imitation test. Receiver beliefs and sender incentives must therefore be solved as one system, not separately.</p>
+  <p><strong>What breaks without it:</strong> Without signaling, the course could not explain education, warranties, investment, or other actions whose value partly comes from what observers infer. It would treat all messages as direct information rather than incentive-shaped evidence.</p>
+</article><article class="wide-card limit-card" id="limit-cheap_talk">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/cheap_talk.html">Cheap Talk</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to say cheap means irrelevant. Costless speech can matter when incentives make truthful communication self-enforcing.</p>
+  <p><strong>Student trap:</strong> Students often get stuck by saying cheap talk is either always useless or always informative. The lecture point is conditional: credibility depends on payoff alignment and receiver response.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is incentive alignment. Costless communication can transmit information only when the sender prefers a receiver response close enough to the truth. This is why cheap talk is a useful boundary case after signaling. It asks how much information can be transmitted when the usual separating device, costly action, has been removed. The answer depends on preferences, not on the beauty of the message. Payoff alignment is the hidden engine. The receiver listens only when the sender’s strategic interest makes listening defensible.</p>
+  <p><strong>What breaks without it:</strong> Without cheap talk, the course would treat all communication as either irrelevant noise or costly signaling. It would miss the middle case where aligned interests make some costless messages credible enough to affect actions.</p>
+</article><article class="wide-card limit-card" id="limit-common_knowledge">
+  <p class="eyebrow">Concept limit</p>
+  <h2><a href="concepts/common_knowledge.html">Common Knowledge</a></h2>
+  <p><strong>Common misunderstanding:</strong> The mistake is to treat true, known, and common knowledge as the same. They are different levels of shared awareness.</p>
+  <p><strong>Student trap:</strong> Students often get stuck because the infinite chain sounds philosophical. The course uses it for concrete coordination: people act differently when a fact is publicly shared than when each person only privately receives it.</p>
+  <p><strong>Where the idea stops working:</strong> The boundary is public assurance. A fact can be true and widely known without becoming common knowledge if players doubt whether others received or understood it. The boundary is that common knowledge is stronger than public posting in the ordinary sense. If people miss the announcement, doubt its authenticity, or doubt whether others saw it, the recursive chain can fail.</p>
+  <p><strong>What breaks without it:</strong> Without common knowledge, the course would miss higher-order uncertainty. Players might all know the same event, yet hesitate because they do not know whether others know, or whether others know that they know.</p>
+</article></section>
+<section><h2>Theme-Level Boundaries</h2><article class="wide-card limit-card" id="theme-limit-choice_and_payoff">
+  <p class="eyebrow">Theme limit</p>
+  <h2><a href="themes.html#choice_and_payoff">Choice Under Tradeoffs</a></h2>
+  <p><strong>Where the analogy breaks:</strong> The analogy breaks if the utility number is read as a psychological meter. In these lectures, utility is a representation of choice behavior. Changing the units can leave ordinal choice unchanged, while expected-utility comparisons need stronger structure because lotteries require meaningful tradeoffs across uncertain outcomes.</p>
+</article><article class="wide-card limit-card" id="theme-limit-strategic_dependence">
+  <p class="eyebrow">Theme limit</p>
+  <h2><a href="themes.html#strategic_dependence">Strategic Dependence</a></h2>
+  <p><strong>Where the analogy breaks:</strong> A table can hide timing and information, while a tree can become misleading if the information sets or payoffs are wrong. Dominance is also fragile: strict dominance is a strong deletion rule, but weak dominance and belief-based arguments require more care.</p>
+</article><article class="wide-card limit-card" id="theme-limit-equilibrium_reasoning">
+  <p class="eyebrow">Theme limit</p>
+  <h2><a href="themes.html#equilibrium_reasoning">Equilibrium As Mutual Consistency</a></h2>
+  <p><strong>Where the analogy breaks:</strong> Equilibrium does not mean efficient, ethical, or likely in a behavioral sense. It also changes shape when time, private information, or beliefs enter; that is why later lectures need subgame-perfect, Bayesian Nash, and perfect Bayesian equilibrium rather than one universal test.</p>
+</article><article class="wide-card limit-card" id="theme-limit-time_and_credibility">
+  <p class="eyebrow">Theme limit</p>
+  <h2><a href="themes.html#time_and_credibility">Time, Threats, And Credibility</a></h2>
+  <p><strong>Where the analogy breaks:</strong> Backward logic can overstate precision if the tree omits uncertainty, private information, renegotiation, or limited foresight. A threat that is credible in one subgame may fail once beliefs or outside options change.</p>
+</article><article class="wide-card limit-card" id="theme-limit-repetition_and_cooperation">
+  <p class="eyebrow">Theme limit</p>
+  <h2><a href="themes.html#repetition_and_cooperation">Repeated Interaction And Cooperation</a></h2>
+  <p><strong>Where the analogy breaks:</strong> The repeated-game analogy breaks when monitoring is poor, players are too impatient, punishment is not credible, entry changes the player set, or the horizon is known to end. Future discipline is a mechanism with conditions, not a guarantee of cooperation.</p>
+</article><article class="wide-card limit-card" id="theme-limit-private_information">
+  <p class="eyebrow">Theme limit</p>
+  <h2><a href="themes.html#private_information">Private Information And Beliefs</a></h2>
+  <p><strong>Where the analogy breaks:</strong> Beliefs are not free excuses. Off-path beliefs, impossible observations, and strategic signaling can make the model delicate. Treating any arbitrary belief as equally disciplined can make a private-information model explain too much.</p>
+</article><article class="wide-card limit-card" id="theme-limit-mechanisms_and_markets">
+  <p class="eyebrow">Theme limit</p>
+  <h2><a href="themes.html#mechanisms_and_markets">Mechanisms, Auctions, And Markets</a></h2>
+  <p><strong>Where the analogy breaks:</strong> Auction results can collapse when assumptions change: correlated values, risk aversion, budgets, entry costs, reserve prices, quality scores, or repeated interaction can all move the answer. Design claims have to travel with their assumptions.</p>
+</article><article class="wide-card limit-card" id="theme-limit-communication_and_knowledge">
+  <p class="eyebrow">Theme limit</p>
+  <h2><a href="themes.html#communication_and_knowledge">Communication And Knowledge</a></h2>
+  <p><strong>Where the analogy breaks:</strong> A signal is not the same as cheap talk, and mutual knowledge is not automatically common knowledge. Costs, preferences, observability, and higher-order beliefs determine which communication model applies.</p>
+</article></section>
+<section><h2>Equation Misreads</h2><article class="wide-card limit-card" id="derivation-limit-dominance_inequality">
+  <p class="eyebrow">Equation misread</p>
+  <h2><a href="primitives.html#dominance_inequality">Dominance Inequality</a></h2>
+  <p><strong>Common misread:</strong> The common mistake is deleting a strategy because it performs badly in the most likely case. That is not dominance. Dominance requires the inequality to hold across every case named by the model.</p>
+</article><article class="wide-card limit-card" id="derivation-limit-expected_utility">
+  <p class="eyebrow">Equation misread</p>
+  <h2><a href="primitives.html#expected_utility">Expected Utility</a></h2>
+  <p><strong>Common misread:</strong> The formula is not saying the average state actually happens. It is a decision rule for choosing under uncertainty.</p>
+</article><article class="wide-card limit-card" id="derivation-limit-best_response">
+  <p class="eyebrow">Equation misread</p>
+  <h2><a href="primitives.html#best_response">Best Response</a></h2>
+  <p><strong>Common misread:</strong> A best response is always conditional. If the opponent action or belief changes, the best response may change too.</p>
+</article><article class="wide-card limit-card" id="derivation-limit-nash_equilibrium">
+  <p class="eyebrow">Equation misread</p>
+  <h2><a href="primitives.html#nash_equilibrium">Nash Equilibrium</a></h2>
+  <p><strong>Common misread:</strong> Equilibrium does not mean the best overall outcome. It means no single player wants to move alone under the modeled payoffs.</p>
+</article><article class="wide-card limit-card" id="derivation-limit-backward_induction">
+  <p class="eyebrow">Equation misread</p>
+  <h2><a href="primitives.html#backward_induction">Backward Induction</a></h2>
+  <p><strong>Common misread:</strong> Solving backward is only as good as the tree. If the tree leaves out information, renegotiation, or hidden types, the backward calculation can be precise but misleading.</p>
+</article><article class="wide-card limit-card" id="derivation-limit-discounted_sum">
+  <p class="eyebrow">Equation misread</p>
+  <h2><a href="primitives.html#discounted_sum">Discounted Payoff Sum</a></h2>
+  <p><strong>Common misread:</strong> The formula does not make future punishment automatically powerful. If delta is small, future consequences may barely matter.</p>
+</article><article class="wide-card limit-card" id="derivation-limit-bayes_rule">
+  <p class="eyebrow">Equation misread</p>
+  <h2><a href="primitives.html#bayes_rule">Bayes Rule</a></h2>
+  <p><strong>Common misread:</strong> Bayes rule does not tell you off-path beliefs when the observed signal has zero probability under the proposed strategy. That is why dynamic information games need careful belief discipline.</p>
+</article><article class="wide-card limit-card" id="derivation-limit-auction_expected_payment">
+  <p class="eyebrow">Equation misread</p>
+  <h2><a href="primitives.html#auction_expected_payment">Auction Expected Payment</a></h2>
+  <p><strong>Common misread:</strong> A higher bid can raise both the chance of winning and the payment made when winning. The bidder&#x27;s incentive depends on both effects, not one alone.</p>
+</article><article class="wide-card limit-card" id="derivation-limit-common_knowledge_recursion">
+  <p class="eyebrow">Equation misread</p>
+  <h2><a href="primitives.html#common_knowledge_recursion">Common Knowledge Recursion</a></h2>
+  <p><strong>Common misread:</strong> A fact being true or widely known is not enough. Common knowledge requires the recursive publicness that lets players reason about other players&#x27; reasoning.</p>
+</article></section></main>
+</body>
+</html>
