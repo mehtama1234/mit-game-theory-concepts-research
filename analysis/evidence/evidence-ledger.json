@@ -1,0 +1,1837 @@
+[
+  {
+    "id": "ev-preferences-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 1: Introduction to Individual Decision-Making",
+    "youtube_url": "https://www.youtube.com/watch?v=WRibE2nt8wM",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/001-WRibE2nt8wM-Lecture 1: Introduction to Individual Decision-Making.txt",
+    "timestamp_start": "00:17:36.880",
+    "timestamp_end": "00:17:49.270",
+    "paraphrased_claim": "The lecture gives transcript support for Preferences as a way to say which outcomes a person ranks above others.",
+    "lecture_argument": "In Lecture 1: Introduction to Individual Decision-Making, the course treats Preferences as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Preferences, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A preference relation ranks outcomes, often represented by a utility function u(x). The useful relation is `x preferred to y means u(x) > u(y).`. In plain language: x and y are possible outcomes; u assigns each outcome a number; the larger number records the option the person ranks higher.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Preferences; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Preferences as a glossary entry.",
+    "local_transcript_window": "who consistently maximize some sort of preference. So, we need to specify this preference. So, we need to specify this preference. So, we need to specify this agent's preferences. And in this case, their preferences are And in this case, their preferences are And in this case, their preferences are going to specify some ordering amongst",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "preference",
+      "preferences",
+      "prefer"
+    ],
+    "supports_concepts": [
+      "preferences"
+    ],
+    "supports_subthemes": [
+      "ranking_outcomes"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-preferences-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 2: Representation of Games",
+    "youtube_url": "https://www.youtube.com/watch?v=JAib42oAiKE",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/002-JAib42oAiKE-Lecture 2: Representation of Games.txt",
+    "timestamp_start": "00:08:52.110",
+    "timestamp_end": "00:09:00.560",
+    "paraphrased_claim": "The lecture gives transcript support for Preferences as a way to say which outcomes a person ranks above others.",
+    "lecture_argument": "In Lecture 2: Representation of Games, the course treats Preferences as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Preferences, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A preference relation ranks outcomes, often represented by a utility function u(x). The useful relation is `x preferred to y means u(x) > u(y).`. In plain language: x and y are possible outcomes; u assigns each outcome a number; the larger number records the option the person ranks higher.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Preferences; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Preferences as a glossary entry.",
+    "local_transcript_window": "If I want to specify this this problem, If I want to specify this this problem, what have I not told you? Yeah? Preferences? Preferences, right? Yeah? Preferences? Preferences, right? Yeah? Preferences? Preferences, right? And it's tempting to say, \"Oh, well, all And it's tempting to say, \"Oh, well, all",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "preference",
+      "preferences",
+      "prefer"
+    ],
+    "supports_concepts": [
+      "preferences"
+    ],
+    "supports_subthemes": [
+      "ranking_outcomes"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-utility-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 1: Introduction to Individual Decision-Making",
+    "youtube_url": "https://www.youtube.com/watch?v=WRibE2nt8wM",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/001-WRibE2nt8wM-Lecture 1: Introduction to Individual Decision-Making.txt",
+    "timestamp_start": "00:34:21.399",
+    "timestamp_end": "00:34:26.919",
+    "paraphrased_claim": "The lecture gives transcript support for Utility as a numerical representation of what someone is trying to get.",
+    "lecture_argument": "In Lecture 1: Introduction to Individual Decision-Making, the course treats Utility as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Utility, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A preference relation ranks outcomes, often represented by a utility function u(x). The useful relation is `x preferred to y means u(x) > u(y).`. In plain language: x and y are possible outcomes; u assigns each outcome a number; the larger number records the option the person ranks higher.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Utility; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Utility as a glossary entry.",
+    "local_transcript_window": "to be cardinal utility functions or von cardinal utility functions or von cardinal utility functions or von Neumann utility functions rather than Neumann utility functions rather than Neumann utility functions rather than ordinal utility functions. And just to ordinal utility functions. And just to",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "utility",
+      "utility function",
+      "von Neumann"
+    ],
+    "supports_concepts": [
+      "utility"
+    ],
+    "supports_subthemes": [
+      "ranking_outcomes"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-utility-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 2: Representation of Games",
+    "youtube_url": "https://www.youtube.com/watch?v=JAib42oAiKE",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/002-JAib42oAiKE-Lecture 2: Representation of Games.txt",
+    "timestamp_start": "00:58:25.359",
+    "timestamp_end": "00:58:32.320",
+    "paraphrased_claim": "The lecture gives transcript support for Utility as a numerical representation of what someone is trying to get.",
+    "lecture_argument": "In Lecture 2: Representation of Games, the course treats Utility as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Utility, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A preference relation ranks outcomes, often represented by a utility function u(x). The useful relation is `x preferred to y means u(x) > u(y).`. In plain language: x and y are possible outcomes; u assigns each outcome a number; the larger number records the option the person ranks higher.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Utility; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Utility as a glossary entry.",
+    "local_transcript_window": "utilities over consequences. And that expected utility is going to be the new expected utility is going to be the new expected utility is going to be the new definition of the new utility function definition of the new utility function definition of the new utility function that we assign to the strategy profile. that we assign to the strategy profile.",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "utility",
+      "utility function",
+      "expected utility"
+    ],
+    "supports_concepts": [
+      "utility"
+    ],
+    "supports_subthemes": [
+      "ranking_outcomes"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-expected_utility-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 1: Introduction to Individual Decision-Making",
+    "youtube_url": "https://www.youtube.com/watch?v=WRibE2nt8wM",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/001-WRibE2nt8wM-Lecture 1: Introduction to Individual Decision-Making.txt",
+    "timestamp_start": "00:44:08.120",
+    "timestamp_end": "00:44:13.960",
+    "paraphrased_claim": "The lecture gives transcript support for Expected Utility as averaging possible payoffs by how likely they are.",
+    "lecture_argument": "In Lecture 1: Introduction to Individual Decision-Making, the course treats Expected Utility as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Expected Utility, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Expected Utility; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Expected Utility as a glossary entry.",
+    "local_transcript_window": "And similarly, the MBTA is a different lottery where with probability P, I get lottery where with probability P, I get lottery where with probability P, I get this outcome, and with probability 1 - this outcome, and with probability 1 - this outcome, and with probability 1 - P, I get this outcome. So, we need some P, I get this outcome. So, we need some",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "lottery",
+      "probability"
+    ],
+    "supports_concepts": [
+      "expected_utility"
+    ],
+    "supports_subthemes": [
+      "ranking_outcomes"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-expected_utility-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 16: Bayesian Games",
+    "youtube_url": "https://www.youtube.com/watch?v=-6A59LiKUss",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/016--6A59LiKUss-Lecture 16: Bayesian Games.txt",
+    "timestamp_start": "00:45:47.440",
+    "timestamp_end": "00:45:52.880",
+    "paraphrased_claim": "The lecture gives transcript support for Expected Utility as averaging possible payoffs by how likely they are.",
+    "lecture_argument": "In Lecture 16: Bayesian Games, the course treats Expected Utility as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Expected Utility, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Expected Utility; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Expected Utility as a glossary entry.",
+    "local_transcript_window": "that's indicative of it being hard, indeed with probability Q, but with indeed with probability Q, but with indeed with probability Q, but with probability 1 minus Q, you know, it's probability 1 minus Q, you know, it's probability 1 minus Q, you know, it's deceptively hard. It looks it's actually deceptively hard. It looks it's actually",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "probability"
+    ],
+    "supports_concepts": [
+      "expected_utility"
+    ],
+    "supports_subthemes": [
+      "ranking_outcomes"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-strategic_form_games-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 2: Representation of Games",
+    "youtube_url": "https://www.youtube.com/watch?v=JAib42oAiKE",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/002-JAib42oAiKE-Lecture 2: Representation of Games.txt",
+    "timestamp_start": "00:30:21.640",
+    "timestamp_end": "00:30:29.680",
+    "paraphrased_claim": "The lecture gives transcript support for Strategic Form Games as a compact table of players, actions, and payoffs chosen at the same time.",
+    "lecture_argument": "In Lecture 2: Representation of Games, the course treats Strategic Form Games as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Strategic Form Games, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A payoff function u_i(a_i, a_-i) maps everyone's actions to player i's payoff. The useful relation is `u_i(a_i, a_-i).`. In plain language: i is one player; a_i is that player's action; a_-i means everyone else's actions; u_i is the payoff assigned to the whole action profile.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Strategic Form Games; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Strategic Form Games as a glossary entry.",
+    "local_transcript_window": "important. So up here, when I said players I equals one through N, part of players I equals one through N, part of players I equals one through N, part of naming those players is also assigning a naming those players is also assigning a naming those players is also assigning a player to every single node in the tree. player to every single node in the tree.",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "players"
+    ],
+    "supports_concepts": [
+      "strategic_form_games"
+    ],
+    "supports_subthemes": [
+      "tables_and_trees"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-strategic_form_games-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 1: Introduction to Individual Decision-Making",
+    "youtube_url": "https://www.youtube.com/watch?v=WRibE2nt8wM",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/001-WRibE2nt8wM-Lecture 1: Introduction to Individual Decision-Making.txt",
+    "timestamp_start": "00:51:34.920",
+    "timestamp_end": "00:51:41.320",
+    "paraphrased_claim": "The lecture gives transcript support for Strategic Form Games as a compact table of players, actions, and payoffs chosen at the same time.",
+    "lecture_argument": "In Lecture 1: Introduction to Individual Decision-Making, the course treats Strategic Form Games as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Strategic Form Games, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A payoff function u_i(a_i, a_-i) maps everyone's actions to player i's payoff. The useful relation is `u_i(a_i, a_-i).`. In plain language: i is one player; a_i is that player's action; a_-i means everyone else's actions; u_i is the payoff assigned to the whole action profile.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Strategic Form Games; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Strategic Form Games as a glossary entry.",
+    "local_transcript_window": "through introspection, you form your beliefs about what nature does, not what beliefs about what nature does, not what beliefs about what nature does, not what other players do. other players do. other players do. Okay, so one final thing is in the last Okay, so one final thing is in the last",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "players"
+    ],
+    "supports_concepts": [
+      "strategic_form_games"
+    ],
+    "supports_subthemes": [
+      "tables_and_trees"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-extensive_form_games-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 2: Representation of Games",
+    "youtube_url": "https://www.youtube.com/watch?v=JAib42oAiKE",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/002-JAib42oAiKE-Lecture 2: Representation of Games.txt",
+    "timestamp_start": "00:23:25.280",
+    "timestamp_end": "00:23:31.560",
+    "paraphrased_claim": "The lecture gives transcript support for Extensive Form Games as a game drawn as a tree so timing and information can be represented.",
+    "lecture_argument": "In Lecture 2: Representation of Games, the course treats Extensive Form Games as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Extensive Form Games, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Extensive Form Games; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Extensive Form Games as a glossary entry.",
+    "local_transcript_window": "At this node, well, nothing has happened. So, the history is nothing. happened. So, the history is nothing. happened. So, the history is nothing. At this node, the history is player one At this node, the history is player one At this node, the history is player one chose C. chose C.",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "node",
+      "history"
+    ],
+    "supports_concepts": [
+      "extensive_form_games"
+    ],
+    "supports_subthemes": [
+      "tables_and_trees"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-extensive_form_games-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 8: Backward Induction",
+    "youtube_url": "https://www.youtube.com/watch?v=VHex0a2JFWI",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/008-VHex0a2JFWI-Lecture 8: Backward Induction.txt",
+    "timestamp_start": "00:35:54.160",
+    "timestamp_end": "00:36:00.240",
+    "paraphrased_claim": "The lecture gives transcript support for Extensive Form Games as a game drawn as a tree so timing and information can be represented.",
+    "lecture_argument": "In Lecture 8: Backward Induction, the course treats Extensive Form Games as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Extensive Form Games, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Extensive Form Games; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Extensive Form Games as a glossary entry.",
+    "local_transcript_window": "this to games of perfect information so that at any node we get to, we know that that at any node we get to, we know that that at any node we get to, we know that we're at that node and therefore we can we're at that node and therefore we can we're at that node and therefore we can compute the optimal play. If we're at a compute the optimal play. If we're at a",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "node"
+    ],
+    "supports_concepts": [
+      "extensive_form_games"
+    ],
+    "supports_subthemes": [
+      "tables_and_trees"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-dominance-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 3: Dominance",
+    "youtube_url": "https://www.youtube.com/watch?v=b7BAHSV1EBo",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/003-b7BAHSV1EBo-Lecture 3: Dominance.txt",
+    "timestamp_start": "01:02:03.520",
+    "timestamp_end": "01:02:09.640",
+    "paraphrased_claim": "The lecture gives transcript support for Dominance as a way to rule out choices that are never better than another choice.",
+    "lecture_argument": "In Lecture 3: Dominance, the course treats Dominance as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Dominance, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Dominance compares one strategy against another across possible opponent choices. The useful relation is `s dominates t if u_i(s, a_-i) >= u_i(t, a_-i) for all a_-i, with strict inequality somewhere.`. In plain language: The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Dominance; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Dominance as a glossary entry.",
+    "local_transcript_window": "see that in fact M is dominated. It's in fact strictly dominated, just not by a fact strictly dominated, just not by a fact strictly dominated, just not by a pure strategy. It's strictly dominated pure strategy. It's strictly dominated pure strategy. It's strictly dominated by a mixed strategy. So, let's formally by a mixed strategy. So, let's formally",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "dominated",
+      "strictly dominated"
+    ],
+    "supports_concepts": [
+      "dominance"
+    ],
+    "supports_subthemes": [
+      "eliminating_bad_moves"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-dominance-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 4: Rationalizability",
+    "youtube_url": "https://www.youtube.com/watch?v=ZdwIokL0P_U",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/004-ZdwIokL0P_U-Lecture 4: Rationalizability.txt",
+    "timestamp_start": "00:03:44.720",
+    "timestamp_end": "00:03:56.910",
+    "paraphrased_claim": "The lecture gives transcript support for Dominance as a way to rule out choices that are never better than another choice.",
+    "lecture_argument": "In Lecture 4: Rationalizability, the course treats Dominance as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Dominance, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Dominance compares one strategy against another across possible opponent choices. The useful relation is `s dominates t if u_i(s, a_-i) >= u_i(t, a_-i) for all a_-i, with strict inequality somewhere.`. In plain language: The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Dominance; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Dominance as a glossary entry.",
+    "local_transcript_window": "pure strategy. We had to consider strict dominance by mixed strategies. So if dominance by mixed strategies. So if dominance by mixed strategies. So if it's strictly dominated by some mixed it's strictly dominated by some mixed it's strictly dominated by some mixed strategy. And what we showed last week is that",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "dominance",
+      "dominated",
+      "strictly dominated"
+    ],
+    "supports_concepts": [
+      "dominance"
+    ],
+    "supports_subthemes": [
+      "eliminating_bad_moves"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-iterated_deletion-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 3: Dominance",
+    "youtube_url": "https://www.youtube.com/watch?v=b7BAHSV1EBo",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/003-b7BAHSV1EBo-Lecture 3: Dominance.txt",
+    "timestamp_start": "00:00:09.800",
+    "timestamp_end": "00:00:21.310",
+    "paraphrased_claim": "The lecture gives transcript support for Iterated Deletion as repeatedly removing bad strategies and seeing what remains.",
+    "lecture_argument": "In Lecture 3: Dominance, the course treats Iterated Deletion as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Iterated Deletion, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Dominance compares one strategy against another across possible opponent choices. The useful relation is `s dominates t if u_i(s, a_-i) >= u_i(t, a_-i) for all a_-i, with strict inequality somewhere.`. In plain language: The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Iterated Deletion; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Iterated Deletion as a glossary entry.",
+    "local_transcript_window": "So today we're going to start analyzing So today we're going to start analyzing So today we're going to start analyzing games. So in my view this is where things start",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "iterated deletion",
+      "delete"
+    ],
+    "supports_concepts": [
+      "iterated_deletion"
+    ],
+    "supports_subthemes": [
+      "eliminating_bad_moves"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-iterated_deletion-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 4: Rationalizability",
+    "youtube_url": "https://www.youtube.com/watch?v=ZdwIokL0P_U",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/004-ZdwIokL0P_U-Lecture 4: Rationalizability.txt",
+    "timestamp_start": "00:24:15.720",
+    "timestamp_end": "00:24:19.679",
+    "paraphrased_claim": "The lecture gives transcript support for Iterated Deletion as repeatedly removing bad strategies and seeing what remains.",
+    "lecture_argument": "In Lecture 4: Rationalizability, the course treats Iterated Deletion as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Iterated Deletion, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Dominance compares one strategy against another across possible opponent choices. The useful relation is `s dominates t if u_i(s, a_-i) >= u_i(t, a_-i) for all a_-i, with strict inequality somewhere.`. In plain language: The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Iterated Deletion; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Iterated Deletion as a glossary entry.",
+    "local_transcript_window": "really needed to use is that players don't play strictly dominated don't play strictly dominated don't play strictly dominated strategies. strategies. strategies. They know their opponents don't play They know their opponents don't play",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "dominated strategies"
+    ],
+    "supports_concepts": [
+      "iterated_deletion"
+    ],
+    "supports_subthemes": [
+      "eliminating_bad_moves"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-rationalizability-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 4: Rationalizability",
+    "youtube_url": "https://www.youtube.com/watch?v=ZdwIokL0P_U",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/004-ZdwIokL0P_U-Lecture 4: Rationalizability.txt",
+    "timestamp_start": "00:03:09.600",
+    "timestamp_end": "00:03:16.800",
+    "paraphrased_claim": "The lecture gives transcript support for Rationalizability as a strategy is plausible if it can be optimal for some reasonable belief about others.",
+    "lecture_argument": "In Lecture 4: Rationalizability, the course treats Rationalizability as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Rationalizability, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Rationalizability; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Rationalizability as a glossary entry.",
+    "local_transcript_window": "And let's remember what a belief is. And let's remember what a belief is. And let's remember what a belief is. A belief that player I has is a belief A belief that player I has is a belief A belief that player I has is a belief about the strategies chosen by all of about the strategies chosen by all of",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "belief"
+    ],
+    "supports_concepts": [
+      "rationalizability"
+    ],
+    "supports_subthemes": [
+      "eliminating_bad_moves"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-rationalizability-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 1: Introduction to Individual Decision-Making",
+    "youtube_url": "https://www.youtube.com/watch?v=WRibE2nt8wM",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/001-WRibE2nt8wM-Lecture 1: Introduction to Individual Decision-Making.txt",
+    "timestamp_start": "00:29:08.280",
+    "timestamp_end": "00:29:15.240",
+    "paraphrased_claim": "The lecture gives transcript support for Rationalizability as a strategy is plausible if it can be optimal for some reasonable belief about others.",
+    "lecture_argument": "In Lecture 1: Introduction to Individual Decision-Making, the course treats Rationalizability as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Rationalizability, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Rationalizability; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Rationalizability as a glossary entry.",
+    "local_transcript_window": "it's sunny.\" So, we'll assign beliefs, and in this So, we'll assign beliefs, and in this So, we'll assign beliefs, and in this case, let's represent our belief by the case, let's represent our belief by the case, let's represent our belief by the probability P that it's sunny, probability P that it's sunny,",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "belief",
+      "beliefs"
+    ],
+    "supports_concepts": [
+      "rationalizability"
+    ],
+    "supports_subthemes": [
+      "eliminating_bad_moves"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-best_response-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 4: Rationalizability",
+    "youtube_url": "https://www.youtube.com/watch?v=ZdwIokL0P_U",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/004-ZdwIokL0P_U-Lecture 4: Rationalizability.txt",
+    "timestamp_start": "00:05:41.880",
+    "timestamp_end": "00:05:48.280",
+    "paraphrased_claim": "The lecture gives transcript support for Best Response as the move that works best against a specified belief or opponent action.",
+    "lecture_argument": "In Lecture 4: Rationalizability, the course treats Best Response as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Best Response, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "BR_i(a_-i) is the set of actions for player i that maximize u_i given others' actions. The useful relation is `BR_i(a_-i) = argmax_a u_i(a, a_-i).`. In plain language: argmax means choose the action a that makes player i's payoff as large as possible when others choose a_-i.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Best Response; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Best Response as a glossary entry.",
+    "local_transcript_window": "And it's restrictive in that the player must be playing a best response to some must be playing a best response to some must be playing a best response to some belief. So the best response part of it belief. So the best response part of it belief. So the best response part of it is what imposes some restriction. is what imposes some restriction.",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "best response"
+    ],
+    "supports_concepts": [
+      "best_response"
+    ],
+    "supports_subthemes": [
+      "stable_predictions"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-best_response-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 5: Nash Equilibrium",
+    "youtube_url": "https://www.youtube.com/watch?v=ftCXguW2k4o",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/005-ftCXguW2k4o-Lecture 5: Nash Equilibrium.txt",
+    "timestamp_start": "00:12:02.200",
+    "timestamp_end": "00:12:08.200",
+    "paraphrased_claim": "The lecture gives transcript support for Best Response as the move that works best against a specified belief or opponent action.",
+    "lecture_argument": "In Lecture 5: Nash Equilibrium, the course treats Best Response as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Best Response, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "BR_i(a_-i) is the set of actions for player i that maximize u_i given others' actions. The useful relation is `BR_i(a_-i) = argmax_a u_i(a, a_-i).`. In plain language: argmax means choose the action a that makes player i's payoff as large as possible when others choose a_-i.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Best Response; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Best Response as a glossary entry.",
+    "local_transcript_window": "So, rationalizability means you have an explanation, you're behaving optimally explanation, you're behaving optimally explanation, you're behaving optimally given this explanation or given these given this explanation or given these given this explanation or given these beliefs, but there's no requirement that beliefs, but there's no requirement that",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "given"
+    ],
+    "supports_concepts": [
+      "best_response"
+    ],
+    "supports_subthemes": [
+      "stable_predictions"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-nash_equilibrium-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 5: Nash Equilibrium",
+    "youtube_url": "https://www.youtube.com/watch?v=ftCXguW2k4o",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/005-ftCXguW2k4o-Lecture 5: Nash Equilibrium.txt",
+    "timestamp_start": "00:43:54.360",
+    "timestamp_end": "00:44:01.040",
+    "paraphrased_claim": "The lecture gives transcript support for Nash Equilibrium as a profile of strategies where no player wants to change alone.",
+    "lecture_argument": "In Lecture 5: Nash Equilibrium, the course treats Nash Equilibrium as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Nash Equilibrium, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Equilibrium requires each strategy to be a best response to the others. The useful relation is `a_i in BR_i(a_-i) for every player i.`. In plain language: For each player i, their chosen action a_i must belong to the set of best responses against the other players' actions.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Nash Equilibrium; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Nash Equilibrium as a glossary entry.",
+    "local_transcript_window": "Exactly right. So, by the definition of Nash equilibrium, let me explain this. Nash equilibrium, let me explain this. Nash equilibrium, let me explain this. By the definition of Nash equilibrium, By the definition of Nash equilibrium, By the definition of Nash equilibrium, we know that SI star is a best response we know that SI star is a best response",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "Nash equilibrium",
+      "equilibrium",
+      "best response"
+    ],
+    "supports_concepts": [
+      "nash_equilibrium"
+    ],
+    "supports_subthemes": [
+      "stable_predictions"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-nash_equilibrium-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 10: Subgame-Perfect Nash Equilibrium",
+    "youtube_url": "https://www.youtube.com/watch?v=byS0I3U3YoQ",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/010-byS0I3U3YoQ-Lecture 10: Subgame-Perfect Nash Equilibrium.txt",
+    "timestamp_start": "00:33:14.120",
+    "timestamp_end": "00:33:20.200",
+    "paraphrased_claim": "The lecture gives transcript support for Nash Equilibrium as a profile of strategies where no player wants to change alone.",
+    "lecture_argument": "In Lecture 10: Subgame-Perfect Nash Equilibrium, the course treats Nash Equilibrium as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Nash Equilibrium, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Equilibrium requires each strategy to be a best response to the others. The useful relation is `a_i in BR_i(a_-i) for every player i.`. In plain language: For each player i, their chosen action a_i must belong to the set of best responses against the other players' actions.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Nash Equilibrium; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Nash Equilibrium as a glossary entry.",
+    "local_transcript_window": "to make sure that every subgame perfect Nash equilibrium The point is we want it Nash equilibrium The point is we want it Nash equilibrium The point is we want it to be a Nash equilibrium and satisfy to be a Nash equilibrium and satisfy to be a Nash equilibrium and satisfy these stronger assumptions. So, it these stronger assumptions. So, it",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "Nash equilibrium",
+      "equilibrium"
+    ],
+    "supports_concepts": [
+      "nash_equilibrium"
+    ],
+    "supports_subthemes": [
+      "stable_predictions"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-mixed_strategies-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 5: Nash Equilibrium",
+    "youtube_url": "https://www.youtube.com/watch?v=ftCXguW2k4o",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/005-ftCXguW2k4o-Lecture 5: Nash Equilibrium.txt",
+    "timestamp_start": "00:50:08.400",
+    "timestamp_end": "00:50:13.400",
+    "paraphrased_claim": "The lecture gives transcript support for Mixed Strategies as choosing randomly on purpose so opponents cannot exploit a predictable move.",
+    "lecture_argument": "In Lecture 5: Nash Equilibrium, the course treats Mixed Strategies as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Mixed Strategies, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Mixed Strategies; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Mixed Strategies as a glossary entry.",
+    "local_transcript_window": "use? Yeah? Mixed strategy. You'd use a mixed Yeah? Mixed strategy. You'd use a mixed Yeah? Mixed strategy. You'd use a mixed strategy, right? So, you you'd randomize strategy, right? So, you you'd randomize strategy, right? So, you you'd randomize and in this case, how do you think you and in this case, how do you think you",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "mixed strategy",
+      "randomize"
+    ],
+    "supports_concepts": [
+      "mixed_strategies"
+    ],
+    "supports_subthemes": [
+      "stable_predictions"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-mixed_strategies-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 7: Zero-Sum Games",
+    "youtube_url": "https://www.youtube.com/watch?v=CBCf8iWKFZY",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/007-CBCf8iWKFZY-Lecture 7: Zero-Sum Games.txt",
+    "timestamp_start": "00:05:27.910",
+    "timestamp_end": "00:05:35.920",
+    "paraphrased_claim": "The lecture gives transcript support for Mixed Strategies as choosing randomly on purpose so opponents cannot exploit a predictable move.",
+    "lecture_argument": "In Lecture 7: Zero-Sum Games, the course treats Mixed Strategies as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Mixed Strategies, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Mixed Strategies; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Mixed Strategies as a glossary entry.",
+    "local_transcript_window": "is a linear function. is a linear function. Um so that you are indifferent between say so that you are indifferent between say so that you are indifferent between say getting $10 for sure and a lottery that getting $10 for sure and a lottery that",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "indifferent"
+    ],
+    "supports_concepts": [
+      "mixed_strategies"
+    ],
+    "supports_subthemes": [
+      "stable_predictions"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-zero_sum_games-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 7: Zero-Sum Games",
+    "youtube_url": "https://www.youtube.com/watch?v=CBCf8iWKFZY",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/007-CBCf8iWKFZY-Lecture 7: Zero-Sum Games.txt",
+    "timestamp_start": "00:04:48.000",
+    "timestamp_end": "00:04:58.430",
+    "paraphrased_claim": "The lecture gives transcript support for Zero-Sum Games as a setting where one player's gain is exactly the other's loss.",
+    "lecture_argument": "In Lecture 7: Zero-Sum Games, the course treats Zero-Sum Games as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Zero-Sum Games, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Equilibrium requires each strategy to be a best response to the others. The useful relation is `a_i in BR_i(a_-i) for every player i.`. In plain language: For each player i, their chosen action a_i must belong to the set of best responses against the other players' actions.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Zero-Sum Games; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Zero-Sum Games as a glossary entry.",
+    "local_transcript_window": "things are often not zero-sum. things are often not zero-sum. things are often not zero-sum. Maybe I'll say rarely zero-sum. And that's why game theory has moved on And that's why game theory has moved on And that's why game theory has moved on a bit beyond zero-sum games and looked",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "zero-sum"
+    ],
+    "supports_concepts": [
+      "zero_sum_games"
+    ],
+    "supports_subthemes": [
+      "conflict_and_security"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-zero_sum_games-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 5: Nash Equilibrium",
+    "youtube_url": "https://www.youtube.com/watch?v=ftCXguW2k4o",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/005-ftCXguW2k4o-Lecture 5: Nash Equilibrium.txt",
+    "timestamp_start": "00:49:41.920",
+    "timestamp_end": "00:49:46.480",
+    "paraphrased_claim": "The lecture gives transcript support for Zero-Sum Games as a setting where one player's gain is exactly the other's loss.",
+    "lecture_argument": "In Lecture 5: Nash Equilibrium, the course treats Zero-Sum Games as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Zero-Sum Games, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Equilibrium requires each strategy to be a best response to the others. The useful relation is `a_i in BR_i(a_-i) for every player i.`. In plain language: For each player i, their chosen action a_i must belong to the set of best responses against the other players' actions.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Zero-Sum Games; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Zero-Sum Games as a glossary entry.",
+    "local_transcript_window": "and whoever's losing would rather change their behavior so that they could win. their behavior so that they could win. their behavior so that they could win. This is a a zero-sum game in the in a This is a a zero-sum game in the in a This is a a zero-sum game in the in a formal sense that we'll talk about more formal sense that we'll talk about more",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "zero-sum"
+    ],
+    "supports_concepts": [
+      "zero_sum_games"
+    ],
+    "supports_subthemes": [
+      "conflict_and_security"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-minimax-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 7: Zero-Sum Games",
+    "youtube_url": "https://www.youtube.com/watch?v=CBCf8iWKFZY",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/007-CBCf8iWKFZY-Lecture 7: Zero-Sum Games.txt",
+    "timestamp_start": "00:20:36.360",
+    "timestamp_end": "00:20:41.480",
+    "paraphrased_claim": "The lecture gives transcript support for Minimax as choosing a strategy by protecting yourself against the worst response.",
+    "lecture_argument": "In Lecture 7: Zero-Sum Games, the course treats Minimax as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Minimax, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "BR_i(a_-i) is the set of actions for player i that maximize u_i given others' actions. The useful relation is `BR_i(a_-i) = argmax_a u_i(a, a_-i).`. In plain language: argmax means choose the action a that makes player i's payoff as large as possible when others choose a_-i.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Minimax; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Minimax as a glossary entry.",
+    "local_transcript_window": "if player one chooses the strategy that makes my loss as large as possible.\" So, makes my loss as large as possible.\" So, makes my loss as large as possible.\" So, we have a maximum here and a minimum we have a maximum here and a minimum we have a maximum here and a minimum here. here.",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "minimum",
+      "maximum"
+    ],
+    "supports_concepts": [
+      "minimax"
+    ],
+    "supports_subthemes": [
+      "conflict_and_security"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-minimax-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 6: Imperfect Competition",
+    "youtube_url": "https://www.youtube.com/watch?v=79Nqii6nQ5U",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/006-79Nqii6nQ5U-Lecture 6: Imperfect Competition.txt",
+    "timestamp_start": "00:26:27.320",
+    "timestamp_end": "00:26:34.679",
+    "paraphrased_claim": "The lecture gives transcript support for Minimax as choosing a strategy by protecting yourself against the worst response.",
+    "lecture_argument": "In Lecture 6: Imperfect Competition, the course treats Minimax as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Minimax, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "BR_i(a_-i) is the set of actions for player i that maximize u_i given others' actions. The useful relation is `BR_i(a_-i) = argmax_a u_i(a, a_-i).`. In plain language: argmax means choose the action a that makes player i's payoff as large as possible when others choose a_-i.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Minimax; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Minimax as a glossary entry.",
+    "local_transcript_window": "And that's kind of a a problem. We don't think that demand is ever negative. So think that demand is ever negative. So think that demand is ever negative. So we're going to write the maximum we're going to write the maximum we're going to write the maximum of 1 minus P and 0. of 1 minus P and 0.",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "maximum"
+    ],
+    "supports_concepts": [
+      "minimax"
+    ],
+    "supports_subthemes": [
+      "conflict_and_security"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-backward_induction-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 8: Backward Induction",
+    "youtube_url": "https://www.youtube.com/watch?v=VHex0a2JFWI",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/008-VHex0a2JFWI-Lecture 8: Backward Induction.txt",
+    "timestamp_start": "00:04:47.480",
+    "timestamp_end": "00:04:52.760",
+    "paraphrased_claim": "The lecture gives transcript support for Backward Induction as solving a sequential game by starting at the end.",
+    "lecture_argument": "In Lecture 8: Backward Induction, the course treats Backward Induction as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Backward Induction, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Backward Induction; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Backward Induction as a glossary entry.",
+    "local_transcript_window": "So the topic for today is going to be So the topic for today is going to be So the topic for today is going to be what's called backward induction, but I what's called backward induction, but I what's called backward induction, but I think the best way to go about it is think the best way to go about it is",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "backward induction"
+    ],
+    "supports_concepts": [
+      "backward_induction"
+    ],
+    "supports_subthemes": [
+      "credible_time_paths"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-backward_induction-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 2: Representation of Games",
+    "youtube_url": "https://www.youtube.com/watch?v=JAib42oAiKE",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/002-JAib42oAiKE-Lecture 2: Representation of Games.txt",
+    "timestamp_start": "00:24:10.520",
+    "timestamp_end": "00:24:26.750",
+    "paraphrased_claim": "The lecture gives transcript support for Backward Induction as solving a sequential game by starting at the end.",
+    "lecture_argument": "In Lecture 2: Representation of Games, the course treats Backward Induction as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Backward Induction, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Backward Induction; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Backward Induction as a glossary entry.",
+    "local_transcript_window": "So, within the set of nodes H, we'll say Z, which is a subset of H, we'll say Z, which is a subset of H, we'll say Z, which is a subset of H, these are the terminal nodes. And then H minus Z, these are the And then H minus Z, these are the And then H minus Z, these are the decision nodes.",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "terminal"
+    ],
+    "supports_concepts": [
+      "backward_induction"
+    ],
+    "supports_subthemes": [
+      "credible_time_paths"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-subgame_perfection-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 10: Subgame-Perfect Nash Equilibrium",
+    "youtube_url": "https://www.youtube.com/watch?v=byS0I3U3YoQ",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/010-byS0I3U3YoQ-Lecture 10: Subgame-Perfect Nash Equilibrium.txt",
+    "timestamp_start": "00:14:28.480",
+    "timestamp_end": "00:14:36.520",
+    "paraphrased_claim": "The lecture gives transcript support for Subgame-Perfect Nash Equilibrium as an equilibrium that remains sensible after every possible history.",
+    "lecture_argument": "In Lecture 10: Subgame-Perfect Nash Equilibrium, the course treats Subgame-Perfect Nash Equilibrium as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Subgame-Perfect Nash Equilibrium, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Subgame-Perfect Nash Equilibrium; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Subgame-Perfect Nash Equilibrium as a glossary entry.",
+    "local_transcript_window": "is to introduce a new solution concept of SPNE, which I wrote up here, subgame of SPNE, which I wrote up here, subgame of SPNE, which I wrote up here, subgame perfect Nash equilibrium, that is going perfect Nash equilibrium, that is going perfect Nash equilibrium, that is going to capture, so we'll say this in words, to capture, so we'll say this in words,",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "subgame perfect",
+      "subgame",
+      "SPNE"
+    ],
+    "supports_concepts": [
+      "subgame_perfection"
+    ],
+    "supports_subthemes": [
+      "credible_time_paths"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-subgame_perfection-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 8: Backward Induction",
+    "youtube_url": "https://www.youtube.com/watch?v=VHex0a2JFWI",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/008-VHex0a2JFWI-Lecture 8: Backward Induction.txt",
+    "timestamp_start": "01:12:04.840",
+    "timestamp_end": "01:12:10.720",
+    "paraphrased_claim": "The lecture gives transcript support for Subgame-Perfect Nash Equilibrium as an equilibrium that remains sensible after every possible history.",
+    "lecture_argument": "In Lecture 8: Backward Induction, the course treats Subgame-Perfect Nash Equilibrium as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Subgame-Perfect Nash Equilibrium, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Subgame-Perfect Nash Equilibrium; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Subgame-Perfect Nash Equilibrium as a glossary entry.",
+    "local_transcript_window": "don't, I'm going to punish you by flooding the market.\" Yes. How would flooding the market.\" Yes. How would flooding the market.\" Yes. How would this be a credible threat though because this be a credible threat though because this be a credible threat though because firm two loses money by flooding? firm two loses money by flooding?",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "credible threat"
+    ],
+    "supports_concepts": [
+      "subgame_perfection"
+    ],
+    "supports_subthemes": [
+      "credible_time_paths"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-one_shot_deviation-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 11: One-Shot Deviation Principle and Bargaining",
+    "youtube_url": "https://www.youtube.com/watch?v=iL3XRRI5rQs",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/011-iL3XRRI5rQs-Lecture 11: One-Shot Deviation Principle and Bargaining.txt",
+    "timestamp_start": "00:00:26.960",
+    "timestamp_end": "00:00:42.630",
+    "paraphrased_claim": "The lecture gives transcript support for One-Shot Deviation Principle as a shortcut for checking whether changing one move at one point can improve a strategy.",
+    "lecture_argument": "In Lecture 11: One-Shot Deviation Principle and Bargaining, the course treats One-Shot Deviation Principle as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming One-Shot Deviation Principle, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of One-Shot Deviation Principle; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving One-Shot Deviation Principle as a glossary entry.",
+    "local_transcript_window": "And the key technical tool that we're going to introduce today is something going to introduce today is something going to introduce today is something called the one-shot deviation principle. So, I'll go into detail about what this So, I'll go into detail about what this So, I'll go into detail about what this is later in the class, but it's going to",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "one-shot deviation",
+      "deviation principle"
+    ],
+    "supports_concepts": [
+      "one_shot_deviation"
+    ],
+    "supports_subthemes": [
+      "credible_time_paths"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-one_shot_deviation-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 5: Nash Equilibrium",
+    "youtube_url": "https://www.youtube.com/watch?v=ftCXguW2k4o",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/005-ftCXguW2k4o-Lecture 5: Nash Equilibrium.txt",
+    "timestamp_start": "00:19:36.159",
+    "timestamp_end": "00:19:41.560",
+    "paraphrased_claim": "The lecture gives transcript support for One-Shot Deviation Principle as a shortcut for checking whether changing one move at one point can improve a strategy.",
+    "lecture_argument": "In Lecture 5: Nash Equilibrium, the course treats One-Shot Deviation Principle as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming One-Shot Deviation Principle, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of One-Shot Deviation Principle; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving One-Shot Deviation Principle as a glossary entry.",
+    "local_transcript_window": "in the sense of a monetary payoff, but in the sense of utilities. So, a in the sense of utilities. So, a in the sense of utilities. So, a profitable deviation is a deviation that profitable deviation is a deviation that profitable deviation is a deviation that gives me a higher utility, a strictly gives me a higher utility, a strictly",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "profitable deviation"
+    ],
+    "supports_concepts": [
+      "one_shot_deviation"
+    ],
+    "supports_subthemes": [
+      "credible_time_paths"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-bargaining-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 9: Negotiation",
+    "youtube_url": "https://www.youtube.com/watch?v=_09ziyzbinY",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/009-_09ziyzbinY-Lecture 9: Negotiation.txt",
+    "timestamp_start": "00:00:25.440",
+    "timestamp_end": "00:00:31.600",
+    "paraphrased_claim": "The lecture gives transcript support for Bargaining as dividing a surplus when each side can accept, reject, or wait.",
+    "lecture_argument": "In Lecture 9: Negotiation, the course treats Bargaining as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Bargaining, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A payoff function u_i(a_i, a_-i) maps everyone's actions to player i's payoff. The useful relation is `u_i(a_i, a_-i).`. In plain language: i is one player; a_i is that player's action; a_-i means everyone else's actions; u_i is the payoff assigned to the whole action profile.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Bargaining; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Bargaining as a glossary entry.",
+    "local_transcript_window": "And the basic idea is that when two parties are bargaining and negotiating parties are bargaining and negotiating parties are bargaining and negotiating they often one party might make an offer they often one party might make an offer they often one party might make an offer and say let's do this and then the other and say let's do this and then the other",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "bargaining",
+      "offer"
+    ],
+    "supports_concepts": [
+      "bargaining"
+    ],
+    "supports_subthemes": [
+      "credible_time_paths"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-bargaining-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 11: One-Shot Deviation Principle and Bargaining",
+    "youtube_url": "https://www.youtube.com/watch?v=iL3XRRI5rQs",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/011-iL3XRRI5rQs-Lecture 11: One-Shot Deviation Principle and Bargaining.txt",
+    "timestamp_start": "00:39:40.920",
+    "timestamp_end": "00:39:45.720",
+    "paraphrased_claim": "The lecture gives transcript support for Bargaining as dividing a surplus when each side can accept, reject, or wait.",
+    "lecture_argument": "In Lecture 11: One-Shot Deviation Principle and Bargaining, the course treats Bargaining as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Bargaining, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A payoff function u_i(a_i, a_-i) maps everyone's actions to player i's payoff. The useful relation is `u_i(a_i, a_-i).`. In plain language: i is one player; a_i is that player's action; a_-i means everyone else's actions; u_i is the payoff assigned to the whole action profile.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Bargaining; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Bargaining as a glossary entry.",
+    "local_transcript_window": "that this is our very last opportunity to negotiate and whoever makes an offer to negotiate and whoever makes an offer to negotiate and whoever makes an offer in that period has a lot of bargaining in that period has a lot of bargaining in that period has a lot of bargaining power. So, we want to kind of shut down power. So, we want to kind of shut down",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "bargaining",
+      "negotiate",
+      "offer"
+    ],
+    "supports_concepts": [
+      "bargaining"
+    ],
+    "supports_subthemes": [
+      "credible_time_paths"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-finitely_repeated_games-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 12: Finitely Repeated Games",
+    "youtube_url": "https://www.youtube.com/watch?v=_XM0CRvaWq0",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/012-_XM0CRvaWq0-Lecture 12: Finitely Repeated Games.txt",
+    "timestamp_start": "00:04:35.200",
+    "timestamp_end": "00:04:40.560",
+    "paraphrased_claim": "The lecture gives transcript support for Finitely Repeated Games as playing a stage game a known limited number of times.",
+    "lecture_argument": "In Lecture 12: Finitely Repeated Games, the course treats Finitely Repeated Games as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Finitely Repeated Games, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Finitely Repeated Games; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Finitely Repeated Games as a glossary entry.",
+    "local_transcript_window": "cooperating in the future, right? Uh we'll see that in the finitely repeated we'll see that in the finitely repeated we'll see that in the finitely repeated game, the unique subgame perfect Nash game, the unique subgame perfect Nash game, the unique subgame perfect Nash equilibrium is actually uh always equilibrium is actually uh always",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "finitely repeated",
+      "repeated game"
+    ],
+    "supports_concepts": [
+      "finitely_repeated_games"
+    ],
+    "supports_subthemes": [
+      "future_as_discipline"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-finitely_repeated_games-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 8: Backward Induction",
+    "youtube_url": "https://www.youtube.com/watch?v=VHex0a2JFWI",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/008-VHex0a2JFWI-Lecture 8: Backward Induction.txt",
+    "timestamp_start": "01:12:40.440",
+    "timestamp_end": "01:12:44.160",
+    "paraphrased_claim": "The lecture gives transcript support for Finitely Repeated Games as playing a stage game a known limited number of times.",
+    "lecture_argument": "In Lecture 8: Backward Induction, the course treats Finitely Repeated Games as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Finitely Repeated Games, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Finitely Repeated Games; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Finitely Repeated Games as a glossary entry.",
+    "local_transcript_window": "in production capacity? I think the the best way to make it credible would be to best way to make it credible would be to best way to make it credible would be to say it's a repeated game, and that's say it's a repeated game, and that's say it's a repeated game, and that's what we'll study later on, right? We're what we'll study later on, right? We're",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "repeated game"
+    ],
+    "supports_concepts": [
+      "finitely_repeated_games"
+    ],
+    "supports_subthemes": [
+      "future_as_discipline"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-infinitely_repeated_games-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 13: Infinitely Repeated Games",
+    "youtube_url": "https://www.youtube.com/watch?v=HRZeLYNhOUw",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/013-HRZeLYNhOUw-Lecture 13: Infinitely Repeated Games.txt",
+    "timestamp_start": "00:14:55.520",
+    "timestamp_end": "00:15:01.800",
+    "paraphrased_claim": "The lecture gives transcript support for Infinitely Repeated Games as a relationship with no fixed last round, where future punishment can shape present behavior.",
+    "lecture_argument": "In Lecture 13: Infinitely Repeated Games, the course treats Infinitely Repeated Games as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Infinitely Repeated Games, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A discount factor delta weights future payoffs in an intertemporal sum. The useful relation is `U = u_0 + delta u_1 + delta^2 u_2 + ...`. In plain language: u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Infinitely Repeated Games; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Infinitely Repeated Games as a glossary entry.",
+    "local_transcript_window": "more commonly we'll write G of delta to indicate the infinitely repeated game uh indicate the infinitely repeated game uh indicate the infinitely repeated game uh with discount factor delta. I mean, more with discount factor delta. I mean, more with discount factor delta. I mean, more generally we could have G of generally we could have G of",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "infinitely repeated",
+      "discount factor"
+    ],
+    "supports_concepts": [
+      "infinitely_repeated_games"
+    ],
+    "supports_subthemes": [
+      "future_as_discipline"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-infinitely_repeated_games-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 9: Negotiation",
+    "youtube_url": "https://www.youtube.com/watch?v=_09ziyzbinY",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/009-_09ziyzbinY-Lecture 9: Negotiation.txt",
+    "timestamp_start": "00:48:45.280",
+    "timestamp_end": "00:48:51.840",
+    "paraphrased_claim": "The lecture gives transcript support for Infinitely Repeated Games as a relationship with no fixed last round, where future punishment can shape present behavior.",
+    "lecture_argument": "In Lecture 9: Negotiation, the course treats Infinitely Repeated Games as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Infinitely Repeated Games, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A discount factor delta weights future payoffs in an intertemporal sum. The useful relation is `U = u_0 + delta u_1 + delta^2 u_2 + ...`. In plain language: u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Infinitely Repeated Games; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Infinitely Repeated Games as a glossary entry.",
+    "local_transcript_window": "So, here, you may have seen this in other economics courses, delta is called other economics courses, delta is called other economics courses, delta is called our discount factor. our discount factor. our discount factor. And what this says is each period we And what this says is each period we",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "discount factor"
+    ],
+    "supports_concepts": [
+      "infinitely_repeated_games"
+    ],
+    "supports_subthemes": [
+      "future_as_discipline"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-folk_theorem-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 14: Folk Theorem",
+    "youtube_url": "https://www.youtube.com/watch?v=3ws34WgJKzk",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/014-3ws34WgJKzk-Lecture 14: Folk Theorem.txt",
+    "timestamp_start": "00:49:43.080",
+    "timestamp_end": "00:49:49.454",
+    "paraphrased_claim": "The lecture gives transcript support for Folk Theorem as a result showing that many cooperative outcomes can be sustained when the future matters enough.",
+    "lecture_argument": "In Lecture 14: Folk Theorem, the course treats Folk Theorem as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Folk Theorem, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A discount factor delta weights future payoffs in an intertemporal sum. The useful relation is `U = u_0 + delta u_1 + delta^2 u_2 + ...`. In plain language: u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Folk Theorem; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Folk Theorem as a glossary entry.",
+    "local_transcript_window": "Right? Because with average, it's 1 minus delta times 1 today, 1 minus delta minus delta times 1 today, 1 minus delta minus delta times 1 today, 1 minus delta times delta tomorrow, 1 minus delta times delta tomorrow, 1 minus delta times delta tomorrow, 1 minus delta times delta squared in the future. times delta squared in the future.",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "delta"
+    ],
+    "supports_concepts": [
+      "folk_theorem"
+    ],
+    "supports_subthemes": [
+      "future_as_discipline"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-folk_theorem-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 1: Introduction to Individual Decision-Making",
+    "youtube_url": "https://www.youtube.com/watch?v=WRibE2nt8wM",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/001-WRibE2nt8wM-Lecture 1: Introduction to Individual Decision-Making.txt",
+    "timestamp_start": "00:44:16.040",
+    "timestamp_end": "00:44:21.200",
+    "paraphrased_claim": "The lecture gives transcript support for Folk Theorem as a result showing that many cooperative outcomes can be sustained when the future matters enough.",
+    "lecture_argument": "In Lecture 1: Introduction to Individual Decision-Making, the course treats Folk Theorem as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Folk Theorem, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A discount factor delta weights future payoffs in an intertemporal sum. The useful relation is `U = u_0 + delta u_1 + delta^2 u_2 + ...`. In plain language: u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Folk Theorem; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Folk Theorem as a glossary entry.",
+    "local_transcript_window": "notation for lotteries. I'm going to use throughout the course throughout the course throughout the course delta of Z. delta of Z. delta of Z. I don't want the notation to scare I don't want the notation to scare",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "delta"
+    ],
+    "supports_concepts": [
+      "folk_theorem"
+    ],
+    "supports_subthemes": [
+      "future_as_discipline"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-implicit_cartels-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 15: Implicit Cartels",
+    "youtube_url": "https://www.youtube.com/watch?v=9MtmH12aag4",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/015-9MtmH12aag4-Lecture 15: Implicit Cartels.txt",
+    "timestamp_start": "00:02:21.520",
+    "timestamp_end": "00:02:25.960",
+    "paraphrased_claim": "The lecture gives transcript support for Implicit Cartels as firms may keep prices high without an explicit agreement when future punishment disciplines cheating.",
+    "lecture_argument": "In Lecture 15: Implicit Cartels, the course treats Implicit Cartels as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Implicit Cartels, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A discount factor delta weights future payoffs in an intertemporal sum. The useful relation is `U = u_0 + delta u_1 + delta^2 u_2 + ...`. In plain language: u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Implicit Cartels; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Implicit Cartels as a glossary entry.",
+    "local_transcript_window": "the market. So it's common for one drug cartel to say operate in the north of a cartel to say operate in the north of a cartel to say operate in the north of a country, another cartel to operate in country, another cartel to operate in country, another cartel to operate in the south of the country, and they have the south of the country, and they have",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "cartel"
+    ],
+    "supports_concepts": [
+      "implicit_cartels"
+    ],
+    "supports_subthemes": [
+      "future_as_discipline"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-implicit_cartels-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 1: Introduction to Individual Decision-Making",
+    "youtube_url": "https://www.youtube.com/watch?v=WRibE2nt8wM",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/001-WRibE2nt8wM-Lecture 1: Introduction to Individual Decision-Making.txt",
+    "timestamp_start": "00:18:16.960",
+    "timestamp_end": "00:18:22.280",
+    "paraphrased_claim": "The lecture gives transcript support for Implicit Cartels as firms may keep prices high without an explicit agreement when future punishment disciplines cheating.",
+    "lecture_argument": "In Lecture 1: Introduction to Individual Decision-Making, the course treats Implicit Cartels as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Implicit Cartels, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A discount factor delta weights future payoffs in an intertemporal sum. The useful relation is `U = u_0 + delta u_1 + delta^2 u_2 + ...`. In plain language: u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Implicit Cartels; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Implicit Cartels as a glossary entry.",
+    "local_transcript_window": "coffee to tea. I won't write that out explicitly, but that's implied by this. explicitly, but that's implied by this. explicitly, but that's implied by this. And there's an there's an implicit And there's an there's an implicit And there's an there's an implicit transitivity assumption that we're transitivity assumption that we're",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "implicit"
+    ],
+    "supports_concepts": [
+      "implicit_cartels"
+    ],
+    "supports_subthemes": [
+      "future_as_discipline"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-bayesian_games-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 16: Bayesian Games",
+    "youtube_url": "https://www.youtube.com/watch?v=-6A59LiKUss",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/016--6A59LiKUss-Lecture 16: Bayesian Games.txt",
+    "timestamp_start": "00:47:09.880",
+    "timestamp_end": "00:47:18.640",
+    "paraphrased_claim": "The lecture gives transcript support for Bayesian Games as a game where players may not know each other's type, value, or payoff information.",
+    "lecture_argument": "In Lecture 16: Bayesian Games, the course treats Bayesian Games as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Bayesian Games, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Bayesian Games; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Bayesian Games as a glossary entry.",
+    "local_transcript_window": "interpretation is different. So we still have for player one two types, the hard have for player one two types, the hard have for player one two types, the hard type and the easy type. But now the hard type and the easy type. But now the hard type and the easy type. But now the hard type, we don't mean you know for certain type, we don't mean you know for certain",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "type",
+      "types"
+    ],
+    "supports_concepts": [
+      "bayesian_games"
+    ],
+    "supports_subthemes": [
+      "hidden_types"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-bayesian_games-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 2: Representation of Games",
+    "youtube_url": "https://www.youtube.com/watch?v=JAib42oAiKE",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/002-JAib42oAiKE-Lecture 2: Representation of Games.txt",
+    "timestamp_start": "00:40:37.360",
+    "timestamp_end": "00:40:43.000",
+    "paraphrased_claim": "The lecture gives transcript support for Bayesian Games as a game where players may not know each other's type, value, or payoff information.",
+    "lecture_argument": "In Lecture 2: Representation of Games, the course treats Bayesian Games as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Bayesian Games, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Bayesian Games; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Bayesian Games as a glossary entry.",
+    "local_transcript_window": "The idea would be if we don't know where the game starts, we don't know where we the game starts, we don't know where we the game starts, we don't know where we are, then there must be some prior move are, then there must be some prior move are, then there must be some prior move that we didn't observe, and we should that we didn't observe, and we should",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "prior"
+    ],
+    "supports_concepts": [
+      "bayesian_games"
+    ],
+    "supports_subthemes": [
+      "hidden_types"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-types_and_beliefs-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 16: Bayesian Games",
+    "youtube_url": "https://www.youtube.com/watch?v=-6A59LiKUss",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/016--6A59LiKUss-Lecture 16: Bayesian Games.txt",
+    "timestamp_start": "00:47:09.880",
+    "timestamp_end": "00:47:18.640",
+    "paraphrased_claim": "The lecture gives transcript support for Types And Beliefs as types store hidden information; beliefs describe what others think those types might be.",
+    "lecture_argument": "In Lecture 16: Bayesian Games, the course treats Types And Beliefs as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Types And Beliefs, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Types And Beliefs; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Types And Beliefs as a glossary entry.",
+    "local_transcript_window": "interpretation is different. So we still have for player one two types, the hard have for player one two types, the hard have for player one two types, the hard type and the easy type. But now the hard type and the easy type. But now the hard type and the easy type. But now the hard type, we don't mean you know for certain type, we don't mean you know for certain",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "type",
+      "types"
+    ],
+    "supports_concepts": [
+      "types_and_beliefs"
+    ],
+    "supports_subthemes": [
+      "hidden_types"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-types_and_beliefs-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 21: Perfect Bayesian Equilibrium",
+    "youtube_url": "https://www.youtube.com/watch?v=yDNNcall_ho",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/021-yDNNcall_ho-Lecture 21: Perfect Bayesian Equilibrium.txt",
+    "timestamp_start": "00:52:43.520",
+    "timestamp_end": "00:52:48.320",
+    "paraphrased_claim": "The lecture gives transcript support for Types And Beliefs as types store hidden information; beliefs describe what others think those types might be.",
+    "lecture_argument": "In Lecture 21: Perfect Bayesian Equilibrium, the course treats Types And Beliefs as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Types And Beliefs, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Types And Beliefs; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Types And Beliefs as a glossary entry.",
+    "local_transcript_window": "what belief we specify here. In this case, the belief is pinned down by case, the belief is pinned down by case, the belief is pinned down by Bayes' rule. Bayes' rule tell us tells Bayes' rule. Bayes' rule tell us tells Bayes' rule. Bayes' rule tell us tells us what the belief has to be. us what the belief has to be.",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "belief",
+      "Bayes"
+    ],
+    "supports_concepts": [
+      "types_and_beliefs"
+    ],
+    "supports_subthemes": [
+      "hidden_types"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-bayesian_nash_equilibrium-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 17: Bayesian Nash Equilibrium: Applications",
+    "youtube_url": "https://www.youtube.com/watch?v=9_jcdMsPomQ",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/017-9_jcdMsPomQ-Lecture 17: Bayesian Nash Equilibrium: Applications.txt",
+    "timestamp_start": "00:04:46.560",
+    "timestamp_end": "00:04:57.670",
+    "paraphrased_claim": "The lecture gives transcript support for Bayesian Nash Equilibrium as a plan for every type such that each type is best responding to its beliefs.",
+    "lecture_argument": "In Lecture 17: Bayesian Nash Equilibrium: Applications, the course treats Bayesian Nash Equilibrium as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Bayesian Nash Equilibrium, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Bayesian Nash Equilibrium; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Bayesian Nash Equilibrium as a glossary entry.",
+    "local_transcript_window": "Okay, so now I think the first step, so now our goal now our goal now our goal is solving for BNE. Bayes-Nash equilibrium. I think Bayes-Nash equilibrium. I think Bayes-Nash equilibrium. I think sometimes the hardest part, often the",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "BNE"
+    ],
+    "supports_concepts": [
+      "bayesian_nash_equilibrium"
+    ],
+    "supports_subthemes": [
+      "hidden_types"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-bayesian_nash_equilibrium-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 2: Representation of Games",
+    "youtube_url": "https://www.youtube.com/watch?v=JAib42oAiKE",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/002-JAib42oAiKE-Lecture 2: Representation of Games.txt",
+    "timestamp_start": "01:10:35.000",
+    "timestamp_end": "01:10:40.320",
+    "paraphrased_claim": "The lecture gives transcript support for Bayesian Nash Equilibrium as a plan for every type such that each type is best responding to its beliefs.",
+    "lecture_argument": "In Lecture 2: Representation of Games, the course treats Bayesian Nash Equilibrium as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Bayesian Nash Equilibrium, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Bayesian Nash Equilibrium; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Bayesian Nash Equilibrium as a glossary entry.",
+    "local_transcript_window": "plus 1/2 times the utilities here, and that's going to give each player that's going to give each player that's going to give each player player's expected payoff from this player's expected payoff from this player's expected payoff from this strategy profile. That gives us two strategy profile. That gives us two",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "expected payoff"
+    ],
+    "supports_concepts": [
+      "bayesian_nash_equilibrium"
+    ],
+    "supports_subthemes": [
+      "hidden_types"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-auctions-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 18: Auctions",
+    "youtube_url": "https://www.youtube.com/watch?v=7dTlS_PLo6I",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/018-7dTlS_PLo6I-Lecture 18: Auctions.txt",
+    "timestamp_start": "00:04:27.199",
+    "timestamp_end": "00:04:34.800",
+    "paraphrased_claim": "The lecture gives transcript support for Auctions as rules for allocating an object when bidders have private values.",
+    "lecture_argument": "In Lecture 18: Auctions, the course treats Auctions as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Auctions, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) >= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Auctions; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Auctions as a glossary entry.",
+    "local_transcript_window": "So I'm contemplating a deviation where instead of bidding B1, instead of instead of bidding B1, instead of instead of bidding B1, instead of bidding V1, I bid B1 prime. So I bid bidding V1, I bid B1 prime. So I bid bidding V1, I bid B1 prime. So I bid strictly higher than my true valuation. strictly higher than my true valuation.",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "bid",
+      "bidding",
+      "valuation"
+    ],
+    "supports_concepts": [
+      "auctions"
+    ],
+    "supports_subthemes": [
+      "rules_for_bidding"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-auctions-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 1: Introduction to Individual Decision-Making",
+    "youtube_url": "https://www.youtube.com/watch?v=WRibE2nt8wM",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/001-WRibE2nt8wM-Lecture 1: Introduction to Individual Decision-Making.txt",
+    "timestamp_start": "00:03:34.160",
+    "timestamp_end": "00:03:39.800",
+    "paraphrased_claim": "The lecture gives transcript support for Auctions as rules for allocating an object when bidders have private values.",
+    "lecture_argument": "In Lecture 1: Introduction to Individual Decision-Making, the course treats Auctions as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Auctions, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) >= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Auctions; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Auctions as a glossary entry.",
+    "local_transcript_window": "worked out pretty well. Uh anyone else who want to share maybe who want to share maybe who want to share maybe a bid they're happy with, a bid they a bid they're happy with, a bid they a bid they're happy with, a bid they feel they made a mistake on? Um any feel they made a mistake on? Um any",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "bid"
+    ],
+    "supports_concepts": [
+      "auctions"
+    ],
+    "supports_subthemes": [
+      "rules_for_bidding"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-revenue_equivalence-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 19: Revenue Equivalence",
+    "youtube_url": "https://www.youtube.com/watch?v=mu0X3GpDAy8",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/019-mu0X3GpDAy8-Lecture 19: Revenue Equivalence.txt",
+    "timestamp_start": "00:05:08.080",
+    "timestamp_end": "00:05:16.120",
+    "paraphrased_claim": "The lecture gives transcript support for Revenue Equivalence as different auction rules can produce the same expected seller revenue under specific assumptions.",
+    "lecture_argument": "In Lecture 19: Revenue Equivalence, the course treats Revenue Equivalence as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Revenue Equivalence, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) >= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Revenue Equivalence; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Revenue Equivalence as a glossary entry.",
+    "local_transcript_window": "amount that I pay is my probability of winning times my expected payment if I winning times my expected payment if I winning times my expected payment if I win, my expected payment conditional on win, my expected payment conditional on win, my expected payment conditional on winning, right? Now, if I win, how much winning, right? Now, if I win, how much",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "payment"
+    ],
+    "supports_concepts": [
+      "revenue_equivalence"
+    ],
+    "supports_subthemes": [
+      "rules_for_bidding"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-revenue_equivalence-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 18: Auctions",
+    "youtube_url": "https://www.youtube.com/watch?v=7dTlS_PLo6I",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/018-7dTlS_PLo6I-Lecture 18: Auctions.txt",
+    "timestamp_start": "00:02:39.599",
+    "timestamp_end": "00:02:46.160",
+    "paraphrased_claim": "The lecture gives transcript support for Revenue Equivalence as different auction rules can produce the same expected seller revenue under specific assumptions.",
+    "lecture_argument": "In Lecture 18: Auctions, the course treats Revenue Equivalence as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Revenue Equivalence, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) >= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Revenue Equivalence; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Revenue Equivalence as a glossary entry.",
+    "local_transcript_window": "the most gets the item. The difference from a first price auction is the from a first price auction is the from a first price auction is the payment rule. So in a second price payment rule. So in a second price payment rule. So in a second price auction, the winning bidder doesn't pay auction, the winning bidder doesn't pay",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "payment"
+    ],
+    "supports_concepts": [
+      "revenue_equivalence"
+    ],
+    "supports_subthemes": [
+      "rules_for_bidding"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-ad_auctions-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 20: Ad Auctions",
+    "youtube_url": "https://www.youtube.com/watch?v=Myfs7LdkV98",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/020-Myfs7LdkV98-Lecture 20: Ad Auctions.txt",
+    "timestamp_start": "00:26:49.920",
+    "timestamp_end": "00:26:57.040",
+    "paraphrased_claim": "The lecture gives transcript support for Ad Auctions as auction design applied to online ad slots where position, clicks, and value interact.",
+    "lecture_argument": "In Lecture 20: Ad Auctions, the course treats Ad Auctions as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Ad Auctions, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) >= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Ad Auctions; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Ad Auctions as a glossary entry.",
+    "local_transcript_window": "difference. Yes Amy. But then doesn't Google lose out on pay per click if all Google lose out on pay per click if all Google lose out on pay per click if all the ads are pretty unpopular? the ads are pretty unpopular? the ads are pretty unpopular? Yeah I mean I guess Yeah I mean I guess",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "ads",
+      "click"
+    ],
+    "supports_concepts": [
+      "ad_auctions"
+    ],
+    "supports_subthemes": [
+      "rules_for_bidding"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-ad_auctions-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 17: Bayesian Nash Equilibrium: Applications",
+    "youtube_url": "https://www.youtube.com/watch?v=9_jcdMsPomQ",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/017-9_jcdMsPomQ-Lecture 17: Bayesian Nash Equilibrium: Applications.txt",
+    "timestamp_start": "00:26:34.120",
+    "timestamp_end": "00:26:39.440",
+    "paraphrased_claim": "The lecture gives transcript support for Ad Auctions as auction design applied to online ad slots where position, clicks, and value interact.",
+    "lecture_argument": "In Lecture 17: Bayesian Nash Equilibrium: Applications, the course treats Ad Auctions as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Ad Auctions, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) >= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Ad Auctions; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Ad Auctions as a glossary entry.",
+    "local_transcript_window": "websites, right? So, if you go to the New York Times and you see ads, uh those New York Times and you see ads, uh those New York Times and you see ads, uh those ads are also, you know, managed through ads are also, you know, managed through ads are also, you know, managed through Google and the New York Times if they Google and the New York Times if they",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "ads"
+    ],
+    "supports_concepts": [
+      "ad_auctions"
+    ],
+    "supports_subthemes": [
+      "rules_for_bidding"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-perfect_bayesian_equilibrium-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 21: Perfect Bayesian Equilibrium",
+    "youtube_url": "https://www.youtube.com/watch?v=yDNNcall_ho",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/021-yDNNcall_ho-Lecture 21: Perfect Bayesian Equilibrium.txt",
+    "timestamp_start": "00:15:43.200",
+    "timestamp_end": "00:16:03.120",
+    "paraphrased_claim": "The lecture gives transcript support for Perfect Bayesian Equilibrium as an equilibrium for dynamic games with beliefs that stay consistent with observed behavior.",
+    "lecture_argument": "In Lecture 21: Perfect Bayesian Equilibrium, the course treats Perfect Bayesian Equilibrium as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Perfect Bayesian Equilibrium, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Perfect Bayesian Equilibrium; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Perfect Bayesian Equilibrium as a glossary entry.",
+    "local_transcript_window": "perfect from here and the Bayes from here, and it's just called perfect here, and it's just called perfect here, and it's just called perfect Bayesian equilibrium. Um I guess maybe I'll give somewhat of a I guess maybe I'll give somewhat of a",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "perfect Bayesian"
+    ],
+    "supports_concepts": [
+      "perfect_bayesian_equilibrium"
+    ],
+    "supports_subthemes": [
+      "hidden_types"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-perfect_bayesian_equilibrium-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 22: Signaling",
+    "youtube_url": "https://www.youtube.com/watch?v=H-wFpqnDrhs",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/022-H-wFpqnDrhs-Lecture 22: Signaling.txt",
+    "timestamp_start": "00:20:14.800",
+    "timestamp_end": "00:20:21.040",
+    "paraphrased_claim": "The lecture gives transcript support for Perfect Bayesian Equilibrium as an equilibrium for dynamic games with beliefs that stay consistent with observed behavior.",
+    "lecture_argument": "In Lecture 22: Signaling, the course treats Perfect Bayesian Equilibrium as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Perfect Bayesian Equilibrium, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Perfect Bayesian Equilibrium; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Perfect Bayesian Equilibrium as a glossary entry.",
+    "local_transcript_window": "So, remember an assessment is a strategy So, remember an assessment is a strategy So, remember an assessment is a strategy profile together with a belief system. profile together with a belief system. profile together with a belief system. So, we need to first say, let's look at So, we need to first say, let's look at",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "belief system"
+    ],
+    "supports_concepts": [
+      "perfect_bayesian_equilibrium"
+    ],
+    "supports_subthemes": [
+      "hidden_types"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-signaling-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 22: Signaling",
+    "youtube_url": "https://www.youtube.com/watch?v=H-wFpqnDrhs",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/022-H-wFpqnDrhs-Lecture 22: Signaling.txt",
+    "timestamp_start": "00:00:20.480",
+    "timestamp_end": "00:00:25.920",
+    "paraphrased_claim": "The lecture gives transcript support for Signaling as using an action or message to convey private information when others update beliefs from it.",
+    "lecture_argument": "In Lecture 22: Signaling, the course treats Signaling as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Signaling, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Signaling; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Signaling as a glossary entry.",
+    "local_transcript_window": "was kind of a simple example of signaling and today we're going to do a signaling and today we're going to do a signaling and today we're going to do a more involved application of signaling. more involved application of signaling. more involved application of signaling. So So",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "signaling",
+      "signal"
+    ],
+    "supports_concepts": [
+      "signaling"
+    ],
+    "supports_subthemes": [
+      "messages_and_shared_awareness"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-signaling-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 1: Introduction to Individual Decision-Making",
+    "youtube_url": "https://www.youtube.com/watch?v=WRibE2nt8wM",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/001-WRibE2nt8wM-Lecture 1: Introduction to Individual Decision-Making.txt",
+    "timestamp_start": "00:14:55.079",
+    "timestamp_end": "00:15:00.320",
+    "paraphrased_claim": "The lecture gives transcript support for Signaling as using an action or message to convey private information when others update beliefs from it.",
+    "lecture_argument": "In Lecture 1: Introduction to Individual Decision-Making, the course treats Signaling as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Signaling, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Signaling; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Signaling as a glossary entry.",
+    "local_transcript_window": "should shoot left or right depends upon which way the goalie is going to dive, which way the goalie is going to dive, which way the goalie is going to dive, or which way the tennis serve receiver or which way the tennis serve receiver or which way the tennis serve receiver is planning to play. The best action for is planning to play. The best action for",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "receiver"
+    ],
+    "supports_concepts": [
+      "signaling"
+    ],
+    "supports_subthemes": [
+      "messages_and_shared_awareness"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-cheap_talk-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 24: Cheap Talk",
+    "youtube_url": "https://www.youtube.com/watch?v=SsdSpzJ-d7s",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/024-SsdSpzJ-d7s-Lecture 24: Cheap Talk.txt",
+    "timestamp_start": "00:03:09.640",
+    "timestamp_end": "00:03:17.430",
+    "paraphrased_claim": "The lecture gives transcript support for Cheap Talk as costless messages that matter only when incentives make them credible enough to influence beliefs.",
+    "lecture_argument": "In Lecture 24: Cheap Talk, the course treats Cheap Talk as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Cheap Talk, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Cheap Talk; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Cheap Talk as a glossary entry.",
+    "local_transcript_window": "And we're going to think of this is a game between a sender, we call them game between a sender, we call them game between a sender, we call them sender and receiver. But I want you to think these are But I want you to think these are But I want you to think these are abstract labels. I want you to think of",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "sender",
+      "receiver"
+    ],
+    "supports_concepts": [
+      "cheap_talk"
+    ],
+    "supports_subthemes": [
+      "messages_and_shared_awareness"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-cheap_talk-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 1: Introduction to Individual Decision-Making",
+    "youtube_url": "https://www.youtube.com/watch?v=WRibE2nt8wM",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/001-WRibE2nt8wM-Lecture 1: Introduction to Individual Decision-Making.txt",
+    "timestamp_start": "00:14:55.079",
+    "timestamp_end": "00:15:00.320",
+    "paraphrased_claim": "The lecture gives transcript support for Cheap Talk as costless messages that matter only when incentives make them credible enough to influence beliefs.",
+    "lecture_argument": "In Lecture 1: Introduction to Individual Decision-Making, the course treats Cheap Talk as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Cheap Talk, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Cheap Talk; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Cheap Talk as a glossary entry.",
+    "local_transcript_window": "should shoot left or right depends upon which way the goalie is going to dive, which way the goalie is going to dive, which way the goalie is going to dive, or which way the tennis serve receiver or which way the tennis serve receiver or which way the tennis serve receiver is planning to play. The best action for is planning to play. The best action for",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "receiver"
+    ],
+    "supports_concepts": [
+      "cheap_talk"
+    ],
+    "supports_subthemes": [
+      "messages_and_shared_awareness"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-common_knowledge-01",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 25: Common Knowledge",
+    "youtube_url": "https://www.youtube.com/watch?v=YHAY9UY9MgE",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/025-YHAY9UY9MgE-Lecture 25: Common Knowledge.txt",
+    "timestamp_start": "00:28:19.360",
+    "timestamp_end": "00:28:25.840",
+    "paraphrased_claim": "The lecture gives transcript support for Common Knowledge as a fact that everyone knows, everyone knows everyone knows, and so on.",
+    "lecture_argument": "In Lecture 25: Common Knowledge, the course treats Common Knowledge as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Common Knowledge, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Common knowledge means everyone knows, everyone knows everyone knows, and the chain continues. The useful relation is `E, KE, KKE, KKKE, ...`. In plain language: E is the event; K means known by the players; repeated K's represent higher-order knowledge.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Common Knowledge; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Common Knowledge as a glossary entry.",
+    "local_transcript_window": "might call We called this mutual knowledge. It's We called this mutual knowledge. It's We called this mutual knowledge. It's kind of first order mutual knowledge. kind of first order mutual knowledge. kind of first order mutual knowledge. This we might call second order mutual This we might call second order mutual",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "knowledge",
+      "mutual knowledge"
+    ],
+    "supports_concepts": [
+      "common_knowledge"
+    ],
+    "supports_subthemes": [
+      "messages_and_shared_awareness"
+    ],
+    "confidence": "moderate"
+  },
+  {
+    "id": "ev-common_knowledge-02",
+    "course": "mit-14-12-economic-applications-of-game-theory-fall-2025",
+    "video_title": "Lecture 4: Rationalizability",
+    "youtube_url": "https://www.youtube.com/watch?v=ZdwIokL0P_U",
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/004-ZdwIokL0P_U-Lecture 4: Rationalizability.txt",
+    "timestamp_start": "00:09:01.400",
+    "timestamp_end": "00:09:20.270",
+    "paraphrased_claim": "The lecture gives transcript support for Common Knowledge as a fact that everyone knows, everyone knows everyone knows, and so on.",
+    "lecture_argument": "In Lecture 4: Rationalizability, the course treats Common Knowledge as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.",
+    "example_or_analogy": "The useful everyday picture is: before naming Common Knowledge, ask what one decision-maker can safely infer about another decision-maker's move, information, or future response.",
+    "mathematical_claim": "Common knowledge means everyone knows, everyone knows everyone knows, and the chain continues. The useful relation is `E, KE, KKE, KKKE, ...`. In plain language: E is the event; K means known by the players; repeated K's represent higher-order knowledge.",
+    "caveat_or_warning": "This evidence anchors the local course treatment of Common Knowledge; broader cross-theme comparisons in the atlas remain synthesis and should be read through that scope.",
+    "why_span_matters": "The span matters because it ties the page's first-principles explanation to lecture material rather than leaving Common Knowledge as a glossary entry.",
+    "local_transcript_window": "reasoning that captures what's often called called called higher order knowledge of rationality. So first order knowledge of rationality So first order knowledge of rationality So first order knowledge of rationality means I know other people are rational.",
+    "evidence_basis": "local VTT timestamp span",
+    "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
+    "evidence_review_status": "transcript_span_selected",
+    "matched_terms": [
+      "knowledge"
+    ],
+    "supports_concepts": [
+      "common_knowledge"
+    ],
+    "supports_subthemes": [
+      "messages_and_shared_awareness"
+    ],
+    "confidence": "moderate"
+  }
+]

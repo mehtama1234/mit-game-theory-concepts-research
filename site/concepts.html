@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Concepts · MIT Game Theory Concept Lab</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">MIT Game Theory Concept Lab</a>
+    <nav><a class="" href="index.html">Overview</a><a class="active" href="concepts.html">Concepts</a><a class="" href="themes.html">Themes</a><a class="" href="families.html">Method Families</a><a class="" href="primitives.html">Primitives</a><a class="" href="evidence.html">Evidence</a></nav>
+  </header>
+  <main><section class="page-head"><h1>Concept Atlas</h1><p>Each page explains the strategic pressure, the mathematical object, what breaks without it, and transcript evidence.</p></section><section class="grid"><article class="concept-card" id="preferences">
+  <p class="eyebrow">choice and payoff</p>
+  <h3><a href="concepts/preferences.html">Preferences</a></h3>
+  <p class="definition">A way to say which outcomes a person ranks above others.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is that before we talk about strategy, we need a way to say what one person is trying to get. A person may like one outcome more than another even when dollars, risk, effort, and timing are mixed together.</dd>
+    <dt>Math</dt><dd>A preference relation ranks outcomes, often represented by a utility function u(x). The useful relation is `x preferred to y means u(x) &gt; u(y).`. In plain language: x and y are possible outcomes; u assigns each outcome a number; the larger number records the option the person ranks higher.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-preferences-01">ev-preferences-01</a>: Lecture 1: Introduction to Individual Decision-Making</li><li><a href="evidence.html#ev-preferences-02">ev-preferences-02</a>: Lecture 2: Representation of Games</li></ul>
+</article><article class="concept-card" id="utility">
+  <p class="eyebrow">choice and payoff</p>
+  <h3><a href="concepts/utility.html">Utility</a></h3>
+  <p class="definition">A numerical representation of what someone is trying to get.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is that rankings are awkward to compute with. A payoff table, expected value, or equilibrium check needs numbers, not only verbal statements like this outcome is preferred.</dd>
+    <dt>Math</dt><dd>A preference relation ranks outcomes, often represented by a utility function u(x). The useful relation is `x preferred to y means u(x) &gt; u(y).`. In plain language: x and y are possible outcomes; u assigns each outcome a number; the larger number records the option the person ranks higher.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-utility-01">ev-utility-01</a>: Lecture 1: Introduction to Individual Decision-Making</li><li><a href="evidence.html#ev-utility-02">ev-utility-02</a>: Lecture 2: Representation of Games</li></ul>
+</article><article class="concept-card" id="expected_utility">
+  <p class="eyebrow">choice and payoff</p>
+  <h3><a href="concepts/expected_utility.html">Expected Utility</a></h3>
+  <p class="definition">Averaging possible payoffs by how likely they are.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is choosing when the outcome is uncertain: a bid might win or lose, a risky action might pay off or fail, and a type may be one of several possibilities.</dd>
+    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-expected_utility-01">ev-expected_utility-01</a>: Lecture 1: Introduction to Individual Decision-Making</li><li><a href="evidence.html#ev-expected_utility-02">ev-expected_utility-02</a>: Lecture 16: Bayesian Games</li></ul>
+</article><article class="concept-card" id="strategic_form_games">
+  <p class="eyebrow">strategic dependence</p>
+  <h3><a href="concepts/strategic_form_games.html">Strategic Form Games</a></h3>
+  <p class="definition">A compact table of players, actions, and payoffs chosen at the same time.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is representing a situation where everyone chooses without first seeing the others&#x27; choices, yet everyone&#x27;s payoff depends on the whole combination.</dd>
+    <dt>Math</dt><dd>A payoff function u_i(a_i, a_-i) maps everyone&#x27;s actions to player i&#x27;s payoff. The useful relation is `u_i(a_i, a_-i).`. In plain language: i is one player; a_i is that player&#x27;s action; a_-i means everyone else&#x27;s actions; u_i is the payoff assigned to the whole action profile.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-strategic_form_games-01">ev-strategic_form_games-01</a>: Lecture 2: Representation of Games</li><li><a href="evidence.html#ev-strategic_form_games-02">ev-strategic_form_games-02</a>: Lecture 1: Introduction to Individual Decision-Making</li></ul>
+</article><article class="concept-card" id="extensive_form_games">
+  <p class="eyebrow">time and credibility</p>
+  <h3><a href="concepts/extensive_form_games.html">Extensive Form Games</a></h3>
+  <p class="definition">A game drawn as a tree so timing and information can be represented.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is that some games unfold over time. A later choice can depend on an earlier choice, and some players may know more about the history than others.</dd>
+    <dt>Math</dt><dd>Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-extensive_form_games-01">ev-extensive_form_games-01</a>: Lecture 2: Representation of Games</li><li><a href="evidence.html#ev-extensive_form_games-02">ev-extensive_form_games-02</a>: Lecture 8: Backward Induction</li></ul>
+</article><article class="concept-card" id="dominance">
+  <p class="eyebrow">strategic dependence</p>
+  <h3><a href="concepts/dominance.html">Dominance</a></h3>
+  <p class="definition">A way to rule out choices that are never better than another choice.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is that some choices are plainly bad no matter what the other side does. Keeping them in the analysis can distract from the strategic choices that actually need thought.</dd>
+    <dt>Math</dt><dd>Dominance compares one strategy against another across possible opponent choices. The useful relation is `s dominates t if u_i(s, a_-i) &gt;= u_i(t, a_-i) for all a_-i, with strict inequality somewhere.`. In plain language: The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-dominance-01">ev-dominance-01</a>: Lecture 3: Dominance</li><li><a href="evidence.html#ev-dominance-02">ev-dominance-02</a>: Lecture 4: Rationalizability</li></ul>
+</article><article class="concept-card" id="iterated_deletion">
+  <p class="eyebrow">strategic dependence</p>
+  <h3><a href="concepts/iterated_deletion.html">Iterated Deletion</a></h3>
+  <p class="definition">Repeatedly removing bad strategies and seeing what remains.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is that once obviously bad moves are removed, new moves may become obviously bad in the smaller game.</dd>
+    <dt>Math</dt><dd>Dominance compares one strategy against another across possible opponent choices. The useful relation is `s dominates t if u_i(s, a_-i) &gt;= u_i(t, a_-i) for all a_-i, with strict inequality somewhere.`. In plain language: The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-iterated_deletion-01">ev-iterated_deletion-01</a>: Lecture 3: Dominance</li><li><a href="evidence.html#ev-iterated_deletion-02">ev-iterated_deletion-02</a>: Lecture 4: Rationalizability</li></ul>
+</article><article class="concept-card" id="rationalizability">
+  <p class="eyebrow">strategic dependence</p>
+  <h3><a href="concepts/rationalizability.html">Rationalizability</a></h3>
+  <p class="definition">A strategy is plausible if it can be optimal for some reasonable belief about others.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is deciding which strategies can be defended as sensible without requiring everyone to land on one exact equilibrium.</dd>
+    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-rationalizability-01">ev-rationalizability-01</a>: Lecture 4: Rationalizability</li><li><a href="evidence.html#ev-rationalizability-02">ev-rationalizability-02</a>: Lecture 1: Introduction to Individual Decision-Making</li></ul>
+</article><article class="concept-card" id="best_response">
+  <p class="eyebrow">equilibrium reasoning</p>
+  <h3><a href="concepts/best_response.html">Best Response</a></h3>
+  <p class="definition">The move that works best against a specified belief or opponent action.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is that a strategy is not good in the abstract. It is good against a particular opponent action or belief.</dd>
+    <dt>Math</dt><dd>BR_i(a_-i) is the set of actions for player i that maximize u_i given others&#x27; actions. The useful relation is `BR_i(a_-i) = argmax_a u_i(a, a_-i).`. In plain language: argmax means choose the action a that makes player i&#x27;s payoff as large as possible when others choose a_-i.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-best_response-01">ev-best_response-01</a>: Lecture 4: Rationalizability</li><li><a href="evidence.html#ev-best_response-02">ev-best_response-02</a>: Lecture 5: Nash Equilibrium</li></ul>
+</article><article class="concept-card" id="nash_equilibrium">
+  <p class="eyebrow">equilibrium reasoning</p>
+  <h3><a href="concepts/nash_equilibrium.html">Nash Equilibrium</a></h3>
+  <p class="definition">A profile of strategies where no player wants to change alone.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is making a prediction that does not immediately fall apart when each participant asks, given what the others are doing, should I switch?</dd>
+    <dt>Math</dt><dd>Equilibrium requires each strategy to be a best response to the others. The useful relation is `a_i in BR_i(a_-i) for every player i.`. In plain language: For each player i, their chosen action a_i must belong to the set of best responses against the other players&#x27; actions.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-nash_equilibrium-01">ev-nash_equilibrium-01</a>: Lecture 5: Nash Equilibrium</li><li><a href="evidence.html#ev-nash_equilibrium-02">ev-nash_equilibrium-02</a>: Lecture 10: Subgame-Perfect Nash Equilibrium</li></ul>
+</article><article class="concept-card" id="mixed_strategies">
+  <p class="eyebrow">equilibrium reasoning</p>
+  <h3><a href="concepts/mixed_strategies.html">Mixed Strategies</a></h3>
+  <p class="definition">Choosing randomly on purpose so opponents cannot exploit a predictable move.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is what to predict when choosing one pure action would make a player exploitable or when no pure-action equilibrium exists.</dd>
+    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-mixed_strategies-01">ev-mixed_strategies-01</a>: Lecture 5: Nash Equilibrium</li><li><a href="evidence.html#ev-mixed_strategies-02">ev-mixed_strategies-02</a>: Lecture 7: Zero-Sum Games</li></ul>
+</article><article class="concept-card" id="zero_sum_games">
+  <p class="eyebrow">equilibrium reasoning</p>
+  <h3><a href="concepts/zero_sum_games.html">Zero-Sum Games</a></h3>
+  <p class="definition">A setting where one player&#x27;s gain is exactly the other&#x27;s loss.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is pure conflict: one side&#x27;s gain is the other side&#x27;s loss, so cooperation or joint surplus is not the issue.</dd>
+    <dt>Math</dt><dd>Equilibrium requires each strategy to be a best response to the others. The useful relation is `a_i in BR_i(a_-i) for every player i.`. In plain language: For each player i, their chosen action a_i must belong to the set of best responses against the other players&#x27; actions.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-zero_sum_games-01">ev-zero_sum_games-01</a>: Lecture 7: Zero-Sum Games</li><li><a href="evidence.html#ev-zero_sum_games-02">ev-zero_sum_games-02</a>: Lecture 5: Nash Equilibrium</li></ul>
+</article><article class="concept-card" id="minimax">
+  <p class="eyebrow">equilibrium reasoning</p>
+  <h3><a href="concepts/minimax.html">Minimax</a></h3>
+  <p class="definition">Choosing a strategy by protecting yourself against the worst response.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is choosing under hostile response: what can I guarantee if the other side tries to hurt me as much as possible?</dd>
+    <dt>Math</dt><dd>BR_i(a_-i) is the set of actions for player i that maximize u_i given others&#x27; actions. The useful relation is `BR_i(a_-i) = argmax_a u_i(a, a_-i).`. In plain language: argmax means choose the action a that makes player i&#x27;s payoff as large as possible when others choose a_-i.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-minimax-01">ev-minimax-01</a>: Lecture 7: Zero-Sum Games</li><li><a href="evidence.html#ev-minimax-02">ev-minimax-02</a>: Lecture 6: Imperfect Competition</li></ul>
+</article><article class="concept-card" id="backward_induction">
+  <p class="eyebrow">time and credibility</p>
+  <h3><a href="concepts/backward_induction.html">Backward Induction</a></h3>
+  <p class="definition">Solving a sequential game by starting at the end.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is that early choices in a tree depend on what later players will actually do, not what they announce they might do.</dd>
+    <dt>Math</dt><dd>Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-backward_induction-01">ev-backward_induction-01</a>: Lecture 8: Backward Induction</li><li><a href="evidence.html#ev-backward_induction-02">ev-backward_induction-02</a>: Lecture 2: Representation of Games</li></ul>
+</article><article class="concept-card" id="subgame_perfection">
+  <p class="eyebrow">time and credibility</p>
+  <h3><a href="concepts/subgame_perfection.html">Subgame-Perfect Nash Equilibrium</a></h3>
+  <p class="definition">An equilibrium that remains sensible after every possible history.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is that Nash equilibrium can allow plans based on threats that would not be carried out if the threatened moment arrived.</dd>
+    <dt>Math</dt><dd>Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-subgame_perfection-01">ev-subgame_perfection-01</a>: Lecture 10: Subgame-Perfect Nash Equilibrium</li><li><a href="evidence.html#ev-subgame_perfection-02">ev-subgame_perfection-02</a>: Lecture 8: Backward Induction</li></ul>
+</article><article class="concept-card" id="one_shot_deviation">
+  <p class="eyebrow">time and credibility</p>
+  <h3><a href="concepts/one_shot_deviation.html">One-Shot Deviation Principle</a></h3>
+  <p class="definition">A shortcut for checking whether changing one move at one point can improve a strategy.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is checking a whole dynamic strategy can be exhausting because a strategy describes what to do after many histories.</dd>
+    <dt>Math</dt><dd>Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-one_shot_deviation-01">ev-one_shot_deviation-01</a>: Lecture 11: One-Shot Deviation Principle and Bargaining</li><li><a href="evidence.html#ev-one_shot_deviation-02">ev-one_shot_deviation-02</a>: Lecture 5: Nash Equilibrium</li></ul>
+</article><article class="concept-card" id="bargaining">
+  <p class="eyebrow">time and credibility</p>
+  <h3><a href="concepts/bargaining.html">Bargaining</a></h3>
+  <p class="definition">Dividing a surplus when each side can accept, reject, or wait.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is dividing gains from agreement when each side would like more of the surplus and can sometimes wait, reject, or walk away.</dd>
+    <dt>Math</dt><dd>A payoff function u_i(a_i, a_-i) maps everyone&#x27;s actions to player i&#x27;s payoff. The useful relation is `u_i(a_i, a_-i).`. In plain language: i is one player; a_i is that player&#x27;s action; a_-i means everyone else&#x27;s actions; u_i is the payoff assigned to the whole action profile.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-bargaining-01">ev-bargaining-01</a>: Lecture 9: Negotiation</li><li><a href="evidence.html#ev-bargaining-02">ev-bargaining-02</a>: Lecture 11: One-Shot Deviation Principle and Bargaining</li></ul>
+</article><article class="concept-card" id="finitely_repeated_games">
+  <p class="eyebrow">repetition and cooperation</p>
+  <h3><a href="concepts/finitely_repeated_games.html">Finitely Repeated Games</a></h3>
+  <p class="definition">Playing a stage game a known limited number of times.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is whether repeating a game for a known number of rounds changes behavior relative to playing once.</dd>
+    <dt>Math</dt><dd>Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-finitely_repeated_games-01">ev-finitely_repeated_games-01</a>: Lecture 12: Finitely Repeated Games</li><li><a href="evidence.html#ev-finitely_repeated_games-02">ev-finitely_repeated_games-02</a>: Lecture 8: Backward Induction</li></ul>
+</article><article class="concept-card" id="infinitely_repeated_games">
+  <p class="eyebrow">repetition and cooperation</p>
+  <h3><a href="concepts/infinitely_repeated_games.html">Infinitely Repeated Games</a></h3>
+  <p class="definition">A relationship with no fixed last round, where future punishment can shape present behavior.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is how cooperation can survive when each player is tempted to grab a short-run gain by cheating.</dd>
+    <dt>Math</dt><dd>A discount factor delta weights future payoffs in an intertemporal sum. The useful relation is `U = u_0 + delta u_1 + delta^2 u_2 + ...`. In plain language: u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-infinitely_repeated_games-01">ev-infinitely_repeated_games-01</a>: Lecture 13: Infinitely Repeated Games</li><li><a href="evidence.html#ev-infinitely_repeated_games-02">ev-infinitely_repeated_games-02</a>: Lecture 9: Negotiation</li></ul>
+</article><article class="concept-card" id="folk_theorem">
+  <p class="eyebrow">repetition and cooperation</p>
+  <h3><a href="concepts/folk_theorem.html">Folk Theorem</a></h3>
+  <p class="definition">A result showing that many cooperative outcomes can be sustained when the future matters enough.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is explaining why repeated interaction can support many outcomes, not just the one-shot equilibrium.</dd>
+    <dt>Math</dt><dd>A discount factor delta weights future payoffs in an intertemporal sum. The useful relation is `U = u_0 + delta u_1 + delta^2 u_2 + ...`. In plain language: u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-folk_theorem-01">ev-folk_theorem-01</a>: Lecture 14: Folk Theorem</li><li><a href="evidence.html#ev-folk_theorem-02">ev-folk_theorem-02</a>: Lecture 1: Introduction to Individual Decision-Making</li></ul>
+</article><article class="concept-card" id="implicit_cartels">
+  <p class="eyebrow">repetition and cooperation</p>
+  <h3><a href="concepts/implicit_cartels.html">Implicit Cartels</a></h3>
+  <p class="definition">Firms may keep prices high without an explicit agreement when future punishment disciplines cheating.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is how firms might keep prices high without signing an explicit cartel agreement.</dd>
+    <dt>Math</dt><dd>A discount factor delta weights future payoffs in an intertemporal sum. The useful relation is `U = u_0 + delta u_1 + delta^2 u_2 + ...`. In plain language: u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-implicit_cartels-01">ev-implicit_cartels-01</a>: Lecture 15: Implicit Cartels</li><li><a href="evidence.html#ev-implicit_cartels-02">ev-implicit_cartels-02</a>: Lecture 1: Introduction to Individual Decision-Making</li></ul>
+</article><article class="concept-card" id="bayesian_games">
+  <p class="eyebrow">private information</p>
+  <h3><a href="concepts/bayesian_games.html">Bayesian Games</a></h3>
+  <p class="definition">A game where players may not know each other&#x27;s type, value, or payoff information.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is strategic choice when players do not know exactly who they are facing or what payoffs the other side has.</dd>
+    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-bayesian_games-01">ev-bayesian_games-01</a>: Lecture 16: Bayesian Games</li><li><a href="evidence.html#ev-bayesian_games-02">ev-bayesian_games-02</a>: Lecture 2: Representation of Games</li></ul>
+</article><article class="concept-card" id="types_and_beliefs">
+  <p class="eyebrow">private information</p>
+  <h3><a href="concepts/types_and_beliefs.html">Types And Beliefs</a></h3>
+  <p class="definition">Types store hidden information; beliefs describe what others think those types might be.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is keeping track of hidden facts and what players think those facts might be.</dd>
+    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-types_and_beliefs-01">ev-types_and_beliefs-01</a>: Lecture 16: Bayesian Games</li><li><a href="evidence.html#ev-types_and_beliefs-02">ev-types_and_beliefs-02</a>: Lecture 21: Perfect Bayesian Equilibrium</li></ul>
+</article><article class="concept-card" id="bayesian_nash_equilibrium">
+  <p class="eyebrow">private information</p>
+  <h3><a href="concepts/bayesian_nash_equilibrium.html">Bayesian Nash Equilibrium</a></h3>
+  <p class="definition">A plan for every type such that each type is best responding to its beliefs.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is predicting behavior when each possible type of a player may want a different action.</dd>
+    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-bayesian_nash_equilibrium-01">ev-bayesian_nash_equilibrium-01</a>: Lecture 17: Bayesian Nash Equilibrium: Applications</li><li><a href="evidence.html#ev-bayesian_nash_equilibrium-02">ev-bayesian_nash_equilibrium-02</a>: Lecture 2: Representation of Games</li></ul>
+</article><article class="concept-card" id="auctions">
+  <p class="eyebrow">mechanisms and markets</p>
+  <h3><a href="concepts/auctions.html">Auctions</a></h3>
+  <p class="definition">Rules for allocating an object when bidders have private values.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is allocating an object when people know their own values but the seller and rival bidders may not.</dd>
+    <dt>Math</dt><dd>Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) &gt;= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-auctions-01">ev-auctions-01</a>: Lecture 18: Auctions</li><li><a href="evidence.html#ev-auctions-02">ev-auctions-02</a>: Lecture 1: Introduction to Individual Decision-Making</li></ul>
+</article><article class="concept-card" id="revenue_equivalence">
+  <p class="eyebrow">mechanisms and markets</p>
+  <h3><a href="concepts/revenue_equivalence.html">Revenue Equivalence</a></h3>
+  <p class="definition">Different auction rules can produce the same expected seller revenue under specific assumptions.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is comparing auction formats that look different: first-price, second-price, English, and others may create different bidding behavior.</dd>
+    <dt>Math</dt><dd>Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) &gt;= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-revenue_equivalence-01">ev-revenue_equivalence-01</a>: Lecture 19: Revenue Equivalence</li><li><a href="evidence.html#ev-revenue_equivalence-02">ev-revenue_equivalence-02</a>: Lecture 18: Auctions</li></ul>
+</article><article class="concept-card" id="ad_auctions">
+  <p class="eyebrow">mechanisms and markets</p>
+  <h3><a href="concepts/ad_auctions.html">Ad Auctions</a></h3>
+  <p class="definition">Auction design applied to online ad slots where position, clicks, and value interact.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is selling attention slots, not a single physical object. Position affects clicks, quality affects usefulness, and bids interact with platform rules.</dd>
+    <dt>Math</dt><dd>Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) &gt;= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-ad_auctions-01">ev-ad_auctions-01</a>: Lecture 20: Ad Auctions</li><li><a href="evidence.html#ev-ad_auctions-02">ev-ad_auctions-02</a>: Lecture 17: Bayesian Nash Equilibrium: Applications</li></ul>
+</article><article class="concept-card" id="perfect_bayesian_equilibrium">
+  <p class="eyebrow">private information</p>
+  <h3><a href="concepts/perfect_bayesian_equilibrium.html">Perfect Bayesian Equilibrium</a></h3>
+  <p class="definition">An equilibrium for dynamic games with beliefs that stay consistent with observed behavior.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is dynamic play with hidden information: after observing actions, players must update beliefs and continue choosing rationally.</dd>
+    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-perfect_bayesian_equilibrium-01">ev-perfect_bayesian_equilibrium-01</a>: Lecture 21: Perfect Bayesian Equilibrium</li><li><a href="evidence.html#ev-perfect_bayesian_equilibrium-02">ev-perfect_bayesian_equilibrium-02</a>: Lecture 22: Signaling</li></ul>
+</article><article class="concept-card" id="signaling">
+  <p class="eyebrow">communication and knowledge</p>
+  <h3><a href="concepts/signaling.html">Signaling</a></h3>
+  <p class="definition">Using an action or message to convey private information when others update beliefs from it.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is how someone with private information can convince others of it through an observable action.</dd>
+    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-signaling-01">ev-signaling-01</a>: Lecture 22: Signaling</li><li><a href="evidence.html#ev-signaling-02">ev-signaling-02</a>: Lecture 1: Introduction to Individual Decision-Making</li></ul>
+</article><article class="concept-card" id="cheap_talk">
+  <p class="eyebrow">communication and knowledge</p>
+  <h3><a href="concepts/cheap_talk.html">Cheap Talk</a></h3>
+  <p class="definition">Costless messages that matter only when incentives make them credible enough to influence beliefs.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is whether costless messages can influence behavior when the speaker may want to mislead.</dd>
+    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-cheap_talk-01">ev-cheap_talk-01</a>: Lecture 24: Cheap Talk</li><li><a href="evidence.html#ev-cheap_talk-02">ev-cheap_talk-02</a>: Lecture 1: Introduction to Individual Decision-Making</li></ul>
+</article><article class="concept-card" id="common_knowledge">
+  <p class="eyebrow">communication and knowledge</p>
+  <h3><a href="concepts/common_knowledge.html">Common Knowledge</a></h3>
+  <p class="definition">A fact that everyone knows, everyone knows everyone knows, and so on.</p>
+  <dl>
+    <dt>Problem</dt><dd>The problem is that coordinated action may require more than everyone privately knowing a fact. People may also need to know that others know it, and know that others know that others know it.</dd>
+    <dt>Math</dt><dd>Common knowledge means everyone knows, everyone knows everyone knows, and the chain continues. The useful relation is `E, KE, KKE, KKKE, ...`. In plain language: E is the event; K means known by the players; repeated K&#x27;s represent higher-order knowledge.</dd>
+  </dl>
+  <ul class="evidence-list"><li><a href="evidence.html#ev-common_knowledge-01">ev-common_knowledge-01</a>: Lecture 25: Common Knowledge</li><li><a href="evidence.html#ev-common_knowledge-02">ev-common_knowledge-02</a>: Lecture 4: Rationalizability</li></ul>
+</article></section></main>
+</body>
+</html>

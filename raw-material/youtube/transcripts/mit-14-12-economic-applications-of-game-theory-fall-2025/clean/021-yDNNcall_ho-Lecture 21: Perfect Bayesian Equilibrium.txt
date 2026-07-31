@@ -1,0 +1,2028 @@
+So today I want to talk about uh we're
+going to move to kind of the final phase
+of the course, which is going to be on
+dynamic Bayesian games. But I want to
+start with maybe one example of a VCG
+mechanism cuz I think yesterday uh that
+was maybe a bit abstract and a bit hard
+to follow. So let's start with uh one
+final example and it's going to be a VCG
+mechanism or maybe we'll call it a VCG
+auction
+for two items.
+So a lot of the classical work that we
+did so far in the course and auctions we
+assumed there was just one item being
+auctioned off. Then we looked at the ad
+auction setting which had the special
+structure where there was this ranking
+between the items. Here we're just going
+to have two abstract items. So I'm going
+to call these maybe item A
+and item B.
+So what the auction needs to do is it
+needs to solicit bids. Maybe I'll write
+what it's going to do. It's going to
+collect bids
+from the bidders.
+And then based upon these bids, as
+usual, we have to decide two things.
+We have to decide how we allocate the
+goods and how much everyone pays.
+So then it specifies an allocation
+which in this case it says who gets item
+A if someone gets it and who gets item B
+if anyone gets it.
+Uh and then in addition to the
+allocation we have to specify a payment
+by each bidder.
+Now I put bids in quotes because the
+kind of surprising or maybe
+somewhat confusing aspect of a VCG
+auction is that a bid is essentially a
+report or claim about how much you value
+the items.
+So you think of my bid is as the
+auctioneer saying tell me how much you
+value everything and then the bidders
+say I value it this much. And that may
+seem strange but if you think about a
+second price auction, that's exactly
+what happens because in a second price
+auction people are bidding their true
+valuation. So it's as if the auctioneer
+is saying tell me your valuation and
+then the bidders are submitting their
+valuation.
+So let's
+put a little more structure on this.
+So let's imagine that we have two
+bidders.
+And it's a little complicated to specify
+the whole auction because we have to
+specify the allocation and payment for
+any vector of bids that's submitted. So
+let's just go through one example. Let's
+look at some vector of bids that could
+be submitted. So well, we first have to
+say well what is a valuation? What do I
+need to tell the auctioneer if the
+auctioneer is asking me how much I value
+things? Well I actually have to say
+three things. I have to say how much do
+I value item A if I just get item A.
+How much do I value item B if I just get
+item B.
+And then how much do I value getting
+both items together?
+And depending on these items, it may not
+be that the the value of the the bundle
+of the two items is exactly the same as
+your sum of your valuations for the two
+items, right? Um if you know if it's
+shoes, a left shoe and a right shoe
+together are much more valuable than the
+the two shoes separately. Whereas other
+items that are substitutes, uh the
+bundle may be
+uh less uh valuable than the sum of its
+parts if there's some duplication
+between the two parts. Maybe uh two
+apples is not twice as valuable as as
+one apple. So what we're going to think
+of it as a table
+where my valuation is going to say if I
+get item A alone, what's my value? If I
+get item B alone, what's my value? And
+if I get the bundle, what's my value?
+So bidder one is going to make some
+report
+and bidder two is going to make some
+report.
+I've made the numbers here so it works
+out. So let's suppose that the report
+bidder one makes is they say if I get
+only item A, I value that at five.
+If I get only item B, I value it at
+three.
+And if I get both items, I value it at
+eight.
+So for bidder one, it turns out their
+value of the bundle is exactly the sum
+of the value of the two parts. But it
+doesn't have to be that way.
+Now let's look at uh bidder two.
+Let's suppose bidder two says I value
+item A alone at two.
+I value B alone at six but I only value
+the bundle at seven.
+So notice for bidder two, the bundle is
+not worth as much to them as the sum of
+its parts. If they just got A and if
+they just got B, that's different from
+if they get the bundle together because
+for them um these two items, you know,
+maybe if this if item B is like a better
+version of item A, then getting both
+them together is basically just as good
+as getting item B.
+Okay.
+So let's suppose these are the reported
+valuations for the two bidders. And now
+we have to specify who gets what and
+what the payments are. So let's go
+through this. Uh maybe we'll do
+allocation over here.
+So remember the rule of the VCG
+mechanism is that we always allocate
+things efficiently.
+So that is we want to maximize the sum
+of the players' utilities.
+So we need to think
+who should item A go to
+and who should item B go to?
+Any thoughts here on what would be the
+efficient way of allocating things
+given these reports? So remember when we
+say we allocated efficiently, what we
+mean is we collect the reports and we
+allocate in a way that would be
+efficient if these were the players'
+true valuations.
+So taking this as sort of the truth,
+let's think about the efficient way of
+allocating.
+So how would
+how would you do this? Yeah, the front.
+Uh you could give item A to person one.
+Right. That seems like a good way of
+doing it. So let's see. If we give item
+A to person one, they get a valuation of
+five.
+If we give item B to person two,
+they get a valuation of six which means
+the sum is 11. That sounds pretty good.
+If we did the opposite, we would only
+get a sum of five. And if we gave both
+items to the same player, we'd either
+get eight or seven but that's still less
+than 11. So this is going to be the
+efficient allocation. This is going to
+be the allocation that maximizes the sum
+of the reported utilities.
+But now we have to do the payments.
+And I think the payments part is a bit
+trickier, right? So we have to specify
+two payments,
+T1 and T2.
+And maybe if I'm more precise I would
+say this is T1 of V1 hat V2 hat.
+And this is T2 of V1 hat V2 hat.
+So what the mechanism is saying is if
+these are the submitted valuation
+reports that the two players submit,
+this is how much I'm going to ask player
+one to pay. And if these are the
+valuation reports that are submitted,
+two to pay. to pay. And the full
+mechanism is going to have to specify a
+function that says what these payments
+are for any submitted reports. But
+writing out that full function is a bit
+complicated so we'll just do this
+example.
+Okay?
+Now what we said in class last time is
+what bidder one is supposed to pay is
+the externality that they impose on the
+other bidders. So we have to compute two
+things. We have to say if we just cared
+about the other bidders and we allocated
+the items to maximize the utility of the
+other bidders, how well would they do?
+And then we have to subtract from that
+how well the bidders actually do under
+this allocation. So let's do the first
+start with the first part and this is
+how well the other bidders could do. So
+let's say I'm bidder one.
+These are the submitted valuations.
+If we gave bidder two, if we just
+allocated things in the best way for
+bidder two, what would bidder two's
+valuation be?
+Well what we would do is we would give
+both items to bidder two.
+And if we gave both items to bidder two,
+then bidder two's valuation would be
+seven, right? So we're going to first
+start with a seven here because this is
+how well the other bidders could do
+optimally if bidder one weren't here. Or
+in other words, if we didn't care about
+bidder one and we only tried to maximize
+bidder two's payoff.
+Now we want to subtract from that
+how well bidder two actually does.
+How well does bidder two actually do
+under the given allocation? What's their
+actual valuation?
+Six, right? So we subtract six
+and we get one.
+So this is the payment that bidder one
+is asked to make.
+Why is it one? Well,
+because they're what is the effect that
+they're having on the other bidders? The
+other bidder, bidder two, could have
+gotten the bundle AB
+but because of the presence of bidder
+one, bidder two is only getting the item
+B by itself.
+And the difference in utility for bidder
+two between the bundle
+and getting only B by itself is exactly
+one and that's why we get this. Okay?
+Now let's do it for for bidder two.
+So if I'm bidder two, we first need to
+compute how well bidder one would do if
+bidder two weren't here.
+If bidder two weren't here, bidder one
+would get everything
+and their utility would be eight.
+How well does bidder one actually do?
+Well, bidder one actually gets item A
+which gives them a utility of five.
+So we get eight minus five
+and we see the payoff is the payment is
+&gt;&gt; [clears throat]
+&gt;&gt; Why does bidder two have to pay more?
+Because bidder two has a bigger
+externality on bigger bidder one.
+Bidder one would have been able to get
+everything together, A and B, but
+because of the presence of bidder two,
+they only get item A by itself and the
+difference in utility between eight and
+five is three which is uh a larger
+number. And this is going to this
+completes the specification of a VCG
+uh for this particular profile of bids.
+And the result that I didn't prove but
+that I claimed yesterday is that if you
+use this kind of rule in a VCG auction,
+it's going to be optimal for each bidder
+to report truthfully. So I should maybe
+make a note on this. Uh
+there's an optimal strategy
+for each bidder.
+And what is that strategy? Well, it's
+reporting truthfully.
+And you might call that vi hat
+equals vi.
+So, whatever my true valuation is, I
+look and I say this is how much I really
+value a, this is how much I really value
+b, and this is how much I really value
+the bundle, it's optimal for me to tell
+the designer exactly uh how I really
+feel and be honest about it. And I can't
+benefit by misreporting my valuation to
+the designer.
+All right. Any uh
+questions on that? Yes. Will you ever
+find a situation where your
+externalities are going to be less than
+the kind of
+valuation that you have for the good?
+Like that uh payment would be negative
+in that case. Good question. Uh so,
+you're never going to have a case where
+the payments are negative. And this
+follows from the the way that we define
+an externality. Um
+So,
+&gt;&gt; yeah, we have to
+be a little careful about this. So, it
+is true that more broadly in economics
+when we talk about externalities, some
+things do have positive externalities.
+There are things I can do that make
+activities I can do that make other
+people better off. So, I guess I should
+be maybe a little careful about the
+terminology of externality. So, here uh
+what we mean in this context by
+externality is
+well, we're comparing
+how well the other bidder would do if we
+just cared about maximizing that
+bidder's utility
+to how well that bidder actually does
+under this allocation.
+And there's no way that the current
+allocation can give more to the other
+bidder than if we just maximize that
+bidder's utility. So, for that reason,
+this number is always going to be
+non-negative, and you're right if you're
+thinking of other externality context,
+this is a bit more special. So, it does
+turn out here that the payments will
+always be non-negative. They could be
+zero, uh but they would never be
+negative cuz in order for them to be
+negative, it would have to be that the
+allocation we're choosing makes the
+other bidder strictly better off than
+the best allocation for that bidder, and
+that can't that you know, that goes
+against the definition of best. Yeah.
+Seven is maximizing their utility when
+everyone besides myself is is in the
+game, or is it just their utility alone?
+Uh good question. So, the seven here
+is what we're maximizing is the
+sum of everyone else's utility
+and we're ignoring my own utility. So,
+in this case, because there's only two
+bidders, the sum of everyone else's
+utility is just maximizing the other
+bidder's utility. But if we had three
+bidders, then we would think about how
+could we allocate the goods in a way to
+maximize the sum of say bidders two and
+three's utility, uh ignoring the effect
+of the presence of bidder one. Yeah.
+Good.
+Any other questions on this?
+So, now let's uh change
+tacks a little bit
+and we're now going to move to the final
+phase of the course
+which is called dynamic Bayesian games.
+And I think it's kind of good at this
+point to pause and see where we've where
+we've come. So, we can think of the
+course as organized into four parts. We
+have looked at static games
+and dynamic games.
+And we've also looked at games of
+complete information
+and games of incomplete information.
+And basically, so far we've filled in
+three of these boxes, and now we're
+going to fill in the fourth box. And for
+each box in each class of games, we have
+a different solution concept, different
+equilibrium notion. So, let's fill this
+in.
+So, in the first part of the course, we
+started here. This would just be like
+your basic strategic form game with
+complete information, and our solution
+concept there was just Nash equilibrium,
+right?
+Next, we said, well,
+we looked at extensive form games where
+players make moves over time, and we
+said one problem with the Nash
+equilibrium is it allows players to make
+non-credible threats. And we said we
+wanted to refine Nash equilibrium and
+impose a stronger solution concept that
+rules out threats that are threats that
+are not credible, and that solution
+concept was called subgame perfect Nash
+equilibrium.
+So, that was a a stronger notion than
+Nash that ruled out some Nash equilibria
+that we didn't find compelling because
+they involved threats that were not
+credible at nodes that were not reached
+in the game.
+Then we step back and we said, wait a
+second,
+our complete information seems like a
+really strong assumption. A lot of times
+when people come to the game and they
+start the game, they know things that
+other players don't. They know things
+about their preferences that other
+players in the game don't. So, we
+introduced uh Bayesian games,
+that is games that have incomplete
+information, and we introduced a
+solution concept for that called Bayes
+Nash equilibrium or Bayesian Nash
+Now, this kind of dealt with the issue
+of incomplete information, but it turns
+out that
+Bayesian Nash equilibrium doesn't deal
+with the issue of non-credible threats.
+And if we want to look at dynamic games
+with incomplete information, we have to
+both take into account the fact that
+players have incomplete information, but
+we also may want to rule out equilibria
+that involve non-credible threats. So,
+we're going to introduce today our final
+solution concept, which it's not very
+creative, we basically combine the
+perfect from here and the Bayes from
+here, and it's just called perfect
+Bayesian equilibrium.
+Um
+I guess maybe I'll give somewhat of a
+warning about this. Uh these first three
+concepts are very uh are
+well agreed upon. Everyone kind of
+agrees what's the right notion. Once we
+get to dynamic games of incomplete
+information, there's been a lot of
+recent work arguing about what's the
+right notion of equilibrium. So, we're
+going to present a particular notion
+called perfect Bayesian equilibrium, but
+there's like 10 other equilibrium
+notions that could fill this box that
+are more exotic and involve more
+constraints, and people are arguing to
+this day about what's the right way to
+uh to define equilibrium. So, I'll just
+warn you that things are a little uh
+maybe trickier or uh less clear-cut in
+this case, but we'll we'll try to focus
+on well-trodden ground in this class.
+Okay. So, I want to first today, before
+defining perfect Bayesian equilibrium, I
+want to give a few examples that try to
+motivate why we need a new definition,
+why our existing equilibrium notions are
+insufficient, and then we'll go over how
+we can actually solve for perfect
+Bayesian equilibrium and go over the
+formal definition.
+So, let's start with uh
+maybe a reminder
+about non-credible threats and a
+weakness of Nash equilibrium with
+complete information, and then we'll
+build on that. So, let's go back to
+maybe our classic example uh where we
+had two firms.
+We had firm one and we had firm two.
+And we'll think of firm one as a
+potential entrant
+and we'll think of firm two as an
+incumbent.
+So, firm two's already in the market.
+Firm one is deciding whether to enter
+the market or not. So, they're called an
+entrant, but really they're potential
+entrant. They may or may not enter.
+And firm one is choosing whether to
+enter the market, we'll call that e, or
+not enter the market, we'll call that n.
+And this is the example we've we've done
+before.
+Firm two is the incumbent. If firm one
+enters, firm two is the incumbent can
+choose whether to accommodate their
+entry or to fight them by starting some
+price war, trying to cut prices, and
+doing something that hurts both players.
+firm two is choosing a or f.
+A for accommodate the new entrant, and f
+for fight against uh the new entrant.
+So, let's write this as an extensive
+form game.
+We have firm one is here.
+They're choosing whether to maybe I'll
+put n here, not enter or enter.
+And then if they do enter,
+we have firm two,
+and they're choosing to either
+accommodate the entrant
+or fight. Let me make sure I get the
+numbers
+right. So, what we did here,
+let's put
+0 5,
+1 1,
+and -10 10 to make this easy.
+So, what's the idea?
+If firm one does not enter,
+well, that's great for firm two, the
+incumbent. They're the monopolist,
+they're all by themselves, so they get a
+payoff of five. Firm one isn't entering,
+so they get a payoff of zero.
+If firm one does enter, well, then the
+payoffs to the firms depend on whether
+to accommodate the entrant or fights.
+If they accommodate, then they both do
+pretty well, they both get one, but of
+course not as well as firm two would
+have gotten if firm two were by himself
+as monopolist.
+And then if firm two fights, that's
+really bad for for both sides. They have
+a price war, prices go say really low,
+and and this is bad for everyone. Um you
+know, we're thinking of fighting in kind
+of an abstract sense. Uh it could
+literally involve violence, or it could
+be cutting prices, or it could be
+flooding the market. There's a lot of
+things it could be.
+So, let's now
+just write this as a this is a bit of a
+review today of kind of our standard
+strategic form game box. Player one has
+two strategies, n e. Player two has two
+strategies, a f.
+I'll write this n e to keep the order
+consistent.
+And let's see, if player one doesn't
+enter,
+then they both get 0 5 either way.
+If player one does enter, then the
+payoffs depend on what player two does,
+and we get one one here.
+And negative 10.
+Negative 10 here.
+Well, now let's just do our standard
+approach to try to find the Nash
+equilibrium of this. This is a good
+little review. The final exam is going
+to be cumulative, so you do have to
+remember
+how to how to solve the basic games. So,
+let's see. We go down here. If firm two
+is going to accommodate, then it's
+better for firm one to enter.
+If firm two is going to fight,
+it's better for firm one to not enter.
+And then we can do things the other way.
+If firm one doesn't enter, actually it
+doesn't matter what firm two does.
+If firm one enters, then firm two would
+rather accommodate.
+So, we get two equilibria.
+We get EA
+and NF.
+Which we can see on our graph
+here.
+Now, both of these are Nash equilibria,
+but we precisely introduce subgame
+perfect Nash equilibria as a more
+demanding solution concept to rule out
+one of these equilibria.
+So, which of these equilibria is not a
+subgame perfect Nash equilibrium? Which
+one did we does subgame perfection rule
+out?
+Yeah. The EF
+because we can't really
+EF, sorry. Uh
+NF or EA? Sorry.
+It these it's it's one of these two,
+right? It's EA and NF. Yeah.
+Uh maybe yeah.
+NF.
+NF, I agree. Okay. And and why?
+Uh because if
+the entrant enters, it doesn't make
+sense for the incumbent to
+uh fight.
+Exactly right. So,
+both of these are Nash equilibria.
+Only EA is a subgame perfect Nash
+equilibrium. As you said, NF is not
+subgame perfect.
+And it's not subgame perfect because it
+involves a threat by firm two that is
+not credible.
+Firm two says, "If you enter,
+I'm going to fight."
+But if firm one actually enters, well,
+firm two is here and they look, "Well,
+wait a second. If I fight, I get
+negative 10.
+If I accommodate, I get one. I'm much
+better off accommodating."
+So, it's not optimal
+for firm two to actually carry out this
+punishment or this threat that they that
+they threatened to carry out.
+Uh formally,
+well,
+we have to think of the definition of
+subgame perfect Nash equilibrium.
+In the definition, we have to look at
+every subgame.
+We have the full game here, but we also
+have a subgame that starts here. So,
+remember this is
+one subgame
+of the full game.
+And the problem with NF
+is that fighting is not an equilibrium
+of this subgame. Now, maybe weird to
+think of this as a subgame cuz there's
+only one player moving. But remember, we
+can have a game with a single player.
+And an equilibrium of a single player
+game just means that player is behaving
+optimally, right? So, here F is not uh a
+Nash equilibrium of this subgame because
+F is strictly worse for player two than
+A. So, this doesn't satisfy our
+definition of subgame Nash uh subgame
+perfect Nash equilibrium.
+But let's uh maybe change the game
+slightly.
+So, what if we change the game and say,
+"Well, actually firm one
+has two different ways of entering. They
+can enter the market and produce one
+kind of good, or they can enter the
+market and produce a slightly different
+kind of good." So, we're now going to
+say that firm one is choosing between
+not entering
+or
+I'll call it E1
+or E2.
+These are just two different ways they
+can enter and maybe use a slightly
+different marketing strategy or slightly
+different pricing strategy, but they're
+effectively entering either way.
+Uh
+and now let's
+write out how this looks.
+So, we have firm one here.
+Firm one is now choosing
+enter
+not enter, sorry. Not enter, E1, or E2.
+Again, if they don't enter, the payoff
+is 0 5.
+If they enter in this way,
+firm two choose to accommodate or fight.
+They enter in this way, firm two choose
+to accommodate or fight.
+This is still firm two, firm two.
+And, you know, maybe the exact pricing
+strategy they use makes a bit of a
+difference, but just to make things
+simpler, let's say it it doesn't really
+affect their payoffs whether they sell
+them in one way or a different way, or
+whether they use this advertising firm
+or this other advertising firm. So,
+let's say the payoffs down here are
+going to be 1 1,
+negative 10 negative 10,
+1 1, negative 10 negative
+So, these are different ways of
+entering, but the effect in the payoffs
+is actually
+uh zero. This it doesn't actually change
+the way the payoffs are. And we could
+change these slightly if we wanted, but
+it doesn't matter.
+Okay? And notice the way I'm writing
+this,
+uh
+Let me
+slightly modify this.
+We have to make a choice. Does firm two
+observe the advertising strategy that
+firm one is using? And we're going to
+assume no. So, we're going to put this
+in the same information set. So, as firm
+two, all I see is that firm one has
+entered. I don't really know under the
+hood exactly what, say, production
+process they're using or what what
+advertising firm they have.
+And now
+let's think of the strategies in this
+game. It turns out the strategies in
+this game are exactly the same as the
+strategies over here.
+Firm one is still choosing
+uh oh, sorry. For firm one, it's
+slightly different.
+So, firm one is choosing between N,
+E1, and E2.
+And firm two
+is still choosing
+accommodate or fight. It's the same for
+firm two, but it's slightly different
+for firm one.
+Let's try to compute the Nash Let's try
+to find some the Nash equilibria.
+of this game.
+Any ideas what
+What are some Nash equilibria
+of this game? It looks really similar,
+so I think it shouldn't be too hard to
+figure this out.
+Well, let's let's organize it by what
+firm two is doing.
+Let's say firm two is accommodating.
+And notice firm two makes a single
+choice, accommodate or fight. It's a
+single choice because these two nodes
+are in the same information set. So, I
+can't choose to accommodate E1 and fight
+against E2 because I can't distinguish
+those.
+So, if firm two accommodates, what does
+firm one want to do?
+Yeah. E1 or E2. E1 or E2 is is is going
+to be good for them. They want to enter
+and they're happy to do either one. So,
+we're going to get E1A
+and E2A are both going to be Nash
+equilibria, right?
+What if firm two is going to fight?
+What does firm one want to do?
+Yeah.
+Not enter, right? So, now it looks kind
+of similar to before,
+but now we actually have three
+equilibria. Right?
+Same idea. If firm one is going to
+accommodate, then
+if if sorry, firm two is going to
+accommodate, then firm one wants to
+enter. They're happy to enter either
+way. If firm two is going to fight, then
+firm one uh
+doesn't want to enter.
+Now, I think that NF still feels
+like a non-credible threat.
+For exactly the same reason as before.
+Firm two is fighting.
+They know that by fighting they get a
+payoff of negative 10. And if they
+didn't fight, they would get a payoff of
+one.
+So, to me this feels like a non-credible
+threat. But the question is is NF a
+subgame perfect Nash equilibrium of this
+game?
+What do people think?
+Well, the first question we always have
+to ask ourselves about subgame perfect
+Nash is first we have to identify the
+subgames. Remember, maybe we're going a
+little bit back before we need to maybe
+review a little bit. So, if we go all
+the way back, uh what are the subgames
+of
+this game here?
+Only the entire game is a subgame
+because the decision point for player
+two is all a singleton node.
+Exactly right. So, we can't start
+a subgame here because we would break
+this information set.
+We can't start here because we would
+break this information set. And we can't
+include both of them as part of our uh
+subgame because we had a rule that a
+subgame has to start with a single node.
+So, the only subgame of the full game is
+just the full game itself.
+And if there's no not if there's no
+proper subgames, no subgames other than
+the game itself, then subgame perfect
+Nash equilibrium doesn't have any
+additional bite.
+Because the additional strength of
+subgame perfect Nash is it says, "In
+every subgame, we must be playing a Nash
+equilibrium." But if there's no other
+subgames, well, it doesn't have any
+bite.
+So, these are Nash equilibria, and all
+of these
+all three
+are subgame perfect.
+So, this seems like maybe a problem. It
+shows that our notion of subgame
+perfection doesn't have the bite to rule
+out non-credible threats in games like
+this where we have multiple nodes in the
+same information set.
+And we're going to introduce our notion
+of perfect Bayesian equilibrium to rule
+out these kinds of non-credible threats
+even in situations like this.
+So, let's maybe go through a more
+involved example.
+So, let's think of maybe we'll call this
+an application game.
+People have probably
+applied to internships, or jobs, or
+schools like this. And sometimes there's
+an optional essay, or an optional
+interview, or something optional. And
+often people feel it's not really
+optional. If I don't do it, I'm not
+going to get the job, I'm not going to
+get in. Well, let's try to explore that
+in this game. So, uh
+let's say well, it's an application
+game. We have an applicant
+and we could call it a firm, or a
+college, or a school. Let's say school.
+Let's use school just in this example.
+And we have a school.
+And the applicant, let's assume has
+private information uh
+In this example, it could be private
+information about how strong of a
+candidate they are, but maybe here, just
+to make it a little nicer, we'll say the
+applicant privately knows how excited
+they are about going to this school.
+Okay? So, the applicant
+uh has two types. We'll call them types.
+Maybe
+T excited or passionate. Let's say P. TP
+or TN.
+So, TP says I'm really passionate about
+going to the school. I really or about
+this the thing that the school does. I'm
+going to I want to go. And TN doesn't
+really uh they're not quite as excited.
+They would they still want to go, but
+they're not quite as excited.
+And then we have the school. And uh
+the school, let's just say in words,
+what they do is
+they want to accept
+TP
+but not TN.
+So, there's two kinds of students, two
+kinds of applicants. I'll be more
+precise for what the utilities are, but
+just at a high level understand if
+someone's really passionate and excited
+about coming, they want to accept that
+that person. If they're not excited,
+they don't want to accept them.
+So, let's try to let's draw out a game
+tree here.
+So, the applicant has private
+information at the beginning of the game
+about whether they're excited or not
+about going to the school. And the way
+that we model this is we start with a
+move by nature, right? We first assume
+that nature makes a move and draws this
+applicant's type.
+And let's we need to specify some
+probabilities. So, let's say that
+they're passionate with probability uh
+1/2
+and they're not passionate with
+probability 1/2, just to make the math a
+little bit easier.
+So, I need a new board just to This is
+going to get a little big, this game.
+Let's start here. So, we start with
+nature.
+And nature is first going to draw
+whether this person is passionate or
+not.
+So, we're going to have nature making
+this first move.
+Probability 1/2.
+Probability 1/2. And this is going to be
+kind of the
+the passionate student.
+This is going to be the not passionate
+student.
+&gt;&gt; Okay?
+And then
+the student
+or the applicant. I'm going to call them
+the applicant, so I'll say A.
+Is going to make a choice. They can
+either
+submit the optional essay or not, right?
+They're applying to this job, this some
+or this this school, there's some
+optional essay. So, let's write here,
+let's say
+they can include the essay
+or not. Maybe I'll use these words.
+&gt;&gt; [snorts]
+&gt;&gt; So, they're applying either way, but
+they're just choosing whether to submit
+the essay.
+And now we have the school
+is making a choice
+whether to accept or reject the
+candidate.
+Let's say accept.
+Reject.
+And let's save some space over here, AR.
+Now, we said the school
+would rather accept someone
+who's passionate than somebody who's
+And
+that
+a passionate candidate gives the school
+a utility of three. But uh someone who's
+not excited gives the school a payoff of
+negative two if they accept them.
+And if they don't accept them, they're
+just going to pay off from zero.
+So, let's go and fill that in here.
+On this side of the tree, the student is
+excited, they're passionate. So, if the
+school accepts them, the school is going
+to get a payoff of three.
+And if they reject them,
+the school is going to get a payoff of
+zero. I'm writing a comma here cuz we're
+going to fill in the the applicant's
+payoffs next. Yeah? Is there a reason
+why
+there are no I mean, no equal to Uh yes,
+I was going to fill that out, but maybe
+I'll I'll uh
+Let me fill out the payoffs and then
+I'll do that. So, I am going to make I'm
+going to fill in some information sets
+next.
+Uh and then if we go over here,
+if we accept the not very excited
+student, then we get negative two,
+negative two,
+and then zero, zero. Okay?
+But as you pointed out, the school only
+observes whether the applicant has
+submitted the optional essay. They don't
+directly observe whether the student is
+excited or not.
+So, we're going to need to define our
+information sets like this.
+Here.
+And like this.
+So, the school has two information sets.
+At this information set, I know that
+you've not accept not submitted the
+essay, but I don't know your true uh
+enthusiasm.
+At this information set, I know you've
+submitted the essay,
+but again, I don't know your true
+Now, we need to specify the student's
+payoff.
+let's start if when the student doesn't
+submit the essay,
+uh let's suppose that if they're
+rejected, they get a payoff of zero.
+Actually, let's assume that everywhere.
+So, all I'd said here is whenever the
+student is rejected, they get a payoff
+of zero because they want to be
+accepted.
+Now, if they do get accepted, let's
+suppose that
+So, let's talk about the value of
+acceptance.
+Well, it's two
+to the passionate student.
+It's only one to the less passionate
+student. And let's assume that writing
+the essay is costly.
+So, writing the essay also has a cost of
+C.
+And I'm just using C so I can vary this
+over the game, but C is a known
+parameter. We all know C is just like a
+number like one and two, but I just want
+uh to be have some flexibility over what
+this is. So, let's see if we can fill
+this in. So, down here, the student is
+passionate and they don't submit the
+essay, and then they get accepted.
+Uh yeah.
+Question.
+I guess I guess we'll modify it, but for
+the one where the student writes the
+essay and the student is rejected,
+wouldn't it be zero minus
+Uh good, good. Uh yes, we should do
+that.
+Good point. Uh they still had to write
+it. Yeah. So, let's Great point. Let's
+do that.
+Good point.
+Thank you.
+&gt;&gt; Okay.
+Thanks. So, let's have that in here. And
+now we go over here. So, let's see. The
+student is passionate. They don't write
+the essay and then they get accepted, so
+they get two for being passionate. And
+that's it.
+Over here, the student is passionate,
+but they have to write the essay and
+then they're accepted. So, we get two
+minus C.
+Then we go over here. The student is not
+passionate. They don't write the essay
+and they're accepted, so they get one.
+And then over here, the student is not
+passionate and they do write the essay,
+so they get one minus C.
+This may be
+getting a little messy, but I think we
+we have everything. Maybe I'll put
+parentheses around these things just to
+make it a little clearer.
+Okay. So, here's our
+our game.
+Let's get back over here. Start our
+analysis.
+So, we're going to look at a few
+different versions of the game and a few
+different kinds of equilibria, but let's
+first assume that
+C is less than one. Okay?
+So, this means even if I'm not
+passionate,
+if I'm going to get accepted, it's still
+worth writing the essay.
+Right? The benefit of being accepted uh
+outweighs uh
+the essay cost. [clears throat]
+And let's see if we can look for an
+equilibrium
+where
+every student applies and writes the
+essay. Because I think this is often
+what we see in practice, right? Even the
+students who aren't that excited, they
+write some essay about how excited they
+are to go to the school, right?
+So, let's look for an equilibrium
+which both
+types of students
+submit the essay.
+So, formally
+let's look at the student strategy.
+Remember, a student strategy has to say
+what the student does as a function of
+their type, as a function of their
+private information.
+So, we have
+the passionate student
+and the non-passionate student, and they
+both choose the essay.
+Okay? It's pretty easy.
+And now we have to go to the school
+and see what they do.
+let's put ourselves in the position of
+the school
+and let's look at the information set
+where they have received an essay.
+Right? So, remember for the school,
+their information sets
+are essay and no essay.
+So, the school needs to decide what to
+do if they see that the student has
+submitted an essay and what to do if
+they see the student has not submitted
+an essay. Right?
+if we sort of think about our experience
+with how these things work, what is a
+guess about what the school's strategy
+might be if we want to try to look for
+this equilibrium where all the students
+are writing the essay.
+What's your guess about what the school
+might do?
+If they see that you submitted the
+essay, what are they going to do?
+Probably going to accept you, right?
+And if they see you didn't write the
+essay,
+they're going to reject you. Let's see
+Let's see how this works out. Okay?
+So, first we need to say, well, let's
+suppose they see that you've written the
+essay.
+What does the school believe about your
+passion for the position? Do they think
+you're passionate or not passionate?
+What probability do they assign?
+1/2 1/2, right?
+So, technically we're using Bayes' rule,
+but here it's pretty simple because the
+prior is half half. Half the students
+are passionate, half the students are
+not passionate. If all the students
+submit the essay, well, then the
+students who submit the essay are also
+half passionate, half not passionate.
+Nothing has changed. Okay?
+But what does the school believe if they
+see that you didn't submit the essay?
+I don't know. What do you think? This is
+a bit trickier. Should it be half half?
+Why Why should it be half half? What's
+What do you think?
+I I There's not one right answer to
+this. So, uh I think it's unclear. But
+But Amy, you said half half. Why? I'm
+guessing the idea is symmetric to the
+other one where everyone submits the
+essay. Like, no one submits the essay.
+But
+Wait. Like, so if everyone submits the
+essay, you assume half half. And then
+there's like you have a student that you
+don't receive an essay from.
+Like
+it would also be half half cuz basically
+the way that Bayes' rule plays out,
+they're all the same numbers in both
+cases.
+Um Okay, so let's let's maybe write out
+Let's get another thought and then let's
+write out Bayes' rule and see what
+happens here. Were there any other any
+other thoughts on on what we do here?
+Yeah. I mean, just like qualitatively,
+maybe you assume that there's a greater
+chance that they're not passionate.
+That also seems reasonable, right? I
+think there's a lot of reasonable
+answers to this. But let's let's see how
+Bayes' rule works, right? Um
+to apply Bayes' rule,
+Yeah, so I think we're going to have an
+issue when we apply Bayes' rule, right?
+So, let's let's see what happens.
+So, remember, or just sort of a quick
+review of Bayes' rule,
+Bayes' rule allows us to calculate
+conditional probabilities. So, it allows
+us to say something like
+if we have two events, A and B, what is
+the probability that event A occurs
+conditional on B occurring?
+And the rule for Bayes' rule is that
+this is
+the probability of A and B occurring
+divided by
+the probability of B occurring.
+And the sort of basic picture that we
+give,
+if this is sort of A and this is B,
+well, what's the probability of A
+occurring given B? Well, if we know that
+B occurred, we know we're somewhere in
+this circle.
+The probability that A occurs given B
+is saying, what's given that we're in
+this circle B, what's the likelihood
+that we're in the shaded region?
+And that's exactly what's being pictured
+here. P of A intersect B is the
+probability that we're in this shaded
+region and probability B is just the
+probability that we're in
+this outer circle. Okay?
+So, let's try to apply Bayes' rule when
+we see that the student writes the
+essay. Right? So, what we're interested
+in
+is
+given essay,
+we want to say, what is the probability
+that the student is passionate, TP,
+given that they write the essay?
+And Bayes' rule tells us this is equal
+to the probability that they're
+passionate and they write the essay
+divided by the probability that they
+write the essay.
+Now,
+the probability they write the essay is
+a little hard to calculate. Let's break
+it up down.
+Let's So, write this one more time.
+Maybe I'll write it over here to give
+myself more space. This is the
+probability that they're passionate
+and they write the essay
+divided by Well, there's two ways they
+could write the essay. They could be
+passionate and then write the essay, or
+they could be not passionate and write
+the essay. So, let me break it down like
+that. We have the probability of TP and
+essay
+plus the probability
+of TN.
+So, let's see if we can fill this in.
+What is the probability that they're
+passionate and they write the essay?
+Well, they always write the essay.
+So, this is just the probability that
+they're passionate, and that's 1/2.
+Right?
+And on the bottom, again, we have the
+plus
+we're going to get a second 1/2.
+Because the probability that they're not
+passionate and they write the essay,
+well, if they're not passionate, they
+always write the essay.
+they're not passionate, which is also
+1/2.
+So, we get a half divided by a half plus
+a half, and that's going to be one.
+I think it's good to kind of
+go over this carefully once, and then I
+think people get the hang of it. Any uh
+any questions on this?
+Uh two questions. Okay, great. Yeah.
+This is just trying to solve
+This is just uh confirming this. Yeah,
+yeah. Yeah. Yes.
+So, then in the other case, So, let's go
+Let's go to the other case. Yeah, yeah.
+So, okay. Uh
+So, maybe I'll erase our little review
+and go to the other case.
+So, now we want to say, given that we
+see a student
+We didn't expect to see this. We thought
+everyone was supposed to write an essay.
+That's what they're supposed to do under
+their equilibrium strategy. But now we
+see
+that someone submits an application with
+no essay.
+And we say, well, how What belief should
+we form about the student? Well, let's
+apply Bayes' rule.
+We say, what's the probability that
+they're actually passionate, that I want
+to accept them, given no essay?
+And that's exactly equal to
+the probability that they're passionate
+and no essay
+divided by the probability of no essay.
+And what is this?
+Zero over zero.
+&gt;&gt; This is zero over zero, right?
+Because I'm never No one is writing no
+Don't know. Everyone is writing an
+So, the probability that you're
+passionate and you don't write an essay
+is zero.
+Because if you're passionate, you always
+write an essay.
+The probability that you don't submit an
+essay, well, if you're passionate, you
+always submit an essay. If you're not
+passionate, you always submit an essay.
+So, we get a zero here as well.
+So, what we see is that there's a
+fundamental problem with Bayes' rule,
+that Bayes' rule only allows us to
+define conditional probabilities
+conditional on events that have positive
+probability.
+When we try to define conditional
+probabilities conditioned on zero
+probability events, Bayes' rule doesn't
+really apply, and we run into problems.
+So, I'll say not well defined.
+And I think this is exactly why we got a
+few different answers here. What should
+we conclude when someone doesn't write
+an essay? I think there's a few
+reasonable choices, right? You might
+say, well,
+this isn't supposed to happen, so let me
+just go back to my prior and say it's
+half half.
+You could say, well, the fact that they
+don't want to write an essay, that must
+mean they're not really passionate about
+the program. I'm going to assume they're
+I'm going to say that they're not
+passionate. Or maybe you think they are
+passionate and they just,
+you know, I don't know. You could tell a
+lot of stories. But basically, we don't
+really pin down what the belief is.
+But now this creates a problem.
+Because now the question is,
+So, this equilibrium seems seems to fit.
+Let's see if this makes sense.
+If I'm the student,
+if I believe that the school is going to
+accept me if I write an essay and not
+accept me if I don't write the essay,
+then it's optimal for me to write the
+That makes sense.
+And given that all the students are
+writing the essay, well, the school is
+happy to accept you because the school
+gets a payoff of three from accepting a
+passionate student, negative two from
+accepting a not passionate student, and
+the average of three and negative two is
+strictly positive.
+So, everything looks good here. The only
+question is is this a credible threat?
+There was a question here. Yeah. I was
+just curious like if like you were to
+get someone to submit an essay, could
+that also imply that maybe there's a
+third type of student that you don't
+know about?
+That's That's a good point. So, maybe
+you want to re- revise your model of the
+world, right? And maybe our types We've
+only represented types by how excited
+they are about the program, but maybe
+there's like a laziness component that
+we also need to need to model, right?
+Or, and we'll talk about this later, it
+could be that this cost C varies in the
+population.
+Uh again, talking about essay costs, I
+feel like it's zero for everyone in the
+real GPT, but in the old days, there was
+a cost, and some people were better at
+writing essays, and the cost for them
+was lower. And we're going to talk about
+that later. Yeah, exactly.
+So, I guess the the basic question here
+is is this a credible threat? Is it
+credible for the school to say, as they
+do in this equilibrium, if you don't
+submit an essay, we're going to reject
+you?
+Yeah. Well, isn't it kind of murky
+because we were just talking about there
+are some ways you can get sailed if you
+don't write an essay that you're not
+passionate, so we don't want you. But,
+what if the school has like a really
+different way of thinking like, "Oh, if
+you didn't write the essay, that's cuz
+you were spending more time studying for
+the exam, so then like we're actually
+like more excited." So, I think because
+you don't know exactly what the school
+will conclude, the threat is like it's
+not as good.
+I think that's a great answer. So, it's
+definitely murky, and that's exactly
+what I'm trying to convey with this
+example, that it is murky. But, I think
+the key point, which you hinted at, was
+whether this threat is credible
+depends on what the school believes when
+they don't see an essay.
+So, is this threat credible? Well, it
+depends on the belief.
+If the school believes that everyone who
+doesn't submit an essay is passionate,
+then it's not credible for them to say
+we're going to reject those students
+because they rather accept passionate
+students than not.
+But, if their belief after not seeing an
+essay is that the student is not
+passionate, then it is credible for them
+to reject that student because that's
+exactly what's optimal for them if they
+see that a student if they believe that
+a student is not passionate.
+So, how do we get around this? Well,
+beliefs aren't well defined,
+but whether something is credible
+The way we get at this is our
+equilibrium notion is going to need to
+explicitly specify what beliefs the
+school forms even at this information
+set.
+So, beliefs
+So, as a result,
+beliefs must be part of the equilibrium.
+Why?
+Well,
+strat- Specifying strategies alone is
+not enough to tell us what people
+believe, but a whole equilibrium notion
+is supposed to capture whether these
+threats are credible, and therefore
+we're going to need to explicitly
+specify what the belief is.
+And what we'll see here
+is that here there's no flexibility in
+what belief we specify here. In this
+case, the belief is pinned down by
+Bayes' rule. Bayes' rule tell us tells
+us what the belief has to be.
+Here, we have we can choose whatever
+belief we want. There's no further
+restriction
+imposed by Bayes' rule on what the
+school's belief is here.
+Now, I said before there's all this big
+debate in the literature about how to
+define it.
+People came along and made all these
+arguments about what belief should be at
+this kind of information set. What
+should you believe here? For now, we're
+not we're not going to impose any
+restrictions on what those beliefs are.
+And now I'm going to go into kind of the
+formal
+definition.
+Let's go back over here.
+Let's define
+perfect Bayesian equilibrium.
+So, the first key point is that one
+thing I've harped on throughout the
+semester is no longer true. So,
+throughout the semester I've said an
+equilibrium is a strategy profile, and I
+said this over and over again.
+Now, that's no longer true because an
+equilibrium is going to be a strategy
+profile together with beliefs. So, we're
+going to have to have this new object,
+which is going to be called an
+assessment.
+I think this is a silly word, but this
+is the word that's used, and that
+specifies two things.
+It specifies a strategy profile,
+and also beliefs, or sometimes it's
+called a belief system.
+So, strategy profile,
+we already know what that is. It
+specifies a strategy for each player,
+and a strategy in this game, and in any
+game, is a mapping from information sets
+to actions. It's a complete contingent
+plan that says at my information set at
+any of my information sets, what am I
+going to do?
+So, in this game,
+it's exactly what we wrote down over
+The student has two information sets, TP
+and TN. So, a strategy for the student
+specifies what they do at TP and what
+they do at TN.
+Similarly, the school has two
+information sets. The information set
+where they observe the student wrote an
+essay, and the information set where
+they observe the student didn't write an
+essay, and the strategy specifies what
+action they take at each of those
+information sets.
+So, I said that in words. Now, a belief
+system
+is going to specify
+specifies a belief
+at every
+non-singleton
+information set.
+Okay? So, a lot of the information sets
+are singletons. I don't need to specify
+a belief here. I only need to specify a
+belief at an information set that
+contains multiple nodes.
+And what is a belief? A belief is going
+to be a probability distribution over
+the nodes in that information set. And
+that's exactly what we did here. We
+said,
+if the student submitted an essay,
+we had two nodes in that information
+set, and we had to form belief about
+what was the relative likelihood of
+those two nodes.
+And similarly, at this information set,
+no essay, or maybe I got it backwards,
+at the essay information set, we have to
+form a belief about the two nodes within
+that information set. So, a belief at
+every non-singleton information set,
+what is a belief?
+i.e.,
+a probability distribution
+over Well, it can't be over all nodes. I
+certainly can't assign positive
+probability to nodes that are not in
+that information set. It's only a
+distribution over the nodes that are
+within that information set.
+So, it's a probability distribution over
+nodes
+in the information set.
+So, now we've defined an assessment.
+Let's formally define a perfect Bayesian
+So, definition, an assessment
+is a PBE
+if it satisfies two conditions.
+The first condition is sequential
+rationality.
+And the second is belief consistency.
+Let's start with belief consistency.
+This is what we're getting at here. We
+want to say that
+the school's belief here must be
+half-half,
+but the school's belief here is totally
+flexible.
+So, what belief consistency says
+is, well, the beliefs are consistent.
+The beliefs
+are consistent with Bayes' rule.
+they can't be consistent with Bayes'
+rule everywhere. Sometimes we use this
+vague phrase, "wherever possible."
+There's often different ways of defining
+exactly what wherever possible means.
+What I mean by wherever possible is at
+any information set that's reached with
+positive probability.
+Now, let's be careful. The probability
+that we reach an information set depends
+on the strategy profile, right? So, what
+we're saying is we have an assessment.
+Looking at the strategy profile that's
+part of that assessment, I can go to
+every information set, and I can compute
+the probability that we actually reach
+that information set under the strategy
+profile, and I can split those
+information sets in two. I can say
+there's some information sets that are
+reached with positive probability, and
+there's some that are never reached.
+And the ones that are reached with
+positive probability, the beliefs at
+those information sets must satisfy
+Bayes' rule.
+But, at the other information sets that
+are not reached with with positive
+probability, I have total flexibility
+over over those beliefs.
+There's no restriction on the beliefs
+there.
+So, now sequential rationality,
+we're close. Well, the whole point of
+introducing beliefs
+was to determine whether these threats
+were credible.
+And what credible meant precisely was
+optimal, right? Optimal given my beliefs
+and given the strategy of others. So,
+sequential rationality means
+at every information set
+the action under the strategy profile
+is optimal
+given beliefs
+and the rest of the strategy profile.
+I would say the rest.
+This kind of a quote.
+So, what do I mean here?
+Whenever we get to an information set
+a strategy is going to specify what
+action the player is supposed to take
+at that information set.
+And that action that they're supposed to
+take better be optimal.
+Well, how do we define that it's
+optimal? We have to check
+that it's optimal given the beliefs that
+the player has there
+and how everyone else is going to play
+which is the rest of the strategy
+profile.
+So, what's optimal for me at this node
+depends on or at this information set
+depends on my beliefs over which node
+I'm actually at and also how people are
+going to subsequently play in the game.
+And the way they subsequently play is
+pinned down by the rest of the strategy
+I could write all this in math and
+that's what the notes do, but I think
+that maybe just makes things a little
+more confusing. So, I'm trying to write
+in words, but if anything's unclear
+Uh so, let's go back to this game and
+see if we can
+find some some more
+PBE.
+So
+just look here.
+So, let's try to finish off our our
+construction of a perfect Bayesian
+equilibrium over here.
+We already have a strategy for for the
+student. We already have a strategy for
+the school.
+The next step is you have to specify
+beliefs.
+We've already specified the half half
+belief.
+But, we have flexibility over the P 1
+minus P belief.
+So, let's emphasize here that this is
+unconstrained by Bayes' rule.
+Now, one confusion I've often see on
+problem sets or exams is people say,
+"Oh, here's my equilibrium. You can take
+P whatever you want."
+Just because it's unconstrained by
+Bayes' rule to write down an
+equilibrium, we still have to make a
+choice about what this is. We have a lot
+of flexibility in what that choice is,
+but you still have to make a concrete
+choice. You can't say the equilibrium is
+whatever P you want. You have to choose
+a particular P
+um and that's what we're going to do
+here. So, let's see what P we can
+choose.
+So, this P is unconstrained by Bayes'
+rule
+but it is constrained by something else.
+It is constrained by sequential
+Say SR. Why?
+Why am I not allowed to choose whatever
+P I want here? To make this So, I want
+to make this
+construct here a perfect Bayesian
+But, you might think, "Oh, I can just
+choose whatever P I want." But, I think
+there's an there's an issue. Yeah?
+I mean, if you were to accept like or to
+assume that was more
+um
+passionate than non-passionate, right?
+Then what you suggest is
+rejecting
+like would have been a higher utility
+Exactly right. So, let's check whether
+rejecting is sequentially rational given
+this belief.
+Okay? So, my payoff as the school is
+always zero if I reject, right?
+So, my payoff from rejecting
+What's my expected payoff from accepting
+given this belief, right? My expected
+payoff from accepting depends on the
+belief, right? So, let's write it down,
+yeah? So, we have Well, P is the
+probability that the student is
+passionate. And if they're passionate, I
+think we said I get a payoff of
+three, right?
+And if they're not passionate
+I get a payoff of -2.
+So, in order for rejecting to be
+sequentially rational at this node, it
+must be that the expected payoff from
+rejecting is weakly higher than the
+expected payoff from accepting.
+So, I need zero to be greater than equal
+to this.
+And now let's simplify this a little
+bit.
+Uh we get
+3P and then we get
+5P
+-2.
+That's right.
+So, we need zero greater than equal to
+5P -2. Let's put the two over here and
+then divide by five.
+So, we must get P
+less than or equal to 2/5.
+So, we've actually constructed a family
+of perfect Bayesian equilibria. For any
+P that you give me, as long as that P is
+smaller than 2/5, we have a perfect
+Bayesian equilibria where the student
+always submits the essay, the school
+accepts if you submit an essay, they
+reject if you don't submit an essay, and
+if they see that you don't submit an
+essay, they assign belief P to you being
+a passionate student.
+And that belief P must be small enough
+that it's credible uh for them to
+actually reject. Yes. So, does that mean
+that given different students, as long
+as like they can assign one person 3 and
+one person like I like any like
+different students who don't submit
+essays can have different values of P as
+long as P is less
+Uh so, I think you're describing a
+slightly different game. So, here
+yeah, here we've kind of made a
+simplification here where we've
+basically imagined that there's really
+only one student.
+So, you know, here what we're imagining
+is a student is drawn from the
+population and uh applies.
+Uh I think this is a reasonable model if
+in reality what happens is many people
+apply, but the school adopts a uniform
+rule. They either uh accept students
+with essays or they don't uh and they
+either accept students who don't have
+essays or they don't. Uh if they wanted
+to do something more complicated where
+there's five applications and they do
+different things to different
+applications, then we'd have to
+explicitly model the number of
+applications and you know, here look at
+the information set. All I see is I see
+one applicant and it's either an essay
+or not an essay. And if we want to
+capture what you're describing, which I
+think is important for applications, we
+need to enrich the the game.
+We're just looking at one student uh or
+the interpretation is kind of a uniform
+policy that treats all students equally.
+If you wanted to treat students
+differently, then we'd have to enrich
+the game.
+Great. So, this is what's called a uh
+Let's put it this in words. This is
+what's called a pooling equilibrium.
+It's called a pooling equilibrium
+because both types of students, the
+passionate and the non-passionate
+students, choose the same action.
+They pool together and all submit
+essays. And as a result, their choice
+about whether to submit an essay doesn't
+reveal that much information about
+whether they're passionate or not.
+So, next let's see if we can compute a
+what's called a separating equilibrium
+where different types of students uh
+make different choices.
+Let's go up here.
+Last thing we do.
+So, earlier I'd assumed that C, remember
+C is the cost of submitting an essay,
+was less than one. Let's now relax that
+assumption and let's let C be arbitrary.
+let C be arbitrary.
+And now what we'd like to do is see for
+which values of C
+can we find a separating equilibrium?
+Okay? And this is actually kind of exam
+question I often uh I like to ask where
+we you try to find the set of parameter
+values such that something is an
+So, let's see if we can work through
+this. So
+we want to look for an equilibrium
+where the essay distinguishes the types
+of students. I think this is exactly why
+schools offer optional essays. What
+they're hoping is the people who really
+want to get in and are excited write the
+essay and the people who don't really
+want to get in don't write the essay. I
+think it often doesn't work cuz we end
+up in the other equilibrium I described
+where everyone submits the essay even if
+they don't want to go, but this is the
+idea and if essays are costly enough,
+this is what what might work.
+So, we're looking for an equilibrium
+where what is the student doing?
+Well
+if they're passionate
+they submit the essay.
+they don't submit the essay.
+And then what does the school do?
+let's first specify the school's
+beliefs. Okay?
+In this case, both information sets are
+reached with positive probability.
+There's a positive probability that a
+student submits an essay and a positive
+probability that a student does not
+submit an essay. So, in this case we can
+apply Bayes' rule at both information
+sets. We don't run into this issue of
+dividing by zero and these beliefs are
+going to be well defined.
+So, if I see that a student submits an
+given that this is the strategy, what
+does Bayes' rule tell me as a school?
+passionate, and what is the probability
+that they're not passionate?
+Yeah, it's just one, and I think the way
+I'm writing it, let's write this 1 0.
+So, I say there's a probability one that
+they're passionate and zero that they're
+not passionate.
+What if I see that there's no essay?
+Well, now it's the opposite. The only
+students who don't submit essays are the
+ones who are not passionate. So, I'm
+certain that they must be not
+and I get 0 1.
+Well, now it's pretty clear.
+If I'm certain that students who submit
+the essay are passionate, I certainly
+want to accept them.
+And if I'm certain that students who
+don't submit the essay are not
+passionate, then I certainly want to
+reject them.
+So, here's our candidate equilibrium,
+and let's just sort of go through the
+conditions.
+And I think this is always a good way to
+check.
+So, does this equilibrium satisfy belief
+consistency? Yes, right? We just checked
+Bayes' rule, so we're good here.
+Just a reminder, when I say equilibrium,
+notice I've not just specified the
+strategies, I've also specified the
+And that's because this is an
+assessment, not just a strategy profile,
+Okay, so I have belief consistency. Now
+I move to sequential rationality. Well,
+let me separately check it for the
+student and the school.
+Sequential rationality for the school is
+pretty clear, right? This is what I
+already said. They're accepting students
+who they think are likely to be
+passionate, and they're rejecting
+students they think are likely to be un-
+So, we're good here.
+But what about sequential rationality
+for the student? This is going to be a
+little trickier, and this is going to
+depend on C, yeah?
+Yeah, I was going to say, does the
+expected value for
+a non-passionate student have to be
+like negative for not writing it?
+Right, so let's exactly check it out.
+So, there's two things we have to check.
+We have to check that if I'm a
+passionate student, I prefer writing an
+essay to not.
+And if I'm a not passionate student, I
+prefer not writing an essay to writing
+an essay, right? So, let's just write
+that down in math, uh but in words,
+that's exactly what we want.
+So, let's suppose I'm a student who's
+passionate.
+if I write an essay, what is my payoff?
+And if I don't write an essay, what is
+my payoff?
+Well, if I'm passionate and I write an
+what happens? What's my payoff here?
+2 - C, right?
+And if I don't write an essay, well, I'm
+not accepted,
+and I don't write the essay, so my
+payoff is just zero, right?
+Now, notice a really crucial point here.
+The school's strategy
+is that if you don't submit an essay,
+you're rejected.
+When I as a passionate student
+contemplate deviating and not submitting
+an essay,
+when I don't submit an essay, the
+school's strategy is fixed, and
+therefore they reject me.
+People have to get confused here cuz you
+might say, "Well, the school's belief is
+wrong. Their belief is that only
+non-passionate students
+don't submit essays."
+And now a passionate student is
+submitting an essay.
+But the school can't tell the
+difference. If the the school's belief
+you can't be passionate. And if if a
+passionate student deviates and doesn't
+send an essay, they're not able to
+change the beliefs that the school has.
+The belief has the school has their
+beliefs fixed, and therefore what
+happens to them when they don't write an
+essay is determined by the strategy of
+the school. It doesn't change. Some
+people are tempted to say, "Oh, they're
+passionate, so now the school's going to
+accept them." No. It's a unilateral
+deviation, the school's strategy is
+fixed, and we're considering what
+happens when a passionate student
+deviates by not submitting this.
+Okay, now let's consider a
+non-passionate student.
+They're not submitting an essay,
+and again, they're getting a payoff of
+zero.
+What if they submitted an essay?
+What would their payoff be?
+Yeah. 1 - C. 1 - C.
+Again,
+they're able to trick the school. If
+they submit the essay, they successfully
+trick the school, and the school's going
+to accept them, even though the school
+doesn't want to accept non-passionate
+people, but they have to pay the essay
+cost of C.
+So, now let's check the equilibrium
+A passionate student is supposed to
+so we need 2 - C
+to be greater than or equal to zero.
+But a non-passionate student is not
+supposed to submit the essay, so uh we
+need zero greater than or equal to 1 -
+what's our solution?
+Well, this is going to be an equilibrium
+if both of these inequalities are
+satisfied,
+and that's going to be true if 1 is less
+than or equal to C
+less than or equal to 2.
+And let's try to understand the role of
+this. Why do we have these two
+assumptions?
+Well, we want the essay to separate the
+good students from the bad students.
+If C what would go wrong if C was too
+big? If C was greater than 2?
+Yeah, it's so costly. If you say you
+have to write 100 essays, well, no one's
+going to apply to your school, again, in
+the pre-GPT world.
+So, we're not able to separate the
+students, right?
+If C is too low, what goes wrong? If C
+is less than 1, well, even the
+non-passionate students say, "Well, it's
+a one-paragraph essay, I can do that."
+It's worth it for me to do that.
+So, if you think of the school as kind
+of, you know, this is a broader question
+about the game, you could think of the
+design question, if the school can
+choose C by choosing how hard the essay
+is, they might want to choose the essay
+to be kind of a moderate difficulty.
+It's hard enough to deter the the
+uninspired students from applying, but
+easy enough that the that the inspired
+students will still apply. And I think
+that's exactly what admissions offices
+uh and and jobs think
+Okay, let me uh stop there, unless
+there's any questions.
+And I'll see everyone next week.

@@ -1,0 +1,211 @@
+[
+  {
+    "id": "choice_and_payoff",
+    "name": "Choice Under Tradeoffs",
+    "big_picture": "Before strategy enters, the course needs a language for ranking outcomes and measuring what a person is trying to get.",
+    "why_this_theme_matters": "Game theory cannot explain strategic interaction unless each player first has a reason to prefer one outcome over another.",
+    "subthemes": [
+      "ranking_outcomes"
+    ],
+    "core_concepts": [
+      "preferences",
+      "utility",
+      "expected_utility"
+    ],
+    "course_coverage": {
+      "Lecture 1: Introduction to Individual Decision-Making": 3,
+      "Lecture 2: Representation of Games": 2,
+      "Lecture 16: Bayesian Games": 1
+    },
+    "cross_course_argument": "Choice Under Tradeoffs is not a lecture label. It is an argument about why the same strategic pressure reappears across several course topics.",
+    "mathematical_spine": "The mathematical spine is built from primitives such as belief, preference.",
+    "where_analogy_breaks": "The analogy breaks when a tool that works for complete-information simultaneous choice is moved into timing, uncertainty, or communication without adding the missing structure.",
+    "lecture_evidence_chain": "Evidence comes from the listed concept pages and their transcript spans; theme prose is synthesis over those records."
+  },
+  {
+    "id": "strategic_dependence",
+    "name": "Strategic Dependence",
+    "big_picture": "The central problem is that one person's best move depends on what other people do.",
+    "why_this_theme_matters": "This is the move from ordinary decision-making to game theory.",
+    "subthemes": [
+      "tables_and_trees",
+      "eliminating_bad_moves"
+    ],
+    "core_concepts": [
+      "strategic_form_games",
+      "dominance",
+      "iterated_deletion",
+      "rationalizability"
+    ],
+    "course_coverage": {
+      "Lecture 2: Representation of Games": 1,
+      "Lecture 1: Introduction to Individual Decision-Making": 2,
+      "Lecture 3: Dominance": 2,
+      "Lecture 4: Rationalizability": 3
+    },
+    "cross_course_argument": "Strategic Dependence is not a lecture label. It is an argument about why the same strategic pressure reappears across several course topics.",
+    "mathematical_spine": "The mathematical spine is built from primitives such as belief, payoff_mapping, pruning.",
+    "where_analogy_breaks": "The analogy breaks when a tool that works for complete-information simultaneous choice is moved into timing, uncertainty, or communication without adding the missing structure.",
+    "lecture_evidence_chain": "Evidence comes from the listed concept pages and their transcript spans; theme prose is synthesis over those records."
+  },
+  {
+    "id": "equilibrium_reasoning",
+    "name": "Equilibrium As Mutual Consistency",
+    "big_picture": "A prediction must be stable against each player's own incentive to change.",
+    "why_this_theme_matters": "Equilibrium is the course's main way to turn interactive choices into a disciplined prediction.",
+    "subthemes": [
+      "stable_predictions",
+      "conflict_and_security"
+    ],
+    "core_concepts": [
+      "best_response",
+      "nash_equilibrium",
+      "mixed_strategies",
+      "zero_sum_games",
+      "minimax"
+    ],
+    "course_coverage": {
+      "Lecture 4: Rationalizability": 1,
+      "Lecture 5: Nash Equilibrium": 4,
+      "Lecture 10: Subgame-Perfect Nash Equilibrium": 1,
+      "Lecture 7: Zero-Sum Games": 3,
+      "Lecture 6: Imperfect Competition": 1
+    },
+    "cross_course_argument": "Equilibrium As Mutual Consistency is not a lecture label. It is an argument about why the same strategic pressure reappears across several course topics.",
+    "mathematical_spine": "The mathematical spine is built from primitives such as belief, best_response, mutual_consistency.",
+    "where_analogy_breaks": "The analogy breaks when a tool that works for complete-information simultaneous choice is moved into timing, uncertainty, or communication without adding the missing structure.",
+    "lecture_evidence_chain": "Evidence comes from the listed concept pages and their transcript spans; theme prose is synthesis over those records."
+  },
+  {
+    "id": "time_and_credibility",
+    "name": "Time, Threats, And Credibility",
+    "big_picture": "Promises and threats matter only when they remain optimal at the moment they must be carried out.",
+    "why_this_theme_matters": "Sequential games force students to separate what someone says now from what they will actually want later.",
+    "subthemes": [
+      "credible_time_paths"
+    ],
+    "core_concepts": [
+      "extensive_form_games",
+      "backward_induction",
+      "subgame_perfection",
+      "one_shot_deviation",
+      "bargaining"
+    ],
+    "course_coverage": {
+      "Lecture 2: Representation of Games": 2,
+      "Lecture 8: Backward Induction": 3,
+      "Lecture 10: Subgame-Perfect Nash Equilibrium": 1,
+      "Lecture 11: One-Shot Deviation Principle and Bargaining": 2,
+      "Lecture 5: Nash Equilibrium": 1,
+      "Lecture 9: Negotiation": 1
+    },
+    "cross_course_argument": "Time, Threats, And Credibility is not a lecture label. It is an argument about why the same strategic pressure reappears across several course topics.",
+    "mathematical_spine": "The mathematical spine is built from primitives such as backward_recursion, discounting, mutual_consistency, payoff_mapping.",
+    "where_analogy_breaks": "The analogy breaks when a tool that works for complete-information simultaneous choice is moved into timing, uncertainty, or communication without adding the missing structure.",
+    "lecture_evidence_chain": "Evidence comes from the listed concept pages and their transcript spans; theme prose is synthesis over those records."
+  },
+  {
+    "id": "repetition_and_cooperation",
+    "name": "Repeated Interaction And Cooperation",
+    "big_picture": "Repeated relationships can make cooperation possible because today's action changes tomorrow's incentives.",
+    "why_this_theme_matters": "This explains why behavior can differ between one-time encounters and ongoing relationships.",
+    "subthemes": [
+      "future_as_discipline"
+    ],
+    "core_concepts": [
+      "finitely_repeated_games",
+      "infinitely_repeated_games",
+      "folk_theorem",
+      "implicit_cartels"
+    ],
+    "course_coverage": {
+      "Lecture 12: Finitely Repeated Games": 1,
+      "Lecture 8: Backward Induction": 1,
+      "Lecture 13: Infinitely Repeated Games": 1,
+      "Lecture 9: Negotiation": 1,
+      "Lecture 14: Folk Theorem": 1,
+      "Lecture 1: Introduction to Individual Decision-Making": 2,
+      "Lecture 15: Implicit Cartels": 1
+    },
+    "cross_course_argument": "Repeated Interaction And Cooperation is not a lecture label. It is an argument about why the same strategic pressure reappears across several course topics.",
+    "mathematical_spine": "The mathematical spine is built from primitives such as backward_recursion, discounting, incentive_compatibility, mutual_consistency.",
+    "where_analogy_breaks": "The analogy breaks when a tool that works for complete-information simultaneous choice is moved into timing, uncertainty, or communication without adding the missing structure.",
+    "lecture_evidence_chain": "Evidence comes from the listed concept pages and their transcript spans; theme prose is synthesis over those records."
+  },
+  {
+    "id": "private_information",
+    "name": "Private Information And Beliefs",
+    "big_picture": "People often act without knowing another person's type, value, cost, or information.",
+    "why_this_theme_matters": "Beliefs let the course model uncertainty without pretending everyone knows the same facts.",
+    "subthemes": [
+      "hidden_types"
+    ],
+    "core_concepts": [
+      "bayesian_games",
+      "types_and_beliefs",
+      "bayesian_nash_equilibrium",
+      "perfect_bayesian_equilibrium"
+    ],
+    "course_coverage": {
+      "Lecture 16: Bayesian Games": 2,
+      "Lecture 2: Representation of Games": 2,
+      "Lecture 21: Perfect Bayesian Equilibrium": 2,
+      "Lecture 17: Bayesian Nash Equilibrium: Applications": 1,
+      "Lecture 22: Signaling": 1
+    },
+    "cross_course_argument": "Private Information And Beliefs is not a lecture label. It is an argument about why the same strategic pressure reappears across several course topics.",
+    "mathematical_spine": "The mathematical spine is built from primitives such as backward_recursion, belief, mutual_consistency.",
+    "where_analogy_breaks": "The analogy breaks when a tool that works for complete-information simultaneous choice is moved into timing, uncertainty, or communication without adding the missing structure.",
+    "lecture_evidence_chain": "Evidence comes from the listed concept pages and their transcript spans; theme prose is synthesis over those records."
+  },
+  {
+    "id": "mechanisms_and_markets",
+    "name": "Mechanisms, Auctions, And Markets",
+    "big_picture": "Rules shape incentives, so market design asks which rules make strategic behavior produce useful outcomes.",
+    "why_this_theme_matters": "Auctions and ad auctions show game theory as an engineering tool, not only a descriptive language.",
+    "subthemes": [
+      "rules_for_bidding"
+    ],
+    "core_concepts": [
+      "auctions",
+      "revenue_equivalence",
+      "ad_auctions"
+    ],
+    "course_coverage": {
+      "Lecture 18: Auctions": 2,
+      "Lecture 1: Introduction to Individual Decision-Making": 1,
+      "Lecture 19: Revenue Equivalence": 1,
+      "Lecture 20: Ad Auctions": 1,
+      "Lecture 17: Bayesian Nash Equilibrium: Applications": 1
+    },
+    "cross_course_argument": "Mechanisms, Auctions, And Markets is not a lecture label. It is an argument about why the same strategic pressure reappears across several course topics.",
+    "mathematical_spine": "The mathematical spine is built from primitives such as belief, incentive_compatibility, payoff_mapping.",
+    "where_analogy_breaks": "The analogy breaks when a tool that works for complete-information simultaneous choice is moved into timing, uncertainty, or communication without adding the missing structure.",
+    "lecture_evidence_chain": "Evidence comes from the listed concept pages and their transcript spans; theme prose is synthesis over those records."
+  },
+  {
+    "id": "communication_and_knowledge",
+    "name": "Communication And Knowledge",
+    "big_picture": "Messages matter when they change beliefs, but incentives determine whether messages can be trusted.",
+    "why_this_theme_matters": "Signaling, cheap talk, and common knowledge explain how information moves through strategic settings.",
+    "subthemes": [
+      "messages_and_shared_awareness"
+    ],
+    "core_concepts": [
+      "signaling",
+      "cheap_talk",
+      "common_knowledge"
+    ],
+    "course_coverage": {
+      "Lecture 22: Signaling": 1,
+      "Lecture 1: Introduction to Individual Decision-Making": 2,
+      "Lecture 24: Cheap Talk": 1,
+      "Lecture 25: Common Knowledge": 1,
+      "Lecture 4: Rationalizability": 1
+    },
+    "cross_course_argument": "Communication And Knowledge is not a lecture label. It is an argument about why the same strategic pressure reappears across several course topics.",
+    "mathematical_spine": "The mathematical spine is built from primitives such as belief, incentive_compatibility, knowledge_recursion.",
+    "where_analogy_breaks": "The analogy breaks when a tool that works for complete-information simultaneous choice is moved into timing, uncertainty, or communication without adding the missing structure.",
+    "lecture_evidence_chain": "Evidence comes from the listed concept pages and their transcript spans; theme prose is synthesis over those records."
+  }
+]

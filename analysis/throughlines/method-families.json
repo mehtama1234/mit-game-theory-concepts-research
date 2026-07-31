@@ -1,0 +1,80 @@
+[
+  {
+    "id": "equilibrium_family",
+    "name": "Equilibrium Family",
+    "first_principles_problem": "How can we predict behavior when each person is reacting to everyone else?",
+    "core_move": "Find mutually consistent plans where no one wants to move alone.",
+    "mathematical_primitive": [
+      "best_response",
+      "mutual_consistency"
+    ],
+    "concepts": [
+      "best_response",
+      "nash_equilibrium",
+      "mixed_strategies",
+      "subgame_perfection",
+      "bayesian_nash_equilibrium",
+      "perfect_bayesian_equilibrium"
+    ],
+    "plain_language_family_summary": "This family turns strategic dependence into a stability test.",
+    "course_evidence_ids": [
+      "ev-nash_equilibrium-01",
+      "ev-subgame_perfection-01"
+    ],
+    "family_walkthrough": "Ask what each player expects, then ask whether any single player would want to change.",
+    "where_analogy_breaks": "Different equilibrium concepts are needed when time or private information enters.",
+    "lecture_evidence_chain": "Supported by Nash, subgame perfection, Bayesian Nash, and PBE lecture spans.",
+    "paper_family_treatment": "Use this family to read papers that propose solution concepts or refine existing equilibrium predictions."
+  },
+  {
+    "id": "information_family",
+    "name": "Information And Belief Family",
+    "first_principles_problem": "How should people act when important facts are hidden?",
+    "core_move": "Represent hidden facts as types and beliefs, then check incentives under those beliefs.",
+    "mathematical_primitive": [
+      "belief",
+      "incentive_compatibility"
+    ],
+    "concepts": [
+      "bayesian_games",
+      "types_and_beliefs",
+      "signaling",
+      "cheap_talk",
+      "common_knowledge"
+    ],
+    "plain_language_family_summary": "This family explains how private information and messages affect strategy.",
+    "course_evidence_ids": [
+      "ev-bayesian_games-01",
+      "ev-signaling-01"
+    ],
+    "family_walkthrough": "List what each side knows, what each side thinks others know, and what incentives make messages credible or not.",
+    "where_analogy_breaks": "A message is not automatically evidence; it depends on the sender's incentive to lie or reveal.",
+    "lecture_evidence_chain": "Supported by Bayesian games, signaling, cheap talk, and common knowledge lecture spans.",
+    "paper_family_treatment": "Use this family for papers about asymmetric information, communication, reputation, and knowledge."
+  },
+  {
+    "id": "mechanism_family",
+    "name": "Mechanism And Auction Family",
+    "first_principles_problem": "How can rules be designed when participants act strategically?",
+    "core_move": "Choose rules so private incentives produce the intended allocation or information revelation.",
+    "mathematical_primitive": [
+      "incentive_compatibility",
+      "payoff_mapping"
+    ],
+    "concepts": [
+      "auctions",
+      "revenue_equivalence",
+      "ad_auctions",
+      "implicit_cartels"
+    ],
+    "plain_language_family_summary": "This family treats game theory as design for markets and institutions.",
+    "course_evidence_ids": [
+      "ev-auctions-01",
+      "ev-ad_auctions-01"
+    ],
+    "family_walkthrough": "Write the rule, identify each participant's private information, then check what behavior the rule makes attractive.",
+    "where_analogy_breaks": "Revenue or efficiency claims depend heavily on assumptions about values, risk, independence, and participation.",
+    "lecture_evidence_chain": "Supported by auction, revenue equivalence, ad auction, and cartel application spans.",
+    "paper_family_treatment": "Use this family for auction design, market design, and applied industrial organization papers."
+  }
+]

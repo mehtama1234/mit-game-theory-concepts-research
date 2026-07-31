@@ -1,0 +1,455 @@
+[
+  {
+    "id": "ranking_outcomes",
+    "parent_theme": "choice_and_payoff",
+    "name": "Ranking Outcomes",
+    "concepts": [
+      "preferences",
+      "utility",
+      "expected_utility"
+    ],
+    "everyday_problem": "The everyday problem is that strategic behavior must be read in context, not as a standalone action.",
+    "hidden_principle": "The hidden principle is that incentives, beliefs, timing, and information determine which explanation survives.",
+    "mathematical_lever": "The lever is the relevant payoff, belief, equilibrium, recursion, or incentive-compatibility object.",
+    "why_it_matters": "It matters because the subtheme gives a reusable way to recognize the same strategic shape in new applications.",
+    "examples_from_courses": [
+      {
+        "concept": "preferences",
+        "evidence_id": "ev-preferences-01",
+        "video_title": "Lecture 1: Introduction to Individual Decision-Making"
+      },
+      {
+        "concept": "utility",
+        "evidence_id": "ev-utility-01",
+        "video_title": "Lecture 1: Introduction to Individual Decision-Making"
+      },
+      {
+        "concept": "expected_utility",
+        "evidence_id": "ev-expected_utility-01",
+        "video_title": "Lecture 1: Introduction to Individual Decision-Making"
+      }
+    ],
+    "connected_concepts": [
+      "expected_utility",
+      "mixed_strategies",
+      "preferences",
+      "rationalizability",
+      "utility"
+    ],
+    "first_principles_walkthrough": "Start from the human situation, identify who knows what and who can respond, then introduce the formal object only as the shortest way to check that situation.",
+    "cross_links_and_limits": "The same primitive can reappear in another subtheme, but the application changes when information, time, or institutions change.",
+    "lecture_evidence_chain": "The examples point to transcript spans in the evidence ledger.",
+    "recognize_in_new_work": "Look for the underlying pressure rather than the vocabulary: dependence, uncertainty, credibility, repetition, or communication."
+  },
+  {
+    "id": "tables_and_trees",
+    "parent_theme": "strategic_dependence",
+    "name": "Tables, Trees, And Strategic Dependence",
+    "concepts": [
+      "strategic_form_games",
+      "extensive_form_games"
+    ],
+    "everyday_problem": "The everyday problem is that strategic behavior must be read in context, not as a standalone action.",
+    "hidden_principle": "The hidden principle is that incentives, beliefs, timing, and information determine which explanation survives.",
+    "mathematical_lever": "The lever is the relevant payoff, belief, equilibrium, recursion, or incentive-compatibility object.",
+    "why_it_matters": "It matters because the subtheme gives a reusable way to recognize the same strategic shape in new applications.",
+    "examples_from_courses": [
+      {
+        "concept": "strategic_form_games",
+        "evidence_id": "ev-strategic_form_games-01",
+        "video_title": "Lecture 2: Representation of Games"
+      },
+      {
+        "concept": "extensive_form_games",
+        "evidence_id": "ev-extensive_form_games-01",
+        "video_title": "Lecture 2: Representation of Games"
+      }
+    ],
+    "connected_concepts": [
+      "ad_auctions",
+      "backward_induction",
+      "bargaining",
+      "dominance",
+      "iterated_deletion",
+      "one_shot_deviation",
+      "rationalizability",
+      "subgame_perfection"
+    ],
+    "first_principles_walkthrough": "Start from the human situation, identify who knows what and who can respond, then introduce the formal object only as the shortest way to check that situation.",
+    "cross_links_and_limits": "The same primitive can reappear in another subtheme, but the application changes when information, time, or institutions change.",
+    "lecture_evidence_chain": "The examples point to transcript spans in the evidence ledger.",
+    "recognize_in_new_work": "Look for the underlying pressure rather than the vocabulary: dependence, uncertainty, credibility, repetition, or communication."
+  },
+  {
+    "id": "eliminating_bad_moves",
+    "parent_theme": "strategic_dependence",
+    "name": "Eliminating Bad Moves",
+    "concepts": [
+      "dominance",
+      "iterated_deletion",
+      "rationalizability"
+    ],
+    "everyday_problem": "The everyday problem is that strategic behavior must be read in context, not as a standalone action.",
+    "hidden_principle": "The hidden principle is that incentives, beliefs, timing, and information determine which explanation survives.",
+    "mathematical_lever": "The lever is the relevant payoff, belief, equilibrium, recursion, or incentive-compatibility object.",
+    "why_it_matters": "It matters because the subtheme gives a reusable way to recognize the same strategic shape in new applications.",
+    "examples_from_courses": [
+      {
+        "concept": "dominance",
+        "evidence_id": "ev-dominance-01",
+        "video_title": "Lecture 3: Dominance"
+      },
+      {
+        "concept": "iterated_deletion",
+        "evidence_id": "ev-iterated_deletion-01",
+        "video_title": "Lecture 3: Dominance"
+      },
+      {
+        "concept": "rationalizability",
+        "evidence_id": "ev-rationalizability-01",
+        "video_title": "Lecture 4: Rationalizability"
+      }
+    ],
+    "connected_concepts": [
+      "bayesian_games",
+      "dominance",
+      "expected_utility",
+      "iterated_deletion",
+      "mixed_strategies",
+      "rationalizability",
+      "strategic_form_games"
+    ],
+    "first_principles_walkthrough": "Start from the human situation, identify who knows what and who can respond, then introduce the formal object only as the shortest way to check that situation.",
+    "cross_links_and_limits": "The same primitive can reappear in another subtheme, but the application changes when information, time, or institutions change.",
+    "lecture_evidence_chain": "The examples point to transcript spans in the evidence ledger.",
+    "recognize_in_new_work": "Look for the underlying pressure rather than the vocabulary: dependence, uncertainty, credibility, repetition, or communication."
+  },
+  {
+    "id": "stable_predictions",
+    "parent_theme": "equilibrium_reasoning",
+    "name": "Stable Predictions",
+    "concepts": [
+      "best_response",
+      "nash_equilibrium",
+      "mixed_strategies"
+    ],
+    "everyday_problem": "The everyday problem is that strategic behavior must be read in context, not as a standalone action.",
+    "hidden_principle": "The hidden principle is that incentives, beliefs, timing, and information determine which explanation survives.",
+    "mathematical_lever": "The lever is the relevant payoff, belief, equilibrium, recursion, or incentive-compatibility object.",
+    "why_it_matters": "It matters because the subtheme gives a reusable way to recognize the same strategic shape in new applications.",
+    "examples_from_courses": [
+      {
+        "concept": "best_response",
+        "evidence_id": "ev-best_response-01",
+        "video_title": "Lecture 4: Rationalizability"
+      },
+      {
+        "concept": "nash_equilibrium",
+        "evidence_id": "ev-nash_equilibrium-01",
+        "video_title": "Lecture 5: Nash Equilibrium"
+      },
+      {
+        "concept": "mixed_strategies",
+        "evidence_id": "ev-mixed_strategies-01",
+        "video_title": "Lecture 5: Nash Equilibrium"
+      }
+    ],
+    "connected_concepts": [
+      "best_response",
+      "expected_utility",
+      "minimax",
+      "mixed_strategies",
+      "nash_equilibrium",
+      "rationalizability",
+      "zero_sum_games"
+    ],
+    "first_principles_walkthrough": "Start from the human situation, identify who knows what and who can respond, then introduce the formal object only as the shortest way to check that situation.",
+    "cross_links_and_limits": "The same primitive can reappear in another subtheme, but the application changes when information, time, or institutions change.",
+    "lecture_evidence_chain": "The examples point to transcript spans in the evidence ledger.",
+    "recognize_in_new_work": "Look for the underlying pressure rather than the vocabulary: dependence, uncertainty, credibility, repetition, or communication."
+  },
+  {
+    "id": "conflict_and_security",
+    "parent_theme": "equilibrium_reasoning",
+    "name": "Conflict And Security",
+    "concepts": [
+      "zero_sum_games",
+      "minimax"
+    ],
+    "everyday_problem": "The everyday problem is that strategic behavior must be read in context, not as a standalone action.",
+    "hidden_principle": "The hidden principle is that incentives, beliefs, timing, and information determine which explanation survives.",
+    "mathematical_lever": "The lever is the relevant payoff, belief, equilibrium, recursion, or incentive-compatibility object.",
+    "why_it_matters": "It matters because the subtheme gives a reusable way to recognize the same strategic shape in new applications.",
+    "examples_from_courses": [
+      {
+        "concept": "zero_sum_games",
+        "evidence_id": "ev-zero_sum_games-01",
+        "video_title": "Lecture 7: Zero-Sum Games"
+      },
+      {
+        "concept": "minimax",
+        "evidence_id": "ev-minimax-01",
+        "video_title": "Lecture 7: Zero-Sum Games"
+      }
+    ],
+    "connected_concepts": [
+      "best_response",
+      "minimax",
+      "mixed_strategies",
+      "nash_equilibrium",
+      "zero_sum_games"
+    ],
+    "first_principles_walkthrough": "Start from the human situation, identify who knows what and who can respond, then introduce the formal object only as the shortest way to check that situation.",
+    "cross_links_and_limits": "The same primitive can reappear in another subtheme, but the application changes when information, time, or institutions change.",
+    "lecture_evidence_chain": "The examples point to transcript spans in the evidence ledger.",
+    "recognize_in_new_work": "Look for the underlying pressure rather than the vocabulary: dependence, uncertainty, credibility, repetition, or communication."
+  },
+  {
+    "id": "credible_time_paths",
+    "parent_theme": "time_and_credibility",
+    "name": "Credible Time Paths",
+    "concepts": [
+      "backward_induction",
+      "subgame_perfection",
+      "one_shot_deviation",
+      "bargaining"
+    ],
+    "everyday_problem": "The everyday problem is that strategic behavior must be read in context, not as a standalone action.",
+    "hidden_principle": "The hidden principle is that incentives, beliefs, timing, and information determine which explanation survives.",
+    "mathematical_lever": "The lever is the relevant payoff, belief, equilibrium, recursion, or incentive-compatibility object.",
+    "why_it_matters": "It matters because the subtheme gives a reusable way to recognize the same strategic shape in new applications.",
+    "examples_from_courses": [
+      {
+        "concept": "backward_induction",
+        "evidence_id": "ev-backward_induction-01",
+        "video_title": "Lecture 8: Backward Induction"
+      },
+      {
+        "concept": "subgame_perfection",
+        "evidence_id": "ev-subgame_perfection-01",
+        "video_title": "Lecture 10: Subgame-Perfect Nash Equilibrium"
+      },
+      {
+        "concept": "one_shot_deviation",
+        "evidence_id": "ev-one_shot_deviation-01",
+        "video_title": "Lecture 11: One-Shot Deviation Principle and Bargaining"
+      },
+      {
+        "concept": "bargaining",
+        "evidence_id": "ev-bargaining-01",
+        "video_title": "Lecture 9: Negotiation"
+      }
+    ],
+    "connected_concepts": [
+      "backward_induction",
+      "bargaining",
+      "extensive_form_games",
+      "infinitely_repeated_games",
+      "nash_equilibrium",
+      "one_shot_deviation",
+      "strategic_form_games",
+      "subgame_perfection"
+    ],
+    "first_principles_walkthrough": "Start from the human situation, identify who knows what and who can respond, then introduce the formal object only as the shortest way to check that situation.",
+    "cross_links_and_limits": "The same primitive can reappear in another subtheme, but the application changes when information, time, or institutions change.",
+    "lecture_evidence_chain": "The examples point to transcript spans in the evidence ledger.",
+    "recognize_in_new_work": "Look for the underlying pressure rather than the vocabulary: dependence, uncertainty, credibility, repetition, or communication."
+  },
+  {
+    "id": "future_as_discipline",
+    "parent_theme": "repetition_and_cooperation",
+    "name": "The Future As Discipline",
+    "concepts": [
+      "finitely_repeated_games",
+      "infinitely_repeated_games",
+      "folk_theorem",
+      "implicit_cartels"
+    ],
+    "everyday_problem": "The everyday problem is that strategic behavior must be read in context, not as a standalone action.",
+    "hidden_principle": "The hidden principle is that incentives, beliefs, timing, and information determine which explanation survives.",
+    "mathematical_lever": "The lever is the relevant payoff, belief, equilibrium, recursion, or incentive-compatibility object.",
+    "why_it_matters": "It matters because the subtheme gives a reusable way to recognize the same strategic shape in new applications.",
+    "examples_from_courses": [
+      {
+        "concept": "finitely_repeated_games",
+        "evidence_id": "ev-finitely_repeated_games-01",
+        "video_title": "Lecture 12: Finitely Repeated Games"
+      },
+      {
+        "concept": "infinitely_repeated_games",
+        "evidence_id": "ev-infinitely_repeated_games-01",
+        "video_title": "Lecture 13: Infinitely Repeated Games"
+      },
+      {
+        "concept": "folk_theorem",
+        "evidence_id": "ev-folk_theorem-01",
+        "video_title": "Lecture 14: Folk Theorem"
+      },
+      {
+        "concept": "implicit_cartels",
+        "evidence_id": "ev-implicit_cartels-01",
+        "video_title": "Lecture 15: Implicit Cartels"
+      }
+    ],
+    "connected_concepts": [
+      "backward_induction",
+      "bargaining",
+      "extensive_form_games",
+      "finitely_repeated_games",
+      "folk_theorem",
+      "implicit_cartels",
+      "infinitely_repeated_games",
+      "mixed_strategies",
+      "nash_equilibrium",
+      "subgame_perfection",
+      "zero_sum_games"
+    ],
+    "first_principles_walkthrough": "Start from the human situation, identify who knows what and who can respond, then introduce the formal object only as the shortest way to check that situation.",
+    "cross_links_and_limits": "The same primitive can reappear in another subtheme, but the application changes when information, time, or institutions change.",
+    "lecture_evidence_chain": "The examples point to transcript spans in the evidence ledger.",
+    "recognize_in_new_work": "Look for the underlying pressure rather than the vocabulary: dependence, uncertainty, credibility, repetition, or communication."
+  },
+  {
+    "id": "hidden_types",
+    "parent_theme": "private_information",
+    "name": "Hidden Types And Beliefs",
+    "concepts": [
+      "bayesian_games",
+      "types_and_beliefs",
+      "bayesian_nash_equilibrium",
+      "perfect_bayesian_equilibrium"
+    ],
+    "everyday_problem": "The everyday problem is that strategic behavior must be read in context, not as a standalone action.",
+    "hidden_principle": "The hidden principle is that incentives, beliefs, timing, and information determine which explanation survives.",
+    "mathematical_lever": "The lever is the relevant payoff, belief, equilibrium, recursion, or incentive-compatibility object.",
+    "why_it_matters": "It matters because the subtheme gives a reusable way to recognize the same strategic shape in new applications.",
+    "examples_from_courses": [
+      {
+        "concept": "bayesian_games",
+        "evidence_id": "ev-bayesian_games-01",
+        "video_title": "Lecture 16: Bayesian Games"
+      },
+      {
+        "concept": "types_and_beliefs",
+        "evidence_id": "ev-types_and_beliefs-01",
+        "video_title": "Lecture 16: Bayesian Games"
+      },
+      {
+        "concept": "bayesian_nash_equilibrium",
+        "evidence_id": "ev-bayesian_nash_equilibrium-01",
+        "video_title": "Lecture 17: Bayesian Nash Equilibrium: Applications"
+      },
+      {
+        "concept": "perfect_bayesian_equilibrium",
+        "evidence_id": "ev-perfect_bayesian_equilibrium-01",
+        "video_title": "Lecture 21: Perfect Bayesian Equilibrium"
+      }
+    ],
+    "connected_concepts": [
+      "bayesian_games",
+      "bayesian_nash_equilibrium",
+      "expected_utility",
+      "extensive_form_games",
+      "mixed_strategies",
+      "nash_equilibrium",
+      "perfect_bayesian_equilibrium",
+      "rationalizability",
+      "types_and_beliefs"
+    ],
+    "first_principles_walkthrough": "Start from the human situation, identify who knows what and who can respond, then introduce the formal object only as the shortest way to check that situation.",
+    "cross_links_and_limits": "The same primitive can reappear in another subtheme, but the application changes when information, time, or institutions change.",
+    "lecture_evidence_chain": "The examples point to transcript spans in the evidence ledger.",
+    "recognize_in_new_work": "Look for the underlying pressure rather than the vocabulary: dependence, uncertainty, credibility, repetition, or communication."
+  },
+  {
+    "id": "rules_for_bidding",
+    "parent_theme": "mechanisms_and_markets",
+    "name": "Rules For Bidding",
+    "concepts": [
+      "auctions",
+      "revenue_equivalence",
+      "ad_auctions"
+    ],
+    "everyday_problem": "The everyday problem is that strategic behavior must be read in context, not as a standalone action.",
+    "hidden_principle": "The hidden principle is that incentives, beliefs, timing, and information determine which explanation survives.",
+    "mathematical_lever": "The lever is the relevant payoff, belief, equilibrium, recursion, or incentive-compatibility object.",
+    "why_it_matters": "It matters because the subtheme gives a reusable way to recognize the same strategic shape in new applications.",
+    "examples_from_courses": [
+      {
+        "concept": "auctions",
+        "evidence_id": "ev-auctions-01",
+        "video_title": "Lecture 18: Auctions"
+      },
+      {
+        "concept": "revenue_equivalence",
+        "evidence_id": "ev-revenue_equivalence-01",
+        "video_title": "Lecture 19: Revenue Equivalence"
+      },
+      {
+        "concept": "ad_auctions",
+        "evidence_id": "ev-ad_auctions-01",
+        "video_title": "Lecture 20: Ad Auctions"
+      }
+    ],
+    "connected_concepts": [
+      "ad_auctions",
+      "auctions",
+      "bargaining",
+      "expected_utility",
+      "implicit_cartels",
+      "mixed_strategies",
+      "rationalizability",
+      "revenue_equivalence",
+      "signaling",
+      "strategic_form_games"
+    ],
+    "first_principles_walkthrough": "Start from the human situation, identify who knows what and who can respond, then introduce the formal object only as the shortest way to check that situation.",
+    "cross_links_and_limits": "The same primitive can reappear in another subtheme, but the application changes when information, time, or institutions change.",
+    "lecture_evidence_chain": "The examples point to transcript spans in the evidence ledger.",
+    "recognize_in_new_work": "Look for the underlying pressure rather than the vocabulary: dependence, uncertainty, credibility, repetition, or communication."
+  },
+  {
+    "id": "messages_and_shared_awareness",
+    "parent_theme": "communication_and_knowledge",
+    "name": "Messages And Shared Awareness",
+    "concepts": [
+      "signaling",
+      "cheap_talk",
+      "common_knowledge"
+    ],
+    "everyday_problem": "The everyday problem is that strategic behavior must be read in context, not as a standalone action.",
+    "hidden_principle": "The hidden principle is that incentives, beliefs, timing, and information determine which explanation survives.",
+    "mathematical_lever": "The lever is the relevant payoff, belief, equilibrium, recursion, or incentive-compatibility object.",
+    "why_it_matters": "It matters because the subtheme gives a reusable way to recognize the same strategic shape in new applications.",
+    "examples_from_courses": [
+      {
+        "concept": "signaling",
+        "evidence_id": "ev-signaling-01",
+        "video_title": "Lecture 22: Signaling"
+      },
+      {
+        "concept": "cheap_talk",
+        "evidence_id": "ev-cheap_talk-01",
+        "video_title": "Lecture 24: Cheap Talk"
+      },
+      {
+        "concept": "common_knowledge",
+        "evidence_id": "ev-common_knowledge-01",
+        "video_title": "Lecture 25: Common Knowledge"
+      }
+    ],
+    "connected_concepts": [
+      "cheap_talk",
+      "common_knowledge",
+      "expected_utility",
+      "implicit_cartels",
+      "mixed_strategies",
+      "rationalizability",
+      "signaling"
+    ],
+    "first_principles_walkthrough": "Start from the human situation, identify who knows what and who can respond, then introduce the formal object only as the shortest way to check that situation.",
+    "cross_links_and_limits": "The same primitive can reappear in another subtheme, but the application changes when information, time, or institutions change.",
+    "lecture_evidence_chain": "The examples point to transcript spans in the evidence ledger.",
+    "recognize_in_new_work": "Look for the underlying pressure rather than the vocabulary: dependence, uncertainty, credibility, repetition, or communication."
+  }
+]

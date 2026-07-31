@@ -1,0 +1,219 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import html
+import json
+from collections import defaultdict
+from pathlib import Path
+from typing import Any
+
+ROOT = Path(__file__).resolve().parents[1]
+SITE = ROOT / "site"
+
+
+def load(path: str) -> Any:
+    return json.loads((ROOT / path).read_text(encoding="utf-8"))
+
+
+def esc(value: Any) -> str:
+    return html.escape(str(value), quote=True)
+
+
+def write(path: Path, content: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(line.rstrip() for line in content.splitlines()) + "\n", encoding="utf-8")
+
+
+def page(title: str, body: str, active: str = "", depth: int = 0) -> str:
+    prefix = "../" * depth
+    nav = [
+        ("index.html", "Overview", "overview"),
+        ("concepts.html", "Concepts", "concepts"),
+        ("themes.html", "Themes", "themes"),
+        ("families.html", "Method Families", "families"),
+        ("primitives.html", "Primitives", "primitives"),
+        ("evidence.html", "Evidence", "evidence"),
+    ]
+    nav_html = "".join(
+        f'<a class="{"active" if key == active else ""}" href="{prefix}{href}">{label}</a>' for href, label, key in nav
+    )
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{esc(title)} · MIT Game Theory Concept Lab</title>
+  <link rel="stylesheet" href="{prefix}assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="{prefix}index.html">MIT Game Theory Concept Lab</a>
+    <nav>{nav_html}</nav>
+  </header>
+  <main>{body}</main>
+</body>
+</html>"""
+
+
+def flow(title: str, steps: list[tuple[str, str]], kind: str = "concept-flow") -> str:
+    return f"""<figure class="learning-diagram {kind}">
+  <figcaption>{esc(title)}</figcaption>
+  <div class="flow-steps">{''.join(f'<div class="flow-step"><span>{esc(label)}</span><p>{esc(text)}</p></div>' for label, text in steps)}</div>
+</figure>"""
+
+
+def evidence_map(evidence: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    return {record["id"]: record for record in evidence}
+
+
+def concept_card(concept: dict[str, Any], ev_by_id: dict[str, dict[str, Any]]) -> str:
+    ev_items = []
+    for ev_id in concept["course_evidence_ids"][:2]:
+        ev = ev_by_id[ev_id]
+        ev_items.append(f'<li><a href="evidence.html#{esc(ev_id)}">{esc(ev_id)}</a>: {esc(ev["video_title"])}</li>')
+    return f"""<article class="concept-card" id="{esc(concept['id'])}">
+  <p class="eyebrow">{esc(concept['theme_id']).replace('_', ' ')}</p>
+  <h3><a href="concepts/{esc(concept['id'])}.html">{esc(concept['name'])}</a></h3>
+  <p class="definition">{esc(concept['plain_language_definition'])}</p>
+  <dl>
+    <dt>Problem</dt><dd>{esc(concept['everyday_problem'])}</dd>
+    <dt>Math</dt><dd>{esc(concept['mathematical_principle'])}</dd>
+  </dl>
+  <ul class="evidence-list">{''.join(ev_items)}</ul>
+</article>"""
+
+
+def evidence_row(ev: dict[str, Any], prefix: str = "") -> str:
+    when = f" {esc(ev['timestamp_start'])}" if ev.get("timestamp_start") else ""
+    return f"""<article class="evidence" id="{esc(ev['id'])}">
+  <h3><a href="{prefix}evidence.html#{esc(ev['id'])}">{esc(ev['id'])}</a>{when}</h3>
+  <p class="meta">{esc(ev['video_title'])} · <a href="{esc(ev['youtube_url'])}">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> {esc(ev['lecture_argument'])}</p>
+  <p><strong>Mathematical claim:</strong> {esc(ev['mathematical_claim'])}</p>
+  <blockquote>{esc(ev['local_transcript_window'])}</blockquote>
+</article>"""
+
+
+def build_index(concepts, themes, evidence):
+    body = f"""<section class="hero">
+  <div>
+    <p class="eyebrow">Transcript-backed first-principles research</p>
+    <h1>Understand game theory as a small set of ideas about choice, incentives, beliefs, time, rules, and knowledge.</h1>
+    <p class="lead">This lab turns MIT 14.12's 25 lectures into a connected concept atlas. It starts with ordinary strategic problems, then introduces the math only when the idea needs it.</p>
+  </div>
+  <aside class="stats"><strong>{len(concepts)}</strong><span>concepts</span><strong>{len(themes)}</strong><span>themes</span><strong>{len(evidence)}</strong><span>evidence records</span></aside>
+</section>
+<section><h2>The Big Throughline</h2><p>Game theory studies situations where choosing well means reasoning about other choosers. Equilibrium, credibility, beliefs, auctions, signaling, and common knowledge are different answers to the same pressure: my best move depends on what others do, know, want, and expect.</p></section>
+<section><h2>Start With Concepts</h2><div class="grid">{''.join(concept_card(c, evidence_map(evidence)) for c in concepts[:6])}</div><p><a class="button" href="concepts.html">Open the full atlas</a></p></section>"""
+    write(SITE / "index.html", page("Overview", body, "overview"))
+
+
+def build_concepts(concepts, evidence):
+    ev_by_id = evidence_map(evidence)
+    concept_ids = {c["id"] for c in concepts}
+    body = f'<section class="page-head"><h1>Concept Atlas</h1><p>Each page explains the strategic pressure, the mathematical object, what breaks without it, and transcript evidence.</p></section><section class="grid">{"".join(concept_card(c, ev_by_id) for c in concepts)}</section>'
+    write(SITE / "concepts.html", page("Concepts", body, "concepts"))
+    for concept in concepts:
+        related = "".join(
+            f'<a class="chip" href="{esc(r)}.html">{esc(r).replace("_", " ")}</a>'
+            if r in concept_ids else f'<span class="chip muted">{esc(r).replace("_", " ")}</span>'
+            for r in concept["related_concepts"]
+        )
+        ev_html = "".join(evidence_row(ev_by_id[ev_id], "../") for ev_id in concept["course_evidence_ids"])
+        diagram = flow("First-Principles Map", [
+            ("Problem", concept["everyday_problem"]),
+            ("Constraint", concept["first_principles_reason"]),
+            ("Math Handle", concept["mathematical_object"]),
+            ("Failure Mode", concept["what_breaks_without_it"]),
+        ])
+        sections = [
+            ("What real-world problem is this about?", concept["everyday_problem"]),
+            ("Why does this problem exist?", concept["first_principles_reason"]),
+            ("What is the mathematical idea underneath?", concept["mathematical_principle"]),
+            ("Why is this concept important?", concept["why_it_matters"]),
+            ("What breaks without it?", concept["what_breaks_without_it"]),
+            ("Worked Mini-Example", concept["worked_mini_example"]),
+            ("Common Misunderstanding", concept["common_misunderstanding"]),
+            ("How to Recognize This in a New Paper or Model", concept["recognize_in_new_work"]),
+            ("Connected Concepts", concept["cross_course_connections"]),
+        ]
+        treatment = "".join(f"<h2>{esc(h)}</h2><p>{esc(text)}</p>" for h, text in sections)
+        body = f"""<section class="page-head"><p class="eyebrow">{esc(concept['theme_id']).replace('_', ' ')}</p><h1>{esc(concept['name'])}</h1><p>{esc(concept['plain_language_definition'])}</p></section>
+{diagram}
+<section class="treatment">{treatment}<p class="chips">{related}</p></section>
+<section><h2>Transcript Evidence</h2><div class="evidence-stack">{ev_html}</div></section>"""
+        write(SITE / "concepts" / f"{concept['id']}.html", page(concept["name"], body, "concepts", depth=1))
+
+
+def build_themes(themes, subthemes, concepts):
+    names = {c["id"]: c["name"] for c in concepts}
+    sub_by_theme = defaultdict(list)
+    for sub in subthemes:
+        sub_by_theme[sub["parent_theme"]].append(sub)
+    blocks = []
+    for theme in themes:
+        diagram = flow("Theme Map", [
+            ("Pressure", theme["big_picture"]),
+            ("Math Spine", theme["mathematical_spine"]),
+            ("Limit", theme["where_analogy_breaks"]),
+            ("Evidence", theme["lecture_evidence_chain"]),
+        ], "theme-flow")
+        subs = "".join(f"<li><strong>{esc(s['name'])}</strong>: {', '.join(esc(names[c]) for c in s['concepts'])}</li>" for s in sub_by_theme[theme["id"]])
+        blocks.append(f'<article class="wide-card" id="{esc(theme["id"])}"><h2>{esc(theme["name"])}</h2><p>{esc(theme["big_picture"])}</p>{diagram}<ul>{subs}</ul></article>')
+    write(SITE / "themes.html", page("Themes", '<section class="page-head"><h1>Themes And Subthemes</h1></section>' + "".join(blocks), "themes"))
+
+
+def build_primitives(primitives):
+    cards = []
+    for primitive in primitives:
+        diagram = flow("Equation Breakdown", [
+            ("Why Needed", primitive["why_it_exists"]),
+            ("Formal Object", primitive["formal_object"]),
+            ("Equation", primitive["useful_equation"]),
+            ("Misuse", primitive["misuse_failure"]),
+        ], "primitive-flow")
+        cards.append(f'<article class="wide-card" id="{esc(primitive["id"])}"><h2>{esc(primitive["name"])}</h2><p>{esc(primitive["plain_language"])}</p>{diagram}<p>{esc(primitive["symbol_explanation"])}</p></article>')
+    write(SITE / "primitives.html", page("Primitives", '<section class="page-head"><h1>Mathematical Primitives</h1></section>' + "".join(cards), "primitives"))
+
+
+def build_families(families):
+    cards = []
+    for family in families:
+        diagram = flow("Method-Family Reading Path", [
+            ("Pressure", family["first_principles_problem"]),
+            ("Core Move", family["core_move"]),
+            ("Limit", family["where_analogy_breaks"]),
+            ("Evidence", family["lecture_evidence_chain"]),
+        ], "family-flow")
+        cards.append(f'<article class="wide-card" id="{esc(family["id"])}"><h2>{esc(family["name"])}</h2><p>{esc(family["plain_language_family_summary"])}</p>{diagram}<p>{esc(family["paper_family_treatment"])}</p></article>')
+    write(SITE / "families.html", page("Method Families", '<section class="page-head"><h1>Method Families</h1></section>' + "".join(cards), "families"))
+
+
+def build_evidence(evidence):
+    body = '<section class="page-head"><h1>Evidence Ledger</h1><p>Transcript evidence is kept separate from synthesis.</p></section><section class="evidence-stack">' + "".join(evidence_row(ev) for ev in evidence) + "</section>"
+    write(SITE / "evidence.html", page("Evidence", body, "evidence"))
+
+
+def build_assets():
+    css = """:root{--bg:#f8f7f2;--ink:#202124;--muted:#5f6673;--line:#d9d6ca;--accent:#8a4b16;--accent-dark:#6f3b10;--panel:#fff;--soft:#f4eadf}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.58}a{color:var(--accent-dark)}.topbar{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:14px 28px;border-bottom:1px solid var(--line);background:rgba(248,247,242,.94);backdrop-filter:blur(10px)}.brand{font-weight:800;text-decoration:none;color:var(--ink)}nav{display:flex;flex-wrap:wrap;gap:8px}nav a{padding:7px 9px;border-radius:6px;text-decoration:none;color:var(--muted);font-size:14px}nav a.active,nav a:hover{background:var(--soft);color:var(--accent-dark)}main{max-width:1180px;margin:0 auto;padding:28px}.hero{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:32px;align-items:center;min-height:520px;padding:42px 0 46px;border-bottom:1px solid var(--line)}h1{font-size:clamp(36px,5.2vw,62px);line-height:1.04;margin:0 0 20px;letter-spacing:0}h2{font-size:28px;margin:34px 0 12px}h3{font-size:20px;margin:0 0 10px}.lead{font-size:19px;color:var(--muted);max-width:780px}.eyebrow,.meta{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:0}.stats{display:grid;gap:2px;border-left:4px solid var(--accent);padding-left:18px}.stats strong{font-size:44px;line-height:1}.stats span{color:var(--muted);margin-bottom:14px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.concept-card,.wide-card,.evidence{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px}.concept-card h3 a{text-decoration:none;color:var(--ink)}dl{display:grid;gap:8px;margin:14px 0}dt{font-weight:800}dd{margin:0;color:var(--muted)}.page-head{max-width:840px;padding:26px 0 18px}.page-head h1{font-size:clamp(34px,5vw,58px)}.treatment{max-width:870px}.evidence-list{padding-left:18px;color:var(--muted)}.evidence-stack{display:grid;gap:14px}.wide-card{margin:14px 0}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip,.button{display:inline-flex;align-items:center;min-height:32px;padding:6px 10px;border-radius:6px;background:var(--soft);color:var(--accent-dark);text-decoration:none;font-size:14px}.button{background:var(--accent);color:white}blockquote{margin:12px 0 0;padding:12px 14px;border-left:4px solid var(--accent);background:#fbfaf7;color:var(--muted)}.learning-diagram{margin:18px 0 30px;padding:0;border:1px solid var(--line);border-radius:8px;background:var(--panel);overflow:hidden}.learning-diagram figcaption{padding:12px 16px;border-bottom:1px solid var(--line);color:var(--accent-dark);font-weight:800}.flow-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.flow-step{min-height:160px;padding:16px;border-right:1px solid var(--line);background:linear-gradient(180deg,#fff,#fbfaf7)}.flow-step:last-child{border-right:0}.flow-step span{display:inline-flex;margin-bottom:10px;padding:4px 8px;border-radius:6px;background:var(--soft);color:var(--accent-dark);font-size:13px;font-weight:800}.flow-step p{margin:0;color:var(--muted);font-size:14px;overflow-wrap:anywhere}@media(max-width:820px){.topbar{align-items:flex-start;flex-direction:column;padding:12px 18px}main{padding:18px}.hero,.grid{grid-template-columns:1fr}.hero{min-height:0;padding-top:32px}h1{font-size:clamp(34px,10vw,44px)}.flow-steps{grid-template-columns:1fr}.flow-step{min-height:0;border-right:0;border-bottom:1px solid var(--line)}.flow-step:last-child{border-bottom:0}}"""
+    write(SITE / "assets/styles.css", css)
+
+
+def main():
+    concepts = load("analysis/concepts/concept-atlas.json")
+    themes = load("analysis/themes/theme-map.json")
+    subthemes = load("analysis/themes/subtheme-map.json")
+    evidence = load("analysis/evidence/evidence-ledger.json")
+    primitives = load("analysis/throughlines/primitives.json")
+    families = load("analysis/throughlines/method-families.json")
+    build_index(concepts, themes, evidence)
+    build_concepts(concepts, evidence)
+    build_themes(themes, subthemes, concepts)
+    build_primitives(primitives)
+    build_families(families)
+    build_evidence(evidence)
+    build_assets()
+
+
+if __name__ == "__main__":
+    main()

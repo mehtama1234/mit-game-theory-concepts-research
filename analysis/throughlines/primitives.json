@@ -1,0 +1,185 @@
+[
+  {
+    "id": "preference",
+    "name": "Preference",
+    "plain_language": "A way to say which outcome a person would rather have.",
+    "why_it_exists": "Choices need an internal ordering; without one, better and worse have no operational meaning.",
+    "formal_object": "A preference relation ranks outcomes, often represented by a utility function u(x).",
+    "useful_equation": "x preferred to y means u(x) > u(y).",
+    "symbol_explanation": "x and y are possible outcomes; u assigns each outcome a number; the larger number records the option the person ranks higher.",
+    "misuse_failure": "Treating utility as literal happiness can mislead; in game theory it is a ranking device for choices.",
+    "concepts_in_atlas": [
+      "preferences",
+      "utility",
+      "expected_utility"
+    ],
+    "everyday_setup": "A way to say which outcome a person would rather have.",
+    "course_appearances": "Appears in: preferences, utility, expected_utility."
+  },
+  {
+    "id": "payoff_mapping",
+    "name": "Payoff Mapping",
+    "plain_language": "A table that says what each person gets from each combination of choices.",
+    "why_it_exists": "In strategic settings, my result depends on what others do too.",
+    "formal_object": "A payoff function u_i(a_i, a_-i) maps everyone's actions to player i's payoff.",
+    "useful_equation": "u_i(a_i, a_-i).",
+    "symbol_explanation": "i is one player; a_i is that player's action; a_-i means everyone else's actions; u_i is the payoff assigned to the whole action profile.",
+    "misuse_failure": "A payoff table is not the world itself; it is a simplified representation whose assumptions drive the result.",
+    "concepts_in_atlas": [
+      "strategic_form_games",
+      "bargaining",
+      "ad_auctions"
+    ],
+    "everyday_setup": "A table that says what each person gets from each combination of choices.",
+    "course_appearances": "Appears in: strategic_form_games, bargaining, ad_auctions."
+  },
+  {
+    "id": "best_response",
+    "name": "Best Response",
+    "plain_language": "The choice that works best given what someone believes others will do.",
+    "why_it_exists": "No strategy is good in isolation; it is good against some expectation about others.",
+    "formal_object": "BR_i(a_-i) is the set of actions for player i that maximize u_i given others' actions.",
+    "useful_equation": "BR_i(a_-i) = argmax_a u_i(a, a_-i).",
+    "symbol_explanation": "argmax means choose the action a that makes player i's payoff as large as possible when others choose a_-i.",
+    "misuse_failure": "Calling something a best response without naming the belief or opponent action hides the key assumption.",
+    "concepts_in_atlas": [
+      "best_response",
+      "minimax"
+    ],
+    "everyday_setup": "The choice that works best given what someone believes others will do.",
+    "course_appearances": "Appears in: best_response, minimax."
+  },
+  {
+    "id": "mutual_consistency",
+    "name": "Mutual Consistency",
+    "plain_language": "A situation where each person's plan makes sense given everyone else's plan.",
+    "why_it_exists": "A prediction of strategic behavior must survive every player asking whether they personally want to change.",
+    "formal_object": "Equilibrium requires each strategy to be a best response to the others.",
+    "useful_equation": "a_i in BR_i(a_-i) for every player i.",
+    "symbol_explanation": "For each player i, their chosen action a_i must belong to the set of best responses against the other players' actions.",
+    "misuse_failure": "Equilibrium does not mean fair, efficient, or morally good; it means no one has a one-person reason to move.",
+    "concepts_in_atlas": [
+      "nash_equilibrium",
+      "mixed_strategies",
+      "zero_sum_games",
+      "subgame_perfection",
+      "folk_theorem",
+      "bayesian_nash_equilibrium"
+    ],
+    "everyday_setup": "A situation where each person's plan makes sense given everyone else's plan.",
+    "course_appearances": "Appears in: nash_equilibrium, mixed_strategies, zero_sum_games, subgame_perfection, folk_theorem, bayesian_nash_equilibrium."
+  },
+  {
+    "id": "pruning",
+    "name": "Pruning",
+    "plain_language": "Remove choices that are never worth taking, then reason with the smaller problem.",
+    "why_it_exists": "Large strategic problems become easier when obviously bad options can be ruled out.",
+    "formal_object": "Dominance compares one strategy against another across possible opponent choices.",
+    "useful_equation": "s dominates t if u_i(s, a_-i) >= u_i(t, a_-i) for all a_-i, with strict inequality somewhere.",
+    "symbol_explanation": "The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.",
+    "misuse_failure": "Pruning too aggressively can remove behavior that matters when beliefs, weak dominance, or timing are handled differently.",
+    "concepts_in_atlas": [
+      "dominance",
+      "iterated_deletion"
+    ],
+    "everyday_setup": "Remove choices that are never worth taking, then reason with the smaller problem.",
+    "course_appearances": "Appears in: dominance, iterated_deletion."
+  },
+  {
+    "id": "backward_recursion",
+    "name": "Backward Recursion",
+    "plain_language": "Solve the future first, then use that answer to decide what should happen earlier.",
+    "why_it_exists": "In sequential games, later credible choices determine earlier incentives.",
+    "formal_object": "Backward induction assigns optimal choices from terminal decision nodes back to the start.",
+    "useful_equation": "V(node) = max_action V(next node).",
+    "symbol_explanation": "V is continuation value; at each decision point the player chooses the next branch with the best continuation value.",
+    "misuse_failure": "Backward induction assumes the game tree and payoffs are known and that later threats are credible.",
+    "concepts_in_atlas": [
+      "extensive_form_games",
+      "backward_induction",
+      "subgame_perfection",
+      "one_shot_deviation",
+      "finitely_repeated_games",
+      "perfect_bayesian_equilibrium"
+    ],
+    "everyday_setup": "Solve the future first, then use that answer to decide what should happen earlier.",
+    "course_appearances": "Appears in: extensive_form_games, backward_induction, subgame_perfection, one_shot_deviation, finitely_repeated_games, perfect_bayesian_equilibrium."
+  },
+  {
+    "id": "discounting",
+    "name": "Discounting",
+    "plain_language": "Future rewards count, but usually count less than rewards right now.",
+    "why_it_exists": "Repeated relationships trade off today's temptation against tomorrow's consequences.",
+    "formal_object": "A discount factor delta weights future payoffs in an intertemporal sum.",
+    "useful_equation": "U = u_0 + delta u_1 + delta^2 u_2 + ...",
+    "symbol_explanation": "u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.",
+    "misuse_failure": "A cooperation result can disappear when players are impatient or cannot punish future deviations.",
+    "concepts_in_atlas": [
+      "bargaining",
+      "infinitely_repeated_games",
+      "folk_theorem",
+      "implicit_cartels"
+    ],
+    "everyday_setup": "Future rewards count, but usually count less than rewards right now.",
+    "course_appearances": "Appears in: bargaining, infinitely_repeated_games, folk_theorem, implicit_cartels."
+  },
+  {
+    "id": "belief",
+    "name": "Belief",
+    "plain_language": "A probability story about what kind of situation or opponent you are facing.",
+    "why_it_exists": "People often choose without knowing another person's type, value, cost, or information.",
+    "formal_object": "A belief is a probability distribution over states, types, or histories.",
+    "useful_equation": "E[u(a, theta)] = sum_theta p(theta) u(a, theta).",
+    "symbol_explanation": "theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "misuse_failure": "If beliefs are not tied to information and incentives, the model can rationalize almost anything.",
+    "concepts_in_atlas": [
+      "expected_utility",
+      "rationalizability",
+      "mixed_strategies",
+      "bayesian_games",
+      "types_and_beliefs",
+      "bayesian_nash_equilibrium",
+      "auctions",
+      "perfect_bayesian_equilibrium",
+      "signaling",
+      "cheap_talk"
+    ],
+    "everyday_setup": "A probability story about what kind of situation or opponent you are facing.",
+    "course_appearances": "Appears in: expected_utility, rationalizability, mixed_strategies, bayesian_games, types_and_beliefs, bayesian_nash_equilibrium, auctions, perfect_bayesian_equilibrium, signaling, cheap_talk."
+  },
+  {
+    "id": "incentive_compatibility",
+    "name": "Incentive Compatibility",
+    "plain_language": "Design rules so people want to reveal or do what the rule needs them to reveal or do.",
+    "why_it_exists": "People with private information may gain by misreporting it.",
+    "formal_object": "Truthful behavior must give at least as much payoff as each profitable lie.",
+    "useful_equation": "u_i(truth) >= u_i(report) for every alternative report.",
+    "symbol_explanation": "The inequality says a person should not gain by replacing the truthful action with another report.",
+    "misuse_failure": "A mechanism can look efficient on paper while failing because participants have incentives to shade bids or messages.",
+    "concepts_in_atlas": [
+      "implicit_cartels",
+      "auctions",
+      "revenue_equivalence",
+      "ad_auctions",
+      "signaling",
+      "cheap_talk"
+    ],
+    "everyday_setup": "Design rules so people want to reveal or do what the rule needs them to reveal or do.",
+    "course_appearances": "Appears in: implicit_cartels, auctions, revenue_equivalence, ad_auctions, signaling, cheap_talk."
+  },
+  {
+    "id": "knowledge_recursion",
+    "name": "Knowledge Recursion",
+    "plain_language": "Not only knowing a fact, but knowing that others know it, and so on.",
+    "why_it_exists": "Coordinated strategic behavior often depends on shared awareness, not private awareness alone.",
+    "formal_object": "Common knowledge means everyone knows, everyone knows everyone knows, and the chain continues.",
+    "useful_equation": "E, KE, KKE, KKKE, ...",
+    "symbol_explanation": "E is the event; K means known by the players; repeated K's represent higher-order knowledge.",
+    "misuse_failure": "Treating public facts as common knowledge can be wrong if people are unsure what others observed.",
+    "concepts_in_atlas": [
+      "common_knowledge"
+    ],
+    "everyday_setup": "Not only knowing a fact, but knowing that others know it, and so on.",
+    "course_appearances": "Appears in: common_knowledge."
+  }
+]

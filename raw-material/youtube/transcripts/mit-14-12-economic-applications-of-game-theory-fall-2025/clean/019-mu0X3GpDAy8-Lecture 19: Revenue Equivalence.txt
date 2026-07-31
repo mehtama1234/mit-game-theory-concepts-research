@@ -1,0 +1,2075 @@
+Today we're going to talk about
+something called revenue equivalence.
+So so far we've studied a few different
+auction formats and we've solved for the
+equilibrium of these auction formats and
+we found this kind of surprising or
+peculiar finding that the amount of
+revenue that these auctions generate
+doesn't seem to depend on which auction
+format we use. So I want to first review
+a few of those examples and then today
+we're going to try to understand in
+general why this happens and what are
+the limitations
+and scope of this result.
+So remember we first looked at the
+really simple case
+where we had only two bidders and each
+bidder's valuation was uniformly and
+independently drawn from the 01
+interval, right? So in the simple case
+we had V1 and V2. This is bidder one's
+valuation. This is bidder two's
+valuation. They were in 01 and they were
+uniform AND INDEPENDENT.
+AND IN THIS [clears throat] REALLY
+SIMPLE CASE we looked at the first price
+auction and we said that in the first
+price auction there was an equilibrium.
+Maybe I'll write B
+first price auction
+where
+bidder i's bid if their valuation was Vi
+was half of their true valuation, right?
+We know in the first price auction
+people bid in equilibrium less than
+their true valuation. This is sometimes
+called bid shading. You shade your bid
+below your valuation and we saw that
+this was exactly Vi over two.
+And then we also found an equilibrium of
+the second price auction so I'll write
+SPA.
+And in the second price auction, we
+observed that uh the amount you pay for
+the item, if you win, doesn't depend on
+your bid. It only depends on other
+people's bids, and we gave this argument
+as to why you should always bid
+truthfully in a second price auction. So
+here we had bi of vi uh equals vi.
+Uh but
+what we noticed is well, let's try to
+compute in each case how much you are
+expected to pay in each of these
+auctions.
+Well, in a first price auction, let's
+say your true valuation is vi, and this
+is how much you bid.
+Well,
+YOUR EXPECTED PAYMENT
+IS GOING TO BE
+your bid times the probability that you
+actually win the good. Because you only
+pay your bid when you win, right? So
+your expected payment is vi over two.
+That's your bid, and in a first price
+auction, you pay your bid if you win. So
+it's the amount you pay times the
+probability that you win, right? What is
+the probability that you win in this
+auction if your valuation is vi?
+So maybe I'll say
+this is going to be
+probability of winning.
+Well, this was a symmetric equilibrium,
+right? So uh the bidder who wins is the
+bidder who has the highest valuation,
+right? So I'm going to win. Yeah.
+&gt;&gt; Do you want to write it?
+&gt;&gt; Exactly. And I guess here we have vi, so
+it's going to be vi, but exactly, yeah.
+Uh yeah, it could be a one.
+Exactly right, right? Why is it vi?
+Well, I'm going to win if my value is
+higher than everyone else's, right?
+Because we're all using the same
+increasing bidding function.
+What's the probability that my value is
+higher than everyone else's? Well,
+there's only two of us, so it's the
+probability that the other bidder has a
+value below mine. But for a uniform
+distribution, if my value is VI, the
+probability that the other bidder's
+value is below VI is just VI, right?
+This is just
+you know, for uniform 0 1, if here's my
+bid, here's my value VI,
+I'm going to win if the other bidder's
+value lies in this interval, and the
+length of this interval is exactly VI.
+So, we multiply by the probability of
+winning, and we get VI squared over two.
+This is the amount that I expect to pay
+if my valuation is
+And then we can do a similar calculation
+here.
+Uh
+What is my expected payment in this
+case?
+Well, we're still going to multiply by
+VI,
+the probability of winning,
+but now we can't just multiply my
+probability of winning times the amount
+I pay if I win, because the amount that
+I pay if I win depends on what other
+people bid.
+So, what we have to multiply it by is
+not what I pay if I win, but my expected
+payment
+conditional on winning.
+And this is a general way of breaking
+down how much I expect to pay, right? I
+only pay if I win, so the expected
+amount that I pay is my probability of
+winning times my expected payment if I
+win, my expected payment conditional on
+winning, right? Now, if I win, how much
+do I pay? Well, I pay the second highest
+bid.
+If I win,
+the second highest bid is the bid of the
+other person,
+and I know the other person is bidding
+truthfully, right? So, the amount that
+I'm going to pay is my opponent's
+valuation.
+And
+it turns out what this is going to be is
+Well, let's see. It's the expectation of
+maybe VJ
+conditional on VJ being less than or
+equal to VI.
+So, I'm bidder I,
+I know that my valuation is VI. When do
+I win? I win exactly if my opponent's
+value VJ is less than mine.
+And if I do win, I pay exactly their
+valuation because I pay their bid and
+their bid equals their valuation.
+So, it's
+We're going to get this formula here.
+Maybe I'll erase this arrow just to give
+myself some more space. So, this is my
+This is my expected payment conditional
+on winning. And
+can we compute this conditional
+expectation here? Yes.
+&gt;&gt; Yes, we can compute it. And actually, we
+can also think about how VJ is uniformly
+distributed from zero to VI. So, the
+expectation will just be half of VI.
+&gt;&gt; Exactly. Let's be careful. So, VJ is
+uniformly distributed from zero to one.
+I mean, you're right, but you're saying
+equal to VI, it's uniformly distributed
+on zero to VI, right? And therefore, uh
+you know, here's the example. If I know
+that the other player's valuation is
+below mine, well, I know it's somewhere
+in here. And if it's uniform, well, it
+turns out conditionally, it's still
+uniform over here. What's its mean?
+Well, it's just going to be the middle
+of this interval, which is exactly VI
+over two, right? So,
+exactly here,
+VI over two. So, if I compute this out,
+what do I get? I also get VI over two
+times VI. And what do I get? VI squared
+over two.
+So, here, this is just kind of a a recap
+of this finding we had before that in
+both the first price and the second
+price auction, at least in the
+equilibria that we looked at, the
+expected payment made by bidder I when
+her valuation is VI is exactly the same
+in the two auctions, right?
+And that seemed kind of puzzling. And
+you know, you wonder if that's a
+coincidence. Well, let's go more
+generally. Let's look at the at the
+general case.
+So,
+in the general case,
+&gt;&gt; The general case we had N bidders
+instead of just two and we didn't assume
+that they were uniformly distributed. We
+allowed more general distributions. So
+here we had the valuations were V1 up to
+VN.
+And let's I think what we said is they
+lived in some set V lower bar to V upper
+bar
+everything is non-negative.
+So everyone's value lies somewhere
+between this lower bound V lower bar and
+this upper bound V upper bar. Up here
+those bounds were just zero and one, but
+here we're going to be more general.
+And we're going to assume that these
+valuations are
+independent.
+That is the
+distribution of V2 or V3 is
+statistically independent of the
+distribution of V1. But now they're
+drawn from a different distribution
+instead of the uniform we said they have
+density
+F
+&gt;&gt; [snorts]
+&gt;&gt; over this interval
+V lower bar to V upper bar.
+And then we introduced one more piece of
+notation. It was nice to have notation
+for the distribution of the maximum of
+everyone else's valuation. So we had we
+looked at the max
+over let's say J not equal to I
+of VJ.
+So I'm holding out one bidder and taking
+the perspective of bidder I and I'm
+thinking of all the bidders other than
+bidder I. I'm looking at all of their
+valuations and I'm taking the maximum.
+This is another random variable, right?
+As bidder I I don't know what this is. I
+can form beliefs about this.
+And what we said is we just had
+notation. We said this has cumulative
+distribution function big G and density
+little g. And we had formulas for what
+these are, but they don't the exact
+formulas don't matter. It's just that we
+can compute the distribution of this and
+we gave a name to it. The cumulative
+distribution is big G and the density is
+uh is little G.
+Notice here that uh everything here is
+symmetric. So, the value of I here
+doesn't matter. If I'm bidder one and
+I'm thinking about what's the highest
+value of everyone other than me or if
+I'm bidder two and I'm saying what's the
+highest value of everyone other than me,
+that distribution is going to take uh is
+going to be the same. Maybe just make
+sure we're on the same page. If
+n equals two,
+what is the density G going to be?
+If n equals two,
+so there's two bidders.
+Yeah?
+Just F, right? Cuz if there's two
+bidders, well,
+what is the maximum of every other
+bidder except me? Well, it's just the
+other person.
+So, this is just VJ.
+And we already assumed that the
+distribution of each bidder uh bidder's
+valuation follows density F.
+So, in this case G is just going to
+reduce to F because there's only one
+other uh
+one other bidder. But when n is bigger
+than two, then this is going to be a
+more complicated form, right? But the
+simple thing is the highest bidder among
+my opponents, if I only have one
+opponent, is just the value of my
+opponent.
+Okay.
+Great. So, here was the general case and
+we also looked at the first price
+auction and the second price auction in
+this case and we computed equilibria and
+maybe I'll start here with the second
+price auction cuz that was maybe uh
+that's a bit easier to write down.
+So, BI VI in the second price auction,
+do people remember uh what our
+equilibrium was here?
+I think people know. They just don't
+want to say.
+If we have a second price auction, how
+much should you bid if your valuation is
+VI?
+Yeah.
+&gt;&gt; VI.
+&gt;&gt; Just VI. You should just bid your
+valuation. So, it turned out this we
+gave this argument that in a second
+price auction you always want to bid
+truthfully. You always want to bid your
+valuation exactly and that didn't depend
+on the details of whether there's two
+bidders or n bidders or what the
+distributions are. That's a very robust
+result. So we got
+vi.
+we can again try to compute what is your
+expected
+payment. Okay, this is a little tricky
+here, but let's see if we can do it.
+FIRST LET'S JUST WRITE IT ABSTRACTLY.
+WHAT is my expected payment? Well,
+it's we first have to say well there's
+some chance I don't pay anything at all.
+If I lose the auction, I pay nothing.
+So my expected payment, it's always
+helpful to break it down into the
+probability that I win the auction
+times the expected amount that I pay
+given that I win, right? So we'll break
+it down just like we did before. So let
+me first write down the probability that
+I win. So this is
+the probability that I win
+is the probability well, in this
+equilibrium everyone's bidding their
+So I'm going to win if my bid is
+highest, which is exactly the case if my
+value is higher than everyone else's. So
+I'm going to win if the probability of
+the max
+of j not equal to i of vj
+is less than or equal to vi. And as
+usual we don't have to be too careful is
+it less than or equal? Is it strictly
+less than? The probability is going to
+be the same so we don't really have to
+you know, it it doesn't really matter
+what we write here. Okay. So this is the
+probability that I win.
+Now, what is the expected payment
+conditional on winning? So
+it's going to be kind of an analog of
+this formula here.
+Um the expected payment conditional on
+winning, well it's going to be
+an expectation
+uh
+a little more space here. Let's see how
+small I can write.
+Well, it's expectation conditioned on me
+winning. So, I'm exactly going to win
+if the max
+over J not equal to I VJ is less than or
+Right? This is exactly the event that I
+win. I'm going to win if everyone else's
+valuation is below mine. Another way of
+saying that is the maximum over everyone
+else's valuation is weakly smaller than
+mine.
+And when that happens,
+how much am I going to pay in the second
+price auction?
+&gt;&gt; VJ
+&gt;&gt; Uh
+&gt;&gt; VJ is like the second highest.
+&gt;&gt; Right. And we have some notation for
+that right here, right?
+It's exactly So, you're exactly right.
+I'm going to pay the second highest
+valuation. But, what that is is it's
+precisely the highest among everyone
+other than me because I'm the highest.
+So, you're exactly right. It is Let's
+write it as this. max VJ not equal to I
+of VJ. Right? So, it's crucial here,
+yes, that this is the second highest
+value, but in the event that I have the
+highest value, well, what's the second
+highest value? It's just the highest
+among everyone else. So, we exactly get
+uh this formula here.
+this gets maybe
+a little messy,
+but we're actually able to
+compute it. Let's see. So, it's going to
+be an integral
+from V lower bar to VI.
+&gt;&gt; So, technically we get into some
+conditional densities. It gets a little
+messy, but let me just write out what we
+get. We're going to get T
+or maybe I'll write X
+G of X
+for G of VI DX.
+I just wrote this probability as G of VI
+because big G is the cumulative
+distribution function associated with
+this random variable. So, the
+probability that this random variable is
+below VI is by definition G of VI. So,
+here I'm just using a definition.
+For this part, it's a little trickier.
+I'm using what's called a conditional
+density. I'm saying what is the
+conditional density of the highest value
+of my opponents given that their
+valuation is below VI. And this here is
+my conditional density.
+I'm integrating this between V lower bar
+and VI because I'm focusing on the event
+that the highest value of my opponents
+is lower than mine.
+And you know, maybe we don't need to get
+too caught up in in the algebra here,
+but we can just see that this G of VI
+and this G of VI cancel, and we're going
+to get a really simple formula.
+So, this is my general formula
+for
+how much I expect to pay in the second
+price auction if my valuation is VI.
+Let's do one more. Let's kind of finish
+things off here.
+and as I said, if if this conditional
+density is new to you, we it won't come
+up again. So, the the kind of the final
+answer is maybe what's important here.
+Let's just do one more, the
+B I first price auction
+of VI.
+We actually computed this. Didn't we
+remember
+uh what this what this was? We computed
+this in class before. Maybe I'll just
+write it down. It turns out we had a
+formula that
+actually looked exactly like this. This
+was actually our formula. So, it turns
+out we derived this in class I think
+last Thursday. We used a differential
+equation, and we found that
+it's exactly this.
+So, this is just uh
+the formula that we had.
+But now, if this is how much I'm bidding
+in a first-price auction, what is the
+expected payment that I'm going to make?
+Well, in the first-price auction, what I
+pay is my bid.
+So, my expected payment is just my bid,
+how much I pay, times the probability
+that I actually have to pay my bid.
+But when do I pay my bid? I pay my bid
+when I win.
+Right? So, my expected payment
+well, it's just
+b i f p a
+of v i, my bid, times the probability
+that I win. What is the probability that
+I win?
+Well, it's the probability that my value
+is higher than everyone else. It's
+exactly this thing we already computed
+down here, and we have a simple formula
+for it. It's just g of v i.
+And this is
+Okay. Well, we already have a formula
+for b i f p a of v i, so let's plug in
+this here,
+and we see that the g of v i cancels,
+and we get
+the same integral.
+And we get this.
+So, this seems like it probably is not a
+coincidence, right?
+That we've gotten exactly the same
+answer in both cases. Yes?
+&gt;&gt; So, why is b i of v i this integral when
+we had already said it was just v i?
+the key is the superscript here.
+s p a. So, in a second-price auction,
+the equilibrium bidding strategy is for
+me to bid exactly my valuation. Okay?
+So, everything we did here was for the
+second price auction. Now, we're
+changing cases here, and I should have
+been more clear about this. Now, we're
+moving to the first price auction.
+In the first price auction, the
+equilibrium is different. In the first
+price auction, I don't want to bid my
+true valuation. If I bid my true
+valuation in a first price auction, then
+I can never come out ahead.
+Cuz either I don't win, or I win, but
+then I have to pay my my bid. So,
+deriving this was a lot harder. We spent
+basically all of class deriving a
+differential equation, and in the end we
+got this formula. So,
+uh if you don't, you know, this is kind
+of hard to see. This took us like an
+hour to get to, but it should be in your
+notes from from last class. Yeah, so the
+answer why are these different? These
+are different equilibria of different
+Uh but, the surprising thing is we get
+exactly the same formula for the
+expected uh payment in both cases.
+Uh and let's just see if that's
+consistent. I mean, up here
+I got vi squared over two.
+Is this formula going to give me vi
+squared over two in the really simple
+example in the simple uniform example?
+Can we see this little calculus
+exercise?
+Well, in the uniform example, what is g?
+In our example where we had two bidders
+and the values were uniformly
+distributed over 0 1?
+It's just one, right? Because the first
+observation that you made was that g
+equals f when we have two bidders,
+right?
+But, if
+our valuations are uniformly
+distributed, what is f? It's just one,
+right? So, if we just plug in one here,
+we get the integral from v lower bar to
+Uh well,
+so, let me go through our example. So,
+in our simple example,
+everything works out
+because g of x equals one.
+And what is v lower bar?
+Zero, right? And v upper bar is one, but
+that doesn't show up. So, now we just
+get the integral
+from zero to VI
+of X DX.
+And this is something people should
+know, right? This is just the
+antiderivative. This is just X squared
+over two. So, we just get VI squared
+And this just confirms the two formulas
+that we got up here.
+So, everything's consistent. That's
+good. And we have this kind of
+surprising finding. So,
+note
+the equilibrium
+expected payment
+is the same in the first price auction
+and the second price auction.
+Be a little more precise. I'm talking
+about a particular equilibrium that we
+computed, but I'll be a little looser.
+The equilibrium expected payment is the
+same
+in the first price auction
+And notice how this happened, came
+about, getting back to the question, the
+rules of these auctions are different.
+So, if the players bid the same way in
+these two auctions, their payments would
+definitely be different. But, the
+equilibrium bidding behavior is also
+different. So, the rules of the auction
+are different, the bidding behavior is
+different, and somehow these things
+offset in exactly the right way that we
+get exactly the same formula in both
+cases.
+And I think it feels, to me at least,
+that this can't be a coincidence. It
+seems like there's something else going
+on here. And what's going on is exactly
+what's called revenue equivalence. And
+today we're going to try to understand
+more generally why and under what
+conditions this is true. So, I I think
+this should be kind of a puzzle. It's
+not at all clear why we get the same
+answer here. And today we want to kind
+of get to the bottom and understand this
+puzzle. Um but, this was to be
+motivation for what we do. So, if this
+is unclear, what we do won't be
+motivated. So, let me pause for some
+questions here. Everything clear so far?
+so far we said that the equilibrium
+expected payment was the same in these
+two auctions.
+What if we use a different auction
+format? Maybe we could use a third price
+auction or fourth price auction, all pay
+auction. There's many different auction
+formats we could use.
+And we'd like our theorem to speak to
+any auction format you can come up with.
+So, to do that we have to think, well,
+what is an auction? Like, how can I
+define a general abstract auction? So,
+let's be really general. What is Maybe
+I'll call this a generalized auction.
+And I'm still going to be in this
+setting over here. So, I'm still
+assuming
+uh the these assumptions about the
+environment, these assumptions about how
+much each person values the item, but
+what's going to be general is the
+auction format that we use.
+Well, at bottom, what is an auction?
+Well, first I have to specify what bids
+are allowed, right? So far we've allowed
+bids to be real numbers, but you could
+have really weird auctions where bids
+can only be multiples of five, or maybe
+you can only say yes or no, or
+uh maybe you say I really like it or I
+don't really like it. There's a lot of
+different ways we could do it. So, a
+generalized auction format, first we
+have to specify THE BID SETS.
+B1,
+&gt;&gt; [applause]
+&gt;&gt; B2,
+all the way up to BN.
+So, this is specifying what each bidder
+is allowed to bid. You could think of
+these as
+messages, or, you know, there's a lot of
+different ways we can think about it,
+but this is just the set of choices that
+each bidder has in the auction. Okay?
+And then we need to specify
+an allocation rule.
+An allocation rule says, well, if we
+collect some bid by bidder one and some
+bid by bidder two and all the way up to
+a bid by bidder n, what do we do?
+Well, the auctioneer has to specify two
+things.
+The allocation rule is who gets the
+good.
+And then the payment rule is how much
+does everyone pay? So, we'll call it the
+allocation rule and maybe the payment or
+transfer rule.
+Now, for instance, so far we've only
+looked at auctions where all the
+auctions we've looked at
+you only pay if you win.
+But, that's actually not a requirement
+of an auction. In fact, there's
+something called an all-pay auction
+where everyone submits their bid and you
+have to pay your bid whether or not you
+win the item or not.
+That may sound like a
+appealing auction, but of course you're
+going to bid less in in response to
+that, right? So, we're actually going to
+allow pretty general payment rules and
+transfer rules. We've generally looked
+at allocation rules where the highest
+bidder gets the item, but we could be
+even more general. Maybe we like one of
+the bidders more and we want to always
+give them the item.
+So, in general, what is an allocation
+rule? It's going to be a function, maybe
+I'll call it Q,
+from
+B1
+cross Bn
+to
+well,
+it's going to take in a profile of bids
+by all the players.
+And what it's going to spit out is it
+should spit out something like, I give
+the good to player one
+or I give the good to player two or I
+give the good to player n.
+The problem is sometimes we have to
+randomize because sometimes two bidders
+will bid the same amount.
+And then we might have to flip a coin to
+see who gets the item. So, we have to
+allow these kinds of lotteries. So, I'm
+going to write it's going to map to what
+I'll call delta,
+where delta is just going to be the set
+of lotteries. It's going to be the set
+of all vectors
+Q1 up to Qn
+where the interpretation is if these are
+the submitted bids, then Q1 is going to
+tell us the probability that player one
+gets the item.
+So, these are going to be
+So, Q1 through QN is greater than equal
+to zero.
+Now, I want to emphasize I want to
+emphasize this here.
+I don't require equality.
+So, what's the interpretation here? What
+if I were to say, "Okay, if these are
+the bids that are submitted,
+I'm going to allocate the good with
+these probabilities that sum to strictly
+less than one."
+Could this ever happen? What's the
+interpretation? Yeah?
+&gt;&gt; Well, there's also the situation which I
+can't say.
+&gt;&gt; Right, exactly. So, why do I have to
+allocate the good?
+I might say, and we see this in
+auctions, no one's bid was high enough.
+I'm not happy with the bids people
+submitted, I'm going to keep the keep
+the good myself. And that would
+correspond to
+uh all of these being zero, actually,
+right? So, we allow
+the auctioneer to keep the good.
+So, more formally,
+one minus the sum of the QIs is exactly
+the probability that the auctioneer
+keeps the good. So, one way of thinking
+about this is it's a probability
+distribution, not over bidders one
+through N, but over the auctioneer and
+bidders one through N, and it doesn't
+have to sum up to one because the
+auctioneer could get the good with some
+probability.
+Okay?
+So, this is just a definition of this
+set delta that I'm going to use. So,
+delta is the set of sometimes it's
+called sub-probabilities. It's like
+distributions over who gets the good,
+but they might sum to less than one.
+Now, what about a payment or transfer
+rule?
+Uh that's going to be a function T
+to RN.
+Where
+as a function of the bids, I'm going to
+specify T1, how much player one has to
+pay me, T2, how much player two has to
+pay me, and and so on.
+So, just to uh make sure we we
+understand what's going on,
+let's look at a really simple example.
+Let's look at the first price auction.
+Okay? So, in the standard first price
+auction, what were these bid sets, B1
+through BN?
+What did we allow people to to bid?
+&gt;&gt; Any real number that's positive.
+&gt;&gt; Any real number that's positive, or
+maybe non-negative, yeah. So, I think,
+you know, it doesn't really the details
+don't matter too much if it if we allow
+negative bids, but you're right. So far,
+we haven't allowed negative bids. So, in
+that case, we had B1
+is equal to BN
+is equal to maybe I'll write R plus, or
+maybe I'll be a bit more explicit. I'll
+write zero
+to infinity, right?
+So, what we said is, what is the bid set
+for each player? The bid set is just the
+set of all non-negative real numbers.
+That's what we allowed you to bid.
+Maybe in reality, maybe you can only bid
+multiples of a cent or something, and we
+could add more complexity, but but we'll
+just allow this for now,
+Now, specifying the allocation rule and
+transfer rule,
+it's just a bit messy to write it all
+out because they're whole functions. So,
+let's just go through an example, one
+example. What if um
+say
+n equals two. So, we have two bidders.
+&gt;&gt; Let's see if we can compute
+Q of
+3 4
+and T of 3 4.
+So, it's really just to make sure we
+understand the notation that's going on.
+Right?
+So, if n equals two,
+the bid set for player one is just a
+non-negative real number.
+The bid set for player two is just the
+set of non-negative real numbers.
+So, the domain of the allocation rule
+and the transfer rule, they have to say,
+if bidder one bids this number
+and bidder two bids this number, who do
+we allocate the good to and how much do
+we make them pay?
+So, when I write Q of 3 4,
+the interpretation of this is
+three is the bid by bidder one,
+four is the bid by bidder two,
+and we need to say what happens if
+bidder one bids three and bidder two
+bids four. And this is really just to
+check our notation here. So, what is Q
+of 3 4?
+&gt;&gt; Wouldn't it be a 0 {comma} 1?
+&gt;&gt; 0 {comma} 1, right? Because here,
+because bidder two's bid is higher than
+bidder one's bid, we need to allocate
+the good to bidder two, and we have
+notation for that. Our notation just
+tells us the probability that each
+bidder gets the good. Now, probability
+seem a bit weird here. They're just 0 or
+1, right? We always give the good to
+bidder two if bidder two's bid is
+higher. So, this is just going to be the
+vector 0 {comma} 1. That says
+we give the good to bidder one with
+probability zero and we give the good to
+bidder two with probability one.
+Uh what about the
+vector T? T of 3 4? What is that going
+to be? Yeah.
+&gt;&gt; 0 4.
+&gt;&gt; 0 4, right?
+This says, well,
+this first component we might call T1 of
+3 4. This is how much bidder one has to
+pay. Well, bidder one got outbid.
+They're not getting the item and
+therefore they don't pay.
+So, they pay zero.
+Bidder two
+was the highest bidder. They're winning
+the item and in the rules of the first
+price auction, they pay their bid, so we
+get 0 4,
+Now, what if I were to change this to a
+second price auction? If I change this
+to a second price auction, what would
+change here? Would Q change? Would T
+change? What would be different?
+Uh yeah.
+&gt;&gt; Q would not change because still the
+person bidding four
+bidding Well, they got the bid four in
+this case for bid. T would change,
+however, because they would only have to
+pay three.
+&gt;&gt; Exactly. So, notice when you compare the
+first and second price auction, they
+actually use the same allocation rule.
+And a lot of auctions use this
+allocation rule. The allocation rule is
+pretty simple. We allocate it to the
+highest bidder.
+They both use the allocation rule. The
+difference between the first price
+auction and the second price auction is
+the payment rule. How much people have
+to pay? And indeed, down here what we
+would get is 0 3.
+If it were second price auction, the
+first bidder got outbid, they still lose
+the item and pay nothing.
+The second bidder in a second price
+auction though pays the Well, bidder two
+is the highest bidder, they pay the
+second highest bid. Well, what's the
+second highest bid between three and
+four? It would just be three. So, we'd
+have to change this four to a three if
+we wanted to do uh the first price
+auction. What about an all pay auction?
+What would this be if it were an all pay
+auction?
+Well, then it would just be 3 4. Right?
+Because bidder one would have to pay
+three even though they didn't win the
+good, and bidder two would would pay
+four, they pay their own
+uh Okay. So, I think we understand the
+notation here.
+And now that we have this generalized
+auction format, we want to try to
+understand these uh expected payments.
+Now, to talk about how much people
+expect to pay, we have to first have an
+equilibrium in mind, right? Let's This
+is sort of a key conceptual point that
+when I say Notice when I said expected
+payments, I said equilibrium expected
+payments because just from the auction
+format alone, we have no idea how much
+people are going to pay until we specify
+how people actually bid, right? So,
+first we need to choose or focus our
+attention on an equilibrium of the
+auction, and then given that
+equilibrium, we can compute how much
+people are expected to pay.
+So, consider We're going to consider
+an equilibrium
+a Bayes-Nash equilibrium
+of some generalized auction.
+And let's just make sure we understand
+what kind of object this is.
+So, a base Nash equilibrium is going to
+specify functions. Let's see.
+B1, usually we use star, but I think I'm
+actually going to use hats today cuz
+we're going to have to take some
+derivatives and with the stars it's a
+bit messy. So, bidder one's equilibrium
+strategy is going to be a mapping from
+&gt;&gt; V lower bar to V upper bar
+to B1.
+All the way down to BN HAT.
+SO, REMEMBER A BASE NASH EQUILIBRIUM IS
+A strategy profile
+and a strategy profile just specifies a
+strategy or bidding function for each of
+the players.
+Notice here that in general these bid
+sets could be different and our our
+strategies have to reflect that. So,
+what is bidder one do?
+They know what their true value is. It's
+somewhere between V lower bar and V
+upper bar.
+And to each true value their bidding
+function specifies how much they bid.
+Well, what is a bid? A bid is just
+something in the set B1. Remember this
+is really abstract. B1 could be I like
+it or I don't like it.
+And then my strategy would say for which
+values do I tell the auctioneer I like
+it and for which values do I tell the
+auctioneer I don't like it.
+Um, and then all the way down to bidder
+N whose bidding function takes each
+value they could possibly have and
+assigns it to some bid that's feasible,
+some bid that's in the bid set that the
+auctioneer has presented.
+&gt;&gt; Okay.
+we're considering a base Nash
+equilibrium
+and what we're interested in is the
+payments, right? We're interested in the
+expected payment that each bidder makes.
+And we might also be interested in how
+likely each bidder is to to win the
+good. So, given this we want to define
+what we might call the equilibrium
+allocation and payments.
+&gt;&gt; [clears throat]
+&gt;&gt; So, let's first define
+the
+allocation. Maybe I'll call it
+Q
+I hat. Let's focus on bidder one. I
+think it just makes the notation a
+little easier. Q1 hat
+of V1.
+So, the hat reminds us that this depends
+on the equilibrium, B1 hat. And what I
+want to compute here is, let's say we're
+playing this generalized auction,
+and we're following this Bayes-Nash
+equilibrium.
+Suppose I'm bidder one.
+Suppose my true valuation for the good
+is V1.
+What is my
+probability, or my expected probability
+of winning the item?
+whether I win the item depends on what
+other people's valuations are. So, I
+need to take an expectation.
+So, I'm going to take the an expectation
+of
+Let's write this.
+Let's make sure we understand what's
+going on here.
+And I'll say this expectation is over
+V2
+through VN.
+&gt;&gt; Why do I not take expectations over V1?
+Well, I know V1. I'm bidder one. I know
+what V1 is. So, this is what's I think
+really tricky about this notation. When
+you see V1 in here, that's just a
+number.
+That's something I know.
+When you see VN, that's something I
+don't know, and that's something that's
+random.
+So, think of V1, it's just something
+like two. It's It's a number, we're not
+taking an expectation over it, but
+everyone else's bid everyone else's
+value we are taking an expectation over
+it because we don't know what it is.
+So, what this is saying is
+if
+my value is V1 as bidder one, well then
+the amount I'm going to bid in
+equilibrium is B1 hat of V1, right?
+That's what my equilibrium bidding
+strategy tells me I should bid.
+Now let's take the example of bidder N,
+well I don't know what bidder N's value
+is.
+But if their value is VN, then how much
+do they bid? They bid BN hat of VN.
+And we'll do the same for bidder N-1 and
+bidder N-3 all the way down to bidder
+two.
+So, what's in here
+is the profile of bids that are
+submitted when we're following the
+equilibrium strategy and bidder one's
+value is V1, bidder two's value is V2,
+all the way up to bidder N's value is
+Now, bidder one knows her own value V1,
+but she doesn't know these other values,
+so that's why we take an expectation.
+And then notice we have to feed in this
+profile of bids into our allocation
+function. And I realize I made a mistake
+here, we need a one here.
+Should be Q
+one.
+Because this is the profile of bids.
+Q1 of this profile is going to specify
+the probability that player one or
+bidder one gets the item
+when this is the submitted profile of
+bids.
+And then we compute expectations here.
+But I think this is a little abstract,
+so clear Yeah.
+&gt;&gt; So, so player one can't know her own
+allocation function, right? Because it
+depends on like other people's values.
+&gt;&gt; So, let's be clear. There's a key
+difference here between the function and
+the value of the function. So, she does
+know the allocation rule. She knows if
+these are the bids that are submitted,
+then this is this is the amount I'm
+going to get. But you're right, she
+doesn't know the bids that are actually
+submitted because she doesn't know how
+other people bid. So, this thing in
+here, she doesn't know what value this
+takes. The value this takes is going to
+depend on these bids here.
+But, she's able to form beliefs over
+that. She's able to say things like,
+"Well, I don't know, let's say there's
+two bidders, I don't know what bidder
+two is going to bid."
+But, if bidder two bids five, this is
+the probability I get the good. If
+bidder two bids seven, this is the
+probability that I get the good. And
+because she has a belief about the
+distribution from which bidder two's
+valuations are drawn, and she believes
+that bidder two is following bidder
+two's equilibrium strategy, she's able
+to compute an expectation here. So, she
+doesn't know the actual, I guess what's
+also tricky here,
+it's weird to talk about
+this is kind of a probability on the
+inside, and then we're also taking an
+expected probability. I know that's a
+little weird, but think of this number
+as basically always being zero or one on
+the inside. So, it's we're basically
+saying, "What's the probability that I
+get the good?" So, we're taking an
+expectation of something that's
+sometimes one, it's one if I win, and
+and sometimes zero, it's zero if I lose.
+These tie-breaking stuff is not really
+going to going to come up.
+Any other questions? Great. Good
+question here. Okay.
+Great. So, this is the equilibrium
+probability that I get the good if I'm
+bidder one,
+and my valuation is V1. Now, let's do
+the same with the transfer. So, we want
+to define T1 hat of V1.
+So, this is exactly the object that we
+were computing over here. We were
+saying, "If I'm bidder V1, if I'm bidder
+one, and my valuation is V1, what is the
+expected amount that I'm going to pay in
+this particular auction, in this
+particular equilibrium of the auction?"
+So, again, we're going to take
+expectations.
+Again, our expectations are going to be
+over V2 through VN, because those are
+the values that bidder one does not
+know.
+And now, we're going to write T1
+of B1 hat V1
+all the way up to
+VN hat VN
+here. And maybe I'll
+make it clear this is known
+but these are uncertain.
+From the perspective of bidder one.
+So, we have
+bidder one's bid
+all the way up to bidder n's bid. That
+forms the profile of bids. The
+auctioneer says, "If I get this profile
+of bids, this is how much I'm going to
+ask player one to pay."
+And then we're taking expectations over
+that.
+we've now kind of formalized our
+question. Revenue equivalence tells us
+that this function T1 hat of V1 seems to
+take the same form
+in a lot of different auction formats
+and a lot of different equilibria.
+In both the equilibrium of the first
+price auction and the equilibrium of the
+second price auction, this function was
+the same. And we'd like to understand
+why that is.
+So, that's at a high level uh what we
+want to do.
+Well, we're going to have to use the
+fact that this is a base Nash
+So, the fact that this is a base Nash
+tells me that
+let's say take the perspective of bidder
+one
+who has valuation V1.
+What we know
+is that bidding
+B1 hat of V1
+is optimal.
+&gt;&gt; Given the way everyone else is bidding.
+I could bid whatever I want, but bidding
+B1 hat of V1 is the best possible bid
+for me. It maximizes my expected
+utility.
+And a kind of weird
+way you want to think about this
+is
+you know
+that tells me that bidding B1 hat of V1
+is better than any other bid I could
+make.
+But these other bids, you know, as you
+said we they're numbers, they could be
+words, we don't really know what these
+things are. But in particular what this
+tells us is that
+bidding
+and this is sort of the key observation
+bidding B1 hat of V1
+is weakly better
+than bidding
+B1 hat of V1 prime
+for all V1 prime.
+So in a sense I haven't done anything
+here, but this actually turns out to be
+the crucial observation. So the point is
+bidding B1 hat of V1 is better than any
+other bid.
+So in particular, what's another bid I
+could make?
+I could choose the bid that I'm supposed
+to make in this equilibrium if my true
+valuation is V1 prime. Here V1 prime is
+just a different valuation. I could do
+But
+following my equilibrium bidding
+strategy must be better than this
+alternative bid B1 of V prime.
+And then the name of the game here is
+just to try to write out mathematically
+what this means
+in terms of these functions here.
+So it's very useful to contemplate this
+particular alternative bid because we
+can use this alternative bid, we can
+express my utility from this alternative
+bid in terms of these functions here.
+And that's really the the key step. So
+let's uh
+we come back over here.
+&gt;&gt; I really want to emphasize everything
+we're going to do now is just following
+from this simple observation. So, if
+there's any questions on this, I think
+this is key. Yes, thank you.
+&gt;&gt; On to the second slide that for every
+unique item in the bid set there's like
+the same valuation that maps to it.
+that's a very subtle question. It does
+not imply that. So,
+um
+Uh so, I think you're you're basically
+asking, yeah, are they are the bidding
+functions like onto, right? Are they
+subjective functions? Uh
+if they were onto, then these function
+statements would be equivalent. In
+general, the bidding functions are not
+onto, so it's still the case that this
+implies this, but not the converse. So,
+we're not using that assumption. We're
+actually if that is not if that
+assumption is violated, then we're
+actually throwing away information
+because we're saying we know that this
+bid is better than every other bid, even
+bids that no one ever chooses in
+equilibrium. But, in particular, we know
+we know this. So, we're throwing away
+information uh potentially. We're not
+even considering it's true that this bid
+is better than a bid that's never
+chosen, but we don't even need to use
+that that fact. Uh but we're so we're
+not requiring that.
+Yes.
+&gt;&gt; So, why can't uh B hat B1 hat of V1
+prime technically just represent all
+other possible bidding strategies?
+&gt;&gt; Um you said
+could you maybe rephrase I'm not sure if
+I quite follow, yeah.
+&gt;&gt; Because there's infinite other bidding
+strategies.
+&gt;&gt; You're right. So,
+I think the key here is I'm just using
+this forward arrow, okay? I'm not saying
+that this is that if this is true and
+this relates to this question, I'm not
+saying if this is true, then this must
+be an equilibrium. I'm only going in one
+direction. I'm saying we know that this
+is an equilibrium
+and an implication of the fact that it's
+an equilibrium, because it's an
+equilibrium, I'm better off bidding B
+hat of V1
+than making any alternative bid.
+So, in particular, one implication of
+that is I don't want to bid five. I
+don't want to bid three. I don't want to
+bid this.
+Maybe we're not considering all the
+other possible bids, that's fine.
+Uh we're we're maybe we're throwing away
+information here, but uh it's certainly
+an implication of equilibrium that this
+must hold.
+&gt;&gt; When you say throwing away information,
+what information are you referring to?
+&gt;&gt; Uh what I mean is
+the definition of equilibrium tells a
+lot of things, and I'm only using some
+logical implications of the definition
+of equilibrium.
+Uh so it's like I have like 10
+equations, and I'm only using nine of
+them. And the 10th equation's true, but
+I'm just not focusing on it. I'm not
+using that fact.
+Um
+and
+maybe this all abstract stuff makes more
+sense once we go through the argument.
+&gt;&gt; So you're basically saying like bidding
+B1 hat of V1 is possible, and like
+there's other strategies that we're not
+comparing to. We're just comparing to
+the bids B1 hat of V1 in different
+markets.
+&gt;&gt; Exactly. So the fact that bidding B1 hat
+of V1 opt is optimal tells me a lot. It
+tells me that bidding B1 hat of V1 is
+better than any other bid I could come
+up with.
+it's certainly better than these special
+And I'm only going to use that fact
+here. Even though I know it's better
+than some other bids, too, I'm not going
+to worry. I don't even need to use that
+fact. Uh yeah. Okay. So now, uh
+as we said, not equivalent, but an
+implication of equilibrium is this
+observation, and now we just want to
+write this observation down
+mathematically using our notation here.
+Okay? So what we want to say is what is
+my expected utility if I bid this?
+What is my expected utility if I bid
+this? And then we want to have an
+inequality between them. Okay? So let's
+take the first. What is my So what is my
+utility from bidding
+B1 hat
+of V1?
+Well
+it's going to be V1
+times the probability that I win
+minus
+my expected payment.
+Right? This is what my utility is. When
+I enter an auction, I say, "Well, this
+is my probability of winning.
+Whenever I win, I get my valuation for
+the good. But then I have to pay, well,
+we'll just subtract my expected payment
+because we're assuming here people are
+risk-neutral. Right?
+So, what is my probability of winning if
+I bid B1 hat of V1 using our notation
+over there?
+&gt;&gt; Just a Q
+hat of
+&gt;&gt; of V1, right? So, this is Q1 hat of V1.
+Okay? And then what is my expected
+payment?
+Now, the tricky part, what if I instead
+bid
+I deviate and instead of bidding what
+I'm supposed to bid in equilibrium, I
+make a different bid. Specifically, I
+bid B1 hat
+of V1 prime.
+Well, the crucial point is what is my
+utility? Well, first,
+I still have a V1 here. Let's not get
+confused. My value is still V1. The fact
+that I'm bidding differently doesn't
+change my value to V1 prime. My value is
+still V1. So, it's going to be my value
+here times again my probability of
+winning minus my expected payment.
+What is the probability of winning now
+going to be?
+&gt;&gt; Q1 hat of V1 prime.
+&gt;&gt; Right. So, I just plug in, you know,
+if I look carefully at this formula, if
+I replace B1 hat of V1 with B1 hat of V1
+prime, well, then that's just the
+definition of this function evaluated at
+V1 prime.
+So, I'm going to get
+Q1 hat
+V1 prime
+minus T1 hat
+&gt;&gt; And this makes sense. What's the
+definition this? This tells me if I use
+bidding, if I use the bid B1 hat of V1
+prime, what is my probability of
+winning?
+And kind of the crucial thing going on
+here is that my probability of winning
+only depends on how much I bid. It
+doesn't depend on my true valuation. It
+just depends on what I bid. So, the V1
+prime here is really reflecting my bid,
+not my true valuation.
+So, now what do we know?
+Well, we know this is greater than or
+equal to this. And maybe I've
+interpreted things so much, it's nicer
+to to kind of start a clean board and
+just write down our inequality.
+So, what do we know?
+So, what we know
+is that
+for all
+V1, V1 prime,
+remember the interpretation here is V1
+is my true value, V1 prime is sort of
+the value that I pretend to have when I
+Well, we must have
+V1
+Q1 hat of V1
+minus Q1 hat of V1
+greater than or equal to
+So, I've just brought that equation down
+And maybe it's easier if we say for all
+V1, this holds
+for all V1 prime. Just a slightly
+different perspective.
+&gt;&gt; Well,
+what does this tell me?
+I have some function on the right side
+that depends on V1 prime.
+But it's always smaller than this
+left-hand side.
+in particular, what that tells me
+is that the value of V1 prime
+that maximizes this right-hand side must
+be V1 itself.
+So, that tells me that V1, let's use our
+argmax notation, is an element of the
+argmax
+over V1 prime
+In words, what is this saying? It's
+saying, if my true value is V1,
+I could bid as if my valuation is V1
+prime for any other value V1 prime,
+but because we know that I'm playing an
+equilibrium,
+the best thing for me to do is to bid as
+if I am myself, to bid as if my value V1
+prime is exactly V1. And that's what uh
+this is telling us
+All right?
+And now, let's just compute the
+first-order condition.
+So, if V1 is a maximizer of this,
+then we should be able to take the
+derivative of this with respect to V1
+prime
+and then plug in V1 prime equals V1, and
+we should get zero. So, let's let's do
+So, it's going to be a little tricky
+with the primes. You have to interpret
+the primes carefully. So, this is V1 Q1
+hat prime
+V1 prime minus T1 hat prime V1 prime
+evaluated at V1 prime equals V1, this
+should be zero.
+Sorry, the primes This prime on the
+inside is just a symbol, and this prime
+on the outside is a derivative. I Sorry,
+that can be a bit confusing here.
+So, you could call V1 prime Z if you
+wanted it wouldn't make a difference.
+Uh and what do we get?
+We get V1
+Q1 prime V1
+Minus, sorry.
+Uh so this equals zero or I could say it
+implies that they're equal.
+Wow, so a lot of work.
+But now we've narrowed things down a
+lot. I have a formula for the derivative
+of this expected payment that I make
+in terms of my probability of getting
+the good. Okay?
+So now
+the trick is we're just going to
+integrate this.
+So if
+if this equals zero
+that tells me that this derivative
+equals this.
+Right? So now we can just integrate this
+from V lower bar and see what happens.
+Actually, maybe I'll just do it right
+So what does this tell me?
+It tells me that
+T1 hat
+of V1
+is equal to
+T1 hat of V lower bar
+plus an integral
+from V lower bar to V1
+X, I'll change
+X.
+Again, when we start integrating you
+have to be careful I
+used a new dummy variable here, uh X.
+And there's a prime missing, right?
+Okay. So this is going to be sort of the
+key revenue revenue formula.
+Now
+why is this so powerful? I think we want
+to step back, and at first you might
+say, "Okay, we just did a sea of
+algebra. What's going on?"
+Well, what is this giving me?
+It's giving me a formula
+for if I'm player one
+and my valuation is V1
+and we're considering an equilibrium of
+this generalized auction, it's giving me
+a formula
+for the expected payment that I make in
+this auction.
+But let's understand, in general, you
+might think that my expected payment
+would depend on a lot of things.
+You might think it would depend on the
+details of the auction and all these
+complicated things.
+But if we look here, what is it
+depending on?
+It's depending on two things.
+Can someone interpret these these two
+terms? These are the only only things
+that appear on the right hand side.
+So, what is this first term?
+&gt;&gt; The base cost of winning the lowest
+people.
+&gt;&gt; Yeah, so it's just the expected payment
+that the lowest possible valuation
+person
+pays, right? That's the one the one
+thing, and I think it you could
+interpret it maybe that way. Um
+and then what is
+Q1 prime? I mean, the prime, let's just
+focus on the function Q1 hat. What is
+this function Q1 hat?
+Can we interpret What is it? What does
+it mean?
+Uh yeah, maybe I think yeah.
+&gt;&gt; It's like the marginal likelihood of
+winning for each like infinitesimal
+change in your valuation.
+&gt;&gt; Uh I think the integral is making you
+think about infinitesimal stuff, but
+really it's Oh, oh, you're taking the
+derivative. Exactly. Sorry, yes. So,
+sorry, you jumped ahead. Yes, that's the
+derivative of it, exactly. And if we
+take away the derivative, it's just
+my probability of winning, exactly. And
+this is the infinitesimal. Sorry, yes,
+exactly. I forgot it. Yeah.
+Okay. So, what it tells us is that a lot
+of the details of the auction doesn't
+matter don't matter, right? I mean,
+whether we're bidding what we name our
+bids, like notice the sets B1 through BN
+don't even appear here. All that matters
+is the probability that I win the good
+in equilibrium and the amount I pay if
+I'm the lowest value person.
+So, we immediately see
+that only a few details of an auction
+equilibrium pin down or uniquely
+determine the expected payment that
+everyone makes.
+So, maybe I'll
+come over here.
+So, WHAT'S THE IMPLICATION?
+THAT THE EXPECTED PAYMENT
+by
+say, bidder one with a valuation is V1
+say,
+depends
+only on
+T1 hat V lower bar, which is the
+of the lowest valuation.
+More precisely, the expected payment
+that bidder one makes when her valuation
+is the lowest possible valuation.
+we had the derivative here, but if it
+depends on the derivative of Q1 hat,
+well, it's also depends on Q1 hat, so
+it's a bit cleaner to say,
+just depends on Q1 hat.
+Uh, uh, this function Q1 hat,
+which is the
+win probability.
+And this is entire function, so it's the
+win probability of every valuation.
+But the point is
+in a lot of different equilibria of
+different auction formats, these two
+values take take very these take very
+special values, okay?
+So, in many equilibria, in many auctions
+that we've looked at so far, what is
+So, I'll just say often
+Well, INTUITIVELY
+WHAT DO YOU THINK T1 hat
+of V1 lower bar is often going to be?
+Zero, because in most auctions, if you
+have the lowest possible valuation for
+the item, in most equilibria,
+well, you're never going to win.
+And if you never going to win, you don't
+want to pay anything.
+So, often
+auction equilibria have this property.
+And now, maybe this is a more subtle
+What about Q1 hat?
+Maybe I'll write Q1 hat of V1.
+Well, in a lot of auction equilibria
+we've looked at, which bidder wins the
+item?
+The It's the highest bidder, but another
+way of saying it it is it's It's the
+bidder who bids the most, that's true,
+but it's also the bidder whose valuation
+is the highest, right? So, often, when
+auctions kind of work well, we might
+think that an implicate an outcome of
+the auction is that the bidder who
+values the item most gets the item.
+But if the bidder who values that item
+most gets the item,
+then what is Q1 hat
+Q hat one of V1 going to be?
+Well, yeah.
+&gt;&gt; Uh,
+or as an expectation, um, you know, if
+you reduce to be a probability between 0
+and 1. Yeah, that's true.
+Can we say more about it? Yeah.
+In the uniform example, that's exactly
+what it would be. But more generally,
+maybe let's just write it would be the
+probability that everyone else's value
+is below V1.
+Right? Cuz if it goes to the bidder with
+the highest value, what's the
+probability that bidder one gets it when
+the valuation is V1? It's the
+is below V1. So it's the probability
+that the max
+of J
+not equal to 1 VJ is less than or equal
+to V1.
+And we actually have notation for this,
+right? What is What is our in the in the
+symmetric case? What is our notation?
+Big G, right? So this is also
+Big G
+So we often see that this holds.
+Often, you know, it's kind of a in
+quotes. But what we see is that, you
+know, these are these tend to happen.
+And and if that happens, let's plug into
+a formula over here.
+So
+under these conditions,
+what does T1 hat of V1 give us?
+what is this first term under those
+conditions?
+Zero? Okay, so we can forget that.
+Q1 hat one of X is what?
+Small G of
+X. Right, so Q1 hat is big G. And then
+when we take the derivative, we get
+small G, right? So what we get
+the integral from V lower bar to V1
+of X
+G of X DX.
+&gt;&gt; of X
+Does this look familiar?
+This is exactly the formula we had,
+right? So, now we understand where it
+comes from, right? So, this is not a
+special property of first price auctions
+or second price auctions. Now, we
+understand exactly when this is going to
+hold.
+This is going to hold in any equilibrium
+of any auction that satisfies these two
+properties. If whenever my value is the
+lowest possible value, I pay nothing.
+That's the condition here.
+And if the good is always allocated to
+the bidder with the highest valuation.
+Now, how that happens is going to depend
+on the details of the equilibrium, what
+the bids are. But, as long as the
+auction has that property,
+then the expected payments are going to
+be the same. They're exactly going to
+take this form.
+Um so, indeed, it wasn't a coincidence.
+It wasn't just something about the first
+and second price auction. This is a very
+general fact. So, I I think it's good to
+kind of understand
+I think sometimes when I I I I should
+see exactly how it's done in the notes,
+revenue equivalents can be stated in two
+different ways. Uh so, when people say
+only revenue equivalents only holds
+under certain conditions, let's
+understand this formula always holds, or
+always. This This formula holds quite
+generally,
+but it reduces to this special form
+under the additional conditions. So, you
+can still apply this formula to an
+auction where the good isn't always
+allocated to the the person with the
+highest valuation, or where the lowest
+valuation person pays a positive amount.
+This formula still holds, but it reduces
+and simplifies under those further
+conditions.
+&gt;&gt; Could you revisit the step of how you
+went through kind of taking the
+derivative of like our V1 equation
+&gt;&gt; Yes.
+&gt;&gt; to the revenue formula?
+&gt;&gt; Yeah, so
+from here to there?
+&gt;&gt; Okay. Uh so, you're you're good up to up
+to this point?
+&gt;&gt; Okay. So, we're at this point, and it's
+a little spread out, but this is this is
+zero over here, right? So, the zero over
+here tells me that
+times
+Q1 hat prime of V1 equals T1 hat prime
+And now, yeah, I think the way I changed
+variables is tricky. Uh I think the best
+thing to do would be
+wherever you see a V1, let's just put an
+So, this tells me X Q1 prime of X equals
+T1 prime of X.
+Now, I'm going to integrate both sides
+from X equals V lower bar
+to X equals V1.
+&gt;&gt; So,
+when I
+integrate the derivative of T1 from V
+lower bar to V1, I just get T hat of V1
+minus T hat of V lower bar. So, we can
+think of that coming to the left-hand
+side.
+And then, when I integrate this, well, I
+exactly get
+this.
+&gt;&gt; That makes sense.
+&gt;&gt; Clear? Okay. Thanks for asking. Any
+other questions, please?
+So, yeah, it was tricky.
+I used V1 here, but then V1 becomes my
+dummy variable X, and then I integrate
+up to V1. Yeah.
+any other questions?
+So, you might say, "Okay, this is kind
+of a nice theory, but how can we ever
+use this?" Well, it turns out this can
+be a convenient way to solve for
+equilibria in auctions.
+So, let's go over kind of a mini
+uh an application of revenue
+equivalence.
+Maybe I'll call it RET, an application
+of the revenue equivalence theorem.
+Let's look at the all-pay auction. So,
+let's do our our simple case
+where we have just two bidders, V1 and
+V2,
+and they're in 0,1, and they're uniform.
+And now, instead of considering the
+first-price auction or the second-price
+auction, let's consider what's called an
+all-pay auction, APA.
+So, in an all-pay auction, the
+allocation rule is the same as the
+first- and second price auction. We
+allocate the good to the highest bidder.
+So we allocate
+to highest bidder.
+But everyone has to pay their bids
+whether they win or lose.
+So I think it should be quite intuitive
+here that you don't want to bid very
+much in this auction because you know
+you have to pay your bid whether or not
+you win. So intuitively
+uh people will bid less.
+we might guess
+So let's
+guess
+that there's a
+symmetric equilibrium of this auction or
+let's look for a symmetric equilibrium
+of this auction.
+So a symmetric equilibrium
+Remember a symmetric equilibrium means
+both players are using the same bidding
+function, right? So a symmetric
+equilibrium means we're looking for a
+function
+beta
+from 0 1
+maybe 0 to infinity.
+So we're looking for a symmetric
+equilibrium where both players follow
+the bidding strategy beta that says if
+my valuation is this, I'm going to bid
+beta of my valuation. Okay? So this is
+what we're trying to solve for.
+go over here.
+And we're going to guess a symmetric
+equilibrium but with a few more
+properties. I think we're going to guess
+that there's an equilibrium and also
+beta of 0 equals 0
+and beta is strictly increasing.
+These seem like pretty reasonable
+guesses, right? Um so, we think because
+the environment's symmetric, maybe
+people use symmetric bidding functions.
+It seems to make sense that if you if
+your value is higher, you should bid
+more. That makes sense.
+And why do we expect beta of zero to be
+zero?
+&gt;&gt; You wouldn't want to bid anything
+positive if the item isn't worth
+anything.
+&gt;&gt; Especially because it's an all-pay
+auction, right? I mean, that's always
+true, but in an all-pay auction, if you
+bid something positive, what happens?
+You have to pay it. So, you're paying a
+positive amount, and even if you get the
+good, you don't value it. So, this these
+seem like pretty safe guesses, right?
+But let's say there is an equilibrium
+with this property.
+Will our revenue equivalent assumptions
+be satisfied?
+So, let's check. If there's an
+equilibrium with this property, what is
+the expected payment
+someone whose valuation is zero? What's
+it going to be?
+Just zero, right? If there's an
+equilibrium where if my value is zero, I
+bid nothing, well, then I'm going to pay
+nothing.
+It's going to be zero.
+And then, if we're both using us the
+same strictly increasing bidding
+function,
+well, which bidder is the good going to
+be allocated to?
+&gt;&gt; Whoever has the greater value.
+&gt;&gt; It's going to go to whichever bidder has
+the highest value, because it's going to
+go to whichever bidder bids the most,
+but we're both using the same increasing
+bidding strategy, so who's going to bid
+the most? It's going to be the person
+who has the higher value. So, it's going
+TO BE ALLOCATED
+SO, THE TWO CONDITIONS WE NEEDED to get
+the revenue formula to simplify are
+satisfied.
+And that means we immediately know what
+the expected payment of each bidder has
+to be. So, what does that tell us? Well,
+what is Let's just focus on bidder one.
+It'll be the same for everyone else.
+What is T1 hat of V1 then?
+Well, let's go through it, right? It's
+the integral
+Well, what is V lower bar? It's just
+zero.
+Zero to V1 of X G of X DX.
+What is G of X here?
+It's just one, right? Remember, G equals
+F if there's two bidders. And if they're
+uniform, G is just one.
+why G is the density of the
+highest valuation among my opponents.
+There's only one of them. So, it's just
+the density of the uniform distribution,
+which is one. So, what do we get?
+Same Same thing formula that we always
+got before, right?
+V1 squared over two.
+Notice this is exactly what we got way
+at the beginning of class, right? So, in
+general, this is always the formula for
+the expected payment by a bidder with
+valuation V1 in our simple two-bidder
+uh uniform distribution case, as long as
+our assumptions are satisfied. But now I
+claim that we're done. What is the What
+must the bidding
+uh function be?
+So, let's Let's step back and see what
+we've done.
+We've guessed that this is the bidding
+function, beta.
+We've said that if this is the bidding
+function, beta,
+then the expected payment by a bidder
+one when the valuation is V1 must
+exactly be V1 squared over two.
+one half.
+It's even easier, right?
+It's an all-pay auction.
+So, another way of writing the expected
+is beta V1.
+If it's an all-pay auction, my expected
+payment is my bid
+cuz I always pay my bid. So, of course,
+that's my expected payment.
+Right? If I bid two, I always pay two.
+If I bid three, I always pay three.
+That's my expected payment.
+So, what's the answer?
+&gt;&gt; V squared over two.
+&gt;&gt; That's it, and we're done. So, so we've
+now found uh I mean, technically, we
+should verify this. We've sort of only
+said this is a necessary condition, but
+it is true. So, you can check this is
+right. Uh
+Actually, it's V.
+We're done.
+So, revenue equivalence can be kind of a
+convenient way of actually
+solving for an equilibrium because
+revenue equivalence gives us a very
+simple formula for the expected payment
+that each player makes.
+This is from revenue equivalence. The
+auction format gives us a relationship
+between the expected payment and the
+bid. In the all-pay auction, it's a very
+simple relationship. The expected
+payment I make is exactly my bid.
+But now,
+if we have two different formulas, two
+different expressions for T1 out of V1,
+they must must both be equal, and now
+and now we have this.
+Maybe just one more example to see how
+we could derive the
+uh first-price
+auction equilibrium using this.
+Basically, we're going to do the reverse
+of what we did before at the beginning
+of class.
+Let's consider a first-price auction
+again in our simple example
+in our simple
+two-bidder
+uniform example.
+again, if we look for a symmetric
+where if your value is zero, you bid
+nothing,
+and beta is strictly increasing, then
+our two assumptions of revenue
+equivalence are going to hold, and
+therefore, we know
+so revenue equivalence
+tells us that t1 hat of v1 equals v1
+squared over two.
+That's still going to be true as long as
+the good goes to the bidder who values
+it most, and the bidder with zero value
+pays nothing.
+But now, from the auction format, what
+t1 hat of v1?
+&gt;&gt; That's the probability of winning times
+&gt;&gt; Exactly. So, this should be my bid is
+beta of v1
+times the probability that I win,
+which is v1.
+So, now we set these equal, and indeed,
+we get
+which we already derived before, right?
+So, we can sort of go go back and forth.
+We can solve for the equilibria. We can
+see that revenue equivalence is
+satisfied, or we can jump right to
+revenue equivalence and use that
+together with the rules of the auction
+to try to derive what the equilibrium
+bidding behavior will be. And this is
+useful when we confront new auctions we
+haven't looked at before because of how
+general revenue equivalence is. Uh I
+want to end with maybe one caveat
+uh about revenue equivalence though.
+And revenue equivalence is often
+misinterpreted.
+When people interpret revenue
+equivalence, they often say it's about
+the equivalence between auction formats.
+They say something like the first price
+auction generates the same revenue as
+the second price auction. But if you
+want to be really precise, revenue
+equivalence is a comparison between an
+equilibrium of one auction and an
+equilibrium of another auction. So,
+caveat,
+it's not about so it's not
+about the auction
+per se, it's about a particular
+equilibrium of the auction.
+Maybe I'll say BNE
+of the auction.
+And in fact,
+we'll give some examples in a given
+auction format, you could have multiple
+equilibria that generate different
+revenue for the auctioneer if those
+conditions aren't satisfied. So, let's
+make sure we understand
+these conditions
+that the bidder with value the lowest
+value pays nothing
+and the good is allocated to the bidder
+with the highest value, these are not
+properties simply of the auction format.
+They're properties of the equilibrium
+together with the auction format.
+If everyone used a different bidding
+strategy, then this may no longer be
+true. Right? So, these assumptions are
+not assumptions about the rules of the
+auction, they're assumptions about a
+particular equilibrium of the auction.
+And whenever we apply revenue
+equivalence, we're not just comparing
+the revenue from two auctions, we're
+saying, let's look at equilibrium of one
+of this auction and equilibrium two of
+auction two and let's compare the
+revenue there.
+uh so that's kind of a final caveat and
+we'll see some uh implications of that
+next week. So, I'll stop there. Thank
+you.

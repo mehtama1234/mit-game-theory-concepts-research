@@ -1,0 +1,2088 @@
+So, if you recall last class, we
+discussed uh finitely repeated games.
+Today, we're going to discuss infinitely
+repeated games, and we're going to see
+that the results are actually uh quite
+different.
+So, what's the motivation for studying
+infinitely repeated games? We can, of
+course, debate about whether, you know,
+the future's really infinite, whether
+it's finite. We can have these
+philosophical debates, but I think uh
+what we're hoping to capture in these
+models is simply the idea that there's
+not a natural last period.
+So, there's
+no
+natural
+last period.
+So, when firms are setting prices,
+there's never really a time where they
+think there's no opportunity to set
+price in the future.
+When governments are negotiating,
+there's no natural point where they
+think the world ends and we're not going
+to have further negotiation.
+And what we saw is that when we modeled
+finitely repeated games, a lot of the
+conclusions were driven by these last
+period effects, by the fact that in a
+finitely repeated game, there's some
+period of the game that everyone knows
+is the last period of the game, and the
+game cannot continue beyond that. We
+want to shut that down today and study
+games where there's no uh natural last
+period. There's going to be some some
+key differences between the finite and
+the infinite case.
+And
+what we saw in the finite case is in a
+lot of games, like in the prisoner's
+dilemma, there was no scope for
+cooperation or for punishment and
+rewards. So, maybe I'll say
+limited
+scope
+for rewards and punishments.
+And this uh came from this last period
+effect. We often argued if we know
+what's going to happen in the last
+period, then we can figure out what's
+going to happen in the period before,
+and we can keep working backwards using
+this kind of backward induction
+reasoning.
+And it's all driven by the fact that uh
+in the last period, there's certainly no
+scope for rewards and punishments, and
+then that sort of extended earlier in
+time.
+In the infinite case, we're going to see
+um there's actually a huge range of
+possibilities. So,
+um
+maybe we'll say many things can happen.
+We'll actually formalize this next
+class, but particularly if players are
+very patient.
+We're going to see that if the players
+are patient enough, the future looms
+very large, and there's a huge richness
+of of possibilities uh for equilibria in
+these games.
+So, today, the plan is to We're not
+going to quite get to this anything can
+happen result uh until next class, but
+today we're going to set up the
+framework of infinitely repeated games,
+and then we're going to discuss how we
+can achieve cooperation in the
+prisoner's dilemma. So, we're going to
+focus on the prisoner's dilemma, and
+we're going to observe a crucial
+difference. In the prisoner's dilemma,
+the unique subgame perfect Nash
+equilibrium was defection every period.
+We're going to see in the infinitely
+repeated version, there's scope for a
+lot of cooperation.
+So, let's set up the
+general framework.
+So, just as in the finitely repeated
+version of the game, we have to have
+some stage game that we're going to
+repeat. So, as before, we have a stage
+game.
+maybe we'll call this G. Remember, we
+had our stage game G, and this was just
+a simple strategic form game, but
+remember we defined or labeled
+strategies in the stage game as actions
+rather than strategies, so that we don't
+get confused. So, this was uh we had UI
+from
+A to R
+for I equals 1 through N.
+So, we have N players.
+The players' payoffs depend on action
+profiles. So, remember A is A1
+cross up to AN. It's the set of action
+profiles the players can play in the
+stage game, and then we specified the
+utilities that the players get as a
+function of that.
+Now, the difference here is timing.
+Whereas before, we said that time was 0
+1 2 up to some fixed finite horizon, now
+the horizon's infinite. So, now we have
+periods
+T equals 0 1 2 dot dot dot.
+There's no point at which the game
+necessarily ends.
+And otherwise, everything's the same.
+So, in particular, we still have perfect
+monitoring of past actions.
+Now, the first thing we have to figure
+out in a game like this is how we're
+going to compute payoffs, because in the
+finitely repeated version of the game,
+we just could add up the payoffs and
+then take the average, right?
+But here,
+things go on forever. So, it's not clear
+how we're going to be able to add up all
+the payoffs, and we're going to return
+to an idea that we had before, which is
+we're going to have discounting.
+Uh
+So, we're going to use discounted
+payoffs.
+So, let's see what we mean by that.
+Well, what's actually going to happen
+What's an outcome of the game, right? In
+the finite version, an outcome of the
+game was an a profile of actions in the
+first in the zeroth period, a profile of
+actions in the first period, all the way
+up to the last period.
+But now, an outcome of the game is an
+infinite path of actions. So, we might
+say uh
+we want to be interested in something
+called an action path,
+which is something like A0 A1
+A2 dot dot dot.
+So, this is like an infinite vector.
+And this is going to say,
+well,
+what did everyone do in period zero?
+Notice there are no subscripts here. If
+I had a subscript I here, that would
+mean what player I did in period zero.
+But with no subscript, this is what
+everyone does in period zero. It's a
+profile of actions.
+So, just to make sure we're on the same
+page, each of these lives in A.
+So, an action path says, what did
+everyone do in period zero? What did
+everyone do in period one? What did
+everyone do in period two? And so on.
+And what we want to understand is
+what payoff the players get from an
+action path like this.
+You could think of the action path kind
+of as playing the role of the terminal
+nodes in a finite horizon game.
+Remember, we wrote out the extensive
+form game, and we had this tree, and we
+looked at the terminal nodes.
+Here, the game goes on forever, so it's
+a bit trickier to think about what a
+terminal node is, but this is kind of
+the analog of a terminal node in the
+infinite horizon game.
+And now, we need to understand what
+payoff this gives.
+So, the payoff from this
+is going to be Maybe we'll write UI
+of A0 A1 dot dot dot.
+We need to say what this is.
+again, we can't just add it all
+together, because it's going to go on
+forever. So, we're going to look at the
+discounted sum of the payoffs.
+So, player I will get UI of A0 in period
+zero, because this is the action profile
+that's played in period zero, and this
+is the stage game utility that player I
+gets. So, you can think of this as
+player I's flow payoff in period zero.
+Then we want to add to that the flow
+payoff in period one, but now we have to
+discount that.
+So, we're going to get delta
+times UI
+of A1.
+So, this is the flow payoff player I
+gets from the action profile played in
+period one, multiplied by delta, that's
+our discount factor, which we've looked
+at before, to represent the fact that
+payoffs tomorrow matter less than
+payoffs today.
+And then we keep doing this, right? Then
+we'll get delta squared U of
+A2,
+and we'll continue continue on
+like this.
+And if you want to write this a bit more
+mathematically, we can use summation
+notation, so it's the sum.
+We're summing over all the periods, and
+our index is starting at time zero. So,
+we're going to have a sum from T equals
+zero to infinity.
+And then, what is the discounted flow
+payoff in period T? It's delta to the T
+times UI of AT.
+We're notice when T equals zero, this
+just reduces to one. Delta to the zero
+is equal to one, and we just get this
+first payoff here.
+So,
+I think this raises a few questions
+about the discount factor delta.
+The discount factor delta is going to be
+a number between zero and one. The idea
+is that the future matters less than the
+present.
+If delta equaled one,
+then we wouldn't be able to compute the
+summation, because we'd be summing
+infinitely many things, and that might
+not converge.
+Um
+how do we interpret this discount factor
+delta? I don't know. How do you think of
+this?
+Um how can we think of this discount
+factor?
+Why might you value future payoffs less
+than payoffs today? Do you feel that you
+have a discount factor? If I said I'll
+give you $10 today or $10 in 10 years,
+which would you prefer? Yeah. Well,
+about today due to inflation?
+So, say it again. It's due to inflation.
+Inflation, right? Um exactly. So, one
+one interpretation discount factor,
+which is especially relevant if we have
+monetary rewards, is inflation and
+interest rates, right? So, you could
+take that money today and you could
+invest it in, say, treasury bills and
+you could get a guaranteed return to the
+future. So, one interpretation is
+sometimes the interest rate,
+which is tied tied to inflation.
+And under this interpretation, we might
+say that delta is equal to 1 over 1 + R.
+So, if we have an interest rate R and
+we're thinking about monetary payoffs,
+then the value of $1 today
+is uh the value of $1 tomorrow
+has the same value as 1 over 1 + R
+dollars today. Why is that? Well, if you
+give me 1 over 1 + R dollars today,
+and I invest that in a checking account,
+and I get a return at rate R, then I'll
+multiply this by 1 + R and I'll get my
+dollar back tomorrow.
+Um of course,
+sometimes these utilities are not
+monetary payoffs. So, if this is just
+how much I enjoy,
+you know, a certain item, we can't
+literally, you know, I can't take my
+utility to the bank and get an interest
+rate.
+Um so, sometimes we have other
+interpretations. Any other reasons why
+if I said, "What if I told you I'm going
+to give you a really big reward
+in a billion years?" Uh yeah.
+We'd be dead by then. Right. So, it
+could be, you know, people die or maybe
+another way of saying it is, you know,
+things could end. The game could end.
+There could be some reason why you leave
+the game, you know, things could happen.
+So, one other interpretation of this
+discount factor is that there could be
+some fixed probability at which the game
+ends each period. So, if we wanted to
+formalize that, we could say, "What if
+the game ends
+with probability
+1 minus delta each period?"
+Well, then we can say, "What's the
+probability that we actually get to
+tomorrow?"
+Well, there's probability 1 minus delta
+that the game ends today.
+So, the probability that we actually get
+to tomorrow is going to be delta, right?
+But then, what's the probability that we
+get to the day after that? Well, again,
+there's only probability delta that the
+game continues. So, we could one
+interpretation of delta to the T is
+saying, "In order for us to get to
+period T, we have to transition from
+period zero to period one, which has
+probability delta. We have to transition
+from period one to period two, which has
+probability delta, and so on."
+And delta to the T is simply
+representing the probability that we're
+still around or that we survive up until
+period T.
+And crucially, if the game ends with
+probability 1 minus delta, then it
+continues with probability delta. So,
+that's a a key
+observation. But even if you were
+certain the game would continue,
+I think people are just impatient. And
+this is something that's been documented
+in the lab all the time. If I say I'll
+give you an ice cream cone today or
+tomorrow,
+uh you know, we don't have to worry
+about inflation cuz I'm giving you an
+ice cream cone. I'm not giving you money
+to pay for the ice cream cone.
+you're pretty likely to be around
+tomorrow, but I think a lot of people
+would just say I'd rather have ice cream
+cone today than tomorrow. This is just
+sort of a behavioral fundamental uh
+preference. So, we might just say, uh
+maybe I'll call this fundamental
+impatience.
+People are just impatient. This is this
+is the way
+uh
+the way people are.
+In reality, you can think of this
+discount factor delta as maybe
+reflecting some combination of these
+forces. Depending on the application, it
+may be really about interest rates, it
+may be about the game ending, it may be
+some combination. Maybe you're worried
+that the game will end before tomorrow,
+and you're also just fundamentally
+impatient. We're not really going to
+take a stance in the in the mathematical
+conclusions won't really depend on the
+interpretation, but we're just going to
+have some fixed discount factor delta
+that's reflecting
+um any any reason for it to discount.
+All right. And because of this discount
+factor delta, sometimes this game,
+remember before we referred to a game,
+so just a reminder, remember when we did
+finite repetition,
+we talked about G of T.
+So, we said in the finitely repeated
+game, we denoted it by G of T, where we
+said this means game G is played up to
+horizon capital T.
+In the infinite case,
+we might talk about G of infinity or
+more commonly G of delta.
+Because just telling me G of infinity
+doesn't give me enough information. That
+tells me the game is repeated with an
+infinite horizon, but if I don't know
+the discount factor, I I'm not I haven't
+really fully specified the game. So,
+more commonly we'll write G of delta to
+indicate the infinitely repeated game uh
+with discount factor delta. I mean, more
+generally we could have G of
+T, delta, but uh normally in the finite
+case, we don't do discounting.
+So, that's something to keep in mind.
+All right.
+So, now let's think about what a
+strategy is.
+So, as before, we just define a strategy
+to be a mapping
+from histories to actions. So, what do
+you What are the contingencies you face
+in the game? You're player in the game.
+In every period, you can see what
+happened before,
+and based upon what's happened so far,
+you choose an action.
+So, a strategy for player I
+is going to need to say, "Let's look at
+all the periods,
+period zero all the way down to period
+T.
+Go down to period one as well.
+Well, if it's period zero,
+nothing has happened so far. There's
+just a null history. So, we're just
+going to specify a single action. We
+need to say, "What is S I
+of the empty set?"
+So, this is going to say, "My strategy
+needs to tell me what I'm going to do in
+period zero. I know I'm in period zero.
+Nothing has happened so far, and I just
+need to choose an action."
+Then in period one,
+I don't just specify one action. I need
+to specify a lot of actions because I
+need to say what I'm going to do in
+period one as a function of or
+contingent on how we all played in
+period zero.
+And that's what H1 represents, right?
+So, H1 is going to say, "In period one,
+what history of play
+What is the history of play? So, for all
+Well, where does H1 live? Let's call it
+H1. This is the set of histories at
+period one. But can we be more precise?
+What What is this set going to be? If
+it's period one and I observed what
+happened last period, what is H1 going
+to be?"
+What's a history in period one?
+Yeah, in the front. What happened in
+period zero. Right. And what What's our
+notation for that? Do we have
+So, what How can we describe what
+happened in period zero? What do we need
+to say? Or just in words, what What do
+we need to specify from period zero?
+What each player did in period zero.
+What each player did. So, we have to
+specify what player one did, what player
+two did, all the way to player N. That
+means we need to specify a profile of
+actions from period zero, and we have
+notation for that. That's just A, right?
+So, remember our set A
+contains profiles of actions that
+specify what every player does in the
+stage game.
+Okay? And then if we go down to period
+T,
+now things get really complicated
+because in period T, we have to specify
+what player I does as a function of
+every possible history of play. Now, the
+history is a lot more complicated. So,
+we have for all histories HT
+in HT
+equal So, now what is HT? Well, it's
+period T,
+so I know how people played in period
+zero.
+I know how they played in period one,
+and I know how they played all the way
+up to period T minus one.
+So, that means altogether, I know T
+action profiles. So, this is going to be
+A
+So, let's just make sure we understand.
+So, as an example,
+HT would look something like this. It's
+going to say, "This is how people played
+in period zero.
+This is how people played in period one.
+And this is how people played in T minus
+one."
+So, a time T history
+looks something like this
+because we specify action profiles from
+zero all the way up to T minus one. We
+have to specify T action profiles
+altogether, and that's why we have A to
+the T here. So, the set A to the T
+is just the set of all
+uh vectors that look like this. Yes? And
+so,
+like little A zero, that includes an
+action for every I. Exactly right. So,
+let's So, this is kind of tricky because
+this is like a nested vector, right?
+What is A zero?
+This is A zero one
+A N
+A zero N.
+Right? So, you could if you wanted, you
+could think of this kind of like a
+matrix,
+right? We have to specify what hap- what
+every player did in every uh period. So,
+we have to specify number for each
+player and for each time.
+Uh and we're going to be really
+consistent about this. The superscripts
+are always going to be about time,
+and the subscripts are always going to
+be about the players.
+So, we have subscript I tells me which
+player I am I talking about, and that I
+can vary from one to N cuz those are the
+players.
+A superscript T
+can vary from zero to infinity cuz that
+tells me what period I'm in.
+Now,
+I like this notation
+Uh to it's consistent but I guess one
+downside of this notation is it can be
+unclear whether
+a number like this is a superscript
+just a label or whether it actually
+means
+multiplying things together. So let me
+just kind of give you a warning about
+this, right? When I write
+and if you're confused at any point let
+me know, when I write delta to the T
+delta is a number.
+So here delta to the T is the number
+delta multiplied by itself T times. So
+this is multiplication.
+When I write A0 or A1 I can't multiply A
+by itself cuz A is A is not a number.
+This is just a symbol it's just
+notation.
+And I guess I'm actually being
+a little I guess unclear here a little
+naughty because this is just a symbol
+this is just a symbol but this actually
+is the product of sets. So
+um maybe I'll write
+to avoid that confusion let me write
+this as A
+times itself T times.
+But if you're ever unsure about what
+notation means let me know because I
+think sometimes the biggest barrier in
+setting repeated games is just getting
+the notation right. But once you get the
+notation I think everything should be
+clear.
+Okay, so formally
+what is a strategy? Well, a strategy has
+to say what I do at every single
+history.
+So we could try to think of a strategy
+you know, writing out these spaces and
+talking about you know, okay, we have
+the null history we have some history
+here we have some history here and so
+on.
+The problem is this list is going to go
+on forever. So this is going to be
+pretty complicated to write down. So
+we're just going to denote a strategy as
+a function.
+What is it?
+It's a function SI
+from H to AI.
+This says at every history H I'm going
+to specify what I do.
+But I haven't defined what the set H is
+so let's just think carefully about what
+H is where H
+is just going to collect all the
+histories together.
+I'm just going to take all the histories
+and put them together. So I'm going to
+collect the period zero history.
+Well, that's just the empty set. So I
+need to put that in there.
+Then the period one histories.
+H1 union H2 union dot dot dot.
+Erase this here.
+So here the union this is just set
+theory notation but it doesn't matter.
+All all I'm saying is I'm going to
+collect together
+the zero history, all the histories in
+period one, all the histories in period
+two, all the histories in period three
+and so on and put them all together in a
+set. And then my strategy is going to
+tell me what action I take as a function
+of every possible history that I'm at.
+All right, any any questions on this?
+Yeah.
+So okay, just to make sure I understand
+Yeah, absolutely. The last one can you
+write a set of different actions you
+would do for each possible history at
+each stage? Uh yeah, not so
+it it will specify a single one, right?
+AI says what I specify lives in AI. So
+AI is a set. AI is the set of actions I
+could take but a single strategy SI a
+single function will say at every single
+history what action will I do. But at
+every single possible history for each
+period. At every single possible history
+for each period. So if I want to break
+it down I could think of SI as just
+encoding
+a different you know, a different sub
+strategy for every history. It has kind
+of a period zero part that tells me what
+I do in period zero as a function of
+well, in period zero there's only one
+history so it's kind of easy. In period
+one what I do at every period one
+history. Then in period two what I do at
+every period two history and on and on.
+So you can think of it as kind of a list
+of functions. Um you know, we're not
+really going to deal with this formal
+notation too much but I just want us to
+kind of know what what the objects are
+and what's going on. Yeah, great
+question. Uh any other clarifications or
+questions?
+Okay.
+So now we want to apply the one-shot
+deviation principle to understand
+subgame perfect Nash equilibria of this
+game. So now our goal
+is to study or analyze
+subgame perfect Nash equilibrium
+of these infinitely repeated games.
+Now remember step one if you want to
+analyze subgame perfect Nash equilibria
+is always understand the subgames. So
+what we want to do is understand
+what are the
+uh all the subgames in this infinitely
+repeated game.
+the key observation is that
+each subgame
+each history
+H starts a subgame.
+But now what's tricky is you know, in
+the finitely repeated version
+what the subgame looked like depended on
+how far along in the game we were. If
+our subgame started right before the end
+of the game we didn't have many periods
+left.
+But in the infinitely repeated game
+whatever period we're in the future
+actually looks the same. The future is
+still infinite. So let's try to
+understand what a subgame starting at
+history H looks like.
+so just to make it maybe concrete let's
+take uh
+eight let's take T equals
+two just to make things really simple.
+So let's look at a history
+and consider a history
+H2
+which is going to specify A0
+A1.
+So what I'm going to say is let's look
+at the subgame where we're in period
+two.
+We know what's happened so far. We know
+the history and what is this history?
+It's going to tell us what happened in
+period zero and what happened in period
+one. And I'm using the bar notation just
+to say this is fixed. So you could think
+of this as A this is just a symbol. I'm
+writing the bar just to um
+I think it'll be a little clearer below
+what's going on. But this is a fixed
+action profile A0 and this is a fixed
+action profile A1.
+And as before
+this tells me what every single player
+did in period zero and this tells me
+what every single player did in period
+one.
+So now
+we can think of our subgame
+as we're at A0
+we're at A1.
+Here we are. This is our history.
+And then
+play is going to continue. Right? The
+subgame is sort of everything from here
+on out.
+Right?
+And just to understand what's going to
+happen let's say the way we play is
+going to induce some action profile A2
+some action profile A3 some action
+profile A4 and so on and it's going to
+go all the way forward, right?
+So let's try to understand what our
+payoff is going to be
+in this
+particular subgame.
+So our payoff
+is just going to be
+let's look at player I.
+The payoff for player I is going to be
+UI
+of A0
+plus delta
+of A1
+plus delta squared
+UI of A2 plus delta cubed UI
+of A3
+and so on.
+So technically if you want to compute
+our payoffs we have to keep track of all
+the actions here.
+But a key observation is that this part
+isn't really going to matter for this
+subgame.
+Because once this is the history and
+once we're considering how we're going
+to play moving forward these actions
+have already been chosen.
+So these actions just serve as a
+constant.
+Once I've made it to period two
+how I played in period zero and period
+one it adds to my payoff but it doesn't
+really matter for my decisions today
+because whatever I do moving forward
+these have already happened.
+And these numbers are already here.
+And if we focus on this part
+we can it's convenient to factor out the
+delta
+to the two. So let's just factor this
+out.
+And we're going to get delta squared
+times
+A2
+plus delta UI
+A3
+plus dot dot dot.
+And what we know from von
+Neumann-Morgenstern utilities is that if
+I take a utility function and I add a
+constant to it and I multiply it by a
+constant that doesn't really change my
+preferences.
+So all that really matters is this.
+So often and from here on out when we're
+looking at a subgame instead of writing
+out the payoffs like this which is maybe
+formally correct we're just going to
+directly jump to this cuz this is what
+matters. And we're going to say if
+you're in the period three
+subgame all that matters is
+your payoff today plus delta times your
+payoff tomorrow and so on. And we only
+need to sort of look at what happens
+moving forward we don't have to look
+back at the past.
+Um so this is going to be uh
+This is what matters and this is what
+we're going to use as the subgame
+payoff.
+Okay, so now that we've kind of
+set that up, let's now uh try to
+actually construct an equilibrium.
+So let me come back over here.
+So let's consider the prisoner's
+dilemma.
+So remember we have cooperate, defect,
+cooperate, defect.
+2 2, 3 -1, -1 3, 0 0.
+So now let's Our goal today and for the
+rest of the class is to find
+SPNE
+of
+the infinitely repeated version of the
+prisoner's dilemma. So maybe I'll write
+PD
+of delta.
+What I mean here is the stage game is
+the prisoner's dilemma.
+We're going to repeat this game
+infinitely many times
+and the discount factor we're going to
+use is delta.
+Both players use this discount factor.
+So we want to try to find subgame
+perfect Nash equilibria of this game and
+as context let's recall
+what did we see about PD of a fixed T?
+So the finitely repeated version of the
+prisoner's dilemma, we analyzed that on
+Tuesday. Does anyone recall what the
+subgame perfect Nash equilibria of that
+game were?
+So remember on Tuesday we had a result
+that said, if a stage game has a unique
+Nash equilibrium,
+then the finitely repeated version of
+that game also has a unique subgame
+perfect Nash equilibrium. Yep.
+&gt;&gt; [snorts]
+&gt;&gt; They just defect every period, right?
+And they do And more importantly, they
+defect whatever's happened in the past.
+prisoner's dilemma
+had a unique equilibrium, had unique
+subgame perfect Nash equilibrium.
+And what was it? It was
+SI
+S1 of H
+equals D
+for every history H.
+And similarly S2 of H equals D for every
+H.
+And again, we always have to be really
+clear
+about the difference between the outcome
+of a game and the strategies in the
+So the outcome of this subgame perfect
+Nash equilibrium was we defect every
+period.
+But just saying that we defect every
+period doesn't specify the strategies.
+Cuz the strategies have to say not only
+what we do do, but what we would have
+done had play been different.
+So the strategies are this. We're saying
+not only do we actually defect, but we
+would have defected had the history been
+And in fact here then the subgame
+perfect Nash equilibrium is at every
+history we always defect.
+So now we want to understand how is the
+infinitely repeated version of
+different?
+We studied the PD of T.
+So
+so how is the infinite horizon
+Any thoughts? Do people have intuition?
+Do you think
+people will be able to cooperate more?
+How do you think the infinite horizon
+might be different? I don't know. Will
+this still be an equilibrium?
+Any thoughts?
+So it turns out
+that in the infinite horizon, we still
+have this
+subgame perfect Nash equilibrium, but
+we're going to have a lot of other
+equilibria as well.
+So the first point is that
+maybe I'll call it
+star.
+I'll call that strategy profile star. So
+star
+is still
+a subgame perfect Nash equilibrium
+of the infinitely repeated version.
+Let's check this. Okay?
+So here's Let's check.
+We have a strategy profile. We want to
+check that it's a subgame perfect Nash
+equilibrium. How do we do that? Well, we
+have to check that in every subgame, it
+gives us a Nash equilibrium.
+To make that easier, we're going to
+apply the one-shot deviation principle.
+So by the one-shot deviation principle,
+we only need to check one-shot
+deviations.
+One-shot deviations,
+but we do have to check them at every
+I want to really emphasize this. So I
+think one common mistake that I see is
+people say, "Oh, we'll apply the
+one-shot deviation principle. We're
+looking for the the equilibrium where we
+always defect. So let's just look at a
+history where we've always defected so
+far and then check that no one wants to
+deviate."
+But that's not enough. You have to
+consider every history, even histories
+that wouldn't happen under this strategy
+profile. So we have to take into account
+what happens at histories like
+cooperate, cooperate, cooperate, even
+though those histories won't actually
+happen.
+So let's
+consider a fixed history H.
+And let's consider player I.
+Maybe player one to make it easier.
+So at some history H,
+let's consider player one. They're
+choosing between two things.
+They can either choose
+defect or cooperate.
+Okay?
+So we're at history H.
+Defect is what they're supposed to do
+because we want to check that always
+defecting is a subgame perfect Nash
+equilibrium. So we want to compare
+defecting,
+which is what they're supposed to do,
+to the one-shot deviation where instead
+of defecting today, they cooperate
+and then from here on after, they would
+return to their equilibrium strategy.
+So what does the future look like if the
+player follows their equilibrium
+strategy? Well, today they get DD.
+Why? Well, player one is defecting today
+and the other player's strategy is to
+always defect.
+Then the next period they get DD. The
+next period DD.
+So DD. Cuz this is just what happens in
+equilibrium. So if the player does what
+they're supposed to and we follow the
+equilibrium path of play, then from
+today onward, we're just going to get
+defect defect
+from here on out.
+What if the player one-shot deviates to
+C? Now what happens?
+What does the future look like? What is
+the future path of play going to be?
+Yeah. You're fine. Um shouldn't they
+write in the one-shot deviation?
+Uh so I guess what I'm saying is here So
+we're at history H in Let me say in
+And I guess maybe my notation was
+unclear. This is period T.
+Exactly. So I'm I'm including what
+happens today, right? So, you know, to
+go to this example here, if T equals 2,
+I'm starting right here inside the
+inside the game. Yeah. Uh
+good good clarification. So indeed it'll
+be CD today.
+Why is it CD today? Well, my opponent is
+playing D today because their strategy
+says they always play D whatever the
+And I'm player one. I'm deviating to C.
+We have to be clear, defect and deviate
+are not the same. So I'm deviating to
+the strategy C.
+I play C, my opponent plays D, but now
+what happens up here? Now you said DD, I
+agree, but but why?
+Why is it DD up here? Yeah? Because it's
+only a one-shot D. Because it's a
+one-shot deviation, right? We know that
+the second player is always playing D.
+So let's understand kind of the two re-
+the reasoning for this. We know the
+future has to look like this
+for the second player because this is a
+unilateral deviation. So if it's a
+unilateral deviation by player one,
+player two is simply going to follow
+their equilibrium strategy and their
+strategy is to always defect. So we know
+that player two is always defecting.
+What's tricky though is I could consider
+a more complicated deviation as player
+one
+where I cooperate today and then I
+continue doing weird things in the
+future.
+But since this is only a one-shot
+deviation, once I get here, I'm supposed
+to do exactly what my strategy
+specifies, which is D. So we get DD, DD,
+DD.
+And now is this deviation, this one-shot
+deviation, profitable? We have to ask,
+is this future better than this future
+or not?
+Well,
+these look all the same. So, the only
+difference comes down to this period.
+But, if I do what I'm supposed to do and
+I defect, I get a payoff of
+But, if I cooperate and the other player
+defects, I get a payoff of negative one.
+And thereafter, the payoffs are the
+same.
+So, this is better than this and indeed
+I've shown that the player does not have
+a profitable deviation.
+So, we've checked that this is a subgame
+perfect Nash equilibrium.
+So, this is the equilibrium that looks a
+lot like the equilibrium of the finitely
+The difference with the infinitely
+repeated game, however, is that there
+are also other equilibria where we do
+cooperate.
+So, now the question is
+how can we sustain cooperation?
+in a subgame perfect Nash equilibrium.
+So, we could get into the math, but
+let's just think about it. You played
+this game with your friends yesterday on
+or on Tuesday.
+And some of you were able to sustain
+cooperation. How did you do it? What did
+you think would happen? So, if you play
+this game with your friends
+and those of you who did play cooperate
+uh each period, why did you do that?
+What did you think would happen if you
+didn't cooperate?
+What was your your strategy that you
+were using? What was your plan? Yeah? I
+guess my idea is like in this round, if
+my friend cooperates but wait, if my
+friend
+if I cooperate, I defect in the next
+round, I should probably start to defect
+and then we would go getting two two to
+zero zero.
+Right. So, so generally the idea is
+if
+my friend
+defects and chooses D and kind of messes
+my payoff up, I'm going to punish them
+in the future by playing D as well.
+Right? Um
+that's something called tit-for-tat and
+we're going to analyze that a bit later.
+We're going to start with something even
+simpler, which is called the grim
+trigger strategy.
+You can imagine very complicated things
+where maybe if my opponent defects, I'm
+going to punish them for like three
+periods and then go back to cooperating.
+But, here we're going to think of a very
+vindictive player.
+And the idea of the grim trigger
+strategy is
+if anyone ever defects,
+I'm going to defect from here on out.
+Uh so,
+let's write this down.
+So, we have
+S1 of H. We'll look at player one, it's
+the same. Oh, we can do I, it doesn't
+matter.
+So, we're defining a strategy.
+That means we have to define what this
+player does at every history.
+And we're going to define this
+piecewise. We're going to say, well,
+there's some histories where no one has
+defected so far.
+So, we're going to break up the
+histories in two. We're going to say if
+H
+does not contain D,
+So, what do I mean by this?
+What a history that does not contain D
+means at this point in time, if we look
+back at the way the game has been
+played, no one ever defected.
+And that either means we're in period
+zero, so maybe no one defected because
+there we didn't play at all, we're in
+period zero, or it means we're after
+period zero, but when we look back,
+people cooperated the whole time.
+And then we have other histories where
+someone has already defected. We're
+looking back and some player has
+defected.
+So, what's the idea here? If it doesn't
+contain D and we've cooperated so far,
+intuitively, what should we do?
+We should cooperate, right? So far
+everyone's cooperated, so we're going to
+But, if someone has defected in the
+past, then we're going to defect as
+well.
+So, this is the grim trigger strategy.
+The trigger
+is someone defecting.
+That's what triggers us to move from
+cooperating to defecting.
+It's grim because once someone defects,
+we defect forever after.
+This is the harshest, grimmest possible
+punishment we can impose.
+Want to point out one kind of strange
+thing about this strategy. When I say
+contains D, this means by either player.
+So, in particular, let's say in period
+zero,
+the players play CD.
+Then, what is the grim trigger strategy
+going to specify
+in period one?
+DD, right?
+for player one, I think this is very
+natural. Let's think of this from the
+perspective of player one.
+They look back to period zero.
+They say, I cooperated,
+but my opponent defected. I'm unhappy
+with them. I'm going to punish them by
+defecting tomorrow.
+Or defecting today, sorry. We're in
+period one. I'm going to defect today
+because yesterday my opponent, player
+two, defected. That makes sense, right?
+What about player two though? This is a
+little weird, right?
+What is player two's thought process
+here?
+Uh yeah, in the front. Maybe you're
+anticipating the punishment, so you're
+trying to avoid it as much as possible.
+Exactly. So, what's weird about player
+two
+is they're looking back and they're
+saying, wait, player one cooperated with
+me yesterday. That's great.
+I'm the one who defected. I'm the bad
+guy.
+Yet nevertheless, under this strategy,
+player two is defecting today exactly
+for the reason you pointed out.
+I'm not defecting to punish myself.
+I'm defecting because I I see that
+because I defected, I anticipate that my
+opponent is going to defect today and if
+they're going to defect today, why don't
+I just defect as well?
+it has this weird feature that it might
+appear that players are punishing
+themselves, their own misbehavior, but
+really they're anticipating the other
+players' punishment and responding to
+that exactly as you said. Great
+observation.
+Okay, so now we want to check, is this a
+subgame perfect Nash equilibrium?
+Well, the answer is going to depend on
+delta. And let's first, I always think
+it's good in these questions to try to
+intuit which way it's going to go before
+you solve the algebra. It's good to
+build intuition and it's also helpful on
+exams. If you have a sense of what the
+solution should look like and then you
+make a an algebra mistake, you're able
+to catch it, right? So, it's going to
+depend on delta. Is your intuition that
+this is going to be a a subgame perfect
+Nash equilibrium when delta is high or
+when delta is low?
+So, I'm going to tell you for some delta
+this will be a subgame perfect Nash
+equilibrium. For some delta it won't.
+It's going to depend on delta. For which
+one do you think it'll work? High delta
+or low delta?
+Just a guess, but the higher the delta
+or just a high delta and then it will be
+a subgame perfect.
+I agree and uh what's your intuition for
+that? Yeah?
+Because you're getting a higher payoff
+really early, which means if you have a
+high delta, only the high only that
+early payoff will matter.
+Uh so, almost. I mean, we have to think
+with a high delta, it's always the case
+that later payoffs matter less.
+But, with a high delta, they just
+matter less the amount less they matter
+is less. Um so, it's still true that the
+the future matters. The present is sort
+of the most important period, but it's
+almost as important as
+uh sorry, the present is always more
+important. Today's always more important
+than tomorrow, but when delta's close to
+one, today is uh tomorrow is almost as
+important as today. Is it a better way
+of saying it? Um so, I think that's part
+of the intuition and the other
+intuition, why do you think
+high delta is going to make this
+Let's think of the incentives of the
+Let's suppose the player thinks about
+deviating or sorry, thinks about
+defecting.
+What happens if a player defects in this
+game under this strategy intuitively?
+Yeah?
+They
+They lose [clears throat] all future
+benefits of cooperating. Exactly. But,
+what happens to them today? That's
+exactly right. And then today, what
+happens? They gain the extra payoff.
+Exactly. So, if we've cooperated so far
+and I'm thinking about what to do, I
+face a tradeoff.
+If I defect today, I increase my payoff
+today,
+but I get punished in the future by my
+opponent.
+So, I'm trading off the benefits of
+defecting today against the losses I
+experience in the future.
+And if I'm patient enough,
+those losses in the future loom large
+and will discourage me
+from defecting. And therefore, will
+sustain a subgame perfect Nash
+equilibrium.
+On the other hand, we can think of the
+extreme case, if delta is basically
+zero, let's take delta to be zero.
+If delta is zero, then this is just a
+one-shot game.
+And we know in the one-shot game, the
+unique equilibrium is defect. So, we
+know this can't be a subgame perfect
+Nash equilibrium when delta is zero.
+So, intuitively, we expect the higher
+delta is, the easier it will be to
+sustain this as an equilibrium and let's
+check it and and confirm whether that
+intuition is correct.
+I should make, I guess, one comment. Uh
+just a technical comment.
+I'm applying the one-shot deviation
+principle.
+The one-shot deviation principle applies
+to multi-stage games that are
+continuous. It turns out, because we
+have this discount factor delta, these
+games are always going to be continuous
+and they're going to satisfy the
+technical condition, and therefore we
+can apply the one-shot deviation
+Okay, so let's uh
+let's try to go through this.
+So, I said, when we're analyzing subgame
+perfect Nash equilibrium, the first step
+is always identifying the subgames,
+which is the histories in this case. I
+think the second step I maybe I'll make
+this observation, the key step
+is grouping the histories correctly.
+Because there's infinitely many
+histories, and we have to argue at every
+history
+no player has a one-shot deviation.
+If we just went through every single
+history, we'd have no hope. I mean, we'd
+never finish, right? So, what we want to
+do is we want to kind of split the
+histories into groups and argue about
+the entire group of histories, and then
+argue about the other group of
+histories.
+So, what's the natural way you would
+group the histories here? If you look at
+the way the strategy is defined, I think
+it's natural to put the histories in two
+groups, right? What would those two
+groups of histories be?
+If you wanted to reason about one class
+of histories all together and another
+class of histories all together.
+Well, uh yeah. Now, like if someone has
+defected or something. Exactly. So,
+let's break the histories in two, and
+let's consider
+maybe start with the easy case
+where someone has already defected. So,
+maybe you can think of it as
+case one.
+So, we're we're proving something about
+every history. We're going to split the
+histories into groups. Maybe I'll say
+group one instead of case one.
+Group one. So, let's consider history H
+that contains D.
+So, we're at some period, we're at some
+contain containing contains
+containing D.
+And we need to check that at this
+history, I mean, really that we're
+reasoning simultaneously about many,
+many histories, but we're going to let's
+just take one of them.
+And let's argue that neither player has
+a profitable one-shot deviation at this
+history. That's what we have to show.
+Uh everything here is symmetric.
+So, I'm just going to reason about
+player one, and all the reasoning I do
+would also apply to player two.
+So, let's focus on player one.
+And maybe uh
+a good way of saying this, sometimes we
+say if I deviate So, let's look at a
+one-shot deviation
+versus if I follow the strategy.
+Let's just understand what we're trying
+to show before we add all the details.
+We're considering a history
+that contains
+some D. So, someone has defected in the
+past.
+We're trying to check that player one
+does not have a profitable one-shot
+deviation from this strategy, from this
+grim trigger strategy. So, we're going
+to compare what happens if player one
+follows the strategy, what happens from
+here on out, versus what happens if
+player one
+chooses a one-shot deviation.
+In general, there could be many one-shot
+deviations because there could be many
+different actions the player could
+deviate to. But because this game only
+has two actions, there's only one
+one-shot deviation. If I don't do what
+I'm supposed to today, there's only one
+other thing I could do. So, instead of
+having many different one-shot
+deviations, namely the number of actions
+minus one, we just have one of them.
+And what I want to keep track of is what
+happens from today onward
+if I follow the strategy, and what
+happens from today onward if I deviate.
+So, let's start what happen with what
+happens if I follow the strategy.
+What's going to be the future
+path of play from here on out?
+Well, both of us are following the
+strategy,
+and the strategy says if a history
+contains D, we better defect.
+So, that means today
+we're both going to defect. That's what
+happens if we follow the strategy.
+Again, defecting is an action, it's not
+the same as deviating from a strategy
+profile. So, um
+I'm just talking about the action
+defect. Then what happens the next day?
+Yeah. Continue to defect. Continue to
+defect because if you've already
+defected here, and then we both defect
+here, we'll certainly
+from this perspective, we look back, we
+see someone's defected, so we're just
+going to have DD forever.
+What if player one chooses a one-shot
+deviation? Now, what is the future going
+to look like? Let's start here. What's
+going to happen in this period if player
+deviates? Well, player one is supposed
+to play D,
+so a deviation means they play C.
+So, we're going to get CD today.
+from here on out, it's just a one-shot
+deviation, so everyone's going to follow
+the strategy.
+If we'd already defected at this point,
+certainly, you know, we still defected
+here, so we're just going to have DD DD
+So, is this one-shot deviation
+profitable or not?
+No, because
+it's actually easy to see.
+Here I do worse today,
+and then I do just as well from here on
+out. So, certainly this is actually
+strictly worse, so this is actually
+strictly unprofitable.
+So, this one-shot deviation makes me
+strictly worse off than if I follow the
+equilibrium strategy profile.
+Okay, now let's look at group two.
+Now, I only reasoned about a single
+history and a single player, but the
+reasoning is symmetric for player two,
+and this reasoning applies to any
+history in the first group. So, I kind
+of simultaneously dealt with many, many
+histories that look the same.
+Now, let's look at group two. This is
+the harder case.
+So, group two is going to be all
+histories
+that don't contain D.
+So, let's consider
+a history H
+that does not contain D.
+It's a minor point, but why don't I say
+consider history H that just consists of
+C?
+That would You might think another way
+of saying it. Well, I'm making sure that
+I cover the null history, right? So, one
+history is the game has started, nothing
+has happened so far. I want to make sure
+that counts. That history does not
+contain D, but it also isn't just C, so
+I I have to say it this way.
+Okay, and now let's go through the same
+reasoning. We have player one,
+and they can either
+follow the strategy
+or
+OST, one-shot deviate.
+And let's see what happens.
+So, following the strategy is pretty
+clear. What's going to happen from here
+on out if we
+no one has deviated so far,
+and we follow the grim trigger strategy,
+what does the future look like? What's
+the path of play? Yeah. Cooperation
+every round. Cooperation every round,
+right?
+Because that's what we're we're doing.
+If no one's deviated, we cooperate.
+We cooperate again, no one's deviated,
+we cooperate again, and so on. Okay?
+What about the one-shot deviation?
+Uh yeah, over here. Um
+you I would defect in the first round.
+&gt;&gt; Okay, so let's let's break it up. Let's
+do the first round. Yeah, so I defect
+here, okay? And then what is and what
+and what's this going to be?
+&gt;&gt; Cooperate. Cooperate, okay. So, uh
+that's the one-shot deviation, great.
+And then what happens after that? I
+believe following the appropriate
+strategy after that, we would be
+defecting. Exactly right.
+this is
+kind of the key point and can confuse
+people a lot. I said this is a one-shot
+deviation,
+but what's happening is changing in
+every subsequent period.
+Can you reconcile that? Why I It's a
+one-shot deviation, but if I look at
+this, it doesn't look one-shot. So, you
+are right, but but this is a a tricky
+point. Can you explain what's what's
+happening? Well, the So, if I like let's
+say at time equals zero right now, I'm
+going to make one decision Right. which
+my
+cooperate to defect. Exactly right.
+Assuming this grim trigger strategy that
+we have kind of set in stone before we
+started this game,
+based on that, the strategy dictates
+that every future period must defect.
+And so,
+based on that, then
+we we are going to defect in the
+Exactly, great explanation. So,
+here, why am I playing D Why are we
+playing DD here rather than CC? It's not
+because a player is changing what their
+strategy does at this history, it's that
+we've reached a different history than
+before. So, the function the strategy
+hasn't changed, but the history, what
+we're plugging into the function, has
+changed, exactly as you explained.
+So, let's go over it one last time.
+I one shot deviate today. I'm supposed
+to play C
+and I play D.
+Subsequently, I follow my strategy, but
+now if we're here and we look back, we
+say wait a second, someone defected
+yesterday.
+The history contains D and therefore the
+grim trigger strategy specifies that we
+both play D.
+And we continue following this from here
+on out. Any questions? I think this is
+sort of the crucial step. Any questions
+on this?
+Okay. So now let's compare these
+payoffs. If we do CC every period, we
+get 2 2 2 2.
+Now, what happens? I get
+So here we can see exactly what's kind
+of the fundamental idea about
+punishments.
+If I deviate from cooperate to defect
+today, I gain today.
+We know I must gain today because CC is
+not a Nash equilibrium of the stage
+game. What it means for CC to not be a
+Nash equilibrium of the stage game is
+precisely that I can behave differently
+today and increase my payoff today from
+the stage game.
+But I may not want to do that because if
+I do this,
+we're going to observe that tomorrow and
+I'm going to experience a punishment
+And in order for this not to be
+profitable, it must be that the
+punishment is sufficient to offset the
+gain. Which is exactly going to be true
+if we're patient enough and the future
+looms large enough. So let's actually
+compute this. Okay?
+We have to do a little bit of algebra
+here.
+if we discount starting today, we're
+going to have discount this by delta,
+this by delta squared, this by delta
+cubed, and so on.
+So we're going to get
+uh 2 + delta 2 + delta squared 2 + delta
+cubed 2
+Again, I'm using this trick
+that I'm focusing just on the payoffs
+here, right? It could be that this that
+the history we're at is period a billion
+and everything is discounted by delta to
+the billion, but I've just factored that
+out to the front and that's not going to
+change my my preference. So I'm just
+going to remove that.
+Um okay. Let's do a little
+simplification here.
+We see a two in every term, so let's
+factor that out.
+So this is 2 * 1 + delta + delta squared
++ so on.
+And this is one series that I think for
+this class it's good to know the formula
+for this. This is a geometric series. It
+converges because delta is less than one
+and the formula for this is it's just 1
+over 1 minus delta. Right?
+So this is going to be 2 * 1 over 1
+minus delta.
+Let's just make sure this formula makes
+sense.
+If delta is really close to zero,
+then this series is basically just one.
+And that makes sense. 1 over 1 minus
+basically zero is is one.
+If delta gets very close to one,
+this series gets really really big.
+And indeed, as delta gets really close
+to one, the thing in the bottom here
+gets really close to zero and therefore
+the reciprocal of it gets really really
+big.
+Is that intuitive?
+Um okay. Now let's compare that
+to what happens here.
+Well, this is actually pretty easy to
+calculate, right? What is the What is
+this stream?
+Well, it's uh you know, it's 3 +
+delta * 0 + delta squared * 0 + dot dot
+dot. Well, the zeros don't matter.
+So we just get three.
+So what is our equilibrium condition?
+So what we see is that every history in
+this group
+our deviation is not profitable as long
+as this is greater than equal to this.
+Right? And remember equality is okay
+because if we have equality, then that
+means the deviation gives you exactly
+the same payoff as on path. Nash
+equilibrium allows that. So the
+condition is
+over 1 minus delta
+must be
+greater than or equal to
+three.
+Let's just do a little
+algebra here. Let's move the 1 minus
+delta to this side. We get 2 is greater
+than or equal to 3
+* 1 minus delta,
+which is 3 minus 3 delta.
+And now we move three delta over here,
+two over here
+and we get three delta greater than or
+equal to one
+or in other words, delta is greater than
+or equal to 1/3.
+It's very easy when you're doing this
+algebra to to get the sign wrong.
+And that's why keeping track
+that we better get an inequality that
+has this form, delta greater than
+something, because we know that this
+should be an equilibrium if and only if
+delta is large enough. So if I made a
+mistake and I got delta less than or
+equal to three, I would know I'd made a
+mistake if I if I understand the
+economic intuition. So that's a good tip
+for exams.
+Okay. So we intuited
+that this strategy would be a subgame
+perfect Nash equilibrium if the players
+are patient enough, if delta is large
+enough, and our calculation found the
+exact threshold, which is exactly 1/3.
+And that threshold reflects
+the ratio between the one shot gain from
+defecting
+and the subsequent punishment that I
+experience.
+Okay. Any questions on on that?
+All right. Let's do one more
+strategy.
+See what happens.
+Yes, absolutely.
+Uh we have to be really clear about what
+a Remember, an SPNE is a strategy
+profile. So to What we're saying is the
+strategy profile where both players use
+the grim trigger strategy is a subgame
+perfect Nash equilibrium if and only if
+delta is large enough.
+Now you're right that at histories where
+someone has already defected,
+there's never a profitable deviation.
+No matter the value of delta. Right? If
+we go to group one, this deviation was
+never profitable.
+But to be a Nash equilibrium, it's not
+enough to say there's some histories
+with where the no deviation is
+profitable. SPNE is really strong. It
+says at every history,
+no deviation can be profitable.
+So that's only going to hold if delta is
+greater than or equal to three. So
+another way of saying it is if delta is
+large,
+whatever history I'm at, no one has a
+profitable deviation and therefore I
+have a Nash equilibrium.
+If delta is smaller than 1/3, there are
+some histories where I have a profitable
+deviation and other histories where I
+don't have a profitable deviation. But
+as long as there's some history where I
+have a profitable deviation, that does
+not constitute a subgame perfect Nash
+equilibrium and therefore the strategy
+profile doesn't work as a subgame
+perfect Nash.
+the profitable deviation. I mean, I have
+deviations here, they're just not
+profitable, right? But the profitable
+deviation will always be uh at group two
+histories, yeah. So in fact, there's
+Keep in mind though, this is when when
+you call it group two, it's not just one
+history. Uh it's actually many many
+histories that all fall into this
+Great.
+Any other questions on this? Yeah.
+Great. So
+great question. So as always, we have to
+distinguish between the strategy profile
+and equilibrium and the outcome of the
+equilibrium. I described the strategy
+profile, but I should say what the
+outcome is. Okay? So let's look at the
+outcome. Well, the strategy profile
+says, maybe it's gone now,
+if no one's
+defected so far, we cooperate, right? So
+in the zeroth period, we should
+Cuz no one it's the zeroth period. No
+one's defected so far, so we cooperate.
+Now let's go to period one, what do we
+do?
+We cooperate because no one's defected
+so far. Period two, we cooperate. So the
+outcome of this equilibrium is always
+cooperate. Maybe I should have said
+that. So
+uh the outcome
+I'm so focused on strategies versus
+outcomes, I didn't even say what the
+outcome is. The outcome is CC CC CC CC.
+Right? So that's the outcome. We do
+indeed sustain cooperation in
+equilibrium, but I didn't say this
+because I want to be clear, it is not
+correct to say the equilibrium is
+cooperate forever because that's an
+outcome, not a strategy profile. But But
+great question. Yes.
+Yeah, yeah. So let's be clear.
+Uh well, I guess it depends what you
+mean. The outcome of the grim trigger
+strategy profile is always is CC CC. But
+that strategy profile is only a Nash
+equilibrium if delta is greater than or
+equal to 1/3. For any strategy profile,
+I can compute what the outcome is,
+whether or not it's an equilibrium. I
+can say if this is how we If they If
+these are our complete contingent plans,
+this is what's going to happen. That
+doesn't rely on equilibrium.
+But then a separate question is, are
+those plans actually consistent with
+equilibrium? And that's where we need
+delta greater than or equal to three.
+Is that clear?
+Yeah. Any other questions? Great. These
+are great questions.
+So, now let's look at one more, I think,
+very natural strategy profile and see uh
+if this works.
+this is called tit-for-tat.
+And people actually have these contests
+where you play prisoner's dilemmas, and
+this strategy actually tends to do quite
+well. Um
+tit-for-tat, I should know the etymology
+exactly what tit and tat mean, but uh
+the basic idea is I'm always going to do
+what you did yesterday.
+So, if yesterday you cooperated, then
+I'll cooperate today.
+If yesterday you defected, then I'll
+defect today.
+So, tit-for-tat means
+each player
+copies
+the opponent's
+action yesterday.
+So, opp means opponent.
+If you cooperated yesterday,
+I cooperate today. If you defected
+yesterday, I defect today.
+And that seems like a pretty reasonable
+Uh let's be careful.
+I need to say one more thing. I actually
+haven't fully specified a strategy here.
+What have I not specified, and this is
+crucial?
+Yeah. What you do in period zero? What I
+do in period zero? In period zero,
+nothing's happened so far, and that
+makes a huge difference. And but so plus
+cooperate in period zero.
+So, when we say tit-for-tat, that's
+usually what we what we mean. So, in
+period zero, I cooperate.
+And in any subsequent period, I copy
+what everyone else did.
+So, the first question we should ask,
+going back to our discussion we had, is
+if we use the tit-for-tat strategy, what
+is the outcome going to be?
+And remember, we can ask this question
+whether or not tit-for-tat is a Nash
+We can just say what would happen if if
+this is played. So, what is the outcome
+of this going to be?
+We're not saying it's a Nash equilibrium
+or subgame perfect Nash. We're just
+saying if these are the contingent plans
+people use, what's going to happen?
+Yeah. Because uh everyone cooperates in
+period zero, so it's clearly everyone
+cooperates in period one, and then this
+will the outcome is that CC is played
+every
+Exactly.
+So, you might say, "Great. This induces
+CC. This seems reasonable. Maybe this is
+another equilibrium that's going to
+allow us to sustain cooperation." We
+already computed uh
+grim trigger. Let's see if this one
+works.
+it turns out it's not going to work uh
+even though it seems quite intuitive,
+and let's let's understand why.
+So, what we want to do
+is we want to check
+is maybe I'll say TFT, tit-for-tat,
+a subgame perfect Nash equilibrium.
+Well, I need to check at every history
+does anyone have a profitable one-shot
+deviation?
+And as usual,
+there's a lot of histories. I can't
+reason about all of them, so I need to
+break up the histories into groups.
+How would Last time we grouped them into
+two groups depe- according to whether
+someone had deviated or defected in the
+How would you group the histories under
+this strategy? Any guesses how many
+groups you might have and how you would
+group them?
+Yeah. Someone deviated yesterday versus
+someone cooperated yesterday.
+Uh great. So, that So, I agree we need
+to look exactly at what happened
+And whether someone deviated tomorrow is
+important. It turns out we want to keep
+track of all the four possibilities
+yesterday, and maybe this is what you
+meant, right? So, yesterday it could
+have been we both deviated, or sorry,
+defected. I I always mix these up. We
+both defected, we both cooperated, or I
+cooperated and you defected, or you
+cooperated and I defected. So, exactly
+right, but there's going to be four of
+them, right? So, we're going to group
+them into four groups
+based on what happened yesterday. So,
+maybe I'll say
+group one is a history H
+with
+CC
+And now we're going to have
+CD,
+DC,
+Okay. Great.
+Uh yes. Just out of curiosity, or
+question, how is DD possible? Like, how
+is a one-shot deviation to DD
+Great. But remember,
+the crucial thing about the one-shot
+deviation principle is we have to
+that aren't possible. So, you're exactly
+right. Not all of these histories are
+possible uh given the strategy, and this
+is a common thing, but the good news is
+this makes your life easier. You don't
+have to figure out at which histories
+are possible and which are not. Don't
+worry about it. Just you have to look at
+every history. And in fact, uh yeah,
+it's I think this is the most
+counterintuitive thing about all this,
+but that's a crucial thing. At every
+history, even histories that aren't
+reached. Why? Well, because of
+non-credible threats.
+It may be that the reason a history was
+not reached was that we were doing
+something ridiculous at that history,
+and therefore we still have to figure
+out how people are playing at that
+history. Um that's that's the key point
+Um great. Again, I need to be a little
+careful. I'm missing one thing. What
+What's the gap here? I have one history
+not covered.
+The null history, right? There's no
+yesterday. Uh
+but since we cooperate in period zero,
+let's group the null history with this
+group.
+Okay? So, history with CC yesterday, or
+in this case
+H equals
+the empty set or with CC yesterday. So,
+we'll we'll group this history into
+here. Okay. So, now every history is in
+one of the four groups. We've It's
+mathematically it's called a partition.
+We've split up the histories into
+groups. And now we want to go through
+our same reasoning here. Um
+again, let's just look at player one.
+Everything's symmetric, so we could look
+at player two. We get the same answers.
+So, let's look at player one.
+And we want to compare
+what happens if they follow versus a
+one-shot deviation.
+So, I'll maybe I'll say follow
+or one-shot deviation. And then we'll go
+through all these.
+the history is CC.
+I think for this it's easier to go step
+by step.
+So, let's
+fill this in.
+Uh yesterday we played CC.
+So, today, if we follow the equilibrium
+strategy, what happens?
+CC, and it's going to continue that way,
+What if I do a one-shot deviation? I
+would encourage you to to to answer this
+in two steps. So, first let's say what
+happens today. If I deviate today, well,
+the outcome is DC, right? Because my
+opponent was playing C today anyway. I
+was supposed to play C, but I'm
+deviating, so I'm playing D, right?
+Now that we figure out what happens
+today, let's figure out what happens
+tomorrow.
+It's a one-shot deviation. So, from
+tomorrow onward, we're both following
+the equilibrium strategy of tit-for-tat.
+So, if DC was played today, what's going
+to be played the next period? Yeah.
+CD, right? Why?
+Well, player one is copying what player
+two did, and player two is copying what
+player one did. Okay?
+And then you can see we're going to keep
+alternating DC, CD,
+There's a lot of cases. We're running
+out of time. Let's just do case two, and
+uh we'll we'll make an observation.
+So, follow
+OSD.
+actually,
+let's skip case two and go to case
+It's going to be more helpful.
+Encourage you to do cases two and four
+on your own, but this is going to be a
+more useful case. So, if we follow, what
+happens?
+yesterday
+was DC.
+So, today is going to be CD, right?
+Player one copies what player two did,
+and player two copies what player one
+did. And then we're going to see the
+same pattern, right?
+Uh maybe I should have done yesterday.
+Okay. Anyway, this is
+Okay. And if I
+have a one-shot deviation as
+player one,
+I did this wrong.
+We get
+My original ordering was right. Sorry.
+Let's go Let's go here.
+&gt;&gt; Okay. Let's look at the case uh CD.
+Sorry, this is the more important one.
+Uh if CD was played yesterday and I
+follow, we're going to get
+CD, DC, CD, and so on.
+Ah, yes. Thank you.
+Thank you.
+exactly. Ah, yeah. I'm confusing myself
+here. And what if we
+one shot deviate Oh, yes, there's
+actually anyway. Okay. What if I one
+shot deviate today?
+I'm supposed to play DC.
+I'm player one, I defect or I deviate to
+CC.
+And then we're going to continue like
+this.
+I see. So, let me actually
+Let me erase this one cuz it's just
+causing confusion and it isn't actually
+the important one.
+I
+I switch things. Okay.
+Let's go over this slowly.
+We played CD yesterday.
+We're supposed to play DC today. And if
+we continue, we're going to get this.
+If we were supposed to play DC today,
+but I deviate, then instead of playing
+D, I play C. I'm player one. But if we
+both cooperate today, then from here on
+out, we get cooperate.
+Now, we need to check that neither of
+these is profitable.
+But I argue that if we look really
+carefully, we can see that this is not
+going to work in general. What's What's
+the issue?
+Sorry.
+Uh but DC is actually better than CC, so
+it's not obvious.
+If we say one of these patterns, say D C
+C D so on is more profitable than C C D
+overall, so the
+one shot deviation for case one is
+profitable, then by default, the one
+shot deviation for case two cannot be
+um an improvement because it's the exact
+Exactly. So, the key observation is what
+we get if we follow here is what we get
+if we deviate here.
+And what we get if we deviate here
+uh is what we get if we follow here.
+So, if the stream D C C D D C is higher,
+is better,
+then we have a profitable deviation in
+this case.
+If the stream C C C C is higher, then we
+have a profitable deviation in this
+case. So, in fact, the only way neither
+can be profitable is if these two
+streams are exactly the same.
+And I won't do this, but you can
+actually check that this holds if and
+only if delta is exactly 1/3. So, it's
+kind of a degenerate case. For most
+deltas, this is not going to be uh
+equilibrium, and I think for this reason
+we would mostly say we don't think
+tit-for-tat is a very compelling
+prediction because you have a really
+knife-edge case. If delta is slightly
+higher or slightly lower, it's not going
+to work.
+You can go through this case as well and
+check that indeed if delta is a third,
+equilibrium, but for any other value of
+delta, which is basically always the
+case we're in, this will not be uh a
+Let me stop there. Great.

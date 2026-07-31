@@ -1,0 +1,1990 @@
+So today I want to say just a little bit
+more about revenue equivalents or the
+revenue formula that we wrote down and I
+think this will be useful
+for the problem set and the quiz on
+Friday. And then I'm going to talk about
+an application of auctions to display
+advertising auctions, like the kinds of
+auctions, the keyword auctions that
+Google does
+commonly today.
+Just a reminder of this revenue formula
+that we computed. We were looking at a
+single item auction and we had this
+formula, maybe I'll write it down here
+where we said TI hat of VI
+which was the equilibrium expected
+payment by a bidder with valuation VI
+was equal to
+this.
+So we said the expected payment of a
+bidder with valuation VI in this
+equilibrium
+is equal to the expected payment of
+bidder I when she has the lowest
+possible valuation plus this integral of
+maybe this kind of mysterious term of X
+times the derivative of this function Q
+hat where remember this is the
+derivative
+of the allocation probability.
+So I just want to highlight a few
+assumptions that were required to get
+this result and the problem set is going
+to explore some ways this assumption
+this result can break. Yes? Is there a
+reason why the lower bound of the
+integral Ah, yes, that should be V lower
+bar, sorry.
+Yeah, thanks.
+So a few assumptions we made. One was
+the assumption of independent
+private values.
+Independence says statistical
+independence. It says one bidder's
+valuation is statistically independent
+of another bidder's valuation.
+Private values, private is kind of a
+confusing term. I think maybe known
+values
+is maybe a more descriptive term. It
+means that each bidder knows exactly how
+much they value the good. Information
+that another bidder has is not relevant
+to my valuation of the item. And I still
+think that's a bit abstract, so I'm
+going to go over an example where this
+fails in a second and I think that
+should clarify the role of this
+assumption.
+The other assumption we made
+notice we took an integral here over
+some range of values. So another
+important assumption is that the values
+maybe I'll say live in an interval.
+So if instead a player's valuation could
+only be say $1 or $2, it's not an
+interval, it's just two points, then we
+wouldn't be able to take an integral
+between one and $2 and this formula
+would no longer hold. And the problem
+set will show you an example of this.
+One other maybe more technical
+assumption you might notice is that
+well, for this to make sense, this
+function Q hat has to be well-behaved.
+We have to be able to take the
+derivative of Q hat.
+That's a more technical thing, so I'll
+just say technical
+QI hat is differentiable.
+I call this technical because it turns
+out if you use a more involved proof,
+you can get a substantially similar
+result without this assumption. So
+that's not something we're going to
+cover in the course, but I'll just
+highlight that uh
+our proof used differentiability of Q
+hat, but that's not really necessary for
+the result.
+But these assumptions really are
+substantive and important for this
+revenue formula.
+Okay. So to understand what private
+values mean,
+let's look at a
+classic example without private values,
+which is called a wallet auction.
+You know, I don't think anyone actually
+does auctions like this, but it's a good
+illustration. So I think there's a few
+stories for this. The basic story is
+that I guess this happened like at a
+bar. You have two people at a bar, they
+each get out their wallet and they put
+their wallet in a bowl, say or or in a
+pile
+on the table. So you have
+player one's wallet and player two's
+wallet.
+And then
+the players bid for the union of the two
+wallets.
+So we have both their wallets together
+in a bowl.
+We're now each going to submit a bid.
+Whoever bids more gets the bowl, but has
+to pay that amount.
+Um
+Now, what's special about this auction?
+I mean the story maybe is is kind of
+far-fetched, but the important thing is
+I know as player one what's in my wallet
+but I don't know what's in the other
+player's wallet.
+The other player knows what's in their
+wallet, but they don't know what's in my
+wallet, right? So maybe we'll call the
+amount in my wallet theta one and the
+amount in the other person's wallet
+theta two.
+And just to make it simple, let's say
+theta one and theta two
+just to clarify exactly which assumption
+we're relaxing, let's say theta one and
+theta two are
+independent and uniform.
+Independent
+and uniform over zero one. You know,
+that's just a normalization. One could
+be, you know, one billion or something.
+Okay, but the key point is that bidder
+one
+knows theta one
+but not theta two.
+Because they don't know what's in the
+other person's wallet. So if I'm bidder
+one, I say I know my wallet say has .3
+but all for all I know the other
+person's wallet is uniformly distributed
+between zero and one. That's all I know
+because I can't see what's in their
+wallet. And symmetrically bidder two
+knows
+theta two
+but not theta one.
+Now, why is this not a setting of
+private values? Well, I do know
+something.
+I know theta one, I know what's in my
+wallet, but I don't know the joint value
+of our two wallets.
+And more specifically, something the
+other player knows is relevant for my
+valuation of the bowl, of the of the
+item. So what makes it not private
+values, so maybe I'll say here it's a
+failure of private values.
+Why? Because my willingness to pay, my
+valuation depends on information that
+another player has. Or maybe more
+precisely
+another player and other players
+information
+influences or affects my valuation for
+the item. Where here the item is the
+combination of the two wallets.
+Maybe I'll say my willingness to pay.
+If the other player's wallet contains a
+dollar, which only the other player
+knows, I'd be willing to pay more for
+this bowl that contains both of our
+Now you might say, well, okay, I don't
+know exactly what's in the other wallet,
+but I can compute expectations. So kind
+of the naive approach might be well,
+let's try to treat this like a normal
+private values auction. So here I'll
+write naive approach to say this is
+going to be wrong, but let's let's see
+what happens.
+Under the naive approach, if I'm player
+what would I say is my
+willingness to pay for the
+the bowl. If someone if I just, you
+know, looked at it, I know theta one,
+what's like a reasonable way to say what
+is my willingness to pay? What is my
+expected value from
+the union of the two wallets or the sum
+of the two wallets?
+Yeah?
+Since the other player's value is
+uniformly distributed between zero and
+one, the expected value of the other
+person's value is .5. So the naive
+approach would be to add .5 to player
+one's value.
+Exactly right. So we might say, okay,
+this is just a normal auction where
+player one's value is theta one plus .5
+or plus a half.
+And player two's value
+is theta two plus a half.
+So we might say, look, we have some item
+and I have some private information. I
+know my theta one, I use that to compute
+my valuation and let's just go ahead
+like this. And what I want to show is
+that this auction is going to behave
+very differently
+from a private values auction where this
+is my value and this is the other
+player's value.
+So to see this, let's look at I'm not
+going to so fully solving this auction
+is quite involved and
+I'll leave that to the notes and we
+won't really cover that in this course.
+We will cover it in 1416 in the spring
+if you're interested in that, but
+let's just imagine we did a second price
+auction.
+And let's imagine that we looked for an
+where
+each player bids truthfully. Okay? So
+let's look at a strategy profile
+where player one bids
+I'll say B1 of theta one
+equals theta one plus a half
+and B2 of theta two
+equals theta two plus a
+Now
+if this were a private values auction
+then this strategy profile would be an
+equilibrium. Right? We already argued
+that in a classical private values
+single item auction, it was an
+equilibrium for each player to bid
+truthfully, to bid their valuation for
+the item.
+And in fact, we argued more, we said
+however the other player bids, it's
+optimal for me to bid my valuation in a
+second price auction.
+So let's kind of see what goes wrong
+in this case.
+So
+let's suppose that
+to make things simple, let's say theta
+one is 0.4
+and theta two equals 0.3.
+So, if that happens, then player one
+is supposed to bid 0.9.
+And player two is supposed to bid 0.8,
+right? 0.5 + 0.3.
+So, this would be player two's bid.
+And this would be player one's bid.
+Now, how would our reasoning for
+why bidding B1 is
+optimal go? Well, if this were private
+values, we would say, "Okay,
+I'm bidder one.
+My valuation is 0.9.
+If I bid truthfully, what happens? Well,
+I get the item and I pay 0.8.
+And 0.8 is less than 0.9.
+So, I'm doing well.
+And if I deviated, well, if I deviate to
+bid any amount more than 0.8, it's not
+going to make a difference. I'm still
+going to win.
+And I'm still going to pay 0.8. And if I
+deviate to any amount less than 0.8,
+well, I'm going to lose and I'm going to
+get a payoff of zero. So, the naive
+argument might be
+"Well, I'm bidding optimally. Why?
+Because 0.1
+is greater than zero."
+And maybe I should explain where this
+comes from, 0.9 - 0.8.
+So, it looks like I'm doing well. I get
+a payoff of 0.1.
+I could do no better than 0.1. I'm
+bidding optimally. That would be the
+private values intuition.
+What's wrong with this?
+So, everything I said was was wrong.
+Yeah. Your actual value is negative 0.1
+cuz the value is 0.7 and you're bidding
+0.8.
+You're paying 0.8.
+Exactly right. And this is getting at
+the key point that it's not it's not
+really the case that my value is known
+to be 0.9. That was just my expected
+value without getting any additional
+information about the other player. The
+problem is if the other player bids 0.8
+and the reason they bid 0.8 is that
+their value of their wallet is 0.3, that
+changes the amount that I value the
+I no longer value it at 0.9. What do I
+value it at? Well, the true value of the
+wallet to me is the sum of theta one
+plus theta two,
+which in this case is going to be
+0.7.
+So, if I bid truthfully here,
+I'm going to pay 0.8 for something
+that's only worth 0.7 to me.
+What changed? And why is it different
+from the classical auction? It's that
+well, this 0.9 wasn't my true valuation
+of the item. It was my belief or my
+expected uh value of the item.
+And unfortunately, my assessment of the
+value of the item is influenced by the
+other player's private information. So,
+the issue is when I won, I'm winning
+precisely because the other player's
+wallet doesn't have much money in it.
+And this phenomenon, which I mean, this
+is a very simple example. Uh maybe you
+think, "Oh, this doesn't have relevance
+to the real world." But this is actually
+uh
+a really serious problem when in a lot
+of real auctions and it's something
+called the winner's curse.
+So, it sounds good for player one here.
+Player one won the auction. The problem
+is we have to think, "Why did player one
+win?"
+Well, when will player one win this
+auction?
+The uh yeah, go ahead.
+No, when their wallet has more money
+Yeah, they'll win the auction when the
+other person bids a lower amount, which
+is precisely when the other person's
+valuation is low.
+And the other person's wallet doesn't
+have very much. So, the winner's curse
+is that you tend to win
+when the item is less valuable.
+And if you don't take this into account,
+people will tend to overbid and the
+person who wins the auction will tend to
+come away a loser because they'll
+overpay for an item that's not worth
+very much. Now, just a few examples
+where this has happened in practice.
+And you know, firms in the '70s and '80s
+lost tons of money uh making mistakes
+like this. One example would be
+oil drilling.
+And someone
+maybe walk me through how oil drilling
+has anything to do with uh this wallet
+auction and why firms might uh
+be subject to the winner's curse. So,
+here we're drilling for oil
+and we're bidding for attractive land.
+Uh so, oil drilling
+and let's say an auction
+for land. So, it's
+for land rights, I'll say.
+So, there's some big plot of land, say
+in Alaska in the Arctic.
+We are bidding for the right to drill
+for oil in that land and we're different
+oil firms. Yeah.
+Maybe you like a lot of firms ended up
+paying more than the oil they would
+actually get
+So, that's exactly what happened and and
+why why did that happen?
+I guess
+others put more than they got caught up
+in the auction just trying to make most
+of the person who's selling and ended up
+Right. So, I think we're along the right
+track. Any other thoughts about maybe a
+little more specificity? Uh yeah, in
+blue. Yeah.
+The person who's going to win is going
+to be the one who thinks there's the
+most oil there and
+assuming there's a range that's uh
+people's beliefs and it falls somewhere
+in the middle, they're going to have
+overvalued it. Exactly. So, the crucial
+thing here is what are we doing when
+we're a firm bidding on this? We're
+going to make a noisy estimate of the
+amount of oil in the land. So, the issue
+here is
+noisy or imprecise estimates.
+SO, I'M GOING TO DO A LITTLE TESTING,
+RIGHT? I'm going to try to guess
+or estimate how much oil is in this this
+land.
+Every other firm is going to do the same
+thing.
+If I win, what does that mean about my
+estimate relative to everyone else's?
+Means my estimate was higher than
+everyone else's.
+And if my estimate was higher than
+everyone else's, it probably means my
+estimate was just was an overestimate of
+the true value of the of the land and
+I'm going to end up paying too much. Um
+another example where this happens is uh
+auctions for
+say government
+procurement.
+So, this is kind of the analog of this.
+What what happens there? The government
+says, "We want to build a subway."
+And now the firms are going to bid on
+the amount that they need to get paid to
+build the subway. So, I might say, "I'll
+build it for 100 million." Someone else
+says, "I'll build it for 110 million."
+Someone else says, "I'll build it for 90
+million." And the government chooses the
+lowest bidder. So, these you always have
+to be careful here. So, the winner
+is the lowest bidder.
+Because the government wants it built as
+cheaply as possible, right? Now, I think
+something else that can be a similar
+winner's curse here. What's the what's
+the story in a government procurement
+Say we're building a subway in New York.
+Yeah.
+To build the subway, there's unknown
+kind of costs that are not fully
+certain. And so again, you're making a
+noisy estimate of exactly how much it's
+going to cost to make the subway. And
+then whoever wins is going to be whoever
+had the lowest estimate of cost, which
+is probably wrong. [snorts] Exactly
+right. So, it's exactly parallel to
+this, right? We're making noisy
+estimates. Here, we're estimating the
+value of something. If I win, I probably
+overestimated the value.
+Here, we're estimating the cost of doing
+something. If I won, I probably
+underestimated the cost. So, I thought
+it would only cost me 100 million. Then
+I uh I build it and uh it ends up
+costing a lot more. So, it's the same
+basic idea that we have imprecise
+estimates that are all correlated.
+There's actually a really nice story.
+So, Paul Milgrom, who did some famous
+work on this and ultimately won the
+Nobel Prize, said his dad was a painter
+and and would always complain to him
+that when he would bid on painting
+contracts, he'd always find that when he
+won, it cost more to paint the house
+than he expected. It was always a bit of
+a harder job than he thought. And Paul
+Milgrom said, "Oh, one day I wanted to
+tell him, you know,
+the answer." It turned out his father
+died before he could tell him. So, it's
+it's a sad story, but um
+I think it's sort of a nice illustration
+of of this phenomenon.
+Uh okay. Any questions on that? And then
+we'll move to another application.
+Okay. So, now
+let's
+move to big application of auctions,
+which is going to be advertising
+auctions.
+And by advertising, what I really mean
+is
+or keyword search auctions.
+And you know, you probably see this all
+the time.
+If you Google something, you know, you
+get the organic results. So, let's just
+see what it looks like on a page. If I
+go to Google,
+well, I'm going to get some organic
+search results.
+What do I mean by organic? Organic just
+means Google's algorithm is saying these
+are the websites that are most relevant
+for what I typed in.
+But then you're also going to have
+sponsored results, right? You might have
+something here.
+Say I'll say S for sponsored one. Maybe
+something here, S2. Maybe you'll have a
+few over here.
+S3, S4.
+And
+these slots, if you look, they'll be
+kind of relevant to what you searched.
+and you may not even notice. I think you
+probably know, but a lot of people just
+think of all the results are the same
+and they don't quite recognize uh
+what's sponsored and what's not. What
+does it mean if it's sponsored? Do
+people know what what's going on there?
+What's the difference in organic and
+sponsored?
+Uh
+yeah.
+I don't know exactly what
+They paid to have it there. So, if you
+notice, if you let's say you
+Google Uber
+just as one example.
+Uh what might you see in the first slot
+if you if you Google Uber?
+You often see Lyft, right? Um and what's
+happening
+is Uber will probably show up as the
+first organic result,
+but the first sponsored result might
+actually be Lyft.
+Because Lyft recognizes that someone
+who's searching for Uber is looking to
+rideshare and maybe Lyft can kind of
+undermine can undermine them and get
+them to buy that. Now Uber might
+actually buy a slot here as well to try
+to do that and now we might see so Uber
+might actually appear both in the
+organic results and in the sponsored
+results and there's a lot of strategy
+that goes on
+into this.
+And this is actually how Google makes a
+lot of their money, right? That by
+having the best search engine they have
+a lot of people searching and firms are
+willing to pay a lot for these slots.
+Now a big insight a big kind of
+advantage for Google was the fact that
+these slots are responsive to the
+keyword. So I'll say the sponsored slots
+depend
+on the keyword. The keyword meaning what
+you what you Googled.
+Before this Google would just do banner
+advertisements where they would just
+have something on the screen that was
+shown to everyone. But that's not very
+valuable because I might be showing an
+ad to someone who doesn't really care
+about it. So by
+these sponsored searches allow Google to
+hyper target their ads and therefore
+generate a lot more revenue from their
+ads.
+Now how does Google decide who gets to
+be in this slot, who gets to be in this
+slot, who gets to be in this slot? They
+run an auction among the advertisers and
+this is actually you know maybe in in
+numerical terms the the most important
+auctions we see in the world billions
+hundreds of billions are raised every
+year doing this and today we're going to
+analyze a very simple model of this kind
+of sponsored search auction.
+So just to be clear here the entire
+auction is designed for a particular
+keyword. If people Google Lyft then
+there's going to be an auction for
+showing slots to someone who Googled
+Lyft. If someone Googled Uber there
+would be a different thing if they
+Googled Googled a hotel there would be
+something else. So everything we're
+going to be talking about is for a fixed
+keyword.
+Now why can't we just off the shelf
+apply what we've done so far? The
+challenge is this is not a single
+item auction.
+We have many items. We have the first
+slot, we have the second slot, we have
+the third slot. And the other thing is
+these items are not the same. So it's
+not a single item auction. We have
+multiple
+heterogeneous items.
+Or maybe I'll say differentiated items.
+Getting shown first is a lot better than
+being shown second which is better than
+being shown third. So how do we model
+this? Well we're going to write down
+pretty simple model and here's our
+general model.
+We're going to say that if your ad shows
+up in the first slot it's more likely to
+be clicked. Right? So in our general
+model we have n bidders.
+I'll call them
+i equals one to m n sorry.
+And then we're going to have m
+advertising slots. So in my example up
+here we had four in general we'll have m
+advertising slots.
+We'll call these j equals one to m.
+And what distinguishes these slots is
+what we'll call the click-through rate.
+I'll say
+the click
+through rate
+sometimes called CTR
+are alpha one
+alpha two
+alpha m. So what does this mean?
+Alpha one is the click-through rate of
+the first position.
+If someone shows their ad in the first
+position this is the probability that
+it's going to get clicked.
+If someone shows their ad in the second
+position then the probability that it
+gets clicked is alpha two all the way
+down to alpha m if it's shown in the mth
+position. Now there's a big simplifying
+assumption here that the probability
+that it's clicked doesn't depend on
+which ad is shown there, right? If I
+showed a really bad ad for a really
+undesirable product even if it's first
+probably no one's going to click on it.
+But
+if we're looking at products that are
+pretty similar like Uber and Lyft maybe
+this is a a reasonable assumption.
+We're next going to assume that each of
+the bidders we have to specify well what
+do the bidders know? Well we're going to
+assume the bidders have valuations per
+click. So the bidders
+so let's say bidder i
+has valuation
+vi per click.
+The idea would be if someone clicks on
+my ad well maybe they'll buy it maybe
+they won't but the expected value to me
+of someone clicking on my ad is vi.
+Another simplifying assumption here is
+that we're saying
+if someone clicks on it when it's in the
+first position versus someone clicks on
+it when it's in the second position
+that's equally valuable to me. That may
+not be a good assumption maybe if
+someone clicks on it even when it's in a
+bad position maybe it's more valuable
+because those people really like it but
+we're not going to
+focus on on that. We're going to keep it
+simple.
+Okay.
+So now I'm Google
+I have these m slots. I have these i
+bidders. I'm going to ask them to submit
+bids and I need to choose then choose so
+what do I need to choose? Let's go back
+over here.
+So Google has
+maybe I'll call this auction design
+choices.
+So one first choice is well I'm going to
+ask people to pay me but am I going to
+ask them to pay me every time someone
+clicks on the ad or am I going to ask
+them to pay me just every time the ad is
+shown? And these are two common models
+for these auctions. One is called pay
+per click
+and one is called pay per impression.
+An impression means the ad is shown to
+someone but not necessarily clicked on
+may or may not be clicked on.
+In in our model this actually won't make
+a difference because we're assuming that
+the click-through rates are perfectly
+known.
+In a more realistic model people might
+be uncertain about these click-through
+rates and then it does make a big
+difference whether it's pay per click or
+pay per impression. I might want pay per
+click if I'm really uncertain about how
+popular my ad is because then if my ad
+turns out to be a failure and no one
+clicks on it well then I don't at least
+at least I don't have to pay very much.
+Whereas if it's paid for impression well
+then I'm on the hook to keep showing my
+ad no one's clicking on it and I'm still
+paying for it. So you can see why it's
+it's pretty common to use pay per click.
+You can think of this as kind of
+insuring advertisers against having a
+really bad ad that no one wants to click
+on. But in this model that won't make a
+difference. Yes Amy. But then doesn't
+Google lose out on pay per click if all
+the ads are pretty unpopular?
+Yeah I mean I guess
+the firms would still have an incentive
+to
+have good ads. Yeah I mean I guess you
+might worry a little bit maybe about
+moral hazard. I mean
+the
+the pay per click
+if the payment for click was too high
+then maybe firms wouldn't have an
+incentive to improve their ads.
+I guess there is a bit of an incentive
+trade-off there but I think the firms
+still have a pretty you know Google can
+still tell the firms no one's clicking
+on your ad.
+And the firms still want their ads to be
+clicked on. But I agree their incentives
+may not be quite as strong in that case.
+So there's sort of a trade-off there
+between
+maybe insurance and incentives but
+And over time I think the firms learn a
+lot about
+about how often the likelihood of their
+ad being clicked on.
+So today we're going to use pay per
+click. Again in our model it won't
+matter but this will just simplify
+things, right? So what is what does the
+auctioneer say? Well the auction's going
+to collect the bids and the bids are
+going to be payments per click. So my
+bid is going to say think of it roughly
+as how much am I willing to pay each
+time my ad is clicked on. So we're going
+to collect these bids
+b1
+through bn.
+And then what do we need to decide? Well
+we need to have an allocation. So we
+have
+slot one slot two up to slot m. For each
+slot we have to say
+who gets it.
+So which ad is shown in this slot?
+And then the payment per click.
+So this is you know formally what we're
+choosing. We're choosing a function that
+says if these are the the n bids that
+the advertisers submit
+who are we going to put in the first
+slot and how much are we going to ask
+them to pay per click?
+Who are we going to put in the second
+them to pay per click? All the way down
+to the mth slot. So that's the the
+choice we have to make.
+And of course the design of the auction
+that we use is going to affect the
+bidding behavior of the advertisers,
+right? We could use this there's various
+auction formats. So
+today the first auction format we're
+going to look at is what's called a GSP
+or generalized second price auction.
+And I think we can kind of maybe guess
+how this works. You know how a second
+price auction works. Why do we call it
+generalized? Well a classic second price
+auction applies when there's a single
+item that we're auctioning off. Here we
+have multiple items so we have to
+generalize it.
+And I think this is kind of the most
+intuitive generalization. Any ideas
+about if you had to think how it let's
+say you're working at Google someone
+said let's generalize a second price
+auction what might you do here?
+Well let's first think about the
+allocation. I think that's pretty easy.
+Who do you think you're going to show in
+the first slot? Who's that?
+The highest bidder. The highest bidder,
+right? So, it's sort of the allocation
+rule kind of makes sense. We'll show the
+highest bidder here, the second highest
+bidder here, all the way down to the mth
+highest bidder here, right? So,
+in general, maybe I'll
+put it here. We're in slot k, so slot k
+is going to go to the kth highest
+bidder.
+I'm good then.
+But now, maybe the harder thing is
+what's the payment per click? What's a
+reasonable amount to charge the kth
+highest bidder
+per click? Any? The k plus k plus first.
+Right. That's a pretty natural way of
+doing it, right? We say, "Okay, you're
+the kth highest bidder, so you get the
+kth slot, but we're not going to charge
+you your bid, we're going to charge you
+the next highest bid, right?" Um in a
+second price auction, you can think of
+the second price as the second as the
+next highest bid after the winner, and
+here we're charging the next highest bid
+after the person who wins the kth slot.
+So, the payment, maybe I'll call it pk,
+is equal to
+k plus first.
+highest bid.
+Okay, this seems pretty intuitive, and
+let's let's try to get a feel for how
+this works
+uh in an example.
+What would happen like in in the end
+like the last person?
+Uh good point. So,
+there's a question of, you know, what's
+the relationship between m and n?
+usually the last person uh would pay, so
+if uh the last, you know, m may be
+smaller than n, but if m is equal to n,
+the next highest bid we would usually
+call zero. So, we can imagine we have
+the n bids, and then imagine the n plus
+first bid is just zero.
+So, the first one wouldn't pay They
+wouldn't pay anything. Now, in reality,
+m is probably much smaller than n,
+right? So, if m is smaller than n, then
+the mth highest bidder is going to pay
+the m plus first highest bid, and then m
+plus two, m plus three, m plus four,
+they don't get anything at all. So, what
+you're describing can only happen if
+there's more bidders than ad slots. And
+that kind of makes sense, right? If
+there's Sorry, if there's more ad slots
+than bidders. If there's as many or more
+ad slots than bidders, then
+you know, we we can't really charge much
+because, you know, we can just give them
+away, right? Okay.
+But good question.
+This is
+Okay, so let's go through
+a simple example to make sure
+you understand. So, let's do a example
+with
+m equals
+maybe two
+and n equals three. So, we have three
+bidders and two ad slots, and let's say
+the ad slots we have ad slot one,
+which has click-through rate alpha one,
+and we have ad slot two, which has
+click-through rate alpha two.
+And we're always assuming that alpha
+that they're in descending order, so
+alpha one is strictly greater than alpha
+two.
+And let's say the bidders submit these
+bids that maybe b1 is
+uh $7,
+b2 is $8, and bid three is $5, okay?
+So now, what's going to happen in this
+Well, the first slot is going to go to
+the bidder who bids the most. In this
+case, that's bidder two.
+So, bidder two's ad is going to be
+they're going to show bidder two's ad.
+And in the second slot, they're going to
+show the second highest bidder, which in
+this case is bidder one. So, they're
+going to show bidder one's ad.
+And what is the payment per click going
+to be?
+So, maybe I'll call this p1 and p2. So,
+p I'll try to use superscripts for
+positions and subscripts for bidders,
+right? So, p1 is not necessarily bidder
+one, it's the payment made per click for
+the first ad slot.
+So, in this case, the highest bidder bid
+eight, the second highest bid was seven,
+so p1 is going to be
+seven. So, bidder two is going to pay
+have to pay $7 per click.
+And now, if we go to two, well, the the
+second highest bidder is going to pay
+the third highest bid, which in this
+case is five, so p2 is going to be five.
+Okay, [snorts] this all
+sounds good.
+But now, we might ask, well,
+is it optimal to bid truthfully?
+We know in a standard second price
+auction it is, you you should bid
+truthfully, but now things are a little
+more complicated.
+So, let's take the perspective of bidder
+Well, what is their expected profit
+going to be
+from bidding truthfully? That is,
+bidding eight in this auction.
+So, let's assume, I guess I haven't been
+clear, let's assume that v2 equals
+eight. So, let's
+suppose the true value is eight and they
+bid eight, what is their uh
+what are they going to get
+in expectation?
+Well, let's go through it. The
+probability they're being shown in slot
+one,
+the probability their ad gets clicked is
+alpha one,
+and each time it's clicked, their
+valuation per click is eight,
+but they end up having to pay seven.
+So, we get alpha one times eight minus
+seven,
+which is just alpha one, right?
+But let's suppose that instead
+they
+bid a bit less.
+And let's suppose that instead of
+bidding eight, they bid six.
+So,
+so this is a bid of eight,
+but let's suppose instead they bid six.
+&gt;&gt; [snorts]
+&gt;&gt; Well, now what's going to happen?
+Now, what's their expected payment?
+Well, if they bid six, where is their ad
+going to be shown?
+It'll be the second slot, right? If they
+bid six, bidder one is going to get the
+first slot, bidder two is now going to
+get the second slot, so they're going to
+get alpha two.
+Their value is still eight, but now
+how much do they pay?
+They're going to pay five, right?
+Because now um
+they're getting the second slot, they're
+going to pay the third highest bid, the
+highest bid is seven, the second highest
+bid is six, the third highest bid is
+five, right?
+So, we get three alpha two.
+Well, what's better?
+Well, it's going to depend on the
+relative values of alpha one and alpha
+And in particular,
+if alpha two is pretty close to alpha
+one, they're going to be much better off
+shading their bid.
+So, this is going to be preferred
+if alpha two is close to alpha one,
+right? It's smaller than alpha one, but
+if it's close.
+And here we see a fundamental difference
+between a standard second price auction
+and the generalized second price
+In the standard second price auction,
+you want to bid truthfully because if
+you don't get the item, you don't get
+anything.
+But in a multi-item auction, now it's
+less clear. If you shade your bid,
+instead of getting nothing, you get the
+next slot. And if the next slot is
+almost as good as the first slot, you
+might as well shade your bid. You might
+as well reduce your bid. So, we now have
+a much stronger temptation to reduce
+your bid when the penalty for losing is
+lower. Instead of getting nothing, I
+just go one slot down. And in
+particular, when these slots are very
+close, going one slot down is not very
+costly.
+So now, we need to ask, well, we could
+use this bidding bidding format, but
+then bidders have to, you know, spend a
+lot of money trying to figure out how
+much other people are going to bid, and
+their bids going to depend on other
+people's bids, and it's going to be
+complicated. So, maybe we want an
+auction where it's optimal for people to
+just bid truthfully. So, we want a
+different generalization of the second
+price auction than what's called a
+generalized second price auction. Yes.
+Does this generalized bidder decrease
+revenue for the auctioneer because
+everyone's going to shade?
+that's kind of uh
+it's a sort of question. So,
+there is an equilibrium of this auction
+that will give
+I guess we have to say, what is the
+comparison with? Um
+the auction format that we're going to
+describe next, the VCG auction, there
+will be an equilibrium of this auction
+that will give the same revenue in this,
+but that's in this very stylized example
+where there's no uncertainty. Um if you
+added some more realistic features, then
+you have to be a little more careful,
+and it's it's actually not so clear.
+Yeah. So, so the auctioneer doesn't have
+a preference between
+like the style of the second price
+auction? So, I I think the question is
+some of the theorems say it doesn't
+matter, but those theorems make some
+very strong assumptions that people bid
+exactly according to the equilibrium,
+and we know in practice that that
+doesn't really happen. So, in fact, one
+concern there was, going back
+historically, is people using a
+basically a first price a version of a
+first price auction of this, and there
+was a suggestion that people should that
+we should move to um
+to a second price uh auction. But the
+concern was, well, if we jump right away
+to a second price auction, and firms
+don't adjust their bidding behavior, now
+we're going to lose a lot of money. So
+the second price auction should give you
+as much revenue if we played the new
+equilibrium where people bid much
+differently. But if firms don't know
+that and they don't react quickly
+enough, then there's really a strong
+disincentive to move to a second price
+auction. I think that's one issue that
+went on. So I there's kind of a gap
+between the theory and the and the
+applications here. Um
+I guess I should say the real I guess
+maybe the
+the fundamental issue that motivated a
+lot of this auction work was that firms
+are able to modify their bids quickly in
+real time. So the firm submits some
+bids, their ads shown, and then they can
+change their bids over time. And what
+was happening is firms were constantly
+changing their bids and there were these
+bids were going in cycles. So we're
+modeling this as kind of a one-off
+interaction.
+If we use
+the auction format we're going to
+describe, I think that's a good model,
+but if if people really care about how
+other people bid, then it can make
+things a lot more complicated when
+people can change their bids over time.
+Good question.
+Okay, so let's think about uh how else
+we can generalize the second price
+auction. And I think the key is to think
+about the second price auction a bit
+differently.
+So I think the most obvious way to
+generalize the second price auction is
+to say, "Well, what is the second price
+auction? You pay the second highest bid,
+so let's generalize it you pay the next
+highest bid." But let's think about it
+what's really going on in the second
+price auction a bit differently.
+Another way of thinking about a second
+price auction
+is that each bidder is asked to pay
+their externality.
+Let's understand what we mean by this.
+So let's say the valuations are ordered.
+It's like V2
+to VN.
+let's say I'm this guy
+and I win, okay?
+So I'm the highest bidder. Let's suppose
+everyone's bidding truthfully, I guess,
+to make this argument. I win, I get my
+valuation of V1, and these guys all
+lose, right?
+what if I weren't here
+and we just wanted to allocate the good
+in a way that was efficient for everyone
+else? What would we do if if if bidder
+one were not here?
+Who would we allocate it to?
+Bidder two. And what would they get?
+Their valuation would be V2.
+Right? So we can say
+if bidder one
+were gone
+then
+the total value of that all the other
+bidders would get would be V2. Bidder
+one were gone, the item
+would go to bidder two.
+And the value
+would be V2.
+So we can think of it as, "Well,
+the total value that everyone other than
+bidder one gets is zero when bidder one
+is here
+and would have been two if bidder one
+were not present."
+So the externality that bidder one's
+presence or bidder one's bid imposes on
+everyone else is exactly V2. Because
+they take the item away from everyone
+else, and the most efficient allocation
+of it everyone else would have been to
+bidder V2.
+So this is the aspect of the second
+price auction that we're next going to
+try to generalize. We're going to try to
+charge people the externality that their
+presence imposed on everyone else.
+In this case that externality happens to
+be the second highest valuation, the
+second highest bid, but in general it's
+not necessarily. And that's what we'll
+see with the
+with the next auction format.
+let's look at this.
+So let's say that we bid
+B1
+B2
+B3
+and let's suppose that these are ordered
+like this.
+And we have these slots 1 2 3.
+Now if I'm the highest bidder then I get
+slot one.
+The second highest bidder gets slot two,
+and the third highest bidder gets slot
+three.
+So here I'm just assuming bidder one's
+the highest, bidder two's the second
+highest, and bidder three is is next.
+Well, what would happen if
+bidder one
+were not present?
+If bidder one weren't here, or in other
+words, if bidder one just bid zero and
+didn't win anything
+what would happen to bidder two? Which
+slot would they get?
+They'd move up to the first slot, right?
+So they'd go up here.
+And bidder three similarly would move up
+to the second slot.
+let's now compute
+bidder one's the highest bidder's
+externality.
+Well, bidder two
+the externality is that they're pushed
+down from alpha one to alpha two at the
+as their click-through rate.
+So we have
+B2.
+So what happens?
+Bidder two
+gets alpha two instead of alpha one as
+their click-through rate.
+And their value per click uh
+let's treat it as their bid B2.
+This is the externality imposed on
+bidder two.
+And this is the externality imposed on
+bidder three. Notice here we have to be
+a little careful to directly compute the
+externality
+we'd have to know how much other people
+actually value the item. So when we
+compute the externality, we compute it
+as if people are bidding truthfully. So
+I don't actually know how much bidder
+two values the slot, but we're going to
+compute the externality as if they were
+bidding truthfully. So if bidder two
+were bidding truthfully, then the amount
+they value the slot per click is exactly
+B2. And their loss is the difference in
+click-through rate times their valuation
+per click. And similarly B3, their loss
+is the difference in click-through rate
+times their valuation here.
+in general we want to the idea or the
+goal
+to charge each bidder
+So let's now motivated by this simple
+example, let's see if we can give a
+general formula for this auction format.
+And this is called
+a VCG auction, and this is named after
+three people
+Vickrey
+won the Nobel Prize for this, Clark
+and Groves.
+&gt;&gt; [clears throat]
+&gt;&gt; And we can think of this as a different
+or maybe the true
+generalization of the second price
+So now we get some bids
+B1 through BN.
+And we have to decide what to do with
+them.
+It's helpful to have some notation for
+what's the highest bid, what's the
+second highest bid, and so on. It's not
+necessarily the first bidder is the
+highest. So just some notation, I'm
+going to write B1 in parentheses. This
+is going to say which among these bids
+is the highest.
+And then I'll write B2 in parentheses to
+say which among these bids is the second
+highest, all the way down
+to B in parentheses N for the nth
+highest among the bids, right?
+Now I'm going to have my slots.
+Say slot one
+down to slot M.
+And instead of writing it many times,
+let me just describe what happens to the
+Kth slot. Where K is an arbitrary or I
+guess I was using J before, maybe I'll
+call it the Jth slot.
+The Jth slot.
+So who gets the Jth slot? Well, the Jth
+slot is going to go to the Jth highest
+bidder as before. So the allocation rule
+is going to be the same as the second
+price auction. I allocate the good to
+the Jth best good to the Jth highest
+So it's allocated
+to Jth
+highest bidder.
+But the tricky thing is the payment. So
+maybe I'll call it
+PJ.
+And remember this is a payment
+per click.
+Um well
+it's easier I think to think Let's have
+a little more space.
+To think about alpha J
+PJ. Because remember
+I want each bidder to be charged their
+So what I want to set equal to the
+bidder's externality is the actual
+amount they pay.
+And the actual amount they pay is not
+PJ, that's the amount they pay per
+click. So they pay PJ per click times
+the probability they're actually clicked
+on, that's the expected amount that they
+pay. So this is going to be the expected
+payment.
+So later we can divide by alpha J and
+get a formula for PJ, but it's just when
+we're thinking of the externality, it's
+easier to think this way. Yes. Expected
+expected payment per click, right?
+Uh no no no. Uh
+well, I guess it depends what you mean.
+If alpha J is the probability per click
+of the probability of a click, then this
+is just the expected payment. Correctly.
+No, no. Just Just PJ is the payment per
+click, right?
+&gt;&gt; Yeah. So, if I if I multiply the payment
+times my probability of a click, that
+gives me my full expected payment,
+right? If I pay 100 per click, and
+there's a half chance of getting
+clicked, then my expected payment is 50.
+Cuz there's a half chance I get clicked
+and pay 100, and
+half chance I don't get clicked and pay
+nothing.
+If there's multiple clicks, then uh we
+could more generally think of alpha j as
+the expected number of clicks, and maybe
+the expected number of clicks is more
+than one, but in reality each time a
+keyword is searched, there's a different
+auction. Um
+Uh well,
+&gt;&gt; [laughter]
+&gt;&gt; uh that that is how it used to be. Uh
+now people have a lot of automated
+bidding. Now people are using kind of
+robots to bid on their behalf, so it's a
+little more complicated, but originally
+uh yeah, I mean maybe they were they
+were batched a little bit, but uh
+roughly uh yeah, you can change your bid
+very very frequently. If
+two people are searching for the same
+keyword at the same time, Yeah, okay.
+There's going to be some lag. Uh you
+know, I I think formally what happened I
+I don't know, you know, and some of this
+may be proprietary. Firms are able to
+change their bid very quickly. I know
+firms are able to change their bid maybe
+like a second interval. So, maybe all
+the all the keywords that were searched
+a given second would use those bids, and
+then when your bid changed, uh all the
+uh auctions in the next second would use
+the new bid. Um and there was actually
+when they were when it used to be like
+when they used to use uh
+things that were not strategy-proof, and
+people were kind of gaming it, this is
+what would happen. I mean, there was
+people investing in technology to change
+their bids and update their bids very
+very quickly. Um yeah. But yeah,
+probably not literally per auction, uh
+but every auction in a second, uh which
+is a lot, but yeah. So, that's why we're
+kind of just considering like is there
+one click or one set of the number?
+Yeah, I mean, it doesn't I mean, it it
+mathematically doesn't matter at all,
+right? If you want to think of alpha j,
+one way of thinking of this is this is
+uh probability per click, and maybe our
+bid is relevant for a batch of 100
+auctions, and then you could just
+multiply alpha j every alpha by 100, and
+then you get the expected number of
+clicks in this batch of auctions that's
+relevant for a bid.
+Great. Um okay, so here's our expected
+payment and [clears throat]
+uh I was trying to be consistent about
+superscripts, but I wasn't. Oh, no, I
+was over here. Okay, sorry. This should
+be alpha j, I guess.
+I don't know if I've been consistent.
+Uh I wasn't consistent over here. Change
+So, this is actually right. B3 is
+actually the third bidder, so that's a
+subscript. Alpha 2 is the second bid
+slot, so it's a superscript. Um so, I
+think my notation is good.
+Okay, so now we want to compute what is
+the externality that bidder j is
+imposing on the other bidders. So, the
+first question is who does bidder j Who
+is bidder j affecting?
+Which So, over here we thought bidder
+one was affecting bidder two and bidder
+three. Who is uh
+Which bidders is bidder j's bid
+affecting? If bidder j were gone, whose
+allocation would change?
+All those.
+Everyone afterwards? Okay, yeah. So,
+what we need to compute is what is the
+externality that bidder j is imposing on
+everyone after bidder j, because these
+people above him are not going to be
+changed, right? If bidder j weren't
+there, those people are still going to
+win.
+So, it's going to be a sum,
+and let's sum it over everyone after
+bidder j.
+this is the jth highest bidder. We want
+to sum from the j plus first highest
+bidder
+to n, right?
+So, within our sum, we want to say what
+is the externality imposed on the kth
+highest bidder?
+So, if I'm the kth highest bidder, where
+k is bigger than j,
+when j's here, I get the kth slot.
+But if j were not here, what slot would
+I get?
+The k minus one slot, right? So, the
+externality, the change in my
+click-through rate, is alpha k minus
+This is the externality. Without j, I
+would have become the k minus first
+highest bidder, and I would have gotten
+the k minus first highest slot. With j,
+I'm only the kth highest bidder, and I
+get the kth slot.
+But I have to multiply that change in
+the click-through rate times my value
+per click. Again, we don't know that
+bidder's value, but the way we compute
+externalities is if people are bidding
+truthfully.
+And we have notation. What is our
+notation for the bid of the kth highest
+bidder?
+Right. It's just b
+to the superscript k.
+So, this is our formula, and this fully
+specifies the auction, because we've
+specified
+who
+which bidder each slot is assigned to,
+and we've specified the payment per
+click for each of these slots. Okay? But
+now let's try to understand a little bit
+what this uh formula looks like. So,
+let's dig in a little more. Let's go
+Let's try to interpret this.
+Let's divide both sides by
+alpha j.
+So, we're going to see that
+pj,
+the payment per click in the jth slot,
+is going to equal a sum
+of k equals j plus one to n
+of bk
+times
+alpha k minus one
+divided by
+Good?
+we can see that the amount that we pay
+in the jth slot
+is a sum over all the lower bids, but
+each of the lower bids is multiplied by
+some coefficient here. So, let's
+introduce notation for this. Let's call
+this
+wk,
+and let's see what we can say about
+uh wk.
+Well, first, wk is greater than equal to
+zero. In fact, strictly greater than
+zero.
+Why?
+Well, alpha k minus one is strictly
+higher than alpha k. That's our
+assumption. The higher slots, higher
+slot meaning lower numbered slot, right?
+The higher slots have a higher
+click-through rate. So, each of these
+numbers is strictly positive. Now, let's
+try to see what the sum of these numbers
+are.
+So, let's look at
+w
+j plus one
+all the way up to w n.
+Well,
+let's go through it. W j plus one,
+let's plug in j plus one for k. We're
+going to get alpha j
+minus alpha j plus one
+divided by alpha j.
+Plus, well, the next term is going to be
+alpha j plus one
+minus alpha j plus two
+over alpha j.
+All the way Well, what's the last term
+going to be? We have wn here, so we're
+going to have alpha
+n minus one
+minus alpha n
+alpha j is underneath everything, so we
+can make this into a single fraction,
+and we add alpha j plus one
+Sorry, we subtract alpha j plus one, and
+then we add it back.
+We subtract alpha j plus two, and then
+we add it back. So, this is going to be
+what's called a telescoping sum. It's
+going to simplify a lot, and we're only
+going to get the first term
+and the last term.
+Everything in the in every intermediate
+term is going to cancel.
+So, what we're going to get is
+alpha j
+Yes. What's the significance of bk in
+the sum if we're if each of the terms is
+multiplied by a different value of bk?
+So, it's not bk multiplied by alpha k.
+Um just as interpretation. So, let's see
+in a second, and then I think it'll
+it'll make sense. So, what can we say
+about this value? Well, in general, this
+value is less than or equal to one.
+And in fact, it's going to equal one if
+alpha n equals zero. So, if we have
+fewer slots than bidders, this is going
+to equal one. Uh you might worry if
+there's fewer slots than bidders,
+are we ever going to divide by zero? It
+turns out the top's going to become zero
+before the bottom does, and we're not
+really going to have to worry about it,
+but I won't go through the details. So,
+it turns out this is going to be less
+than or equal to one,
+with equality
+if m is strictly less than n. If there's
+fewer slots than bidders, which is a
+pretty standard uh phenomenon, right?
+You have many many advertisers wanting
+to advertise on just a few limited
+slots. So, generally, n is going to be
+bigger than m, and I guess the sort of
+trick I've used here is if m is bigger
+than n, well, let's just create null
+slots beyond the mth. Uh I guess I
+should have said this, right? Um
+We we could have just stopped, or we
+could say, "Yeah, well, there's actually
+an m plus first slot, but it just has
+zero click-through rate. It's just a a
+fake slot." And if we do that, then all
+these alphas are well defined. They're
+just all zero after the mth.
+And if we do that, then we see that this
+sum is going to be exactly one.
+So, why did we do this sum? The sum was
+for interpretation.
+What is the payment per click that I
+make if I'm the jth highest bidder?
+It's a weighted average of all the bids
+that are lower than mine.
+The weights are non-negative
+and the sum of the weights, well, in
+this general case here is exactly one.
+So, it's exactly a weighted average.
+And now we have kind of a nice
+comparison, right? Because
+I'll go back over here.
+If we looked at the GSP
+or the generalized second price auction,
+PJ
+was what? Just using our notation, what
+was PJ? What was the payment per click
+for the jth slot?
+Right. It was
+the j plus first highest bid.
+Under the
+VCG mechanism,
+PJ, well, we have this formula over
+here, but let's just check.
+K ranges from j plus one to n.
+So, these range from bj plus one to n.
+So, we get a weighted average
+of all the lower bids.
+And we can exactly see why
+the VCG or at least there's some
+intuition for why under the GSP
+we see bid shading.
+And under the VCG
+bidding truthfully is optimal.
+In short, it turned out in the GSP,
+well, it seemed like the right
+generalization to have you bid to have
+you pay the next highest bid, that was
+actually too high.
+And as a result, people wanted to shade
+their bids.
+And in a VCG, you actually asked to pay
+less relative to your bids.
+Instead of paying the next highest bid,
+you pay a weighted average of the next
+highest bid, the next highest, the next
+highest, and so on. And these later bids
+are lower than uh than this bid here.
+In particular, let's look at
+kind of a special case
+which is kind of instructive.
+&gt;&gt; What if alpha one
+So, this technically isn't covered by
+assumption cuz we assumed it was strict,
+but we can think of this as a limit,
+right? So, let's say there's n bidders
+and the n slots are all basically the
+same.
+So, we have n bidders
+and we have n identical slots.
+Okay?
+How would people bid in the
+GSP?
+Would you want to bid your evaluation
+for the slot? How how would you bid if
+you were in the
+in the GSP and you knew there were n
+slots?
+Uh yeah. You could end up bidding
+anything and still you could just end up
+getting it if you're like in the last
+one.
+It doesn't really matter cuz you'll all
+have the same money.
+Right. So, here there's really no
+scarcity, right? There's n slots,
+they're all equally good. There's no
+competition between the bidders at all.
+There's It's not like we're fighting for
+that top slot cuz the next slot's just
+as good.
+So, we see that the GSP is going to
+wildly uh is going to induce really, you
+know, intense bid shading. People are
+going to shade their bids a lot. In
+fact, people are generally going to bid
+zero. There's no shortage, I can just
+bid zero, I'll still get one of the n
+slots uh and I'm happy with that.
+So, you might think, well, how is the
+VCG going to get people to be truthful
+at all?
+Right? How could we possibly get people
+to pay anything if there's no scarcity?
+Well, what is the payment going to be
+um
+the payment rule going to be in the VCG?
+Well, what are these weights going to be
+if all the alphas are the same?
+Zero.
+So, in fact, in the VCG mechanism in
+this special case, people are always
+just going to pay zero.
+So, you might think, oh, VCG, how do we
+kind of get something for nothing? Well,
+it's sort of like if people had a really
+strong incentive to shade their bid in
+GSP, then the VCG is kind of going to
+shade on their behalf and just charge
+everyone zero anyway, and then people
+are going to be willing to be truthful.
+Um so, nothing comes for free.
+How do we get people to bid more?
+They're willing to bid more because of
+the function of their bids, they're
+asked to pay less. And that's kind of
+the I think the key uh idea or key
+insight of the VCG mechanism.
+So, maybe in the last
+15 minutes, we'll try to I'd like to go
+over maybe the the general formula for
+VCG beyond this setting. So, it turns
+out the VCG mechanism, it was applied to
+this setting of ad auctions, but it
+makes sense and it works in a much more
+abstract setting and we're just going to
+go over uh how that works.
+So, now I'll say kind of abstract VCG.
+So, the general setting of VCG is, well,
+we're having to make some decision for
+all the bidders. Here the decision was
+how we match the bidders to the ad
+slots.
+Maybe the decision is, do we build a
+bridge or
+you know,
+there are many many things it could be.
+How we allocate some item among the
+bidders, there there could be many many
+things. So, we're going to be totally
+abstract and the decision
+is just going to be some abstract x in
+some set x. But if you want to make it
+concrete, think of x as the allocation
+of bidders to slots. Maybe another
+classic example would be the allocation
+of planes to airline landing slots. Uh
+this is a
+or airport landing slots. This is a
+classic application of VCG.
+Or maybe routing in internet protocols,
+routing of packets through the network.
+That might be what x represents. But the
+crucial thing is x is a collective
+decision that affects everyone. X does
+not represent bidder one gets slot one.
+It represents the complete mapping of
+bidders to slots or the complete
+allocation of airplanes to landing slots
+and so on.
+Now,
+we now need to describe the bidders'
+preferences
+or the players' preferences. So, we
+have, let's say, player i
+vi.
+Now, before, vi was just a number. When
+we were in a setting where we were
+allocating a good, my valuation was just
+how much am I willing to pay for that
+good.
+But now my valuation needs to specify
+how much I value every possible social
+decision that's made. Let me say social
+or collective decision.
+So, now my valuation is a function vi
+from x to r.
+So, I'm just going to call it vi, but
+remember it's a much richer object now.
+It's not just one number that says how
+much do I value an item, it's an entire
+mapping that says, if this is the uh
+allocation of bidders to to auction
+slots, that's how much utility I get. If
+we have a different allocation of
+bidders to auction slots, here's how
+much utility I get, and so on. Yeah. Why
+do you have to consider how if how other
+bidders are like putting in different
+auction slots? It doesn't matter. If
+you're in a fixed auction slot, can it
+just be your auction slot to your
+utility? It's a good point. So,
+if we're willing to impose more
+structure on x, maybe x says, this is
+what you get, this is what you get, this
+is what you get, and my valuation only
+depends on my component of x. But at
+this level of generality, we're not even
+assuming that that kind of structure,
+and it may be that uh
+you know, we we want to be The point is
+this is more general, so it may be that
+if we're allocating planes to landing
+slots, I also really like if my
+competitor gets a bad slot. I don't just
+care about getting a good slot. So, in
+principle, that could be the case.
+Maybe there are ways we could restrict
+it, but this is more general and it
+makes the notation cleaner, so we're not
+going to impose that assumption. But I
+think that's a very reasonable
+assumption. Yeah.
+Um okay.
+what are we going to do?
+before in a second price auction, we had
+this idea that people were bidding
+truthfully. We'd also like people to bid
+truthfully, but if we want people to bid
+truthfully, well, we have to just ask
+them what their valuation function is.
+And that's what the mechanism is going
+to do. We're going to say, everyone,
+tell me what your valuation function is.
+So, instead of telling me just how much
+you value one item, we're going to say,
+tell me how much you value every
+possible social decision.
+the mechanism
+will say elicits
+reports
+and we'll often denote these v1 hat
+through vn hat.
+So, what's the interpretation here? V1
+is bidder one's true valuation function.
+V1 hat is a effectively a bid. It's what
+bidder one It's the valuation function
+that bidder one reports to the
+mechanism. And that may not be truthful.
+We want to make sure that people have
+the right incentives to report
+Uh but they're reporting an entire
+function, which may be a little bit
+confusing and abstract at first.
+So, what does the mechanism do?
+So, we have 5 minutes. Just going to
+write two formulas, but they're a little
+long.
+So, just like an auction, a mechanism is
+going to just specify two things. It's
+going to have to specify an allocation
+rule and a payment rule. Right?
+So, we need an allocation rule
+and a payment rule.
+The allocation rule says, "If these are
+the reported valuation functions that
+people send to me,
+how what decision am I going to choose?"
+And the payment rule says, "If these are
+the valuation functions that are
+reported to me, how much am I going to
+ask each agent to pay?"
+So, the allocation rule
+we need to define x v1 hat
+vn hat.
+These are the valuation functions that
+are reported.
+X of this is going to be the allocation
+or the decision
+allocation or decision rule.
+We use these interchangeably.
+we want to allocate things efficiently.
+So, what does that mean?
+This is going to be in the argmax.
+I think the notation here is a little
+tricky.
+of x prime
+in x
+for the sum.
+So, let's just understand what this is.
+This says, "If we choose decision x
+prime,
+what is the sum of the players'
+utilities
+when we compute them with respect to
+what they report?"
+Taking the argmax of this says, "We're
+going to choose the decision that
+maximizes the sum of the reported
+valuations." What we'd really like to do
+is maximize the sum of the true
+valuations, but we don't know those. We
+only know the reports. So, all we can do
+is take in the reported valuation
+functions and choose the decision that
+makes the sum of the valuations as large
+as possible.
+And that's what this is, and sometimes
+we call this x star to denote that this
+is efficient.
+I think this is a bit abstract, so uh
+any
+questions on this?
+No? Good.
+There could be multiple maximizers, and
+we'll just choose one of them. Doesn't
+matter. If there's If there's two things
+that would be efficient. So, as an
+example, if we were in the auction
+context, then this would be the
+allocation that gives the highest uh
+bidder the first slot,
+the second highest bidder the second
+slot, and so on. That's what x star
+would represent.
+And v1 hat would say would be the report
+of how much I value each slot, each
+click.
+Now, the payment rule is exactly what we
+said before. We want to charge each
+bidder their externality.
+So, ti
+of v1 hat through vn hat
+is saying, "If these are the valuation
+functions that are reported by the
+bidders, how much are we going to charge
+bidder i?"
+We're going to charge bidder i,
+informally, the externality
+imposed on all others.
+Okay? So, let's write that more
+formally.
+What is the externality imposed on all
+others? It's
+how well everyone else would do if
+bidder i weren't there
+minus how well they actually do.
+That's what the externality is. So, how
+well would they do if bidder i weren't
+there? Well, let's just look at the best
+they could possibly do. So, the best
+they could possibly do if bidder i
+weren't there
+would be this.
+I'm looking at everyone other than
+bidder i.
+I'm using their reported valuation
+functions,
+and I'm saying, "If we chose x prime,
+this is how well everyone but player i
+would do."
+And let me choose the allocation that
+makes those people as well off as
+possible.
+So, I want to maximize the welfare of
+everyone other than bidder i.
+That's what we could do if bidder i
+weren't here. And we do Or in other
+words, if we didn't care about bidder i,
+this is how well everyone else could do.
+Now, I want to subtract from that how
+well they actually do. How well they do
+uh given that bidder i is present.
+How well do they actually do? Well, it's
+the sum over j not equal to i
+vj hat. But now, what I want to plug in
+here is the decision that's actually
+chosen.
+And the decision that's actually chosen
+is this one up here.
+And this is the formula.
+It's a little abstract.
+Put this in parentheses.
+And if you go to the notes, you can see
+a proof uh as to why
+using this um
+mechanism, it's always optimal for
+bidders to be truthful. So, let me just
+write that fact. This is a fact that you
+can prove.
+So, for each bidder i
+and each valuation
+function vi
+bidding
+vi hat equals vi. What I mean by that is
+reporting
+my true valuation to the mechanism
+is optimal
+no matter how everyone else bids.
+And when I say no matter what others
+bid, well, that's basically
+vj hat
+for j not equal to i.
+So, whatever everyone else other than me
+reports to the mechanism,
+if my true value is vi,
+bidding or reporting my true value vi is
+going to be best for me. It's going to
+be weakly better than any other bid.
+Uh and this is sort of a
+kind of
+incredible property of the VCG
+mechanism.
+Uh the proof is like three lines, but
+it's a little dense, so I encourage you
+to check the notes uh to see the proof.
+And maybe I'll
+stop here a few minutes early, and I'm
+happy to stick around to go over any
+questions people have about

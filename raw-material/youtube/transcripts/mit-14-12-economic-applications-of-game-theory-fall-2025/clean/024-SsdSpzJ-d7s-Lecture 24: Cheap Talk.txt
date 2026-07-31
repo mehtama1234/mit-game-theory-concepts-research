@@ -1,0 +1,1844 @@
+So then let's get started with uh
+I guess our second-to-last topic today,
+which is going to be something called uh
+cheap talk.
+I think it's good to have some context
+for this. So so far we've looked at
+signaling games.
+And
+so let's recall
+that when we looked at signaling games,
+people with private information were
+conveying information to some other
+party through costly actions. So under
+signaling
+info is conveyed
+through costly
+or we might also say payoff-relevant
+actions.
+So one way to convey information about
+how smart you are, how good of an
+employee you are, is to go to college.
+And the whole point of that model was
+that going to college is costly and
+differentially costly for different
+kinds of people. Or when a firm was
+conveying information
+um about the quality of an item, they
+were setting a price, and maybe a price
+isn't directly costly, but it is
+payoff-relevant because the price I set
+affects how much money I get if you
+actually uh accept
+uh my offer.
+But, you know, in the real world, we see
+a lot of information conveyed not
+through costly actions, but just through
+speech, through communication. We send
+messages to people, we use words, we
+talk to people.
+And the question is, when there's a
+conflict of interest, can we also convey
+information through costless actions? So
+today, the difference is we're going to
+look at uh
+through costless
+and sometimes instead of calling these
+actions, we might call them messages cuz
+we usually think of speech or words or
+messages as being costless.
+Now, there are certainly some contexts
+where this isn't going to work. If we
+think of the job market signaling
+example, the firm could could ask you
+how good of an employer are you?
+Well, everyone's going to say they're a
+good employee, right? So there are some
+contexts where we really need a costly
+action in order to make it credible the
+information that we're going to convey.
+There are other situations where it's
+clear that interests
+then of course we can communicate freely
+and that's not going to be difficult. So
+the the the point
+of the model today is going to show that
+sometimes there will be a a misalignment
+of interests, there'll be a conflict of
+interests, yet nevertheless some kind of
+communication can be credible in
+contrast to the model of telling the the
+employer that you're a good employee. So
+that's going to be the the model we're
+going to look at today.
+So this model is based on a paper by
+Crawford and Sobel
+in 1982.
+So we're getting
+you know, closer to modern topics.
+And we're going to think of this is a
+game between a sender, we call them
+sender and receiver.
+But I want you to think these are
+abstract labels. I want you to think of
+the the sender as an advisor and the
+receiver as a decision maker.
+So and the presidential advisor might
+collect information and and make a
+recommendation to the president about
+what tax policy should be or to the Fed
+about what the interest rate should be
+or how much we should spend on the
+military. And the idea is that the
+sender, the advisor, has more
+information than the decision maker cuz
+the decision maker is very busy. The CEO
+can't know about everything. They talk
+to a consultant or
+uh an an a researcher who's going to be
+very informed about this particular
+issue. So how do we model this? Well,
+the sender
+is going to uh privately observe
+what we're going to call maybe a state
+or this could also be called their type
+T in 01.
+So we're going to think of this, you
+know, in our economic example, how good
+is the economy?
+What's the ideal amount of spending we
+should spend on the military? What's the
+ideal tax rate? So this makes sense for
+any decision where uh there's kind of
+this one-dimensional choice uh that we
+have to make.
+We can think of this usually as the
+state of the world, uh but we'll also
+call it the sender's type because this
+is private information that the sender
+has.
+And then the sender, after observing
+their type T, is going to send a message
+M, we'll just call it in some abstract
+set big M
+to the receiver.
+And then the receiver is going to
+observe
+M, but not T.
+Right? The whole point is if the
+receiver, the decision maker, understood
+the state of the world, knew what the
+right decision was, they wouldn't need
+help from the advisor anyway.
+So they don't directly observe T, but
+they do observe this message that's sent
+by the sender.
+And then after that, they choose an
+action or decision
+which we'll call Y, and that's going to
+be a real number.
+So maybe I'll say
+uh I don't know if I've used this
+notation before. This is just the set of
+real numbers.
+Um
+Now, whenever we talk about something
+being privately observed, we need to
+specify the distribution from which this
+comes. And we're going to assume that
+the state, just to make things easier,
+is uniform.
+So just to be clear, the sender knows
+what the state is, they know their type.
+The uniform distribution is relevant to
+the receiver. The receiver believes that
+the state is uniformly distributed, but
+they don't know what the actual value of
+the state is.
+We also say uniformly distributed.
+And now let me specify payoffs. Of
+course, this is a very stylized model,
+but I think it captures um a lot of
+policy disagreements that that we have.
+So the sender
+their payoff US depends on the decision
+Y that the receiver takes
+and also T, the state of the world.
+And same for the receiver.
+what we're going to imagine for the
+receiver, to make things simple, is the
+receiver just wants to match their
+decision with the state of the world.
+So we could think of
+the state of the world might be
+uh
+the some measure of how close the
+economy is to a recession
+and Y might be uh how much we're
+planning to cut interest rates.
+Or T might be the severity or the risk
+of some military conflict and Y might be
+the the spending level that we spend on
+that conflict. And the idea is these
+things move together, the higher the
+state, the higher the ideal decision for
+the receiver. So we'll formally model
+this
+with the quadratic function that we've
+uh loss function that we said before.
+So this means what the receiver would
+love to do is have the decision exactly
+match the state. So we can think of the
+state as basically measuring what would
+be the ideal decision for the receiver
+if they could observe the state.
+And then the receiver experiences a loss
+that's equal to the difference between
+their decision and the state squared. So
+how far off the decision is from the
+state. Yes? So basically the decision is
+just a reflection of what the receiver
+believes that the state is.
+Uh
+it's true that their preferences over
+the decision
+depend on their beliefs about the state.
+&gt;&gt; what exactly matches the state, right?
+So it should be
+So is the decision like supposed to be a
+state?
+No, I wouldn't um I think what one maybe
+one way of interpreting this is
+Okay, if we want to think about a richer
+model, probably the state is really
+uh a very rich multi-dimensional object,
+but we're going to denote the state that
+the aspect of the state that matters is
+what the ideal decision is in that
+state.
+So I think maybe the better
+interpretation is when we write T, what
+we really mean is what is the receiver's
+ideal decision given the the state of
+the world. So maybe the economy has many
+dimensions, but think of T saying the
+ideal interest rate for the Fed to set
+is 3% and Y being the interest rate the
+Fed actually sets.
+Does that make sense? Yes. Yeah. Okay,
+great.
+So now what about the sender? Well, if
+the sender and receiver had the same
+preferences, this would be a really easy
+problem. Of course, the advisor is going
+to just reveal the state and allow the
+receiver to make a good decision. But
+often advisors and decision makers have
+misaligned interests. And the way we're
+going to capture that here is we're
+going to say the sender's preferences
+is like this
+where beta, maybe I'll put it down here,
+is greater than zero.
+So here beta is called the bias.
+This is the bias that the sender or the
+advisor has relative to the decision
+maker.
+So notice that well, the receiver always
+wants to match the decision with the
+state,
+the sender would like to match the
+decision not with the state, but with
+the state plus this bias beta.
+So notice some characteristics of this
+misalignment of interests.
+Both the sender and the receiver agree
+that when the state is higher,
+a higher decision is warranted.
+What they disagree about is the exact
+value of the decision. So whatever the
+state is, the sender always thinks the
+decision should be a little bit higher
+than the receiver thinks. And I think
+this is consistent with um a lot of
+policy disagreements. Let's take the
+example of the Fed. There are some
+people who are more hawkish and more
+dovish on inflation.
+So some people always tend to want lower
+interest rates than someone else. But
+everyone agrees that when the economy is
+in worse shape, we should tend to um cut
+interest rates and the economy is is is
+doing well, maybe we should raise
+interest rates. So um they all agree
+about the directional effect of the
+state on the ideal decision, they just
+disagree slightly uh about what the
+level is. And the sender always wants a
+decision that's higher uh than what the
+receiver wants exactly by this amount
+beta.
+So the larger beta is, the greater the
+disagreement between the sender and the
+receiver.
+Okay, so here's our model. Any
+any questions about the model so far?
+Yes.
+Is beta just like depends on who the
+sender is? Like it's not like
+distributed, it's just like being
+correct with Good question. So you could
+imagine a richer model where the
+decision maker doesn't know the
+political biases of the of the advisor,
+and that's actually interesting
+extension that people have looked at,
+but for today we're going to assume beta
+is commonly known. So I hire this
+advisor, I know that my advisor
+always, you know, tends to have this
+policy preference, and this is known.
+What I don't know is the true state of
+the
+Good question. Any other questions?
+Okay. So it's a game. Let's first think
+about what strategies are in this game.
+they observe the state of the world or
+they observe their type T
+and they choose what message to send to
+the receiver. So a strategy for the
+sender is a function M
+from 01
+to this abstract set of messages M.
+Maybe we'll
+go into here just to understand what
+goes on.
+So what this says is if I see that the
+state is say 0.3, this is the message I
+send, M of 0.3. If I see that the state
+is 0.7, then I might send a different
+message, M of 0.7.
+Now the receiver strategy, well what do
+they do?
+They see the message, and based on the
+message that they see, they choose a
+decision to make.
+So for the receiver, a strategy is a
+function Y
+from M
+to
+maybe we'll say R.
+Just to understand what's going on.
+I'll write it like this.
+So the receiver says, if I get a message
+M from my advisor, this is the decision
+I'm going to take, Y of M.
+And the solution concept we're going to
+work with
+is going to be PBE as before, perfect
+Bayesian
+equilibrium.
+Now let's start by kind of analyzing
+how things work for the receiver.
+So with perfect Bayesian equilibrium,
+whatever message the receiver sees,
+they're going to update their belief and
+then behave optimally given their
+updated belief.
+So let's just
+remember
+that whenever we work with perfect
+Bayesian equilibrium, we have to
+distinguish between the messages that
+occur on path and the messages that
+don't occur on path. So a message M is
+on path if in a given strategy profile
+there's some state of the world where
+the sender actually sends that message.
+And a message is off path if that
+message is not supposed to be sent in
+any state of the world.
+So if the receiver sees an on path
+message M
+they apply Bayes' rule.
+And then they using Bayes' rule, they
+have an updated belief about the state
+of the world T.
+But because of the nature of our
+preference relation, the the nature of
+our utility function
+the receiver always wants to take the
+decision that's equal to their updated
+expectation of the state.
+So they apply Bayes' rule.
+They can now compute
+maybe I'll say E of T given M.
+What does this mean? It says, I observe
+M
+I update my beliefs about the state of
+the world and I'm now going to compute
+what I think the expected value of the
+state of the world is given my updated
+beliefs.
+And it's always going to be optimal for
+them to to take this as their decision.
+Compute that, and in fact, that's going
+to be their decision.
+They're going to update their beliefs
+about the state, compute an expectation,
+and set their decision equal to that.
+Off path well
+the beliefs over 01
+are unconstrained.
+Because we can't apply Bayes' rule.
+So off path, the receiver can
+believe anything about the the state
+between 0 and 1.
+So the key question is, what decisions
+could the receiver take if they see an
+off path message M? What are the range
+of decisions that are consistent with
+some belief?
+Yeah. Just the real numbers.
+So
+we might think it's all the real
+numbers, but is there any belief that's
+consistent with taking decision Y equals
+2?
+We know T is lives in 01.
+So the point is, and this is kind of a
+subtle point,
+the point is
+I can form any belief I want about the
+state, but we know the state lies
+between 0 and 1. So the most pessimistic
+belief I could have is the state's
+definitely 0.
+And the most optimistic, or here it's
+not clear what's optimistic, but the
+highest belief I could have is the state
+is certainly 1.
+And in those two cases I would take the
+decision Y equals 0 and Y equals 1. So
+I'm always going to take a decision
+take some decision
+Y that's always going to be between 0
+and 1.
+Because those are the decisions that are
+consistent with some belief about the
+Any decision in here can be justified by
+some belief about the state. I could
+take decision 1/2 because I think the
+state is certain to be 1/2, or maybe I
+think it's uniform. Um those are all
+going to be okay.
+it's going to turn out, as we'll see,
+that
+the off path beliefs are not going to
+play as big of a role in this model as
+they did in the signaling model, um but
+we'll see that a bit later. So so let's
+start with, just to kind of build
+intuition, a really simple
+And the simplest equilibrium would be a
+no communication equilibrium.
+Now when I say no communication, what I
+mean is no information is actually
+conveyed. Of course, they're actually
+going to send a message because they
+have to.
+But you know, one thing the advisor
+could do is they could be a broken
+record. They could just always send the
+same message. And if they always send
+the same message no matter the state of
+the world, then that message doesn't
+convey any information about the state.
+So let's look at this kind of boring
+equilibrium. Well what is let's fix
+some message I'll call M star in M.
+This is going to be the message that the
+sender always sends no matter the state
+of the world.
+So the sender strategy is M of T
+equals M star
+for all T
+in 01.
+So going to our economic example, if
+they see the economy is great, they say
+cut interest rates. If they see the
+economy is bad, they say cut interest
+rates, and therefore what they say
+conveys no information
+about the state.
+Now let's try to compute what the
+receiver is going to do in this case.
+let's now look at the receiver.
+And what happens if the receiver
+sees the message M star?
+What beliefs does the receiver form
+about the state if they get this message
+M star?
+Yeah. Wouldn't they just going to be
+left with the prior which is that T is
+distributed over 01? Exactly. They'd
+just be left with the prior because they
+know whatever the state is, they're
+going to get this message. This hasn't
+told them anything. If you always say
+the same thing, you haven't revealed
+anything to me. So my beliefs are the
+same as the prior. So if I see M star
+uh maybe we could say retains
+prior beliefs.
+That is, I still think the state is
+uniformly distributed over 01.
+And the average state is therefore 1/2.
+So the best decision for me is to take Y
+equals 1/2. So it retains prior beliefs,
+and they take so Y of M star
+equals 1/2.
+So this looks good for our equilibrium.
+But we still have to worry, well
+we have to say, what does the receiver
+do if they see
+a message M that's not equal to M star?
+Right? They don't really know what to do
+in this case because they were expecting
+to always see the message M star. They
+can't really apply Bayes' rule here
+because they'd be dividing by zero. So
+there's a lot of flexibility.
+you might say, oh let's just choose Y
+arbitrarily.
+But what could go wrong if we just
+sort of chose Y arbitrarily here for the
+receiver. Let's say we chose Y
+equals
+you know
+1/3 or something.
+What could go wrong here? Yeah? Maybe
+the sender will like there will be a
+profitable deviation for the Exactly
+right. So whenever we're choosing the
+off path behavior by the receiver, we
+have to keep in mind that we don't want
+to choose behavior that will introduce a
+profitable deviation for the sender. In
+this equilibrium, the sender is only
+supposed to send the message M star. So
+we want to make sure that the sender
+never wants to deviate to send any
+message other than M star.
+So how can we be sure? How could we
+choose Y of M to be sure that the sender
+never wants to deviate? Yeah?
+You could make it so that the difference
+between
+like they get the same uh utility from
+getting M star
+Exactly right. And how could we make
+sure they get the same utility? I
+don't know exactly what the equation is,
+but depending on beta, right?
+Right. Well but I think you're on the
+right track. I think there's even a
+simpler answer. So you're exactly right.
+We want to make sure that if they
+deviate to this, the sender gets exactly
+the same utility. But what could it be?
+Yeah?
+It could just be 1/2, right? So what
+they could do is they could say, "Look,
+if I see any other message, I'm going to
+do exactly the same thing. I'm just
+going to choose Y M equals 1/2. I'm
+going to maintain my prior belief." So
+let's understand the structure of this
+no communication equilibrium. The
+receiver says, "Whatever message you
+send me, I'm going to do the same thing.
+I'm going to completely ignore you."
+And the sender says, "Well, if you're
+going to ignore what I say, it doesn't
+matter what I say, so I might as well
+always send the message M star."
+And this kind of sometimes goes over the
+the name This is sometimes called
+babbling.
+So in this equilibrium, the receiver is
+treating his advisor's words as just
+babbles. I don't care what you say, it's
+not going to change my belief. I'm just
+going to, you know, ignore what you say
+and do the same thing. And therefore the
+advisor says, "Well, I might as well
+always send this message M star."
+Um so indeed, this satisfies
+Let's just check what we would have to
+check to make sure this is an
+equilibrium. We'd have to check sender
+optimality,
+receiver optimality,
+and belief consistency.
+I've been a little imprecise. I haven't
+really written what the beliefs are
+here, but naturally,
+the beliefs could be I just think the
+state is uniformly distributed if I see
+any other message. And then we can see
+uh that each of these three conditions
+is going to be is going to be satisfied.
+This is not a very interesting
+equilibrium, but it's just good to see
+this always an equilibrium like this
+where
+uh our words just don't have any meaning
+and no one listens.
+Well, that's one extreme. Let's see if
+we could do better. We might want to
+have perfect communication.
+So what about an equilibrium where
+there's perfect communication?
+So you might think, "Well, if the
+advisor and the decision maker have a
+pretty good relationship, what should
+happen is the advisor should just say,
+'This is what the state is.'"
+So could there be an equilibrium
+where the message M of T
+just equals T? So the advisor says,
+"This is the state. Make a decision."
+Any thoughts? Could Could we make this
+an equilibrium?
+Yeah, hit me. I think it's not an
+equilibrium because uh the receiver
+would just act with Y equals T as a
+result. And then the sender is losing
+some amount because Y does not equal T
+plus beta. Right. So let's work through
+it. If we tried to This is not going to
+work, but let's kind of go ahead. If we
+tried to have an equilibrium where this
+was the messaging strategy of the
+sender, well, this looks great for the
+receiver. What is the receiver Y of T
+going to be? Let's be clear here.
+The receiver's strategy is not a
+function of the state, it's a function
+of the message, right? But here the
+message is the same as the state. So
+that's why I'm writing T. Um
+so Or actually, I maybe I'll still write
+torn about which notation to use. It
+doesn't make a difference.
+I'll write M.
+Uh in this case, when they see a message
+M, they're going to say, "Well, that
+means the state T equals M."
+So their best decision is just going to
+be
+M.
+Right?
+But now, let's put yourself in the shoes
+of the sender.
+And let's say you see that the state is
+C is T.
+If you were the sender, what message
+would you send to your to the decision
+maker?
+Yeah? T plus beta. Uh exactly.
+you know the state is T. Well, why don't
+you just say, "Look, you're going to
+tell the advisor
+M equals T plus beta."
+And I think we see this
+all the time, right? If someone's more
+of an interventionist and they know that
+the president is less of an
+interventionist and they want them to
+intervene in the conflict, they don't
+say, "I'm an interventionist." They say,
+"Oh, this conflict is just really
+serious. It's really important to
+intervene. I'm not saying it cuz I'm an
+interventionist, it's just the nature of
+the conflict means we really have to
+intervene." Or someone who always wants
+um
+cut interest rates isn't going to say,
+"Oh, let's cut interest rates cuz I love
+cutting interest rates." Um they're
+going to say, uh "Inflation's not really
+a problem. We're not really having any
+inflation. I think this is what you
+should do."
+So the sender has an incentive to
+misrepresent what the state is in order
+to get their ideal decision because they
+know if the receiver believes the state
+is actually T plus beta, then the
+receiver will take decision T plus beta,
+and that'll give the sender exactly what
+they want. So we see that indeed this
+cannot be an equilibrium
+because the sender has a profitable
+deviation and then the receiver won't
+trust the messages and everything breaks
+down. So not an equilibrium.
+But now we have a bit of a puzzle.
+We definitely see communication in
+practice between people who have
+misaligned interests.
+we don't just see this no communication
+equilibrium. So the question is, well,
+if we can't get a perfect communication
+equilibrium, maybe it's possible to have
+an equilibrium where we have some
+partial communication. We don't
+perfectly reveal the state, but we
+provide some valuable information about
+the state. And that's going to be the
+key idea of this of this paper.
+So let's our goal
+is to find well, maybe not perfectly
+informative equilibria, but partially
+informative equilibria.
+Let's start with, you know, a really
+simple case. I guess the simplest
+possible message you could send about
+some real-valued state is you could say
+the state's either higher or low. You
+could just say it's either above a
+threshold or below a threshold. So let's
+Let's see if we can
+work with that.
+So the state
+is here between 0 and 1.
+And let's say we choose some threshold.
+We'll call this threshold T1.
+And what's the sender going to do?
+If they see the state is below T1,
+they're going to send a message maybe
+we'll call the message L.
+They're going to say, "The state is low.
+The state is below T1."
+And if they see the state is above T1,
+they're going to send a message H.
+Saying the state is high.
+we want to see if this could be an
+equilibrium. You might worry because you
+might think, "Well, wait a second, isn't
+the sender going to want to lie
+and pretend the state is high when
+sometimes it's not in order to get their
+higher preferred decision?" That's a
+good intuition, but it turns out we can
+get this to work, which I think is maybe
+a bit surprising. So let's Let's go
+through this.
+So what is Y of L going to be and Y of H
+going to be?
+So T1 is a parameter that we're going to
+solve for. Okay? So we're going to look
+for an equilibrium that has this form
+for some parameter T1. And this is what
+we're going to figure out. Okay? So what
+happens if the receiver sees the the
+message L? Well, the receiver knows that
+the state is somewhere between 0 and T1,
+and they know it's uniformly distributed
+between 0 and T1.
+So what do they think is the average
+expected What do they think is the
+expected state when they see message L?
+Half of T1, right?
+Cuz they're going to say, "Look, all
+you've told me is the state's here. It's
+uniformly distributed, so on average,
+it's the midpoint of of of this
+interval, which is T1 over 2."
+Conversely, if the receiver gets the
+message high, they're going to say,
+"Okay, the state is uniformly
+distributed between T1 and 1.
+The average
+So my updated expectation of the state
+is just the midpoint of this interval,
+which is the average of T1 and 1. So
+this is just going to be
+T1 plus 1 over 2.
+Now,
+we're not done yet.
+We still have to worry what happens if
+they get a message that's neither L nor
+H, right?
+Um but there's kind of a trick that we
+can always use that goes back to what we
+did over here.
+The trick was if we see a message that
+we're not supposed to see, we can just
+treat it as if it were a message we were
+supposed to see, and that's never going
+to be a profitable deviation. So in this
+case,
+the receiver can say, "Look, if you send
+me any message other than L or H, I'm
+just going to treat that as if you had
+sent me L."
+So it's going to be T1 over 2.
+So as if
+M equals L.
+And then there's never a reason for the
+sender to deviate to any message other
+than L or H because if they send a
+message other than L or H, it's just as
+if they're sending the message L, so
+they might as well send the message L to
+begin with. And this is a common um
+kind of trick
+that's used in cheap talk games.
+Uh I want to emphasize I don't want to
+create confusion with signaling, so I
+want to say this is a trick
+that doesn't work with signaling.
+Let's just understand this cuz I don't
+want to create confusion going back to
+the signaling game. What if in the
+employment context, the employer said,
+"Okay, you're supposed to get this level
+of education. If you don't go to school,
+I'll just treat it as if you went to
+school, and that shouldn't be a
+profitable deviation."
+That's not going to work, right? Because
+they'd much rather not go to school and
+form the same beliefs. So the crucial
+reason this trick works is
+if I can send message L
+and message M and get the same decision,
+I'm indifferent between those two
+things.
+But if the message itself were costly,
+then I wouldn't necessarily be
+indifferent because I'd have to take
+into account not only the decision it
+induced, but the cost of the message I'm
+I'm sending. So this is a crucial
+difference between a model with payoff
+irrelevant messages and a model where
+the actions I'm choosing are payoff
+irrelevant. I think that's a bit of a
+subtle point. So any questions on on
+that difference?
+Yes. Could you repeat the example of
+Of the employer example, yeah. So in the
+employer example, let's say we're doing
+um the job market signaling, and
+everyone is supposed to get Let's look
+at the pooling equilibrium where
+everyone goes to school for goes to
+college and gets a certain wage. And the
+employer says, "Okay, if you choose any
+other level of education, I'm going to
+treat it as if you'd gone to college for
+as if you got to college and I'll pay
+you the same wage as if you'd gone to
+college."
+Well, now
+the student is going to say, "Wait a
+second, if I can instead of going to
+college, not go to college and get the
+same wage, I'm strictly better off."
+And the difference here is even though
+those two actions induce the same
+decision by the receiver, the actions
+themselves have different costs and
+therefore the student would rather not
+go to college. Here,
+the message L and the message M induce
+the same decision, but in this case the
+sender is actually indifferent between
+those two things because the message
+itself doesn't directly uh have a cost.
+Does that clear things up?
+Yeah, great. Okay.
+And actually that's why sort of what I
+said earlier,
+off-path beliefs and belief consistency
+don't really make a big difference in
+cheap talk games and it's really just
+everything we do is basically the same
+as just doing Nash equilibrium, but
+that's a
+that's a subtle point, that's not so
+important. Okay, so here we are. Let's
+see if this is going to work out. We've
+specified the receiver's strategy and
+now we have to check that the sender
+is willing to
+send these messages as they're supposed
+to.
+So, what's the sender supposed to do?
+If they see any state
+here,
+they send message L.
+And if they see any state here, they
+send message H.
+So, how can that be optimal for them?
+Well, what must be true if the state is
+exactly T1?
+So, let's ask this.
+What must be true about the sender
+if the state is exactly T1? Yes, Amy?
+The sender is indifferent between
+sending L and sending H. They have to be
+indifferent because
+if the state were just a little bit to
+the left, they want to send L and if
+it's a little bit to the right, they
+want to send M. So, the only way they
+can have those preferences is if at T1,
+they're exactly indifferent between
+sending the message L and the message H.
+So, the idea is here I'm going to be
+exactly indifferent and if the state is
+anywhere to the left, I want to send L
+and anywhere to the right, I want to
+send H. So, we're going to have what we
+need is we we must have indifference.
+So,
+let's work this out.
+Well,
+that means when the state is T1,
+maybe we'll write it graphically, what
+we must have is
+Y of L.
+Maybe we'll put negatives here, it
+doesn't matter.
+So, if I know the state is T1,
+if I send the message L,
+the receiver is going to take decision Y
+of L
+and this is going to be my utility.
+If I send the message H, the receiver is
+going to take the decision Y H and this
+is going to be my utility. So, in order
+for me to be indifferent between these
+two things, I need these two formulas to
+agree.
+But let's look at it graphically cuz I
+think that's a bit clearer.
+Well, graphically,
+we have a quadratic loss function.
+I'm the sender.
+I know the state is T1.
+What I'm going to graph is well, what
+does my utility look like as a function
+of the decision Y that's taken?
+Well, my utility is going to look
+something like this.
+Here it's actually going to be
+zero.
+So, if the decision Y is exactly T1 +
+beta, well, that's my that's the best
+thing that I can get. The decision
+exactly matches T1 + beta.
+The difference between the decision and
+T1 + beta is zero, so my loss is zero
+and that's the best possible thing I
+could get.
+If the decision is higher than T1 +
+beta, well, I'm going to experience a
+loss that's quadratic and if it's lower
+than T1 + beta, I'm also going to
+experience a loss that's quadratic.
+Now, the nice thing about the quadratic
+is
+it's symmetric.
+So, what we need
+Well, we need it the picture to look
+something like this. We need the sender
+to be indifferent between the decision
+YL and the decision YH. And what that
+means is the utility function
+has to take the same value at these two
+decisions.
+It crosses through the same horizontal
+line.
+But because of symmetry,
+this is only going to happen if T1 +
+beta is exactly the halfway between
+these two points.
+If T1 + beta was closer to YL, then the
+sender would rather induce the decision
+YL.
+And if T1 + beta was closer to YH,
+they'd rather induce the decision YH.
+So, we could do it algebraically, but I
+think it's clearer to do it this way.
+So, what we see
+is T1 + beta
+must be halfway between these two
+So, it must be
+YL
+plus Y of H
+over two.
+And now let's do just a little bit of
+algebra.
+We get
+maybe let's multiply both sides by two
+to make it a little easier. We have 2 T1
++ 2 2 2 beta
+is equal to Y of L + Y of H and let's
+just plug these in. So, Y of L is T1
+Y of H is
+T1 + 1 over two.
+And that's
+T1
+plus 1/2.
+Just put the T1 over two and T1 over two
+together.
+And now let's do a final
+simplification.
+Get T1.
+T1 = 1/2 - 2 beta.
+So, let's see if we can
+visualize what this looks like.
+If beta is zero, let's start with that
+case. That's the easiest case. If beta
+is zero, then T1 = 1/2.
+So, that means that the sender just
+says, "Is the state above average or
+below average?"
+But
+if beta gets larger,
+then T1 has to be below 1/2.
+So, that this interval is smaller than
+this interval.
+Do you have Do you have some intuition
+for why these intervals are
+kind of asymmetric
+in this way?
+Why is it that
+the interval on the right
+is larger than the interval
+on the left?
+Yeah.
+There's going to be
+certain kind of
+values that are right below 1/2 where
+with the bias in mind,
+the sender they'd be more incentivized
+if the responder played high.
+And so or or believed that it was high.
+And so for that small range of values,
+that's why T1 is biased below 1/2.
+Exactly right. Yeah. So, if if it was
+symmetric,
+then at the midpoint, the sender would
+always want to say the state is high.
+So, we have to create these intervals to
+be asymmetric to ensure that the sender
+isn't tempted to say high and
+effectively what we're doing is we're
+shifting the midpoint left um in order
+to counter uh that bias. So,
+one one way I like to maybe think about
+it is
+this interval is smaller, which means
+the sender is giving more precise
+information about the state.
+So, in order to deter the sender from
+claiming the state is high, what we're
+saying is well, if you say it's high,
+you're not able to convey very much
+information and therefore the decision
+isn't going to be very precise. So, the
+sender is sort of trading off the bias
+of the decision against kind of the
+informativeness of the decision. That's
+one way of thinking about it. Um Okay,
+and then one final thing. Wait a second.
+T1 needs to be between zero and one.
+So, we immediately see that beta has to
+be pretty small in order for this to
+make sense at all. Is that a question?
+Can you explain the whole thing about
+bias this about the decision and like
+why does it like what benefit there is
+from the precision in the lower part
+versus
+like having bias later?
+Um I guess that's
+I mean, I think the
+maybe another way of
+saying it is
+by having the interval this interval
+larger,
+we're basically shifting the midpoint of
+this interval farther away from me.
+So, as the as the person right at the at
+the threshold, I'm tempted to claim the
+state is high just uh because I'm biased
+and I want the state to be higher.
+But as we enlarge this right interval,
+well, the decision that is induced when
+I say high starts getting higher and
+higher because the interval is so big
+and the midpoint is moving farther to
+the right. And then the eventually in
+the extreme case, the interval is going
+to be so big um that I actually don't
+want to send that the higher message and
+the interval is going to be just the
+right length that kind of balances those
+forces. So, maybe maybe I guess the
+point that I'm making is the length of
+the interval determines how far the
+midpoint of the interval is from the end
+point of the interval. And if we made
+that interval really, really big, then
+the midpoint of that interval is going
+to be really, really far away from its
+left end point and in fact, it's going
+to be too high even for the biased
+sender. Um so, we have to balance these
+just right.
+So, I interpret the midpoint being far
+away from the endpoint as being saying,
+"Because I'm not revealing much
+information about the state, the
+receiver's updated belief about the
+state is very far from the true state."
+But, um
+maybe that's not so important.
+one observation here is that note that
+this only works
+if
+2 beta is less than 1/2,
+which means beta is less than 1/4.
+Yeah, absolutely.
+Yeah, questions Yeah, I
+uh yeah.
+Yeah. Then the midpoint of the right
+interval goes down cuz it's one less.
+Right. So, what I'm what I'm thinking
+about is the relative position of the
+midpoint relative to T1. So, what
+happens is if I move T1 to the left, T1
+moves to the left by say an inch, the
+midpoint moves to the left by only half
+an inch.
+So, the difference between the
+endpoint and the midpoint grows.
+And then at a certain point
+because of like the way
+the receiver's going to respond, you
+would it's a little smaller difference
+from the [snorts] last time. Exactly.
+And that's exactly what we've done here.
+We found I mean, this formula is exactly
+telling us where the that point has to
+be. So, you're right. I I maybe I should
+have been more precise. It's true as I
+move T1 left that the the high decision
+gets smaller, but it doesn't get smaller
+fast enough because it um you know, when
+you move the the endpoint by one, you
+only move the average by half.
+Uh and that's exactly I mean, you can
+see that here, right?
+So, I guess what I'm saying is
+Y of H is T1 + 1 / 2.
+If we shrink T1, if we if we reduce T1
+by
+a little bit, then we reduce Y of H by
+only half of that. But, T1 gets reduced
+by the full amount.
+Okay. And then so, the idea that the
+left side is smaller than the right side
+also just based on the idea that because
+there's a beta
+Exactly. Yeah. I mean, I guess very
+simply all it's saying is
+we're choosing the intervals so that the
+midpoint of the left interval
+and the midpoint of the right interval,
+if we look at those two midpoints, they
+average to
+the cutoff point plus beta.
+And that's exactly what we wrote
+here. I mean, this is sort of the the
+key the key condition. Yeah, yes.
+is the responder aware of the bias? And
+if so, they're then incentivized to kind
+of know or change their behavior given
+that the senders would be lying part of
+the time when they say hi. Okay, great
+question. So, so first this goes to your
+earlier question. They do know the bias
+exactly.
+Um and this is an equilibrium, so they
+recognize what the sender is doing.
+Uh but I I wouldn't say the sender is
+lying. I mean, what the sender is doing
+is the sender is telling them whether or
+not the state is below T1 or above T1.
+And given that message, the receiver is
+behaving optimally.
+Because if they get the message L,
+whatever the bias of the sender, they
+believe that the sender is
+that the sender's message means the
+state is uniform over this interval, and
+therefore their optimal decision is T1 /
+2. So, I mean, you're thinking exactly
+about the right way. This is what the
+equilibrium is capturing, um but the
+receiver doesn't have any incentive to
+deviate. Yeah.
+Yeah, yes, other question. So, does the
+the receiver know T1
+Uh oh, good question. Yes.
+So, T1 is is a parameter of the
+equilibrium, so T1 is going to be known.
+And the reason is we all or Okay, this
+gets into the subtle question of what's
+known, but
+in equilibrium,
+when the equilibrium is played, the
+players have correct beliefs about what
+the other players are doing. So, the
+receiver believes that the sender is
+following this equilibrium strategy for
+this particular value of T1. So, the
+receiver uh in a sense knows T1. Yeah.
+So, I guess we have to be careful.
+I was writing down all these formulas to
+try to derive the value of T1. But, once
+I've solved for T1, formally the
+equilibrium is
+this exact value of T1. It's not an
+abstract parameter anymore. It has to be
+1/2 - 2 beta, otherwise the equilibrium
+wouldn't work.
+Um great. So, we said this only works if
+beta is less than 1/4. And indeed, you
+can show that if beta is more than 1/4,
+the only equilibrium is
+the bad no communication equilibrium
+over here.
+So, let's sort of make this point over
+here.
+If beta
+is greater than equal to 1/4,
+no communication
+is the only equilibrium.
+Now, when I say only, I mean the message
+M star that we use could could be a
+different message, but we're never going
+to be able to convey information. And
+the point here is the bias is so strong
+that it's impossible to credibly convey
+information. And you can think of this
+in the extreme case as kind of like the
+story of the worker who goes to the firm
+and says, "I'm a good worker."
+If the advisor has such a bias relative
+to the receiver and they always want
+higher decisions, the receiver just
+can't listen anything they say.
+And therefore, the only equilibrium is
+going to be no communication.
+If beta is less than 1/4,
+well, we can have some coarse
+communication where we reveal whether
+the state is above or below this
+threshold.
+But, we might ask, "Well, can we convey
+even more information?"
+Could we have
+more precise information conveyed? Do
+you have any ideas how we might get
+beyond this case of just above or below
+a threshold? And actually convey
+how might we convey even more
+information uh in equilibrium?
+Yeah? I had a question Yeah.
+So, I was just wondering for like the
+utility functions, because we say that T
+is between zero and one, and then we
+also have this bias, is the sender
+always incentivized to um
+like if T plus beta is ever greater than
+one, wouldn't that mean their like
+utility is always negative?
+Yeah, so one thing is I wouldn't Yeah,
+this is a maybe a good point. Um
+you might worry the way we've written
+the game,
+the utilities are actually always
+negative.
+Um Remember with utilities, we can
+always add a constant to them and it
+doesn't really change things. So, you
+might be thinking, "Oh, they better they
+rather not play the game at all. They'd
+rather just not participate." Um you
+could imagine the utility being 100
+minus this and 100 minus this, and then
+the utilities would sometimes be would
+always be positive.
+So, you can always, you know, the the
+sender is comparing is only looking at
+differences in utilities, not the
+absolute levels. So, we could always
+shift up the utility and it's not going
+to make any difference. Yeah. So, if you
+wanted, we could call this
+100 minus this
+and 100 minus this, and it wouldn't
+change anything.
+Hopefully that answers that.
+Okay. So, any ideas we we have this
+equilibrium where I just say the state's
+either below a threshold or above a
+threshold, how could we maybe convey
+more precise information about the
+state? Yeah?
+So, the threshold idea is possible to
+have like low, medium, high decisions.
+I think that's the natural thing, right?
+Why don't you just say it's low, medium,
+high? Or maybe we could go a step
+further and say split it up and say it's
+either really low or a little bit low or
+a little bit high or really high, right?
+And it's not clear where this stops,
+right? We could do a lot of this. So,
+that's the going to be the idea. And
+these are called
+uh partitional equilibria. So, maybe
+I'll erase this.
+So, more generally, we're going to look
+at
+what are called partitional
+This was a special case of a partitional
+equilibrium where we just had two cells.
+We had two messages that said either
+below or above a threshold, but more
+generally,
+here's our interval 01.
+Why don't we do something like this? We
+could say
+T1,
+T2, maybe it keeps going
+T
+K minus 1.
+And we could say either the state is in
+this interval or it's in this interval
+or it's in this interval. This is, you
+know, keeps going.
+Or this interval or this interval. So,
+we're basically going to our message
+from the by the sender is going to
+reveal which of these intervals the
+state is in.
+And as the number of intervals gets
+really big and each of the intervals
+gets really small, we're actually
+converging to more and more precise
+communication.
+So, let's understand what's going on
+It's kind of convenient to call this T0
+and call this TK.
+So, formally what I'm going to what I'm
+going to look at a partitional
+equilibrium
+with K cells. So, this is a K cell
+partitional equilibrium
+where K is greater than equal to two.
+So, we have the first cell, the second
+cell, the third cell, all the way up to
+the K cell.
+And that means we're going to have K
+messages. And let's label them. Let's
+just call this message one,
+message two,
+all the way to message K.
+So, what the sender's going to do is
+they're going to look at the state and
+they're going to say, "Well, if the
+state's between zero and T1, I'm going
+to send message M1.
+If it's between T1 and T2, I'm going to
+send message M2. If it's between T2 and
+T3, I'm going to send message M3, all
+the way up to MK."
+And maybe I will call write this call
+this Y1. If the receiver sees message
+M1, they're going to take decision Y1.
+If they see M2, they're going to take Y2
+and so on.
+So, formally what I mean is YK is equal
+to Y of M of K.
+But, this is just cleaner notation.
+And again, we're going to try to solve
+for these parameter values
+T1 up to TK minus 1. We're going to
+solve for these thresholds to see if we
+can make this an equilibrium.
+So, what's going to have to happen?
+Well, first let's use receiver
+optimality.
+Receiver optimality says, well, when the
+receiver gets this message M1, they know
+the state is somewhere between 0 and T1.
+And they believe in fact the state is
+uniformly distributed between 0 and T1.
+So, their updated belief about the
+expected state is that it's the midpoint
+of this.
+So, in each case, the receiver's
+decision must be the midpoint of the
+cell um that they're told the state is
+in. So, in math language, what we would
+say is YK
+or YJ
+Let's make sure we get this right is
+going to be equal to
+TJ minus 1
+plus TJ
+Because when they get message MJ,
+they learn that the state is between TJ
+minus 1 and TJ.
+So, maybe we'll say this here.
+Because they learn
+that the state T
+is between TJ minus 1
+TJ.
+Okay.
+So, that gives us a formula for each of
+these decisions.
+This is for
+J equals 1
+all the way up to K.
+And then, what is sender optimality
+tell us?
+Well, it's going to be the same idea.
+At each of these split points
+we want the sender to be indifferent
+between sending the lower message and
+the higher message. So, when the state
+is T1, the sender should be indifferent
+between M1 and M2.
+When the state is T2, the sender should
+be indifferent between M2 and M3. All
+the way up when the state is TK minus 1,
+they should be indifferent between MK
+minus 1 and MK.
+So, what that means is that TJ
+plus beta
+should be the midpoint
+of
+YJ
+YJ plus 1
+two. Let's make sure we got kind of the
+fence post problem right.
+When the state is T1, we should be
+indifferent between M1 and M2, which is
+YJ and YJ plus 1. So, that makes sense.
+And if we did a little more
+uh and this must be true for
+J equals
+1 to K minus 1.
+Notice, we have K
+conditions for the receiver
+because we have K cells.
+We have K minus 1 conditions for the
+sender because we have K minus 1 split
+points. This is the classic kind of
+fence post issue that um
+K minus 1 cuts gives us K pieces.
+So, we could do a bit of algebra. Uh I
+don't think we really need to
+go through all the algebra. Let me just
+uh kind of describe
+what you're going to find.
+So, maybe I'll just say mathematically
+what this is called
+is um okay, we get kind of a system of
+equations.
+for T1 through T
+Remember, we already did the case of K
+equals 2.
+And in the case of K equals 2, we just
+solve for T1. But more generally, we
+have to solve for
+uh K minus 1 values.
+But I want to just sort of
+maybe convey the idea
+intuitively. Uh
+Here's how I like to think about it. We
+could do the algebra, but let's just
+think about it.
+Let's look at adjacent cells, okay?
+And let's look at what happens when the
+state is here.
+Okay?
+Well, if these adjacent cells had the
+same length
+would would this Let's call this TJ.
+Would the sender be indifferent between
+getting this point and this point? Which
+would they prefer?
+these two decisions are equidistant from
+But the sender's biased, right? The
+sender uh prefers the decision that's
+closest to TJ plus beta. So, the sender
+would always prefer the higher decision.
+is we need TJ plus beta to be equal to
+the average of these two points.
+So, what we need to do is we need the
+average of these two points
+to shift
+right
+by beta.
+Because if we want the sender to be
+indifferent between these two points,
+they shouldn't average to TJ, they
+should average to TJ plus beta.
+So, what we want to do is we want to
+move out this interval, make this
+interval longer until the average is
+shifted right by beta.
+But we're only moving this point. This
+point is stayed staying fixed.
+So, if we want the average to go up by
+beta, we have to increase this point by
+two beta.
+Say again? Why is the left point fixed?
+we're basically solving the equation
+forward. We're saying, let's suppose the
+left interval is like this, how big
+should the next interval be? Okay,
+because left intervals are given.
+So, we have to increase
+this point by two beta to increase the
+average by beta.
+But how can we increase the midpoint of
+this interval by two beta? How much do
+we have to increase the right end point
+to get the midpoint to go up by two
+beta?
+Four beta, right? So, that means this
+has to go up
+by four beta.
+Okay, we could do the algebra, but I
+just kind of like to think it through.
+So, what we indeed have is the general
+formula is this.
+And you can solve it, but I think it's
+nicer to think of it
+like this.
+Uh let's write it this way.
+So, we're comparing the lengths No, no,
+no, that's wrong.
+Sorry, let me rewrite this.
+So, we get this formula.
+Which compares the lengths of the
+consecutive intervals.
+So, in our
+in our picture here
+this is an interval length.
+This is the next interval length.
+And what we're saying is as we move to
+the right, the next interval moving to
+the right must be as long as the
+interval to the left plus two beta.
+Through the argument that we did over
+here. Yeah. And that was just when you
+originally first drew the picture, that
+was saying like TJ plus 1 minus TJ was
+the same length of TJ minus TJ minus 1.
+And then you
+And then based on the logic we
+Right. So, formally in this picture, I
+fixed TJ minus 1.
+I fixed TJ, and I was saying how big
+must TJ plus 1 be?
+Um maybe it would have been easier just
+to do the algebra, but I find I find
+this clear. Yeah.
+Um okay.
+So, and actually we can check.
+Let's go back to our example over here.
+When T1 was equal to half minus two
+beta, what were the lengths of these
+intervals?
+This interval
+was half minus two beta.
+What was the other interval?
+Well, it's 1 minus that, right?
+1 minus half minus two beta.
+We could which equals half plus two
+So, indeed that formula held in the
+special case. What that midpoint was
+doing is it was exactly ensuring that
+the length of this interval was exactly
+the length of this interval plus two
+four beta.
+And where did beta over four come in?
+four beta has to be less than one, and
+and that's where it comes comes from.
+So, now we can sort of see what the
+the structure of the equilibria have to
+look like.
+If you want to draw it more more
+carefully,
+as we move to the right, the intervals
+are going to keep getting bigger
+by a fixed amount. So, it's going to be
+something like this. The first interval
+has some length delta.
+The next interval has some length delta
+plus four beta. And the next interval
+has some length delta plus eight beta.
+And we can keep going.
+And then we have to make sure that
+everything works out at the right
+interval and everything comes together.
+So, what's the takeaway? Um
+what we actually find
+Let me just give the kind of statement
+So, it can be shown, we won't go through
+it,
+there exists
+a partitional equilibria
+equilibrium with K cells
+if and only if
+beta is less than
+And I think this formula can really
+capture a lot of the key insights the
+paper. So, let's try to understand
+what's going on.
+First, let's check that this is
+consistent with what we did before.
+So, what if we put in K equals 2?
+With K equals 2,
+we're back to the case we already looked
+at.
+And with K equals 2, the theorem says
+there exists a partitional equilibrium
+with two cells
+if and only if beta is less than 1 over
+2 * 2 * 1, which is 1/4.
+So, indeed, it agrees with what we got
+More generally, we get a formula like
+this.
+So, what does it say? Well,
+as K increases,
+communication becomes more precise.
+As K increases, we're partitioning the
+state into smaller and smaller cells,
+and therefore conveying more and more
+precise information about the state.
+So, if we want more precise
+communication, what it's telling us is
+beta has to be even smaller.
+So, that requires
+less bias.
+is that
+the less biased that the agent is,
+the more precisely it's possible for the
+sender to communicate with that agent,
+and the the more we can split the state
+space into these very, very tiny cells
+and convey more and more precise
+information.
+Uh and in the limiting case, when
+there's no bias, we can basically
+perfectly reveal the state.
+Uh yes. Can you explain a little bit
+more about the reasoning between precise
+communication coming from less bias?
+Or like the last area?
+Right. So, I'm saying the last area
+comes from this equation.
+If we want if K grows, so we want to
+have an equilibrium with a larger with
+more cells,
+then this inequality has to be
+satisfied.
+Because K is on the bottom of this
+fraction, as K goes up, this fraction
+gets smaller, and therefore beta has to
+be smaller in order for this equilibrium
+to work. Is there a reason like that's
+not related to this inequality?
+Oh, um
+Yeah, I think the reason not related to
+the inequality is that
+when we provide really, really precise
+information about the state, it becomes
+very tempting
+for the sender to misreport and claim
+the state is higher than it is.
+So, if we're, you know, think of the
+logic of that opening case where we
+fully reveal the state. If we basically
+say what the state is down to, you know,
+really, really strong precision, what's
+the sender going to do? They're just
+going to claim the state is higher.
+They're going to claim it's in a higher
+cell, and they're going to benefit from
+that.
+If they're less biased, then it's
+feasible for us to split the state space
+into very fine cells, and the sender
+won't have an incentive to deviate.
+So, I guess one final picture I'll show,
+and I know this lecture's maybe a bit
+harder, so I think I'll end maybe five
+five or 10 minutes early. Um
+But,
+what we can look at is I think it's
+helpful to look at the space of biases.
+So, let's look at beta,
+and let's see
+what's possible in this game.
+So, here we have 1/4.
+And if beta is up here, then no
+communication is possible.
+the agent's so biased that there's no
+equilibrium in which any information
+about the state is revealed. That's what
+we already said over there.
+Uh let's sort of get the numbers right.
+If we have three,
+we have six. It's already 1/12.
+I think we'll
+get down to something like 1/12.
+So, here,
+there is
+a two-cell
+only.
+If the bias is between 1/12 and 1/4,
+then the only way the only equilibrium
+it can be shown is the kind of
+equilibrium we described where you
+either say the state is above or below a
+And we're going to keep going down and
+down and down,
+and then here, in this case, we're going
+to have a two-cell
+and a three-cell equilibrium.
+So, for a lower level of bias, there
+will be a two-cell equilibria where the
+sender just says the state's above or
+below a threshold.
+There will also be a three-cell
+equilibria
+where the sender says the state is
+either low, medium, or high, but that's
+it. There's nothing else.
+And then if we get down to here, there's
+going to be a two-cell, a three-cell,
+and a four-cell.
+And as we keep going,
+as beta keeps getting smaller and
+smaller, the set of equilibria grows. We
+have more and more equilibria, and we
+have equilibria with more and more cells
+that provide more and more precise
+communication. And the limit as beta
+gets really close to zero, we have very
+And maybe one final observation I'll
+make
+let's suppose beta is small enough so
+that there's a range of equilibria.
+There's a one-cell, there's a two-
+there's a two-cell, there's a
+three-cell, there's a four-cell. The
+question is, which equilibrium
+is best for the players?
+Any intuition for this? Let's say we're
+in a case Let's say beta is here. So, we
+have both a two-cell and a three-cell.
+What do you think is better? Yeah.
+Or do you have a question? Yeah. I was
+going to say I think for the receiver
+it's probably better to have more cells
+rather than getting closer. Exactly
+right. So, it's it's definitely better
+for the receiver because if there's more
+cells in the equilibrium, the receiver
+is just getting more information about
+the state, and therefore they're able to
+take make more accurate decisions.
+Uh it may be less obvious, but it's
+actually better for the sender as well.
+So, it turns out uh
+the highest K
+is best
+for both the sender and the receiver.
+So, for any value of beta, depending on
+the value of beta, there's going to be a
+range of equilibria. There's going to be
+some uninformative equilibria. In fact,
+there's always the babbling equilibrium
+where you don't reveal anything. There
+might be a two-cell where I just say
+it's high or low. There might be a
+three-cell where I say it's high,
+medium, or low. A four-cell. The high
+the biggest number of cells that that
+can exist as an equilibrium, that's
+going to be the most informative
+equilibrium, and it turns out that's
+going to be the equilibrium that's best
+for the sender and and also for the
+So, maybe that's some sort of prediction
+about uh what we might expect to see.
+Yes, Amy. So, it makes sense that it's
+best for the receiver just because when
+you get closer, your receiver gets more
+info. Yeah. And how does the sender
+benefit? Is it also the same reason? Um
+Yeah, it's actually a property of the
+quadratic um
+loss. So, I think the intuition is that
+because the receiver is always matching
+the decision with their expectation of
+the state,
+the sender can never
+shift the decision. So, it We're getting
+into kind of a technical point, but it
+turns out the expected decision is
+always going to be equal to the expected
+And as the cells get smaller,
+the benefit is that the state is
+conveyed more precisely, and therefore
+that higher decisions are taken in
+higher states and lower decisions in
+lower states, and that's going to be
+better for the sender. Uh but the basic
+intuition is that the
+I guess Okay, the formal answer would be
+it's like a bias-variance decomposition.
+Um you can express the expected loss as
+like the bias of the error and the and
+the variance of the error, and the bias
+is fixed, and the variance you're going
+to make smaller. But, I'm happy to talk
+more offline if if you want to go into
+that more depth.
+Um Okay, so I think that was a a bit of
+a harder lecture. Just let me stop
+there. I know we're near the end of the
+semester. I'll give people an early
+stop, and I will see everyone on Tuesday
+for the last lecture.

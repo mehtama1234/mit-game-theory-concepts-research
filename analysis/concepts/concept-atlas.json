@@ -1,0 +1,1087 @@
+[
+  {
+    "id": "preferences",
+    "name": "Preferences",
+    "plain_language_definition": "A way to say which outcomes a person ranks above others.",
+    "everyday_problem": "The problem is that before we talk about strategy, we need a way to say what one person is trying to get. A person may like one outcome more than another even when dollars, risk, effort, and timing are mixed together.",
+    "first_principles_reason": "This exists because choice needs ordering. If the person cannot rank outcomes, then words like better, worse, rational, or optimal have nothing to attach to.",
+    "mathematical_principle": "A preference relation ranks outcomes, often represented by a utility function u(x). The useful relation is `x preferred to y means u(x) > u(y).`. In plain language: x and y are possible outcomes; u assigns each outcome a number; the larger number records the option the person ranks higher.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a preference relation: a comparison rule over outcomes. When it is complete the person can compare any two outcomes; when it is transitive the comparisons do not cycle back on themselves.",
+    "operation": "List the possible outcomes, ask which ones the person ranks above which others, and then check whether those rankings are consistent enough to be represented and used in a model.",
+    "worked_mini_example": "If someone prefers coffee to tea and tea to water, transitivity says they should prefer coffee to water. Without that, a model can chase its own tail because the person can be walked around a cycle of choices.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to think preferences are emotions. In the course they are a disciplined choice ordering, not a psychological biography.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. In the course sequence this is the quiet foundation under everything else: dominance, equilibrium, bargaining, and auctions all assume that each player can compare outcomes. If preferences are incomplete or cycling, later tools that ask what a player would choose lose their footing.",
+    "recognize_in_new_work": "Look for the place where an economic model has to say what an actor counts as better before any strategic reasoning begins.",
+    "theme_id": "choice_and_payoff",
+    "mathematical_primitives": [
+      "preference"
+    ],
+    "related_concepts": [
+      "utility",
+      "expected_utility"
+    ],
+    "course_evidence_ids": [
+      "ev-preferences-01",
+      "ev-preferences-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "utility",
+    "name": "Utility",
+    "plain_language_definition": "A numerical representation of what someone is trying to get.",
+    "everyday_problem": "The problem is that rankings are awkward to compute with. A payoff table, expected value, or equilibrium check needs numbers, not only verbal statements like this outcome is preferred.",
+    "first_principles_reason": "Utility exists because mathematics needs a handle. If rankings can be represented by numbers, then comparison, maximization, and averaging become possible.",
+    "mathematical_principle": "A preference relation ranks outcomes, often represented by a utility function u(x). The useful relation is `x preferred to y means u(x) > u(y).`. In plain language: x and y are possible outcomes; u assigns each outcome a number; the larger number records the option the person ranks higher.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. A second trap is comparing utility numbers across people as if they used the same ruler. The course usually needs each player's payoffs to explain that player's own choices, not to prove that one person feels twice as much as another.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a utility function u that assigns a number to each outcome while preserving the preference ordering. Higher utility means higher in the ranking, not necessarily more money or happiness.",
+    "operation": "Choose numbers that preserve the ordering, then use those numbers in payoff tables or expected-utility calculations.",
+    "worked_mini_example": "If a diner ranks pizza above salad above soup, utilities 10, 5, and 0 work just as well as 100, 20, and -7 for ordinary choice. The numbers carry the order; their absolute size is not the point unless risk is involved.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to treat utility units as physical units like inches. Utility usually represents order, and only specific setups justify stronger numerical claims.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. This becomes important as soon as the course moves to payoff matrices. The exact numbers in a matrix are not decoration; they encode the tradeoffs that determine dominance, best responses, and equilibrium.",
+    "recognize_in_new_work": "Look for a paper turning goals, payoffs, welfare, or preferences into a number that can be compared or optimized.",
+    "theme_id": "choice_and_payoff",
+    "mathematical_primitives": [
+      "preference"
+    ],
+    "related_concepts": [
+      "preferences",
+      "expected_utility"
+    ],
+    "course_evidence_ids": [
+      "ev-utility-01",
+      "ev-utility-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "expected_utility",
+    "name": "Expected Utility",
+    "plain_language_definition": "Averaging possible payoffs by how likely they are.",
+    "everyday_problem": "The problem is choosing when the outcome is uncertain: a bid might win or lose, a risky action might pay off or fail, and a type may be one of several possibilities.",
+    "first_principles_reason": "This exists because people must act before uncertainty is resolved. A choice must be judged by the whole lottery of possible outcomes, not only by the result that happens afterward.",
+    "mathematical_principle": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. What breaks without it is the ability to compare risky strategies before the uncertainty is resolved. Auctions, Bayesian games, and signaling all need this averaging move because players act while still unsure which world they are in.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is expected utility: utility in each possible state weighted by that state's probability. It compresses a risky situation into one comparison number.",
+    "operation": "Write each possible outcome, attach its probability, multiply probability by utility, and add the pieces.",
+    "worked_mini_example": "A bidder may win with probability 1/3 and earn 90, or lose with probability 2/3 and earn 0. Expected utility asks whether that gamble beats another bid once all possible results are counted.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to average dollars automatically. If people care about risk, the utility of money may not rise one-for-one with dollars.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. This is the bridge from individual decision-making to Bayesian games and auctions. Once types or values are hidden, players choose against a probability-weighted menu of possible worlds rather than a single known payoff table.",
+    "recognize_in_new_work": "Look for private information, lotteries, risk, or unknown types where the model has to average payoffs across possible worlds.",
+    "theme_id": "choice_and_payoff",
+    "mathematical_primitives": [
+      "belief",
+      "preference"
+    ],
+    "related_concepts": [
+      "preferences",
+      "utility",
+      "rationalizability",
+      "mixed_strategies"
+    ],
+    "course_evidence_ids": [
+      "ev-expected_utility-01",
+      "ev-expected_utility-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "strategic_form_games",
+    "name": "Strategic Form Games",
+    "plain_language_definition": "A compact table of players, actions, and payoffs chosen at the same time.",
+    "everyday_problem": "The problem is representing a situation where everyone chooses without first seeing the others' choices, yet everyone's payoff depends on the whole combination.",
+    "first_principles_reason": "This exists because strategic dependence needs a shared object. A verbal story hides who can choose what and what each combination produces.",
+    "mathematical_principle": "A payoff function u_i(a_i, a_-i) maps everyone's actions to player i's payoff. The useful relation is `u_i(a_i, a_-i).`. In plain language: i is one player; a_i is that player's action; a_-i means everyone else's actions; u_i is the payoff assigned to the whole action profile.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The student trap is forgetting that the table is a model choice. If timing, observation, or repeated interaction matters, the normal form may still be mathematically valid but no longer the clearest explanation.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a normal-form game: players, action sets, and payoff functions collected into a table or payoff map.",
+    "operation": "Name the players, list each player's available actions, then fill in the payoff for every action profile.",
+    "worked_mini_example": "In prisoner's dilemma, each person chooses confess or stay silent. The payoff in a cell is not caused by one choice alone; it is caused by the pair of choices.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to read one row or one column as if the other player were irrelevant. The whole point of the table is joint dependence.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. This representation deliberately throws away timing so the simultaneous strategic dependence is visible. That is why it fits dominance and Nash equilibrium so well, but also why later lectures need game trees when order and credibility matter.",
+    "recognize_in_new_work": "Look for simultaneous moves, payoff matrices, or models where the exact timing is suppressed so strategic dependence can be seen cleanly.",
+    "theme_id": "strategic_dependence",
+    "mathematical_primitives": [
+      "payoff_mapping"
+    ],
+    "related_concepts": [
+      "dominance",
+      "iterated_deletion",
+      "rationalizability",
+      "bargaining",
+      "ad_auctions"
+    ],
+    "course_evidence_ids": [
+      "ev-strategic_form_games-01",
+      "ev-strategic_form_games-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "extensive_form_games",
+    "name": "Extensive Form Games",
+    "plain_language_definition": "A game drawn as a tree so timing and information can be represented.",
+    "everyday_problem": "The problem is that some games unfold over time. A later choice can depend on an earlier choice, and some players may know more about the history than others.",
+    "first_principles_reason": "This exists because timing and information change incentives. A threat that sounds good at the start may not be attractive when the threatened moment arrives.",
+    "mathematical_principle": "Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The extra discipline is information sets. Two nodes can be different histories but indistinguishable to the player moving there; that distinction is what later supports signaling and perfect Bayesian equilibrium.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a game tree: decision nodes, branches, histories, information sets, and terminal payoffs.",
+    "operation": "Draw the order of moves, show what each player knows at each decision point, then reason from the end or through beliefs depending on the information structure.",
+    "worked_mini_example": "In an entry game, an incumbent may threaten a price war after entry. The tree asks whether fighting is actually optimal once entry has happened.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to collapse every sequential game into a payoff matrix and lose the credibility problem.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. The tree is the course's way of preventing time from being smuggled into prose. Every branch forces the model to say who moves, what they have seen, and which later choices are actually available.",
+    "recognize_in_new_work": "Look for histories, decision nodes, information sets, or any claim where the order of moves changes what behavior can be believed.",
+    "theme_id": "time_and_credibility",
+    "mathematical_primitives": [
+      "backward_recursion"
+    ],
+    "related_concepts": [
+      "backward_induction",
+      "subgame_perfection",
+      "one_shot_deviation",
+      "bargaining"
+    ],
+    "course_evidence_ids": [
+      "ev-extensive_form_games-01",
+      "ev-extensive_form_games-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "dominance",
+    "name": "Dominance",
+    "plain_language_definition": "A way to rule out choices that are never better than another choice.",
+    "everyday_problem": "The problem is that some choices are plainly bad no matter what the other side does. Keeping them in the analysis can distract from the strategic choices that actually need thought.",
+    "first_principles_reason": "Dominance exists because comparison can sometimes be made without beliefs. If one action beats another across every possible opponent action, the worse action does not need a prediction about opponents to be rejected.",
+    "mathematical_principle": "Dominance compares one strategy against another across possible opponent choices. The useful relation is `s dominates t if u_i(s, a_-i) >= u_i(t, a_-i) for all a_-i, with strict inequality somewhere.`. In plain language: The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a dominance comparison between two strategies across all possible actions by others.",
+    "operation": "Compare one strategy to another row by row or column by column. If it is never worse and sometimes better, it dominates; if it is always strictly better, it strictly dominates.",
+    "worked_mini_example": "If a firm earns less from pricing high than pricing low no matter what the rival does, high pricing is dominated in that model. The firm does not need to forecast the rival before rejecting it.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to delete a strategy because it feels unlikely. Dominance is a universal comparison, not a hunch.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. Dominance is powerful because it avoids speculation about beliefs, but that strength is also its limit. Many interesting strategic choices are not dominated; they survive because their value depends on what the player thinks others will do.",
+    "recognize_in_new_work": "Look for arguments that rule out actions before equilibrium is computed because one action is never a best answer.",
+    "theme_id": "strategic_dependence",
+    "mathematical_primitives": [
+      "pruning"
+    ],
+    "related_concepts": [
+      "strategic_form_games",
+      "iterated_deletion",
+      "rationalizability"
+    ],
+    "course_evidence_ids": [
+      "ev-dominance-01",
+      "ev-dominance-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "iterated_deletion",
+    "name": "Iterated Deletion",
+    "plain_language_definition": "Repeatedly removing bad strategies and seeing what remains.",
+    "everyday_problem": "The problem is that once obviously bad moves are removed, new moves may become obviously bad in the smaller game.",
+    "first_principles_reason": "This exists because reasoning about rational players is recursive. I can remove my dominated action, then you can reason that I removed it, then your own comparison may change.",
+    "mathematical_principle": "Dominance compares one strategy against another across possible opponent choices. The useful relation is `s dominates t if u_i(s, a_-i) >= u_i(t, a_-i) for all a_-i, with strict inequality somewhere.`. In plain language: The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The important caveat is that the result depends on the deletion rule. Strict dominance gives a cleaner foundation; weak dominance may remove strategies whose removal changes later comparisons.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a reduced game created by repeated dominance pruning.",
+    "operation": "Delete dominated strategies, rebuild the smaller strategic environment, and repeat until no more deletions are justified under the chosen dominance rule.",
+    "worked_mini_example": "In a guessing game, very high guesses may be impossible for a rational winner; once those are removed, the next-highest guesses become impossible too. The deletion process walks inward.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to ignore whether the deletion uses strict or weak dominance. Weak deletion can depend on order and needs more care.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. The deeper idea is shared reasoning. Each deletion says not only that a move is bad, but that other players can understand it is bad and adjust their own reasoning to the smaller game.",
+    "recognize_in_new_work": "Look for step-by-step elimination arguments where rationality of others is used more than once.",
+    "theme_id": "strategic_dependence",
+    "mathematical_primitives": [
+      "pruning"
+    ],
+    "related_concepts": [
+      "strategic_form_games",
+      "dominance",
+      "rationalizability"
+    ],
+    "course_evidence_ids": [
+      "ev-iterated_deletion-01",
+      "ev-iterated_deletion-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "rationalizability",
+    "name": "Rationalizability",
+    "plain_language_definition": "A strategy is plausible if it can be optimal for some reasonable belief about others.",
+    "everyday_problem": "The problem is deciding which strategies can be defended as sensible without requiring everyone to land on one exact equilibrium.",
+    "first_principles_reason": "This exists because a strategy can be rational under some belief even if it is not part of the final equilibrium prediction. The course needs a wider plausibility test than Nash equilibrium.",
+    "mathematical_principle": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. This is why rationalizability is useful pedagogically: it tells the reader what rational choice alone can rule out before the stronger mutual-consistency demand of equilibrium is imposed.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a set of strategies that survive because each can be a best response to some belief about the other players' surviving strategies.",
+    "operation": "Ask whether there exists a belief under which the strategy is optimal. If no such belief exists, the strategy cannot be rationalized.",
+    "worked_mini_example": "A move that looks odd may still be rational if the player believes the opponent is likely to choose a certain action. Rationalizability asks whether such a belief can make the move best.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to treat rationalizable as meaning correct or predicted. It means defensible under some belief, not uniquely expected.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. Rationalizability sits between dominance and Nash. It is stricter than allowing every action, but looser than requiring a single mutually consistent equilibrium profile.",
+    "recognize_in_new_work": "Look for models that want to separate impossible behavior from behavior that is merely one of several plausible responses.",
+    "theme_id": "strategic_dependence",
+    "mathematical_primitives": [
+      "belief"
+    ],
+    "related_concepts": [
+      "strategic_form_games",
+      "dominance",
+      "iterated_deletion",
+      "expected_utility",
+      "mixed_strategies",
+      "bayesian_games"
+    ],
+    "course_evidence_ids": [
+      "ev-rationalizability-01",
+      "ev-rationalizability-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "best_response",
+    "name": "Best Response",
+    "plain_language_definition": "The move that works best against a specified belief or opponent action.",
+    "everyday_problem": "The problem is that a strategy is not good in the abstract. It is good against a particular opponent action or belief.",
+    "first_principles_reason": "This exists because strategic choice is conditional. The same move can be excellent against one opponent move and terrible against another.",
+    "mathematical_principle": "BR_i(a_-i) is the set of actions for player i that maximize u_i given others' actions. The useful relation is `BR_i(a_-i) = argmax_a u_i(a, a_-i).`. In plain language: argmax means choose the action a that makes player i's payoff as large as possible when others choose a_-i.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. In applications, best-response thinking is often hidden inside first-order conditions or bidding equations. The same idea remains: hold the environment fixed and ask which action gives the highest payoff.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is the best-response set: all actions that maximize a player's payoff given the other side's action or belief.",
+    "operation": "Fix what the player thinks others will do, compare the player's own available actions, and keep the payoff-maximizing action or actions.",
+    "worked_mini_example": "If a store believes its rival will keep prices high, matching high prices may be best; if the rival cuts prices, cutting may become best. The best response changes with the condition.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to ask whether an action is rational without saying against what belief.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. Best response is the local engine inside equilibrium. Nash, Bayesian Nash, subgame perfection, and many auction bidding rules are built by repeating this conditional question for different players, types, or histories.",
+    "recognize_in_new_work": "Look for arrows, reaction functions, or optimization steps that start with given the other player does X.",
+    "theme_id": "equilibrium_reasoning",
+    "mathematical_primitives": [
+      "best_response"
+    ],
+    "related_concepts": [
+      "nash_equilibrium",
+      "mixed_strategies",
+      "zero_sum_games",
+      "minimax"
+    ],
+    "course_evidence_ids": [
+      "ev-best_response-01",
+      "ev-best_response-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "nash_equilibrium",
+    "name": "Nash Equilibrium",
+    "plain_language_definition": "A profile of strategies where no player wants to change alone.",
+    "everyday_problem": "The problem is making a prediction that does not immediately fall apart when each participant asks, given what the others are doing, should I switch?",
+    "first_principles_reason": "Nash equilibrium exists because a strategic prediction has to be self-consistent. If one player wants to change after seeing the proposed profile, the profile was not a stable prediction.",
+    "mathematical_principle": "Equilibrium requires each strategy to be a best response to the others. The useful relation is `a_i in BR_i(a_-i) for every player i.`. In plain language: For each player i, their chosen action a_i must belong to the set of best responses against the other players' actions.",
+    "why_it_matters": "Nash matters because it is the baseline language for stable strategic prediction throughout the rest of the course.",
+    "what_breaks_without_it": "Without Nash equilibrium, the course could list incentives but would lack the basic test for whether a proposed strategic outcome can hold together.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is an action or strategy profile where every player's choice is a best response to the others' choices.",
+    "operation": "Check each player one at a time. Hold the other players fixed and ask whether that player can improve by changing alone. If nobody can, the profile is Nash.",
+    "worked_mini_example": "At a four-way stop, everyone going at once is not stable if each driver would rather wait or avoid collision given the others. A stable traffic convention must make each driver's move sensible given the convention.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to hear equilibrium and think socially best. Nash can describe bad outcomes, including prisoner's dilemma, because it is about unilateral incentives, not collective welfare.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. The concept also teaches humility: a Nash outcome may be inefficient, unequal, or fragile under changed assumptions. Its claim is narrower and sharper: no one player can profit by changing alone while the rest stay fixed.",
+    "recognize_in_new_work": "Look for claims that a behavior pattern persists because no individual participant can gain by deviating alone.",
+    "theme_id": "equilibrium_reasoning",
+    "mathematical_primitives": [
+      "mutual_consistency"
+    ],
+    "related_concepts": [
+      "best_response",
+      "mixed_strategies",
+      "zero_sum_games",
+      "minimax"
+    ],
+    "course_evidence_ids": [
+      "ev-nash_equilibrium-01",
+      "ev-nash_equilibrium-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "mixed_strategies",
+    "name": "Mixed Strategies",
+    "plain_language_definition": "Choosing randomly on purpose so opponents cannot exploit a predictable move.",
+    "everyday_problem": "The problem is what to predict when choosing one pure action would make a player exploitable or when no pure-action equilibrium exists.",
+    "first_principles_reason": "Mixed strategies exist because unpredictability can itself be strategic. Randomizing can make the opponent indifferent, preventing them from targeting a predictable move.",
+    "mathematical_principle": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. Mixed strategies also explain why equilibrium can involve indifference. A player randomizes only when the payoffs from the actions in the support are balanced in the right way.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a probability distribution over pure strategies, often chosen so the other player has no strict favorite response.",
+    "operation": "Assign probabilities to actions, compute the opponent's expected payoff from each response, and choose probabilities that make the opponent willing to mix or unable to exploit you.",
+    "worked_mini_example": "In penalty kicks, always shooting left invites the goalie to dive left. Mixing left and right makes the goalie's guessing problem hard enough that neither side has a simple pure advantage.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to think mixed strategy means confusion. In the model, randomization can be deliberate and exactly calculated.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. Mixing also changes what evidence means. Observing a player choose left once does not prove left is their fixed plan; under a mixed strategy, realized actions are samples from an intentional probability rule.",
+    "recognize_in_new_work": "Look for indifference equations, randomized play, or models where predictable behavior would be punished.",
+    "theme_id": "equilibrium_reasoning",
+    "mathematical_primitives": [
+      "belief",
+      "mutual_consistency"
+    ],
+    "related_concepts": [
+      "best_response",
+      "nash_equilibrium",
+      "zero_sum_games",
+      "minimax",
+      "expected_utility",
+      "rationalizability"
+    ],
+    "course_evidence_ids": [
+      "ev-mixed_strategies-01",
+      "ev-mixed_strategies-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "zero_sum_games",
+    "name": "Zero-Sum Games",
+    "plain_language_definition": "A setting where one player's gain is exactly the other's loss.",
+    "everyday_problem": "The problem is pure conflict: one side's gain is the other side's loss, so cooperation or joint surplus is not the issue.",
+    "first_principles_reason": "This exists because some strategic settings are distributional rather than productive. The total pie is fixed; strategy determines who gets it.",
+    "mathematical_principle": "Equilibrium requires each strategy to be a best response to the others. The useful relation is `a_i in BR_i(a_-i) for every player i.`. In plain language: For each player i, their chosen action a_i must belong to the set of best responses against the other players' actions.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. Because the interests are exactly opposed, beliefs about cooperation or surplus division are not central. This is why the minimax theorem has such a sharp form in this part of the course.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a payoff function where player two's payoff is the negative of player one's payoff.",
+    "operation": "Represent the game from one player's payoff table, because the other player's payoff moves in the opposite direction. Then search for secure strategies and equilibrium value.",
+    "worked_mini_example": "In matching pennies, if one player wins a dollar the other loses a dollar. There is no both-win cell; the only question is how each side avoids being exploited.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to apply zero-sum intuition to bargaining or market games where joint gains are possible.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. Zero-sum games are useful partly because they are unusually clean. The interests are perfectly opposed, so the course can develop minimax logic without also tracking surplus creation or bargaining.",
+    "recognize_in_new_work": "Look for adversarial models where maximizing my payoff is exactly minimizing yours.",
+    "theme_id": "equilibrium_reasoning",
+    "mathematical_primitives": [
+      "mutual_consistency"
+    ],
+    "related_concepts": [
+      "best_response",
+      "nash_equilibrium",
+      "mixed_strategies",
+      "minimax"
+    ],
+    "course_evidence_ids": [
+      "ev-zero_sum_games-01",
+      "ev-zero_sum_games-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "minimax",
+    "name": "Minimax",
+    "plain_language_definition": "Choosing a strategy by protecting yourself against the worst response.",
+    "everyday_problem": "The problem is choosing under hostile response: what can I guarantee if the other side tries to hurt me as much as possible?",
+    "first_principles_reason": "Minimax exists because in zero-sum conflict, optimism is dangerous. The opponent is not nature; the opponent is choosing against you.",
+    "mathematical_principle": "BR_i(a_-i) is the set of actions for player i that maximize u_i given others' actions. The useful relation is `BR_i(a_-i) = argmax_a u_i(a, a_-i).`. In plain language: argmax means choose the action a that makes player i's payoff as large as possible when others choose a_-i.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The student trap is confusing minimax with being pessimistic about nature. In the course setting, the bad outcome comes from another strategic player choosing intelligently against you.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a security calculation: maximize the minimum payoff you can be forced to accept, or minimize the maximum damage the opponent can impose.",
+    "operation": "For each strategy, look at the worst payoff it could lead to. Then choose the strategy with the best worst-case number.",
+    "worked_mini_example": "A chess player does not evaluate a move by assuming the opponent will blunder. Minimax-style reasoning asks what survives the opponent's strongest reply.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to use minimax as a general decision rule in games that are not zero-sum or not adversarial in that strict way.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. The principle reappears whenever the course asks for protection rather than hope. It is less about predicting a friendly average case and more about surviving an opponent who studies your weakness.",
+    "recognize_in_new_work": "Look for worst-case guarantees, security levels, or saddle-point reasoning.",
+    "theme_id": "equilibrium_reasoning",
+    "mathematical_primitives": [
+      "best_response"
+    ],
+    "related_concepts": [
+      "best_response",
+      "nash_equilibrium",
+      "mixed_strategies",
+      "zero_sum_games"
+    ],
+    "course_evidence_ids": [
+      "ev-minimax-01",
+      "ev-minimax-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "backward_induction",
+    "name": "Backward Induction",
+    "plain_language_definition": "Solving a sequential game by starting at the end.",
+    "everyday_problem": "The problem is that early choices in a tree depend on what later players will actually do, not what they announce they might do.",
+    "first_principles_reason": "Backward induction exists because the future constrains the present. If we can solve the last decision first, that answer becomes an input into the previous decision.",
+    "mathematical_principle": "Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose. It is the course's simplest demonstration that rational planning in time points backward as well as forward.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The technique is mechanical, but the idea is conceptual: a decision earlier in time already contains a prediction about later incentives. Solving backward makes that prediction explicit.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a game tree with continuation values assigned from the terminal nodes backward.",
+    "operation": "Start at the final decision nodes, choose the best branch for the player moving there, replace that subgame with its value, and continue backward to the start.",
+    "worked_mini_example": "If a parent threatens a punishment they will not want to impose later, a child may ignore it. Backward induction exposes that by checking the later choice first.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to reason from the start while treating later threats as fixed facts.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. Backward induction is the first place many students see credibility as a mathematical object. The model does not ask whether a threat sounds scary; it asks whether the future self would choose to carry it out.",
+    "recognize_in_new_work": "Look for finite sequential games where the last move can be solved and folded back into earlier choices.",
+    "theme_id": "time_and_credibility",
+    "mathematical_primitives": [
+      "backward_recursion"
+    ],
+    "related_concepts": [
+      "extensive_form_games",
+      "subgame_perfection",
+      "one_shot_deviation",
+      "bargaining"
+    ],
+    "course_evidence_ids": [
+      "ev-backward_induction-01",
+      "ev-backward_induction-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "subgame_perfection",
+    "name": "Subgame-Perfect Nash Equilibrium",
+    "plain_language_definition": "An equilibrium that remains sensible after every possible history.",
+    "everyday_problem": "The problem is that Nash equilibrium can allow plans based on threats that would not be carried out if the threatened moment arrived.",
+    "first_principles_reason": "Subgame perfection exists because a strategy should be credible after every history, not only from the starting point.",
+    "mathematical_principle": "Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. This is also why off-path behavior matters. Even histories that do not occur under the proposed equilibrium can discipline whether the strategy profile is credible.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a Nash equilibrium that also induces a Nash equilibrium in every subgame.",
+    "operation": "Find every proper subgame, solve behavior there, and reject strategy profiles whose continuation play stops being optimal after some history.",
+    "worked_mini_example": "An incumbent firm may threaten to fight entry, but if fighting loses money after entry occurs, the threat is not subgame perfect. The entrant should not be convinced by it.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example. In lecture terms, it is the repair for dynamic-game predictions that pass only because nobody looks carefully inside the later subgames.",
+    "common_misunderstanding": "The mistake is to think any Nash equilibrium in a dynamic game is credible.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. Subgame perfection refines Nash by forcing the same discipline at every possible continuation. It is the course's answer to equilibria that depend on empty threats or unreasonable off-path behavior.",
+    "recognize_in_new_work": "Look for dynamic games, off-path histories, or threats where the key question is whether the promised future action would really be optimal.",
+    "theme_id": "time_and_credibility",
+    "mathematical_primitives": [
+      "backward_recursion",
+      "mutual_consistency"
+    ],
+    "related_concepts": [
+      "extensive_form_games",
+      "backward_induction",
+      "one_shot_deviation",
+      "bargaining",
+      "nash_equilibrium"
+    ],
+    "course_evidence_ids": [
+      "ev-subgame_perfection-01",
+      "ev-subgame_perfection-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "one_shot_deviation",
+    "name": "One-Shot Deviation Principle",
+    "plain_language_definition": "A shortcut for checking whether changing one move at one point can improve a strategy.",
+    "everyday_problem": "The problem is checking a whole dynamic strategy can be exhausting because a strategy describes what to do after many histories.",
+    "first_principles_reason": "The one-shot deviation principle exists because, in the right finite or discounted settings, profitable complex deviations reveal themselves through a profitable single-period deviation.",
+    "mathematical_principle": "Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The concept is not a new equilibrium by itself. It is a proof tool for checking dynamic optimality, especially when directly checking every possible multi-period deviation would be impractical.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a local deviation test: change one action at one history while leaving the continuation strategy fixed.",
+    "operation": "Hold the proposed strategy fixed everywhere except one decision point. If no one can gain from any one-shot change, the strategy passes the shortcut test under the theorem's assumptions.",
+    "worked_mini_example": "Instead of checking every possible plan for a repeated-game player, check whether cheating today and returning to the plan tomorrow pays. If even that one-step cheat fails everywhere, the larger plan may be safe.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to use the shortcut without checking the assumptions that make local deviations enough.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. The principle matters because dynamic games can have enormous strategy spaces. It gives the course a tractable way to audit sequential rationality without listing every complicated alternative plan.",
+    "recognize_in_new_work": "Look for dynamic incentive proofs that replace many possible deviations with a one-period deviation inequality.",
+    "theme_id": "time_and_credibility",
+    "mathematical_primitives": [
+      "backward_recursion"
+    ],
+    "related_concepts": [
+      "extensive_form_games",
+      "backward_induction",
+      "subgame_perfection",
+      "bargaining"
+    ],
+    "course_evidence_ids": [
+      "ev-one_shot_deviation-01",
+      "ev-one_shot_deviation-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "bargaining",
+    "name": "Bargaining",
+    "plain_language_definition": "Dividing a surplus when each side can accept, reject, or wait.",
+    "everyday_problem": "The problem is dividing gains from agreement when each side would like more of the surplus and can sometimes wait, reject, or walk away.",
+    "first_principles_reason": "Bargaining exists because conflict and cooperation are intertwined. There is value to agreement, but disagreement over division changes each side's threat point.",
+    "mathematical_principle": "A payoff function u_i(a_i, a_-i) maps everyone's actions to player i's payoff. The useful relation is `u_i(a_i, a_-i).`. In plain language: i is one player; a_i is that player's action; a_-i means everyone else's actions; u_i is the payoff assigned to the whole action profile.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The concept reappears with incomplete information because not knowing the other side's value changes offers and delays. Bargaining is therefore both a surplus-division problem and an information problem.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a bargaining game with offers, acceptance rules, disagreement payoffs, and sometimes discounting.",
+    "operation": "Identify the surplus, each side's outside option, who makes offers, and how delay changes payoffs; then solve for which offers can be accepted.",
+    "worked_mini_example": "If a seller values a car at 8,000 and a buyer values it at 10,000, trade creates 2,000 of surplus. Bargaining asks who captures that surplus and why.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to treat bargaining power as a vague personality trait when the model usually locates it in patience, outside options, timing, or information.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. Bargaining also makes delay costly. The formal model turns patience, order of offers, and outside options into bargaining power instead of treating negotiation strength as a vague personality trait.",
+    "recognize_in_new_work": "Look for surplus division, alternating offers, take-it-or-leave-it offers, or incomplete information about values.",
+    "theme_id": "time_and_credibility",
+    "mathematical_primitives": [
+      "payoff_mapping",
+      "discounting"
+    ],
+    "related_concepts": [
+      "extensive_form_games",
+      "backward_induction",
+      "subgame_perfection",
+      "one_shot_deviation",
+      "strategic_form_games",
+      "infinitely_repeated_games"
+    ],
+    "course_evidence_ids": [
+      "ev-bargaining-01",
+      "ev-bargaining-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "finitely_repeated_games",
+    "name": "Finitely Repeated Games",
+    "plain_language_definition": "Playing a stage game a known limited number of times.",
+    "everyday_problem": "The problem is whether repeating a game for a known number of rounds changes behavior relative to playing once.",
+    "first_principles_reason": "Finite repetition exists because the end of the relationship can unravel incentives. If everyone knows the last round has no future punishment, that affects the round before it, and so on.",
+    "mathematical_principle": "Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The course uses finite repetition to show a negative result that is easy to miss: repeating a game does not automatically create trust when everyone can see the endpoint.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a stage game repeated T times with a known final period.",
+    "operation": "Solve the last period first, then reason backward through earlier periods when the stage-game equilibrium is unique or when future incentives collapse.",
+    "worked_mini_example": "If two firms know they will compete for exactly ten days, cheating on day ten cannot be punished on day eleven. That can make day nine punishment less credible too.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example. The known endpoint makes the model a lesson about credibility, not merely about doing the same thing several times.",
+    "common_misunderstanding": "The mistake is to assume repetition automatically creates cooperation. A known last round can destroy that logic.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. This topic is a warning about last periods. A finite horizon can make cooperation collapse backward even when cooperation looked attractive in early rounds.",
+    "recognize_in_new_work": "Look for known horizons and unraveling arguments that start at the final period.",
+    "theme_id": "repetition_and_cooperation",
+    "mathematical_primitives": [
+      "backward_recursion"
+    ],
+    "related_concepts": [
+      "infinitely_repeated_games",
+      "folk_theorem",
+      "implicit_cartels",
+      "extensive_form_games",
+      "backward_induction",
+      "subgame_perfection"
+    ],
+    "course_evidence_ids": [
+      "ev-finitely_repeated_games-01",
+      "ev-finitely_repeated_games-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "infinitely_repeated_games",
+    "name": "Infinitely Repeated Games",
+    "plain_language_definition": "A relationship with no fixed last round, where future punishment can shape present behavior.",
+    "everyday_problem": "The problem is how cooperation can survive when each player is tempted to grab a short-run gain by cheating.",
+    "first_principles_reason": "Infinite repetition exists because no fixed last round means future punishment can always matter. The future becomes a strategic asset.",
+    "mathematical_principle": "A discount factor delta weights future payoffs in an intertemporal sum. The useful relation is `U = u_0 + delta u_1 + delta^2 u_2 + ...`. In plain language: u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose. This makes patience a strategic parameter, not a personal virtue.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The repeated-game inequality is the core object: cooperate if the discounted value of future cooperation beats the one-time temptation to defect followed by punishment.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a repeated game with continuation payoffs and a discount factor that measures patience.",
+    "operation": "Compare the one-time gain from deviation with the discounted future loss from punishment. Cooperation can hold when the future loss is large enough.",
+    "worked_mini_example": "A firm may want to undercut a cartel price today, but if that triggers years of price wars, the short-run gain may not be worth it.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example. The absence of a known final period lets reputation-like discipline enter the payoff calculation directly.",
+    "common_misunderstanding": "The mistake is to say infinite means literally forever. The model often means no known last round or a continuing relationship with future value.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. The important shift is that punishment no longer runs into a known final date. That lets threats about the future discipline present action, but only when players care enough about that future.",
+    "recognize_in_new_work": "Look for trigger strategies, continuation values, and inequalities comparing temptation today to punishment tomorrow.",
+    "theme_id": "repetition_and_cooperation",
+    "mathematical_primitives": [
+      "discounting"
+    ],
+    "related_concepts": [
+      "finitely_repeated_games",
+      "folk_theorem",
+      "implicit_cartels",
+      "bargaining"
+    ],
+    "course_evidence_ids": [
+      "ev-infinitely_repeated_games-01",
+      "ev-infinitely_repeated_games-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "folk_theorem",
+    "name": "Folk Theorem",
+    "plain_language_definition": "A result showing that many cooperative outcomes can be sustained when the future matters enough.",
+    "everyday_problem": "The problem is explaining why repeated interaction can support many outcomes, not just the one-shot equilibrium.",
+    "first_principles_reason": "The folk theorem exists because patient players can use future punishment to make many feasible payoff promises credible.",
+    "mathematical_principle": "A discount factor delta weights future payoffs in an intertemporal sum. The useful relation is `U = u_0 + delta u_1 + delta^2 u_2 + ...`. In plain language: u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. A good reading of the theorem always asks what punishment is available and believable. Without a credible punishment path, the set of sustainable outcomes shrinks.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a set of feasible and individually rational payoffs that can be sustained by equilibrium strategies when the discount factor is high enough.",
+    "operation": "Check whether the target payoff can be produced by actions, whether each player gets at least their punishment value, and whether deviations are deterred by future consequences.",
+    "worked_mini_example": "If two firms can both earn more by keeping prices high, the folk theorem logic says this can be sustained if cheating leads to harsh enough future competition and the firms are patient.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to read the folk theorem as predicting one outcome. It often says many outcomes are possible, which is powerful but also less predictive.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. The folk theorem is both encouraging and unsettling. It shows repeated interaction can support cooperation, but it also says the model may permit many equilibria, so extra institutional detail may be needed for prediction.",
+    "recognize_in_new_work": "Look for repeated-game papers showing a large set of sustainable payoffs under patience and punishment.",
+    "theme_id": "repetition_and_cooperation",
+    "mathematical_primitives": [
+      "discounting",
+      "mutual_consistency"
+    ],
+    "related_concepts": [
+      "finitely_repeated_games",
+      "infinitely_repeated_games",
+      "implicit_cartels",
+      "nash_equilibrium",
+      "mixed_strategies",
+      "zero_sum_games"
+    ],
+    "course_evidence_ids": [
+      "ev-folk_theorem-01",
+      "ev-folk_theorem-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "implicit_cartels",
+    "name": "Implicit Cartels",
+    "plain_language_definition": "Firms may keep prices high without an explicit agreement when future punishment disciplines cheating.",
+    "everyday_problem": "The problem is how firms might keep prices high without signing an explicit cartel agreement.",
+    "first_principles_reason": "Implicit cartels exist because repeated market interaction can make cheating costly. A firm may avoid undercutting today because rivals can punish tomorrow.",
+    "mathematical_principle": "A discount factor delta weights future payoffs in an intertemporal sum. The useful relation is `U = u_0 + delta u_1 + delta^2 u_2 + ...`. In plain language: u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. This is why market transparency can cut two ways. Observing prices may help consumers, but it can also make deviations easier for rivals to detect and punish.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a repeated oligopoly game comparing collusive profits, deviation profits, and future punishment profits.",
+    "operation": "Write the incentive constraint: the value of cooperating must be at least the one-time gain from cheating plus the discounted value after punishment.",
+    "worked_mini_example": "A gas station can cut price today and steal customers, but nearby stations may respond with a price war. Tacit collusion asks when fear of that future makes quiet cooperation stable.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example. The application is concrete because firms do not need to love cooperation; they only need future losses from retaliation to outweigh today's cheating gain.",
+    "common_misunderstanding": "The mistake is to assume high prices prove explicit agreement. Repeated-game incentives can sometimes generate similar outcomes without a formal contract.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. This application connects abstract repeated-game logic to market behavior. It shows why antitrust analysis has to care about observability, patience, number of firms, and punishment, not only explicit written agreements.",
+    "recognize_in_new_work": "Look for industries with repeated price interaction, observability of deviations, and credible punishment paths.",
+    "theme_id": "repetition_and_cooperation",
+    "mathematical_primitives": [
+      "discounting",
+      "incentive_compatibility"
+    ],
+    "related_concepts": [
+      "finitely_repeated_games",
+      "infinitely_repeated_games",
+      "folk_theorem",
+      "bargaining"
+    ],
+    "course_evidence_ids": [
+      "ev-implicit_cartels-01",
+      "ev-implicit_cartels-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "bayesian_games",
+    "name": "Bayesian Games",
+    "plain_language_definition": "A game where players may not know each other's type, value, or payoff information.",
+    "everyday_problem": "The problem is strategic choice when players do not know exactly who they are facing or what payoffs the other side has.",
+    "first_principles_reason": "Bayesian games exist because private information changes best responses. A player must choose against a distribution of possible types, not a single known opponent.",
+    "mathematical_principle": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose. This is the first moment where uncertainty about payoffs becomes part of the game itself.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The key modeling move is before equilibrium: define the type space. A vague statement that players are uncertain is not enough until the possible types and beliefs are specified.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a game with types, priors over types, actions for each type, and payoff functions that may depend on type.",
+    "operation": "List each possible type, assign prior probabilities, define strategies as type-contingent plans, and compute expected payoffs given beliefs.",
+    "worked_mini_example": "A bidder may not know whether rivals value the object highly or weakly. Their bid must respond to that uncertainty, not to one known payoff table.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to treat hidden information as random noise outside the game. In Bayesian games, the uncertainty is part of the strategic structure.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. Bayesian games force strategy to be a plan under uncertainty. A player is not responding to one opponent, but to a distribution over possible opponents with different payoffs or information.",
+    "recognize_in_new_work": "Look for models with types, priors, private values, costs, signals, or asymmetric information.",
+    "theme_id": "private_information",
+    "mathematical_primitives": [
+      "belief"
+    ],
+    "related_concepts": [
+      "types_and_beliefs",
+      "bayesian_nash_equilibrium",
+      "perfect_bayesian_equilibrium",
+      "expected_utility",
+      "rationalizability",
+      "mixed_strategies"
+    ],
+    "course_evidence_ids": [
+      "ev-bayesian_games-01",
+      "ev-bayesian_games-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "types_and_beliefs",
+    "name": "Types And Beliefs",
+    "plain_language_definition": "Types store hidden information; beliefs describe what others think those types might be.",
+    "everyday_problem": "The problem is keeping track of hidden facts and what players think those facts might be.",
+    "first_principles_reason": "Types and beliefs exist because private information has to be represented somewhere. A type stores what one player knows; a belief stores what others think is likely.",
+    "mathematical_principle": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. Beliefs also change after observations in dynamic games. That is why this concept points forward to perfect Bayesian equilibrium, where beliefs must travel with strategies.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a type space plus probability beliefs over types or histories.",
+    "operation": "Assign each privately informed player a type, specify what that type changes, and write beliefs about which type has been drawn.",
+    "worked_mini_example": "In an auction, a bidder's value is their type. Other bidders do not see it, but they hold beliefs about the distribution of possible values.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example. Once that distinction is clear, later signaling and auction models become easier to read because actions are interpreted as clues about hidden types.",
+    "common_misunderstanding": "The mistake is to blur type and action. A type is hidden information; an action is a choice that may reveal or conceal it.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. Types and beliefs are the grammar of asymmetric information. They let the course say both what is privately known and what is inferred by people who do not observe it directly.",
+    "recognize_in_new_work": "Look for any model where behavior depends on values, costs, quality, or information that only one side observes.",
+    "theme_id": "private_information",
+    "mathematical_primitives": [
+      "belief"
+    ],
+    "related_concepts": [
+      "bayesian_games",
+      "bayesian_nash_equilibrium",
+      "perfect_bayesian_equilibrium",
+      "expected_utility",
+      "rationalizability",
+      "mixed_strategies"
+    ],
+    "course_evidence_ids": [
+      "ev-types_and_beliefs-01",
+      "ev-types_and_beliefs-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "bayesian_nash_equilibrium",
+    "name": "Bayesian Nash Equilibrium",
+    "plain_language_definition": "A plan for every type such that each type is best responding to its beliefs.",
+    "everyday_problem": "The problem is predicting behavior when each possible type of a player may want a different action.",
+    "first_principles_reason": "Bayesian Nash exists because equilibrium must be checked before hidden information is revealed to others. Each type needs its own best response under beliefs.",
+    "mathematical_principle": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose. The equilibrium is therefore a whole menu of type-contingent best responses.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The equilibrium condition is therefore many conditions at once: each possible type must prefer its assigned action, even though other players do not observe that type directly.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a strategy for every type of every player, where each type maximizes expected payoff given beliefs about other types and their strategies.",
+    "operation": "For each type, hold fixed the strategy rules of other players, average over unknown types, and check whether that type wants to change its prescribed action.",
+    "worked_mini_example": "In a first-price auction, a high-value bidder and low-value bidder follow different bidding rules. BNE checks that each value type is bidding optimally against the distribution of rival values.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to look for one action per player. In Bayesian Nash, a strategy is a rule mapping types to actions.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. BNE is Nash equilibrium with hidden information handled honestly. The no-deviation check is performed type by type, using expected payoffs over what each type does not know.",
+    "recognize_in_new_work": "Look for type-contingent strategies and expected-payoff best response conditions.",
+    "theme_id": "private_information",
+    "mathematical_primitives": [
+      "belief",
+      "mutual_consistency"
+    ],
+    "related_concepts": [
+      "bayesian_games",
+      "types_and_beliefs",
+      "perfect_bayesian_equilibrium",
+      "expected_utility",
+      "rationalizability",
+      "nash_equilibrium"
+    ],
+    "course_evidence_ids": [
+      "ev-bayesian_nash_equilibrium-01",
+      "ev-bayesian_nash_equilibrium-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "auctions",
+    "name": "Auctions",
+    "plain_language_definition": "Rules for allocating an object when bidders have private values.",
+    "everyday_problem": "The problem is allocating an object when people know their own values but the seller and rival bidders may not.",
+    "first_principles_reason": "Auctions exist because rules can make private information compete in public. Bids are actions shaped by values, beliefs, payment rules, and competition.",
+    "mathematical_principle": "Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) >= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose. This is why auction theory is both price theory and information theory.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The lecture application matters because auctions make hidden values operational. The bid is evidence about value, but it is distorted by the rule and by strategic shading.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is an auction mechanism: bidder values, bid spaces, allocation rules, and payment rules.",
+    "operation": "Specify who wins for each bid profile, what they pay, and how each bidder trades off a higher chance of winning against a worse price.",
+    "worked_mini_example": "In a first-price auction, bidding your full value wins more often but leaves no surplus if you win. The bidder shades the bid because winning is valuable only if the price is below value.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to think the highest-value bidder automatically bids their value in every auction format.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. Auctions are a central application because they put values, beliefs, and rules in the same room. A bid is not just willingness to pay; it is a strategic response to the payment rule and rival uncertainty.",
+    "recognize_in_new_work": "Look for allocation and payment rules that transform private values into strategic bids.",
+    "theme_id": "mechanisms_and_markets",
+    "mathematical_primitives": [
+      "incentive_compatibility",
+      "belief"
+    ],
+    "related_concepts": [
+      "revenue_equivalence",
+      "ad_auctions",
+      "expected_utility",
+      "rationalizability",
+      "mixed_strategies",
+      "implicit_cartels"
+    ],
+    "course_evidence_ids": [
+      "ev-auctions-01",
+      "ev-auctions-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "revenue_equivalence",
+    "name": "Revenue Equivalence",
+    "plain_language_definition": "Different auction rules can produce the same expected seller revenue under specific assumptions.",
+    "everyday_problem": "The problem is comparing auction formats that look different: first-price, second-price, English, and others may create different bidding behavior.",
+    "first_principles_reason": "Revenue equivalence exists because different rules can sometimes generate the same expected payment once bidders adjust their strategies.",
+    "mathematical_principle": "Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) >= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose. The theorem teaches which differences are cosmetic and which assumptions do real work.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. This is a theorem about a family of environments, not a universal slogan. Its usefulness is that it tells you exactly which assumptions make format differences wash out.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a theorem linking allocation rules and expected payments under assumptions such as risk neutrality, independent private values, and symmetric bidders.",
+    "operation": "Check whether the auction gives the object to the same type of bidder and gives the lowest type the same expected payoff; then expected revenue can coincide.",
+    "worked_mini_example": "First-price and second-price auctions induce different bids, but under the theorem's assumptions the seller's expected revenue can match because bidders strategically shade in one format and bid truthfully in another.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to quote revenue equivalence without the assumptions. Change risk, affiliation, reserve prices, or asymmetry and the result can fail.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. The theorem matters because it separates surface format from deeper allocation and incentive structure. Two auctions can look different to bidders yet be equivalent for expected seller revenue under strict assumptions.",
+    "recognize_in_new_work": "Look for auction comparisons where allocation sameness and bidder payoff normalization drive payment conclusions.",
+    "theme_id": "mechanisms_and_markets",
+    "mathematical_primitives": [
+      "incentive_compatibility"
+    ],
+    "related_concepts": [
+      "auctions",
+      "ad_auctions",
+      "implicit_cartels",
+      "signaling"
+    ],
+    "course_evidence_ids": [
+      "ev-revenue_equivalence-01",
+      "ev-revenue_equivalence-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "ad_auctions",
+    "name": "Ad Auctions",
+    "plain_language_definition": "Auction design applied to online ad slots where position, clicks, and value interact.",
+    "everyday_problem": "The problem is selling attention slots, not a single physical object. Position affects clicks, quality affects usefulness, and bids interact with platform rules.",
+    "first_principles_reason": "Ad auctions exist because online markets must allocate ranked slots repeatedly and automatically while advertisers have private values per click.",
+    "mathematical_principle": "Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) >= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose. That mix makes the auction a live system-design problem, not only a classroom bidding game.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The online setting also introduces repeated participation and measurement. Clicks are both the object being priced and a noisy signal about match quality.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a sponsored-search mechanism combining bids, click-through rates, quality scores, allocation order, and per-click payments.",
+    "operation": "Rank advertisers by the platform's scoring rule, assign slots, then compute payments from the rule that determines what each advertiser must pay per click.",
+    "worked_mini_example": "A lower bidder with a highly relevant ad may beat a higher bidder if quality affects ranking. The mechanism is not just who writes the biggest number.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to treat ad auctions as ordinary one-object auctions. Position, click probability, and platform quality adjustments change the strategic object.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. Ad auctions add engineering detail to mechanism design. The platform is not merely selling an item; it is ranking ads, pricing clicks, and balancing advertiser value with user relevance.",
+    "recognize_in_new_work": "Look for markets with ranked slots, click probabilities, quality scores, and generalized second-price style rules.",
+    "theme_id": "mechanisms_and_markets",
+    "mathematical_primitives": [
+      "incentive_compatibility",
+      "payoff_mapping"
+    ],
+    "related_concepts": [
+      "auctions",
+      "revenue_equivalence",
+      "strategic_form_games",
+      "bargaining",
+      "implicit_cartels"
+    ],
+    "course_evidence_ids": [
+      "ev-ad_auctions-01",
+      "ev-ad_auctions-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "perfect_bayesian_equilibrium",
+    "name": "Perfect Bayesian Equilibrium",
+    "plain_language_definition": "An equilibrium for dynamic games with beliefs that stay consistent with observed behavior.",
+    "everyday_problem": "The problem is dynamic play with hidden information: after observing actions, players must update beliefs and continue choosing rationally.",
+    "first_principles_reason": "PBE exists because dynamic Bayesian games need both credible continuation behavior and believable beliefs about what has happened.",
+    "mathematical_principle": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The hard part is off-path beliefs. When an unexpected signal appears, Bayes' rule may not pin down beliefs, so the model must still specify beliefs carefully.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a strategy profile plus a belief system, with sequential rationality and belief consistency where Bayes' rule applies.",
+    "operation": "At each information set, check that the strategy is optimal given beliefs; then check that beliefs are updated consistently from the strategies whenever possible.",
+    "worked_mini_example": "In a signaling game, seeing someone choose education may change an employer's belief about worker type. PBE checks both the education choice and the employer's updated response.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example. That is why PBE belongs after signaling and Bayesian games: it combines dynamic credibility with disciplined belief updating.",
+    "common_misunderstanding": "The mistake is to focus only on strategies and forget beliefs. In hidden-information dynamic games, beliefs are part of the equilibrium object.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. PBE is where beliefs become part of credibility. A continuation action is not enough; the model must also say what the player believes after seeing a history or signal.",
+    "recognize_in_new_work": "Look for dynamic asymmetric-information models with off-path beliefs, updating, and sequential rationality.",
+    "theme_id": "private_information",
+    "mathematical_primitives": [
+      "belief",
+      "backward_recursion"
+    ],
+    "related_concepts": [
+      "bayesian_games",
+      "types_and_beliefs",
+      "bayesian_nash_equilibrium",
+      "expected_utility",
+      "extensive_form_games",
+      "rationalizability"
+    ],
+    "course_evidence_ids": [
+      "ev-perfect_bayesian_equilibrium-01",
+      "ev-perfect_bayesian_equilibrium-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "signaling",
+    "name": "Signaling",
+    "plain_language_definition": "Using an action or message to convey private information when others update beliefs from it.",
+    "everyday_problem": "The problem is how someone with private information can convince others of it through an observable action.",
+    "first_principles_reason": "Signaling exists because words or actions can change beliefs only if different types have different incentives or costs.",
+    "mathematical_principle": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose. The receiver's belief update is therefore just as important as the sender's action.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. Separating and pooling are the two core patterns. In separating equilibria, different types choose different signals; in pooling equilibria, signals fail to distinguish types.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a sender-receiver game with types, signals, receiver beliefs, and receiver actions.",
+    "operation": "For each possible type, compare the payoff from sending each signal; then check how the receiver updates beliefs and responds.",
+    "worked_mini_example": "Education can signal worker ability if high-ability workers find education less costly. The diploma matters not because it directly produces all value, but because it separates types under the right incentives.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to assume any costly action is a signal. It signals only if costs and incentives differ across types in a way receivers can reason from.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. Signaling is costly communication through action. The central question is why a low type would not imitate a high type, and the answer must come from different costs or benefits across types.",
+    "recognize_in_new_work": "Look for actions that are valuable mainly because observers infer hidden quality, commitment, or type from them.",
+    "theme_id": "communication_and_knowledge",
+    "mathematical_primitives": [
+      "belief",
+      "incentive_compatibility"
+    ],
+    "related_concepts": [
+      "cheap_talk",
+      "common_knowledge",
+      "expected_utility",
+      "rationalizability",
+      "mixed_strategies",
+      "implicit_cartels"
+    ],
+    "course_evidence_ids": [
+      "ev-signaling-01",
+      "ev-signaling-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "cheap_talk",
+    "name": "Cheap Talk",
+    "plain_language_definition": "Costless messages that matter only when incentives make them credible enough to influence beliefs.",
+    "everyday_problem": "The problem is whether costless messages can influence behavior when the speaker may want to mislead.",
+    "first_principles_reason": "Cheap talk exists because communication has no direct cost or binding force, so credibility must come from aligned incentives rather than from the message itself.",
+    "mathematical_principle": "A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose. The lecture point is that speech can be strategic even when it is free.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The interesting case is partial alignment. If interests are perfectly opposed, talk often collapses; if they are close enough, messages can partition information usefully.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is a sender-receiver game where messages do not directly change payoffs but can change beliefs and actions.",
+    "operation": "Compare what each type of sender wants the receiver to do. If interests are aligned enough, informative messages can be credible; if not, messages may pool and reveal little.",
+    "worked_mini_example": "A restaurant reviewer saying this is good may be useful if their incentives match yours. A seller saying trust me may not be informative if every seller would say it.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to say cheap means irrelevant. Costless speech can matter when incentives make truthful communication self-enforcing.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. Cheap talk is the opposite stress test from signaling: if messages cost nothing and bind no one, only aligned incentives can make them informative. The message works when lying would not help enough.",
+    "recognize_in_new_work": "Look for models where messages are nonbinding and the key question is whether incentives allow information transmission.",
+    "theme_id": "communication_and_knowledge",
+    "mathematical_primitives": [
+      "belief",
+      "incentive_compatibility"
+    ],
+    "related_concepts": [
+      "signaling",
+      "common_knowledge",
+      "expected_utility",
+      "rationalizability",
+      "mixed_strategies",
+      "implicit_cartels"
+    ],
+    "course_evidence_ids": [
+      "ev-cheap_talk-01",
+      "ev-cheap_talk-02"
+    ],
+    "evidence_status": "transcript-backed"
+  },
+  {
+    "id": "common_knowledge",
+    "name": "Common Knowledge",
+    "plain_language_definition": "A fact that everyone knows, everyone knows everyone knows, and so on.",
+    "everyday_problem": "The problem is that coordinated action may require more than everyone privately knowing a fact. People may also need to know that others know it, and know that others know that others know it.",
+    "first_principles_reason": "Common knowledge exists because higher-order uncertainty can block coordination. A public fact can support behavior that a private fact cannot.",
+    "mathematical_principle": "Common knowledge means everyone knows, everyone knows everyone knows, and the chain continues. The useful relation is `E, KE, KKE, KKKE, ...`. In plain language: E is the event; K means known by the players; repeated K's represent higher-order knowledge.",
+    "why_it_matters": "This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.",
+    "what_breaks_without_it": "Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The infinite chain sounds abstract, but it explains concrete coordination. Public announcements, market conventions, and shared rules work partly because each person can rely on others having the same public reference point.",
+    "naive_problem": "The naive move is to describe what happened and call it rational. The course asks for more: what choice problem made that behavior sensible from the player's own point of view?",
+    "failed_simple_approach": "The simple story fails when another feasible action, another belief, or another continuation would make the player want to do something else.",
+    "mathematical_object": "The object is an infinite hierarchy: the event is known, everyone knows it is known, everyone knows everyone knows it is known, and so on.",
+    "operation": "Start with the event, then ask whether each level of mutual awareness is satisfied. Common knowledge requires the chain not to stop at a finite level.",
+    "worked_mini_example": "If a policy change is announced publicly, firms may coordinate on the new rule. If each firm only hears it privately and doubts whether others heard it, behavior may not shift the same way.",
+    "lecture_emphasis": "The lecture treats this as a working instrument for reading examples, payoff tables, game trees, and applications, not as a term to memorize. The lecture placement matters: this concept is introduced exactly where the previous representation would otherwise stop explaining the example.",
+    "common_misunderstanding": "The mistake is to treat true, known, and common knowledge as the same. They are different levels of shared awareness.",
+    "cross_course_connections": "The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. Common knowledge explains why publicness can matter as much as truth. A fact can be true and individually known, yet fail to coordinate behavior if people doubt whether others know that they know.",
+    "recognize_in_new_work": "Look for coordination failures, public announcements, or arguments that depend on what everyone knows about everyone else's knowledge.",
+    "theme_id": "communication_and_knowledge",
+    "mathematical_primitives": [
+      "knowledge_recursion"
+    ],
+    "related_concepts": [
+      "signaling",
+      "cheap_talk"
+    ],
+    "course_evidence_ids": [
+      "ev-common_knowledge-01",
+      "ev-common_knowledge-02"
+    ],
+    "evidence_status": "transcript-backed"
+  }
+]

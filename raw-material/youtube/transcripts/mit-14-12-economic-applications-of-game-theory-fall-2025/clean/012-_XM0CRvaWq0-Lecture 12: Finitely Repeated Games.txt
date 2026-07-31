@@ -1,0 +1,1807 @@
+Today we're going to start with uh
+finitely
+repeated games.
+And I want to just start with a really
+simple example and we'll actually play a
+game together and then we'll develop the
+general uh theory of this. So let's
+recall the standard prisoner's dilemma
+game where
+each player had two choices. They could
+either cooperate with the other player
+or they could defect.
+And the payoffs that we wrote down are
+going to be 2 2
+3 -1 -1 3
+uh 0 0.
+And what we saw in this game is that for
+both players defecting is a strictly
+dominant strategy. So
+if the opponent cooperates, I'm better
+off if I defect cuz 3 is better than 2.
+And if the opponent defects, I'm still
+better off if I defect because 0 is
+greater than -1.
+But so far we've assumed that this game
+is played only once. In reality, a lot
+of interactions take place over time.
+You play a game with someone, you see
+what happens, then you play the game
+again. Then you see what happens, then
+you play the game again.
+And uh today we're going to study what
+happens and how our conclusions change
+when we're in this kind of repeated
+situation.
+So let's start with a really simple
+let's play the prisoner's dilemma
+three times.
+So how does this work? You're going to
+simultaneously play the game.
+Then both players observe the actions
+that were taken.
+Then the game is played again.
+Both players observe the actions that
+were taken and then finally the game is
+played a third time.
+And we'll assume that your payoffs in
+this
+you know, grand game are just the sum of
+your payoffs or the maybe the average
+payoffs across the games.
+So if you get two in every each
+repetition of the game, your average
+payoff is two. Um I think it's good it's
+fun to just sort of play this. So we
+could do it on MobLab, but I feel that
+if you kind of look someone in the eye
+when you're playing the game, it changes
+the results a bit. So I want you to pair
+off and uh you need a way to to play
+this. I think the easiest way is to
+think of this as like rock paper
+scissors. So just agree maybe rock if
+you need help let's say
+playing rock is defecting and maybe
+playing paper
+is cooperating. So then it's just a
+variant of rock paper scissors. Play it,
+observe the outcome, you play it again,
+observe the outcome, you play it again.
+So three times in total. Pair up, maybe
+one of you will be by yourself, you can
+observe other people.
+Um
+and yeah. Let's uh let's do it and see
+what happens.
+All right, so let's see how I'm curious
+how people did. So
+I hope most groups got a chance to play.
+So tell me how how did people play? Um
+does anyone want to share what you found
+when you played this game?
+Yes.
+So you guys uh you cooperated in all
+three rounds or
+Okay, interesting. That's that's pretty
+good payoffs for you guys. Uh so you
+each got an average payoff of two.
+That's pretty good. Uh I would argue
+maybe someone was a little irrational
+there, but we'll see. Anyone else?
+Uh did other people cooperate? Yeah?
+Great. That's a that's a great point. So
+we'll see actually that the theory of
+infinitely repeated games is much
+different than the theory of finitely
+repeated games and Paul Milgrom loves to
+say the game is always larger than you
+think. So when you write down these
+games, often we're missing additional
+interactions that we might not be
+modeling. Um okay, so a lot of
+cooperation. Did anyone just defect
+every time?
+Yeah?
+Okay. Great. A paragon of rationality
+and uh and what was your reasoning? Uh
+did you did you have reason or uh
+Okay.
+Great. So it seems like we have a few
+different approaches. Some people sort
+of said, well, we understand that in the
+stage game defecting is optimal.
+So let's just let's just expect that the
+other player is going to defect and
+we're both going to defect every period.
+Other people seem to be able to sustain
+some cooperation and maybe what you had
+in mind is if we cooperate today, then
+tomorrow my opponent will reward me by
+cooperating in the future, right? Uh
+we'll see that in the finitely repeated
+game, the unique subgame perfect Nash
+equilibrium is actually uh always
+defecting. So as as one of these groups
+played and the way these other groups
+played is not actually consistent with
+subgame perfect Nash equilibrium, but
+let's uh let's understand why.
+So I think the first key observation
+here is that when we play a game
+repeatedly
+so repetition
+I guess I should say together with
+observability
+creates the opportunity for rewards and
+punishments, right?
+I think what some of you might have
+thought is maybe if I cooperate today,
+I'll be rewarded and my opponent will
+cooperate with me in the future and I'll
+get some benefit from that. Or
+conversely, if I defect today, my
+opponent might punish me by defecting in
+the future.
+Notice that we need both repetition and
+observability for this to happen, right?
+Of course you need repetition because
+you need some future for people to
+reward or punish and we need
+observability because the only way to
+reward and punish people is if you make
+your future play contingent on what was
+done in the past. If you couldn't
+observe the way people played, then uh
+the repetition wouldn't really be so
+important.
+Great. So now let's see if we can uh
+formally model this this game and solve
+for a subgame perfect Nash equilibrium.
+The the three copy version actually gets
+a bit messy. So let me just go over the
+two copy version and then we'll we'll
+generalize from there. So let's imagine
+that the game is played twice. So maybe
+I'll say this is prisoner's dilemma
+times two.
+And even with this very simple game and
+just two repetitions, the game tree is
+going to get pretty complicated, but
+let's see if we can write it out. So
+we'll say
+maybe the first player is choosing
+between
+cooperate and defect.
+And then the second player
+without observing what the first player
+did, is also going to choose
+between cooperate and defect.
+Now remember, we've chosen to model it
+this way as the first player going
+first, but it doesn't really matter. We
+could also have the second player going
+first and then the first player moving
+not having a observed what the second
+player did, right? The key thing is that
+this is really a simultaneous move game
+because neither player's action can
+depend on what the other player is
+doing.
+Okay, so this was kind of the first
+period. Often we call this period zero.
+Uh we often start our labeling at zero.
+And now we have the second period. So
+now
+player one
+chooses
+And notice these are in separate
+information sets to indicate the fact
+that at this point the players observe
+what happened in period zero. You know
+whether both players cooperated, both
+players defected, one cooperated, the
+other defected or vice versa.
+And then
+these are going to be in the same
+information set because this is really a
+simultaneous move game.
+And this is player two.
+And player two chooses cooperate or
+defect.
+YOU SEE THIS GETS A BIT MESSY.
+AND I THINK YOU SEE the pattern.
+And then I could write it all the
+payoffs, but uh that's going to be a bit
+time consuming. So I won't write out the
+payoffs.
+So we want to understand what are the
+SPNE
+of this game?
+And what's the first question we always
+ask when you try to solve for SPNE?
+Well, first we have to identify the
+subgames, right? That's always step one.
+So how many subgames? Maybe I'll write
+down here. This is period one.
+So which nodes of this tree start a new
+subgame?
+Well, there's one easy answer. It's this
+node. I don't know if I have colored
+chalk today. I'll just use arrows. So
+this node starts one subgame that's just
+the entire game. That's easy.
+And what other nodes start subgames?
+Well, we know that if a node is going to
+start a subgame, it has to be by itself.
+If a node is with another node in the
+information set, that node can't start a
+subgame cuz that goes against the
+definition of a subgame.
+And it it has to be a decision node. So
+it can't be any of the terminal nodes.
+It can't be any of the nodes that are in
+multi-node information sets. So actually
+we immediately see that it's just these
+four.
+So what we see
+is first let's look at the subgames.
+And it turns out there's five subgames
+and here we we see the general pattern.
+There's one subgame starting in period
+zero.
+And then there's four subgames starting
+in period one where each of those
+subgames corresponds to the history of
+play that the players have observed. And
+in period one, there's four possible
+histories. Cooperate to cooperate,
+cooperate defect, defect cooperate, and
+defect defect.
+So now let's use our usual approach and
+let's try to work backwards.
+&gt;&gt; So, let's start with our smallest sub
+games, the sub games that come at the
+end.
+And in the sub game starting here,
+if we're looking for a sub game perfect
+Nash equilibrium, the restriction of the
+strategy profile to this sub game must
+be a Nash equilibrium of this sub game,
+right? So, how are the how must we play
+in this sub game to be consistent with
+Nash equilibrium?
+Defect defect, right? Because we know
+maybe I'll
+do it here.
+That if we fill in this game,
+we see that DD is the unique
+Nash equilibrium of this stage game,
+right?
+Now, you might say, "Well, wait a
+second. In this sub game, we're not
+quite playing the stage game." Because
+the payoffs I'm going to put at the end
+here don't just depend on what happens
+here, they also depend on what happened
+in the first game, right? But that's not
+going to change incentives because the
+payoffs we got from the first game are
+sunk. We've already got those payoffs.
+So, the only effect that my play has
+today is on the the game that we're
+playing today, right? The fact that we
+add in yesterday's payoffs doesn't
+change uh the return to my actions. So,
+indeed, we must be defect defect here.
+And the same reasoning says we have to
+be defect defect here,
+and defect defect here, and defect
+defect here.
+So, what we've seen is that at each of
+the stage
+maybe I'll say the stage period one or
+yeah.
+In each of the period one sub games,
+we know that defect defect must be
+what's played.
+And now let's go to the period zero sub
+game.
+Well, now this is where things are more
+complicated because here there's the
+possibility of rewards and punishments,
+right? But I argue that in this period
+zero sub game, we still must both play
+defect defect in this in period zero.
+Why is that? What would happen if we
+weren't playing defect defect?
+What's the key
+observation here?
+Well, I guess the first thing I'd point
+out
+is
+we don't have any rewards or
+punishments.
+Why? Because we've already computed what
+happens in the period one sub game.
+And what we've seen is that both players
+are going to play defect in period one
+regardless of what was done in period
+So, because the future play is
+independent of the past play, there's no
+scope for rewards and punishments. So,
+this is kind of an important point.
+Another way of saying this is how I
+behave today has no effect on how we're
+going to behave tomorrow. Because
+whatever we play today, the same
+behavior DD is going to be played
+tomorrow.
+So, how should I play today?
+If how I play today has no effect on
+what happens tomorrow, I should simply
+do today what maximizes my payoff today.
+And we know that the unique Nash
+equilibrium of of the prisoner's dilemma
+is DD, so in the period zero sub game,
+we both must play DD.
+So, that was kind of a
+of a verbal argument, but let's see any
+any questions on that?
+So, just to make sure
+we understand what's going on,
+what is the strategy? Maybe I'll put it
+over here.
+What is the strategy that each player
+plays?
+So, I might say the outcome of this game
+is we just always defect. But remember
+there's a difference between the outcome
+and the strategy, right? So, what is a
+strategy of a player in this game or in
+this Nash equilibrium? Well, a strategy
+is a complete contingent plan.
+And the number of information sets is
+actually exactly the same as the
+histories here. Because when when am I
+called upon to play? Either I know it's
+period zero,
+or I'm called upon to play in period
+one, and I know what happened in period
+So, a strategy needs to specify
+we'll write it like this.
+SO, WE HAVE
+ONE SPOT FOR each possible information
+set.
+Notice I'm being if we look really
+carefully at the game,
+then the information sets for player one
+are this node,
+this node, this node, this node, and
+this node.
+The information sets for player two look
+a little different. It's this dotted
+line,
+this dotted line, this dotted line, this
+dotted line, this dotted line, but we
+can really think of them as as being the
+same. Because in both cases, the player
+either we're in period zero, or we're in
+period one, and all we know is what
+happened in the first period. So, the
+fact that
+player two comes later and it's dotted
+versus not, it doesn't actually change
+things at all.
+So, what is this the Nash equilibrium or
+the sub game perfect Nash equilibrium we
+found? It's it looks like this.
+This is a full description of the
+strategy. So, it says,
+"Initially, before we played it all, I'm
+going to play defect.
+Then, in the second period or the I was
+the first period, the second, you know,
+in the in the next game,
+if I observe that we both played CC last
+game, then I'm going to play defect. If
+I observe that we played CD, I'm going
+to play defect. If we observe that we
+played DC, I'm going to play defect. And
+if DD, play defect. So, this specifies a
+complete contingent plan in the game."
+Notice one kind of subtlety here,
+and this will come up. We normally think
+that how you play in future games will
+be contingent on how your opponent
+played in the past, right? This is how
+we think about rewards and punishments,
+right? If you play C today, I might
+behave differently tomorrow.
+And that's possible.
+But in general, we can actually do even
+more. That what a strategy allows us to
+do is make our future play contingent
+not only on what the other player did,
+but actually what we ourselves did,
+which may seem a bit weird, but this
+will also come up, right? I might say,
+"I'll play C tomorrow if I played C in
+the first period."
+But I'll play something different if I
+play D in the first period. That's
+allowed. We can contingent make future
+play contingent on our own play. Uh and
+that that will actually play an
+important role below.
+Okay. So, now that we've done an
+example, let's introduce a general
+framework for finitely repeated games.
+You can see this was the simplest
+possible game. It was prisoner's
+dilemma, and we only played it twice,
+and already the extensive form got
+really messy. So, we're not really going
+to draw any more extensive forms, and
+we're going to introduce special
+notation for repeated games that's a bit
+more convenient. So, maybe I'll call
+this the the general framework
+for finitely repeated games.
+All right. So, what's the first
+ingredient? Well, the first ingredient
+is the game that we repeat, right? So,
+this is called the stage game.
+So, in our example, the stage game was
+the prisoner's dilemma, but it could be
+any simultaneous move or any strategic
+form game.
+And
+we're going to call the stage game we're
+going to specify it like this.
+AND WE MIGHT CALL THIS GAME G,
+WHICH is a strategic form game.
+So, what does this say? It says in the
+stage game,
+player one can choose any action from
+the set A1, player N can choose any
+action from the set AN.
+And then we have a payoff function that
+says, "What is player I's utility as a
+function of the profile of actions
+that's played in the stage game?" And we
+specify that function for all players I
+equals one through N.
+Now, we might call the stage game G,
+and this is just a strategic form game.
+You may notice though that the
+notation's a bit different. In the past,
+early in the course, when we wrote a
+strategic form game down, what was
+different about the way we wrote it
+down? We used different notation here.
+Remember?
+These A's are different, right? Before
+we wrote S's. We had S1 up to SN.
+And we can think of these as basically
+the same playing the same roles as the
+S's, but we don't want to get confused
+between strategies in the stage game and
+strategies in the grand repeated game.
+So, now I'm going to change notation a
+bit, and I'm going to call what we do in
+the stage game an action rather than a
+strategy, but that's just uh
+terminology. So, here, before we said C
+and D were strategies in the stage game,
+now we're going to say that C and D are
+actions in the stage game. So, that we
+can keep keep track of what a strategy
+is in the full game.
+Okay?
+Then we have to specify the timing.
+And remember this is finitely repeated,
+so we're going to say that time goes
+we're going to start time at zero, and
+that'll be a bit convenient. We'll see a
+bit later.
+And we're going to have period zero,
+period one, period two,
+all the way up to period T,
+where T
+is finite.
+So, T is sometimes called the big T is
+sometimes called the horizon of the
+And notice we actually play the game big
+T plus one times because we started
+And for this reason, we sometimes call
+the repeated game
+maybe I'll call it G of T.
+So, the idea is G is our notation for
+the stage game.
+G of T denotes the repeated game where
+we play the stage game G in period zero
+all the way up to T.
+So, just so we're on the same page, G of
+zero
+is equal to G. Because if we play the
+repeated game, but a horizon is zero, we
+just play it once, and that just
+coincides with the stage game. But in
+general, this game is going to be more
+complicated. So what did we play here?
+We played G of one.
+Our horizon was one cuz we played it in
+period zero and period one, and G was
+the prisoner's dilemma. So
+uh as an example,
+just to kind of remind ourselves,
+what we played so far could maybe be
+called PD of one.
+The game is the prisoner's dilemma, and
+our horizon was was one.
+Okay, we next have to say
+uh something about information.
+And what we're going to assume is that
+past actions are observed.
+And this was already assumed in our
+example. What we're saying is, whenever
+we play the game together, we've
+observed exactly how people played in
+the past.
+So for instance here, when we play the
+game for the second time, we observe how
+people played it the first time. And we
+pointed out that that was crucial, this
+observability was crucial to create the
+opportunity for rewards and punishments.
+now we have to say what our payoffs are.
+Let's use average payoffs. So maybe I'll
+just write UI
+Maybe I'll be a little more precise.
+So what I'm saying is, let's say I'm
+player I,
+and this is how we play.
+Or this is the outcome of the game. In
+period zero, we play the action profile
+A0, and all the way into period T, we
+play the action profile AT. I want to
+write down what is the payoff of player
+I.
+And this is just going to be the sum.
+I'll write it here. It's going to be 1
+over T
+plus one
+of
+UI of A0
+plus all the way up to UI
+of AT.
+So I look what happens in stage zero or
+period zero, I compute my payoff there.
+I go all the way up to period T, I
+compute my payoff there.
+Altogether, I have T plus one terms, and
+it's convenient just divide it by T plus
+one. That doesn't have any effect on
+incentives. We can always scale
+utilities however we want, but it means
+that we're kind of computing utilities
+in the multi-period game, in the
+repeated game, in kind of the same
+utility units as the stage game. And it
+turns out that that's convenient so that
+our payoff will be something like two or
+three, rather than seven or eight, which
+isn't in the same terms as uh as the
+stage game.
+All right.
+So now let's talk about strategies.
+And before we Maybe before we define
+strategies,
+let me just make one note
+that a finitely repeated game,
+this is a special case
+of a multi-stage game.
+Remember in a multi-stage game, we
+separated the game into stages, and in
+each stage, some subset of players moved
+simultaneously having observed what
+happened in previous stages.
+This is a special case because the
+subset of players who move is always all
+the players,
+and the game they play is always the
+So in in more generally in a multi-stage
+game, the the the stage game could vary
+over time. We might play a different
+game in period zero as we do in period
+one. This is a special case in that we
+always play the same stage game in every
+period.
+So because this is a multi-stage game,
+what does that tell us we can apply?
+Let's just sort of keep in mind, why
+might this be be useful for us? What
+What's a general result we know about
+multi-stage games?
+If we want to check that something's a
+subgame perfect Nash equilibrium in a
+multi-stage game,
+it's a bit easier to check because of
+what result?
+The one-shot deviation principle, right?
+So the one-shot deviation principle gave
+us an easy way to verify that a given
+strategy profile was in fact a subgame
+perfect Nash equilibrium.
+The one-shot deviation principle applies
+to any multi-stage game,
+and finitely repeated games are special
+case of multi-stage games, and therefore
+the one-shot deviation principle applies
+to these games as well.
+And we'll use that fact below.
+Okay, so now let's define what a
+strategy is.
+Let's say for player I.
+And as usual, a strategy is a complete
+contingent plan.
+So we have to say how player I will
+behave at every possible contingency
+player I finds herself at.
+Again, let's separate this into periods.
+We have period zero,
+period one,
+to generic period T, and then eventually
+we get to
+Well, at period zero, nothing has
+happened. So we just have the trivial
+history. So at period zero, my strategy
+must say SI of the empty set
+in AI.
+So my strategy SI
+is going to say, what action do I take
+in period zero? Well, at the null
+history. We haven't observed anything,
+nothing has happened so far. So we're
+going to use the empty set to denote the
+history in period zero.
+Then in period one,
+we need to specify SI of H1.
+This is going to be an action in AI.
+And we have to specify this
+for every history
+H1.
+This is a period one history.
+H1. Well, where do these things live?
+Well, a period one history just
+specifies what happened in period zero.
+And crucially, not just what I did in
+period zero, but what my opponents did.
+So this is going to be an element of A.
+It's going to be an action profile.
+Remember A, let me write is A1
+to AN.
+So what this says is in period one, as
+player I, I'm going to choose some
+action to play,
+and the action I choose can depend upon
+the way that we played in period zero.
+Namely, the action profile that we all
+took in period zero.
+Okay, if we extend this and we get to
+period T, what happens? We're choosing
+SI of HT
+And again, for every history, but now we
+have every history HT
+in what? Where does HT live?
+Well, in period T, I observe how
+everyone behaved in period zero, in
+period one, all the way up to period T
+minus one.
+And altogether, that's actually T
+periods. So this is going to be in AT.
+You might It might be a little confusing
+why it's AT because it only goes up to T
+minus one, but remember we started at
+zero. So actions profiles in zero, one,
+two, all the way up to T minus one,
+there's T of those altogether.
+And then we could go down to to T.
+So maybe if we wanted to say really to
+be
+really formal here, what is it?
+A strategy
+SI is a function
+that specifies what player I does at
+every possible
+history.
+So maybe we could write this as a
+function from the union
+from T equals zero to T
+of AT
+to AI.
+So this is I think the the way to
+interpret it, but if you want to think
+formally mathematically, well, I have to
+specify what I do at every history. So
+I'm going to take the union of all the
+sets of histories. And this will specify
+the period zero history, all the period
+one histories, all the period two
+histories, all the way up to all the
+period T histories, and this is going to
+be the formal way I I write it down. But
+um you know, that's sort of the math
+way. This is I think the uh intuitive
+way to do it. And you'll notice this is
+maybe the way that we'll write it down
+in the examples, that'll be a bit
+clearer.
+All right. Any questions on
+the setup, on how we've defined
+a finitely repeated game?
+Yeah.
+Just a question. So for that game of the
+prisoner's dilemma, what are the two
+actions? Yeah.
+And it just so happened that both
+players had like identical strategies,
+but probably we need to specify two of
+those.
+Exactly right. So I should have said,
+yeah, this is strategy
+uh S I. Exactly right. So, the
+equilibrium good point. So, the
+equilibrium that we solve for has to be
+a strategy profile. So, maybe I would
+say it's actually S1 equals S2 equals
+this.
+Yeah. Great. Thanks for clarifying.
+That's a symmetric equilibrium. We could
+also have potentially asymmetric
+equilibrium. Yeah. Great. Any other
+questions on this?
+So, now we want to understand
+what's kind of special
+and what happened here. We wrote down
+this model thinking that there would be
+maybe a potential for cooperation using
+rewards and punishments where people
+might play differently early on in the
+game anticipating what happens later on
+in the game.
+But then we we looked at the prisoner's
+dilemma
+and we found that it didn't happen. We
+always just played the Nash equilibrium
+of the prisoner's dilemma every period.
+So, let's try to understand how general
+that phenomenon is. Uh and that'll be
+what our first result tells us.
+So, one special property of the
+prisoner's dilemma
+is that the stage game only has one Nash
+equilibrium. It had a unique Nash
+equilibrium.
+And we'll see that when the stage game
+only has unique Nash equilibrium, that
+puts a lot of structure on the subgame
+perfect Nash equilibria of the repeated
+game. So, let's uh
+state this theorem.
+So, let G
+be a strategic form game. This is going
+to be our stage game.
+So, this is an arbitrary strategic form
+game, maybe finite, but uh
+I don't know if they can define it this
+um
+if
+this game G
+has a unique Nash equilibrium.
+Then
+Okay. So, we've started with an
+assumption about our stage game and
+we've assumed that our stage game G has
+unique Nash equilibrium. We want to draw
+a conclusion about the repeated version
+of this game.
+And we actually want a conclusion to
+hold no matter how many finitely many
+times we repeat it. So, I'm going to say
+then
+for every
+horizon
+T
+the game
+G of T
+So, I'm going to finish my sentence, but
+let's just make sure we see what we're
+doing. We've We've started with a a
+single game G.
+We've made an assumption about it that
+it has unique Nash equilibrium. And now
+we're going to draw a conclusion about
+the T repeated version of this game for
+every horizon T.
+Namely, the game G of T
+has unique
+subgame perfect Nash equilibrium.
+We can actually say more. Any guesses on
+what this
+unique subgame perfect Nash equilibrium
+might be?
+Yeah. It's G's Nash equilibrium.
+Exactly. And we have to be a little
+precise. So, you know, the set of
+strategies is a bit different though in
+this game. So, let's be a little So,
+what So, So, can you say that a bit more
+precisely?
+It's the Nash equilibrium where the
+action in history is the same as G's
+Nash equilibrium. Yeah, so I would say
+it's the strategy profile where we
+play the Nash equilibrium of G at every
+Right? But there's a key point there
+that we can't just say it's the Nash
+equilibrium of G because the set of
+strategies in G are different. So,
+namely
+uh
+maybe I'll say
+Maybe I'll give notation. Maybe that
+would be nice. So,
+unique Nash equilibrium Let's add some
+notation. A star.
+So, I'm just giving a a name to the
+unique Nash equilibrium. This is an
+action profile.
+Then this has unique Nash equilibrium,
+S
+of H equals A star
+for every history H.
+So, now we're sort of formalizing what
+you said.
+in the repeated game has to say how we
+play how is you know, a strategy profile
+needs to say how every player plays at
+every history.
+we're going to specify that whatever the
+history is, we all follow the Nash
+equilibrium profile.
+maybe if I want to be a little more
+precise, maybe I'll say SI equals AI
+star for every history H and every
+player I.
+So, if I'm player I, what do I do?
+I have to specify what I do at every
+history. What am I going to do? Just
+what I'm supposed to do in the Nash
+equilibrium of the stage game.
+In particular, this strategy is history
+independent. How I play does not depend
+on how I played in the past.
+Or how other people played in the past.
+And this means we don't really have any
+rewards or punishments.
+You know, this result is true if the
+unique Nash equilibrium is mixed, but
+we'll kind of think for the proof, let's
+think of this as being pure to make it a
+bit easier, but the result will be true
+uh either way. So, let's try to prove
+let's assume
+that A star is pure.
+Just to make the proof easier. The
+result goes through, but we haven't
+really talked about mixed strategies and
+we don't really want to get into that.
+So, let's just say that this unique Nash
+equilibrium is pure.
+Uh
+Let me be clear. I'm not saying that
+it's not enough to just say it's unique
+among the pure Nash equilibrium. I'm
+saying it's um
+there's only one equilibrium
+and that equilibrium happens to be pure.
+All right. Well, we basically want to
+replicate the argument that we used in
+the prisoner's dilemma.
+Uh so,
+let's suppose
+that
+S star
+or S equals
+S1 through SN
+is a Nash equilibrium is a subgame
+So, we're going to consider some
+strategy profile and let's assume it's a
+subgame perfect Nash equilibrium and we
+want to say that if it is a subgame
+perfect Nash equilibrium, it has to take
+this very special form.
+Well, what we want to do is you want to
+work backwards. So, let's look at our
+periods.
+0 1 2
+And I'll give kind of a a verbal proof.
+What do we know
+must be true
+within period T? How must we all play
+in the final period, period T?
+Yeah. Uh you just play I basically
+Right. And And why Why do we know that
+that has to be the case? Because we
+talked about how all the histories
+independent on the first T games.
+So, that
+you just have like the
+one subgame. You just play by the Nash
+Exactly right. So, once you've gotten to
+here
+it's always easier to work backwards
+because at the end there's less to worry
+about. How I play in the last game can't
+have any effect in the future cuz
+there's no future ahead of me. This is
+the last game. So, my only choice today
+how do I want to influence my flow
+payoffs in the game today?
+if this is supposed to be
+if this is a Nash equilibrium of any
+every subgame, well, what we know is
+that we must have
+S of HT
+equals AI star
+HT in AT.
+So, I'm saying whatever history we're at
+in this last period, period T
+this history starts a subgame.
+We have to be playing a Nash equilibrium
+within this subgame, but this subgame is
+just the same as the stage game because
+there's only one We're in the last
+period, all we're doing is choosing how
+to play the stage game once.
+And therefore, we must be playing a Nash
+equilibrium, but there's only one Nash
+equilibrium, so we must be playing that.
+And now we want to move backwards. So,
+maybe now I'll go to period
+T minus 1. So, formally it's kind of a
+proof by induction, but I'm just going
+to
+try to do it verbally.
+So, now what happens in period T minus
+1?
+Well, in principle
+how I behave in period T minus 1 could
+be more complicated because I have to
+anticipate that the way I play in period
+T minus 1 might change the way that we
+play in period T. The future is more
+complicated now.
+But because I know that this is what's
+happening in period T, I don't have to
+worry about that. Right? What I know is
+that if this is how we're playing in
+period T
+then how we're playing in period T is
+independent of how I play in period T
+minus 1.
+So, now
+I just need to maximize my payoff in the
+stage game and the only way that can be
+the case is if we're playing a Nash
+equilibrium the stage game. So, if we
+work backwards, we see that
+SI of HT - 1
+HT - 1
+in AT - 1.
+And then we can just keep going back
+until we get to period zero, when we'll
+see that SI of the empty set must equal
+AI star.
+&gt;&gt; [clears throat]
+&gt;&gt; But notice the ordering really was
+crucial. It was crucial that we knew
+what we were going to do in the future
+in order to figure out our incentives to
+play today.
+&gt;&gt; [snorts]
+&gt;&gt; Yeah, so it's exactly backward
+induction, but I want to be careful when
+we say fixed.
+It's not It's not just that it's fixed
+What's crucial is that it's Yeah, it's
+independent of the history
+that it's The crucial thing is that what
+we do in period T does not depend on HT.
+If it did depend on HT,
+then it would have to then things would
+be more complicated because what I do
+today
+could affect how we end up playing
+tomorrow because what I do today, I
+guess the key the key issue and maybe
+I'll
+Yeah, we'll start start over here.
+So, maybe let's go kind of the
+What's the key issue in
+in repeated games?
+It's that
+my action AIT
+has two effects.
+It affects my flow payoff.
+Namely, UI
+So, if this is how my opponents are
+playing in period T,
+the action that I choose directly
+affects my flow payoff.
+But it also affects future play.
+Why?
+Well,
+AIT
+changes
+the history
+H
+for all S greater than or equal to T.
+Because
+any subsequent history specifies exactly
+what happens so far.
+So, if I behave differently in period
+nine,
+then the history that the players
+observe in period 10 is going to depend
+on what I did in period nine.
+And in particular, that might therefore
+change actions.
+And this is This is sort of the
+fundamental trade-off that we always
+face in repeated games. I have to
+compare how my action today
+affects my flow payoffs today and also
+how it affects what happens in future
+play of the game.
+If we go over here, let's look at what
+happened in period T - 1.
+The first effect was still true, or the
+second this this effect is still true.
+It's still true that at period T - 1, my
+action changes the history tomorrow.
+But this is what broke down.
+If the way that we play tomorrow is
+independent of the history, then the
+fact that my action changes the history
+doesn't mean that the actions are going
+to be different because the actions
+tomorrow are independent of the history.
+Right?
+namely, this
+this property.
+So, sure, if I change my action at T -
+1, I might change HT. I'm going to
+change the history that everyone sees
+But if the way we play is A star, no
+matter what that history is, then the
+fact that I change that history doesn't
+matter at all.
+And therefore, I could ignore the effect
+of my action
+on future play and only focus on the
+effect of my action on my flow payoff,
+but that means we're effectively just
+playing the stage game, and we already
+know that has a Nash equilibrium.
+Again, we could do it all the algebra I
+and and you can look in the notes for
+the kind of more formal algebraic
+argument, but I just find it easier just
+to kind of think through it verbally uh
+than the algebra. Yes, question. Kind of
+the main point is that like
+if future actions were not dependent on
+the history, then my current action
+action today
+Exactly, and we'll do an example of that
+exactly next, yeah.
+I guess technically what I've shown
+here, I should be careful. I've shown
+that if something's a subgame perfect
+Nash equilibrium, we must play the stage
+game Nash every period. I technically
+also have to check that playing the
+subgame playing the Nash every period is
+a subgame perfect Nash equilibrium, but
+uh that's also not too hard to show. So,
+I'll just say
+and this is maybe a good exercise,
+use the one-shot deviation principle
+to show that this
+is a subgame perfect Nash equilibrium.
+Right? I showed that the only possible
+subgame perfect Nash equilibrium is
+this, but of course, it could be that
+there's no subgame perfect Nash
+equilibrium. So, you should actually
+check that this is a subgame perfect
+Nash equilibrium, and it's exactly the
+same reasoning, right? I just have to
+check that there's no profitable
+one-shot deviation, and we go through
+basically the same reasoning, but uh
+maybe I'll leave that as an exercise.
+All right, so I don't want to give the
+impression that repetition can't have
+any effect,
+and it turns out that this result, it is
+very very special that we have a unique
+Nash equilibrium in the stage game. And
+if we have multiple Nash equilibria,
+this result is no longer true. So, uh
+let's
+let's go through that.
+So, let's go through maybe the oldest
+game that's
+been formalized
+is we're going to study the stag hunt.
+So, I think Rousseau talked about this
+in maybe the 1600s.
+And the story is you have two hunters.
+They can either hunt hare, which is
+easy, you do it by yourself, or they can
+hunt a big stag, and they have to do
+that together.
+So, they can choose Each of them
+chooses, do we try to
+kind of cooperate and hunt hat stag
+together, or do we just hunt for hare on
+our own?
+And if we both hunt for stag, then we
+both succeed. We get the stag, and
+therefore we each get a payoff of two.
+Payoff is going to be two, two.
+Now, hare is not as good as uh stag,
+just a a rabbit. If we both hunt for
+rabbits on our own, we each get one.
+We each get a rabbit, and but a rabbit
+is worse than a stag. So, we each just
+get one, one.
+But then, the tricky thing is what
+happens here.
+What if I hunt for hare
+as player one and player two hunts for
+stag?
+Well, I'll still get one
+because I can hunt for hare by myself,
+but now I've kind of screwed over the
+other person
+because they're hunting for stag by
+themselves now. They're not going to be
+able to successfully get a stag, and
+they're going to get a payoff of zero.
+So, the idea is, do we pursue the small
+prey that we can achieve by ourselves,
+or the big prey that requires
+cooperation? If you seek out the big
+prey by yourself, you get nothing
+uh and and you fail.
+So, this is going to have multiple
+equilibria.
+Uh let's just go through it. If my
+opponent is hunting for stag, then I
+also want to hunt for stag because if I
+know they're hunting for stag, then I
+can join them and we'll get stag, and
+that's great.
+But if my opponent is hunting for hare,
+I also want to hunt for hare because if
+I hunt stag by myself, I get nothing.
+And now we can do the symmetric thing.
+And you know, Rousseau didn't really
+write it out quite this way, but he was
+trying to make the point that the nature
+of society uh can have a big impact. We
+can be a society of stag hunters who do
+really well because we all trust each
+other, or we can be a society of hare
+hunters who don't do as well, and these
+are both consistent and and stable uh
+courses of action. Of course, he didn't
+have the notion of Nash equilibrium, but
+but he talks about this in his uh in his
+book in the 1600s.
+But for our purposes, the key point is
+that this has two Nash equilibria.
+Namely, SS
+and HH.
+So, now let's consider the
+uh repeated version of this.
+maybe let's look at stag hunt
+with T equals one. So, we're just going
+to play stag hunt twice.
+And there's actually going to be a lot
+of subgame perfect Nash equilibria.
+Uh let's look for a few.
+Let's first look for
+subgame perfect Nash equilibria
+where I might say there's no rewards and
+What do I mean by that? I mean, let's
+look for SPNE
+where
+the The we play in T equals one doesn't
+depend on how we played in t equals
+Our play is history independent. Again,
+if there's no contingency, if the way we
+play tomorrow doesn't affect how it
+doesn't depend on how we play today,
+then the way we play today doesn't have
+any effect on tomorrow, and we could
+just focus on the stage games.
+So,
+any guesses for some kind of simple SPNE
+that have this property? Maybe I'll
+write
+period zero
+and period one. There's actually a a
+number of choices here. Any any guesses
+for some some really simple SPNE where
+there's no contingency? We just kind of
+ignore the past.
+Well, one thing we could do is we could
+just always hunt stag.
+We know that's a Nash equilibrium of the
+So, maybe I'll be a little informal and
+I'll just write we could do SS SS.
+So, formally what I mean is in period
+zero, we each hunt stag, and in period
+one, we each hunt stag regardless of the
+history in period zero. So, remember if
+I really formally wrote out the strategy
+here, I'm actually saying SS at four
+different contingencies.
+Right? Um
+&gt;&gt; Great.
+So, that's one thing we could do.
+Is this an a subgame perfect Nash
+equilibrium? Well, yes, because
+in period one, we're each playing a Nash
+equilibrium. That's great.
+In period zero, how I play today has no
+effect on what happens in period one, so
+all we need to check is that I'm playing
+a a Nash equilibrium today, and indeed
+that works out. So, here's one.
+Any other examples of SPNE that don't
+have any rewards or punishments? They
+don't have any contingencies.
+We could always hunt hare, right?
+So, again, in each of these subgames,
+it's obviously a Nash equilibrium. We
+just have to check that it's a Nash
+equilibrium of this main subgame. But
+because the way we play tomorrow doesn't
+depend on the way we play today, it's
+it's a Nash equilibrium, we're good. I'd
+argue there's actually even some more.
+Any
+Any other things we could do?
+Yeah. If you hunt stag in the first
+period, both of you, and then hunt hare
+in the next one. Exactly.
+Great.
+So, you might think, wait, oh, this has
+punishments because we're playing
+differently tomorrow. But no,
+punishments are about
+making what we do tomorrow contingent on
+what we do today. So, what I'm saying,
+or what our friend here is saying, is we
+both hunt stag today.
+Tomorrow we hunt hare, but we hunt hare
+whatever happened today.
+If we both hunted hare today, we hunt
+hare tomorrow. If we both hunted stag
+today, we hunt hare tomorrow. If it was
+SH or HS, we still do hare tomorrow. So,
+again, there's no contingency, and we
+can go through it. Clearly a Nash
+equilibrium of this subgame,
+and then clearly a Nash equilibrium here
+because all I care about is my flow
+payoffs, and SS is a Nash equilibrium of
+And then as you pointed out, we have
+one final one where we do HH
+and SS.
+And maybe if I want to be more precise,
+what I mean
+I mean at every
+H1. Right? That's when I write this
+down, I'm really specifying four things.
+I'm saying at every history H1, there's
+four of them, SS, HH,
+HS, SH,
+this is what happens.
+So, here we have four subgame perfect
+Nash equilibria that involve no rewards
+or punishments, and they're pretty easy
+to analyze.
+But now we want to see if we can
+do a little more.
+Any questions on on this before we
+So, now we all go to this board.
+So, what's the question?
+Can we find
+a subgame perfect Nash equilibrium
+in which we don't play a stage game Nash
+in period zero?
+&gt;&gt; in each of these subgame perfect Nash
+equilibria that we looked at, we played
+a Nash equilibrium of the stage game in
+period zero. I'm asking, can we find a
+different subgame perfect Nash
+equilibrium
+in which
+we do not play
+a Nash equilibrium of the stage game?
+So, let's just try to think through
+Well, we might say, wait, we that's
+impossible. We can apply our theorem,
+but why can't we apply our theorem here?
+Our theorem told us there's only one
+subgame perfect Nash equilibrium. We
+already found multiple, so something's
+going on. So, why doesn't the theorem
+apply to this setting? Yeah.
+Uh cuz it doesn't have unique
+Exactly
+right. Our theorem was only applied to
+games where the or stage games with
+unique Nash
+and hurts you or benefits them today,
+tomorrow you might punish them by
+behaving differently, right? And that's
+a way of deterring them from engaging in
+this action. They may be some I maybe
+this is a a negative view of human
+affairs, I don't know, but this I think
+does happen
+certainly between firms
+colluding, this happens.
+All right, so this is all kind of
+abstract. Now, what's tricky is
+we need to punish the deviation
+tomorrow,
+but we know that tomorrow is the last
+And we know that in the last period of a
+game,
+we have to be playing a Nash equilibrium
+of the stage game.
+Because this is this is kind of a a key
+property. In the last period, there's no
+future, so you must be playing a stage
+game Nash. So, we need to punish you
+tomorrow, but we can only punish you by
+playing a Nash equilibrium.
+So, this seems a little tricky, but the
+key is that we have multiple Nash
+So, we can punish you tomorrow
+how? By playing a different Nash
+And this really gets to the core of the
+difference between our theorem and our
+game here.
+In the last period, we have to play a
+Nash equilibrium.
+If there's only one Nash equilibrium,
+then we know how we have to play in the
+last period, and there's no scope for
+punishments or rewards.
+If our game has multiple Nash equilibria
+like the stage stag hunt, now we still
+have to play a Nash equilibrium in the
+last period, but which Nash equilibrium
+we play can depend on our past behavior.
+So, there might be a good Nash
+equilibrium that can serve as a reward,
+and a bad Nash equilibrium that can
+serve as a punishment. So, let's let's
+try to go through that.
+So, the idea
+is we want a good Nash equilibrium
+as a reward.
+Things could be a bit more complicated.
+A Nash equilibrium could be good for
+some people and bad for others, but
+let's start with this really simple
+case.
+And a bad Nash equilibrium as a
+punishment.
+So in this stag hunt game, what is going
+to be the reward and what is going to be
+the the punishment?
+Well, we can look, right? SS is the good
+equilibrium and HH is the bad
+equilibrium. So what we want is we want
+SS
+to serve as a reward for good behavior
+and we want HH to serve as a punishment
+for bad behavior.
+So what we say is
+if you don't do what you're supposed to
+today, then tomorrow we're both going to
+hunt hare. That's bad for you. If you do
+do what you're supposed to do, then
+we're going to hunt stag tomorrow and
+that's better for you.
+Uh so let's
+see if this works out.
+So let's try to let's be a bit more
+specific.
+I want to find an SPNE in which in
+period zero we play something that's not
+a stage game Nash. Let's be more
+specific and let's look for an SPNE
+where in period zero we play
+Well, we don't want to play a Nash. So
+that means we're playing one of these
+and it's kind of symmetric. It doesn't
+really matter which one we choose, but
+let's choose this one. So let's play HS.
+So let's try to
+fill in our
+table. I think this is kind of a good
+way to go about it. Um so let me kind of
+remember I think the hardest thing about
+sometimes finding equilibria is figuring
+out what kind of object they are, like
+how many positions, how many things you
+have to fill in. So let's kind of make a
+blank table and then we'll gradually
+fill it in and try to construct our
+subgame perfect So what is our table
+going to look like? Well, we have um
+our histories.
+We have the empty history
+and then we have four histories after
+that. We have SS
+SH
+HS and HH.
+So to be clear, these are period zero
+histories.
+And these are period one histories.
+And then for each history we have to
+specify
+how player one plays and how player two
+plays, right? So let's say let's put
+player one here and player two here and
+maybe let's put in kind of a a spot.
+So just to be clear, when I'm asking to
+solve for an SPNE, I'm asking to specify
+10 things.
+Five things for player one and five
+things for player two.
+Because player one has five information
+sets and player two has five information
+sets and we're looking for a strategy
+profile.
+So the goal is to fill this in in such a
+way that we get a subgame perfect Nash
+equilibrium in which this is what
+happens in period zero. So we first have
+a very easy thing to fill in. We want
+this to happen in period zero. So we're
+going to fill in
+HS, right?
+And now HS is just written this way, so
+it's player one followed by player two.
+So now we need to fill in what happens
+in period one to try to make this
+a subgame perfect Nash equilibrium.
+So the first observation
+is that whatever we do in period one at
+every history, it must be a Nash
+Because we know in the last period the
+the the subgame is just the same as the
+stage game cuz there's nothing else that
+comes in the future. So what we're
+choosing basically is we need to It's
+almost like a kind of a word search. We
+have
+HH and SS. These are our Nash
+And we need to choose where to put HH
+and where to put SS.
+So we could be really mechanical about
+it, but uh
+for I mean then we have uh
+16 different choices, so that's going to
+take us a while. So let's be a little
+thoughtful, right? We could put either
+SS here or HH here, either SS here or HH
+here and so on. Uh but that's kind of a
+a silly way to do it, so let's let's try
+to think more. Um any guesses about
+where we should put
+HH and where we should put SS?
+Maybe any thoughts about one
+one position?
+Mhm?
+SS goes under SS. I'm not so sure. So
+let's understand, right? We want a
+subgame perfect Nash equilibrium
+where we play HS in the first period,
+right? So you might be thinking we want
+SS, but we're trying to get people to
+play HS in the first period.
+So
+you said put SS under SS?
+So if we put SS under SS, that would
+make it appealing to play SS today,
+Uh so let's think
+So say again?
+Right. Uh exactly. So let's let's
+actually start Let's start I think this
+is the kind of easy Let's start here,
+okay?
+We're trying to encourage people to play
+HS today, right? So we want to reward
+them if they do play HS today with a
+good equilibrium. So let's reward them
+by playing SS tomorrow.
+Now I want to be clear, when we're
+computing repeated game equilibria, it's
+very tempting and it's it's very
+convenient to think about choosing
+an action profile rather than just an
+action. So I'm saying we're going to
+play SS tomorrow.
+But we have to really understand it's
+always the case that a single player is
+choosing how they're playing. We're
+never jointly choosing what to do. It's
+just as the analyst when I'm analyzing
+it, it's convenient to think about where
+we put SS, but
+each player is making a decision for
+themselves. I just want to keep that
+clear.
+Okay. So
+what we've set up so far is we've made
+it so that if we play HS, which is how
+we want people to play, we want this to
+be a Nash equilibrium, we're going to be
+rewarded tomorrow by playing SS.
+We also need to think about punishments.
+Let's try to punish the players if
+anyone unilaterally deviates.
+So if player one unilaterally deviates,
+what happens?
+Player one is supposed to play H. If
+they deviate, they play S and therefore
+the history is SS.
+So because SS is a history that could
+result from a unilateral deviation by
+player one, in order to punish that, we
+want to put HH here.
+Conversely, if player two deviates
+from S to H, then the history is going
+to be HH. So we also want to punish HH
+with HH.
+What about
+this remaining history?
+Uh should we put HH here or
+SS here?
+Or does it matter?
+Turns out this it won't matter at all.
+Why? Well,
+remember Nash equilibrium and subgame
+perfect Nash equilibrium is all about
+unilateral deviations.
+So if we're interested in the incentives
+for people to unilateral unilaterally
+deviate, we have to say what happens if
+player one unilaterally deviates to S
+or player two unilaterally deviates to
+H.
+But there's no unilateral deviation from
+HS that will result in SH.
+Right? That would mean that player one
+had deviated from H to S
+and player two had deviated from S to H.
+But if they both deviate, well that's
+not a unilateral deviation. So it turns
+out whether this is an equilibrium will
+not actually depend on what happens
+here. So we could either do HH or SS.
+Let's do HH, but uh SS would also work.
+It can't be SH though. It's either HH or
+SS. So maybe I should have big
+parentheses
+to make that clear.
+&gt;&gt; Okay, so now let's try to
+check whether this is indeed a
+Nash equilibrium, a subgame perfect Nash
+Now there's a lot to check.
+We have to check that this forms a Nash
+in every subgame.
+So we have to check all five subgames.
+But the the one shot deviation principle
+is going to help us, right? Technically
+we have to check that in every subgame
+there's no profitable deviation.
+But the one shot deviation principle
+says we just have to check that there's
+no profitable one shot deviation. So
+check in all five subgames
+there is no
+profitable
+one shot deviation.
+&gt;&gt; So the period one subgames are pretty
+easy, but let's just do one of them to
+check as an example.
+So in period one we have four subgames.
+Let's look at the subgame following HH.
+Just uh
+make sure we understand.
+So let's consider player one.
+Player one is supposed to play H.
+At history HH, player one is supposed to
+play H. So let's compare two things.
+What happens if player one plays H
+and what happens if player one plays S?
+So let's understand what I'm doing here.
+I'm contemplating
+a one-shot deviation by player one
+at history HH. I'm saying suppose we're
+at history HH and player one
+unilaterally deviates
+instead of playing H they play S and we
+want to compare the payoffs, okay?
+So what if player one
+plays H as he's supposed to do?
+What is player one's average payoff in
+the entire game going to be?
+Well, we're at the HH history.
+So we the way we compute payoffs is we
+already assume that HH was played in the
+first period. So that gives player one a
+payoff of one.
+And then if I play H again, I also get
+one because my opponent is also playing
+So we're going to get a payoff of 1 + 1
+over 2
+which equals one.
+What if I unilaterally deviate to S?
+What is my payoff going to be?
+Well, if I unilaterally deviate to S
+and maybe let's write let me be very
+clear about what it happens here.
+So if at history HH
+I do what I'm supposed to and I play H
+and my opponent also plays H, then this
+is what our payoff is going to be. The
+the path of play is HH in period zero,
+HH in period one, and my payoff is is is
+an average of one.
+If I unilaterally deviate to S
+then after history HH, I unilaterally
+deviate to S, but my opponent stays at
+Which means my payoff is now 1 + 0 over
+which equals 1/2.
+And indeed deviating is not profitable.
+So So what I've checked is there's no
+one-shot profitable deviation for player
+one
+at HH. I guess we do that eight times
+because there's four histories and two
+players, so it's a bit of a mess, but
+it's not too hard to check that that's
+going to work out.
+So now let's go to period zero. This is
+where I think the action is.
+So let's look at period zero.
+And we're at So the history is just
+nothing. Nothing has happened.
+And let's look at
+and player two.
+And in period zero, player one is
+supposed to play H.
+But they could also play S.
+And player two is supposed to play
+uh S.
+But they could also play H.
+So to check that neither player has a
+profitable one-shot deviation, I need to
+say what if player one
+instead of playing H as they're supposed
+one-shot deviates to playing S at this
+history
+and then follows the strategy from there
+on out.
+And ask the same about player two and
+check that these deviations are not
+going to be profitable. Okay?
+So I think that the first thing before
+we can compute payoffs is figure out
+So if player one
+does what they're supposed to and plays
+H today
+then what's going to happen is we're
+going to get HS today
+followed by
+SS tomorrow.
+Right? This is what's supposed to
+happen.
+And the same is true down here. If
+player two does what they're supposed to
+we get HS followed by SS.
+But what happens if player one
+unilaterally deviates to SS?
+we get SS today.
+But then what happens tomorrow?
+HH, exactly.
+And let's ask the same with player two.
+If they deviate from S to H
+then we're going to get
+HH today.
+And then what happens tomorrow?
+HH, right?
+So now we can exactly see what we're
+discussing.
+If player one unilaterally deviates,
+they get a benefit today
+because SS is better than HS, but then
+they get punished tomorrow because they
+get HH tomorrow rather than SS.
+And the same thing goes down here.
+And instead of adding it all up, I think
+it's easier to see
+what is the gain from the deviation in
+going from HS to SS?
+Well, if they did
+Oh, maybe let's just write it all out.
+Player one's payoff from HS is going to
+be one
+two
+one.
+And here player two's payoff is one
+zero two.
+So if we add it all up, we're going to
+get an average of three halves
+three halves
+So I've just gone through and computed
+the flow payoff that player one gets in
+each situation and then I've taken the
+average. And then I've computed the flow
+payoff player two gets in each situation
+and then I've computed the average.
+And what we indeed see is that if player
+one unilaterally deviates, well actually
+their payoff is going to be exactly
+unchanged, so it's not profitable.
+If player two unilaterally deviates,
+their payoff is exactly unchanged, so
+it's not profitable and therefore we see
+that these deviations are not profitable
+and we're we're done here.
+And we can exactly see the effect. If
+player one says, "Wait a second, you're
+asking me to
+to hunt for hare when my opponent's
+hunting for stag? I'd much rather hunt
+for stag and get a higher payoff."
+Indeed your flow payoff would jump up by
+one. It would jump from one to two if
+you deviated. The problem is that
+tomorrow you're going to be punished
+with HH which reduces your payoff by
+So the punishment you experience
+tomorrow is just large enough to offset
+the gain you experienced today and
+therefore the deviation is not
+profitable. And the same happens for
+player two.
+Okay, let me uh stop there and I'll see
+everyone on Thursday.

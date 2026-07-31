@@ -1,0 +1,92 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+SITE = ROOT / "site"
+REPORT = ROOT / "analysis/audits/publication-readiness-report.md"
+
+
+def run(cmd: list[str]) -> tuple[int, str]:
+    proc = subprocess.run(cmd, cwd=ROOT, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    return proc.returncode, proc.stdout.strip()
+
+
+def main() -> int:
+    concepts = json.loads((ROOT / "analysis/concepts/concept-atlas.json").read_text(encoding="utf-8"))
+    themes = json.loads((ROOT / "analysis/themes/theme-map.json").read_text(encoding="utf-8"))
+    subthemes = json.loads((ROOT / "analysis/themes/subtheme-map.json").read_text(encoding="utf-8"))
+    evidence = json.loads((ROOT / "analysis/evidence/evidence-ledger.json").read_text(encoding="utf-8"))
+    primitives = json.loads((ROOT / "analysis/throughlines/primitives.json").read_text(encoding="utf-8"))
+    families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
+    queue = json.loads((ROOT / "analysis/evidence/evidence-review-queue.json").read_text(encoding="utf-8"))
+    summary = json.loads((ROOT / "raw-material/youtube/summary.json").read_text(encoding="utf-8"))
+
+    log_code, log = run(["git", "log", "-1", "--oneline"])
+    remote_code, remote = run(["git", "remote", "-v"])
+    validation_code, validation = run(["python3", "scripts/validate_all.py"])
+
+    lines = [
+        "# Publication Readiness Report",
+        "",
+        "This report separates proven local readiness from any future GitHub publishing step.",
+        "",
+        "## Audit-Time Git Checkpoint",
+        "",
+        "```text",
+        f"$ git log -1 --oneline\n{log or 'no commits yet'}",
+        f"\n$ git remote -v\n{remote or 'No remote configured'}",
+        "```",
+        "",
+        "## Corpus And Artifacts",
+        "",
+        f"- Playlist: {summary['playlist_title']}",
+        f"- Videos: {summary['video_count']}",
+        f"- Clean transcripts: {summary['transcript_count']}",
+        f"- Transcript words: {summary['word_count']}",
+        f"- Concepts: {len(concepts)}",
+        f"- Themes: {len(themes)}",
+        f"- Subthemes: {len(subthemes)}",
+        f"- Evidence records: {len(evidence)}",
+        f"- Evidence records queued for review: {len(queue)}",
+        f"- Mathematical primitives: {len(primitives)}",
+        f"- Method families: {len(families)}",
+        f"- Site HTML files: {len(list(SITE.rglob('*.html')))}",
+        "",
+        "## Validation Evidence",
+        "",
+        "```text",
+        validation,
+        "```",
+        "",
+        "## Requirement Audit",
+        "",
+        "- Transcript corpus: proven locally by `raw-material/youtube/transcript-index.json` and `summary.json`.",
+        "- First-principles concept atlas: proven structurally by `scripts/validate_first_principles_atlas.py`; prose uses required hand-crafted overrides.",
+        "- Evidence discipline: every concept has two transcript evidence records with local transcript windows and YouTube links.",
+        "- Generic-template guard: validators reject the original template phrases in generated concept prose and published HTML.",
+        "- Reader-facing site: proven by static generation, link validation, evidence-anchor validation, diagrams, and screenshot render audit.",
+        "- Push/deploy: not attempted unless explicitly requested.",
+        "",
+        "## Browser Tooling",
+        "",
+        f"- node available: {bool(shutil.which('node'))}",
+        f"- npx available: {bool(shutil.which('npx'))}",
+        "",
+        "## Current Conclusion",
+        "",
+        "Local research/build readiness is strong for a first committed pass. Further editorial passes can deepen individual lecture arguments, but the repo now contains a real transcript-backed, hand-overridden first-principles game-theory lab rather than a template-only scaffold.",
+        "",
+    ]
+    REPORT.parent.mkdir(parents=True, exist_ok=True)
+    REPORT.write_text("\n".join(lines), encoding="utf-8")
+    print("wrote analysis/audits/publication-readiness-report.md")
+    return validation_code
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

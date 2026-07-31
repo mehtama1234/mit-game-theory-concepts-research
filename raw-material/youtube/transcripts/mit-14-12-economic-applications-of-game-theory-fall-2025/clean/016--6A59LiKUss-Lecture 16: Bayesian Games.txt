@@ -1,0 +1,2186 @@
+All right. So, today we're we're
+starting a new phase of the course,
+which is going to be about games with
+incomplete information.
+And I'll warn you up front that the
+terminology here is a bit confusing.
+We've been talking about imperfect and
+perfect information, and now we're
+talking about complete and incomplete
+information. Complete and perfect sound
+kind of similar colloquially, but in
+game theory they have very different
+meanings. So, I want to be precise about
+uh what's going on. So,
+uh so far,
+we've always looked at complete
+information.
+And what's confusing is that under
+complete information, under this
+complete information umbrella, there are
+two special cases that we've talked
+about, or two distinct cases, which is
+perfect information
+and imperfect information.
+So, I'll give some formal definitions,
+but then I'll also give some examples to
+keep in mind cuz I think these
+definitions can seem a bit abstract. So,
+in games of perfect information, what
+that meant was that every information
+set was a singleton, right?
+And I think the canonical game to keep
+in mind for games of perfect information
+would be games like chess.
+So, when we play chess, whenever it's
+our turn to move, we've can perfectly
+see how everyone else has moved so far
+in chess, right? We see the position of
+the board and we remember each move that
+everyone else played.
+Uh that's the sense in which every
+information set is a singleton.
+Then we also looked at games of
+imperfect information. What that meant
+was that some information sets were not
+singletons.
+So, I'll say some
+non-singleton
+info sets.
+Now, economically, what does it mean
+when we had non-singleton information
+sets? It meant that there were times
+when someone was called upon to move
+and there was some aspect of the game
+that or of the previous moves they
+didn't know about, either move by nature
+or move by a different player. And they
+knew which information set they were at,
+but they didn't necessarily know uh or
+they didn't know which node within that
+information set they were at.
+And uh
+this was the case in a few There's a few
+leading examples here.
+Whenever we had a simultaneous move
+game,
+whenever the players move
+simultaneously, remember the way we
+represented that in the extensive form
+was to say, "Well, technically one
+player has moved first, but then the
+other player moves without observing the
+move by the other player." And
+therefore, that second player's
+information set is going to include
+different nodes that specify how the
+other player moved.
+Uh
+so, simultaneous moves in sort of the
+simple example here, I would say, is
+poker.
+Think of uh
+poker would be another case because when
+I'm called upon to move in poker, I
+don't know the cards that the other
+players have been dealt. So, my
+information set, even if we move
+sequentially in poker, my information
+set is still non-singleton because when
+I move, I don't know uh what cards the
+other player has. So, these are kind of
+two distinct ways we can have um
+imperfect information.
+But,
+why do I say both of these are complete
+information?
+So,
+the defining feature, the defining
+property of these two classes of games
+is what makes them complete information.
+And I'll warn you, some people give
+slightly different definitions of this,
+and I think my definition is slightly
+different than what's given in the
+notes. Um but what I like to think of it
+is at the beginning of the game,
+information is symmetric.
+SO, BEGINNING OF THE GAME IS CRUCIAL
+HERE, RIGHT? Once we start playing
+poker,
+we're going to be dealt hands, and one
+player won't know what cards the other
+player has been dealt.
+But when we start the game, when we sit
+down at the poker table, whatever one
+player knows, everyone else knows. No
+one's been dealt any cards yet. We all
+understand the rules of the game. We all
+understand that people want to win as
+much money as possible, and information
+is symmetric in the sense that um
+anything
+known by one player
+is known by all players.
+Uh and maybe if I want to be more
+precise, I'll say it's common knowledge.
+This doesn't mean we know everything,
+right? When we sit down at the poker
+table, we don't know what hands we're
+going to be dealt in the future.
+But none of us know that. There's no
+information that one player knows that
+other player just don't know at the
+beginning of the game.
+And it's crucial here that we're at the
+The distinction with incomplete
+information
+And maybe I'll add, when I say
+information is symmetric, let me add
+here relevant information.
+You know, of course, when you sit down
+at the poker table, you know your
+birthday and someone else doesn't,
+right? But that's not really relevant to
+the game. So, in a technical sense, we
+never have complete information because
+there's always these unmodeled things
+that are relevant, but what I what I
+mean is relevant information.
+With incomplete information, the
+difference is that at the beginning of
+the game,
+there is relevant information that some
+player knows, but another player doesn't
+know.
+So, there is
+information, or more precisely, relevant
+that is known by some player, but not
+others.
+And let's give uh a few examples of
+this.
+So, examples of incomplete information
+games. And what you'll see is that
+a lot of our examples of complete
+information games come from parlor
+games. They come from things like chess
+or poker. But in the real world, when
+we're analyzing economic situations,
+we're much more often in the incomplete
+information So, let's uh let's give a
+few examples of that.
+I was a question? Yeah.
+Uh no, never mind. Oh, you're welcome to
+ask, but Oh, I thought you were asking
+for Oh, oh, sure. Give an example. Yeah.
+Sorry, sometimes I'm rhetorical, it's
+not clear. Yeah, so always You can
+always answer any question you want, and
+if I didn't intend it, that's totally
+fine. Yeah, go ahead. Um
+would one of them be like when there's
+price haggling and they don't know each
+other's values? Exactly, that's a great
+example. So, um
+and actually that fits in The first
+example I was going to give is kind of a
+special case of that. So, let me let me
+give kind of this is the kind of classic
+example, and it exactly fits into your
+setting, and this I would say is buying
+a used car.
+And of course, price haggling over the
+used car.
+Let's say we're haggling over the price
+of the used car. What don't we know?
+Well, you brought up one example, we
+don't know each player's valuation for
+the car. And we could be a little more
+specific, right? Let's say a salesperson
+is selling you a used car. There's
+something they know that you don't,
+probably, right? What what might they
+know that you don't know about the car?
+Yes, ma'am, in the second row. Yeah.
+The actual condition The condition of
+the car, right? So, in this case, the
+seller, maybe they're an experienced
+mechanic or auto dealer, they've seen a
+lot of cars, they've examined the car
+car closely. You maybe don't know a lot
+about cars. So, often the seller,
+you know, knows whether there's a
+problem with the engine. They know
+whether it's been making a sound every
+time they drive it, right? So, the
+seller knows
+the condition of the car.
+And that's probably relevant actually to
+both of your valuations, right? If it's
+a high-quality car, the seller probably
+values it more cuz they could sell it to
+someone else, the buyer probably values
+it more as well. Um I'd argue the buyer
+probably also has some private
+Uh what does the buyer
+know uh the seller, and these are things
+when I say the seller knows this, but
+the buyer doesn't. Maybe I'll say
+And of course, these things aren't
+binary, right? The buyer probably knows
+something about the car. They can look
+at it and see, you know, if it's
+totally, you know, dented, they can see
+that, but there's probably some aspects
+of the car that they can't see or can't
+observe. Uh what about the buyer? What
+is something the buyer may know? Yeah.
+Uh I mean, yeah. The buyer knows like
+how much they want a car, and like
+I feel like that informs like how much
+they'd be willing to pay for it.
+Exactly. So, the buyer knows in this
+exactly what you mentioned in the front
+row, they know their valuation for the
+car, right? Buyer knows
+or at least they know Maybe they don't
+know their valuation exactly, but they
+know
+maybe I'll say how much they need it.
+The reason I don't say they don't know
+their valuation is if they don't know
+the If they don't know if the car is
+broken or not, then they probably don't
+know exactly how much it's really worth
+to them. But, you know, they know Do
+they have a job they need to get to
+tomorrow, and they have to get there,
+right? And And they know they went to
+the last three dealerships and they
+couldn't find a car they liked. Or maybe
+they know that they like the color red
+uh and this car is red or they hate the
+color brown and that's why they value it
+less, right? There's a lot of aspects of
+the buyer's preferences that the buyer
+knows but the seller doesn't.
+And notice how this is fundamentally
+different from the kind of
+imperfect information we see in poker,
+right? In poker, yes, I don't know if
+you have queens or or kings, but when
+you sit down at the table, we basically
+all know the game we're playing and we
+all know the preferences of the other
+players.
+Um
+Another great example would be health
+insurance.
+So also buying health insurance.
+I would argue in this case probably the
+seller and the buyer know some things
+that the other party doesn't know very
+well. Um
+Any thoughts here?
+Certainly the buyer probably knows some
+things the seller
+uh
+doesn't know. Yeah? The buyer knows his
+own medical history and uh
+Exactly. So the buyer knows medical
+history.
+And again, this is not binary, right? If
+you buy health insurance in the private
+market, the seller's concerned about
+this and they're going to have you fill
+out a form and they're going to have a
+doctor go to your house and do a
+30-minute evaluation. But of course,
+that's not going to cover everything.
+You might know that, you know, last week
+you started feeling a bit sick and
+that's why you're buying the health
+insurance, right? Or you might know
+about a family history of a condition
+that the the health insurer doesn't know
+about.
+And this is certainly relevant to both
+of you. It's relevant to how much you
+value insurance cuz the sicker you are,
+the more valuable insurance is to you.
+It's also relevant to how costly the
+insurance is to the seller. If the
+seller insures a very sick person,
+they're going to have to be on the hook
+for a lot of different doctor's bills,
+right? And this is one reason health
+insurance markets
+uh often don't run very well, right?
+Um I'd argue the seller probably
+even in this case maybe knows some
+things.
+This is sort of not the main uh
+missing information in health insurance
+markets, but uh I think there's probably
+some things they know. Yeah? Could the
+seller know that their company is about
+to do a discount next month but doesn't
+tell the buyer? Great. That's That's a
+good thing. So one thing I mean, that's
+in a dynamic context, but certainly in a
+dynamic context, the sellers know the
+prices next period, right? This is a
+huge This is certainly relevant, you
+know, these clothing stores always do
+these regular discounts, right? If you
+go and buy something, if you knew that
+they were going to have a 15% discount
+the next day, you probably wouldn't buy,
+right? And they usually don't tell you
+that the discount's coming in the
+future, right? They announce it when it
+started. They don't tell you in advance.
+So the seller might know uh things about
+future pricing.
+And maybe this is a bit more of a
+behavioral kind of non-rational story,
+but I would argue that when you buy
+health insurance, it's very, very
+complicated. The exact quality of the
+network you have is very, very difficult
+to you know, to untangle. So technically
+when you buy a health insurance plan,
+what's relevant to you is every single
+doctor in the world who's covered by the
+plan and who's not. And more precisely,
+exactly how much your copay is at every
+single doctor
+uh maybe in the world. Right? You
+probably don't know that that well even
+if you pore through the contract. The
+seller probably has a a much better idea
+of maybe what I'll say, the network
+coverage.
+Or what they certainly know about is
+when you apply
+to get reimbursed for a treatment, how
+cumbersome that process is. And what the
+rejection rate is of the insurer. This
+is something the insurer knows. Some
+insurers might uh be a bit more lenient
+than others. They they privately know
+that. Maybe you go and read it and read
+a bit about it, but it's you probably
+don't have uh full information about
+that.
+Uh let's do
+a few more examples.
+Uh what about in an auction
+context?
+Well, here it's sort of the classic case
+when the bidders show up to an auction,
+the bidders generally know uh how much
+they value the item being auctioned, but
+the other bidders don't know that,
+right? So each bidder
+knows her value for the good.
+And of course, this value could reflect
+a few things, right? If I'm bidding
+against someone in auction, their value
+might be high because they just love
+this painting or maybe they're just
+really, really rich or maybe they just
+got all this money and they have to
+spend it today, you know, there's all
+these stories that could go on, but
+their willingness to pay for the item uh
+is something that they know that that I
+don't know.
+Uh and then a classic case that we've
+also discussed so far is maybe
+bargaining
+negotiation more broadly.
+You know, let's say we gave the example
+of kind of bargaining over a peace
+treaty.
+When we when both sides sit down at the
+table, they don't really know what terms
+of the treaty are acceptable, right? If
+I'm negotiating with a foreign leader, I
+mean, I'd never be doing that. Uh they
+they know their political constraints at
+home. They know what kind of deal they
+can make that would get them in trouble
+or not. They might know facts on the
+ground. They might know uh things about
+the condition of their soldiers in their
+army that are all relevant to the
+negotiation that I as the as the
+counterparty don't know. So
+um there's just tons of private
+I'll just say
+about
+really what is it about? It's about
+their preferences
+over the terms of the negotiation, over
+terms of the deal.
+So
+I think it's it's nice to kind of step
+back here and pause and look at the
+history of of game theory. Game theory
+started as I said earlier in the course,
+it was studied by mathematicians. They
+were analyzing things like chess and
+checkers and poker
+and they presented this theory of
+complete information that did a very
+good job of capturing games like chess
+and checkers and poker. But there was
+this folk wisdom, there was this view
+that we could never apply game theory to
+the real world, to things like this
+because the game isn't common knowledge.
+There's just so much information that we
+don't know that we could never apply the
+tools and the rigor of game theoretic
+reasoning.
+And there was a a big breakthrough in
+the '60s. So the breakthrough kind of
+came with
+Harsanyi
+in 1967, 1968
+who presented a a framework for
+uh analyzing situations like this using
+game theory. And I think this was kind
+of a turning point in game theory where
+before that, it was largely studied by
+mathematicians and then once people
+realized that this is the right way to
+think about health insurance markets or
+bargaining, all of a sudden economists
+became much more interested in it and
+the the nature of the field kind of
+shifted. And Harsanyi later won the
+Nobel Prize for his work here.
+So I think Harsanyi's kind of key
+insight uh which was later formalized by
+others is that
+we can model
+incomplete information
+like we model
+So in other words, I think
+as a sentence, this doesn't really make
+much sense. So let's say what we mean.
+What What Harsanyi said is maybe we can
+model negotiation and health insurance
+the way we model poker.
+So why don't we think about someone's
+health status in health care
+or a foreign uh
+you know, a military leader's private
+information about their army the way we
+model your hand in a game of poker?
+So the key is that we don't literally
+have a dealer who's dealing you cards,
+but we can model this private
+information as the move of a
+metaphorical dealer or metaphorical move
+by nature who deals people their private
+information. So Harsanyi's idea is that
+we can have
+a metaphorical
+first move
+by nature.
+And I want you to think about this. I
+think the best way to think about this
+is nature is playing the role of the
+card dealer, but what they're dealing
+you is your health status or how much
+you value the painting or the condition
+of your army.
+Right?
+And after nature makes that deal, then
+we can analyze the game like a game of
+Now, I think a challenge here
+uh is that
+this is metaphorical. So I think
+in poker, it's very clear
+how we can reason through a situation
+before the cards are dealt. If I'm
+playing poker, I'm sitting at the table,
+I don't have the cards yet. The dealer
+deals me a card. I know that's going to
+happen and I can think about what's, you
+know, when that's going on. It's a bit
+hard to think about you buying health
+insurance at the stage before nature
+dealt you your health status, right? So
+So there is it is there is kind of this
+subtlety in how we interpret it. Um but
+despite the difficulty of
+interpretation, so maybe I'll say uh
+this creates some interpretational
+difficulties.
+AND WE'LL SEE THOSE THROUGHOUT UH THE
+COURSE, but
+uh nevertheless, we can analyze these
+things mathematically and uh we can make
+some progress. One difficulty, I guess,
+in the first move by nature
+is we have to specify the probability
+distribution over what nature chooses.
+That's a lot easier when nature's
+drawing a card from a deck. We all
+understand that. When nature's drawing
+your health status or your evaluation
+for a good, that becomes a bit more
+challenging. So one challenge is that we
+have to specify
+the distribution
+over nature's moves.
+BUT LET'S SEE IF WE CAN GET INTO THIS
+AND UH AND start analyzing this.
+So I could present the whole general
+model, but I think it's very complicated
+at first and you might say why do we
+need this complicated model? So let's
+start with an example to try to motivate
+why things are kind of subtle and why we
+actually need to do some work to to
+model this.
+So, let's think about classic example.
+Let's say we're working on a group
+project.
+And let's say we have two players.
+And I'll call them
+I equals 1 and I equals 2.
+And each player I
+is going to choose
+effort on the project.
+You're going to choose
+effort
+EI. They're player I, they choose effort
+EI. And let's say that's a number
+between 0 and 1.
+So, 0 is they don't work at all. 1 is
+they work as hard as they possibly can.
+And now we're going to say the payoffs
+to player I
+well, player I's payoff depends on how
+well the project turns out
+minus the cost they have to bear to uh
+exert effort. Let me see if I had a half
+in here.
+No. So, let's say that their payoff is
+E1 * E2
+minus
+EI squared.
+So, what this says is
+E1 * E2, the product of the efforts that
+the two players put in, this is going to
+represent basically how good the project
+is.
+How good the output is.
+And this is the cost of effort.
+So, notice if I'm player I, my effort EI
+affects my cost.
+And it also affects the quality of the
+output.
+The other player's effort affects the
+quality of the output, but not my cost
+because I don't bear the cost for the
+effort that the other player is putting
+in.
+This is a pretty simple game to analyze,
+but the trick is we're now going to put
+a theta up here.
+Where theta is going to be a state that
+represents how hard the project is. When
+you get working on something together,
+you often don't know how hard this task
+is, right? Um
+&gt;&gt; [clears throat]
+&gt;&gt; So, theta is going to represent the
+difficulty
+of the project. Actually, a higher theta
+means the project is easier. So, maybe
+I'll I'll think of theta as how easy the
+project is.
+So, as a simple case, we could say
+maybe two values
+uh theta H
+and theta L.
+So, these are the two possible values
+theta could take.
+Theta H is a low value because if the
+project is hard, when you put in this
+much effort, you don't get very much
+If the project is easy, theta L, uh hard
+and I guess I'm so used to high and low,
+so easy. Theta H, theta E. If the
+project is easy, then you get more
+output for the same uh level of effort.
+&gt;&gt; The problem is you probably don't know
+how hard the project is.
+So, if
+let's kind of think through a few cases
+here.
+So, the easy case, case 1 would be
+no one knows theta.
+If no one knows theta and they just
+believe theta follows some distribution,
+then
+we can sort of analyze this as a classic
+game because at the beginning of the
+game, information is symmetric.
+So, here this would be symmetric info.
+If no one knows theta, then there's no
+another player doesn't know.
+But the harder case, let's look at case
+where only player 1 knows theta.
+So, if only player 1 knows theta
+let's see if we can start
+analyzing this game.
+Well, in case 2
+player 1 is going to possibly make a
+different choice depending on how hard
+the project is.
+So, player 1 is going to make
+maybe one choice
+E1 if theta H
+and a different choice
+E2 if theta L, right? If player 1 knows
+how hard the project is, if the project
+is hard, they might find it not as
+worthwhile to work on the project. Uh
+this should be E1.
+And this should be easy, so everything's
+wrong here. Um
+If they know the project is easy, they
+might choose a different level of
+effort, right? So, we're going to have
+to capture that when we think about a
+player's strategy in the game, player
+1's strategy might depend on how hard
+the project is, right?
+But now let's look at player 2.
+What should player 2 do? Let's imagine
+you are in this situation.
+You don't know how hard the project is.
+And you're thinking about how hard to
+work.
+I don't know. I I think there's some
+information that's missing here. There's
+something you need to know.
+Um so, we've said they don't know how
+hard the project is.
+They So, they don't know theta.
+But I think we're missing some
+information to see
+how they should behave.
+don't know theta. I don't know, how
+would you approach this if you were
+player 2?
+Yeah?
+Maybe in terms of like a
+security strategy kind Okay.
+Um Like trying to minimize the
+possibility that it goes wrong given
+that I don't know if it's a
+I'm not sure if you Okay, so that would
+be one way. No, I think that would be a
+reasonable answer. That's not We're not
+going to pursue that too much in this
+course, but that's something that people
+do and that's one thing you can study.
+Uh yeah, Eileen. I feel like
+you if you know how much player 1 cares
+about the project, you could kind of use
+backwards induction like Okay. If player
+1 knows theta and you know that player 1
+cares a lot, you'll know that player 1
+is just going to do the project so you
+don't have to do anything. So, so I
+think the first thing you said there was
+really crucial. You said, "If player 1
+knows theta." And then you reason from
+that, right?
+But does player 2 know that player 1
+knows theta? Well, we need to make a
+choice about that. So, this is the
+crucial thing, right? It's not just
+enough to say
+I've said player 2 doesn't know whether
+project is hard. But you immediately
+gave it away. When you're reasoning
+about this, I need to think through how
+hard is player 1 going to work?
+But how hard player 1 works is going to
+depend on whether player 1 knows how
+hard the project is. So, I need to
+think, here's a question for the
+analysis
+does player 2
+whether player 1 knows theta?
+Because that's going to affect the way
+that player 1 moves
+and therefore affect the best thing for
+player 2.
+But now I think we're sort of getting
+into a regress, right? Let's say you're
+player 1, how are you thinking through
+this?
+What what's relevant now for player 1
+when they're trying to think? We know
+player 1 knows theta.
+But player 1 needs to think, well, how
+hard is player 2 going to work?
+But how hard player 2 works depends on
+whether player 2 knows whether player 1
+knows theta.
+So, now we have to think from player 1's
+perspective
+does player 1 know
+knows theta?
+And I think you can see where this is
+going.
+Right? Uh
+we care about what the other player is
+going to do. What they do depends on
+their beliefs about what I know
+but also their beliefs about what I know
+that they know and my beliefs about what
+they know that I know that they know and
+it it kind of unravels here.
+So, we need a way to kind of get a
+handle on this.
+And I think this is what was seen as the
+key challenge to these games. At first,
+you might think all we need to specify
+is what each player knows about theta,
+about the state of the world, how hard
+the project is. But we soon realize that
+to fully analyze the game, we need to
+take a stance on what each player knows
+about other what other people know and
+what other people know about what other
+people know and so on.
+Uh and I so, the key kind of takeaway
+here is that we really need to
+distinguish two different aspects of the
+game.
+Uh so, I think this motivates a key
+distinction
+I don't need another arrow here.
+Between the physical state theta.
+This is in this example, how hard the
+project is. It's totally outside the the
+minds of the players. It's either hard
+or it's easy. That's just some fact of
+the world, fact of nature.
+But then we also need to think about
+maybe the mental state
+of each player, which maybe before we
+saw this example, we might have thought,
+"Oh, mental state just means their
+belief about theta." But now it really
+means their belief
+about the mental state of the other
+player. And in general, we're going to
+try to have this mental state capture
+all the relevant beliefs about the the
+physical state and also about the mental
+state of the other player.
+Uh and that's kind of the
+the direction we're going to go now with
+this uh formal setup.
+Uh any questions about about this? So, I
+don't expect you to see the solution,
+but just to see that there's a problem
+is kind of the goal of this example.
+Okay.
+&gt;&gt; So now we're going to formally present
+our model of a game that can capture
+incomplete information. And we're going
+to be using Bayes' rule a lot, so these
+games are often called Bayesian games.
+So how do we
+kind of try to capture a situation like
+Well, first we're going to have the
+I equals one up to N.
+And then we're going to have the
+actions.
+So each player
+So player I
+is going to choose some action in some
+action set.
+So just like in repeated games,
+it's if we were to call this a strategy
+set, we would then run into issues
+because in the meta Bayesian game
+there's going to be a different notion
+of strategy. So I want to use the term
+action instead of strategy. I think the
+notes talk about Bayesian games with
+Bayesian extensive form games at this
+part. We're not going to talk about that
+at least for now, so we're going to
+think of this is just a simultaneous
+move game where each choosing an action
+just like we did over there. We each
+choose how hard to work.
+Uh but then
+there's going to be some state of
+nature.
+Uh maybe our physical state
+or sometimes called a state of nature.
+theta
+which is going to be in some set big
+theta. Um I don't know if we've used
+theta before. When I write theta it just
+looks like an H with a inside a circle,
+but that's so that we can see the
+difference. Little theta is like this,
+big theta is like this. So I know it
+looks weird, but that's that's how I
+write it on the board.
+And just so we understand how we map it
+into our example over there, there we
+had two players.
+Each player's action was an effort
+level, some effort level between zero
+and one.
+And the physical state was the
+difficulty of the project, which over
+there there were two states. It could
+either be a difficult project H, a hard
+project, or an easy project theta E, an
+easy project.
+Um and then we're going to need payoffs
+just like we had over there.
+So then we're going to have
+utility
+for player I.
+This is going to depend on the actions
+that every player takes, but also
+potentially on the state of the world.
+So just like over here, my payoff
+depended on my own effort level, my
+opponent's effort level, and also the
+state of the project, how hard the
+project was. So over here in the more
+abstract context, UI is going to be a
+function of A1
+all the way up to AN, the actions of
+every player, times
+the set capital theta.
+And it's going to go to R
+for each I.
+So this is going to give me a real
+number payoff that depends on what
+player one does, what player two does,
+all the way up to what player N does,
+and also the value of the physical
+state. In this example, whether the
+project is easy or hard.
+Uh but what we see from that that game
+is we haven't specified enough yet
+because we also have to think about the
+mental states, right? What players know
+about other players.
+And Harsanyi's key trick is to introduce
+this abstract object which we call a
+type.
+And the type of a player is going to
+capture their complete mental state. It
+could be their beliefs about the state
+of the world. It could be their beliefs
+about the other player. It could be all
+these things. Um so we're going to say
+we have
+player I
+has a type
+TI
+which is in some set
+capital TI.
+So this is called
+player I's type space.
+And type is kind of a a weird
+terminology, but you can say there's the
+type of the player who knows the state,
+there's the type of the player who
+doesn't know the state, there's the type
+of the player who knows the other player
+knows the state, but doesn't know the
+state. We just think of these players
+with different mental states as
+different types of of players.
+&gt;&gt; And
+what we're missing here is what's the
+connection between the types and the
+state of the world, and we're going to
+capture that with a prior. So the last
+component here
+is going to be
+a distribution
+P.
+But it's not enough just to say the
+distribution of the physical state, but
+we also have to specify the distribution
+of the players' types. And more
+generally, we have to specify
+um
+the distribution over the combination of
+natural states and types. So this
+distribution P is going to be over
+cross
+T1
+cross TN.
+So it's going to tell us what is the
+probability that
+the physical state is this,
+player one's mental state is something,
+all the way up to player N's mental
+state being something over here. Uh I
+think this is a bit abstract, so um
+let's try to go through
+our example. Maybe I'll give one
+Yeah, so let's go try to capture this in
+our example.
+Where
+I didn't specify everything.
+Let's say does player two know
+whether player one knows theta? We're
+going to say for this example, yes.
+[clears throat]
+And does player one know whether player
+two knows whether player one knows
+theta? We're going to say yes. So we
+could make it more complicated, but
+we're going to say all these things are
+are known. So in this example,
+player one knows the state theta,
+player two doesn't know the state theta,
+but they do know that player one knows
+the state theta.
+And we're going to try to capture that
+in our framework over here, okay? So the
+first, I think, challenging step or
+whenever we set up these models, the
+first thing is to specify the state.
+That's kind of easy, the state theta.
+And then we have to specify the type
+spaces, and that's always a bit harder.
+So let's go through this example. What
+is the state space theta going to be if
+we want to capture our example of the
+group project uh over there?
+What were the physical states in in that
+example?
+Yeah.
+Right. So we just have and actually
+theta H and theta E. I wrote it wrong.
+uh often we do high and low, but here
+let's think of the project is hard or
+the project is easy, right? These are
+the two physical states. Did I write
+L?
+Okay, I don't know. I I did originally
+make a mistake, so uh that's on me.
+But now the hard thing is specifying the
+types. This is always the challenge,
+right? So the next step is to specify
+T1 and T2.
+So I think the question you have to ask
+yourself is
+how many distinct mental states does
+each player have?
+Any thoughts? Let's think about player
+one.
+So we know that player one, we know uh
+player one knows the state.
+what are some distinct mental states
+that player one could have?
+Yeah. Player one can know that player
+two doesn't know the state. Player one
+can know that player two
+doesn't know that player one knows the
+state.
+So there's a lot of things that could
+happen, and this is why I tried to
+simplify it by saying we're going to
+assume that player one does know whether
+player two knows the state. So in our So
+you're right, if we really wanted to get
+general, we'd have to deal with that,
+but we're going to assume
+player one, these higher order beliefs
+are known. We're going to make it kind
+of as simple as possible. So player one
+does know all these things, but I would
+still argue there's at least there's
+certainly two different mental states
+player one could have.
+What are these two mental states? We
+said player one knows the state, but
+what does that mean?
+What could player one believe?
+They know the state well, either they
+know the state is easy
+or they know the state is hard. So
+there's at least two mental states.
+There's the type of player one where
+they know this is a hard project,
+and there's the other type of player one
+where they know this is an easy project,
+right? So in this case, if we really
+went down this rabbit hole, we'd have to
+make it harder, but in the simplest
+example, there's actually only two
+types.
+And they exactly correspond to the
+mental state where player one sees or
+knows
+the project is easy, and the mental
+state where they see or know the project
+is hard. Um
+There's a pretty close correspondence
+here, but to keep the distinction clear,
+let's call this TH and TE.
+So the interpretation is if player one's
+type is TH, what does that mean? That
+means player one knows the project is
+hard. Notice that's different from
+saying the state is state H, right? When
+I say the state is state H, that's a
+statement about whether the project is
+actually hard or not.
+When I say that player one's type is TH,
+that's a statement about what what
+player one knows or believes about the
+What about player two here? Uh it turns
+out in this really simple case, there's
+only one mental state for player two.
+Because they don't know whether the
+project is hard or easy. They do know
+that player one knows that. So
+they show up and they play the game.
+There's there's only one possible type.
+Uh so maybe we'll just call this
+T T0 to show they don't they don't
+really know anything.
+So we now have specified the physical
+states and the mental states. We could
+have made it much more complicated if
+there was uncertainty about what the
+other players knew. We'd have to model
+larger type spaces. But for this simple
+example, we've made it
+quite nice.
+And
+let's also assume
+that theta H and theta L or theta E
+are equally likely.
+And this is known among the players.
+to be clear, player two knows that it's
+equally likely that the project is hard
+or easy.
+They know that player one knows that the
+project is hard or knows that it's easy,
+but they don't know anything else.
+So now the challenge is can we describe
+this distribution P?
+So this distribution P is going to be a
+distribution over theta cross T1
+cross T2. So what we need to specify is
+four different probabilities, right? So
+we need to say what's the probability of
+theta H
+TH T0
+theta H TL T0
+theta E
+Keep messing this up.
+TH
+T0
+and theta E
+TE
+T0.
+So sometimes these are called states of
+the world. The distinction is theta is a
+state of nature or physical state. The
+state of the whole world specifies both
+the physical state and the mental
+states. So these are kind of the four
+possible states of the world and let's
+interpret them. Let's look at the second
+one just as example. This is the state
+of the world where the state of nature
+is theta H. So the project is hard.
+The player one's mental state is TE.
+That means player one believes that the
+project is easy.
+And player two's mental state is just
+T0. They believe what they always
+believe. They don't really have anything
+to believe. They just have the one thing
+they know.
+what we want to do is we need to assign
+probabilities to each of these four
+things based on the story we've told so
+far.
+So any thoughts on what this
+probability distribution P is is going
+to be here?
+Yes, back here. Would it be 1/2 0
+0 1/2? Exactly right.
+So can you
+explain a little bit why how you how you
+got that?
+So if state of the world theta H is
+let's say theta is theta H. Yeah. That
+means we know with absolute State of
+nature, yeah, sorry. It's very
+confusing. Yeah. If the state of nature
+is theta H, yeah, exactly.
+I may have messed it said said it wrong
+myself, yeah.
+Anyways, then with absolute certainty we
+know that player one knows that the
+state of nature is theta H, which means
+they have TH. It's not possible for them
+to have TE in this this mismatch, which
+is why that gets probability zero. And
+then kind of you flip the labels and
+then everything else is symmetric.
+Exactly. Exactly right. So
+I guess it's sort of a hidden implicit
+assumption that, you know, when we say
+player one, well, this is what it means.
+To know that the state is to know the
+state means when you think the state is
+high, it's actually high or hard. And
+when you think the state is easy, it's
+actually easy. Otherwise, you wouldn't
+you wouldn't know the state.
+Okay, let's do
+maybe one more
+example to make sure we kind of uh can
+understand what's going on here.
+So let's consider maybe example two.
+Where we'll try to be a little more
+realistic. Probably player one can't
+perfectly tell whether the the project
+is easy or hard, right? But they have
+some information about it. So what we're
+going to imagine is
+uh player one
+gets a signal about the difficulty of
+the state.
+And so player one has some information
+about whether the project is easy or
+hard, but they don't know it for sure.
+Uh and more specifically
+so let's say player one, sometimes we
+say
+gets a signal.
+And that's kind of a statistically way
+of looking at it, but um you know you
+sit down, you try to start doing your
+homework, you think uh I think it's
+probably hard, but I'm not sure. And you
+maybe assign some probability to how
+hard it is. Um and that's what we're
+going to try to capture here. So
+let's say that the
+I'm going to say with accuracy
+Q
+where Q is going to be between
+1/2 and 1.
+So what this means is let me just kind
+of
+draw this mapping.
+kind of
+running out of arrows here.
+So what I'm representing here is this is
+I'm going to think of theta H and theta
+L as the true difficulty of the project.
+And I'm going to think of TH and TL as
+kind of the signal that player one gets
+about the difficulty of the project.
+And if the project is hard, then most of
+the time player one gets the signal
+that's indicative of it being hard,
+indeed with probability Q, but with
+probability 1 minus Q, you know, it's
+deceptively hard. It looks it's actually
+hard, but it it looks easy and they get
+the the wrong signal. And then we have
+the same thing over here. So let's just
+understand if I allowed Q to be one
+then if the project is hard, they always
+get the signal that it's hard. And I'm
+just going to say L all day long and get
+it wrong. Uh
+but
+when the project and similarly when the
+project is easy, they always get this
+signal that suggests it's easy. So the
+case of Q equals one is exactly what we
+already studied over here.
+But now we're going to generalize to
+this case. What if Q was a half? What
+would that correspond to?
+Yeah. You're right half the time. Right.
+And if the prior, since we said, you
+know, it's equally likely to be
+hard and easy, it actually means you
+know nothing.
+Right? If you have a signal that you
+know, when the state is
+when the state is hard it gives you each
+signal realization with probability
+half. And when it's easy, you get each
+half, then it's not giving you any
+information at all. So you're just
+totally uninformed, right? Your
+your your gut is is totally useless,
+right? Which is
+uh maybe for
+retail stock traders, that's a pretty
+good model of um
+of how they trade stock. So
+let's now try to capture this model,
+this example within our model over here,
+right? So it turns out the type spaces
+are going to be the same, but the
+interpretation is different. So we still
+have for player one two types, the hard
+type and the easy type. But now the hard
+type, we don't mean you know for certain
+the project is hard. What we mean is
+based on the evidence you see, it's more
+likely than not that the project is
+hard.
+And similarly, the the type TE is
+suggests that player one looks at the
+project, they think it's probably easy,
+but they're not certain that it's easy.
+And they can actually compute the
+probability that it's easy.
+So now let's represent this.
+We're going to represent this
+with the distribution
+P
+over
+theta cross T1
+cross T2.
+Uh so what is it going to be? Let's
+write it down. Again, we have theta H
+we have theta H
+TE T0
+we have theta E TH
+T0 and we have theta E
+I guess they got progressively smaller
+as I ran out of space. Okay.
+So now what are the probabilities that
+we're going to assign
+to each of these?
+Yeah. Just to make sure there is equal
+probability that it actually is hard.
+We're going to maintain that assumption.
+So good good question. Let's let's
+maintain this assumption. I didn't say
+that. Yeah.
+Yes. Second row, yeah. So for the first
+one, there's a 1/2 chance that it's
+hard. Yeah.
+&gt;&gt; And then as for TH, that would like
+that's going to be uh
+Okay, so what's the full the probability
+of this uh That's 1/2 Q. 1/2 Q, exactly.
+And then
+uh 1 minus Q. Yes. And then 1/2
+1 minus Q.
+So it's going to be like this. Because
+what has to happen for this to be the
+state of the world? Well, first the
+project has to be hard.
+And we know that happens with
+probability 1/2.
+But further, not only is the project
+hard, but player one gets the signal
+that's indicative of it being hard.
+And when the state's actually hard, how
+likely is that? That's probability Q.
+And then down here, well, it's kind of
+the it's we're going to say, well,
+there's still a probability half that
+the state is uh that it's actually hard,
+but now what's the probability they get
+the the easy signal? So, they get
+misled, they get the signal that
+suggests the project is easy even when
+it's hard. That's still possible. It's
+less likely, but it's possible. That has
+probability 1 minus Q, and we have to
+multiply that by a half.
+Notice here, if we sum the first two,
+we get a half,
+which makes sense because the sum of the
+first two is exactly the probability
+that the state is hard because we're
+summing uh given the state is hard,
+we're summing the over the the
+additional types. Um let's look at the
+extreme cases. If Q goes to 1, what
+happens here?
+Well, now we're just back over here,
+right? This is what we said. This is the
+special case where player one perfectly
+observes the difficulty of the project.
+What if Q goes to a half?
+If Q goes to a half, then each of like
+the pairs like the data H pairs and the
+data E pairs are constantly going to be
+1/4.
+Right. So, basically everything's a
+fourth because now your signal doesn't
+really give you any information about
+this. If this if the project is actually
+hard, you're equally likely to get these
+two signals, and just everything is is
+going to be 1/4.
+Um yes. Is player one aware of their own
+Q, or does that even matter?
+Uh no, it really it really does matter.
+So, this is kind of the subtle thing
+here that
+and this is where
+um the implicit assumption here, and
+this is where it gets a little subtle,
+is that the distribution P is common
+knowledge.
+So, player one knows their own type,
+and
+they know the set of possible types the
+players have, and they know the
+distribution over the types.
+Now, you might say,
+is that a restriction? It turns out
+there's some really subtle mathematical
+points that argue that as long as you
+make the type space big enough, um
+The P is a little tricky. Basically, you
+can make the type space big enough, and
+you can capture everything, but it's
+it's it's quite a subtle point about
+what's known and what's not known, and
+we're kind of getting into this very
+abstract area of epistemic game theory
+uh that kind of gets into logic and
+uh and and really subtleties about what
+what belief and what knowledge is. Uh
+but, the assumption here is that P is is
+known by everyone. Uh yeah.
+Um Okay. So, the next thing we want to
+do is
+let's
+now think about behavior in this game.
+So, so far I've just defined the game.
+We now have to define
+the remaining time we're going to define
+an equilibrium of this game.
+So far I've just defined what a Bayesian
+game is. Let's now define what an
+equilibrium of a Bayesian game is. The
+first step is to define an equilibrium,
+you always have to define what a
+strategy is.
+Okay? So, now let's define a strategy in
+a Bayesian game.
+Now, a strategy, remember, is always a
+complete contingent plan.
+It specifies what action you take as a
+function of things that you can observe,
+things that you know.
+So, in this case for player I,
+a strategy is a function
+SI
+from TI
+to AI.
+Let's kind of visualize it down here. We
+have some type TI,
+and that gets mapped
+to SI of TI.
+So, what this complete contingent plan
+says is it says, "If I'm player I,
+if my mental state is TI, this is the
+action I'm going to take."
+If I have a different mental state, I
+can potentially take a different action.
+My strategy can't depend on the mental
+states of anyone else or on the state of
+the world at the state of nature because
+I don't observe those things. All I know
+as player I is my mental state. So, the
+only thing I can contingent condition my
+action on is my own mental state. And
+that's exactly why this function depends
+on my mental state, but on no one else's
+mental state.
+I think one
+there's one subtlety here in
+interpretation,
+which is that
+I'll say, "Note,
+player I actually has
+one mental state
+/type.
+So, this is where I mentioned the
+interpretive difficulties we get into,
+right? I'm calling this a complete
+contingent plan,
+but it's never clear when you would make
+this complete contingent plan. You'd
+have to make this complete contingent
+plan before you know what your type is.
+And you and, you know, it's very hard
+with these intrinsic preferences, right?
+You're born, let's say you like the
+color red in our car example. Formally,
+what you'd have to do here is make a
+strategy that said, "If I were born and
+I like the color blue, what would I do?
+If I were born differently and like the
+color red, what would I do?" It's kind
+of a bit weird to think about,
+um but I think the role of this
+assumption really is that, yes, player I
+is only going to have a single realized
+type, and they're going to take a single
+action based on that type.
+But, the reason we have to specify this
+complete contingent plan is that the
+other players don't know what type
+player I has. So, the other players are
+going to have to form beliefs about
+player I's type,
+and then form beliefs about what actions
+player I takes, and the other players
+need to
+So, what this represents is what the
+other players believe player I will do
+when player I's type is TI, even if
+player I wakes up and their type is not
+TI.
+Um maybe a little kind of philosophical
+uh digression, but let's just uh stop
+there.
+Yes. So, the fact that the strategy is
+{quote} {unquote}
+uh basically information that everybody
+has, like everyone knows everyone else's
+strategy.
+so, this is sort of a subtlety. Normally
+in game theory,
+we make
+knowledge assumptions not about what
+people do, but about what people know
+and about the the circumstance, and then
+we define a solution concept like an
+equilibrium.
+So, yeah, do people know This is always
+a subtle thing. Do people know the
+strategies that are chosen in
+equilibrium?
+Um I don't think we would formally say
+people
+know them. We would say that uh
+equilibrium
+specifies the beliefs that players have,
+and a demand of equilibrium is that
+those beliefs are correct.
+But, we don't literally if we wanted to
+model the game where you actually
+observed player strategies, that would
+be a different game, and we don't really
+we we generally only model knowledge
+about exogenous things from nature. We
+don't really think about knowledge about
+what other rational players do because
+you know, that's just not kind of a
+probabilistic process in the same way.
+It's that that's in their controls. This
+sort of gets into weird things about
+free will and all these things, but the
+point is we don't assume knowledge of
+other people's strategies. Yeah. Uh but,
+our equilibrium cons in in equilibrium,
+people's beliefs about other people's
+strategies will be correct, and that's
+very similar, but I would say slightly
+different. Yeah.
+So, where does the part come in where
+other players have to understand, "Oh,
+if player I is born like red,
+When we define equilibrium. So, I
+haven't defined equilibrium yet, so
+we'll see when we when we define
+equilibrium. That's a great that's a
+great question. Yeah.
+Okay. So, the final step uh when to
+define equilibrium is you have to say a
+little bit more about beliefs. Let's put
+ourselves in the position of player I.
+Okay? Suppose I'm player I.
+What I know
+is I know my type.
+So, let's say my type is TI. Okay?
+Now, I have to decide how to play. I
+have to decide what action to take.
+But, the action for me
+is going to depend on a lot of other
+things. So, the first step is what I
+need to do is I need to form beliefs
+and about T negative I.
+I need to form beliefs about the
+state of nature theta
+and about the types of other players.
+Okay?
+In this model,
+why do I need to form beliefs about
+theta? Why do I care about theta? Well,
+theta directly affects my payoffs. So,
+going back to the example over here, I
+need to form beliefs about how hard the
+project is because the project is really
+hard, I might not want to work very
+hard, it may not be worth it, right? The
+second subtler thing is, why do I need
+to form beliefs about other players'
+mental states?
+Let's think of the project example. Why
+do I care what another player thinks
+about how hard the project is?
+Uh yeah, in the front. They'll probably
+adjust their effort accordingly.
+Exactly. So, I care about their mental
+states not because their mental states
+directly affect my payoff, but because
+their mental states will affect the
+actions that they take, and the actions
+that they take will affect my payoff.
+And this is where going back to your
+question about the red blue thing,
+I'm forming beliefs about their mental
+states, and then their strategy is going
+to specify what they actually do under
+those mental states. So, it's that
+combination that's going to give me
+So, the first thing is we have to learn
+how to use Bayes' rule. Um so, let's
+maybe
+to do this, we use Bayes' rule.
+Bayes' rule.
+So, let's say
+we'll write something like this. What
+does this mean?
+PI says, "I'm player I."
+TI says, "This is my mental state TI."
+Given that this is my mental state, I
+want to say, "What is the probability
+that the the state of nature is theta,
+and the mental states of all my
+opponents are T negative I?"
+And this is going to be a classic
+application of Bayes' rule. I hope
+people have um seen this before. If you
+haven't, it may be something you have to
+brush up up on a little bit.
+But what is this? Well, the probability
+of A given B is the probability of A and
+B divided by the probability of B. This
+is what Bayes' rule says, and I'm going
+to go over it too fast, so if you
+haven't seen it, this won't make sense.
+Just I think you have to study it on
+your own. I'm happy to talk after class.
+So, what are we going to get? On the
+top, we're going to have the probability
+that my type is TI and this is the state
+of the world. So, we're going to get
+TI T negative I.
+On the bottom, we want the probability
+of TI. This is a little more subtle.
+It's going to be a sum
+over all maybe theta prime
+T negative I prime
+of P of theta prime.
+And in words, this is the
+probability of
+So, Bayes' rule is what allows me to
+leverage the prior distribution P, which
+as we said everyone knows, to update my
+beliefs and form my beliefs and assign
+probabilities to the state of nature and
+to other people's mental states as a
+function of my mental state. And in
+general, this probability here could
+vary with my mental state. If I had a
+different mental state, I would form
+different beliefs about the other
+Okay, so now I think we can finally
+write down
+the definition of equilibrium.
+So, let's uh
+let's maybe go down here.
+It's a it's a bit of a long definition,
+so I really just want to spend the last
+15 minutes just writing down one
+equation to make sure we really
+understand it.
+So, we have our
+Bayesian game over there.
+And here's our definition.
+So, a strategy profile
+S star
+which equals
+S1 star to SN star. So, as usual
+throughout the course, whenever we
+define an equilibrium, the object that
+an equilibrium is is always a strategy
+profile. It's a specification of a
+strategy for each player.
+is a
+Well, what do we call this? Well, it's a
+Nash equilibrium in a Bayesian game. So,
+we call that a Bayesian Nash
+equilibrium. We just put the words
+together. Is a Bayesian Nash
+If
+well
+what's the basic idea about an
+equilibrium? In equilibrium, every
+player
+is choosing their action optimally given
+the beliefs they have about the other
+players and those beliefs are correct.
+So, we want to make sure that everyone
+is behaving optimally given the way
+everyone else is behaving.
+I think the first step is to figure out
+what we need to quantify over.
+So, what we want to consider is we want
+to say for every player
+and for every mental state that player
+could have, they're behaving optimally,
+right? So, if
+for every player I
+for every type
+in capital TI
+the following holds, okay? So, just
+let's understand in words what we want
+to write here. What we want to capture
+down here is to say that
+when player I
+has mental state TI
+the action they're choosing is optimal
+given their beliefs.
+And because we're requiring that for
+every player I and for every type TI, uh
+that's that's capturing what we want.
+Okay? So, first let's compute what is
+the expected payoff of the player of
+type TI.
+So, what we're going to do is we're
+going to take an expectation.
+And when I write this
+I'm going to probably need a bit more
+space.
+I'm going to put something in here.
+But what I'm writing when I write the
+expectation given TI is I'm saying given
+TI, I can form I can compute conditional
+probabilities of
+these other things and what I'm going to
+put in here is going to be a function
+of these things and I'm computing the
+conditional expectation of that quantity
+given my type TI, okay? So, what I want
+to put in here is my payoff when we all
+follow these strategies, okay?
+So, it's going to be my payoff. I'm
+player I.
+Now, my payoff depends on
+the actions that we all take and the
+state of the world, the state of nature.
+So, my player one's action is going to
+be
+what? Well, player one's action is going
+to be S1
+star
+of T1.
+And this is exactly reflecting the point
+we made that why do I as player I care
+about player one's mental state about
+their T1? Because their T1 affects the
+action that they're taking uh under this
+equilibrium strategy profile. And then
+it's going to go all the way up to SN
+of TN.
+Now, it's tricky. One of these things,
+the Ith position here is actually
+something I'm controlling as player I,
+but for everyone other than player I,
+these are random things that I'm forming
+beliefs about.
+So, here we have the action profile and
+then the final thing is
+the theta.
+So, what you can think of it in here is
+if the state of the world, not the state
+of nature, but if the state of the world
+is theta T1 all the way up to TN
+then under the strategy profile, these
+are the actions that all the players are
+going to take.
+This is the state of nature and
+therefore player I's payoff is this and
+player I is simply computing
+expectations over that.
+Questions about that?
+So, we want to compare that
+to what happens if player I deviates.
+Okay? So, what I want is I want to now
+compute the same expected payoff if
+player I chooses some action, let's say
+AI prime.
+And we're going to want this to be true
+for all actions
+So, it's also going to be
+a conditional expectation
+given TI.
+And it's a little tricky that the Ith
+component here is like hidden amongst
+the rest, so I want to kind of
+reorganize this a little bit. Uh so,
+another way of writing this
+which is useful
+is to write this as
+SI star TI
+comma S negative I star
+T negative I.
+This is just notation where I'm going to
+put player I first and put everyone
+else's uh grouped together over here.
+This is really I think misleading
+notation when I write S negative I of T
+negative I because really this is a
+collection of functions, each of which
+depends on a single player's type. So,
+this is like
+S2 star, let's say player I is is one.
+This is S2 star of T2, S3 star of T3, S4
+star of T4 and so on. It's a little
+subtle, but um that's just going on
+Okay, and then what do I have over here?
+Well, I'm player I. I'm unilaterally
+deviating, so I'm taking instead of
+taking action SI star of TI, which I'm
+supposed to take, I'm instead choosing
+action AI prime.
+So, we have AI prime here.
+But everyone else's action is still the
+same.
+So, they're still having S negative I
+But then my payoff also depends on the
+So, we have the state here.
+And this is
+our definition.
+And this is sort of to return to this
+question of do I like blue or red? When
+I'm player I
+I'm forming beliefs about the other
+player and I might not know if they like
+blue or red. So, I'm taking into account
+there's some probability they like blue
+and this is the action they take.
+There's some probability they like red,
+this is the action they take. Even
+though when they wake up in the morning,
+they either like blue or red and they're
+going to take a single action.
+Yes. Is there a reason why we have the
+condition that's given TI based on the
+fact that you can only technically have
+your like SI star for a certain TI
+and then the computer knows your own
+mental state before you compute the
+strategy?
+So, I think there's two separate
+questions there, right? One question is
+why does the strategy why is the domain
+of S1 star T1?
+And why do I have this conditioning
+here, right? So, it's two questions. One
+is why is the strategy a function from
+my type to my action? It's because I can
+only
+the only thing I know is my type. So,
+the only thing that my action can depend
+on is my own type. It can't depend on
+things I don't observe. Just like in
+poker, my strategy can't be
+bet if my hand is higher than the other
+person cuz I don't know his hand, right?
+So, of course that would be a great
+strategy, but it's not a legitimate
+strategy because I don't know what the
+other player's uh hand is. So, that's
+why
+S1 star is defined as a function of
+player one's type only. Now, we go here
+and this is let's think about the
+decision stage. When I'm called upon
+when I wake up and make a decision, I
+know something. I know my own mental
+state. If I'm player I, I know my mental
+state TI
+and that gives me information. I'm going
+to update my beliefs based upon that.
+So, in the same way
+going back to our example here, when
+player one knows the project is hard,
+they have a different belief about
+whether the project is hard than if they
+wake up and they know the project is
+easy and they're going to behave
+differently in those situations. This is
+exactly reflecting that, right? It's
+reflecting the fact that my mental state
+controls what I believe about this data.
+So, just to to understand, if we put in
+a different TI here,
+this conditional expectation would
+change because the belief about theta
+and about everyone else's mental states
+could be different if this TI were a
+different TI, if it were TI prime. So,
+each
+TI, like TI and TI prime, basically lead
+to different vectors of probabilities
+for
+other people's mental states as well as
+theta. Exactly right. So, remember we
+wrote down this formula here.
+This is really a whole vector because
+once I keep fixed TI, I can vary the
+theta and the T negative I.
+So, it's really a vector of
+probabilities. It's a lottery over
+everything I don't know, over all the
+theta T negative I pairs.
+So, this is kind of similar to how we
+talked about like beliefs
+Exactly. No, it's exactly a belief. I
+mean,
+what we're talking about precisely is
+given my TI, I form beliefs. The tricky
+thing is what I form beliefs about is T1
+through TN and theta.
+T1 and my belief about T1 through TN by
+itself isn't that useful,
+but when combined with the strategy the
+opponents the other players use, now it
+becomes useful, right? Just knowing that
+the other player's mental state is T2
+prime doesn't tell me much, but in
+equilibrium, I correctly anticipate that
+they're using the strategy S2 star, so I
+can anticipate that the action they take
+is S2 star of T2 double prime, and then
+that gives me information. Yeah.
+Any other questions? Yeah. Yeah, I think
+you did just say, but just
+&gt;&gt; No, no, no, this is good. Yeah, this No,
+no, no, that's another player has a type
+belief
+not belief, uh type T2 that they're
+going to do this action. Yeah, we can we
+know that for sure.
+Uh so, this is getting into the I guess
+the notion of equilibrium. So,
+Like, if we It's yeah, I I think the
+answer the short answer is yes, if you
+want to get the problems right. If you
+want to be really subtle about what what
+knowledge means, um
+we're saying
+I guess one way of thinking of calling
+this as a base Nash equilibrium is if we
+all believe that these are the strategy
+profiles we're employing,
+then no one has an incentive to deviate
+from the way they're behaving.
+Um so, it's sort of capturing the idea
+of Nash equilibrium that I'm believing
+So, just like in Nash, right? In Nash,
+we say, "I'm believing my opponents are
+following this strategy, and given that
+belief, I'm behaving optimally." If I
+believe that my opponents all follow
+this those strategy profiles, then it's
+optimal for me to follow my my strategy
+profile. And then that's that works for
+everyone, so we sort of have this
+consistency. Um but I guess
+I would say there's a bit of a
+distinction between
+maybe this is this is a point.
+Given TI,
+I
+form beliefs about T1 through TN and
+theta. These are totally
+outside the control of people. This is
+just sort of something about the world I
+can form those beliefs.
+Then the mapping from their types to the
+actions they actually take, that's
+something that's under control of a
+rational decision maker, and we kind of
+view that differently. So, generally,
+you know, I guess this gets to a broader
+point in game theory. We sort of view a
+fundamental difference between when I
+form beliefs about whether
+a dealt hand is going to be um kings or
+aces and whether my opponent is going to
+bet a certain amount cuz one is a choice
+of a rational player, and the other is
+just something that's chosen by nature.
+So, we sort of maintain a distinction
+there uh in game theory. So, you know
+how a player how another player will
+play given a certain hand, but you don't
+yeah, I would say you uh
+you have beliefs about the hand they
+will have,
+and then in equilibrium, the equilibrium
+describes consistent beliefs about the
+way they're going to play. Yeah. Um but
+I guess maybe another way of saying it
+is
+if I change the strategies,
+so, yeah, this is maybe the key point.
+This is independent of strategies.
+The belief the probability I assign to
+the other player having this type is
+totally independent of of of how they
+play. This is not a statement about
+their behavior. This is just a statement
+about the world.
+Equilibrium is now a statement about
+about behavior, but there's kind of this
+this fundamental difference there, but
+these these are subtle things, so these
+are great questions to be asking. Yes.
+So, that just means like
+in So, here this is just over other
+people's beliefs, but then
+here it's like what you actually think
+about what other people are going to
+play.
+Exactly. So,
+sort of by definition of my mental
+state, my mental state kind of defines
+the beliefs I have about other people's
+mental states.
+Right? But that alone doesn't tell me
+give me allow me to form beliefs about
+other people's actions because in
+general I don't know the mapping from
+their mental states to their actions.
+We've defined equilibrium to be a
+profile of strategies that kind of
+allows me to link my beliefs about their
+mental states to my beliefs that about
+their actions, and we apply the
+classical idea of Nash equilibrium that
+says that uh this method of behavior is
+stable and consistent in the sense that
+if everyone correctly believes that
+everyone's playing this way, then no
+one's going to want to deviate from this
+method of play.
+So, this is based on what you think
+other people are going to play, but you
+already based that on like what you
+think their beliefs will be.
+yeah, uh
+I would say
+yeah, I I think my the short answer is
+this calculation is not an equilibrium
+object. This is a calculation that's a
+property of the game itself.
+This calculation is a a property of the
+strategies and of the equilibrium
+concept. Um maybe I'll just stop there.
+Let me say one more thing that maybe
+maybe is useful
+to see how we can tie this in to our
+notion of of Nash equilibrium. So, one
+way
+Actually, one thing I should have sort
+of said before, when we're computing
+these conditional expectations,
+you get into some weird issues when you
+condition on zero probability events.
+So, what I've sort of assumed throughout
+and maybe I'll say it now, I should have
+said it before, assume that
+this distribution P is strictly
+positive.
+So, it assigns positive probability to
+everything um
+uh every combination of of states and
+Say again? The simple case in the
+beginning.
+Good. Okay, so I was going to try to
+avoid that simplicity, but
+No, no, no, so let me say no. So, when I
+say strictly positive, really what I
+mean is I don't know. You're you're
+exactly right. Um
+No, no, no. I should do it. I was I was
+going to skip a step, but you're right.
+It's it's it's good not to.
+So, this is really what I mean. It's not
+that every combination has positive
+probability, but every type of every
+player gets positive probability. And
+the reason I didn't want to write this
+out is what does this mean? I have to
+take a summation in order to compute
+this, right? This is a summation over
+all the other things. So, it's true that
+there are some zeros here, but the
+probability that player two has type
+zero is one. The probability that player
+one has type H is half, and the
+probability that the other player has
+type E is half. So, that's really what I
+mean by positive probability, and that's
+actually not lost cuz if something has
+zero probability, I could just throw it
+out and not include it in the type
+Yeah. So, thanks thanks for catching me
+on that. I just tried to skip a step,
+but you you kept me honest. Thank Um and
+and you'll see that's because when I'm
+conditioning, I'm conditioning on an
+event about my type alone. I'm not
+conditioning on richer things, and
+that's why I only need that to be
+positive probability.
+Uh so, if we want to kind of understand
+what's going on here, one thing we could
+do
+is we could define
+a new utility function directly over
+strategies. So, we could kind of try to
+reduce this game and express it purely
+in strategic form. So, we could say
+you I'm going to write capital UI of S1
+up to SN.
+And this is going to say, "What is my ex
+ante expected utility if we all follow
+these strategies?"
+And now I'm going to take an expectation
+not conditional
+on TI, just expectation kind of before
+we learn any of our types,
+and it's going to be
+UI
+S1 T1
+SN TN
+where here the expectation is just with
+respect to this probability distribution
+P here because the probability
+distribution P specifies the joint
+distribution of T1 up to TN and theta.
+So, it makes sense to talk about this
+expectation. It's a bit of a weird
+object to think about because this is
+this weird calculation that you make
+before you're born and you know whether
+you like blue or red. It's a weird
+thing, but but we can define this.
+So, now once we've defined this, we have
+a classic strategic form game. We can
+say what is the expected utility of each
+player I as a function of the strategies
+that are used.
+And now we have a kind of a theorem.
+I mean, it's a pretty basic theorem,
+we say that
+a strategy profile
+equals S1
+star to SN star
+is a base Nash equilibrium
+of the Bayesian game
+if and only if
+is a Nash equilibrium
+of the strategic form game defined here.
+&gt;&gt; And I think this is kind of a good
+homework exercise to try to
+go through and uh
+and verify this. Yes. Why is it defined
+over P?
+Um I mean all these are implicitly
+defined over P. Maybe I'll put P here.
+But I guess the point I was trying to
+make is that
+this is a conditional expectation using
+conditional probabilities given TI.
+This is an unconditional expectation
+using unconditional probabilities over
+That That's the only point I wanted to
+make.
+It's the same P. Yeah.
+All right. Sorry. This is the P based on
+Uh I mean P is a distribution.
+Using P I can compute conditional
+probabilities here.
+Here I don't even have to compute
+conditional probabilities because P is
+already a distribution over T1 up to TN
+and theta.
+And maybe just two words about the
+intuition for this.
+What this says is
+whatever type I have, I'm behaving
+optimally.
+This is saying let's imagine I'm in the
+position before I learn my type
+and I'm
+it's saying that my complete contingent
+plan is optimal in expectation, but
+that's a complete contingent plan is
+only optimal if at every realization of
+my type it's optimal. Um and that's sort
+of the the connection here. That if I
+anticipate that I'm going to make a
+mistake at some type realization, then
+there must be a mistake in my complete
+contingent plan. Uh and that's the
+connection here, but I think it's good
+to maybe write it out in algebra as a as
+an exercise. But let me stop there. I'm
+happy to stick around for questions, but
+uh let me conclude there. And I know
+this is kind of
+abstract. It's not It's It's natural for
+this not to make so much sense the first
+time, but I think doing problem sets
+will really uh reinforce this.
+Thanks.

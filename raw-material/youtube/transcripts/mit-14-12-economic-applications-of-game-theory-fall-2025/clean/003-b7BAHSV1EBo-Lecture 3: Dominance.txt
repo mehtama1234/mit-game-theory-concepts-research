@@ -1,0 +1,1949 @@
+So today we're going to start analyzing
+games.
+So in my view this is where things start
+getting a lot more interesting. So far
+we've just said how to set up a game or
+first how to set up an individual
+decision problem and then how to set up
+or represent a game and now we're
+actually going to start thinking about
+analyzing the game and trying to make
+predictions about how people will play
+in the game.
+So I want to first go over
+the approach that we're usually going to
+take in this course.
+We'll usually start with some informal
+description of a strategic setting that
+may be something that you get in a
+problem set or um from thinking about
+the world.
+Then based on the informal description,
+we'll usually write down the extensive
+form representation.
+Remember this is the very detailed
+representation that we talked about a
+lot on Tuesday.
+And then we'll
+reduce this extensive form
+representation to the strategic form
+representation.
+And later on in the course we will
+discuss some issues that can only be
+perceived in the extensive form
+representation, but for the beginning of
+the course and in particular in today
+everything we're going to say is going
+to be about a strategic form
+representation. So today our starting
+point
+is going to be three. We're going to
+imagine that we're given a strategic
+form game, but you can imagine in the
+background that we may have derived this
+given strategic form game from an
+extensive form that we previously wrote
+down.
+So let's just recall the notation
+for a strategic form game. We have the
+players
+I equals one through n
+and then for each player I we have a
+strategy set associated with that player
+I. So we have big S1
+up to big SN
+where S1 is the set of strategies that
+are available to player one. Remember
+the set can be quite complicated if
+we've derived this set by evaluating all
+complete contingent plans in the
+extensive form representation.
+And then we have our payoffs
+UI from S to R
+where remember S is the set of strategy
+profiles.
+So S mathematically is a product set of
+S1 up to SN, but the key thing is that
+what lives in S are profiles specifying
+a strategy for each of the N players.
+And we have a function like this again
+for each of the N players
+that specifies each player I's utility
+as a function of the profile of
+strategies that the players play.
+Now
+what is our goal
+when we analyze a game?
+I think we're asking the following
+fundamental question.
+Given a game, we want to ask how do we
+think players will play or should play
+the game?
+Now notice
+I I think the distinction between will
+play and should play gets into two
+different interpretations of the
+analysis that we do.
+So the answers that we get and the
+formal analysis we do won't really
+depend on which interpretation you want
+to keep in mind, but depending on the
+application one may be more or less
+compelling. So will play, if we want to
+think about will play, this is what's
+sometimes called positive analysis
+or descriptive analysis.
+And the idea of this is that if we
+observe some game
+we want to be able to make a prediction
+about how rational players will choose
+to play this game.
+So the goal here is really a prediction.
+Which will of course only be valid if we
+think that the utility functions that we
+write down and the rationality
+assumptions that we make are compelling.
+Another interpretation of game theory is
+to kind of put yourself in the role of
+an advisor.
+Someone comes to you and says, how
+should I play in this game? What is your
+recommendation for how I should play?
+And companies do sometimes hire game
+theorists to consult and make
+recommendations for maybe how they
+should bid in an auction. That would be
+one example. So here this is sometimes
+called normative
+or prescriptive
+analysis.
+And the goal of our analysis is to
+provide what I might say is a
+recommendation
+for how players should play
+uh
+if they want to achieve their objectives
+and they recognize that other players
+are rational as well and maybe also are
+getting advice from game theorists or
+from other informed parties about how
+they should play in the game.
+But I just want you to keep this in mind
+in the background throughout the course,
+but when you're formally asked to solve
+for an equilibrium or to analyze a game,
+you're not uh
+your answer won't really depend on your
+particular interpretation in that
+context.
+Um so I want to start with
+an example of a game
+an example of a strategic form game and
+this is the most famous game in game
+theory probably. You may have heard of
+it. It's called the prisoner's dilemma.
+Now the first thing I want to write down
+is think about how we can represent this
+game.
+It's kind of ugly to think about all
+these functions and all these sets. So
+normally we represent strategic form
+games using what's called a bi-matrix,
+just a box with some numbers in it.
+So in this game each player
+is going to have two strategies which
+we'll call M and F.
+So let me tell the story here. So we
+have two prisoners.
+And
+we assume that they're placed in
+separate cells. Again, this is going to
+be a colorful story to help motivate
+this particular game, but the lessons
+from this game
+I think a lot of game theorists and
+economists believe are much broader than
+this kind of silly uh story that we're
+going to tell here.
+So we have two prisoner prisoners and
+they've been accused of a crime.
+And each prisoner has two options.
+We'll call them M and F.
+So M is to stay mum.
+That is don't admit to anything.
+And F is sometimes uh the word is used
+fink or tattle. It's to tell on the
+other person. Say yeah, the other guy
+did it.
+So the the prosecutor comes by and says,
+you know, do you want to uh accuse your
+co-conspirator of committing the crime?
+And the and the prosecutor says, look,
+we'll give you a good deal. So if you're
+willing to testify
+against the other prisoner
+we'll give you a sentence reduction. But
+now we're going to be able to catch the
+other guy and the other guy is going to
+get a bigger sentence.
+So now what we want to do is fill in the
+payoffs in this matrix.
+And what we imagine is
+if both players stay silent
+then both players get a payoff of two.
+They both get convicted of say a minor
+crime because they didn't have testimony
+to convict either of them.
+Now let's say I'm player one.
+So the way I'm I'm writing this here is
+player one
+is the column is the sorry, the row
+player. Player one is choosing
+the row, so they're choosing between M
+and F.
+Player two is the column player.
+They're choosing between the column M
+So the strategy set, maybe this is
+helpful here, for each player S1 equals
+S2 equals M comma F.
+So if we want to formally connect it to
+our
+strategic form representation over here,
+each player has two strategies. They
+each have the same two strategies,
+simply staying silent M or uh testifying
+against the other player, finking F.
+And then when we write two two in this
+box, the first number represents player
+one's utility from this strategy profile
+corresponding to this box. So this first
+box corresponds to the strategy profile
+where player one chooses M and player
+two chooses M.
+And then in the box we're writing player
+one's payoff from that consequence or
+that strategy profile and then player
+two's payoff from that strategy profile.
+Now let's go down here. We want to say
+what happens if player one instead
+testifies or finks against the other
+prisoner.
+What this should do is it could should
+increase the utility of the prisoner who
+finks because that prisoner gets a
+sentence reduction.
+But it decreases the utility of the
+other prisoner because the other
+prisoner is now going to be convicted of
+a more serious crime.
+So the exact numbers we'll use are three
+and negative one.
+So relative to the case where they both
+stay silent, if I fink on the other
+prisoner, my utility goes up by one
+utile
+but my opponent's utility goes down by
+three utiles.
+And now we're going to put the symmetric
+payoffs over here.
+But remember over here it's prisoner two
+who's testifying and therefore prisoner
+two gets the higher payoff and prisoner
+one gets the lower payoff. So, here
+we're going to put -1 3 in this box.
+And then finally, we have to decide what
+happens if they both testify,
+and here the payoff is 0 0.
+So, the exact numbers aren't so
+important, but the order is pretty
+important. So, why is it zero here?
+Well,
+the other person is testifying against
+me,
+so I get convicted of a pretty serious
+crime,
+but it's not quite as bad as the -1 over
+here, because I still get a little bit
+of a sentence reduction for testifying
+against the other guy.
+So, you can see there's an ordering
+between the four outcomes, and this is
+REALLY WHAT'S IMPORTANT.
+SO, THE HIGHEST PAYOFF I get is if I
+testify and the other guy doesn't.
+The worst payoff is if the other
+prisoner testifies and I don't, because
+then I get convicted and I don't get any
+And then in between, we have the payoff
+where we both stay silent, because we
+only get uh charged with a pretty uh
+small crime. And then the zero here is
+where we both testify, we both get
+charged with a serious crime, but we get
+a little sentence reduction because we
+each cooperate
+with the authorities.
+Now, I guess the question is,
+how would you play
+in this game? If you were here, you're
+one of the prisoners, you're alone in
+your cell,
+how would you think about this and how
+would you expect the other person
+to play?
+Say again?
+You would go F? Okay, tell me why.
+Cuz if the other one doesn't,
+uh then you're just
+in a very bad situation.
+So, you're saying
+you want to go F because you're really
+afraid of So, let's let's say you're
+player one, okay? So, you're going to
+say if I go F,
+you're saying, well, I can either get
+three or zero, but I'm at least not
+going to get -1. So, that's that's good.
+So, certainly the worst possible outcome
+is better if I go F.
+Um
+I think F is a good strategy. Any other
+thoughts about why I might want to go F?
+Yeah. Regardless of what the other
+player chooses, you're better off.
+Right. So, this is a really critical
+observation to make in this game.
+So, I'm player one.
+I don't know whether the other prisoner
+is going to mum or fink. I don't know if
+they're going to testify against me. But
+let me reason separately by cases, okay?
+One possibility
+is the other prisoner is going to stay
+silent.
+If the other prisoner stays silent,
+well, what happens? Either I get a
+payoff of two if I stay silent, or I get
+a payoff of three if I testify.
+So, I'm better off testifying.
+Now, let's look at the other case. What
+if the other prisoner is going to
+testify against me? That's certainly
+worse for me. I'm certainly worse off.
+But if the other prisoner testifies,
+well, if I stay silent, I get -1,
+and if I fink, I get zero, which is
+higher.
+So, in both cases, I do strictly better
+if I fink. So, often we think that a
+prediction of this game
+might be we might be pretty confident
+that
+for each player,
+what are we saying? Well, F
+is better than M,
+no matter what the other player does.
+And in a sense, games like this are
+about a bit easier to analyze, because
+remember we said what makes game theory
+hard is what we called strategic
+interdependence,
+where the best thing for me to do
+depends on what my the other player
+does.
+In this case, it is an interactive
+problem, but the best thing for me to do
+is independent of what my opponent does.
+So, there actually is not this element
+of strategic interdependence.
+F is better than M if my opponent plays
+M,
+and F is still better than M if my
+opponent plays F.
+So, I don't really have to think too
+carefully about exactly how my opponent
+is going to play, because however I they
+play, I know I'm better off
+if I play F.
+So, why is this called a dilemma, or
+sometimes people think of it as a
+paradox? Well, if both players play F,
+then I don't know if I have chalk, but
+I'll just highlight this.
+We both get a payoff of zero.
+But I think it's reasonable for someone
+to come along and say, "Wait a second,
+these prisoners must be doing something
+wrong.
+They're both getting a payoff of zero.
+But if they did both did M,
+they'd both be strictly better off.
+So, are they being irrational? Are they
+doing something wrong in this game? What
+do you think? I mean, why is this a good
+prediction of the game? We said we're
+studying game theory. We said people are
+very rational. They act towards their
+objectives. And if they both do this,
+they're both strictly better off. So,
+why don't they do that?
+Is something wrong with game theory?
+Yeah?
+They don't uh one player doesn't know
+what the other player is going to do.
+So, they're just operating in like just
+maximize my utility
+uh independent of what the other person
+chooses. Right. Uh and another way of
+saying it is I can't influence what the
+other person chooses. So, when I framed
+it, I sort of said, "Oh, we're down
+here. Wouldn't we like to be up here?"
+But how do we get up here? Well, both
+players would have to behave
+differently. And I can't control what
+the other person does. I can only
+control what I do.
+And I think this observation
+was surprising to a lot of people early
+on. I mean, mathematically, it's not
+very deep, but it definitely surprised
+people.
+And the
+uh I think the key interpretation of the
+prisoner's dilemma, or what we learn
+from it, is that
+in games,
+rational behavior
+can lead to inefficiency.
+Or more precisely, rational behavior
+can make everyone worse off.
+What do I worse off than what, you might
+say? Well, what I mean is than some
+other behavior.
+And this is a novel implication or a
+novel feature of interactive
+decision-making.
+In a single decision-maker problem, this
+never happens. In a single agent
+problem, I just do what's best for me,
+and that gives me the best possible
+outcome.
+But with an interactive problem, even if
+we're both behaving {quote} {unquote}
+rationally, the outcome may be very bad
+for both of us, and maybe worse than a
+different outcome that would be feasible
+for both of us.
+&gt;&gt; [snorts]
+&gt;&gt; So, I think today we want to continue
+what we started here,
+and
+we argued that this game was relatively
+easy to analyze because of this property
+that the best thing for me is
+independent of what the other player
+And I think that's a guide for the way
+we're going to approach analysis in this
+class. So, moving forward,
+we're going to start with minimal
+assumptions.
+Minimal assumptions about behavior.
+And because these are minimal or weak
+assumptions, we're going to be quite
+confident in the implications of these
+assumptions. So, this might make us
+confident about predictions.
+But what we'll see is that a lot of
+games are not like the prisoner's
+dilemma,
+and we're not able to make very sharp
+predictions only based on minimal
+assumptions. So, we might be confident
+about our predictions, but these
+predictions are generally going to be
+very weak predictions.
+Or they could be very weak predictions.
+And here notice I'm I'm using the
+interpretation of prediction rather than
+recommendation for now.
+In fact, sometimes if we're only willing
+to make minimal assumptions about
+behavior, our only prediction might be
+anything could happen.
+That's not a very useful prediction. We
+might not be able to narrow things down
+very much.
+So, what we want to do is over the
+course of the of the class is gradually
+strengthen the assumptions that we make
+about behavior. We might gradually lose
+some confidence in the accuracy of these
+predictions, but at the same time we'll
+be able to sharpen and refine the
+predictions that we make. And that's
+kind of the direction we're going to go.
+So, today we're going to start with what
+I think of as the most basic or most
+minimal assumption about behavior, and
+later on we'll we'll move to more
+complicated assumptions.
+So, the first thing I need to do is just
+introduce some notation for strategic
+form games,
+and then I can formally define
+and capture what we described in this
+So,
+strategic form games often have many
+players, but we're often interested in
+what happens when a single player
+modifies their behavior, modifies their
+strategy. So, we'd like to have some
+notation to capture that.
+And what we're GOING TO WRITE
+IS
+A STRATEGY PROFILE, WE'LL often
+decompose it in this way.
+So, we'll say we can think of the
+profile as player i's strategy,
+and s-i specifies the strategies of
+everyone else.
+And this notation is important, so let's
+just go through an example with three
+players.
+If S equals S1, S2, S3,
+this strategy profile specifies a
+strategy for each of the three players.
+But there's three different ways we can
+express this depending on which player
+we want to focus on.
+So, we could write this as S1 S-1
+meaning we're going to put player one
+strategy by itself and then we're going
+to group the other two players' strategy
+under this notation S-1.
+Here -1 is not really the number -1.
+What we mean is not player one. So,
+think of the the minus here as not
+rather than minus.
+But then there's another way we could
+write this. We could write it as S2 S-2
+or as S3 S-3.
+And you might object that well, S3 is
+supposed to come last. We're not really
+going to be consistent about the order.
+As long as we understand what this
+means,
+this is a
+strategy profile where player three
+chooses S3 and players one and two
+collectively choose S-3. It's just
+notation, but it's going to help us
+write things down more more clearly.
+Yeah.
+Sorry, I I don't mean that. Uh
+I don't I'm not making any just
+notation, no behavioral assumption. So,
+I literally when I write S-3, what I
+mean is S1 S2.
+It's just just kind of notation. So, I'm
+not claiming that they're going to
+decide together or I'm not doing
+anything like that. So, it's just to
+save space in the board instead of
+writing S1 S2, I'm going to write S-3,
+but they're still choosing independently
+of each other. That's a good
+clarification. Thank you.
+And then we need some notation for where
+these things live. So, we're going to
+use notation where we've already
+introduced SI,
+but now we're going to use S-I to be the
+set of you might call them partial
+strategy profiles, right? These are the
+set of profiles specifying a strategy
+for every player except player I.
+So, S little I lives in S big I
+and S-I or not I lives in S not I. So,
+that notation will be useful below.
+Okay.
+So, now we'd like to formalize what
+happened in the prisoner's dilemma and
+the formal term for this is dominance.
+Sort of a natural term because F is
+better than M no matter what the other
+player does, we would say that strategy
+F dominates strategy M.
+But we have to be a lit- a little more
+careful because there's strict and weak
+dominance. So, now I'm going to define
+these two terms.
+for player I,
+so let's consider player I and let's
+consider
+uh two strategies.
+SI and SI prime.
+And I want to say so, I'm focusing on
+player I.
+I'm focusing on
+two strategies. They could be the same,
+but two strategies of player I.
+This is a prime here.
+And I want to formally define what it
+means for strategy SI
+to strictly dominate strategy S-I.
+So, I'm going to say SI
+strictly dominates
+Ah, sorry. I may have said S-I. I mean
+SI prime. Sorry.
+Can you in guess in words strict
+dominates what that might mean just to
+re- think through from the example what
+it might mean for player I if strategy
+SI strictly dominates SI prime?
+Uh
+maybe at the back. Yeah. Uh they have a
+better payoff regardless of S-I. Exactly
+right. So, and by better it's strictly
+better, right? So, SI dominates SI prime
+means
+Sometimes I'll use this arrow just to
+mean a definition. So, I'm saying this
+is exactly what this phrase means.
+It means that
+Well, let me first just partially write
+it out.
+I'm going to fill it in a second,
+but the first thing is I'm looking Let's
+just focus on what's here already.
+I'm focusing on player I
+and player I is making a comparison
+between things that are in player I's
+control.
+Player I is comparing
+what happens if she plays SI
+to what happens if she plays SI prime.
+But what we want to argue is that this
+inequality holds
+whatever the opponents play.
+So, we're going to fill in S-I here and
+S-I here and we want this to hold for
+all
+S-I
+in S-I.
+So, notice the key point here.
+S-I can take any possible value,
+but in the inequality, the same S-I
+appears on both sides.
+So, fixing the way that my opponent is
+playing, I'm strictly preferred to play
+SI to play SI to playing SI prime.
+Why do we write it this way? Because S-I
+is outside my control. I can't control
+what my opponents are doing, but they're
+doing something.
+So, how however they're behaving, this
+inequality should hold.
+Now, we want to give a slightly weaker
+version of this. This is very demanding
+and it may not hold. So, let's now say
+weakly dominates.
+I won't fill out everything else, but
+you know, just copy these words.
+And now we're going to weaken this to
+weak inequality.
+But
+this is a little too weak because this
+allows these two strategies to give me
+the same payoff whatever my opponents
+do. And we want there to be some reason
+that SI is better than SI prime. So, we
+demand this weak inequality for every
+S-I,
+but strict inequality
+for some S-I.
+So, however my opponents play,
+SI does weakly better than SI prime,
+but there's some at least one particular
+way my opponents could play
+such that SI does strictly better
+than SI prime.
+And in particular, the strict part of it
+means that no strategy can weakly
+dominate itself.
+Because if we put the same strategy here
+for SI and SI prime, then we would never
+get a strict inequality.
+So, so far these definitions have been
+pairwise comparisons. We've taken one
+strategy and we've compared it to
+another strategy.
+But in reality, the player just needs to
+choose one strategy. So, what we'd like
+to know is when is one strategy kind of
+better than everything else or dominates
+everything else. So, we'll say a
+strategy SI
+is weakly dominant
+do weekly or strictly.
+SI is weakly dominant if SI weakly or
+strictly dominates every other strategy
+that player I has.
+So, maybe I'll just do weekly to avoid
+confusion.
+We say SI is weakly dominant
+if
+SI
+weakly dominates
+every strategy
+SI prime. Now, I need to be a little
+careful. There's something wrong here.
+I can't say every strategy because SI
+can't dominate itself, right? So, every
+strategy SI prime that's not equal to
+SI.
+&gt;&gt; [clears throat]
+&gt;&gt; So, we think that in this case,
+if player I has a weakly dominant
+strategy, that's a pretty safe
+prediction about how that player will
+play in the game, about which strategy
+that player will use.
+And we have one final definition.
+And that is well, let's think about kind
+of the simplest possible case. That's
+where every player
+has some dominant strategy.
+Has some weakly dominant strategy.
+If that's the case, then we can be
+pretty confident our prediction in that
+game is that each player is going to
+play their corresponding weakly dominant
+strategy.
+So, we can give a definition here, our
+first notion of an equilibrium.
+We say a profile
+S1 star
+up to SN star
+is a dominant strategy equilibrium
+And here I'm just going to write
+dominant strategy equilibrium, but
+more precisely we mean weakly dominant
+strategy equilibrium, but we'll just say
+dominant and sometimes we'll call this
+DSE.
+If what?
+Well, this is a profile, so we basically
+made a prediction about how each player
+in the game is going to play. We've made
+a prediction about each player's
+And we say that this is a dominant
+strategy equilibrium if each player is
+playing a strategy that's a weakly
+dominant strategy for that player.
+So, if
+for each player I,
+strategy
+Well, what is the strategy used by
+player I? It's SI star. So, strategy SI
+star
+is weakly dominant.
+But notice an important thing here that
+when we make a prediction
+about a game, it's not enough just to
+predict one player's strategy. We have
+to make a prediction about how every
+player is going to play.
+So our prediction here is a profile of
+strategies specifying a strategy for
+each of the end players.
+And it's a dominant strategy equilibrium
+if each player
+for each player their strategy is weekly
+dominant for them. Meaning that strategy
+SI star, if we go back to our
+definition,
+SI star weekly dominates every other
+strategy by player I.
+Any question on this? Yes.
+Is it possible to have like
+um
+like multiple weekly dominant strategies
+that one is better than a different one?
+That's a great question. So let's put
+this here. Let's write this on the board
+cuz I was going to get there. That's a
+great question.
+Is it possible for there to be multiple
+weekly dominant strategies? So maybe
+I'll say WD
+strategies.
+It's a great question.
+Any ideas?
+Put it to the class.
+Say it again.
+Okay. So what you have in mind is what
+if there's two strategies that give me
+exactly the same payoff however my
+opponent plays?
+Now we have to be really careful.
+The key thing though is this part of the
+definition.
+So if we didn't have this part of the
+definition, we could have two weak we
+could have two strategies that were both
+weekly dominant because they both
+because they give the same payoff
+however the opponents play.
+But two strategies that give the same
+payoff are not going to satisfy strict
+inequality for any way my opponents are
+playing. So it's not possible for two
+strategies for one strategy to weekly
+dominate another and for that strategy
+to weekly dominate the first. And for
+that reason, it's impossible for there
+to be multiple weekly dominant
+strategies. So the answer is
+is no.
+Let's go through the argument again.
+Suppose I had two strategies that were
+both weekly dominant. Let's call them SA
+and SB.
+Well, that means SA must weekly dominate
+SB.
+And SB must weekly dominate SA.
+But that means SB must do weekly better
+than SA no matter how my opponents do,
+but sometimes strictly better.
+But if SB sometimes does strictly
+better,
+then it can't be the case that SA weekly
+dominates SB.
+Maybe a bit fast. It might be a good uh
+little exercise to write down, but
+that's a great question and uh it's good
+to keep in mind and that's sort of our
+one of our motivations for demanding
+strict inequality for some S negative I
+to rule out this case of multiple weekly
+dominant strategies.
+Great. Any other questions?
+Yeah. Um just to clarify for the strict
+inequality part for weekly dominance, is
+it just that like the
+you just have like the
+UI
+like that inequality part [snorts] is
+strict?
+Yeah. So So what I mean is let's list
+for each S negative I, we have an
+inequality that looks like this. So
+let's say we have 10 of them and I'm
+just going to go through each of them
+and say does equality hold in every
+single one of those inequalities? And
+to get weak dominance, equality cannot
+hold in every single one. So another way
+of saying there must be one inequality
+where it's strict, but it could be
+equality in all but one. That's okay.
+So when I say strict, I'm referring
+to that being strict.
+So now let's look at a slightly more
+complicated game than the prisoner's
+dilemma
+and see how we would approach this.
+Make sure I got it.
+Two on top. So we have a two-player
+So remember, we always put player one
+here. Player one is always choosing
+rows.
+Player two is always choosing columns.
+And when we fill in the payoffs, we
+always put player one's payoffs first.
+So here player one has three strategies.
+We call them top, middle, and bottom
+just to keep it make it easy to
+remember.
+And player two also has two strategies
+which we call left and right.
+So for what I'm going to do here, I
+really only care about player one's
+payoffs. So to avoid just distractions,
+I'm only going to fill in
+uh player one's payoffs.
+So there should be something here. Maybe
+I'll
+put this to indicate if I wanted to
+finish filling in the game, I'd have to
+put in all those numbers. But for what
+I'm doing now, I only care about these
+first numbers.
+So let's ask in this game,
+does any strategy dominate any other?
+Does it strictly dominate, weekly
+dominate any other for player one?
+What do you think?
+How do you feel about this game? Are you
+Would you be happy to play any of these
+strategies or do you think some of them
+seem worse than others?
+Okay. Maybe we'll we'll go on, but the
+answer is nothing dominates anything
+else. Let's go through it. Does T
+dominate M?
+Well, you might think so cuz two is
+greater than zero,
+but over here we have negative one and
+zero.
+So M does better than T if my opponent
+plays R.
+So it can't be the case that T dominates
+M.
+And similarly, does M dominate B?
+Well, even though M does better than B
+when my opponent plays L,
+M does worse than B when my opponent
+plays R. And you can go through each of
+these comparisons and see that no
+strategy weekly dominates any other
+So now we have a bit of a conundrum. How
+should you play in this game? It's not
+so clear, right? Before it was pretty
+easy. In the prisoner's dilemma, we said
+if you're rational, play F. You don't
+have to worry about your opponent.
+However they play, you're strictly
+better off playing F.
+But here, it's not so clear. So how
+would you approach this problem if you
+were player one here? What would be
+relevant to you? What would you need to
+think about?
+Yeah. You want to know like what the
+chances are the other player plays L or
+R. Exactly. So you're going to have to
+form beliefs about how the other player
+plays. Just like on the first class when
+we said whether you you walk home or
+take the T depends on after checking
+your phone what you think the
+probability is that it's going to rain.
+In the same way, we're going to form
+beliefs or assign probabilities to the
+strategies that my opponent is playing.
+So
+in this context,
+maybe we'll assign a probability of P to
+L
+and 1 minus P to R.
+So now let's compute my payoffs.
+Going to write U of
+LP. So a few things here.
+Because my opponent only has two
+strategies,
+if I want to specify my belief about
+their strategy, it's enough to specify a
+single number P. And I want to be clear
+here. This is a number P. It's not a
+vector, right? It's just a number. Once
+I know how much probability I assign to
+L, then the amount of probability I
+assign to R is always just 1 minus that
+probability. So this is enough
+information.
+And then here, remember technically
+put one here. We only define the utility
+U1 of a strategy profile.
+So technically we haven't defined what
+this means yet, but we're going to
+extend our notation to define what my
+expected payoff is if I play L
+and I believe that my opponent is going
+to play L with probability P and R with
+probability 1 minus P. Yes. You wouldn't
+be eating T or M or R is Ah, yes. T.
+Sorry. Thank you.
+T. Yes.
+Great. Uh
+So here we are. So what is it? Well,
+with probability P, my opponent plays L
+and therefore my payoff is U1
+of TL.
+But with probability 1 minus P,
+my opponent plays R.
+I'm still playing T. Thanks for the
+clarification.
+So we have T
+R.
+So notice we're treating my beliefs
+about my opponent's strategy just like
+we treated lotteries before.
+When I have beliefs about something,
+I
+think about my choices as corresponding
+to lotteries over outcomes and then I
+evaluate expected utility over those
+outcomes.
+So here we can just plug in the numbers.
+We're going to get this is going to be a
+two and this is going to be a negative
+one.
+what do we get? We get 2P
+minus one
+plus P
+if we do the math right,
+which equals 3P
+minus one.
+And it's often good to to check if this
+makes sense.
+The higher is P,
+yes.
+So I just wanted to ask a future
+question. The utility in this case is
+specifically only the lottery which is
+represented by the value two. So we also
+have to include the strategy in there.
+Right. So if you want to be a little
+more formal, what is this? This is a
+lottery Well, this is a two-player game.
+So this is a lottery over the strategies
+of my opponents. So this lives
+in
+delta of in this case S2, but more
+generally S negative one.
+Because what I need to do is I need to
+say more generally of all the possible
+profiles of strategies that my opponents
+could play, I need to form a belief that
+specifies the probability on each of
+them. In this case, I can represent that
+belief by a single number, but more
+generally it's going to be a more
+complicated object. So that means like
+utilities are computed on the cross
+product of strategies there.
+Uh yes. Yes. And I'll I'll be more
+formal in a second. Yeah. Um
+other question, yeah?
+Good point. Good point. People are being
+very um very precise here. So, this is
+sort of a you might say it's an abusive
+notation or you might say we're
+extending the notation on the right-hand
+side. So, originally we defined
+utilities only for strategy profiles.
+And now we're going to define formally
+what we're doing is we're going to
+extend this function to a larger domain.
+So, we're going to
+imagine that it has the same meaning on
+the original domain, but now we're going
+to define it more broadly. Um so,
+maybe if I was being very pedantic, I
+would use different notation here, but
+we're going to be a little less pedantic
+and we're going to think of these
+utilities as being defined uh on a bit
+more general space. But, you're right
+that conceptually there is a distinction
+here. Though, one way to think about it
+is
+how do I interpret U1 of TL? One
+interpretation is this is what happens
+when I play T and I hold the belief that
+my opponent is certain to play L. So,
+you can think of this as a special case
+where P equals 1. That would be one way
+you can see how these functions fit
+together. Yeah.
+Any other questions? Yes. Can you choose
+like big U on the left-hand side and the
+little U on the right-hand side? Um I I
+could do that. I'm not doing that here.
+Uh I could do it, but eventually we just
+find it easier to to always do this. So,
+from now on we're going to use little U
+and we can put in a belief or a strategy
+over here. And if we put in a strategy,
+the interpretation is that's a belief
+that puts all the probability on that
+particular strategy. Yeah.
+Any other questions here?
+Good. Okay. Um
+and we could similarly compute I won't
+do it here, but we could compute U1 of
+MP
+and U1 of BP.
+Okay. And I guess the question suggested
+we need to be a little more rigorous
+about what these beliefs are and what we
+mean. So, let me
+bring this down and erase.
+So, let's be a little more precise about
+what a belief is.
+Well, a belief for player I is just a
+probability distribution over the
+strategies that the other players are
+playing.
+So, I'll say for player I
+it's a function
+maybe we'll say beta negative I. We're
+going to use the negative I because even
+though it's the belief that's held by
+player I, it's a belief about everyone
+else's strategies. And that's why we use
+the negative I here.
+And what is it? Well, it's a function
+from S negative I
+to 01 if you want to be really formal.
+Where it says
+for each profile of strategies or
+partial profile of strategies that my
+opponents play
+what is the probability that I assign to
+that particular
+profile of strategies? How likely is it
+that they play that particular profile?
+Now, what we need, you have to be
+careful for this to make sense, when we
+sum up all these probabilities, we have
+to get one, right?
+So, it's a function this like this
+that's satisfying
+what? Well, the total probability is
+one, so let me take a summation. What am
+I summing over? I'm summing over all the
+partial strategy profiles of my
+opponent.
+So, I'm going to sum over S negative I
+in big S negative I. If you're not used
+to seeing summations that aren't just
+numbers 1 to N, think of this as just
+I'm writing out addition with
+with one term for each strategy profile
+S negative I.
+And we have beta negative I of S
+negative I
+equals 1.
+So, this is formally what a belief is.
+And now let me formally define the
+function that people rightly challenged
+me on a little bit. So, if I want to
+formally define extend this function,
+we're going to define UI
+of SI beta negative I. So, remember so
+far we only defined player I's utility
+from a strategy profile. Now, we're
+going to think about what is player I's
+expected utility
+if player I plays strategy SI
+and player I has holds this belief about
+everyone else's strategies. Right? We're
+going to take expectations.
+So, we're going to need to do a
+summation.
+We always sum over things we don't know.
+What we don't know is how my opponents
+play.
+So, this is going to be a sum over S
+negative I in S negative I.
+And we're taking an expectation, so I
+want to for each way that my opponents
+could play, I want to consider the
+probability that happens, and then I
+want to multiply that by the utility I
+get if that does happen.
+So, what's the probability
+S negative I happens? It's beta negative
+I of S negative I.
+And I want to multiply this by the
+utility I get if that happens. Well,
+what's my utility? Well, I'm still
+playing SI.
+If it turns out my opponents play S
+negative I, then my utility is UI
+of SI S negative I.
+Let me maybe draw a line here to make it
+clear this is a separate point.
+And this is the formal definition or the
+formal extension of this function to
+strategies and beliefs.
+Now, we can also see here what we
+mentioned earlier. What if beta negative
+I is the special belief that puts
+probability one on a particular strategy
+of my opponents?
+If that happens, then all of these terms
+become zero except one of them.
+And I simply get the same utility
+function that I started with, where S
+negative I is exactly the strategy that
+my belief puts probability one on.
+Any questions about this?
+Yeah. So, in this case, just to confirm,
+the left-hand side we have the cross
+product
+of all strategies, and then well, the UI
+on the right-hand side is just
+purely our strategy.
+Exactly right. So, so this lives in
+S.
+And this lives in SI cross delta of S
+negative I.
+But, I don't want people to be scared by
+the math, but yeah.
+That's where where these things live.
+Great.
+So, now we've talked about beliefs.
+Now, we can talk about
+a best response to a belief. And this is
+I think one of the most central
+ideas in game theory.
+Mathematically, it's not very deep, but
+conceptually it's really I think a step
+forward. In interactive decision
+problems, the idea is that there's two
+steps. First, I form a belief about how
+my opponents are going to play.
+And then I choose a strategy that's best
+given the belief that I form about
+So, we want to formally define that.
+So, we say
+is a best response
+to belief
+beta negative I. And remember, for any
+of this to make sense, we have some game
+in the background. Right? We have some
+game in the background, we have some
+player, and if I wanted to be really
+precise, I would say
+for player I, strategy SI is a best
+response to belief beta negative I. Cuz
+we're we're evaluating things here from
+the perspective of player I.
+Player I chooses a strategy for herself
+and forms beliefs about everyone else's
+If Well, what's the What do we need?
+Well, we want SI to do better than any
+other strategy given the belief.
+So, we need
+UI of SI
+So, what am I going I'll fill it in in a
+second. I'm player I.
+I'm comparing the utility that I get
+from SI
+to the utility I get from SI prime.
+And I want SI to be better than SI prime
+for any SI prime that I contemplate.
+But, what goes in here? Well, what goes
+in here is the fixed belief that I have.
+So, this is beta negative I
+and this is beta negative I.
+So, given the belief beta negative I, I
+can compute my expected utility from any
+And we say that strategy SI
+is a best response to my belief if the
+expected utility I get from SI is weakly
+larger than the expected utility I get
+from any other strategy SI prime.
+Now, let's go back to the question that
+was asked earlier. Can I have multiple
+best responses to a belief?
+Is that possible? Can two strategies
+both be best responses to the same
+belief?
+Yes. So, this sort of goes back to the
+suggestion before. If I had two
+strategies SI and SI prime that gave me
+exactly the same utility no matter what
+my opponents did, then it's possible for
+them both to be best responses. In fact,
+they could both be best responses even
+if they didn't give me exactly the same
+utility, but the expected utility was
+the same. So, um
+let's note here.
+There can be
+multiple best responses
+to the same belief.
+If we wanted there to only be one, we
+sometimes might use the phrase strict
+best response to say this is a best
+response and nothing else is a best
+response. Uh but we'll generally just
+use the weak sense.
+Okay, let's try to
+understand this graphically.
+I think there's space.
+Maybe let's do this over here. So, let
+me
+just erase this.
+Yes, so delta is the space of lotteries
+over the set. Yeah.
+And let me actually just erase this to
+get myself a bit more space.
+So, let's try to understand best
+responses in this game.
+Best responses to what? Well, best
+responses for player one to player two's
+to to player one's belief about player
+two's strategy.
+So, what we want to do is we're going to
+draw some payoffs here. So, I'm going to
+put
+I'm going to draw a graph here where on
+the horizontal axis
+I'm
+Maybe it's better if I put P on R. So,
+let me just
+switch this so that we're geometrically
+better.
+So, I can describe my belief by my
+probability on L or my probability on R.
+It's more convenient to put it the
+probability on R
+because then the graph is going to move
+left to right, and that's going to be a
+bit better.
+So, P down here is the probability on R.
+And I'm going to draw this graph from
+zero to one.
+So, if P equals one, then I'm certain
+that my opponent is playing R.
+If P equals zero, then I'm certain that
+my opponent is playing L.
+And say if P is one half, then I think
+it's equally likely that my opponent
+plays L and that my opponent plays R.
+You can see why I switched things that
+we move from left to right I think is a
+bit more intuitive.
+&gt;&gt; Okay.
+And now to think about best responses, I
+basically want to plot each of these
+functions.
+I want to say, if I play T,
+what is my utility from T as a function
+of the belief that I have about my
+opponents?
+So, let's start.
+Let's put -1, 0, 1, 2.
+If I play T,
+well, if my opponent plays L, I get a
+payoff of two.
+So, that means if I'm certain that my
+opponent is going to play L,
+if that's my belief, then my payoff
+better be two.
+So, we're going to get a point up here.
+And if I'm certain that my opponent is
+playing R, then I get a payoff of -1.
+So, it better be
+that we get a point like this.
+And it turns out, we could calculate it,
+but it turns out expected utilities are
+always linear in my beliefs. So, once we
+know these two points, we can just fill
+it in.
+It's going to be a line like this.
+So, this is
+U1
+of T P.
+And remember, if you did the formula
+earlier in your notes, we've switched P
+to 1 - P. So, the formula in your notes
+was for the old convention.
+So, that no longer applies.
+What about B?
+Well, B is kind of symmetric, right? If
+I play B, then if I know my opponent is
+playing left, I get -1.
+And if I know my opponent is playing
+right, I get two.
+I'll test my drawing skills here.
+And it's going to be linear.
+So, we're going to get something like
+this.
+What about M? What is the graph of M
+going to look like? It's going to look a
+bit different, right?
+What will that line look like? Yeah?
+It's just a horizontal line at zero
+because if I play M,
+whatever my opponent does, I get a
+payoff of zero. So, whatever I believe
+my opponent's doing, I'm going to get a
+payoff of zero.
+So, now we have a horizontal line
+here at zero. And if we're careful, this
+intersection should be at one half.
+You can check that.
+Guys, let me finish writing these out.
+So, to be clear, each of these is a
+different function of P. We have three
+different functions of P where P is a
+number between zero and one. And I've
+graphed all three of the functions here.
+So, from the graph, we should be able to
+say a lot about best responses.
+Can anyone read off from the graph what
+my best response is?
+Let's go through it, right?
+Let's fix a belief.
+A belief is some point on the horizontal
+axis, right? Now, once I fix that
+belief, if I want to understand my
+payoff from my different strategies, I'm
+going to draw a vertical line upwards.
+And as I pass up through that vertical
+line, each curve I intersect is telling
+me my expected payoff from that
+particular strategy given this belief.
+So, at this point, what it tells me is
+my lowest payoff is from B.
+M gives me my middle payoff.
+And then T gives me the highest payoff.
+So, at any beliefs where the highest
+curve is T, T is my best response.
+At any beliefs where B is the highest
+curve, B is my best response.
+So, let's look at this. Let me see, I
+should have gotten out the colored
+chalk.
+It'd be nice if I had it.
+Hmm, maybe no colored chalk today.
+Ah, yes.
+So, what I'm actually going to do, the
+easiest thing to do is I'm going to
+shade in what's sometimes called the
+upper envelope. I'm going to go through
+all these curves, and I'm going to look
+at what's highest. So, if I'm here, this
+is the highest curve.
+Comes down.
+Here it changes. Now this becomes the
+highest curve, right?
+I get something like this.
+So, now
+you can see down here.
+Can anyone now read off from the graph
+what my best responses are as a function
+of my beliefs? So, when is T a best
+response?
+For which beliefs is T a best response?
+Yeah? From zero to one half, probably
+you choose R.
+And then from one half to one, it's
+going to be T. And then at
+one half, you could play either. Great.
+So, exactly right. And a And a key point
+to make at the end, these are inclusive.
+So, at half, I actually have two best
+responses. T and B are both best
+responses at a half as you pointed out.
+And if my belief is below a half, then T
+is the unique best response or the
+strict best response.
+And if P is above a half, then B is the
+unique best response or the strict best
+response.
+Great. Does this make sense? Well, yes,
+right? Because T does really well if my
+opponent plays left.
+So, if my probability on right is small
+enough, and I think it's likely enough
+that my opponent is playing left, then T
+is the best option.
+If it's likely enough that my opponent
+is playing R,
+then B is the best option, and we see
+that B is the best response. Is a best
+But now we have sort of a
+predicament, which is, what about M?
+M is not a best response to any belief.
+Does this mean we shouldn't play M? What
+do you think about M?
+Would you ever play it?
+If you're super uncertain about your
+beliefs, to be very risk averse to
+picking one, you could consider M.
+Okay, we have to be really careful with
+those words. Um
+What you're describing is something
+important that we're not going to cover
+in this class, which is called ambiguity
+aversion. So,
+I don't want to go too far down this
+path, but um we're going to stick with
+expected utility, and
+uh risk aversion would not actually
+cause you to choose M. Something called
+ambiguity aversion would, but we're not
+going to talk about that. So, we're
+imagining that we have our beliefs well
+defined about how the other person is
+doing. Um So, I think it's actually fair
+to say I don't really want to play M.
+There's no belief against which M is a
+best response.
+But, I think it's natural to think back
+to dominance, right?
+What we said before is you might want to
+throw out a strategy if it's dominated
+by another strategy.
+But now we're in this kind of weird
+middle ground where a strategy M is not
+a best response to any belief,
+but it's also not dominated by any other
+And that is kind of a weird conundrum.
+But we're going to show that in fact, M
+is dominated. We just have to be a
+little more careful. Can anyone see a
+sense in which M is
+dominated? Is there anything I could do
+that would always do better than M?
+Yeah? Like a mixed strategy that
+basically varies on whatever P is. If P
+is like
+zero to one half, you just play T.
+Otherwise, you play B. That strategy
+dominates M.
+Okay, so I like the first part of what
+you said about a mixed strategy, but
+crucially with a mixed strategy, we
+can't vary our mixing probability based
+on
+our belief. But But the mixed idea is
+crucial. So, what if I said, instead of
+taking choosing strategy M, I'm going to
+flip a coin. Do you want to add
+something? Okay. Imagine I flipped a
+coin,
+and if the coin is heads, I'm going to
+play T.
+So, consider
+the strategy which we'll call half T
+plus half B.
+What does this mean? I'm going to flip a
+coin.
+If it's heads, I play Well, if it's
+heads, I play T, that's really weird. If
+it's tails, I play T. If it's heads, I
+play B. Okay?
+If I were to do that,
+let's let's add this strategy down here,
+right? So, this is half T
+If my opponent plays L,
+what is my payoff from this mixed
+strategy where I flip a coin?
+It's my expected payoff. Well,
+with probability half I play T
+and I get two.
+With probability half I play B and I get
+negative one.
+So, my expected payoff is half of two,
+which is one,
+plus half of negative one, which is
+minus a half, and if I add it up I get
+one half.
+And now let's go to this side.
+If I do my same coin flip,
+with probability half, I'm going to get
+With probability half, I'm going to get
+two.
+So, maybe I'll do the addition here,
+right? It's half
+times two
+plus half times negative one. It's kind
+of easier to distribute and say, well,
+two minus one is one, so it's half times
+one, which is one half.
+Well, now is M dominated?
+So, in this case we see that M is not
+dominated by any pure strategy, but it
+is dominated by what's called a mixed
+strategy. There's a way I can flip a
+coin
+so that if I flip a coin in this way,
+well, if my opponent plays L, I get half
+from this mixed strategy and I only get
+zero from M.
+And if my opponent plays R, I get half
+And in fact, whatever belief I have
+about what however my opponents play, I
+do strictly better under this mixture.
+We could even write down the payoff of
+this mixture. It's actually going to
+look exactly like this.
+If we wanted to say, what is my expected
+payoff
+from this mixed strategy as a function
+of my belief? So, what I have here, let
+me put it a bit separate, is U1
+of half T
+plus half B, comma P. So, this says, if
+I believe my opponent is playing right
+with probability P, and I flip a coin
+and play T with probability half and B
+with probability half, what is my payoff
+going to be? And you can see the
+dominance relation because this is
+always higher than this.
+So, do we think that people really play
+mixed strategies in practice?
+We can debate about it, but I want to
+point out that this kind of resolves
+this seeming paradox at first. Where on
+the one hand M was never a best response
+to any belief, so it seemed like a
+really bad strategy, but we couldn't
+directly show what would always be
+better than it.
+By using mixed strategies, we can. We
+see that in fact M is dominated. It's in
+fact strictly dominated, just not by a
+pure strategy. It's strictly dominated
+by a mixed strategy. So, let's formally
+define a mixed strategy. It's sort of
+what you would think, but um
+I'm going to be careful.
+So, what is a mixed strategy? It says,
+well, just like a belief, it's a
+probability distribution or a lottery,
+but it's not a lottery about other
+people's strategies, it's a lottery
+about my own strategy, right? So, a
+mixed strategy for player I
+is a function
+or is a probability distribution
+We often use the notation sigma I. So,
+we use SI for a pure strategy and sigma
+I, it's like the Greek version of S, we
+use that for a mixed strategy. Well, now
+it's going to be a function from SI to
+zero one
+that says, for each possible strategy,
+what is the probability that I play that
+strategy? But once again, we need
+another condition for this to make
+sense. The probabilities have to sum up
+to one, right? So, it's a function
+satisfying
+Well, if I sum over all my strategies,
+the probability I put on that strategy,
+that better sum to one.
+And I asked before, do people ever play
+mixed strategies? In a lot of economic
+contexts, they don't, but there's
+actually one domain where mixed
+strategies are crucial. Does anyone know
+what's the domain where
+people are very careful to play mixed
+strategies?
+Or are there times where you've played a
+mixed strategy?
+Rock, paper, scissors is is a good one.
+Um and if you played in rock, paper,
+scissors competitions, yeah, that would
+probably be really important. There's
+another domain where people make a lot
+of money that where randomization is
+also important. Yeah. Poker.
+Professional poker, right? So,
+professional poker players are extremely
+good at randomization and they train to
+randomize well. Humans are very bad at
+randomizing naturally and there's all
+these techniques professional poker
+players make. 15 years ago, you could
+play poker and win money without being
+good at randomizing. Today, you would
+just get destroyed. Because the best
+players are extremely good at
+randomizing and they study game theory
+and they randomize extremely carefully.
+Uh and basically the people who are
+better at randomizing with exactly the
+right probabilities win a lot of money.
+Um so, poker is a great example of mixed
+strategies that really happen. If I
+taught this course 20 years ago, it
+would be hard to come up with an example
+of people playing mixed strategies and
+now the the sort of reality has caught
+up to the game theory and now there's a
+lot of people make a lot of money uh by
+mixing.
+Okay. So, now let's
+move on a little bit and try to
+understand how general this phenomenon
+is. So, I want to make one observation
+here and then we want to try to see how
+general that is. So, if you're
+approaching a game like this
+and you're player one, there's kind of
+two ways you could go about it. If I
+were to ask you, what is a reasonable
+strategy to play?
+You could say, well,
+so, let me say, let's look at player one
+and I'll just say which strategies.
+Well, one thing you could do is you
+could start with the sort of the good
+strategies, okay? And maybe I'll call
+them the reasonable strategies.
+This is not really a formal term, but
+I'll just say reasonable strategies.
+And these would be the strategies that
+are best responses to some belief.
+So, I don't want to think too much for
+for the moment about how you form your
+beliefs, but let's just say,
+is there some belief I could have that
+would make this a best response?
+So, in this game, we saw in the graph
+which strategies in this game are best
+responses to some belief. So, which
+strategies are reasonable in this sense?
+T and B, right?
+So, I might say, look,
+I have three strategies, but the
+reasonable ones are T and B, right?
+Another way you could approach it though
+is instead of looking for what you
+should do, you could try to look for
+what you don't want to do and avoid
+that. So, I could say, what are the
+unreasonable strategies?
+And by an unreasonable strategy, I mean
+a strategy that's strictly dominated
+by some other strategy, possibly mixed.
+Now, technically I only defined
+dominance for pure strategies, but
+everything makes sense if I just replace
+the SIs with uh sigma Is and I interpret
+these utilities as expected utilities.
+So, in this game, what are the
+unreasonable strategies? What are the
+strategies I could throw out by saying
+they're dominated by something else?
+M. Just M, right?
+So, notice here there's two different
+ways to get to the same answer. I could
+say, let me only consider strategies
+that are best responses to some beliefs.
+I would go through and I would just get
+T and B.
+Or I could kind of do the inverse. I
+could say, let me throw out all the
+strategies
+that are dominated, that are strictly
+dominated by something. I would throw
+out M and I'd be left with just T and B.
+And the question is, is this a
+coincidence? Is this a special property
+of this game? Or is this more generally
+true that we can always split our
+strategies into two groups?
+Those that are best responses to some
+belief and those that are strictly
+dominated by some mixed strategy.
+And it turns out this is a very general
+property and that'll be sort of the
+first theorem that we state in this
+course.
+So, let me
+state the theorem.
+So, here's our
+theorem.
+We need some assumptions, so let's say
+we're in a finite strategic form game.
+Finite just means the set of strategies
+for every player is finite and there's
+finitely many players.
+So, for each player I
+and each strategy SI
+So, before I write it, let's just
+understand. We fixed our finite
+strategic form game.
+We're considering a particular player I
+and a particular strategy SI.
+And what we want to argue, what we want
+to say, is that this strategy
+falls in exactly one of these two
+categories.
+It can't be in both
+and it can't be in neither.
+So, what we say is exactly one of the
+following holds.
+Exactly one means not both and not
+neither.
+And one is that this strategy SI is
+reasonable in this sense.
+Meaning what? SI is a best response to
+some belief.
+And when I say belief, what is that a
+belief about? It's a belief
+Maybe I'll say over
+S negative I. Let's remind ourselves
+when player I forms beliefs, they form
+beliefs over the strategy profiles of
+the other players.
+And then the other case is SI is
+strictly dominated.
+By what? Well, by some mixed strategy
+and we have to allow mixed. If we only
+allowed pure strategies, we already saw
+up here that the theorem wouldn't be
+true because there are strategies that
+are never best responses, but are not
+dominated by any pure strategy. So, we
+have to allow for mixed strategies.
+SI is strictly dominated by some mixed
+And of course, when I say strategy, that
+has to be a strategy of player I because
+player I is compares two different
+strategies when they look at strict
+dominance. But wait a second, I said SI
+is strictly dominated by some mixed
+strategy. What about pure strategies?
+Am I including those?
+Why?
+Exactly right. So, every pure strategy
+is a mixed strategy
+but not every mixed strategy is a pure
+So, as long as I cover mixed strategies,
+in particular I'm including the mixtures
+that put all the probability on a single
+strategy which are simply pure
+So, if we want to say that I'm not doing
+that, sometimes we say properly mixed
+strategy or non-pure mixed strategy, but
+here we're allowing
+all kinds of mixed strategies including
+the ones that are just pure strategies
+in disguise.
+And again, I think the interpretation of
+this is that there are two
+very natural ways of thinking about a
+game and which strategy someone might
+play. I think it'd be very natural to
+say it's reasonable to play anything
+that's a best response to some belief.
+And it would also be natural to say
+here's what you should do. Just don't
+play anything that's strictly dominated
+by something else.
+And if those two approaches gave us
+different answers, we have to really
+think hard about which one was more
+reasonable.
+But it turns out these are literally
+going to give us the same answer.
+So, you can think positively about
+what's the best response to something
+or you can think negatively about what's
+strictly dominated by something
+and either way, you're going to get the
+same two groups of strategies, the good
+ones and the bad ones.
+Um let me say a little bit about how we
+prove this.
+The proof won't be
+covered on exams, but I want to
+give some idea.
+So, what's the argument?
+Proof.
+Well, how do you show that exactly one
+thing happens?
+You have to show that both can't happen
+and neither can't happen. So, another
+way of saying it is
+at most one
+So, at most one of these two things can
+be true
+and at least one.
+So, to say at most one of the statements
+is true
+is another way of saying both statements
+can't be true.
+Right? At most one, not two.
+At least one
+is a way of saying it can't be the case
+that neither is true.
+Right? At least one, either one or two,
+but not two.
+And by one or two, I mean
+the number maybe I'll call these A and B
+to avoid confusion.
+I'm talking about at most one meaning
+the number of statements that are true,
+not the labels of the statements.
+So, one of these directions is more is a
+bit easier.
+One of these is is quite tricky. Does
+anyone see one that they think is kind
+of intuitive and they could maybe
+you know, I won't ask you for the proof,
+but could kind of reason through on
+their own?
+At most one. So, this is the easier
+direction, and not not easy maybe, but
+easier. And what's your kind of
+intuitive argument? I won't we won't
+give a formal one, but um
+We're going to get a contradiction,
+right? So, if both were true, you're
+saying this is the best we can do
+against some belief but there's
+something else that is strictly better
+whatever my opponent does. Well, if it
+does strictly better whatever my
+opponent does it should also do strictly
+better given my belief. But that means
+the other thing couldn't be a best
+response. So, I think it's pretty
+intuitive. I'd encourage you to work out
+the algebra on your on your own. I think
+this is a good exercise to do at home.
+Uh the at least one is a lot harder and
+that I wouldn't expect you
+to be able to figure out at home. There
+is a proof given in the appendix of the
+lecture notes. And actually, let me
+clarify. I said I won't test you on the
+proof, but I could test you on this part
+of the proof. I think that's the top is
+fair game, the bottom is not. Let me be
+clear about that. Uh so, the bottom for
+the harder part uh see appendix.
+And it uses a mathematical result called
+either the separating hyperplane theorem
+which you may have heard of
+or something called Farkas' lemma is
+also my preferred way of proving it.
+And just to see why this is harder well,
+if SI we want to show at least one is
+true. So, we have to say if SI is not a
+best response to some belief then it's
+strictly dominated by something.
+But that means the proof requires you to
+construct something and that's what's
+hard. All we know is it's not a best
+response to any belief but how do we
+know what dominates it?
+Well, how do we come up with that?
+That's pretty hard. So, this theorem
+gives you a way of constructing either
+the belief you need or the
+dominating strategy that you need and
+that's that's much more involved, so
+that won't be covered in the course, but
+I encourage you to read the appendix if
+you want to see that.
+And uh let me stop there and I'll see
+everyone next week. Good luck on the
+quiz uh tomorrow.

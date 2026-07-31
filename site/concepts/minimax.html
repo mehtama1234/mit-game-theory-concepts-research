@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minimax · MIT Game Theory Concept Lab</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+    <nav><a class="" href="../index.html">Overview</a><a class="active" href="../concepts.html">Concepts</a><a class="" href="../themes.html">Themes</a><a class="" href="../families.html">Method Families</a><a class="" href="../primitives.html">Primitives</a><a class="" href="../evidence.html">Evidence</a></nav>
+  </header>
+  <main><section class="page-head"><p class="eyebrow">equilibrium reasoning</p><h1>Minimax</h1><p>Choosing a strategy by protecting yourself against the worst response.</p></section>
+<figure class="learning-diagram concept-flow">
+  <figcaption>First-Principles Map</figcaption>
+  <div class="flow-steps"><div class="flow-step"><span>Problem</span><p>The problem is choosing under hostile response: what can I guarantee if the other side tries to hurt me as much as possible?</p></div><div class="flow-step"><span>Constraint</span><p>Minimax exists because in zero-sum conflict, optimism is dangerous. The opponent is not nature; the opponent is choosing against you.</p></div><div class="flow-step"><span>Math Handle</span><p>The object is a security calculation: maximize the minimum payoff you can be forced to accept, or minimize the maximum damage the opponent can impose.</p></div><div class="flow-step"><span>Failure Mode</span><p>Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The student trap is confusing minimax with being pessimistic about nature. In the course setting, the bad outcome comes from another strategic player choosing intelligently against you.</p></div></div>
+</figure>
+<section class="treatment"><h2>What real-world problem is this about?</h2><p>The problem is choosing under hostile response: what can I guarantee if the other side tries to hurt me as much as possible?</p><h2>Why does this problem exist?</h2><p>Minimax exists because in zero-sum conflict, optimism is dangerous. The opponent is not nature; the opponent is choosing against you.</p><h2>What is the mathematical idea underneath?</h2><p>BR_i(a_-i) is the set of actions for player i that maximize u_i given others&#x27; actions. The useful relation is `BR_i(a_-i) = argmax_a u_i(a, a_-i).`. In plain language: argmax means choose the action a that makes player i&#x27;s payoff as large as possible when others choose a_-i.</p><h2>Why is this concept important?</h2><p>This concept matters because it turns a loose strategic story into a checkable claim about what someone would actually choose.</p><h2>What breaks without it?</h2><p>Without this concept, the analysis can name the players and choices but cannot tell whether the proposed behavior survives individual incentives. The student trap is confusing minimax with being pessimistic about nature. In the course setting, the bad outcome comes from another strategic player choosing intelligently against you.</p><h2>Worked Mini-Example</h2><p>A chess player does not evaluate a move by assuming the opponent will blunder. Minimax-style reasoning asks what survives the opponent&#x27;s strongest reply.</p><h2>Common Misunderstanding</h2><p>The mistake is to use minimax as a general decision rule in games that are not zero-sum or not adversarial in that strict way.</p><h2>How to Recognize This in a New Paper or Model</h2><p>Look for worst-case guarantees, security levels, or saddle-point reasoning.</p><h2>Connected Concepts</h2><p>The same primitive returns whenever the course asks whether a proposed behavior is compatible with incentives, beliefs, timing, or information. The principle reappears whenever the course asks for protection rather than hope. It is less about predicting a friendly average case and more about surviving an opponent who studies your weakness.</p><p class="chips"><a class="chip" href="best_response.html">best response</a><a class="chip" href="nash_equilibrium.html">nash equilibrium</a><a class="chip" href="mixed_strategies.html">mixed strategies</a><a class="chip" href="zero_sum_games.html">zero sum games</a></p></section>
+<section><h2>Transcript Evidence</h2><div class="evidence-stack"><article class="evidence" id="ev-minimax-01">
+  <h3><a href="../evidence.html#ev-minimax-01">ev-minimax-01</a> 00:20:36.360</h3>
+  <p class="meta">Lecture 7: Zero-Sum Games · <a href="https://www.youtube.com/watch?v=CBCf8iWKFZY">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> In Lecture 7: Zero-Sum Games, the course treats Minimax as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.</p>
+  <p><strong>Mathematical claim:</strong> BR_i(a_-i) is the set of actions for player i that maximize u_i given others&#x27; actions. The useful relation is `BR_i(a_-i) = argmax_a u_i(a, a_-i).`. In plain language: argmax means choose the action a that makes player i&#x27;s payoff as large as possible when others choose a_-i.</p>
+  <blockquote>if player one chooses the strategy that makes my loss as large as possible.&quot; So, makes my loss as large as possible.&quot; So, makes my loss as large as possible.&quot; So, we have a maximum here and a minimum we have a maximum here and a minimum we have a maximum here and a minimum here. here.</blockquote>
+</article><article class="evidence" id="ev-minimax-02">
+  <h3><a href="../evidence.html#ev-minimax-02">ev-minimax-02</a> 00:26:27.320</h3>
+  <p class="meta">Lecture 6: Imperfect Competition · <a href="https://www.youtube.com/watch?v=79Nqii6nQ5U">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> In Lecture 6: Imperfect Competition, the course treats Minimax as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do.</p>
+  <p><strong>Mathematical claim:</strong> BR_i(a_-i) is the set of actions for player i that maximize u_i given others&#x27; actions. The useful relation is `BR_i(a_-i) = argmax_a u_i(a, a_-i).`. In plain language: argmax means choose the action a that makes player i&#x27;s payoff as large as possible when others choose a_-i.</p>
+  <blockquote>And that&#x27;s kind of a a problem. We don&#x27;t think that demand is ever negative. So think that demand is ever negative. So think that demand is ever negative. So we&#x27;re going to write the maximum we&#x27;re going to write the maximum we&#x27;re going to write the maximum of 1 minus P and 0. of 1 minus P and 0.</blockquote>
+</article></div></section></main>
+</body>
+</html>

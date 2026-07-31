@@ -1,0 +1,2108 @@
+So today we're going to continue
+with what we did last week
+and we're going to talk about something
+called rationalizability.
+And I'll say up front that I think today
+is the first class where maybe there'll
+be a bit more notation, a bit more math.
+So if anything's unclear, if some
+notation isn't clear, feel free to ask
+me questions cuz there's probably other
+students who also find it unclear.
+So first let's remember or recall
+how we defined a strategic form game.
+So remember a strategic form game
+specified the strategy sets for all of
+the players and also the payoffs for all
+of the players.
+So one way I'll often write it
+is U
+from S1
+SN
+to RN.
+So what does this mean?
+This U function assigns to every profile
+of strategies some vector of payoffs.
+That specifies each of the N players'
+payoffs. So with this notation, we might
+think of a strategy profile S
+is going to get mapped to a vector U of
+S, which is just all the payoffs the
+players get put together in a vector. So
+we have U1 of S
+all the way up to UN of S.
+This tells us player one's payoff if the
+profile of strategies that's played is S
+all the way up to player N's payoff if
+the profile of strategies that's played
+is S.
+And I'll point out here that
+we're generally going to use lower case
+U throughout the course. So in the first
+couple of lectures, we made this big
+deal, I which I think correctly so,
+about the distinction between the von
+Neumann-Morgenstern utility which was
+defined over consequences
+and then expected utility that was
+capital U and that was defined over
+lotteries, over consequences.
+But throughout the course, as we start
+talking about beliefs and mixed
+strategies, it gets a little cumbersome
+to think, you know, every time should
+this be capital U or lower case U?
+So I'm throughout the course from here
+on out going to always use lower case U
+with the understanding that that can
+represent expected utility if there's
+any
+um beliefs or mixed strategies or moves
+by nature in the extensive form. But as
+we get to more complicated things, it's
+just a little less clear when it's big U
+and little U. So I'm just going to stick
+to little U as long as we understand the
+conceptual distinction.
+So what we talked about last time is
+which strategies were reasonable to
+play. So last time we talked about
+strategies that were reasonable
+and I'm I put reasonable and
+unreasonable in quotes because I don't
+mean these in really formal terms. I'm
+just being a little informal here.
+But let's remember
+we called a strategy reasonable for a
+player
+if it was a best response to some
+belief.
+So I'll say BR for best response to some
+And let's remember what a belief is.
+A belief that player I has is a belief
+about the strategies chosen by all of
+the other players. So whenever I talk
+about player I's belief that's a belief
+about the partial profile of strategies
+played by the other players.
+And then we alternatively said we can
+think of a strategy as unreasonable
+if it is strictly dominated
+which we defined last week.
+And crucially it wasn't enough to just
+think about strict dominance by another
+pure strategy. We had to consider strict
+dominance by mixed strategies. So if
+it's strictly dominated by some mixed
+strategy.
+And what we showed last week is that
+these are two sides of the same coin.
+Either a strategy is a best response to
+some belief
+or
+strategy, but every strategy falls into
+exactly one of these two categories. So
+you can take a positive view and say, I
+only want to play a strategy that's a
+best response to some belief or you can
+take the negative view and say, I don't
+want to play a strategy that's strictly
+dominated by some mixed strategy and
+either approach you take is going to
+give you the same set of strategies.
+So today we want to be maybe a little
+more formal.
+I don't really love this terminology,
+but we'll use it and we'll say that
+we'll say what it means for a player to
+be rational
+in this context. We'll say player I is
+rational
+well, if player I plays a strategy
+that's in this good collection of
+strategies or equivalently is not in
+this bad collection of strategies. So
+I'll say player I is rational
+if she plays
+a best response to some belief.
+That is the strategy she chooses is a
+best response to some belief about the
+other players' strategies.
+I want to be a little careful using the
+term rational. This is a a word that's
+used in a lot of different ways in a lot
+of different contexts, but in this
+specific context of game theory, this is
+usually the term that's used, so I'm
+going to use it, but I warn you that in
+other game theory courses you might take
+or other things you see, rationality can
+be defined to mean different things cuz
+it's an important, difficult concept.
+But let's look at this definition.
+And it's restrictive in that the player
+must be playing a best response to some
+belief. So the best response part of it
+is what imposes some restriction.
+But notice there's no restriction on the
+belief here.
+So the res- the assumption or the
+restriction of rationality by himsel- by
+itself is a very weak requirement
+because it doesn't constrain or
+discipline the beliefs that player I
+forms about the other players'
+strategies. So this is purely about
+player I's rationality and it says
+nothing about the other players'
+rationality.
+But let's think a little bit
+and let's say
+what if not only is player I rational
+but what if player I
+knows or believes that the other players
+are rational, too?
+Would this change the way that player I
+might play or would this impose any
+additional restrictions? What do you
+think? What might change if player I, in
+addition to being rational herself also
+knows that the other players she's
+playing against are rational?
+Yeah.
+Uh it changes
+beliefs that the player I knows that the
+other players are limited in their
+strategy
+&gt;&gt; [snorts]
+&gt;&gt; Exactly. Right. So uh do you want to say
+more or yeah? Yeah. Yeah, great. So I
+just didn't want to cut you off. Um
+exactly. So before we had no
+restrictions on beliefs. We said all
+player I is going to do is they're going
+to play some best response to a belief,
+but we don't know where that belief
+comes from. But now if player I knows
+that the other players are rational,
+they shouldn't form a belief that
+assigns positive probability to a really
+weird, bad strategy that a rational
+player wouldn't play.
+So the idea here is that this is going
+to
+restrict
+or constrain
+the beliefs that player I should or
+reasonably would form about others.
+Constrain beliefs
+about other strategies.
+And do we stop there? Are we done or can
+we keep going?
+Yeah. Then I guess the other players,
+from their perspective, would update
+based on player one playing what they
+believe is player I's strategic
+Right. So you might think, okay, now not
+only
+is it relevant if I know that the other
+players are rational, but do I know that
+the other players know that I'm
+rational?
+Because if the other players know that
+I'm rational, that's going to affect the
+beliefs that they form about my strategy
+and therefore affect further restrict
+the way they might play and therefore
+further restrict the beliefs that I
+would form about them. Now I think you
+can see pretty soon this is going to get
+pretty complicated and just writing it
+in words is going to become cumbersome.
+So now we're going to try to take a
+formal approach to this kind of
+reasoning that captures what's often
+called
+higher order knowledge of rationality.
+So first order knowledge of rationality
+means I know other people are rational.
+Second order knowledge is I know that
+they know that I'm rational. And third
+order, I know that they know that I know
+and we can see how this goes on and on
+and on and we want to capture these
+higher degrees of knowledge about
+rationality in order to make more
+precise or sharper predictions about
+play in the game.
+So let's go through this is a bit
+abstract. So let's go through an example
+to try to convey this idea and this is
+going to be the same example we did last
+class, but we're going to add in the
+payoffs for player two as well. So we're
+going to have
+game like this.
+Remember player one is always the player
+who chooses rows and player two is
+always the player who chooses columns.
+We always put player one's payoffs
+first. So, we're going to have
+2 0
+-1 1. Copy from my notes here.
+So, last week
+we used these same payoffs for player
+one, but we didn't specify any payoffs
+for player two when we talked about this
+game. And just as a reminder, we
+represent the game in this nice normal
+form, what's sometimes called a
+bi-matrix cuz it's a matrix of numbers,
+but each entry has two numbers, so bi
+for two.
+Uh but let's remember what's going on
+here. S1, the set of strategies for
+player one, are just the rows of this
+bi-matrix. So, we have
+top middle and bottom.
+And S2
+for player two is just left and right.
+Okay, so let's try to start going
+through this procedure of
+So, let's first think about well, if
+player one is rational, what strategies
+might they play?
+And a good way of going about this
+that's sometimes helpful is to say, well
+we know that rationality is a bit
+complicated because we have to consider
+all possible beliefs about the other
+players.
+But let's start with the simpler beliefs
+where we know what strategy the other
+player is playing.
+So, if I'm player one
+and I know that my opponent is playing L
+then I can just look down and say, well
+I get two if I play T
+I get zero if I play M and I get -1 if I
+play B.
+So, the best response for me as player
+one is to play T.
+And we often denote that by underlining
+the first entry here.
+So, the fact that we're underlining
+player one's payoff means we're thinking
+about player one's best response to
+player two's strategy.
+And the fact that it's in the first
+column
+tells us we're thinking about player
+one's best response to player two
+playing L.
+Now, let's do the same thing if player
+two plays R.
+If player two were to play R, then
+player one knows that they get -1 if
+they play T
+zero if they play M
+and two if they play B.
+Two is the highest number there, so
+we're going to underline this.
+And we can immediately see
+two strategies that are reasonable for
+player one.
+T and B.
+Now, the trickier part is are there any
+more? Does anyone remember? So, M here
+is not a best response to L or R, but we
+haven't actually checked if it could be
+a best response to a belief where I
+think you play L with some probability
+and R with some probability. Does anyone
+remember is M a best response to any
+belief that player one has? You're
+shaking your head. The answer is no, and
+why? What How do we know that?
+Yeah. There's a theorem
+theorem that says
+that
+&gt;&gt; [clears throat]
+&gt;&gt; either a strategy is a best response to
+some belief or it's strictly dominated.
+Exactly right. And you're saying that
+this is strictly dominated by something?
+Um
+It is. It is going to be strictly
+dominated by something. This is what we
+went over last week that was a bit of a
+while ago. We said that M is strictly
+dominated by the mixture of playing T
+with probability half and B with
+probability 1/2. That's something we
+checked last week.
+So, we know that the only {quote}
+reasonable strategies for player one
+are T and B.
+So, let's maybe
+think of that as step one.
+And when I say step one, I'm going to
+say, let's assume or suppose that both
+players are rational.
+And just from that assumption alone,
+what can we conclude about the
+strategies that might be played? So,
+player P1 and P2
+are both rational.
+Well, if they're both rational, we've
+said that that tells us something about
+what player one can play.
+So, I'll write S1' here to say, let me
+collect together the strategies that
+player one could play or might
+reasonably play if player one is
+rational.
+And in this case, we just get T and B.
+And now let's try to do the same for
+player two.
+So, let's go through the same procedure.
+Suppose I'm player two.
+Imagine player one is playing T.
+Then I get zero if I play left and one
+if I play right. Right is better, so I'm
+going to underline it. And notice here I
+underlined the second number
+because here I'm keeping track of the
+best response by player two to the
+beliefs they have about player one.
+And I'll do the same thing here. If
+player one plays M, I can get 10 or
+zero. 10 is higher, so I'll choose L.
+And if they play B, I can get -6 or
+zero. Zero is higher, so I come here.
+And we can immediately see that R is a
+best response to some strategy
+and L is a best response to another
+So, in this case we're already done
+because we already see that both of
+these strategies are reasonable.
+Each of them is a best response. In
+fact, in this case, not only to some
+belief, but to a belief that puts all
+the probability on a single strategy.
+So, here
+we'll say S2'
+equals L and R.
+And notice an important point here
+rationality doesn't always restrict the
+strategies that a player might play.
+In player one's case, player one's
+rationality does throw out one strategy.
+It threw out M because M was strictly
+dominated by another mixed strategy and
+was never a best response to any belief.
+But for player two, even if they're
+rational, we can't say much more. We
+can't say anything else about what they
+might play because what's best for them
+depends upon what player one does. And
+if player one plays T
+it's great for them to play R.
+And if player one plays M, it's great
+for them to play L. So, we can't rule
+out any strategies yet.
+So, that's kind of step one.
+Now, let's go to step two and impose a
+bit more
+you know, slightly strengthen our
+assumptions. Let's now say in step two
+we'll maintain our assumption that P1
+and P2 are both rational
+but we'll add the further assumption
+that each player knows that the other
+player is rational.
+So, I'll say and
+to remind you that I'm maintaining the
+assumption up here
+each knows
+that the other is rational.
+So, our numbers are kind of off here.
+This is we could call that step zero,
+but this is first order knowledge of
+rationality here in step two.
+So, now let's
+maybe write S1'' to be prime
+to be the strategies that player one
+could play if player one is rational and
+knows that the other player is rational.
+So, if player one knows that player two
+is rational
+what can they conclude from that?
+Well, in this case actually not much.
+They know that instead of the player
+playing something in here, they're going
+to play something in here. Well, those
+are the same. So, actually in this case,
+player one's knowledge of player two's
+rationality doesn't change things and
+we're actually going to get the same
+answer down here.
+We're going to get T and B.
+Because in this case, my knowledge of
+player two's rationality doesn't
+actually restrict the beliefs that I
+form.
+But let's do the second player. I think
+this will be a bit clearer.
+What about player two?
+So, now that player two
+knows that player one is rational, how
+does that change player two's beliefs?
+Yeah. Well, I'm going to play right
+Great. So, let's let's go through that
+slowly. So, if I'm
+player two
+if I know that player one is rational, I
+can reason through the way player one
+would behave and I can say, if player
+one is rational, they're only going to
+play T or B. Those are the only two
+strategies they could play.
+And then I'm going to look up and I'm
+going to say, okay if player one plays T
+then I'm better off playing R.
+And if player one plays B, then I'm also
+better off playing R.
+Now, we have to be a little careful here
+because I might also think, well
+maybe they'll play T with some
+probability and B with some probability,
+but it turns out even if they play those
+with some probability, you'd still be
+better off playing R. And the reason is
+that, well
+R is strictly better than L given T and
+strictly better than L given B. So, it's
+not too hard to check that if they
+formed a belief about those two things
+R would still be better.
+So, now
+we go down to R.
+So, what changed when we moved from step
+one to step two?
+Notice the set of strategies that we
+think player two might play or could
+play has gotten smaller.
+Not because player two is rational. We
+already assumed player two was rational.
+But what further restricted our
+prediction or sharpened our prediction
+was our assumption that player two not
+only was rational herself
+but knew that player one was also
+rational. And by thinking through how
+her opponent being rational might play,
+player two was able to restrict things.
+So, now let's see if we can go one step
+further.
+So, now it gets a bit cumbersome to
+write, but maybe I'll say step three
+is what? It's that and each player knows
+that each other player knows that the
+other player is rational. This is a a
+trickier to say, but
+and
+knows
+the other
+that they are rational. It's a bit
+sloppy, but
+So, if we if we read through this from
+player one's perspective, player one
+knows that the other player, player two,
+knows that they, player one, are
+And similarly, player two knows
+that player one knows that player two is
+So, we might If we want to write this in
+words, it's like one knows that two
+knows that one is rational, and two
+knows that one knows that two is
+rational. It's kind of two different
+statements here, and the arrows indicate
+knowledge, right? This is that two knows
+that one is rational, and this is that
+one knows that two knows that one is
+rational, and so on.
+And maybe now we'll call this S1 triple
+prime,
+and S2
+triple prime.
+Well, S2 triple prime is pretty easy
+because player two we've already
+narrowed it down to the only strategy
+they have left. So, that's just still
+going to be R.
+And that's not going to change.
+But what about player one?
+What is player one
+What is reasonable for player one to
+play given this second-order knowledge
+of rationality?
+Thoughts?
+B, right? Because now, if player one
+knows that player two must play R,
+then they look up and they say, "Well,
+if player two plays R, I've already
+actually underlined it.
+B is my best response to R.
+So, if I know that player two is playing
+R, then my best response is B."
+And notice here the structure of this
+when I go through the steps. We write S1
+triple prime and S2 triple prime next to
+each other.
+But what defines S1 triple prime is
+actually my knowledge that player two
+is playing a strategy in S2 double
+prime. And similarly, S2 triple prime is
+driven by player two's beliefs
+about what player one is going to play
+from S1 double prime. So, we're always
+kind of looking back to the step before.
+The step before pinned down how my
+opponent would play,
+and now adding one other layer of
+knowledge tells me that I know my
+opponent will play that way, and that
+may allow me to further restrict the
+strategy that I use. This kind of this
+crisscross pattern as we go down.
+And now we're done.
+Uh in this case, there's no strategies
+left uh to deal with, and we can check
+not a coincidence here that we have one
+strategy left at the end, one strategy
+profile left at the end, BR, and notice
+that both
+um B that both numbers in that cell are
+underlined, which reminds us that B is a
+best response to R, and R is a best
+response to B, which uh makes sense and
+and will hold a bit more generally.
+So, notice here that here
+this approach, or we might say
+rationalizability, or we haven't defined
+that yet, but let's say here um
+we get
+a unique
+prediction.
+When we apply this algorithm, um
+eventually we got to a point where each
+player only had one strategy left.
+But that doesn't always hold.
+So, let's emphasize this is not always
+the case, as we'll see later.
+But when this is true, we have a name
+for it. So, when we have a game where we
+can go through this procedure, and we
+get a unique prediction for each
+player's strategy, we call that game
+dominant solvable. So, when this does
+happen, it's not guaranteed, but when it
+does happen, we say the game
+is dominant solvable.
+Underline this.
+Why do we call it dominant solvable?
+Well, simply by reasoning about
+dominance. Remember, we often reasoned
+about best responses, but that's
+equivalent to reasoning about dominance
+by a theorem from last week. So, all we
+really needed to use is that players
+don't play strictly dominated
+strategies.
+They know their opponents don't play
+strictly dominated strategies. They know
+their opponents know that they don't
+play strictly dominated strategies. They
+know their opponents know that they know
+that their opponents know that they
+strategies, and so on. And simply by
+reasoning about dominance, we're able to
+{quote} {unquote} solve the game in the
+sense of identifying a unique prediction
+in the game.
+Any questions on on this so far?
+So, now we'd like to formalize this. We
+went through it in an example, but let's
+introduce the formal algorithm that uh
+is going to go through this procedure.
+So, this algorithm is called
+rationalizability.
+Or it has two names.
+So, it's either called
+rationalizability,
+and rationalizability is really a
+statement about the strategies that
+survive this algorithm. So, in this
+example, we would say strategy B is
+rationalizable for player B, and
+strategy R is rationalizable for player
+two. Sorry, player one and player two.
+But the procedure we use is often goes
+by a different name, which is the
+iterated
+elimination
+of strictly dominated strategies.
+And sometimes this goes by the acronym
+elimination of strictly dominated
+strategies,
+cuz it's a bit of a mouthful.
+But the idea
+at each step,
+we implicitly threw out the strategies
+that were strictly dominated. We
+eliminated the strategies that were
+strictly dominated, and we did this
+recursively or iteratively, and that's
+why we call it iterated elimination of
+strictly dominated strategies.
+To formally define this procedure, we
+need some notation, right? It was easy
+in this example to kind of work through
+it, but to do it more generally, we're
+going to need some general notation.
+So, we really need two um pieces of
+notation to start. So, let's consider
+player I.
+So, given player I,
+some collection
+of strategy profiles of the other
+players. So, we're given player I,
+and I'll say S negative I prime,
+which is a subset
+of S negative I.
+So, remember, S negative I is the
+collection of all profiles, or we might
+say partial profiles, of strategies of
+my opponents.
+And S negative I prime is just an
+arbitrary subset of those strategies,
+of those strategy profiles. So, it's
+just some collection of strategies that
+my opponents might play.
+And now we want to define two things.
+The first thing is BR I
+of S negative I prime.
+So, what this is going to be is the set
+of strategies
+for player I
+that are best responses to some belief
+about my opponent's strategies
+that only puts positive probability on
+strategies in here. So, let's go through
+this, right? Remember we said
+we have to think through what beliefs
+are reasonable, and we only want to keep
+track of strategies that are best
+responses to certain reasonable beliefs.
+So, let's define this a bit for more
+formally.
+First of all, the key thing about this
+is this is these are strategies for
+So,
+here as I said, I'm going to use
+some notation that maybe we haven't done
+before.
+I'm defining a set here,
+and the way I'm you building up the set
+using set builder notation is I'm going
+to say this set contains every strategy
+little SI in the set big SI that
+satisfies some additional property.
+So, this is kind of the universe of
+things I'm considering, and then I'm
+going to impose some constraints over
+here that narrow down which elements of
+this set I actually allow for.
+So, what does it mean for SI to be in
+here? Well,
+a strategy SI is in this set if SI
+is a best response
+to some belief
+beta negative I.
+Now, if I just stop there, we'd be back
+to what we did last week. We would just
+be thinking about being a best response
+to some belief.
+But now I want to impose the restriction
+on this belief. I want to say it's a
+best response to a belief
+strategies in this set, not any
+So, on some belief beta negative I
+satisfying
+Well, what's the way of saying this?
+Well, this belief assigns some
+probability to the opponent's strategies
+being in this set.
+And I'm going to require that that
+probability is one.
+beta negative I of S negative I prime
+equals one.
+So, it's not enough
+for a strategy to be a best response to
+some belief.
+It has to be a best response to a
+particular kind of belief.
+A belief that maybe puts,
+you know, it could put probabilities on
+different strategies in this set, but it
+can't put any probability on strategies
+that are outside this set. So, the
+interpretation of this is if I know that
+my opponents are only going to play
+strategies in this set,
+what strategies for me are reasonable?
+And it's exactly the strategies that are
+best responses to a belief that doesn't
+put any probability outside that set, or
+equivalently, puts all the probability
+on the strategies
+in this set.
+Now,
+we said from last week that there are
+two ways of thinking about this. We
+could think about what I should play and
+what I shouldn't play.
+So, now we want to look at the other
+side of the coin, which is what are the
+strategies that are strictly dominated
+by some mixed strategy.
+So, let's go here.
+So, what this stands for is
+strictly conditionally dominated.
+we talked about what it means for a
+strategy to be strictly dominated by
+another strategy, and it means some
+other strategy does better however my
+opponents play.
+But now we want to be a bit more
+permissive, right?
+Again, we're going to have the
+interpretation that I know
+that my opponent strategies lie in here.
+So, if I know that my opponent
+strategies are in here, I'm not going to
+for dominance, I'm not going to require
+a strategy to do better however my
+It's going to be enough if that strategy
+does better
+however my opponents play in this
+restricted set.
+And that's what the conditional
+dominance means. It means conditional on
+my opponents playing a strategy in this
+set,
+conditional dominance means one strategy
+always does strictly better than the
+other strategy. So, let me write it in
+words and then we'll
+be a bit more formal. So, again, this is
+a collection of strategies SI
+big SI
+such that
+SI is
+strictly
+conditionally dominated.
+Now, if I say conditionally dominated,
+strictly conditionally dominated, I have
+to say what it's conditional on, right?
+So, strictly conditionally dominated,
+I'll say given
+S negative I prime.
+So, that's my condition. The condition
+is I know my opponents are going to play
+something in S negative I prime, and I'm
+interested in conditional dominance
+given that condition.
+So, it's strictly conditionally
+dominated given S negative I by what? By
+some
+mixed strategy.
+And I think it's often tricky to get
+It's easy to get confused here.
+Is it dominated by a mixed strategy of
+player I's or player I's opponents? What
+should come here?
+Yeah. Player I. Player I, right? So,
+it's always player I's strategies that
+dominate player I's other strategies.
+The beliefs are about the opponent
+strategies, but the dominance relation
+is always between strategies by the same
+player because the player is only
+comparing their own strategies. So, by
+some mixed strategy
+sigma negative I.
+So, here's the definition, or here's
+Here's the definition of this set, but
+I've sort of cheated a bit because I've
+used a new word that I haven't yet
+defined.
+So, now I need to define that new word,
+right? What does it mean for SI to be
+strictly conditionally dominated given S
+negative I prime by some mixed strategy
+sigma I? Well, we already said it
+intuitively, it means that whatever
+strategy profile my opponents play in
+this set,
+sigma I is strictly better for me as
+player I
+than strategy SI.
+And now we just need to translate this
+intuitive idea into math, right?
+So, I'm comparing
+as player I
+what I get from sigma I
+to what I get
+from SI.
+And again here, we're using our
+lowercase U's, even though what I'm
+plugging in here is not a pure strategy,
+but a mixed strategy. But remember what
+we said at the beginning,
+the interpretation is that this is just
+my expected utility
+over the lotteries induced by this mixed
+Okay, so we're comparing sigma I to SI.
+We want SI to be dominated by sigma I,
+so we know the inequality has to go this
+way.
+And it's strict dominance, so it has to
+be a strict inequality.
+But we're not going to require this for
+every strategy of my opponents. We're
+only going to require it for the
+strategies that satisfy the condition,
+right? So, this is going to be
+S negative I
+S negative I, but for which S negative
+I?
+For all
+that are elements of
+Now, if there's two players, this is
+pretty easy. S negative I is just a
+strategy of my opponent.
+But if there's more than two players,
+remember, say there's three players,
+then S negative I, let's say I is one, S
+negative I specifies what strategy
+player two chooses and what strategy
+player three chooses.
+And in this case, S negative I prime is
+a collection
+of strategy pairs
+chosen by players two and player three.
+They're still choosing separately, but
+we're just putting them together
+mathematically into a vector.
+Are there any questions
+on this? Uh I think this is kind of a
+maybe the heaviest definition we've
+done.
+Any questions?
+Okay.
+Great. So, now
+let's try to maybe I'll move to a new
+board.
+Let's try to
+recall
+what our theorem said last week
+in this new notation.
+So, often when we introduce new
+notation, it becomes a lot easier to
+express ideas that we've already
+expressed.
+So, let's recall the the theorem
+from last week.
+Well,
+what we said is that a strategy is
+either a best response or it's strictly
+dominated. It's not both. But remember
+last week, we didn't worry about strict
+conditional dominance, we didn't worry
+about restricting beliefs.
+So, it was sort of a special case where
+S negative I prime was just S negative
+I. There wasn't any restriction on these
+things.
+So, our theorem from last week
+basically said two things.
+It said SI
+equals
+BRI
+of S negative I
+union
+SCDI
+Let's try to go through this
+in words. And first, let's think about
+what the union means.
+This is a set of strategies.
+This is a set of strategies. When I take
+the union, I'm thinking of the larger
+set that puts together things that are
+in either of those two sets. So, it's
+like I have two bags of strategies, and
+I pour them together into one big bag
+that contains all of the strategies.
+So, in words, this says
+every strategy in SI
+is either a best response to some
+Notice here, I'm not There's no prime
+here.
+So, this is a best response to an
+unrestricted belief.
+It would only have a restriction if I
+chose as S negative I prime a smaller
+set of strategies.
+Right?
+So, another way of saying this is
+if we go to this definition, well, if S
+negative I prime is just S negative I,
+then the fact that beta negative I of S
+negative I equals 1 is not a restriction
+at all cuz every belief assigns
+probability one to the set of all
+strategies, right?
+So, every strategy is either
+a best response to some belief
+or it's strictly dominated. And again,
+this means strictly conditionally
+dominated, but strictly conditionally
+dominated conditional on any possible
+strategy just reduces to strict
+dominance. So, strict dominance is a
+special case of strict conditional
+dominance. But this is only one part of
+the theorem. What What else did our
+theorem say? I mean, this says that
+every strategy is in one of these two
+sets.
+But it said one more There's one more
+thing we know about these sets.
+Yeah? Each strategy is in exactly one of
+the sets. Exactly one. So, what's
+missing here? What haven't we What does
+this allow for that that we we want to
+rule out? It allows for a non-empty
+intersection. Right. But what we know is
+that that can't happen. So, what we also
+know is that the intersection is empty.
+That is, no strategy is in both of these
+sets, right?
+So, this is sort of our at least one
+statement, and now we're going to just
+using the notation we said last week,
+this statement says that every strategy
+is in at least one of these two sets.
+But our second part of our statement was
+that every strategy was in at most one.
+What does it mean to be in at most one?
+It means you're not in both.
+So, what that means is BRI
+intersection SCD of S negative I
+is empty, and the math notation for
+that, I'll just write this.
+So, again, this is a collection of
+This is a collection of strategies.
+Should have an I here.
+And all this notation says in math is
+that no strategy is in both of these
+The intersection of these two sets is
+empty.
+It turns out though that this holds more
+generally.
+So last week
+we had the special case with S negative
+I where we didn't put any restrictions
+on these beliefs.
+It turns out this holds more generally
+if we put primes here.
+So this holds
+for any subset.
+So let's kind of
+work through this.
+We started with S negative I. Now we're
+using a smaller set of strategies. So
+let's try to understand what happens to
+these two sets.
+If S negative I prime
+gets smaller
+so I'm considering fewer strategies that
+my opponents might play
+what happens to these two sets?
+So this best response set, does this get
+smaller or bigger as S negative I prime
+gets smaller?
+Say again?
+I think someone had it. Yeah, smaller,
+right? So this gets smaller. Why? Well
+I'm not allowed as many beliefs, right?
+This is the set of all strategies that
+are best response to certain beliefs. If
+I shrink the set S negative I prime, it
+says I'm narrowing down the strategies
+that my opponents might play
+which narrows down the beliefs I might
+hold.
+So how many strategies do I have that
+are best responses to this smaller
+narrower set of beliefs? Fewer
+strategies. So this set is going to get
+smaller.
+What about this set? As S negative I
+prime gets smaller, what's going to
+happen to this set?
+It's got to get bigger, right? Well, one
+way I'll explain in a second. One way to
+see this is well
+the union is staying the same size. So
+if one gets smaller, the other has to
+get bigger, but let's think through it
+mathematically, right?
+A strategy is dominated by another
+strategy if that other strategy is just
+better no matter what happens in here.
+It gets easier to be dominated
+if there are fewer strategies that my
+opponents could be playing.
+So it's easier to be conditionally
+dominated if the condition is stronger,
+right? One way of thinking about it is
+just counting the inequalities, right?
+If S negative I prime is a really big
+set we have a lot of inequalities here.
+These inequalities have to hold for
+every element of this big set.
+If SI prime becomes a smaller set, there
+are fewer things to check. It's easier
+to be dominated conditional on a smaller
+set of strategies and therefore the set
+of things that are dominated gets
+larger.
+That's what we see here.
+And in the extreme case, maybe one thing
+to think through, in the extreme case,
+what if this just has
+a single element?
+So special case
+So what if S negative I prime contains a
+single strategy profile S negative I
+prime? So this is big S negative I
+prime.
+This is little S negative I prime.
+Then what happens to this set? What is
+this set going to be in words?
+Not quite. So it's actually just going
+to be the strategies that are best
+responses to this strategy. So remember
+before we got into all these fancy sets
+of strategies, we just defined what it
+is for one strategy to be a best
+response to another strategy.
+So if this set just has a single element
+in it it just says this is the the
+collection of strategies that are best
+responses to this particular strategy
+profile of my opponent.
+But then this gets tricky. Then that
+means this is everything that's not a
+best response
+to this strategy. So how does that work
+out? Why is everything else strictly
+dominated then? That seems a bit tricky,
+right? That seems like we have a lot of
+strategies in there.
+Remember strict conditional dominance
+given one strategy is really simple,
+right? All it means
+to be in this set is that some other
+strategy does strictly better
+given the strategy of my opponents.
+But that's exactly the same as saying
+this strategy is not a best response,
+right? If there's only one strategy of
+my opponents, either a strategy is a
+best response to my opponent's strategy
+or it's not meaning another strategy
+does strictly better given that strategy
+of my opponents and that's exactly what
+strict conditional dominance means in
+the special case. That may have been a
+little quick, sorry.
+Any any questions here? Yes. So
+is it always is it always strict that
+every time we basically make SI
+um
+when we like shrink SI S negative I
+prime
+that BRI S negative I prime is going to
+shrink or can it sometimes like stay the
+same?
+It could sometimes stay the same and and
+I mean one way to see that is
+uh
+well
+it's going to end eventually. So
+eventually we're not going to be able to
+take things out. That's one way of
+seeing it. Um but you're right, we'll go
+through an example like this. So um it's
+not always the case that
+at each step things will shrink. Uh but
+once nothing is thrown out, once
+everything stays the same for one round,
+then we're basically done with the
+algorithm. But we'll we'll talk about
+Okay, any more questions about these
+relations here?
+Okay, so now that we have our notation
+we can formally define our algorithm. It
+took us a while. We started by
+motivating it. We gave these
+definitions, but with these definitions
+we can write the algorithm in a really
+short clean way. So let's let's go over
+this.
+Okay, so here's our algorithm.
+Maybe I'll write it kind of in a more
+computer science-y way. So what's our
+input
+to the algorithm?
+The input is just a strategic form game.
+And I'll be a little more precise. Let's
+say a finite strategic form game.
+So
+and if I just write it like we did in
+the beginning, it's just a function U
+and maybe I'll write S to RN.
+And in a sense all of game theory is
+just studying
+functions like this, right? It's a
+function that says for every strategy
+profile the players choose what are all
+the players' payoffs? Right? And this is
+a vector that tells me player one's
+payoff, player two's payoff all the way
+up to player N's payoff.
+And you can see this simple function
+gives me everything I need to know.
+Because the N up here tells me how many
+players there are.
+The S here tells me all the strategy
+profile all the strategy profiles and
+therefore all the strategy sets for each
+of the N players. And then the function
+itself tells me all the payoffs. So
+that's really all I need to know.
+I should maybe I'll put a star by finite
+and I'll kind of say you know, what we
+often do throughout the course is when
+we talk about formal results, we assume
+things are finite to make sure nothing
+bad happens. The reason we do that is
+when you move away from the finite case
+there are some weird cases that can go
+wrong.
+But then we'll discuss a lot of examples
+that aren't finite, but where things are
+well-behaved and nothing goes wrong. So
+we will apply these ideas to the
+infinite case, but we just don't want to
+claim make any formal claims about the
+infinite case because you can come up
+with some really weird infinite
+discontinuous games where bad things
+happen. But uh
+we will, you know, if on an exam I say
+compute the rationalizable strategies in
+this game, you can't just say, "Oh, it's
+not a finite game. I'm not going to do
+it." Um you can't get out that easily.
+So we are we are going to apply these
+ideas to infinite games, but I'll
+formally define it here for the finite
+case.
+Okay?
+Uh so we're going to define things
+recursively. So let's start with kind of
+our maybe I'll call it the base case.
+And the idea is we just want to go
+through the algorithm we did before. We
+want to start with all the strategies
+and at each point we want to throw out
+strategies that we don't think players
+will play and we want to whittle down
+the set of strategies until we get to
+the the good ones at the end.
+So the base case
+we'll index things by K.
+So I is always going to index players. K
+will indicate the steps uh in this
+algorithm.
+So with K equals zero
+well, we just say SI0
+equals SI
+for all I equals one through N.
+So we haven't done anything here. We
+just said at step zero
+what strategies are left? Well, the
+strategies that we started with.
+And that's true for each of the N
+players. So we've done nothing so far.
+We've just formally um
+gotten the algorithm going. We've
+initialized things.
+And now let's look at the inductive
+step.
+If you haven't seen taken an algorithms
+course or seen proofs by induction, um
+or seen recursive definitions, it just
+means
+after we start with case zero, well,
+next we're going to go to step one,
+and then we're going to go to step two,
+and then we're going to go to step
+three, but it takes a long time to write
+out all those things. So, we're going to
+kind of reason at an arbitrary step.
+We're going to say, let's say we've gone
+through steps up to K,
+how are we going to perform step K plus
+one? And if you know how to go from K to
+K plus one, well, we already know how
+zero, so then we can go from zero to
+one, and then one to two, and then two
+to three, and so on.
+So, the inductive step, well, what's our
+starting point? We're imagining that
+we've already defined
+these sets up to stage K. So, what we
+have is we're given
+maybe I'll write it out.
+S1K
+all the way up to SNK.
+So, these are the strategies for player
+one that have survived the first
+the rounds up to round K. I guess we're
+starting at zero, so it's really K plus
+one of them, but the rounds up to K.
+And SNK is the set of strategies for
+player N that have survived so far up to
+round K.
+And what we want to do is to find which
+strategies are going to be left at round
+K plus one.
+So, what do we need to do?
+We're going to define
+maybe here
+say for each I
+plus one, right? So, before I write
+down the formula, let's just understand
+what we have.
+We have S1K through SNK.
+We want to define SIK plus one for every
+So, SIK plus one is the set of
+strategies for player I
+that survive up to round K plus one.
+Any ideas based on the notation we've
+done
+given so far what
+what could be here? I mean, intuitively
+we want to keep in all the strategies
+about our opponents that's consistent
+with what we've calculated so far.
+So, what we know at stage K is that it's
+only reasonable for player one to play
+something in here
+all the way up for player N to play
+something in here.
+So, given that knowledge that player I
+has, what is reasonable for player I to
+play at this kind of round of the
+algorithm?
+Any thoughts?
+Yeah. So, the BRI of
+S
+minus
+um the other minus I, yeah? Uh
+to the K. Exactly right. So, this is
+going to be
+of S negative I to the K.
+Now, let me first define what this is,
+right? So, I think we know what this
+notation is, but let's be clear, this is
+something like
+all the way up to S I minus one K
+times S I plus one K.
+SNK. I think that makes it seem fancier
+than it is. All it means is
+I know the S I know the strategy set at
+the Kth round for each of my opponents,
+and I just want to put all those
+together, making sure to skip myself.
+Because I'm player I, I don't need to
+form beliefs about my own strategies.
+So, this is
+you can think of it as or it exactly is
+the set of
+strategy profiles of my opponent such
+that each player's strategy in that
+profile lies in the corresponding
+strategy set that we got at the end of
+And more mathematically from our
+definition here, these are the set of
+strategies for player I that are best
+responses to some belief player I could
+hold that only puts positive probability
+on strategies that are in this special
+Now, there's another definition we could
+use using our theorem over here. How
+else could we define this step
+that would give us the same answer?
+Yeah. We could define the set as
+basically like S I
+the things that S D I S negative I
+K. Exactly. So,
+just like we always said, there's two
+ways we can do it. We can keep in what's
+good or we can throw out what's bad.
+So, we could also define it as
+everything in SI
+except so, when I use this set minus
+thing, I want to say the set of things,
+so everything that's in here, but not in
+here. And that's SCD
+I
+K.
+And our theorem over here exactly tells
+us
+that those two are the same.
+So, you could always use this
+definition, you could always use this
+definition, it's not going to make a
+difference.
+Uh this definition is maybe more
+consistent with the name iterated
+strategies. That's literally what we're
+doing here,
+but we could also say iterated retention
+of best response strategies, and that's
+basically what we're doing here. Though,
+I just made that up, that's not a a name
+that's used. Um but that's one thing we
+could do.
+Great. So, we're not done yet.
+Because all I've told you is how to go
+through each step. Step Oh, yes. Why
+isn't the S sub I S sub I to the K?
+Uh
+here?
+Ah, that's a good point. Um it turns out
+you could do that and you get the same
+answer.
+in the infinite case you have to be a
+little careful, but in the finite case
+you're right. If you put SI to the K
+here, you would get the same answer. Um
+I think conceptually
+it's I like to think I think this is
+sort of conceptually more
+better captures it that you know, here I
+am, I'm player I. All I know at this
+stage is that this is what the players
+could do, and I want to throw out things
+that are strictly dominated. So, it
+doesn't
+you know, there's no reason for me to
+really think back to what I did before,
+so I think conceptually maybe this is
+more in the spirit of the algorithm, but
+you're exactly right that mathematically
+this is going to be a subset of SIK, and
+if I put SIK here, and often when we do
+the algorithm, that's kind of what we're
+uh what we implicitly do in our heads.
+Um so, you could put the K here, um and
+it wouldn't In the finite case it
+wouldn't change things. You have to be a
+bit careful in the infinite case.
+Great. So,
+we've defined these steps,
+but in general this could go on forever.
+So, if we wanted to be really formal,
+then what is the output of the
+Well, the output of the algorithm is we
+think of which strategies remain after
+we do this infinitely many times.
+It's a little weird to think about, but
+the output technically we might call SI
+infinity,
+and this is the set of strategies that
+survive every single round. So, if you
+want to be really mathy about it, we
+would say this is
+uh SI zero intersect
+SI one intersect SI two intersect and
+dot dot dot.
+And we could write that as the
+intersection
+from K equals zero to infinity
+of SIK.
+So, formally what does this set mean? It
+means it's
+I only include a strategy in this set if
+it survives round zero,
+it survives round one,
+it survives round two, it survives round
+three, and on forever.
+And we call this
+rationalizable
+strategies for player I.
+So, if you wanted to be really precise,
+we might say that
+iterated elimination of strictly
+dominated strategies is an algorithm or
+procedure, and that the output of that
+procedure is the set of rationalizable
+strategies. You might say
+rationalizability is a property of a
+strategy, and IESDS is a procedure that
+we go through in order to identify the
+strategies that have that property. But,
+you know, on exams we're not going to be
+too picky about exactly this distinction
+between the algorithm and the output of
+the algorithm.
+But, you might say, well, wait, this we
+have no hope of doing this.
+We have to go through infinitely many
+steps. That's that's a mess.
+So, fortunately,
+when we're in a finite
+game,
+the algorithm is always going to end
+after finitely many steps.
+And what do I mean by that?
+So, I'll say fortunately,
+this ends after finitely many steps.
+Now, what does ending mean? It doesn't
+mean I only have one strategy left for
+each player. That happened in our
+example, but that doesn't always happen.
+But, what ending means, kind of going
+back to the question earlier, is I get
+to a point where I can't throw out any
+more strategies.
+And if I don't throw any more out of one
+round, then I'm not going to be able to
+throw any more out of the next round.
+And basically the algorithm is just
+going to become static. There's going to
+be nothing else that happens.
+So, formally what it means is for some
+big K
+so, after big K steps,
+subsequent steps don't change anything.
+So, I'll say for some big K
+SIK, that's a big K,
+SIK plus one
+equals SIK plus two
+and so on
+for all I.
+So, what that says is, okay, once I get
+to stage K,
+if I were to apply step of the
+algorithm, nothing would change.
+And if I were to apply one more step,
+nothing would change. How do you know
+you've gotten to that point? Well, as
+long as you get to a step
+where nothing is thrown out,
+you're done.
+But let's be really careful. It's not
+enough for there to be one player where
+you throw nothing out.
+If if if you throw strategies out for
+any player, you might have to keep
+going.
+So, the algorithm is only done when
+every single player's strategy set stays
+the same from one round to the next.
+You can even see in our example here,
+when we went from step one to step two,
+player two's strategy set, sorry, player
+one's strategy set did not change.
+But the algorithm wasn't done because
+player two's strategy set did change.
+And for that reason, we had to do one
+more step. So, it's only when everyone's
+strategy set is fixed that you're done.
+Uh so, keep going
+until nothing changes, and then you're
+done, and what's left are the
+rationalizable strategies. Now, let me
+give a tip, I think, for exams, for
+problem sets, when you're actually doing
+this on your own.
+This algorithm has a Or before I do the
+tip, let me say,
+how do we know that it has to end? If
+you want to be a little mathy and think,
+wait, how can we be sure it ends? Why
+can't it go on forever?
+Anyone know?
+Well, there's only finitely many
+strategies to begin with, right? And at
+each round, we just throw strategies
+out. We never get bigger. So, if we have
+finitely many things, and we keep
+throwing something out, we can't throw
+things out forever. Eventually, we can't
+get any smaller. Yes. Does that mean
+that you can never swap strategies?
+Like I guess I didn't understand. Like
+throw one out and put another one back
+Exactly, that will never happen. Yeah,
+so at each step, these sets are getting
+smaller and smaller and smaller. And
+this exactly goes to the property we
+were describing about how the set of
+best responses gets smaller
+as the set of opponent strategies gets
+smaller. So, at each round, everyone
+else's strategy set gets smaller,
+but that means the set of best responses
+I have gets smaller, which means the set
+of best responses they have gets
+smaller, and at each stage, we're just
+throwing things out. Another way to see
+um yeah, I guess it's not immediately
+obvious from this. Uh but again, this
+set gets smaller,
+and this set gets bigger. We throw out
+more things, and we uh we keep fewer
+If if it didn't have that property, then
+it could go forever, right? We'd worry
+that we might get in cycles, where we
+take a strategy out, put it back in,
+take it out, put it back in. That can't
+happen. There's no cycles. We just get
+smaller and smaller until we stop.
+Yes. So, when you say it's a finite
+strategic form game, does that mean that
+the number of players is finite, as is
+the number of strategies per player?
+Yes.
+Uh so, N is finite. I mean, uh we're
+never really going to think of N
+infinite, but technically, it means N is
+finite, but the the real substantive
+content of it is that the SIs are also
+finite.
+Okay, so here's my tip for doing this.
+Because of this property that things get
+smaller at every stage,
+if you throw something out that you're
+not supposed to,
+you're done. You're really in trouble.
+You've you've messed up. There's no
+coming back from it.
+But if you don't throw something out
+that you're supposed to throw out, you
+can always throw it out next time.
+So, it's always safer to keep things in,
+cuz once you throw it out, it can't come
+back.
+But if you keep it in, well, maybe it
+just stays in a little too long, and
+you'll throw it out next round.
+So, it's it's better to err on the side
+of inclusion.
+Uh and for that reason,
+my suggestion would be, when you're
+going through it,
+think about
+dominance. So, I would say,
+use SCD
+during the algorithm.
+Why? Well,
+if you're looking for strategies that
+are strictly dominated, and you miss
+one,
+that means you forget to throw something
+out.
+And you can throw it out next time.
+If you look for strategies that are best
+responses, and you miss one,
+then you're going to throw that strategy
+out, and you can never recover from
+that.
+Now, the only problem though is at the
+end, if I'm using this definition,
+there's a risk that I might have kept in
+too many strategies at the end.
+So, my advice would be on the last
+stage, once you think you're done,
+then use this definition. And check that
+everything that's left is a best
+response to some belief about your
+opponents. So, use SCD during the
+algorithm, and then
+use BR at the end.
+And this is a safe way to make sure you
+never throw anything out you shouldn't
+throughout the algorithm, but then at
+the very end, check that there's nothing
+left that you should have thrown out.
+Um so, that would be my advice for how
+you go about it, uh if you want to be
+safe. Maybe it's a bit slower, but I
+think that's a safe way to do it.
+Any questions on that?
+Great. So, let's now do a few examples.
+So, another simple example would be
+the prisoner's dilemma.
+cooperate, defect, cooperate, defect.
+I think last time we may have used the
+phrases M and F, mum and fink, but in
+the prisoner's dilemma, it's also common
+to use cooperate, defect, cooperate,
+defect.
+Remember,
+cooperate means cooperate with the other
+prisoner, not with the authorities. That
+can be a little confusing. So,
+cooperation is a property of what the
+players in the game are doing. So, it
+doesn't mean testify against the other
+prisoner, it means cooperate with the
+other prisoner by not testifying.
+So, here in the prisoner's dilemma,
+we have Let's go through the algorithm.
+Well, first,
+what is S1 zero?
+Well, this is just a set of strategies
+for player one.
+We already see what it is. It's CD. So,
+that's easy.
+And then, S2 zero also equals CD.
+So, now let's go So, this is step K
+equals zero. Here's K here.
+Now, let's go to step one.
+So, at step one, what happens? Let's
+follow our tip, and let's only throw out
+dominated, strictly dominated
+So, what do we throw out here?
+Well, cooperate is strictly dominated by
+If my opponent cooperates,
+I do strictly better
+by defecting.
+And if my opponent defects, I also do
+strictly better
+So, D strictly dominates C for each
+player.
+That means I throw out D.
+And what do I keep in? Well, C. Sorry. I
+throw out C, and I keep in uh D. Uh let
+me say that again. I may have
+jumbled my words. C is strictly
+dominated by D, so I throw out C and
+keep D.
+&gt;&gt; And now I could go one more stage, but
+actually here, one way you always know
+you're done is if each player only has
+one strategy left. But let's make sure
+we didn't make a mistake.
+Let's do our best response thing at
+check at the end.
+Is D a best response to D?
+Well, we can actually go through our
+procedure here.
+So, I'm just doing the underlining that
+we did before, and sure enough,
+D is a best response to D for both
+players, and we know
+Well, we don't know we've done it right,
+but we at least know we didn't obviously
+do it wrong. Um
+So, we're done there.
+Let's do
+one more example.
+maybe I'll call
+top, bottom,
+left, right. So, again, two players,
+uh two strategies each.
+Let's do it like this.
+And let's go through our procedure.
+So, again, step zero is easy. We're just
+writing down the strategies the players
+have.
+Player one's strategies are T and B.
+Player two's strategies are L and R. So,
+we have
+S1 zero
+equals TB.
+And S2 zero equals LR.
+And I'll warn you, when you look at
+this,
+it gets a little confusing when you see
+things like S11. But I'm always going to
+use the convention that the subscript is
+the player,
+thing at the bottom, and the superscript
+is the round number, or the stage of
+elimination.
+So, I'll call these things K at the top,
+and I at the bottom, but if they take
+actual numbers, just remember, the
+bottom is the player, and the top is the
+stage that we're at.
+Okay, so that's step one, step zero. Uh
+What do we throw out here?
+Yeah. No strategies should be dominated.
+Right. So, we don't throw anything out.
+And how can we see that? Uh well, let's
+go through our best response thing.
+If I'm player one, if my opponent plays
+L, I'd rather play T.
+If my opponent plays R, we haven't
+gotten to a case like this, but here I
+have multiple best responses.
+And it's really crucial when you have
+multiple best responses to underline
+both of them, because they're both
+reasonable ways you could respond.
+So, given my opponent plays R, I get
+zero from both T and B.
+So, I'm going to underline both of them.
+And then we'll do the same thing the
+other way. If player one plays T,
+player two wants to play L.
+If player one plays B, player two is
+indifferent between L and R, so we
+underline both of these.
+And if we look at our underlining, we
+see that T
+is indeed a best response for player
+one.
+It's a best response to L.
+And actually also to R, but L is enough.
+What about B?
+Is B a best response to anything? Yes. B
+is a best response to R. It's underlined
+So, both T and B
+are best responses to some belief.
+And similarly, both L and R are best
+responses to some belief.
+L is a best response to both T and B
+cuz we can see L underlined twice.
+And R is a best response to B,
+but not to T.
+But that's okay. It's a best response to
+something, so we get
+S11
+equals TB
+and S21
+equals LR.
+So, do you have to keep going or are we
+done?
+So, now we're done.
+But the reason we're done is that player
+one strategy set didn't change and
+player two strategy set didn't change.
+But remember, we're only done because
+every single player strategy set stayed
+the same. It's not enough for just one
+to stay the same.
+Uh so, we're done here. We're done here.
+And these two examples illustrate that
+in some cases
+this rationalizability procedure gives
+us a very strong prediction about what
+we'll play in the game.
+But in other cases, it doesn't really
+give us any sharp prediction at all.
+We're not able to rule out any
+strategies using this concept of
+rationalizability alone.
+Let me check the time.
+Great. So, let me do one maybe more
+substantive example to finish
+that actually has continuous strategies.
+So, let's go back to the beauty contest
+game
+that we played
+uh on the first day of class.
+And I think some people were starting to
+go through this kind of reasoning. Here
+we can formally get uh we can formally
+solve this game.
+So, let's go to the beauty contest.
+But this time it's a bit easier to say
+that you get to choose a number, any
+number, any real number between zero and
+100. So, you're not restricted to
+integers here.
+So, each player gets to choose, so we
+have players I equals
+one through N.
+And each player I gets to choose a
+number
+between zero and 100. So, I'm following
+the notes here and using X to be the
+number that you choose
+instead of S.
+Well, let's write down our payoffs.
+So, let's say I'm player I
+and the numbers are chosen are X1, X2
+all the way to XN.
+So, we're going to consider here
+uh the alpha beauty contest.
+So, we're going to have some number
+alpha
+that's between zero and one.
+And your goal is for your guess to match
+alpha times the average of everyone's
+guess.
+So, on the first day of class we played
+when the second day we played the beauty
+contest with alpha equals 2/3, I think.
+And
+to make things a bit easier, instead of
+just saying you either win or you don't,
+we're going to say that your payoff
+depends on how close you are to alpha
+times the average.
+You get the highest possible payoff if
+you're exactly alpha times the average.
+And the farther you are your guess is
+away from alpha times the average, the
+lower your payoff is.
+And we're going to specifically do that
+with what's called a quadratic loss
+function. So, you lose the square of
+your distance from your ideal guess.
+So, what is that going to be?
+It's going to be minus something
+squared.
+So, the thing squared, this is your loss
+and you're subtracting this loss.
+And what are we going to square? We want
+to square the distance or the difference
+between what you actually guess
+and the ideal guess, which is alpha
+times the average of the class.
+So, this is player I's payoff.
+So, I have XI here. That's what I
+actually guess.
+What's the best possible guess? It's
+alpha times the average of everyone
+else's guess, or average of everyone's
+guess, I should say. So, that's minus
+alpha times
+X1
+to XN over N.
+And this is kind of a subtle aspect of
+this game that my own guess contributes
+to the class average, right? So, here
+this is the class average.
+There's N people in the class.
+Each of them guesses a number, so I
+divide by N to get the average guess in
+the class.
+Then I multiply the average guess, which
+remember I as player I contribute to.
+I multiply that average guess by alpha.
+That's the the ideal guess. That would
+be the the best possible guess I can
+make.
+If I guess exactly that, then my payoff
+is zero. That's great. But the farther
+my guess is away from my bliss point or
+the ideal guess,
+the greater my loss is or the more
+negative my payoff is.
+It turns out because it's a little
+tricky to analyze this directly because
+when I think about my guess, I'm also
+changing the class average at the same
+time.
+So, it's better to just factor out the
+XI. So, let's
+uh write this a bit differently.
+So, we have XI here,
+but then there's also an XI here and
+it's multiplied by alpha over N.
+So, what I get is 1 minus alpha over N
+times XI.
+The one times XI comes from here.
+And the minus alpha over N times XI
+comes from over here.
+And then what I'm left with is alpha
+times the sum of everyone else's guess
+divided by N.
+But that's kind of awkward to deal with
+cuz there's only N N minus one people
+and I'm dividing by N. So, I'd rather
+divide by N minus one. So, let's
+write this times as alpha
+times
+N minus one
+over N
+times X negative I bar
+where this is
+the sum over everyone but me
+divided by N minus one.
+So, all I've done is multiplied and
+divided by N minus one. It's a little
+algebra here, but I divided by N minus
+one here. I wasn't really supposed to do
+that, so I undid it by multiplying by N
+minus one over here and I still have the
+N that I'm supposed to have on the
+bottom.
+And this is just nicer notation cuz this
+tells me what is the average of everyone
+else's guess. And that's really the way
+you think about this problem, right? You
+think about your guess and you think
+about the average of everyone else's
+guess. It's a bit weird to think of the
+class average, which partly reflects
+your guess and partly reflects everyone
+else's guess. So, this is just a
+slightly nicer way of
+of writing it though it makes things a
+little messier.
+Let's go
+down here.
+So, from this formula, it's also a bit
+easier to calculate my best response.
+So, let's imagine hypothetically that I
+knew what the average of everyone else's
+guess was.
+Then I would want to choose my XI
+so that this
+equals this, right? And this should be
+Right? I want my loss as small as
+possible. I want this expression to be
+zero, so I want this to equal that.
+And now I'm going to solve for XI. So, I
+want XI to be this
+divided by this.
+Just a little bit of algebra, which you
+can work through at home if you'd like.
+And what you'll find is that the
+kind of best response, if I solve for
+this, is I get XI equals
+Well, I get the right side divided by 1
+minus alpha over N and the N's kind of
+cancel nicely, so I get
+over N minus
+alpha times X negative I bar.
+So, what this says is if I knew
+that this is what everyone else was
+going to guess or more specifically,
+this is the average of everyone else's
+guess, then this is my best response.
+This is my best guess.
+Now, at first you might have thought you
+would want to guess alpha times what
+everyone else guesses, but that's not
+what we get. Why do we get this
+kind of
+messy term here?
+Well, first let's let's look at this
+number. Is this number bigger than one
+or less than one? Let's assume N is
+greater than one. Otherwise, this is not
+a very interesting game.
+This is less than one.
+Right? Because I'm subtracting one on
+the top and I'm subtracting something
+smaller on the bottom. So, that means
+the bottom is bigger than the top, so
+this is less than one.
+So, that means
+it's best for me to guess not alpha
+times the average of everyone else, but
+strictly less than that.
+less than alpha
+x minus i bar. So, you have any
+any intuition? It's a bit strange,
+right? If you thought about this game,
+you might think you just want to guess
+exactly alpha times everyone else's
+Yeah?
+Exactly right. So, if if I said, "Okay,
+everyone else the average is x negative
+i bar." Let's say I guessed alpha times
+x negative i bar.
+Well, that sounds good. I'm guessing
+alpha times the average, but now the
+average is strictly smaller because my
+guess of alpha times the average is
+smaller than the average. So, as you
+exactly as you said, I've pulled down
+the class average and now I want to
+guess a little bit lower. And that's
+exactly what this is reflecting, the
+fact that my
+guess directly affects the class average
+and when I'm trying to guess a
+a fraction of the class average, my
+guess is always going to pull it down.
+Um but, you know, not so important.
+Let's just give this a name. We'll call
+this alpha n. So, technically it depends
+on this parameter alpha
+uh oh, maybe just can and the number of
+players we have. And as the number of
+players grows large, it's going to get
+really close to alpha because your
+effect on the average is going to become
+very small.
+Okay, but now let's try to go through
+our algorithm in this game.
+Uh okay, running out of time, so let's
+just do it quickly.
+s i zero
+equals zero to 100
+s i one
+the highest my opponents could guess
+would be they all guess 100. And in that
+case, I'd want to guess alpha n times
+100.
+The lowest I'd want to guess is zero if
+everyone else guesses zero. So, we're
+going to get zero to 100 alpha n.
+And you can see the pattern. s i to the
+k
+is going to be zero times 100 alpha n to
+the k. Because each time, if I know that
+my opponents are only guessing up to 100
+times alpha n, I want to take that and
+multiply it by alpha n again.
+So, in the limit, what we find
+is that s i infinity
+equals zero for all i.
+So, this game is dominant solvable and
+the unique rationalizable strategy for
+every player is to play exactly zero. Uh
+that was a bit quick, but uh this a
+variant of this is on the homework, so I
+didn't want to make it too easy for the
+homework. Uh so, you'll get to work on
+this in the problem set. Okay, I'll see
+you all next week.

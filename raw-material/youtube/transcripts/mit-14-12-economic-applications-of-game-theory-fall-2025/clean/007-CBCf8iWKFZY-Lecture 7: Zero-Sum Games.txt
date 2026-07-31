@@ -1,0 +1,2056 @@
+Uh
+so today
+the topic is
+zero-sum games.
+And what does this mean? A zero-sum game
+is a game that features
+exact conflict of interest.
+So maybe I'll call it a
+complete conflict of interest.
+Another way of saying this is that one
+player's gain
+is the other player's loss.
+And whenever I'm talking about losses
+and gains, remember this is about
+utilities, not about money. So it could
+be about money if we're risk-neutral,
+but more specifically
+one player's utility gain is the other
+player's utility loss.
+So what are some examples where this is
+a realistic assumption? Um a lot of
+these examples are actually
+&gt;&gt; [applause]
+&gt;&gt; more parlor games, games like chess and
+checkers.
+So if we think about say chess
+or checkers,
+what happens? Well, assuming that people
+only care about the winner of the game,
+right? You could imagine someone who
+just loves playing chess and they want
+the game to last as long as possible or
+they want a a beautiful game of chess,
+but we're thinking about people who just
+care about winning and losing. Well,
+what are the possible outcomes? Well,
+either player one wins
+and if player one wins, we'll think of
+the payoffs as being
+one and negative one. One for the winner
+and negative one for the loser, player
+two.
+The other option is player two wins
+and then of course the payoffs are the
+other way.
+Negative one for player one who lost and
+one for player two who won.
+Uh and then the last possible outcome is
+a draw,
+a tie, and in that case we'll say the
+payoffs are zero zero.
+So here you can see that the players'
+interests are exactly opposed, right? In
+order for one player's payoff to go up,
+the other player's payoff has to go
+down.
+And in this case the sum of the players'
+payoffs is always zero.
+So we see that payoffs
+sum to zero.
+Another common example of this would be
+I should start in the middle.
+games with monetary trade or monetary
+exchange, so maybe money exchange.
+But there we have to be careful. If
+we're playing if we're bargaining about
+how much money I give to you or how much
+money you give to me, this can still be
+a zero-sum game, but we need two
+assumptions. So I'll say under two
+conditions.
+Well, the first condition
+is that no money enters or leaves the
+game, right? If we're negotiating and
+then someone's parents come along and
+give us both money, that's not a
+zero-sum game anymore. So there's no
+money in or out.
+And then what's the second assumption we
+need in order for this to actually be
+a zero-sum game?
+Thoughts?
+Well, it's important that we're
+risk-neutral.
+Right? Because if we were risk-averse
+for instance and the the terms of our
+trade were that we're going to flip a
+coin and someone's going to win a lot of
+money and someone's going to lose a lot
+of money,
+well, if we're both risk-averse, that
+that bet might be bad for both of us in
+expected utility, right? Because we both
+have a chance of losing a lot of money.
+So the fact that no money comes in or
+out doesn't necessarily mean that no
+utility comes in or out unless we make
+the further assumption that players are
+But under these two assumptions, money
+exchange is also going to be uh an
+example.
+Now, today we're kind of going backwards
+historically. So zero-sum games were
+some of the first games that were
+studied in game theory. They were
+studied by mathematicians who were
+motivated by situations like chess and
+Subsequently, economists started getting
+interested in game theory and then a lot
+of economic situations outside of games,
+outside of parlor games, the situation
+is not zero-sum. And you often hear
+people in politics talking about this
+saying this is not a zero-sum game,
+there's some arrangement we can make
+that makes us both better off. So I'll
+say maybe in the real world
+things are often not zero-sum.
+Maybe I'll say rarely zero-sum.
+And that's why game theory has moved on
+a bit beyond zero-sum games and looked
+at things like Nash equilibrium that can
+capture non-zero-sum games. But
+mathematically, zero-sum games have a
+very nice elegant theory. Uh so we're
+going to cover it today and it does
+apply to a lot of games uh like chess
+and checkers and poker that, you know,
+are relevant to some people.
+Uh yes, question.
+Yeah, so so formally risk-neutral means
+that your von Neumann-Morgenstern
+utility function as a function of money
+is a linear function.
+Um
+so that you are indifferent between say
+getting $10 for sure and a lottery that
+pays you zero with probability half and
+20 with probability half.
+Good question. Any other questions? So
+I'll say over money maybe to be
+more clear.
+Uh question or no?
+Okay.
+All right. So in the real world rarely
+zero-sum, but maybe I'll say something
+positive, but the theory is uh
+elegant.
+And if you play poker and you play these
+games, it can often be a valuable
+benchmark for some situations in the
+real world that are close to strictly
+competitive, close to complete conflict
+of interest.
+All right. So let's now formally define
+what we mean by a zero-sum game.
+So throughout today when we talk about
+zero-sum games, we're always going to be
+focusing on finite
+two-player
+strategic form games.
+Uh finiteness is kind of a technical
+assumption. A lot of the results extend
+beyond finiteness.
+Two player is really essential.
+Uh games that only have two players with
+opposed interests behave quite
+differently than games that have more
+than two players. So this is really
+essential assumption.
+And then the fact that we focus on
+strategic forms is just a modeling
+choice, right? A lot of games like chess
+and checkers take place over time
+and we would naturally model them in the
+extensive form, but remember starting
+with the extensive form, we can always
+represent that game in the strategic
+form and we're going to assume that
+we've already done that transformation.
+So how do we represent these games?
+Well, we have two payoff functions,
+player one's payoff
+and player two's payoff. So let's just
+remember, player one's payoff depends on
+the strategy that player one chooses and
+the strategy that player two chooses.
+And similarly, player two's payoff
+depends on both players' strategies. So
+this is just a two-player game.
+What makes it zero-sum?
+Well, it's what you would think. The sum
+of the payoffs is zero.
+So this is zero-sum.
+What does this mean?
+It means that
+from some strategy profile S
+plus player two's payoff
+from the same strategy profile S is zero
+for every strategy profile S.
+And remember, this is a strategy
+profile, so this is something like S1
+S2.
+So when I write it down, it looks like
+just one equation, but really we have
+many equations, right? We have a
+separate equation that must hold for any
+pair of strategies that the players
+play.
+And now we're going to make a
+simplification.
+If this is the case, then we can just do
+a little algebra
+and we see that that means that U2 of S
+is equal to negative U1 of S
+The payoff or utility that player two
+gets is just negative of the utility
+that player one gets.
+And what that means is that if we're in
+a zero-sum context,
+we don't really have two utility
+functions.
+We really only have one function and
+that determines what the other person's
+utility is. Because once we know one
+player's utility,
+we know that the other player's utility
+must always be the negative of that.
+So we're going to adopt a convention.
+So here's our convention for zero-sum
+games.
+We're basically only going to work with
+player one's payoff.
+So let's let
+U = U1.
+That's going to be player one's payoff
+and that means we have in mind that U2
+is equal to negative U.
+But we're only going to keep track of
+this single function U. So we're going
+to focus on player one
+and this means that U is going to
+represent
+player one's gain,
+but it will also represent player two's
+loss. Because a high value of U
+means
+a large negative value for player two,
+which is a loss. So this represents
+player two's gain.
+So instead of thinking of each player uh
+loss. Thank you.
+So instead of thinking of each player as
+having their own utility function that
+they're trying to maximize,
+we now just have one util- one function
+U, but now the players are doing
+different things with it. So, player one
+is trying to maximize U,
+but player two is trying to minimize U.
+And we're going to maintain this uh
+throughout the course. Now, this creates
+this kind of asymmetry between the
+players. Player is the maximizer, player
+two is the minimizer.
+I find that zero-sum games, it's really
+easy to get yourself confused, so
+hopefully I won't get confused today. I
+don't think what we're doing today is
+the hardest material we're going to
+cover in the course, but I think it
+probably is the most confusing. It's the
+easiest uh lecture to get confused on.
+So, if you have a question, please do
+ask, and hopefully I won't confuse
+myself with all these mins and maxes.
+So, that's going to be
+our convention. And now let's just go
+over one really simple example of a
+zero-sum game to try to get our bearings
+here.
+And the classic zero-sum game uh would
+be rock, paper, scissors.
+So, let's look at this.
+Now, we're going to represent this in
+strategic form. So, we're going to have,
+you know, a matrix here. Player one can
+choose rock, paper, or scissors, and
+player two can choose rock, paper, or
+scissors.
+Now, in the past when we represented a
+strategic form game, every box in this
+matrix had two numbers.
+It had the payoff for player one and the
+payoff for player two.
+But now we're going to follow our
+convention, and we're only going to put
+one number in every box.
+But that one number is going to
+represent the gain for player one
+and the loss for player two.
+So, let's just fill this in
+uh
+cleverly. Well, if we go down the
+diagonal,
+in this case, everyone the two players
+are making the same move, and that means
+the game ends in a tie.
+So, if the game ends in a tie, we'll say
+the payoff is zero to both players. So,
+along the diagonal we have zero, zero,
+and zero.
+Now, we want to put a one, remember this
+is player one's payoff, whenever player
+one wins the game. So, hopefully people
+remember the rules for rock, paper,
+scissors. Let's see. So,
+um
+scissors beat paper for player one, so
+we have a one here.
+Paper beats rock,
+so we have a one here.
+And rock beats scissors,
+And in the other three spots, the winner
+is player two, which means the payoff to
+player one is negative one, cuz player
+one is the loser. So, if player one
+plays scissors and player two plays
+rock, player one loses. Similarly,
+player one loses, player one loses.
+So, whenever we're talking about
+zero-sum games, you're going to see
+something like this. You're only going
+to have a single number in every box,
+rather than two numbers, but we're still
+completely specifying the game because
+of our uh assumption that that it's a
+zero-sum game.
+All right. So, now the question is, how
+should someone play in this?
+Um maybe how to play.
+I think people probably know what's a
+good strategy in rock, paper, scissors,
+but let's kind of think it through.
+One way to think it through is let's
+take the perspective of player one.
+And one thing player one could kind of
+think about is they could say, "If I
+choose a particular move or a particular
+strategy,
+what's the worst that can happen?"
+Let me say,
+what's
+worst that can happen?
+This is a very pessimistic or
+conservative way of playing, but it's
+it's one thing we can think about. So,
+let's say I play rock, and I'm player
+one.
+What's the worst thing that can happen?
+Well, player two could play
+paper,
+and they would beat me, right? So, the
+worst thing, I'll put an arrow here, the
+worst thing is
+player two
+plays paper,
+and my payoff therefore is negative one.
+And I'll just
+negative one is my payoff.
+Similarly, if I play paper, again the
+worst thing is pretty bad. If I play
+paper, then my opponent could play
+So,
+and then again my payoff
+is negative one.
+And symmetrically, if I play scissors,
+my opponent could play rock, and I could
+get a payoff of negative one.
+So, if I'm worried about the worst thing
+that can happen,
+and I only look at these pure
+strategies, it looks pretty dire.
+Whatever move I make, the worst thing
+that can happen is the other player
+plays the one move that beats me, I
+lose, and therefore I get a payoff of
+negative one.
+But what if I instead strategy? Is there
+any mixed strategy that I could play
+that would ensure that even in the worst
+case, I do pretty well?
+Any thoughts? Uh yeah. They randomize so
+that you play each of rock, paper,
+scissors with one third
+Great. So, let's look at the mixed
+strategy. I'll write it down here, and
+I'll call this strategy 1/3
+1/3, 1/3.
+And the meaning of this is I play rock
+with probability 1/3, paper with
+probability 1/3, and scissors with
+probability 1/3.
+And it's not too hard to see that if I
+play this strategy, then whatever my
+opponent does,
+I'm going to win a third of the time,
+I'm going to lose a third of the time,
+and I'm going to tie a third of the
+time. And therefore my expected payoff
+is going to be zero. So, if I fill in
+with this row what my payoff is when I
+as player one use this mixed strategy,
+and my opponent uses each of these
+strategies, we're going to get zero,
+zero, zero.
+And the mathematical way to do this is
+we're literally taking a third of this
+row
+plus a third of this row plus a third of
+this row, and when we add those rows
+together, we're just going to get zero
+at the bottom.
+So, here,
+what's the worst case? The worst thing
+that can happen? Well, actually in this
+case it doesn't really matter what my
+opponent does. Whatever my opponent
+does, I get a payoff of zero.
+So, this suggests and and we can if we
+were careful went through it, we could
+see that no other strategy is going to
+do better in the worst case, right?
+There's going to be no strategy in rock,
+paper, scissors that ensures that I
+always get a positive payoff. So, this
+is actually going to do be a very good
+strategy if I'm concerned uh
+about the worst thing that can happen.
+And I don't think it's really obvious
+why I should be worried about the worst
+thing that can happen. I mean, it's
+reasonable, but there are other
+reasonable things I can do. But
+I promise you that it's going to turn
+out that this turns out to be uh a very
+useful and powerful way to play. So,
+we're going to introduce some formal
+terminology about this kind of reasoning
+with the promise that later on it will
+uh it will be very fruitful.
+So, let's think about this worst case
+or
+reasoning.
+So, let's formally think about what is
+maybe I'll call this worst case
+Another way of thinking about this is
+maybe safe or conservative
+or secure play.
+Right? What I want is I want to find a
+way to play in the games that whatever
+my opponent does,
+I'm guaranteed to do pretty well.
+So, I'm interested in what payoff I can
+guarantee even in the worst case, no
+matter what my opponent does.
+So, let's introduce this idea formally
+in a more general case beyond rock,
+paper, scissors.
+we'll think about player one.
+So, for player one, they're looking at
+gains.
+Let me put player one here.
+We have player two here.
+So, when player one thinks about the
+worst case that can happen, they're
+saying, "What is the worst gain I can
+get
+as a function of my strategy
+sigma one?"
+Now, mathematically, this is just
+saying, "Well,
+the worst thing that can happen is that
+my opponent plays a strategy that makes
+my gain
+as small as possible."
+So, the worst case, I'm going to take a
+minimum
+over
+sigma two.
+Maybe I'll put
+Remember our notation here that capital
+sigma is the set of mixed strategies for
+player two.
+And I'll write U of
+sigma one
+So, let's think through this really
+carefully. We're saying, "I'm player
+Suppose I use the mixed strategy sigma
+What is the worst thing that can
+happen?"
+Well, the payoff I get is going to
+depend on the strategy sigma two that my
+opponent plays,
+but I'm going to evaluate a minimum to
+think of the worst thing that could
+possibly happen, and I'm going to call
+that my worst gain, WG, worst gain from
+sigma one.
+And gain reflects the fact that for me,
+U, the payoff is a gain for me. It's a
+good thing for me.
+One observation here that we often make
+is that I don't actually have to
+minimize over all mixed strategies. If I
+just minimize over pure strategies, I'd
+get the same answer. So, we could also
+write this as the min
+over S2 in S2
+of U of
+sigma one, S2.
+And the reason is that my payoff from a
+mix if my opponent plays a mixed
+strategy is just the average an average
+over the payoffs I get if my opponent
+plays pure strategies. So, the the worst
+thing that can happen uh can will always
+actually be a pure strategy, or there
+will be a pure strategy that's worst.
+And now let's do things symmetrically
+for player two, okay? We want to do
+think about this secure worst case
+reasoning for player two, but now player
+two is focused on their loss. So, I'm
+going to call this WL of sigma two.
+Because remember, these numbers in the
+matrix for player two correspond to
+losses to player two. So, I want to say,
+"If I'm player two,
+and I choose a mixed strategy sigma two,
+what is the worst possible thing that
+can happen?" The worst thing that can
+happen is if my loss is as large as
+possible.
+So, I'm now going to write here a
+maximum
+over sigma one in sigma one
+of U sigma one sigma two.
+This says,
+"How much I lose depends on what player
+one does, and the worst possible loss is
+if player one chooses the strategy that
+makes my loss as large as possible." So,
+we have a maximum here and a minimum
+And again,
+this is the same as max
+over S1 in S1.
+Sigma two.
+And we might call this my
+worst
+loss.
+So, just to check our understanding, if
+we went back to this example, if I'm
+player one,
+if I played sigma one equals R, what
+would be my worst gain from R
+in this game over here?
+It would be negative one, right? Because
+if I play R, the worst thing that can
+happen is my opponent plays paper,
+and then I lose, and I get a payoff of
+On the other hand, the worst gain from
+the mixed strategy a third a third a
+third is going to be zero. That's what
+we showed uh down here.
+And similarly for player two,
+the worst loss, and maybe since we
+haven't worked with player two much,
+let's be careful. The worst loss for
+player two if they play R in this game
+would be what? Let's say I'm player two,
+and I play rock in rock, paper,
+scissors, what is my worst loss?
+So, we have to be careful here. It's
+It's It's actually one, right? You might
+be tempted to say negative one, but
+remember, this is how much I'm losing,
+right? So, the worst case for me, if I'm
+player two,
+and I play R,
+well, I'm trying to minimize how much I
+lose, so the worst loss is if my
+opponent plays paper, and I lose utility
+one. My loss is one.
+so, just keep this in mind, and this is
+why things can be a little bit uh
+confusing here. Yes? Um I understand
+that structurally why mixed strategy is
+the same as pure strategy for those
+formulations that you have there. I want
+to confirm, does this just hold for this
+game, or is that a more general result
+for zero-sum games?
+Uh so, it's actually It's a very general
+result that
+once I fix one player's strategy
+uh in a two-player game,
+and now I want to maximize the payoff
+of the other player, or minimize the
+payoff of the other player, that maximum
+or minimum will be achieved by a pure
+strategy.
+More generally, in an N-player game, if
+I fix the strategies of all but one of
+the players, N minus one of the players,
+and now I contemplate uh a choice of
+strategy for that last player, that
+payoff will be maximized or minimized by
+a pure strategy. Maybe also by a mixed
+strategy, but in particular by a pure
+strategy. But, we have to be really
+careful here.
+On the other hand, it's not true that
+if I take a step back and look at the
+worst-case gain, that my best worst-case
+gain can be achieved by a pure strategy.
+That's not true, and that's exactly what
+we saw over here. Because if I
+restricted myself to a pure strategy,
+then my worst-case gain was always
+negative one. And it was very important
+that we allowed myself to use mixed
+strategies. So, mathematically, what's
+going on
+is that once I fix one player's
+the utility function as a function of
+the other player's strategy is a linear
+function.
+And a linear function over probabilities
+achieves its maximum at at a corner
+solution at the endpoints.
+But, the worst-case gain function WG is
+no longer a linear function.
+Because it's a minimum over linear
+functions, it's actually going to be a
+concave function. Uh and that's
+mathematically what's going on.
+Good question. Any other questions on
+this?
+All right.
+So, we've
+defined we've thought through worst-case
+And now we want to go a step further and
+talk about something called security
+strategies, which just formalizes what
+we talked about in this game before.
+So, what is a security strategy? Well,
+when I'm choosing what strategy to play
+as player one, I evaluate each strategy
+according to its worst-case payoff, and
+I choose the strategy that maximizes
+that worst-case payoff.
+So, for player one,
+we say
+a strategy sigma one star is a security
+strategy
+if
+the worst-case gain from sigma one star
+is better than the worst-case gain I
+would get from any alternative strategy.
+So, I'm comparing,
+if I use strategy sigma one star, what
+is the worst-case gain I get?
+If I use a different strategy sigma one,
+what is the worst-case gain that I get?
+And I would like the worst-case gain to
+be as large as possible. And that's what
+it means to be a security strategy.
+And then for player two, things are just
+symmetric.
+For player two, we say sigma two star
+is a security strategy, I'll just say
+SS,
+let's be careful here. Now, we're
+worried about the worst-case loss
+of sigma two star
+And for player two, they're minimizing,
+they care about losses, so sigma two
+star is best for them if the loss is as
+small as possible. Right? So, they want
+the worst-case loss from sigma two star
+to be less than or equal to
+the worst-case loss from sigma two
+for all
+sigma two in
+And here, going back to the question
+over here,
+uh it is really important that we that
+we contemplate mixed strategies uh here.
+We can't just look at pure strategies.
+Let's We have this definition.
+So, it's nice to have
+some notation here. If we think about
+player one, come back to this.
+So, now that we have this notion of
+security strategies, we can start
+thinking about payoffs.
+So, maybe I'll we'll start thinking
+about secure payoffs.
+And what we want to give a name to is
+what is this
+best worst-case gain for player one?
+for player one,
+let's look at this quantity.
+It's often helpful. We'll call it V
+lower bar for reasons that will become
+clear.
+is the max
+over sigma one
+of WG of sigma one.
+So, we think of this as
+the gain,
+the best gain
+that player one can secure.
+So, if we go back to our definition over
+here, if player one plays a security
+then their worst-case gain from that
+security strategy will precisely be V
+lower bar.
+If they chose a non-security strategy,
+the worst-case gain would be strictly
+smaller.
+But, under a security strategy, the
+worst-case gain is exactly equal to V
+So, one way of saying of defining a
+security strategy is precisely that the
+worst-case gain is equal to the maximum
+possible worst-case gain.
+And then we can also define for player
+two
+what we might call V upper bar,
+and that is going to be the minimum over
+sigma two
+of the worst-case loss
+of
+So, maybe it this is the best
+worst-case loss
+or the best loss
+that P2 can secure.
+So, what this says is, "Suppose player
+two plays a security strategy.
+They know that however their opponent
+plays,
+their uh loss is going to be no worse
+than V upper bar."
+And player one knows that if they play a
+security strategy, their gain is going
+to be no worse than V lower bar. They're
+always going to get at least V lower
+bar.
+And now we can see it starts to get a
+little confusing as we look at the min
+of the max.
+But
+what we'd like to understand
+is the relationship between these two
+numbers.
+So, the gain that player one can secure
+and the loss that player two can secure.
+Uh and
+Let's uh
+Let's go down here and try to think
+about this. So, the first question we
+want to understand
+is what is the relationship between V
+lower bar and V upper bar?
+Well, the way I have to find them kind
+of makes it clear. V upper bar is going
+to be bigger than V lower bar, but let's
+try to understand why. Okay? What we
+want to argue
+is that V lower bar
+must be smaller than V upper bar.
+And
+Say it again? Is that strict?
+Uh we'll we'll we'll see later. It will
+not be strict, but uh there's going to
+be a weak inequality.
+Uh and I think the way I one way I like
+to try to think about this is with a
+little graph here. Well, let's think of
+P1 and P2.
+in the end these will be equal, but
+let's let's not draw it this way.
+What does V lower bar mean for player
+one? Let's think about how to interpret
+it. It means player one can play a
+security strategy.
+And if player one plays a security
+strategy, however the other player pay
+plays, their payoff is at least V lower
+So, what my security strategy tells me,
+this gets to the idea of a guarantee. It
+says if I'm player one and I play my
+security strategy, I don't know how my
+opponent will play.
+But however they play, my payoff is
+going to be somewhere in here. It's
+going to be at least V lower bar.
+And the fact that I'm choosing a
+security strategy means there's no way I
+can make this graph any better. I
+couldn't choose another strategy that
+would ensure that my payoff were
+strictly higher than this.
+And similarly for V upper bar, what it
+tells me is if player two
+plays their security strategy,
+it tells me that their loss is always
+smaller than V upper bar.
+So, they don't know exactly how much
+they're going to lose. It depends on
+what the other player does. But however
+the other player plays, they're never
+going to lose more than V upper bar.
+Now, this is a bit of a misleading
+diagram cuz in the end these we're going
+to show these two numbers are equal, but
+I think this kind of illustrates um
+what goes on.
+Now,
+how can we show this inequality?
+What we want to understand is what would
+happen if each player played their
+security strategy. So, I want to give
+kind of a graphical argument and then
+we'll give the mathematical argument.
+But intuitively, suppose we both play
+our security strategies.
+Or both play a security strategy. We may
+have multiple security strategies. What
+if both play
+security strategies?
+Well, what's going to happen to player
+one's payoff?
+They're playing one of their security
+strategies, so the gain they get has to
+be somewhere in here.
+But now player two is also playing their
+security strategy, so the loss they
+experience must be somewhere in here.
+they're playing these strategies,
+there's some actual gain and actual
+loss. So, what it tells us is we must be
+somewhere in this box if we both play
+And let's try to show that
+uh mathematically.
+So, let's look at what happens.
+So, here's the result. For any
+security strategies
+sigma one star
+and sigma two star,
+let's try to understand what is the
+payoff
+U1 star U2 star.
+So, player one's playing their security
+Player two's playing their security
+strategy and we want to understand U,
+which is the gain for player one and the
+loss for player two. Right?
+Well,
+what do we know about this?
+We exactly want to go through
+this reasoning here.
+Well, the loss, this is the loss for
+So, this loss can't be any worse than
+player two's worst loss from playing
+sigma two star.
+So, this must be less than or equal to
+the
+worst loss of sigma two star. Why? Well,
+this is just the definition, right?
+This says if I play sigma two star,
+however my opponent plays, my loss is
+smaller than the worst loss.
+In particular, if my opponent plays
+sigma one star, then my loss must be
+smaller than my worst case loss.
+Cuz the worst case loss is
+as high as possible.
+Then in the other direction,
+we want to claim
+this.
+if I play sigma one star,
+my worst case gain is WG of sigma one
+star.
+So, that says however my opponent plays,
+I need to get it I'm going to get a
+payoff of at least this.
+So, in particular, if my opponent plays
+sigma two star, my payoff is going to
+have to be higher than this.
+And this is
+V lower bar
+and this is V upper bar.
+Notice here that these middle
+inequalities didn't actually depend on
+the fact that these were security
+strategies. The middle inequalities just
+followed from the definitions of worst
+case loss and worst case gain. But the
+outer equalities are using the fact that
+sigma one star is a security strategy
+for player one and sigma two star is a
+security strategy for player two.
+Um I think there's one last way of kind
+of interpreting this that may be a bit
+more reasonable, a bit more good easy to
+interpret.
+And we can think of this as what would
+happen
+if player one goes first
+and their move is observed. And their
+mixed strategy is observed.
+Well, I claim that if player one goes
+first and plays sigma one star,
+the worst case gain is exactly what
+would happen.
+Why? Well, if I'm player one
+and I go first and I choose sigma one
+star and my opponent can see that, well,
+my opponent and I have exactly
+misaligned interests.
+So, my opponent is going to try to
+minimize my gain.
+And that's exactly what the worst case
+gain from sigma one star captures.
+And if I anticipate that, I want to
+choose the strategy that will do best
+taking into account the fact that when I
+do it, my opponent is going to uh
+choose the strategy that makes me as as
+worse off as possible.
+And that's exactly what V lower bar
+represents.
+Similarly, V upper bar, we can think of
+that as representing, well, if P2 moves
+first
+and their mixed strategy is observed.
+Well, now it's the same reasoning,
+right?
+If I observably choose sigma two,
+then my opponent player one is going to
+try to make my loss as player two as
+large as possible. They're exactly going
+to induce my payoff of the worst case
+Anticipating that, I want to try to make
+this worst case loss as small as
+possible by playing a security strategy
+So, the inequality we've shown here
+captures a pretty intuitive idea that
+moving first and having your move
+observed is a weak disadvantage.
+Player one does worse when they move
+first and the other player gets to see
+what they do, at least
+weakly, than if player two moved first
+and player one got to observe that
+player two was Our interests are
+opposed. If I get to see what you do,
+that's really going to help me.
+In general.
+Or I can weakly help me.
+Any questions on this? I feel like this
+always
+is quite confusing the first time you
+see it. Any uh
+any questions?
+Now, I think a lot of people have this
+intuition that moving first is a strict
+advantage or is a strict disadvantage.
+That if I have to move and the other
+person gets to see what I'm doing, they
+can kind of punish me and exploit me and
+I'm not going to do very well. And the
+surprising result that von Neumann
+proved that we're now going to state is
+that it actually doesn't matter who goes
+first.
+That these two values, the upper bar and
+V lower bar, are actually equal.
+And that's exactly uh the result we're
+going to show.
+So, this is a very famous theorem called
+the minimax theorem.
+And this is proven by von Neumann
+in 1928. So, notice, you know, Nash's
+theorem was proven in 1950. So, this
+work on zero sum games came before Nash.
+And so, Nash, people say is the the
+founder of game theory, but really what
+he did is extended game theory away from
+zero sum games to non-zero sum games.
+Zero sum game theory was actually
+already understood uh when Nash came
+along.
+And the theorem is in any
+finite
+two player
+zero sum game,
+well, V lower bar
+equals V upper bar.
+And now let's just write out exactly
+what that means. Okay? So, V lower bar
+is the worst case gain of sigma one
+star. So this is
+max over sigma one.
+Let's make sure this is what we mean to
+say.
+Let's look at each of these inner
+things.
+If player one plays sigma one
+and player two chooses sigma two to
+minimize player one's payoff, this is
+the worst case gain for player one from
+choosing sigma one. So this is exactly
+WG
+of sigma one.
+And indeed, if we then maximize the
+worst case gain over sigma one, this is
+exactly the definition of V lower bar,
+And then on the other hand,
+if I'm player two
+and I'm playing sigma two
+and my opponent chooses sigma one to
+maximize my loss, this is my worst case
+loss from playing sigma two.
+And if I then minimize this over all
+sigma two, that's exactly the upper bar
+by definition, right?
+the inequality from here to here is what
+we already showed. That's what we showed
+in class, that this is less than or
+equal to this. The content of the
+theorem is to say that in fact we have
+equality. So this graph I showed up here
+is wrong. In fact,
+everything just collapses
+right to here.
+And let's go through how we interpret
+this in terms of who goes first, right?
+On the left-hand side, what we imagine
+is player one moves first.
+Their move is observed
+and then player two, antic- seeing what
+player one does, makes player one as
+So this is the case where player one
+moves observably first.
+This represents what happens if player
+two moves observably first.
+And seeing player two's move, player one
+then chooses what's optimal for player
+So what we said is that in general, we
+would expect that moving first for
+player one would be a disadvantage, and
+indeed we showed that this is less than
+or equal to this. What von Neumann tells
+us is that
+if we
+play optimally, in fact it's not a
+disadvantage at all. It's going to do
+exactly as well as if uh the other
+player moved first.
+Now, this common number here that's
+equal to V lower bar and V upper bar, we
+give it a name and we'll call this V,
+right? It's a good name for something
+that's equal to both V lower bar and V
+upper bar. And this is called the value
+of the game.
+So let's try to understand what this
+means and let's go through a few
+uh examples.
+So what is the value of a game?
+We can think of it in a few ways.
+What I think it does it captures
+it's an objective measure
+of the relative advantage of the two
+players in this game.
+So maybe I would say of the fairness
+relative advantage
+in the game.
+So we have to kind of put ourselves in
+the position uh before von Neumann's
+theorem was proven. What people thought
+is you had these games like chess and
+checkers
+and there's not really a way to say
+who has an advantage. People would say,
+"Well, does player one have advantage or
+player two?" Well, it depends who's
+better at the game.
+That's what most people would have said.
+There isn't some single objective number
+that captures how much of advantage this
+game has. Uh von Neumann's theorem tells
+us that in fact, no, there is an
+objective measure that tells us if
+people play {quote} or optimally,
+who should win the game.
+In other words, how much better player
+one should do than player two if both
+players play optimally. And this
+captures how fair the game is for the
+two players and or or more precisely,
+quantifies the size of the advantage
+that either player one or player two
+has.
+So one maybe, you know, at first you
+might say, "Ah, we've just done some
+inequalities, there's nothing fancy
+here." But one amazing implication of
+this is that chess has a value.
+Chess either
+In fact, we can say more, the value in
+chess is actually either plus one
+minus one or zero. Now, chess is uh
+yeah, chess is still finite games, so
+everything applies.
+What this means is if the value of chess
+is one,
+that means that player one can guarantee
+that they win in chess.
+So then this uh who moves first in
+chess? White? Should know this. Uh the
+first player, right?
+Negative one means
+uh player two can guarantee that they
+always win in chess, the player with the
+black pieces.
+And zero means each player can guarantee
+a draw.
+And von Neumann's theorem tells us that
+chess has a value and in fact, if we're
+a bit careful, it tells us that its
+value must take one of these three
+But we don't know which number it is.
+So but which ONE IS UNKNOWN?
+HOW IS THIS UNKNOWN? I JUST WROTE IT
+DOWN. YOU just have to do maxmin.
+Why is this unknown?
+I mean, I give you Here's the formula.
+Just write it down, right?
+The issue is that chess is extremely
+complex.
+So the set of strategies in chess is,
+you know, bigger than the number of
+atoms in the universe. So yeah, we could
+just
+try to solve this optimization problem,
+but it would have, you know, an absurdly
+large number of of variables, we
+wouldn't be able to solve it.
+Um but this I think shows us the power
+von Neumann's theorem that it tells us
+that in fact, chess has a value. It
+either advantages one player or the
+other, we just don't know what the value
+is because we're not able to calculate
+it cuz it's so complicated.
+Um let's go through a few examples of
+games to try to
+understand this concept of a value. So
+let's start with a game
+let's say top bottom left right.
+And let's
+make this
+1 1
+-4 -8.
+So
+player one chooses top or bottom.
+Player two chooses left or right. And
+the question is what is the value in
+this game? Or another way of saying this
+is if you were going to play this game
+and you were asked, "Do you want to be
+player one or player two?"
+Which player would you rather be?
+Any
+thoughts?
+Yeah.
+I'm not
+sure which is one or two. Uh uh this is
+player one and this is player two. I'd
+rather be player two.
+Should be one. Okay, and why?
+Just cuz like if you look at all the
+outcomes, like you're going
+I don't really have Like if she did
+these negative values, you could lose
+that.
+But I don't know, -4, -8, these are
+pretty big negative numbers, right? So
+if I just look at it,
+I see some really big negative numbers.
+You're right, but I I I'm not convinced.
+You haven't convinced me yet.
+But let's notice, if we just naively
+looked at this game, we might say, "Oh,
+this is a good game for player
+uh two." Because remember, a big
+negative number for player one means
+player two's doing really, really well.
+the structure of the game affects uh who
+has advantage. Anyone else why who How
+would they play? Uh maybe in the red
+sweater? I don't think I've heard from
+you. Yeah? Player one plays top and they
+guarantee one.
+Exactly. So even though we have some
+really big negative numbers down here,
+and notice this is still a zero-sum
+game. I think people get confused and
+say, "Oh, we have these really big
+negative numbers." It's still zero-sum.
+What this -4 means is player two wins
+four if we come down here.
+But because the structure of the game,
+if I'm player one, my security strategy
+here is T.
+If I play T,
+whatever my opponent does, I'm going to
+get a payoff of one.
+And if I were to play anything else
+other than than T,
+I wouldn't be able to secure a payoff of
+And in this case, it turns out player
+two actually anything is a security
+strategy for player two.
+And what that So what we see in this
+game is the value V is one.
+Player one by playing T can secure a
+payoff of one and there's no way they
+can secure anything uh higher than that.
+So I hopefully this makes it a bit more
+concrete uh what these these numbers
+mean. Let's do another example the
+similar flavor.
+Say
+that's
+a bad example.
+Well, it doesn't really matter. We'll
+make all the numbers positive. That's
+fine. Uh let's look at this game.
+What is the
+value of
+of this game or which player
+I mean I guess here it's it's pretty
+clear which player you'd rather be
+because all the payoffs are positive.
+So, I definitely want to be player one
+here, but the question is what is the
+value
+of this game?
+You think through it? Yeah. I think it'd
+be -8. -8? Okay, I I don't think so, but
+let's see. Let's Let's Let's think
+through. So, So, why -8? It's the same
+player two if he chooses right. He can
+catch themselves.
+Like a
+Right, so it'd be it'd be positive. Do
+we have to be This is where it gets
+really confusing. So, player two is
+trying to
+they want to minimize things.
+So, let's think through. If player So,
+let's just walk through it, right? Let's
+say player two plays R.
+Then, they're either going to lose 23 or
+lose eight. So, they would want to
+choose L. So, they would want to choose
+L. And if they choose L, well, whatever
+the other player does, the loss to
+player two is only one. So, playing L is
+much better. So, it turns out in this
+case L is going to be a security
+And the value of the game is then going
+to be one. Player one gets one and
+player two loses one. So, here we see
+the value is one.
+Now, notice an implication of this. If
+we looked at these two games, if you
+just sort of at first stared at it, you
+would probably say this game is so much
+better for player one than this game is.
+Cuz if I look at every cell of the game,
+the payoff is at least as high in this
+game.
+And sometimes a lot higher. 23 is a lot
+bigger or eight is a lot bigger than -8.
+23 is a lot bigger than one. But, if I
+know the min-max theorem actually tells
+us no, each of these games has some
+objective value that captures the
+relative advantage of player one and
+player two if people play optimally. And
+in fact, these two games have exactly
+the same value even though a lot of the
+payoffs seem a lot higher in this game.
+Now, would you really be indifferent
+between these games? Well, it depends
+who you're playing against, right? If
+you're playing against a computer who's
+really rational, probably. If you're
+playing against a person who makes
+mistakes, maybe you'd actually rather uh
+play this game. Because when we
+calculate the value of the game, there's
+this implicit assumption that people are
+behaving are very good at computing
+things and are uh are playing
+rationally.
+Okay, final example.
+What about this game? What is the
+value of this game?
+And what would the security strategies
+be? Yeah.
+It is. Yeah. And what are the What would
+the security strategies be here?
+Exactly. So, let's let's go through it.
+So, here the value is zero. This is a
+game we studied before. We just only put
+in one number here. Let's say I'm player
+Let's try to compute my security
+strategy. Well, if I play T, things
+could go really badly cuz my opponent
+could play R and I get -1.
+If I play B, things could go really
+badly. My opponent could play L and I
+would get -1. But, if I mix 50/50, then
+I ensure that I always get a payoff of
+at least zero, in fact exactly zero. And
+we can do similar reasoning for player
+two and see that the value is zero and
+in fact, each player has a unique
+security strategy. So, security strategy
+equals half half for each player.
+I guess technically it's half T, half B
+for player one and half L plus half R
+for player two, so
+I'm being a little
+Great. Yes. Is it too general to say
+that there's not a strictly dominant
+strategy, then it's always going to be
+zero? Um no, because
+uh no, that's not going to be true. So,
+I
+uh in these actually in these cases, we
+only have uh
+weak dominance, not uh
+strict dominance, right? Um
+but in general, you can have much more
+complicated games uh
+where
+So, we'll actually see an example later
+today of a game uh with that property.
+But, good good observation. Yeah.
+In fact, one player could even have a
+strictly dominant strategy and still
+lose a lot, right? It could be that one
+strategy is better than everything else,
+but whatever I do, I I lose a lot of
+money.
+Um yeah. Any other questions?
+Okay, so now we would like to connect
+what we've done here to what we've been
+doing throughout the course.
+I think it's important to understand
+that before what we looked at was Nash
+equilibrium.
+And Nash equilibrium captured stability.
+It said that if each player
+is playing according to a Nash
+equilibrium, then this out this this
+strategy profile is stable in the sense
+that no player can do strictly better by
+unilaterally deviating.
+Security strategies
+capture something very different.
+Security strategies, well, they capture
+security or safety.
+Each player is is just thinking, "How
+can I play to ensure that whatever
+happens, I do reasonably well?"
+But, it turns out that there's a tight
+connection between these and that's what
+our next result is going to say.
+It's going to say that in fact, in
+zero-sum games,
+these are basically the same concept.
+That Nash equilibria and security
+strategies coincide in zero-sum games.
+So, let me be more precise about that.
+in as usual
+any finite
+zero-sum game,
+Now, remember,
+Nash equilibrium always makes sense.
+Security strategies only make sense in
+two-player zero-sum games. So, I we
+can't It's not even meaningful to say do
+these concepts coincide beyond zero-sum
+games cuz this concept doesn't even make
+sense. But, in any finite two-player
+zero-sum game, at least both of these
+concepts make sense.
+And let's say for any strategy profile,
+mixed strategy profile sigma one, sigma
+two,
+So, I'm I fix the game
+and I consider an arbitrary strategy
+profile sigma one, sigma two.
+I'm going to argue that
+sigma one, sigma two is a Nash
+equilibrium
+if and only if So, I'm saying two
+statements are equivalent. One statement
+is that this strategy profile is a Nash
+The other statement is that each
+component of this profile is a security
+So, if and only if
+is a security strategy for player one
+and sigma two
+is a security strategy
+for player two.
+So, this is an if and only if statement.
+So, let's make sure we understand both
+directions. It says if if you give me a
+strategy profile in a zero-sum game and
+it is a Nash equilibrium, I can
+immediately conclude that player one
+strategy must be a security strategy for
+player one
+and player two strategy must be a
+Now, let's look at the other direction.
+It says if I find a security strategy
+sigma one for player one
+and I find a security strategy sigma two
+for player two and I now consider the
+strategy profile containing these two
+strategies, so player one plays his
+security strategy, player two plays her
+security strategy, then that strategy
+profile is necessarily a Nash
+So, it connects these two ideas. It also
+has an implication for computation.
+Let's say you're asked on a problem set
+or an exam to find a Nash equilibrium of
+a zero-sum game. This theorem tells you
+one way you could do it. How could you
+do it?
+That's it. You go to player one.
+You solve for player one security
+strategy. There may be more than one,
+but you find one of them.
+You go to player two. You solve for
+player two security strategies. You find
+one of them. You put those together.
+Now, you have a Nash equilibrium.
+Now, the nice story is that this is
+computationally easier than finding Nash
+equilibrium the other way.
+That's true for computers. I find this
+actually very rarely true on exams that
+you're better off taking this approach,
+but if you were a computer, you would
+find that this would be a very good way
+of of computing uh Nash equilibrium.
+But, for humans, I don't know. Uh it's
+hard to find a good example. But, in
+principle, this gives uh
+easy computation
+of Nash equilibrium.
+And what's amazing about it is that you
+can compute the Nash equilibria by
+separately finding a strategy for the
+two players, right? Normally, Nash
+equilibrium is about the interaction
+between strategies. And what makes
+finding it hard is what's best for one
+player depends on what's best for the
+what the other player does. But, this
+says you can sort of separate this
+computation into just two simple
+optimization problems for the two
+players and then you get a Nash
+equilibrium. So, computationally uh
+that's why it's very nice.
+Okay, I want to try to show you the
+argument for this. Uh it's very short,
+but it is
+going to have to be a little careful.
+So, let's go through it.
+So, let's first show
+this direction.
+So, what I want to say is suppose I've
+computed a security strategy for each
+player.
+So, let's say sigma one star
+is a security strategy for P1
+and sigma two star
+is a security strategy for P2.
+All right, I've done that. Now, what I
+want to argue is that this pair, sigma
+one star, sigma two star, is a Nash
+equilibrium of the game. Okay?
+And really, I just have to remember my
+formula
+over here.
+So, let me
+just uh
+look at my formula from over there.
+I want to look at
+U of
+sigma two star
+and
+I immediately know
+that this is
+Should I do it the other way?
+Yeah, it doesn't matter which way we do
+it.
+Uh check. It might help. It might look
+nicer if I do it the other way.
+Hm.
+Well, we'll we'll we'll start here.
+Now, up here we just had an inequality
+between these statements.
+But now, we have an equality because of
+the minimax theorem. So, the minimax
+theorem tells us that the worst case
+loss from sigma two star must equal the
+worst case gain from sigma one star, and
+we have equality uh in this expression
+from that last inequality.
+And now, what we want to show is that we
+have a Nash equilibrium.
+let's look at what happens
+if player two were to deviate.
+Okay?
+this is what happens under our strategy
+profile. Let's suppose that player two
+deviates to some strategy sigma two
+prime.
+How does this relate
+to the worst case gain
+for player one?
+What can we say about the relationship
+between this and this?
+Yeah. Worst case gain is obvious. It's
+an inequality.
+I think it's actually going to be
+this way, right?
+Let's make sure. So, it's always This is
+always really confusing. The worst case
+gain says, whatever my opponent does
+I'm guaranteed to get a payoff of at
+least the worst case gain.
+So, one thing my opponent could do is
+they could deviate to sigma two prime.
+And if they chose sigma two prime, then
+that's one thing they can do. It must be
+at least as good as the worst thing they
+can do for me as player one, right?
+Okay, now let's try to get this last
+one. What if player one were to deviate?
+So, player one deviates, what's the
+relationship between this
+and the worst case loss for sigma two
+star? You always This it's really easy
+to get confused here.
+It's actually going to be the same,
+Because this says
+my Now, I'm taking the perspective of
+If I play sigma two star as player two
+the worst loss for me is this.
+So, if player one plays sigma one prime,
+that loss can't be as bad as the worst
+loss
+which means the loss is smaller.
+Not as bad loss is a smaller loss.
+So, here I just used
+the definitions
+of worst case loss, and here I'm
+actually using the minimax theorem.
+Because in general, we only have
+inequalities here, but the minimax
+theorem says they have to be equalities.
+And now, I claim that we're done.
+Someone look. Now, we just have to
+squint.
+Of course, this proof is pretty hard to
+come up with, right? I've done it just
+right, so it seems easy. It's I mean,
+it's not it's not easy, right? Uh you
+have to know exactly where you're going.
+Um but
+can someone just walk me through why
+I've already shown that this is a Nash
+equilibrium? If we just look really
+carefully.
+I always find this confusing, so uh
+Yeah. I mean,
+like if you look
+U of that is player two doing worse, so
+they don't want to Okay, so sorry. So,
+you're left side or the right side?
+Which side? You're on the left side,
+okay? So, you're here. Yeah?
+This is player two deviating and then
+doing
+No, this is player one doing This is
+player one deviating. Let's make sure,
+right? If we compare here, player two is
+doing the same thing.
+And player one, instead of doing what
+they're supposed to do in equilibrium,
+is deviating to sigma one prime. So,
+player one's deviating, and what
+happens?
+They're doing weakly worse. So, this
+says any deviation by player one is
+unprofitable. Player one does weakly
+worse by deviating from sigma one star
+to sigma one prime, and crucially, this
+is holding for all
+sigma one prime
+and sigma two prime.
+Okay? So, what what we've shown what
+you've argued verbally is that player
+one cannot profitably deviate. However
+they deviate, player one does weakly
+worse.
+What about the other case? What about
+player two?
+How does this show me that player two
+can't profit? Yeah?
+So, I'm going to write where player two
+is deviating, right?
+Yes, exactly. And player one
+at least as bad or better, right?
+They should Right, they don't have any
+alternatives then.
+Right. So, you have to be careful
+though, cuz we're interested in how
+player two is doing, right? So, so
+player two was doing this. They deviate
+to this. It looks like play player that
+the payoff is higher. But we have to
+think it's player two. So, what does
+this mean? Player one's payoff is
+higher, player two's is
+lower or just Exactly right. So, this
+says, if player two deviates from sigma
+two star to sigma two prime this is
+player two's loss. So, this says player
+two's loss is weakly higher than their
+loss in equilibrium
+that means their deviation makes them
+weakly worse off, and therefore, neither
+player can benefit by deviating, and
+therefore, we have a Nash equilibrium.
+So, you just have to string the
+inequalities together in just the right
+way. I always think it's very easy to
+get confused, but uh here we are.
+Any questions on this?
+So, now we want to show the reverse
+direction.
+We want to show
+Let's start by saying suppose sigma one,
+is a Nash equilibrium, we want to say
+that both players must be playing
+security strategies.
+But we're actually going to
+erase this. We're actually going to
+prove this by contradiction. So, we have
+to be a little careful. What we're going
+to say is to show that if it's an
+both players must be playing security
+strategies, we're going to show if some
+player were not playing a security
+strategy, then it could not be an
+by symmetry, let's say suppose
+sigma one is not a security strategy
+for player one.
+I want to show, WTS, want to show
+that sigma one, sigma two
+is not a Nash equilibrium.
+So, this is my way of saying in any Nash
+equilibrium, both players must be
+playing security strategies. Because if
+some player is not playing a security
+strategy, then it couldn't have been a
+Nash equilibrium.
+Now, I'm saying what if sigma one is not
+a security strategy, there's a symmetric
+argument if sigma two is not a security
+So, one way of saying this is I can't
+find an equilibrium where players are
+not playing security strategies.
+That's one way of saying this.
+Okay? Uh and now, this one
+again, it's short. The argument's really
+short if you know exactly where you're
+going. Uh but it's tricky. I need to
+make sure I
+get it right in my notes. So, what do we
+know?
+Let's look at sigma one, sigma two.
+This is always what we look at.
+And what's the relationship between this
+and WG of sigma one?
+Yeah. The equality sign goes this way.
+Uh I think it's at least
+Let's see. Maybe that's what you said.
+Maybe I didn't hear you. Let's check.
+This is the
+If I play sigma one as player one this
+is the worst that can happen to me as
+player one. So, sigma two is one thing
+player two could do. The one thing they
+could do is at least as good for me as
+the worst thing that can happen, so I
+get this inequality, right?
+And because we have this
+weak inequality, we're going to argue in
+two separate cases. There's two
+possibilities. Either this is strictly
+bigger than this or it's equal. Okay?
+So, let me actually write it down like
+Write it like this. So, what I'm saying
+is there's two cases.
+Maybe you can add a bit more detail on
+your notes to make it clearer since I'm
+sort of doing it dynamically, but we
+know that this is weakly bigger than
+this, so there's only two possibilities.
+Either they're equal or one is strictly
+bigger than the other. And I want to
+show that in either case, we don't have
+a Nash equilibrium. In either case,
+someone has a profitable deviation.
+Uh I think this one is actually
+the easier direction.
+here I want to show that player one has
+a profitable deviation.
+Using the fact that sigma one is not a
+security strategy for player one. Can
+anyone try to think through? I think
+it's it's good to try to think through
+it before you see it, otherwise there's
+no way to remember, right? So, I want to
+claim I want to argue that player one
+can has a strictly profitable deviation
+precisely because sigma one is not a
+security strategy. Anyone think through?
+How we might do that? Yeah?
+Perhaps
+you know the worst gain of sigma one
+security strategy is going to be greater
+than the worst case or the worst gain of
+this current strategy that sigma one is
+playing, which means that if we switch
+to the security strategy we're getting a
+certainly or weakly I guess
+It's actually going to be strictly.
+Yeah, so great great. So, exactly right.
+Sigma one is not a security strategy.
+So, let's consider a deviation to a
+security strategy. What happens if
+player one deviated to a security
+strategy say sigma one star?
+So, I want to say instead of playing
+sigma one, which we know is not a
+security strategy,
+let's say player one deviates to a
+security strategy sigma one star.
+And I want to show that player one does
+strictly better.
+How do I show it? Well,
+because sigma one is not a security
+strategy, the worst gain from sigma one
+is strictly worse than the worst gain
+from the security strategy.
+This is what it means to be a security
+strategy. It means sigma one star
+maximizes the worst gain, whereas sigma
+one does not.
+Now, I'm almost done. Now, I just need
+one more inequality here. How do we get
+this
+last inequality?
+This is the same thing we've always been
+using, right? But it's always hard to
+remember.
+If this is the worst that player one
+does when they play sigma one star,
+then if player two plays sigma two,
+player one must do weakly better than
+the worst thing.
+And now if I tie these inequalities
+together, what have I shown? I've shown
+that player one can strictly benefit by
+playing sigma one star. I only have a
+weak inequality here, but I have a
+strict inequality here. So, if I link
+them all together, I've identified a
+strictly profitable deviation for player
+one. I'm saying if player one is not
+playing a security strategy, they must
+be able to profitably deviate to a
+security strategy. Though, this relied
+on this assumption here.
+Now, let's go to
+the other case.
+So, here what I showed is that
+player one has a profitable deviation.
+So, any guesses about what I might show
+here?
+Yeah?
+Player two has a profitable deviation,
+right? So, I want to show that player
+two has a profitable
+deviation.
+Hmm.
+Any thoughts? How can I
+Well, we actually just have to unpeel
+the definition of the worst case gain.
+Okay? [snorts]
+What is this? Well, this is exactly the
+over sigma two
+of U of sigma one
+And I claim we're already done. We just
+have to look at it really carefully.
+Ah, sorry. Sigma two prime.
+How can we see that player two has a
+strictly profitable
+deviation? Yeah? Considering that
+currently the sigma two doesn't actually
+allow the utility to be minimized,
+there's some other sigma two prime that
+actually achieves the minimum. That
+sigma two can be replaced with Exactly
+right. Let's choose a sigma two prime
+that achieves this minimum.
+Then the value of this is going to be
+strictly smaller than the value of this,
+but remember we're talking about player
+So, that means player two has a
+deviation to sigma two prime
+that makes their loss strictly smaller
+than their loss here, and that means
+player two profits.
+Okay. So, let me stop there. This is one
+of these proofs where I think you're
+reading the textbook and it's like two
+lines, but unless you go over it really
+really slowly and carefully yourself,
+you're never going to understand it.
+Just to clarify, are you essentially
+saying that then W2 like will switch to
+the case where you're in the in the like
+in the worst case, player two will
+switch to whatever strategy such that
+you're in the second case
+No, it's not the case that we're going
+to immediately get an equilibrium if
+player two deviates. What's tricky is
+that
+here it it could be that given because
+player one is not playing a security
+strategy, player one might be doing
+something really weird here.
+And it could be that given this really
+weird play by player one, the best thing
+for player two is actually something
+else really weird. So, it doesn't
+necessarily mean that when player two
+deviates we're going to get an
+This is not necessarily a security
+strategy for player two. Because it's
+the strategy that does best against
+sigma one, which could be something
+really really strange and and therefore
+it's not necessarily a security
+Okay, good. Yes, so good.
+Is it pretty clean?
+I don't know. What do you mean by clean?
+Yeah. I'm just like cuz this is proof by
+contradiction. Oh, I see. Um yeah, I
+mean you can I think I went for the
+shortest possible proof. I mean,
+whenever you have a proof by
+contradiction, you can always kind of
+undo it. I mean, here everything's
+finite, so there's not
+Okay, there's these like math philosophy
+things about proofs by contradiction,
+but but here I think you can just pretty
+easily convert it to a quote unquote
+direct proof. Yeah.
+Okay. So, this has been kind of math
+heavy. Let me end the last four minutes
+with
+a maybe more sort of
+fun application of this. So, in the past
+I went through a really simple game that
+we could solve exactly. Here I want to
+go through a more realistic game
+and just show you what the answer is
+cuz I think it's a nice demonstration
+of the power of of the theory.
+So, poker is too hard to solve
+full poker. So, we're going to look at a
+really simplified version of poker that
+von Neumann actually came up with that's
+called von Neumann poker.
+And here's how it works.
+Player one
+is going to get a hand.
+So, P1 gets a hand
+which is just a number X between zero
+and one.
+Where higher numbers are good. So,
+instead of thinking of an actual deck of
+cards, player one is dealt some hand
+a number between zero and one and let's
+say it's uniformly distributed.
+Player two is dealt a hand
+Y
+that's also in zero one.
+And then they're each going to ante
+$1.
+So, each player puts $1 in the pot.
+And then we're going to play a very
+simplified version of poker where player
+one chooses whether to
+bet
+or check.
+Checking means not betting.
+Betting means betting and there's only
+one amount they can bet. So, the bet
+size is going to be B.
+And that's some fixed number. It could
+be one, it could be two, it's just a
+fixed number.
+Now, if player one bets, then player two
+can either call
+or fold.
+Really simple version of poker.
+And then what happens? Well, if player
+one checks, then
+whoever has the higher hand wins the
+pot.
+So, I'll just write it's a little vague
+plus one minus one. And this means if I
+check, we just compare our hands and the
+higher hand gets one and the lower hand
+loses one.
+If player one bets and player two folds,
+well player one automatically wins.
+So, player one gets a payoff of one.
+Right?
+And then down here if player one bets
+and player two calls, now each person
+has put one their ante plus their bet B
+into the pot.
+And the person with the higher hand wins
+that and the person with the lower hand
+loses that. So, I'll write down here
+plus one B plus one.
+So, when I write plus minus one, it
+means the the payoffs depend on who has
+the higher hand. If player one has the
+higher hand, they win their ante or
+really they win the other player's ante
+and the other player's bet.
+If they have the lower hand, then they
+lose their own ante and their own bet,
+so they get minus, right?
+And the question is
+how should you play and who has the
+advantage in this game? Here I'm
+assuming risk neutrality.
+let's say the value of the game
+and how to play.
+So, when I ask the value of the game,
+let me start with the more informal
+question, it's who has the advantage?
+And I can formalize that by asking is
+the value of this game positive or
+negative?
+Right? So, who has the advantage is the
+vague question.
+The mathematically precise question is
+what is the value of this zero sum game?
+How to play? This is a vague question.
+The mathematically precise thing is what
+are the security strategies for the two
+players?
+So, you can see how the theory we
+presented today gives a formalization of
+these very of these vague concepts.
+we're running out of time, so maybe I'll
+put this on the problem set to
+to it, but just maybe final thoughts,
+who would you Would you rather be player
+one or player two in this game? I think
+it's uh
+not at all clear.
+Any thoughts?
+Yeah? I'd rather be player one.
+Why?
+Because like then I get to like set the
+rules of the game, right? Cuz I'm
+setting the betting now and I
+Um yeah, so here the bet is exogenous.
+You can't control the size of the bet,
+but you do control whether you bet,
+right? So that And you actually right.
+In this case it is going to be player
+one who has an advantage, but the reason
+is actually this strange thing here that
+if player one checks, player two doesn't
+have the right to bet.
+In normal poker player two can then bet
+after a check, and in standard poker you
+actually have an advantage generally
+going second and going later. Here
+player one actually has an advantage. So
+it turns out the value is greater than
+zero, and
+the how to play, I'll just say sort of
+the punchline is that it turns out
+player one sometimes bluffs.
+Meaning player one sometimes bets even
+when their hand is really, really bad.
+And I think before this people thought
+poker is this psychological game,
+bluffing is this thing that's beyond
+mathematical reasoning, and it turns out
+just just a minimax theorem immediately
+explains why bluffing is sometimes a
+good thing to do. But I'll put this on
+the problem set for you to work out.
