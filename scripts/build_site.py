@@ -38,6 +38,7 @@ def page(title: str, body: str, active: str = "", depth: int = 0) -> str:
         ("study-route.html", "Study Route", "study-route"),
         ("recognition.html", "Recognition", "recognition"),
         ("math-clinic.html", "Math Clinic", "math-clinic"),
+        ("drills.html", "Drills", "drills"),
         ("cross-reference.html", "Cross Index", "cross-reference"),
         ("limits.html", "Limits", "limits"),
         ("lectures.html", "Lectures", "lectures"),
@@ -212,6 +213,7 @@ def build_index(concepts, themes, evidence, lectures):
 <section><h2>Use The Study Route</h2><p>The route map gives a compact path through the course: choice, representation, equilibrium, time, information, and design.</p><p><a class="button" href="study-route.html">Open the study route</a></p></section>
 <section><h2>Diagnose A New Problem</h2><p>The recognition clinic teaches how to look at a fresh strategic situation and decide which course idea is actually doing the work.</p><p><a class="button" href="recognition.html">Open the recognition clinic</a></p></section>
 <section><h2>Read The Math As A Move</h2><p>The math clinic turns core equations into problem-driven walkthroughs with failed shortcuts, worked numbers, and transfer tests.</p><p><a class="button" href="math-clinic.html">Open the math clinic</a></p></section>
+<section><h2>Practice The Move</h2><p>The drills page gives small strategic situations and asks the reader to identify the concept, math move, wrong turn, and transcript evidence.</p><p><a class="button" href="drills.html">Open problem drills</a></p></section>
 <section><h2>Find A Concept By Pressure</h2><p>The cross index lets a reader jump from an everyday problem to the relevant concept, lecture, primitive, subtheme, and evidence record.</p><p><a class="button" href="cross-reference.html">Open the cross index</a></p></section>
 <section><h2>Check The Limits</h2><p>The limits page collects common misunderstandings, student traps, and places where an analogy stops working.</p><p><a class="button" href="limits.html">Open limits and traps</a></p></section>
 <section><h2>Start With The Course Path</h2><p>The lecture path follows the MIT sequence while linking each session to atlas concepts and transcript evidence.</p><p><a class="button" href="lectures.html">Open the lecture path</a></p></section>
@@ -328,6 +330,44 @@ def build_math_clinic(clinic, deriv_by_id, concept_by_id, ev_by_id):
   <p>Core equations treated as reasoning moves. Each card starts with the ordinary problem, shows the shortcut that fails, reads the equation in plain language, and gives a small numerical or concrete test.</p>
 </section>""" + "".join(cards)
     write(SITE / "math-clinic.html", page("Math Walkthrough Clinic", body, "math-clinic"))
+
+
+def build_problem_drills(drills, concept_by_id, primitive_by_id, ev_by_id):
+    cards = []
+    for drill in drills:
+        concept_links = "".join(
+            f'<a class="chip" href="concepts/{esc(concept_id)}.html">{esc(concept_by_id[concept_id]["name"])}</a>'
+            for concept_id in drill.get("concepts", [])
+            if concept_id in concept_by_id
+        )
+        primitive_links = "".join(
+            f'<a class="chip" href="primitives.html#{esc(primitive_id)}">{esc(primitive_by_id[primitive_id]["name"])}</a>'
+            for primitive_id in drill.get("primitives", [])
+            if primitive_id in primitive_by_id
+        )
+        evidence_links = "".join(
+            f'<li><a href="evidence.html#{esc(ev_id)}">{esc(ev_id)}</a>: {esc(ev_by_id[ev_id]["video_title"])}</li>'
+            for ev_id in drill.get("evidence_ids", [])
+            if ev_id in ev_by_id
+        )
+        cards.append(f"""<article class="wide-card drill-card" id="{esc(drill["id"])}">
+  <p class="eyebrow">Problem drill</p>
+  <h2>{esc(drill["title"])}</h2>
+  <p><strong>Scenario:</strong> {esc(drill["scenario"])}</p>
+  <p><strong>Reader task:</strong> {esc(drill["reader_task"])}</p>
+  <p><strong>First-principles answer:</strong> {esc(drill["first_principles_answer"])}</p>
+  <p><strong>Math move:</strong> {esc(drill["math_move"])}</p>
+  <p><strong>Common wrong turn:</strong> {esc(drill["common_wrong_turn"])}</p>
+  <p><strong>Evidence checkpoint:</strong> {esc(drill["evidence_checkpoint"])}</p>
+  <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
+  <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
+  <h3>Transcript Evidence</h3><ul class="evidence-list">{evidence_links}</ul>
+</article>""")
+    body = """<section class="page-head">
+  <h1>Problem Drills</h1>
+  <p>Small transfer problems for checking whether the reader can choose the right concept, name the math move, avoid the common wrong turn, and return to transcript evidence.</p>
+</section>""" + "".join(cards)
+    write(SITE / "drills.html", page("Problem Drills", body, "drills"))
 
 
 def build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence):
@@ -740,6 +780,7 @@ def main():
     route = load("analysis/throughlines/study-route.json")
     clinic = load("analysis/throughlines/recognition-clinic.json")
     math_clinic = load("analysis/throughlines/math-walkthrough-clinic.json")
+    drills = load("analysis/throughlines/problem-drills.json")
     lectures = load("analysis/lectures/lecture-path.json")
     equation_notes = load_optional("analysis/editorial-overrides/equation-walkthrough-notes.json", {})
     worked_examples = load_optional("analysis/editorial-overrides/worked-example-cards.json", {})
@@ -754,6 +795,7 @@ def main():
     build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_by_id)
     build_recognition_clinic(clinic, concept_by_id, primitive_by_id, ev_by_id)
     build_math_clinic(math_clinic, deriv_by_id, concept_by_id, ev_by_id)
+    build_problem_drills(drills, concept_by_id, primitive_by_id, ev_by_id)
     build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence)
     build_limits(concepts, themes, derivations)
     build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id)

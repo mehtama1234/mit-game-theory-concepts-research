@@ -105,6 +105,7 @@ def main() -> int:
     route = json.loads((ROOT / "analysis/throughlines/study-route.json").read_text(encoding="utf-8"))
     clinic = json.loads((ROOT / "analysis/throughlines/recognition-clinic.json").read_text(encoding="utf-8"))
     math_clinic = json.loads((ROOT / "analysis/throughlines/math-walkthrough-clinic.json").read_text(encoding="utf-8"))
+    drills = json.loads((ROOT / "analysis/throughlines/problem-drills.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
@@ -318,6 +319,39 @@ def main() -> int:
             errors.append(f"math clinic {item['id']} missing evidence links")
     if len(math_clinic) != len(derivations):
         errors.append(f"math clinic has {len(math_clinic)} cards for {len(derivations)} derivations")
+    drills_html = (SITE / "drills.html").read_text(encoding="utf-8") if (SITE / "drills.html").exists() else ""
+    drill_cards = 0
+    drill_concept_links = 0
+    drill_primitive_links = 0
+    drill_evidence_links = 0
+    drill_words = []
+    for drill in drills:
+        if f'id="{drill["id"]}"' in drills_html:
+            drill_cards += 1
+        else:
+            errors.append(f"problem drill {drill['id']} not rendered")
+        text = " ".join(
+            str(drill.get(k, ""))
+            for k in ["scenario", "reader_task", "first_principles_answer", "math_move", "common_wrong_turn", "evidence_checkpoint"]
+        )
+        treatment_words = words(text)
+        drill_words.append(treatment_words)
+        if treatment_words < 105:
+            errors.append(f"problem drill {drill['id']} has shallow treatment: {treatment_words} words")
+        linked_concepts = [cid for cid in drill.get("concepts", []) if f'href="concepts/{cid}.html"' in drills_html]
+        linked_primitives = [pid for pid in drill.get("primitives", []) if f'href="primitives.html#{pid}"' in drills_html]
+        linked_evidence = [eid for eid in drill.get("evidence_ids", []) if f'href="evidence.html#{eid}"' in drills_html]
+        drill_concept_links += len(linked_concepts)
+        drill_primitive_links += len(linked_primitives)
+        drill_evidence_links += len(linked_evidence)
+        if len(linked_concepts) != len(drill.get("concepts", [])):
+            errors.append(f"problem drill {drill['id']} missing concept links")
+        if len(linked_primitives) != len(drill.get("primitives", [])):
+            errors.append(f"problem drill {drill['id']} missing primitive links")
+        if len(linked_evidence) != len(drill.get("evidence_ids", [])):
+            errors.append(f"problem drill {drill['id']} missing evidence links")
+    if len(drills) < 8:
+        errors.append(f"only {len(drills)} problem drills")
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     cross_concept_cards = 0
     cross_lecture_links = 0
@@ -536,6 +570,11 @@ def main() -> int:
         f"- Math clinic derivation links: {math_clinic_derivation_links}",
         f"- Math clinic concept links: {math_clinic_concept_links}",
         f"- Math clinic evidence links: {math_clinic_evidence_links}",
+        f"- Problem drill cards: {drill_cards}",
+        f"- Problem drill words: min {min(drill_words) if drill_words else 0}, max {max(drill_words) if drill_words else 0}",
+        f"- Problem drill concept links: {drill_concept_links}",
+        f"- Problem drill primitive links: {drill_primitive_links}",
+        f"- Problem drill evidence links: {drill_evidence_links}",
         f"- Cross-index concept cards: {cross_concept_cards}",
         f"- Cross-index lecture links: {cross_lecture_links}",
         f"- Cross-index subtheme links: {cross_subtheme_links}",

@@ -31,6 +31,7 @@ def main() -> int:
     route = json.loads((ROOT / "analysis/throughlines/study-route.json").read_text(encoding="utf-8"))
     clinic = json.loads((ROOT / "analysis/throughlines/recognition-clinic.json").read_text(encoding="utf-8"))
     math_clinic = json.loads((ROOT / "analysis/throughlines/math-walkthrough-clinic.json").read_text(encoding="utf-8"))
+    drills = json.loads((ROOT / "analysis/throughlines/problem-drills.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
@@ -45,7 +46,7 @@ def main() -> int:
     }
     supplemental_ids = {record["id"] for record in supplemental}
     themes = json.loads((ROOT / "analysis/themes/theme-map.json").read_text(encoding="utf-8"))
-    required = [SITE / name for name in ["index.html", "study-route.html", "recognition.html", "math-clinic.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
+    required = [SITE / name for name in ["index.html", "study-route.html", "recognition.html", "math-clinic.html", "drills.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
     required.extend(SITE / "lectures" / f"{lecture['id']}.html" for lecture in lectures)
     for path in required:
@@ -59,6 +60,7 @@ def main() -> int:
     route_html = (SITE / "study-route.html").read_text(encoding="utf-8") if (SITE / "study-route.html").exists() else ""
     recognition_html = (SITE / "recognition.html").read_text(encoding="utf-8") if (SITE / "recognition.html").exists() else ""
     math_clinic_html = (SITE / "math-clinic.html").read_text(encoding="utf-8") if (SITE / "math-clinic.html").exists() else ""
+    drills_html = (SITE / "drills.html").read_text(encoding="utf-8") if (SITE / "drills.html").exists() else ""
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     limits_html = (SITE / "limits.html").read_text(encoding="utf-8") if (SITE / "limits.html").exists() else ""
     index_html = (SITE / "index.html").read_text(encoding="utf-8") if (SITE / "index.html").exists() else ""
@@ -68,6 +70,8 @@ def main() -> int:
         errors.append("index page missing recognition clinic link")
     if 'href="math-clinic.html"' not in index_html:
         errors.append("index page missing math clinic link")
+    if 'href="drills.html"' not in index_html:
+        errors.append("index page missing problem drills link")
     if 'href="cross-reference.html"' not in index_html:
         errors.append("index page missing cross-reference link")
     if 'href="limits.html"' not in index_html:
@@ -170,6 +174,34 @@ def main() -> int:
     missing_math_cards = set(deriv_by_id) - seen_math_derivations
     if missing_math_cards:
         errors.append(f"math clinic missing derivation cards: {', '.join(sorted(missing_math_cards))}")
+    if len(drills) < 8:
+        errors.append(f"problem drills has only {len(drills)} cards")
+    for drill in drills:
+        if f'id="{drill["id"]}"' not in drills_html:
+            errors.append(f"problem drill not rendered: {drill['id']}")
+        for field in ["scenario", "reader_task", "first_principles_answer", "math_move", "common_wrong_turn", "evidence_checkpoint"]:
+            value = drill.get(field, "")
+            if words(value) < 12:
+                errors.append(f"problem drill {drill['id']} has shallow {field}")
+            elif html.escape(value, quote=True) not in drills_html:
+                errors.append(f"problem drill {drill['id']} {field} not rendered")
+        if words(" ".join(str(drill.get(field, "")) for field in ["scenario", "first_principles_answer", "math_move", "common_wrong_turn", "evidence_checkpoint"])) < 105:
+            errors.append(f"problem drill {drill['id']} has shallow combined treatment")
+        for concept_id in drill.get("concepts", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"problem drill {drill['id']} references missing concept: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in drills_html:
+                errors.append(f"problem drill {drill['id']} missing concept link: {concept_id}")
+        for primitive_id in drill.get("primitives", []):
+            if primitive_id not in primitive_by_id:
+                errors.append(f"problem drill {drill['id']} references missing primitive: {primitive_id}")
+            elif f'href="primitives.html#{primitive_id}"' not in drills_html:
+                errors.append(f"problem drill {drill['id']} missing primitive link: {primitive_id}")
+        for ev_id in drill.get("evidence_ids", []):
+            if ev_id not in ev_by_id:
+                errors.append(f"problem drill {drill['id']} references missing evidence: {ev_id}")
+            elif f'href="evidence.html#{ev_id}"' not in drills_html:
+                errors.append(f"problem drill {drill['id']} missing evidence link: {ev_id}")
     for concept in concepts:
         if f'id="xref-{concept["id"]}"' not in cross_html:
             errors.append(f"cross index missing concept anchor: {concept['id']}")
