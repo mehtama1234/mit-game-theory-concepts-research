@@ -1,0 +1,200 @@
+{
+  "preferences": {
+    "setup": "A student must choose between coffee, tea, and water before class.",
+    "walkthrough": "Suppose they choose coffee over tea and tea over water. Transitivity says the model should also rank coffee above water. If the student instead ranks water above coffee, the model can create a cycle where every chosen option can be beaten by another option.",
+    "lesson": "Preference assumptions are not about proving what the student truly feels. They are the minimum ordering discipline needed before utility or payoffs can mean anything.",
+    "trap": "Do not treat a preference relation as a life story. It is the ranking the model needs for this decision problem."
+  },
+  "utility": {
+    "setup": "A diner ranks pizza above salad above soup, but the course needs numbers for a payoff table.",
+    "walkthrough": "Utilities 10, 5, and 0 preserve the ranking. So do 100, 20, and -7 if the model only needs ordinary choice order. The exact units are less important than the fact that higher numbers stand for higher-ranked outcomes.",
+    "lesson": "Utility turns rankings into a computable handle while preserving the choice information the model needs.",
+    "trap": "Do not compare utility points like inches or dollars unless the model has added assumptions that justify that stronger interpretation."
+  },
+  "expected_utility": {
+    "setup": "A bidder can submit a bid that wins with probability one third and earns 90 if it wins.",
+    "walkthrough": "The expected utility calculation counts both possible outcomes before the uncertainty resolves. Winning contributes one third times the utility of 90. Losing contributes two thirds times the utility of 0. The action is compared by the weighted bundle, not by the best possible result alone.",
+    "lesson": "Expected utility is the arithmetic that lets a player choose while still admitting they do not know which state will happen.",
+    "trap": "Do not average raw dollars when risk attitudes matter; the formula averages utility in each possible state."
+  },
+  "strategic_form_games": {
+    "setup": "Two suspects each choose confess or stay silent without seeing the other's move.",
+    "walkthrough": "One row alone does not determine either person's payoff. A payoff cell is reached only after both choices are named. The table forces the analyst to evaluate every pair of choices rather than telling a one-person story.",
+    "lesson": "Strategic form is the smallest object that keeps simultaneous interdependence visible.",
+    "trap": "Do not read a strategy as good or bad without naming what the other player does."
+  },
+  "extensive_form_games": {
+    "setup": "An incumbent firm threatens a price war if a new firm enters.",
+    "walkthrough": "A flat table can record the threat, but a tree asks when the threat would actually be chosen. After entry happens, the incumbent reaches a later decision node. If fighting loses money at that node, the threat is not credible.",
+    "lesson": "The tree matters because timing changes what a promise or threat means.",
+    "trap": "Do not assume a drawn branch is a believable future action; later incentives still have to be checked."
+  },
+  "dominance": {
+    "setup": "A firm chooses high price or low price while a rival chooses aggressive or calm behavior.",
+    "walkthrough": "Compare high price and low price under the rival's aggressive move, then compare them under the rival's calm move. If low price gives at least as much payoff in both comparisons and more in one, high price is dominated. The firm does not need a forecast about the rival to remove high price.",
+    "lesson": "Dominance is powerful because it is a no-matter-what comparison.",
+    "trap": "Do not delete an action because it feels unlikely; delete it only when the inequality survives every modeled contingency."
+  },
+  "iterated_deletion": {
+    "setup": "Players in a guessing game choose numbers, and very high guesses cannot be optimal once everyone understands the target rule.",
+    "walkthrough": "First remove guesses that cannot win against any rational play. After those are gone, the upper bound of reasonable guesses falls. That can make the next-highest guesses impossible too, so the deletion repeats on the smaller game.",
+    "lesson": "Iterated deletion shows how one round of rationality can create the next round's reasoning.",
+    "trap": "Do not treat surviving deletion as the same thing as being played in equilibrium."
+  },
+  "rationalizability": {
+    "setup": "A move looks strange at first, but it might be a best response to some belief about the opponent.",
+    "walkthrough": "Instead of asking whether the move is part of a mutual equilibrium, ask whether the player could hold a belief that makes the move optimal. If such a belief exists and the belief itself is not ruled out by rationality, the move survives. If no coherent belief can justify it, the move is eliminated.",
+    "lesson": "Rationalizability separates unjustifiable choices from choices that merely look odd under your favorite prediction.",
+    "trap": "Do not confuse 'not Nash' with 'irrational.' A move can be rationalizable without being in the final equilibrium prediction."
+  },
+  "best_response": {
+    "setup": "A store chooses whether to keep prices high or cut prices after forming a belief about its rival.",
+    "walkthrough": "Hold the rival's price fixed. Compute the store's payoff from each available price. The best response is whichever price gives the highest payoff under that held-fixed rival action.",
+    "lesson": "Best response is conditional choice: a move is best against something.",
+    "trap": "Do not call an action a best response without saying what belief or opponent action it responds to."
+  },
+  "nash_equilibrium": {
+    "setup": "Two coffee shops each choose a price, and each shop's best choice depends on the other's price.",
+    "walkthrough": "Start with a proposed pair of prices. Ask whether shop A wants to change while shop B's price stays fixed. Then ask the same question for shop B. If neither shop wants a one-sided change, the pair passes the Nash test.",
+    "lesson": "Nash equilibrium is mutual best-response consistency, not a promise that the outcome is good for everyone.",
+    "trap": "Do not read equilibrium as fairness, efficiency, or happiness; it only means no profitable unilateral deviation."
+  },
+  "mixed_strategies": {
+    "setup": "A penalty kicker can shoot left or right, and the goalie can dive left or right.",
+    "walkthrough": "If the kicker always shoots left, the goalie can exploit that pattern. Randomizing makes the goalie indifferent when the probabilities are chosen correctly. The probabilities become part of the strategy because predictability itself is costly.",
+    "lesson": "Mixing is a way to make the opponent unable to target a fixed action.",
+    "trap": "Do not treat mixed strategy as a player being confused; it can be the disciplined solution."
+  },
+  "zero_sum_games": {
+    "setup": "In matching pennies, one player wins exactly what the other loses.",
+    "walkthrough": "Each outcome has equal and opposite payoffs. There is no cell where both players gain together. The strategic question becomes how each player prevents exploitation by the other.",
+    "lesson": "Zero-sum structure turns strategic reasoning into pure conflict over a fixed total.",
+    "trap": "Do not import cooperation logic into a model whose payoff map says one side's gain is mechanically the other's loss."
+  },
+  "minimax": {
+    "setup": "A player chooses a plan knowing the opponent will look for the weakest point.",
+    "walkthrough": "For each plan, ask how badly things can go if the opponent responds in the most damaging way. Then choose the plan with the best worst-case guarantee. The player is not predicting kindness; they are protecting against exploitation.",
+    "lesson": "Minimax is best-response reasoning under an adversarial worst-case lens.",
+    "trap": "Do not evaluate a minimax move by assuming the opponent will make a convenient mistake."
+  },
+  "backward_induction": {
+    "setup": "A parent threatens a punishment they will not want to impose later.",
+    "walkthrough": "Start at the later moment when the punishment would be chosen. If imposing it is costly and no longer useful, the parent will not choose it there. Knowing that, the earlier threat loses force.",
+    "lesson": "Backward induction tests future credibility before trusting present threats.",
+    "trap": "Do not solve the first move first just because it appears first in the story."
+  },
+  "subgame_perfection": {
+    "setup": "An entrant considers entering a market after the incumbent threatens a price war.",
+    "walkthrough": "The proposed strategy may look like a Nash equilibrium if the entrant is scared away. But subgame perfection asks what happens in the subgame after entry. If the incumbent would rather accommodate than fight there, the threat is not credible.",
+    "lesson": "Subgame perfection removes equilibria supported by empty threats.",
+    "trap": "Do not accept a threat merely because it keeps the game from reaching the place where the threat would be tested."
+  },
+  "one_shot_deviation": {
+    "setup": "A player in a repeated relationship follows a long plan but considers cheating today.",
+    "walkthrough": "Instead of comparing every possible alternate plan, change one action now and then return to the original plan afterward. If that local deviation never pays at any history, the larger plan can pass the check in the relevant setting.",
+    "lesson": "The one-shot deviation principle turns a huge dynamic check into local credibility tests.",
+    "trap": "Do not use it outside the conditions where local deviations are enough to test the full plan."
+  },
+  "bargaining": {
+    "setup": "A buyer values a car at 10000 and a seller values keeping it at 8000.",
+    "walkthrough": "Trade creates 2000 of surplus because the buyer values the car more than the seller does. Bargaining does not ask whether trade is possible; it asks how that surplus is divided. Patience, outside options, and timing shape the split.",
+    "lesson": "Bargaining separates the existence of gains from trade from the fight over who captures them.",
+    "trap": "Do not confuse total surplus with each side's payoff."
+  },
+  "finitely_repeated_games": {
+    "setup": "Two firms compete on price for exactly ten days, and both firms know the relationship ends after day ten.",
+    "walkthrough": "On day ten, cheating cannot be punished on day eleven because there is no day eleven. Once day ten cooperation loses discipline, day nine threats become weaker too. The logic can unravel backward through the finite horizon.",
+    "lesson": "A known endpoint can destroy future punishment before the endpoint arrives.",
+    "trap": "Do not assume repetition automatically creates cooperation when the ending is common knowledge."
+  },
+  "infinitely_repeated_games": {
+    "setup": "Two firms expect to face each other indefinitely.",
+    "walkthrough": "A firm can gain today by cutting price, but that may trigger future low-price punishment. The comparison is between one short-run gain and the discounted value of future losses. Cooperation survives only when the future matters enough.",
+    "lesson": "Infinite repetition makes future discipline a possible current incentive.",
+    "trap": "Do not say forever solves the problem; the discount factor and punishment credibility still decide."
+  },
+  "folk_theorem": {
+    "setup": "A repeated relationship has many possible cooperative arrangements, not one obvious outcome.",
+    "walkthrough": "Pick a candidate long-run payoff. Check whether each player gets at least as much as their punishment baseline. Then check whether deviating today is worse than losing future cooperation. If patience is high enough, many payoff patterns can be self-enforcing.",
+    "lesson": "The folk theorem explains why repeated games can support a large menu of outcomes.",
+    "trap": "Do not read it as saying anything can happen; feasibility and incentive constraints still bind."
+  },
+  "implicit_cartels": {
+    "setup": "Nearby gas stations keep prices high without signing a contract.",
+    "walkthrough": "Each station could cut price today and steal customers. But if rivals respond with a price war, the future loss may outweigh the current gain. The cartel-like outcome survives only if monitoring and punishment make undercutting unattractive.",
+    "lesson": "Tacit collusion is repeated-game discipline applied to market competition.",
+    "trap": "Do not assume high prices prove an explicit agreement; the model studies when incentives can coordinate behavior without one."
+  },
+  "imperfect_competition": {
+    "setup": "Two coffee shops choose quantities or prices in the same neighborhood.",
+    "walkthrough": "If one shop expands output, market price may fall and change the other's best quantity. If one shop raises price, customers may shift. Each firm's choice is evaluated against the rival's choice, not in isolation.",
+    "lesson": "Imperfect competition turns market power into a strategic best-response problem.",
+    "trap": "Do not use the perfect-competition story when each firm is large enough to move the other firm's payoff."
+  },
+  "bayesian_games": {
+    "setup": "A bidder knows their own value but not the rival's value.",
+    "walkthrough": "The bidder represents the rival's value as a type drawn from a probability distribution. A bid is evaluated by averaging over those possible rival types. The strategy can depend on the bidder's own type because different values create different incentives.",
+    "lesson": "Bayesian games keep hidden information inside the strategic model.",
+    "trap": "Do not replace uncertainty with a single average opponent if the action should vary by type."
+  },
+  "types_and_beliefs": {
+    "setup": "In an auction, each bidder privately knows how much the object is worth to them.",
+    "walkthrough": "That private value is the bidder's type. Other bidders do not observe it, so they hold beliefs over possible types. Their choices respond to that probability story rather than to a known payoff table.",
+    "lesson": "Types name hidden payoff-relevant facts, and beliefs describe how others reason about those facts.",
+    "trap": "Do not treat a type as a personality label; it is the private information that changes payoffs or feasible choices."
+  },
+  "bayesian_nash_equilibrium": {
+    "setup": "High-value and low-value bidders use different bidding rules in a first-price auction.",
+    "walkthrough": "A proposed equilibrium gives each type a bid. To test it, hold the distribution of rival bids fixed and ask whether each type wants to change its own bid. If no type wants to deviate, the strategy rule passes the Bayesian Nash test.",
+    "lesson": "Bayesian Nash equilibrium is mutual best response across hidden types.",
+    "trap": "Do not check only the average bidder; each type needs its own incentive check."
+  },
+  "screening_and_adverse_selection": {
+    "setup": "An insurer sets one price for people with different hidden health risks.",
+    "walkthrough": "At a low price, both low-risk and high-risk buyers may buy. At a higher price, low-risk buyers may leave because the policy is not worth it to them. The remaining pool can become riskier, so raising price can worsen the seller's problem.",
+    "lesson": "Adverse selection appears when participation reveals hidden type and changes the group being served.",
+    "trap": "Do not assume a higher price simply means more revenue per customer; it can change who the customers are."
+  },
+  "auctions": {
+    "setup": "A bidder in a first-price auction values the object at 100.",
+    "walkthrough": "Bidding 100 may win often but leaves no surplus when it wins. Bidding lower wins less often but leaves positive surplus when it does win. The bidder compares both the probability of winning and the payoff conditional on winning.",
+    "lesson": "Auction strategy is a tradeoff between chance of winning and surplus if winning.",
+    "trap": "Do not analyze the bid without the payment rule; first-price and second-price formats change incentives."
+  },
+  "revenue_equivalence": {
+    "setup": "A seller compares a first-price auction with a second-price auction.",
+    "walkthrough": "Bidders behave differently across formats: they shade in first price and may bid value in second price. Revenue equivalence asks whether those behavioral changes offset under specific assumptions. If the same type wins with the same probability and the boundary conditions match, expected seller revenue can coincide.",
+    "lesson": "The theorem is about expected payment rules, not surface similarity between auctions.",
+    "trap": "Do not apply revenue equivalence after changing risk attitudes, bidder symmetry, values, or allocation rules."
+  },
+  "ad_auctions": {
+    "setup": "A search platform ranks ads using both bids and predicted click quality.",
+    "walkthrough": "A high bid from an irrelevant ad may produce little value if users rarely click it. A lower bid with higher quality may deserve a better slot. The mechanism has to combine bid, quality, allocation, and payment incentives.",
+    "lesson": "Ad auctions are mechanism design problems where ranking and payment rules shape participant behavior.",
+    "trap": "Do not reduce the auction to highest bid wins; platform value often depends on relevance and click probability."
+  },
+  "perfect_bayesian_equilibrium": {
+    "setup": "An employer observes education and updates beliefs about worker ability.",
+    "walkthrough": "A proposed strategy says which types choose education and how the employer responds. Beliefs must be updated from the observed education choice where Bayes rule applies. Then each type and the employer must find their choices optimal under those beliefs.",
+    "lesson": "PBE combines sequential credibility with disciplined belief updating.",
+    "trap": "Do not choose beliefs only to rescue a story; on-path beliefs must follow from the proposed strategies."
+  },
+  "signaling": {
+    "setup": "Workers choose whether to get education before employers observe productivity.",
+    "walkthrough": "If education is cheaper for high-ability workers, they may choose it while low-ability workers do not. Employers then treat education as evidence about type. If low-ability workers would copy the same education level, the signal loses separating power.",
+    "lesson": "A signal works when its cost or incentive structure makes different types behave differently.",
+    "trap": "Do not assume information is transmitted just because a message or action is visible."
+  },
+  "cheap_talk": {
+    "setup": "An advisor recommends an action to a decision maker, but the recommendation itself is costless.",
+    "walkthrough": "If advisor and decision maker want similar outcomes, the message can guide the decision. If their interests conflict sharply, every advisor type may send the same persuasive message. Then the listener learns little from the words.",
+    "lesson": "Cheap talk is informative only when incentives make some messages more credible than others.",
+    "trap": "Do not treat speech as evidence without checking why different types would say different things."
+  },
+  "common_knowledge": {
+    "setup": "Every firm privately receives the same rule change, but each firm is unsure whether others received it.",
+    "walkthrough": "Private knowledge may not move behavior because each firm worries others may still act under the old rule. A public announcement changes more than information; it tells everyone that everyone heard it. That recursive awareness can coordinate action.",
+    "lesson": "Common knowledge is the publicness structure that lets players reason about others' reasoning.",
+    "trap": "Do not confuse many people knowing a fact with everyone knowing that everyone knows it."
+  }
+}

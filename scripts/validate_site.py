@@ -26,6 +26,7 @@ def main() -> int:
     supplemental = json.loads((ROOT / "analysis/lectures/lecture-evidence.json").read_text(encoding="utf-8"))
     derivations = json.loads((ROOT / "analysis/throughlines/derivations.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
+    worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
     deriv_by_id = {derivation["id"]: derivation for derivation in derivations}
     supplemental_ids = {record["id"] for record in supplemental}
@@ -84,6 +85,18 @@ def main() -> int:
         text = (SITE / "concepts" / f"{concept['id']}.html").read_text(encoding="utf-8")
         if 'class="learning-diagram concept-flow"' not in text:
             errors.append(f"concept page missing diagram: {concept['id']}")
+        card = worked_examples.get(concept["id"])
+        if not card:
+            errors.append(f"concept {concept['id']} missing worked example card")
+        else:
+            if "Worked Example Card" not in text:
+                errors.append(f"concept page {concept['id']} missing worked example card section")
+            for key in ["setup", "walkthrough", "lesson", "trap"]:
+                value = card.get(key, "")
+                if words(value) < 8:
+                    errors.append(f"concept {concept['id']} has shallow worked example {key}")
+                elif html.escape(value, quote=True) not in text:
+                    errors.append(f"concept {concept['id']} worked example {key} not rendered")
         if "Equation Walkthroughs" not in text:
             errors.append(f"concept page missing derivation section: {concept['id']}")
         expected_derivations = expected_derivation_ids_for_concept(concept, deriv_by_id)

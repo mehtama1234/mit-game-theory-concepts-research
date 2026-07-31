@@ -103,6 +103,7 @@ def main() -> int:
     derivations = json.loads((ROOT / "analysis/throughlines/derivations.json").read_text(encoding="utf-8"))
     families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
+    worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
     deriv_by_id = {derivation["id"]: derivation for derivation in derivations}
 
@@ -114,6 +115,7 @@ def main() -> int:
     rows = []
     concept_pages_with_derivations = 0
     equation_note_words = []
+    worked_example_words = []
     for concept in concepts:
         count = words(" ".join(str(concept.get(field, "")) for field in CONCEPT_FIELDS))
         ev_count = len(ev_by_concept.get(concept["id"], []))
@@ -125,6 +127,22 @@ def main() -> int:
         for heading in REQUIRED_HEADINGS:
             if heading not in html:
                 errors.append(f"concept {concept['id']} missing heading: {heading}")
+        card = worked_examples.get(concept["id"])
+        if not card:
+            errors.append(f"concept {concept['id']} missing worked example card")
+        else:
+            card_words = words(" ".join(str(card.get(key, "")) for key in ["setup", "walkthrough", "lesson", "trap"]))
+            worked_example_words.append(card_words)
+            if card_words < 55:
+                errors.append(f"concept {concept['id']} worked example card is shallow: {card_words} words")
+            if "Worked Example Card" not in html:
+                errors.append(f"concept {concept['id']} worked example card not rendered")
+            for key in ["setup", "walkthrough", "lesson", "trap"]:
+                value = str(card.get(key, ""))
+                if words(value) < 8:
+                    errors.append(f"concept {concept['id']} has shallow worked example {key}")
+                if value and html_lib.escape(value, quote=True) not in html:
+                    errors.append(f"concept {concept['id']} worked example {key} not rendered")
         expected_derivations = expected_derivation_ids_for_concept(concept, deriv_by_id)
         linked_derivations = [derivation_id for derivation_id in expected_derivations if f'href="../primitives.html#{derivation_id}"' in html]
         if expected_derivations and not linked_derivations:
@@ -258,6 +276,7 @@ def main() -> int:
         f"- Derivation-card words: min {min(derivation_words) if derivation_words else 0}, max {max(derivation_words) if derivation_words else 0}",
         f"- Concept pages with derivation links: {concept_pages_with_derivations}",
         f"- Concept equation note words: min {min(equation_note_words) if equation_note_words else 0}, max {max(equation_note_words) if equation_note_words else 0}",
+        f"- Concept worked-example card words: min {min(worked_example_words) if worked_example_words else 0}, max {max(worked_example_words) if worked_example_words else 0}",
         f"- Lecture pages with derivation links: {lecture_pages_with_derivations}",
         f"- Method-family treatment words: min {min(family_words)}, max {max(family_words)}",
         f"- Evidence records with transcript teaching notes: {len(deep_evidence)}",
