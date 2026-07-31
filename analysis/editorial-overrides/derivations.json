@@ -1,5 +1,21 @@
 [
   {
+    "id": "dominance_inequality",
+    "primitive_id": "pruning",
+    "title": "Dominance Inequality",
+    "equation": "u_i(s, a_-i) >= u_i(t, a_-i) for every a_-i, and > for at least one a_-i",
+    "everyday_setup": "A player is comparing two possible moves before making any guess about what the others will do. If move s does at least as well as move t in every relevant case, and does better in at least one case, move t has no independent reason to stay in the analysis.",
+    "derivation_steps": [
+      "Choose two strategies for the same player: the candidate keeper s and the candidate loser t.",
+      "Hold one possible set of opponent actions fixed and compare the payoffs from s and t.",
+      "Repeat that comparison for every possible opponent action covered by the game.",
+      "If s is never worse and sometimes strictly better, t is dominated and can be pruned before solving the rest of the game."
+    ],
+    "symbol_by_symbol": "u_i is player i's payoff. s and t are two strategies available to that same player. a_-i means the actions chosen by everyone else. The phrase for every a_-i is the important part: the comparison must survive all opponent actions, not only the one that seems likely.",
+    "why_it_matters": "This relation explains why dominance is stronger than a hunch. It lets the course delete a strategy without first solving beliefs or equilibrium, because no belief about the opponent can rescue a strategy that loses across the whole comparison.",
+    "common_misread": "The common mistake is deleting a strategy because it performs badly in the most likely case. That is not dominance. Dominance requires the inequality to hold across every case named by the model."
+  },
+  {
     "id": "expected_utility",
     "primitive_id": "belief",
     "title": "Expected Utility",

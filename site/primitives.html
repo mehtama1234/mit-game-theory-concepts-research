@@ -121,7 +121,17 @@
   <h3>Symbol By Symbol</h3><p>E is the event; K means known by the players; repeated K&#x27;s represent higher-order knowledge.</p>
   <h3>Where It Appears</h3><p>Knowledge recursion appears most directly in common knowledge, and indirectly in iterated deletion, rationalizability, equilibrium selection, and communication because players reason about others’ reasoning.</p>
   <h3>Why Misuse Breaks The Model</h3><p>The misuse is treating widespread knowledge as common knowledge. If players are unsure whether others saw the same fact, the recursive chain can break and coordination may fail.</p>
-</article><section class="page-head"><h1>Derivation Cards</h1><p>Core equations unpacked as plain-language operations.</p></section><article class="wide-card derivation-card" id="expected_utility">
+</article><section class="page-head"><h1>Derivation Cards</h1><p>Core equations unpacked as plain-language operations.</p></section><article class="wide-card derivation-card" id="dominance_inequality">
+  <p class="eyebrow">pruning</p>
+  <h2>Dominance Inequality</h2>
+  <p>A player is comparing two possible moves before making any guess about what the others will do. If move s does at least as well as move t in every relevant case, and does better in at least one case, move t has no independent reason to stay in the analysis.</p>
+  <blockquote>u_i(s, a_-i) &gt;= u_i(t, a_-i) for every a_-i, and &gt; for at least one a_-i</blockquote>
+  <h3>Derivation In Plain English</h3>
+  <ol><li>Choose two strategies for the same player: the candidate keeper s and the candidate loser t.</li><li>Hold one possible set of opponent actions fixed and compare the payoffs from s and t.</li><li>Repeat that comparison for every possible opponent action covered by the game.</li><li>If s is never worse and sometimes strictly better, t is dominated and can be pruned before solving the rest of the game.</li></ol>
+  <h3>Symbol By Symbol</h3><p>u_i is player i&#x27;s payoff. s and t are two strategies available to that same player. a_-i means the actions chosen by everyone else. The phrase for every a_-i is the important part: the comparison must survive all opponent actions, not only the one that seems likely.</p>
+  <h3>Why This Relation Matters</h3><p>This relation explains why dominance is stronger than a hunch. It lets the course delete a strategy without first solving beliefs or equilibrium, because no belief about the opponent can rescue a strategy that loses across the whole comparison.</p>
+  <h3>Common Misread</h3><p>The common mistake is deleting a strategy because it performs badly in the most likely case. That is not dominance. Dominance requires the inequality to hold across every case named by the model.</p>
+</article><article class="wide-card derivation-card" id="expected_utility">
   <p class="eyebrow">belief</p>
   <h2>Expected Utility</h2>
   <p>A player chooses before knowing which state of the world is true. Instead of pretending one state is certain, the model weighs each possible payoff by how likely that state seems.</p>

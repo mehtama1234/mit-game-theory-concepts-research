@@ -7,6 +7,8 @@ import sys
 from pathlib import Path
 from urllib.parse import urldefrag
 
+from derivation_link_map import expected_derivation_ids_for_concept, expected_derivation_ids_for_lecture
+
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
 
@@ -18,6 +20,8 @@ def main() -> int:
     lectures = json.loads((ROOT / "analysis/lectures/lecture-path.json").read_text(encoding="utf-8"))
     supplemental = json.loads((ROOT / "analysis/lectures/lecture-evidence.json").read_text(encoding="utf-8"))
     derivations = json.loads((ROOT / "analysis/throughlines/derivations.json").read_text(encoding="utf-8"))
+    concept_by_id = {concept["id"]: concept for concept in concepts}
+    deriv_by_id = {derivation["id"]: derivation for derivation in derivations}
     supplemental_ids = {record["id"] for record in supplemental}
     required = [SITE / name for name in ["index.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
@@ -47,9 +51,13 @@ def main() -> int:
         detail = SITE / "lectures" / f"{lecture['id']}.html"
         if detail.exists():
             text = detail.read_text(encoding="utf-8")
-            for heading in ["What This Lecture Teaches", "Where The Math Enters", "Worked Mini-Example", "Mistakes To Avoid", "Transcript Evidence Chain", "Supplemental Lecture Evidence"]:
+            for heading in ["What This Lecture Teaches", "Where The Math Enters", "Equation Walkthroughs", "Worked Mini-Example", "Mistakes To Avoid", "Transcript Evidence Chain", "Supplemental Lecture Evidence"]:
                 if heading not in text:
                     errors.append(f"lecture page {lecture['id']} missing heading: {heading}")
+            lecture_concepts = [concept_by_id[c["id"]] for c in lecture["concepts"] if c["id"] in concept_by_id]
+            expected_derivations = expected_derivation_ids_for_lecture(lecture_concepts, deriv_by_id)
+            if expected_derivations and "../primitives.html#" not in text:
+                errors.append(f"lecture page {lecture['id']} missing derivation links")
             for ev_id in lecture["evidence_ids"]:
                 if f'id="{ev_id}"' not in text:
                     errors.append(f"lecture page {lecture['id']} missing evidence {ev_id}")
@@ -70,6 +78,11 @@ def main() -> int:
         text = (SITE / "concepts" / f"{concept['id']}.html").read_text(encoding="utf-8")
         if 'class="learning-diagram concept-flow"' not in text:
             errors.append(f"concept page missing diagram: {concept['id']}")
+        if "Equation Walkthroughs" not in text:
+            errors.append(f"concept page missing derivation section: {concept['id']}")
+        for derivation_id in expected_derivation_ids_for_concept(concept, deriv_by_id):
+            if f'href="../primitives.html#{derivation_id}"' not in text:
+                errors.append(f"concept page {concept['id']} missing derivation link: {derivation_id}")
         if "Transcript Evidence" not in text:
             errors.append(f"concept page missing evidence section: {concept['id']}")
     for path in html_files:

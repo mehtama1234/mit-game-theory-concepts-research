@@ -5,6 +5,8 @@ import json
 import re
 from pathlib import Path
 
+from derivation_link_map import expected_derivation_ids_for_concept, expected_derivation_ids_for_lecture
+
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
 REPORT = ROOT / "analysis/audits/editorial-quality-report.md"
@@ -99,6 +101,8 @@ def main() -> int:
     primitives = json.loads((ROOT / "analysis/throughlines/primitives.json").read_text(encoding="utf-8"))
     derivations = json.loads((ROOT / "analysis/throughlines/derivations.json").read_text(encoding="utf-8"))
     families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
+    concept_by_id = {concept["id"]: concept for concept in concepts}
+    deriv_by_id = {derivation["id"]: derivation for derivation in derivations}
 
     ev_by_concept: dict[str, list[str]] = {}
     for ev in evidence:
@@ -106,6 +110,7 @@ def main() -> int:
             ev_by_concept.setdefault(cid, []).append(ev["id"])
 
     rows = []
+    concept_pages_with_derivations = 0
     for concept in concepts:
         count = words(" ".join(str(concept.get(field, "")) for field in CONCEPT_FIELDS))
         ev_count = len(ev_by_concept.get(concept["id"], []))
@@ -117,6 +122,12 @@ def main() -> int:
         for heading in REQUIRED_HEADINGS:
             if heading not in html:
                 errors.append(f"concept {concept['id']} missing heading: {heading}")
+        expected_derivations = expected_derivation_ids_for_concept(concept, deriv_by_id)
+        linked_derivations = [derivation_id for derivation_id in expected_derivations if f'href="../primitives.html#{derivation_id}"' in html]
+        if expected_derivations and not linked_derivations:
+            errors.append(f"concept {concept['id']} has no linked equation walkthrough")
+        if linked_derivations:
+            concept_pages_with_derivations += 1
         rows.append((concept["id"], count, ev_count))
 
     site_text = "\n".join(path.read_text(encoding="utf-8", errors="ignore") for path in SITE.rglob("*.html")).lower()
@@ -172,6 +183,7 @@ def main() -> int:
         if treatment_count < 90:
             errors.append(f"lecture {lecture['id']} has shallow hand-authored treatment: {treatment_count} words")
     lecture_page_words = []
+    lecture_pages_with_derivations = 0
     for lecture in lectures:
         path = SITE / "lectures" / f"{lecture['id']}.html"
         if not path.exists():
@@ -182,9 +194,15 @@ def main() -> int:
         lecture_page_words.append(detail_words)
         if detail_words < 450:
             errors.append(f"lecture detail page {lecture['id']} is shallow: {detail_words} words")
-        for heading in ["What This Lecture Teaches", "Where The Math Enters", "Worked Mini-Example", "Mistakes To Avoid", "How To Recognize This Later", "Transcript Evidence Chain"]:
+        for heading in ["What This Lecture Teaches", "Where The Math Enters", "Equation Walkthroughs", "Worked Mini-Example", "Mistakes To Avoid", "How To Recognize This Later", "Transcript Evidence Chain"]:
             if heading not in text:
                 errors.append(f"lecture detail page {lecture['id']} missing heading: {heading}")
+        lecture_concepts = [concept_by_id[c["id"]] for c in lecture["concepts"] if c["id"] in concept_by_id]
+        expected_derivations = expected_derivation_ids_for_lecture(lecture_concepts, deriv_by_id)
+        if expected_derivations and "../primitives.html#" not in text:
+            errors.append(f"lecture detail page {lecture['id']} has no linked equation walkthrough")
+        if "../primitives.html#" in text:
+            lecture_pages_with_derivations += 1
 
     for theme, count in zip(themes, theme_words):
         if count < 180:
@@ -227,6 +245,8 @@ def main() -> int:
         f"- Subtheme treatment words: min {min(subtheme_words)}, max {max(subtheme_words)}",
         f"- Primitive treatment words: min {min(primitive_words)}, max {max(primitive_words)}",
         f"- Derivation-card words: min {min(derivation_words) if derivation_words else 0}, max {max(derivation_words) if derivation_words else 0}",
+        f"- Concept pages with derivation links: {concept_pages_with_derivations}",
+        f"- Lecture pages with derivation links: {lecture_pages_with_derivations}",
         f"- Method-family treatment words: min {min(family_words)}, max {max(family_words)}",
         f"- Evidence records with transcript teaching notes: {len(deep_evidence)}",
         f"- Evidence records still marked weak: {len(weak_evidence)}",

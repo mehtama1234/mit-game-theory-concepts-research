@@ -10,7 +10,9 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Theme treatment words: min 196, max 280
 - Subtheme treatment words: min 189, max 238
 - Primitive treatment words: min 155, max 207
-- Derivation-card words: min 132, max 173
+- Derivation-card words: min 132, max 259
+- Concept pages with derivation links: 30
+- Lecture pages with derivation links: 25
 - Method-family treatment words: min 234, max 297
 - Evidence records with transcript teaching notes: 66
 - Evidence records still marked weak: 0
@@ -19,7 +21,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Supplemental lecture evidence records: 8
 - Lectures below 2 total evidence anchors: 0
 - Lecture path treatment words: min 30, max 50
-- Lecture detail page words: min 1302, max 5210
+- Lecture detail page words: min 1323, max 5278
 - Errors: 0
 
 ## Lowest Concept Depth
