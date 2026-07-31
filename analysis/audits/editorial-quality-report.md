@@ -10,6 +10,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Theme treatment words: min 196, max 280
 - Subtheme treatment words: min 189, max 238
 - Primitive treatment words: min 155, max 207
+- Primitive-to-concept backlinks: 47
 - Derivation-card words: min 132, max 259
 - Concept pages with derivation links: 30
 - Concept equation note words: min 30, max 37

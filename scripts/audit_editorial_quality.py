@@ -176,6 +176,17 @@ def main() -> int:
     theme_words = [words(" ".join(str(t.get(f, "")) for f in ["big_picture", "why_this_theme_matters", "cross_course_argument", "mathematical_spine", "where_analogy_breaks", "lecture_evidence_chain"])) for t in themes]
     subtheme_words = [words(" ".join(str(s.get(f, "")) for f in ["everyday_problem", "hidden_principle", "mathematical_lever", "why_it_matters", "first_principles_walkthrough", "cross_links_and_limits"])) for s in subthemes]
     primitive_words = [words(" ".join(str(p.get(f, "")) for f in ["everyday_setup", "plain_language_principle", "formal_object", "symbol_explanation", "course_appearances", "why_it_matters", "misuse_warning"])) for p in primitives]
+    primitives_html = (SITE / "primitives.html").read_text(encoding="utf-8") if (SITE / "primitives.html").exists() else ""
+    primitive_backlinks = 0
+    for primitive in primitives:
+        linked = [
+            concept_id
+            for concept_id in primitive.get("concepts_in_atlas", [])
+            if f'href="concepts/{concept_id}.html"' in primitives_html
+        ]
+        primitive_backlinks += len(linked)
+        if len(linked) != len(primitive.get("concepts_in_atlas", [])):
+            errors.append(f"primitive {primitive['id']} missing concept backlinks")
     derivation_words = [words(" ".join(str(d.get(f, "")) for f in ["everyday_setup", "equation", "symbol_by_symbol", "why_it_matters", "common_misread"]) + " " + " ".join(d.get("derivation_steps", []))) for d in derivations]
     family_words = [words(" ".join(str(f.get(k, "")) for k in ["family_problem", "first_principles_pattern", "mathematical_signature", "why_family_matters", "family_walkthrough", "where_analogy_breaks", "lecture_evidence_chain", "paper_family_treatment"])) for f in families]
     deep_evidence = [record for record in evidence if record.get("transcript_teaching_note") and record.get("evidence_boundary")]
@@ -273,6 +284,7 @@ def main() -> int:
         f"- Theme treatment words: min {min(theme_words)}, max {max(theme_words)}",
         f"- Subtheme treatment words: min {min(subtheme_words)}, max {max(subtheme_words)}",
         f"- Primitive treatment words: min {min(primitive_words)}, max {max(primitive_words)}",
+        f"- Primitive-to-concept backlinks: {primitive_backlinks}",
         f"- Derivation-card words: min {min(derivation_words) if derivation_words else 0}, max {max(derivation_words) if derivation_words else 0}",
         f"- Concept pages with derivation links: {concept_pages_with_derivations}",
         f"- Concept equation note words: min {min(equation_note_words) if equation_note_words else 0}, max {max(equation_note_words) if equation_note_words else 0}",

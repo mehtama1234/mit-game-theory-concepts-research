@@ -24,6 +24,7 @@ def main() -> int:
     evidence = json.loads((ROOT / "analysis/evidence/evidence-ledger.json").read_text(encoding="utf-8"))
     lectures = json.loads((ROOT / "analysis/lectures/lecture-path.json").read_text(encoding="utf-8"))
     supplemental = json.loads((ROOT / "analysis/lectures/lecture-evidence.json").read_text(encoding="utf-8"))
+    primitives = json.loads((ROOT / "analysis/throughlines/primitives.json").read_text(encoding="utf-8"))
     derivations = json.loads((ROOT / "analysis/throughlines/derivations.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
@@ -75,6 +76,16 @@ def main() -> int:
         if f'id="{ev["id"]}"' not in evidence_html:
             errors.append(f"missing evidence anchor: {ev['id']}")
     primitives_html = (SITE / "primitives.html").read_text(encoding="utf-8") if (SITE / "primitives.html").exists() else ""
+    for primitive in primitives:
+        if f'id="{primitive["id"]}"' not in primitives_html:
+            errors.append(f"missing primitive anchor: {primitive['id']}")
+        if "Concept Pages Using This Primitive" not in primitives_html:
+            errors.append("primitives page missing concept backlink heading")
+        for concept_id in primitive.get("concepts_in_atlas", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"primitive {primitive['id']} references missing concept: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in primitives_html:
+                errors.append(f"primitive {primitive['id']} missing concept backlink: {concept_id}")
     for derivation in derivations:
         if f'id="{derivation["id"]}"' not in primitives_html:
             errors.append(f"missing derivation anchor: {derivation['id']}")

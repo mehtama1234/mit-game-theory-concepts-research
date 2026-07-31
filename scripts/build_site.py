@@ -379,9 +379,14 @@ def derivation_card(derivation: dict[str, Any]) -> str:
 </article>"""
 
 
-def build_primitives(primitives, derivations):
+def build_primitives(primitives, derivations, concept_by_id):
     cards = []
     for primitive in primitives:
+        concept_links = "".join(
+            f'<a class="chip" href="concepts/{esc(concept_id)}.html">{esc(concept_by_id[concept_id]["name"])}</a>'
+            for concept_id in primitive.get("concepts_in_atlas", [])
+            if concept_id in concept_by_id
+        )
         diagram = flow("Equation Breakdown", [
             ("Why Needed", primitive["why_it_exists"]),
             ("Formal Object", primitive["formal_object"]),
@@ -395,6 +400,7 @@ def build_primitives(primitives, derivations):
   <h3>Plain-Language Principle</h3><p>{esc(primitive.get("plain_language_principle", primitive["why_it_exists"]))}</p>
   <h3>Symbol By Symbol</h3><p>{esc(primitive["symbol_explanation"])}</p>
   <h3>Where It Appears</h3><p>{esc(primitive["course_appearances"])}</p>
+  <h3>Concept Pages Using This Primitive</h3><p class="chips">{concept_links or '<span class="chip muted">No linked concept pages yet</span>'}</p>
   <h3>Why Misuse Breaks The Model</h3><p>{esc(primitive.get("misuse_warning", primitive["misuse_failure"]))}</p>
 </article>""")
     derivation_section = '<section class="page-head"><h1>Derivation Cards</h1><p>Core equations unpacked as plain-language operations.</p></section>' + "".join(derivation_card(d) for d in derivations)
@@ -450,7 +456,7 @@ def main():
     build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id)
     build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examples)
     build_themes(themes, subthemes, concepts)
-    build_primitives(primitives, derivations)
+    build_primitives(primitives, derivations, concept_by_id)
     build_families(families)
     build_evidence(evidence)
     build_assets()
