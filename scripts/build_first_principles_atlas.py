@@ -369,6 +369,7 @@ def related_concepts(concept: dict[str, Any]) -> list[str]:
 def build() -> None:
     index = load_index()
     concept_overrides = load_overrides("concepts.json")
+    evidence_overrides = load_overrides("evidence.json")
     evidence: list[dict[str, Any]] = []
     evidence_by_concept: dict[str, list[str]] = defaultdict(list)
     concepts_out = []
@@ -376,6 +377,7 @@ def build() -> None:
         if concept["id"] not in concept_overrides:
             raise ValueError(f"missing hand-crafted concept override for {concept['id']}")
         records = evidence_for(concept, index)
+        records = [record | evidence_overrides.get(record["id"], {}) for record in records]
         evidence.extend(records)
         evidence_by_concept[concept["id"]] = [record["id"] for record in records]
         base = {k: v for k, v in concept.items() if k not in {"keywords", "lectures", "theme", "primitives", "definition"}}

@@ -32,6 +32,10 @@ def main() -> int:
         "look for the same pressure: someone chooses under strategic dependence",
         "as a label to memorize",
     ]
+    forbidden_evidence = [
+        "the course treats",
+        "as a mechanism for the strategic problem where choices, beliefs, timing, or information change what a person should do",
+    ]
 
     concept_ids = {c["id"] for c in concepts}
     theme_ids = {t["id"] for t in themes}
@@ -79,6 +83,15 @@ def main() -> int:
             errors.append(f"subtheme {subtheme['id']} has no examples")
 
     for record in evidence:
+        for phrase in forbidden_evidence:
+            if phrase in record.get("lecture_argument", ""):
+                errors.append(f"evidence {record['id']} contains generic evidence phrase: {phrase}")
+        if len(record.get("lecture_argument", "").split()) < 22:
+            errors.append(f"evidence {record['id']} has shallow lecture_argument")
+        if len(record.get("example_or_analogy", "").split()) < 18:
+            errors.append(f"evidence {record['id']} has shallow example_or_analogy")
+        if len(record.get("why_span_matters", "").split()) < 18:
+            errors.append(f"evidence {record['id']} has shallow why_span_matters")
         if not (ROOT / record["transcript_path"]).exists():
             errors.append(f"evidence {record['id']} transcript missing")
         if words(record.get("local_transcript_window", "")) < 8:
