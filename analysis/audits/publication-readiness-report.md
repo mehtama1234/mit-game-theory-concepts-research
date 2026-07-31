@@ -6,7 +6,7 @@ This report records local readiness evidence. Remote publication is verified by 
 
 ```text
 $ git log -1 --oneline
-cb472d6 Add MIT lecture path
+b5a4c40 Anchor remaining MIT lectures in atlas
 
 $ git remote -v
 origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (fetch)
@@ -19,24 +19,24 @@ origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (pus
 - Videos: 25
 - Clean transcripts: 25
 - Transcript words: 312004
-- Concepts: 31
+- Concepts: 33
 - Themes: 8
 - Subthemes: 10
-- Evidence records: 62
+- Evidence records: 66
 - Lecture path entries: 25
 - Evidence records queued for review: 0
 - Mathematical primitives: 10
 - Method families: 3
-- Site HTML files: 38
+- Site HTML files: 40
 
 ## Validation Evidence
 
 ```text
-validated 31 concepts, 8 themes, 10 subthemes, 62 evidence records, 10 primitives, 3 method families
+validated 33 concepts, 8 themes, 10 subthemes, 66 evidence records, 10 primitives, 3 method families
 wrote analysis/lectures/lecture-path.json with 25 lectures
-validated 38 html files and 62 evidence anchors
-audited editorial quality for 31 concepts; errors: 0
-render-audited 8 screenshots; errors: 0
+validated 40 html files and 66 evidence anchors
+audited editorial quality for 33 concepts; errors: 0
+render-audited 10 screenshots; errors: 0
 + python3 scripts/build_first_principles_atlas.py
 + python3 scripts/validate_first_principles_atlas.py
 + python3 scripts/build_lecture_path.py
