@@ -103,6 +103,7 @@ def main() -> int:
     derivations = json.loads((ROOT / "analysis/throughlines/derivations.json").read_text(encoding="utf-8"))
     families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
     route = json.loads((ROOT / "analysis/throughlines/study-route.json").read_text(encoding="utf-8"))
+    clinic = json.loads((ROOT / "analysis/throughlines/recognition-clinic.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
@@ -251,6 +252,37 @@ def main() -> int:
             errors.append(f"study route {item['id']} missing primitive links")
         if len(linked_evidence) != len(item.get("evidence", [])):
             errors.append(f"study route {item['id']} missing evidence links")
+    recognition_html = (SITE / "recognition.html").read_text(encoding="utf-8") if (SITE / "recognition.html").exists() else ""
+    recognition_cards = 0
+    recognition_concept_links = 0
+    recognition_primitive_links = 0
+    recognition_evidence_links = 0
+    recognition_words = []
+    for item in clinic:
+        if f'id="{item["id"]}"' in recognition_html:
+            recognition_cards += 1
+        else:
+            errors.append(f"recognition clinic {item['id']} not rendered")
+        text = " ".join(
+            str(item.get(k, ""))
+            for k in ["reader_situation", "diagnostic_question", "first_principles_test", "mathematical_handle", "false_friend", "where_to_go_next"]
+        )
+        treatment_words = words(text)
+        recognition_words.append(treatment_words)
+        if treatment_words < 95:
+            errors.append(f"recognition clinic {item['id']} has shallow diagnostic treatment: {treatment_words} words")
+        linked_concepts = [cid for cid in item.get("use_these_concepts", []) if f'href="concepts/{cid}.html"' in recognition_html]
+        linked_primitives = [pid for pid in item.get("use_these_primitives", []) if f'href="primitives.html#{pid}"' in recognition_html]
+        linked_evidence = [eid for eid in item.get("evidence_ids", []) if f'href="evidence.html#{eid}"' in recognition_html]
+        recognition_concept_links += len(linked_concepts)
+        recognition_primitive_links += len(linked_primitives)
+        recognition_evidence_links += len(linked_evidence)
+        if len(linked_concepts) != len(item.get("use_these_concepts", [])):
+            errors.append(f"recognition clinic {item['id']} missing concept links")
+        if len(linked_primitives) != len(item.get("use_these_primitives", [])):
+            errors.append(f"recognition clinic {item['id']} missing primitive links")
+        if len(linked_evidence) != len(item.get("evidence_ids", [])):
+            errors.append(f"recognition clinic {item['id']} missing evidence links")
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     cross_concept_cards = 0
     cross_lecture_links = 0
@@ -459,6 +491,11 @@ def main() -> int:
         f"- Study route concept links: {route_concept_links}",
         f"- Study route primitive links: {route_primitive_links}",
         f"- Study route evidence links: {route_evidence_links}",
+        f"- Recognition clinic cards: {recognition_cards}",
+        f"- Recognition clinic words: min {min(recognition_words) if recognition_words else 0}, max {max(recognition_words) if recognition_words else 0}",
+        f"- Recognition clinic concept links: {recognition_concept_links}",
+        f"- Recognition clinic primitive links: {recognition_primitive_links}",
+        f"- Recognition clinic evidence links: {recognition_evidence_links}",
         f"- Cross-index concept cards: {cross_concept_cards}",
         f"- Cross-index lecture links: {cross_lecture_links}",
         f"- Cross-index subtheme links: {cross_subtheme_links}",

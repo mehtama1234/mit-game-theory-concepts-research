@@ -21,6 +21,7 @@ CHROME = Path.home() / ".cache/ms-playwright/chromium_headless_shell-1228/chrome
 PAGES = [
     ("desktop-index", "index.html", "1280,900"),
     ("desktop-study-route", "study-route.html", "1280,900"),
+    ("desktop-recognition", "recognition.html", "1280,900"),
     ("desktop-cross-reference", "cross-reference.html", "1280,900"),
     ("desktop-limits", "limits.html", "1280,900"),
     ("desktop-lectures", "lectures.html", "1280,900"),
@@ -33,6 +34,7 @@ PAGES = [
     ("desktop-derivation-expected-utility", "primitives.html#expected_utility", "1280,900"),
     ("mobile-index", "index.html", "390,844"),
     ("mobile-study-route", "study-route.html", "390,844"),
+    ("mobile-recognition", "recognition.html", "390,844"),
     ("mobile-cross-reference", "cross-reference.html", "390,844"),
     ("mobile-limits", "limits.html", "390,844"),
     ("mobile-lectures", "lectures.html", "390,844"),

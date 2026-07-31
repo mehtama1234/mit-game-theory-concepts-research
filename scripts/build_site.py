@@ -36,6 +36,7 @@ def page(title: str, body: str, active: str = "", depth: int = 0) -> str:
     nav = [
         ("index.html", "Overview", "overview"),
         ("study-route.html", "Study Route", "study-route"),
+        ("recognition.html", "Recognition", "recognition"),
         ("cross-reference.html", "Cross Index", "cross-reference"),
         ("limits.html", "Limits", "limits"),
         ("lectures.html", "Lectures", "lectures"),
@@ -208,6 +209,7 @@ def build_index(concepts, themes, evidence, lectures):
 </section>
 <section><h2>The Big Throughline</h2><p>Game theory studies situations where choosing well means reasoning about other choosers. Equilibrium, credibility, beliefs, auctions, signaling, and common knowledge are different answers to the same pressure: my best move depends on what others do, know, want, and expect.</p></section>
 <section><h2>Use The Study Route</h2><p>The route map gives a compact path through the course: choice, representation, equilibrium, time, information, and design.</p><p><a class="button" href="study-route.html">Open the study route</a></p></section>
+<section><h2>Diagnose A New Problem</h2><p>The recognition clinic teaches how to look at a fresh strategic situation and decide which course idea is actually doing the work.</p><p><a class="button" href="recognition.html">Open the recognition clinic</a></p></section>
 <section><h2>Find A Concept By Pressure</h2><p>The cross index lets a reader jump from an everyday problem to the relevant concept, lecture, primitive, subtheme, and evidence record.</p><p><a class="button" href="cross-reference.html">Open the cross index</a></p></section>
 <section><h2>Check The Limits</h2><p>The limits page collects common misunderstandings, student traps, and places where an analogy stops working.</p><p><a class="button" href="limits.html">Open limits and traps</a></p></section>
 <section><h2>Start With The Course Path</h2><p>The lecture path follows the MIT sequence while linking each session to atlas concepts and transcript evidence.</p><p><a class="button" href="lectures.html">Open the lecture path</a></p></section>
@@ -251,6 +253,44 @@ def build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_b
 </article>""")
     body = '<section class="page-head"><h1>Study Route</h1><p>A compact path through the course, from first choice primitives to evidence-backed strategic reasoning.</p></section>' + "".join(cards)
     write(SITE / "study-route.html", page("Study Route", body, "study-route"))
+
+
+def build_recognition_clinic(clinic, concept_by_id, primitive_by_id, ev_by_id):
+    cards = []
+    for item in clinic:
+        concept_links = "".join(
+            f'<a class="chip" href="concepts/{esc(concept_id)}.html">{esc(concept_by_id[concept_id]["name"])}</a>'
+            for concept_id in item.get("use_these_concepts", [])
+            if concept_id in concept_by_id
+        )
+        primitive_links = "".join(
+            f'<a class="chip" href="primitives.html#{esc(primitive_id)}">{esc(primitive_by_id[primitive_id]["name"])}</a>'
+            for primitive_id in item.get("use_these_primitives", [])
+            if primitive_id in primitive_by_id
+        )
+        evidence_links = "".join(
+            f'<li><a href="evidence.html#{esc(ev_id)}">{esc(ev_id)}</a>: {esc(ev_by_id[ev_id]["video_title"])}</li>'
+            for ev_id in item.get("evidence_ids", [])
+            if ev_id in ev_by_id
+        )
+        cards.append(f"""<article class="wide-card recognition-card" id="{esc(item["id"])}">
+  <p class="eyebrow">Recognition clinic</p>
+  <h2>{esc(item["title"])}</h2>
+  <p><strong>Reader situation:</strong> {esc(item["reader_situation"])}</p>
+  <p><strong>Diagnostic question:</strong> {esc(item["diagnostic_question"])}</p>
+  <p><strong>First-principles test:</strong> {esc(item["first_principles_test"])}</p>
+  <p><strong>Mathematical handle:</strong> {esc(item["mathematical_handle"])}</p>
+  <p><strong>False friend:</strong> {esc(item["false_friend"])}</p>
+  <h3>Use These Concepts</h3><p class="chips">{concept_links}</p>
+  <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
+  <h3>Evidence Trail</h3><ul class="evidence-list">{evidence_links}</ul>
+  <p><strong>Where to go next:</strong> {esc(item["where_to_go_next"])}</p>
+</article>""")
+    body = """<section class="page-head">
+  <h1>Recognition Clinic</h1>
+  <p>A diagnostic layer for fresh problems. Start with the situation in front of you, ask the simple test question, then jump into the concept, primitive, and transcript evidence that fit.</p>
+</section>""" + "".join(cards)
+    write(SITE / "recognition.html", page("Recognition Clinic", body, "recognition"))
 
 
 def build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence):
@@ -661,6 +701,7 @@ def main():
     derivations = load("analysis/throughlines/derivations.json")
     families = load("analysis/throughlines/method-families.json")
     route = load("analysis/throughlines/study-route.json")
+    clinic = load("analysis/throughlines/recognition-clinic.json")
     lectures = load("analysis/lectures/lecture-path.json")
     equation_notes = load_optional("analysis/editorial-overrides/equation-walkthrough-notes.json", {})
     worked_examples = load_optional("analysis/editorial-overrides/worked-example-cards.json", {})
@@ -673,6 +714,7 @@ def main():
     deriv_by_id = derivation_map(derivations)
     build_index(concepts, themes, evidence, lectures)
     build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_by_id)
+    build_recognition_clinic(clinic, concept_by_id, primitive_by_id, ev_by_id)
     build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence)
     build_limits(concepts, themes, derivations)
     build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id)
