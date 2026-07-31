@@ -15,11 +15,15 @@ Playwright render audit for representative desktop and mobile pages.
 - desktop-imperfect-competition: `concepts/imperfect_competition.html`, viewport 1280,900, captured 1280x900, 179941 bytes
 - desktop-nash-equilibrium: `concepts/nash_equilibrium.html`, viewport 1280,900, captured 1280x900, 153220 bytes
 - desktop-auctions: `concepts/auctions.html`, viewport 1280,900, captured 1280x900, 136830 bytes
+- desktop-primitives: `primitives.html`, viewport 1280,900, captured 1280x900, 117248 bytes
+- desktop-derivation-expected-utility: `primitives.html#expected_utility`, viewport 1280,900, captured 1280x900, 117635 bytes
 - mobile-index: `index.html`, viewport 390,844, captured 390x844, 71375 bytes
 - mobile-lectures: `lectures.html`, viewport 390,844, captured 390x844, 57304 bytes
 - mobile-lecture-23-detail: `lectures/lecture-23.html`, viewport 390,844, captured 390x844, 75214 bytes
 - mobile-screening-adverse-selection: `concepts/screening_and_adverse_selection.html`, viewport 390,844, captured 390x844, 77224 bytes
 - mobile-nash-equilibrium: `concepts/nash_equilibrium.html`, viewport 390,844, captured 390x844, 73558 bytes
+- mobile-primitives: `primitives.html`, viewport 390,844, captured 390x844, 58458 bytes
+- mobile-derivation-bayes-rule: `primitives.html#bayes_rule`, viewport 390,844, captured 390x844, 72929 bytes
 
 ## Errors
 

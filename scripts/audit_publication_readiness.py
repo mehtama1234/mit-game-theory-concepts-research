@@ -24,6 +24,7 @@ def main() -> int:
     lectures = json.loads((ROOT / "analysis/lectures/lecture-path.json").read_text(encoding="utf-8"))
     supplemental = json.loads((ROOT / "analysis/lectures/lecture-evidence.json").read_text(encoding="utf-8"))
     primitives = json.loads((ROOT / "analysis/throughlines/primitives.json").read_text(encoding="utf-8"))
+    derivations = json.loads((ROOT / "analysis/throughlines/derivations.json").read_text(encoding="utf-8"))
     families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
     queue = json.loads((ROOT / "analysis/evidence/evidence-review-queue.json").read_text(encoding="utf-8"))
     summary = json.loads((ROOT / "raw-material/youtube/summary.json").read_text(encoding="utf-8"))
@@ -58,6 +59,7 @@ def main() -> int:
         f"- Supplemental lecture evidence records: {len(supplemental)}",
         f"- Evidence records queued for review: {len(queue)}",
         f"- Mathematical primitives: {len(primitives)}",
+        f"- Derivation cards: {len(derivations)}",
         f"- Method families: {len(families)}",
         f"- Site HTML files: {len(list(SITE.rglob('*.html')))}",
         "",

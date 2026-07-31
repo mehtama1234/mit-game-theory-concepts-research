@@ -408,6 +408,7 @@ def build() -> None:
     subtheme_overrides = load_overrides("subthemes.json")
     primitive_overrides = load_overrides("primitives.json")
     family_overrides = load_overrides("method-families.json")
+    derivations = load_overrides("derivations.json")
     evidence: list[dict[str, Any]] = []
     evidence_by_concept: dict[str, list[str]] = defaultdict(list)
     concepts_out = []
@@ -548,6 +549,7 @@ def build() -> None:
     write_json(ROOT / "analysis/evidence/evidence-review-queue.json", [])
     write_json(ROOT / "analysis/throughlines/primitives.json", primitives_out)
     write_json(ROOT / "analysis/throughlines/method-families.json", families)
+    write_json(ROOT / "analysis/throughlines/derivations.json", derivations)
     write_big_picture(themes_out, primitives_out, families)
     write_rubric()
 

@@ -10,6 +10,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Theme treatment words: min 196, max 280
 - Subtheme treatment words: min 189, max 238
 - Primitive treatment words: min 155, max 207
+- Derivation-card words: min 132, max 173
 - Method-family treatment words: min 234, max 297
 - Evidence records with transcript teaching notes: 66
 - Evidence records still marked weak: 0

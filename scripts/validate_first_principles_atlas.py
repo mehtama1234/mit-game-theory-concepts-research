@@ -34,6 +34,7 @@ def main() -> int:
     subthemes = load("analysis/themes/subtheme-map.json")
     evidence = load("analysis/evidence/evidence-ledger.json")
     primitives = load("analysis/throughlines/primitives.json")
+    derivations = load("analysis/throughlines/derivations.json")
     families = load("analysis/throughlines/method-families.json")
     forbidden_generic = [
         "strategic settings are interdependent: a choice is not good by itself",
@@ -173,6 +174,31 @@ def main() -> int:
         if words(" ".join(str(primitive.get(f, "")) for f in ["everyday_setup", "plain_language_principle", "formal_object", "symbol_explanation", "course_appearances", "why_it_matters", "misuse_warning"])) < 140:
             errors.append(f"primitive {primitive['id']} is shallow")
 
+    required_derivations = {
+        "expected_utility",
+        "best_response",
+        "nash_equilibrium",
+        "backward_induction",
+        "discounted_sum",
+        "bayes_rule",
+        "auction_expected_payment",
+        "common_knowledge_recursion",
+    }
+    derivation_ids = {derivation["id"] for derivation in derivations}
+    for derivation_id in sorted(required_derivations - derivation_ids):
+        errors.append(f"missing derivation card: {derivation_id}")
+    primitive_ids = {primitive["id"] for primitive in primitives}
+    for derivation in derivations:
+        if derivation.get("primitive_id") not in primitive_ids:
+            errors.append(f"derivation {derivation['id']} references missing primitive")
+        if len(derivation.get("derivation_steps", [])) < 4:
+            errors.append(f"derivation {derivation['id']} has too few steps")
+        if not str(derivation.get("equation", "")).strip():
+            errors.append(f"derivation {derivation['id']} has empty equation")
+        for field in ["everyday_setup", "symbol_by_symbol", "why_it_matters", "common_misread"]:
+            if words(str(derivation.get(field, ""))) < 10:
+                errors.append(f"derivation {derivation['id']} has shallow {field}")
+
     for family in families:
         if not family.get("course_evidence_ids"):
             errors.append(f"family {family['id']} has no evidence")
@@ -182,7 +208,7 @@ def main() -> int:
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
-    print(f"validated {len(concepts)} concepts, {len(themes)} themes, {len(subthemes)} subthemes, {len(evidence)} evidence records, {len(primitives)} primitives, {len(families)} method families")
+    print(f"validated {len(concepts)} concepts, {len(themes)} themes, {len(subthemes)} subthemes, {len(evidence)} evidence records, {len(primitives)} primitives, {len(derivations)} derivations, {len(families)} method families")
     return 0
 
 

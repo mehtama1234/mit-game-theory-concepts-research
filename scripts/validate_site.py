@@ -17,6 +17,7 @@ def main() -> int:
     evidence = json.loads((ROOT / "analysis/evidence/evidence-ledger.json").read_text(encoding="utf-8"))
     lectures = json.loads((ROOT / "analysis/lectures/lecture-path.json").read_text(encoding="utf-8"))
     supplemental = json.loads((ROOT / "analysis/lectures/lecture-evidence.json").read_text(encoding="utf-8"))
+    derivations = json.loads((ROOT / "analysis/throughlines/derivations.json").read_text(encoding="utf-8"))
     supplemental_ids = {record["id"] for record in supplemental}
     required = [SITE / name for name in ["index.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
@@ -58,6 +59,13 @@ def main() -> int:
     for ev in evidence:
         if f'id="{ev["id"]}"' not in evidence_html:
             errors.append(f"missing evidence anchor: {ev['id']}")
+    primitives_html = (SITE / "primitives.html").read_text(encoding="utf-8") if (SITE / "primitives.html").exists() else ""
+    for derivation in derivations:
+        if f'id="{derivation["id"]}"' not in primitives_html:
+            errors.append(f"missing derivation anchor: {derivation['id']}")
+        for heading in ["Derivation In Plain English", "Symbol By Symbol", "Why This Relation Matters", "Common Misread"]:
+            if heading not in primitives_html:
+                errors.append(f"primitives page missing derivation heading: {heading}")
     for concept in concepts:
         text = (SITE / "concepts" / f"{concept['id']}.html").read_text(encoding="utf-8")
         if 'class="learning-diagram concept-flow"' not in text:

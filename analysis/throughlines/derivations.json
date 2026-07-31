@@ -1,0 +1,130 @@
+[
+  {
+    "id": "expected_utility",
+    "primitive_id": "belief",
+    "title": "Expected Utility",
+    "equation": "E[u(a, theta)] = sum_theta p(theta) u(a, theta)",
+    "everyday_setup": "A player chooses before knowing which state of the world is true. Instead of pretending one state is certain, the model weighs each possible payoff by how likely that state seems.",
+    "derivation_steps": [
+      "List the possible hidden states, such as low value and high value.",
+      "Attach a probability to each state. These probabilities must add up to one.",
+      "Compute the payoff from the action in each state.",
+      "Multiply each payoff by its probability and add the pieces."
+    ],
+    "symbol_by_symbol": "a is the action being evaluated. theta is the unknown state or type. p(theta) is the probability of that state. u(a, theta) is the payoff if action a is chosen and theta is true. The summation adds the probability-weighted payoffs.",
+    "why_it_matters": "This is the bridge from uncertainty to choice. Bayesian games, auctions, and screening problems all need a way to compare actions before hidden information is revealed.",
+    "common_misread": "The formula is not saying the average state actually happens. It is a decision rule for choosing under uncertainty."
+  },
+  {
+    "id": "best_response",
+    "primitive_id": "best_response",
+    "title": "Best Response",
+    "equation": "BR_i(a_-i) = argmax_a u_i(a, a_-i)",
+    "everyday_setup": "A move is not good by itself. It is good against some belief or opponent action. Best response asks what player i should do after holding the rest of the situation fixed.",
+    "derivation_steps": [
+      "Fix what the other players are doing.",
+      "Try each available action for player i.",
+      "Compute player i's payoff for each candidate action.",
+      "Keep the action or actions with the highest payoff."
+    ],
+    "symbol_by_symbol": "BR_i is player i's best-response set. a_-i means the actions of everyone except player i. argmax means the action that makes the payoff as large as possible. u_i is player i's payoff function.",
+    "why_it_matters": "Best response is the local engine behind Nash equilibrium, rationalizability, mixed strategies, Bayesian Nash equilibrium, and many deviation checks.",
+    "common_misread": "A best response is always conditional. If the opponent action or belief changes, the best response may change too."
+  },
+  {
+    "id": "nash_equilibrium",
+    "primitive_id": "mutual_consistency",
+    "title": "Nash Equilibrium",
+    "equation": "a_i in BR_i(a_-i) for every player i",
+    "everyday_setup": "A proposed prediction must survive every player asking whether they alone would rather switch. Nash equilibrium is the point where all those one-person checks pass at once.",
+    "derivation_steps": [
+      "Start with a proposed action profile.",
+      "For each player, hold the other players' actions fixed.",
+      "Check whether the player's assigned action is a best response.",
+      "If every player passes the check, the profile is a Nash equilibrium."
+    ],
+    "symbol_by_symbol": "a_i is player i's chosen action. a_-i is everyone else's action. BR_i(a_-i) is the set of best responses against those other actions. The phrase for every player means no one is exempt from the deviation check.",
+    "why_it_matters": "It turns strategic prediction into a mutual consistency test. The result can be stable even when it is inefficient, unfair, or socially bad.",
+    "common_misread": "Equilibrium does not mean the best overall outcome. It means no single player wants to move alone under the modeled payoffs."
+  },
+  {
+    "id": "backward_induction",
+    "primitive_id": "backward_recursion",
+    "title": "Backward Induction",
+    "equation": "V(node) = max_action V(next node)",
+    "everyday_setup": "A threat or promise matters only if it will still be attractive later. Backward induction solves later choices first and uses them to interpret earlier choices.",
+    "derivation_steps": [
+      "Go to the final decision points in the game tree.",
+      "At each final decision, choose the branch with the best payoff for the player moving there.",
+      "Replace that decision point with the value of the chosen continuation.",
+      "Move one step earlier and repeat until the start of the tree is reached."
+    ],
+    "symbol_by_symbol": "V(node) is the value of arriving at a decision point. max_action means choose the action with the highest continuation value. next node is the future decision point or outcome reached by that action.",
+    "why_it_matters": "It separates credible future behavior from empty threats. Dynamic games, bargaining, finite repetition, and subgame perfection all depend on this recursive logic.",
+    "common_misread": "Solving backward is only as good as the tree. If the tree leaves out information, renegotiation, or hidden types, the backward calculation can be precise but misleading."
+  },
+  {
+    "id": "discounted_sum",
+    "primitive_id": "discounting",
+    "title": "Discounted Payoff Sum",
+    "equation": "U = u_0 + delta u_1 + delta^2 u_2 + ...",
+    "everyday_setup": "Repeated interaction asks whether future consequences can discipline today's temptation. The discount factor says how strongly the future counts today.",
+    "derivation_steps": [
+      "Write the payoff from the current period.",
+      "Write the payoff from each future period.",
+      "Multiply each future payoff by an extra power of delta for each step into the future.",
+      "Add current and discounted future payoffs into one present-value comparison."
+    ],
+    "symbol_by_symbol": "U is total discounted payoff. u_0 is payoff now. u_1 is next period's payoff. delta is between zero and one and measures patience. delta squared means a payoff two periods away receives two rounds of discounting.",
+    "why_it_matters": "Cooperation, cartel discipline, and bargaining delay all depend on whether discounted future gains or losses outweigh current temptation.",
+    "common_misread": "The formula does not make future punishment automatically powerful. If delta is small, future consequences may barely matter."
+  },
+  {
+    "id": "bayes_rule",
+    "primitive_id": "belief",
+    "title": "Bayes Rule",
+    "equation": "P(type | signal) = P(signal | type) P(type) / P(signal)",
+    "everyday_setup": "After observing an action or signal, a player revises what they believe about hidden type. Bayes rule is the bookkeeping that turns prior belief plus observed evidence into posterior belief.",
+    "derivation_steps": [
+      "Start with the prior probability of the type.",
+      "Ask how likely the observed signal would be if that type were true.",
+      "Multiply prior probability by signal likelihood.",
+      "Normalize by the total probability of seeing that signal across all possible types."
+    ],
+    "symbol_by_symbol": "P(type | signal) is the updated belief after seeing the signal. P(signal | type) is how likely that signal is for that type. P(type) is the prior belief. P(signal) rescales all type weights so the updated probabilities add to one.",
+    "why_it_matters": "PBE, signaling, screening, and Bayesian games need beliefs that respond to observations rather than floating freely.",
+    "common_misread": "Bayes rule does not tell you off-path beliefs when the observed signal has zero probability under the proposed strategy. That is why dynamic information games need careful belief discipline."
+  },
+  {
+    "id": "auction_expected_payment",
+    "primitive_id": "incentive_compatibility",
+    "title": "Auction Expected Payment",
+    "equation": "expected payment = payment if win x probability of winning",
+    "everyday_setup": "A bidder does not only ask what they pay if they win. They also ask how likely the bid is to win. The expected payment combines those two pieces.",
+    "derivation_steps": [
+      "Pick a bid.",
+      "Find what the bidder would pay if that bid wins under the auction rule.",
+      "Find the probability that this bid wins against rival bids.",
+      "Multiply the payment-if-win by the probability of winning."
+    ],
+    "symbol_by_symbol": "The payment-if-win comes from the auction format. The probability of winning comes from beliefs about rival bids or values. Their product is the average payment before knowing whether this bid wins.",
+    "why_it_matters": "Revenue equivalence, bid shading, first-price auctions, and ad auctions all require separating the price paid from the chance of paying it.",
+    "common_misread": "A higher bid can raise both the chance of winning and the payment made when winning. The bidder's incentive depends on both effects, not one alone."
+  },
+  {
+    "id": "common_knowledge_recursion",
+    "primitive_id": "knowledge_recursion",
+    "title": "Common Knowledge Recursion",
+    "equation": "E, KE, KKE, KKKE, ...",
+    "everyday_setup": "Coordination can require more than everyone privately knowing the same fact. Players may need to know that others know, and know that others know that others know.",
+    "derivation_steps": [
+      "Start with an event E.",
+      "Add the statement that everyone knows E.",
+      "Add the statement that everyone knows that everyone knows E.",
+      "Continue the chain without stopping at any finite level."
+    ],
+    "symbol_by_symbol": "E is the event. K is the knowledge operator. KE means everyone knows E. KKE means everyone knows that everyone knows E. The dots mean the chain continues indefinitely.",
+    "why_it_matters": "Public announcements, coordination, rationalizability, and equilibrium reasoning often depend on shared awareness rather than private information alone.",
+    "common_misread": "A fact being true or widely known is not enough. Common knowledge requires the recursive publicness that lets players reason about other players' reasoning."
+  }
+]

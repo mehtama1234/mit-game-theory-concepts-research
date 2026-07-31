@@ -318,7 +318,22 @@ def build_themes(themes, subthemes, concepts):
     write(SITE / "themes.html", page("Themes", '<section class="page-head"><h1>Themes And Subthemes</h1></section>' + "".join(blocks), "themes"))
 
 
-def build_primitives(primitives):
+def derivation_card(derivation: dict[str, Any]) -> str:
+    steps = "".join(f"<li>{esc(step)}</li>" for step in derivation["derivation_steps"])
+    return f"""<article class="wide-card derivation-card" id="{esc(derivation["id"])}">
+  <p class="eyebrow">{esc(derivation["primitive_id"]).replace("_", " ")}</p>
+  <h2>{esc(derivation["title"])}</h2>
+  <p>{esc(derivation["everyday_setup"])}</p>
+  <blockquote>{esc(derivation["equation"])}</blockquote>
+  <h3>Derivation In Plain English</h3>
+  <ol>{steps}</ol>
+  <h3>Symbol By Symbol</h3><p>{esc(derivation["symbol_by_symbol"])}</p>
+  <h3>Why This Relation Matters</h3><p>{esc(derivation["why_it_matters"])}</p>
+  <h3>Common Misread</h3><p>{esc(derivation["common_misread"])}</p>
+</article>"""
+
+
+def build_primitives(primitives, derivations):
     cards = []
     for primitive in primitives:
         diagram = flow("Equation Breakdown", [
@@ -336,7 +351,8 @@ def build_primitives(primitives):
   <h3>Where It Appears</h3><p>{esc(primitive["course_appearances"])}</p>
   <h3>Why Misuse Breaks The Model</h3><p>{esc(primitive.get("misuse_warning", primitive["misuse_failure"]))}</p>
 </article>""")
-    write(SITE / "primitives.html", page("Primitives", '<section class="page-head"><h1>Mathematical Primitives</h1></section>' + "".join(cards), "primitives"))
+    derivation_section = '<section class="page-head"><h1>Derivation Cards</h1><p>Core equations unpacked as plain-language operations.</p></section>' + "".join(derivation_card(d) for d in derivations)
+    write(SITE / "primitives.html", page("Primitives", '<section class="page-head"><h1>Mathematical Primitives</h1></section>' + "".join(cards) + derivation_section, "primitives"))
 
 
 def build_families(families):
@@ -376,6 +392,7 @@ def main():
     subthemes = load("analysis/themes/subtheme-map.json")
     evidence = load("analysis/evidence/evidence-ledger.json")
     primitives = load("analysis/throughlines/primitives.json")
+    derivations = load("analysis/throughlines/derivations.json")
     families = load("analysis/throughlines/method-families.json")
     lectures = load("analysis/lectures/lecture-path.json")
     ev_by_id = evidence_map(evidence)
@@ -384,7 +401,7 @@ def main():
     build_lectures(lectures, ev_by_id, concept_by_id)
     build_concepts(concepts, evidence)
     build_themes(themes, subthemes, concepts)
-    build_primitives(primitives)
+    build_primitives(primitives, derivations)
     build_families(families)
     build_evidence(evidence)
     build_assets()

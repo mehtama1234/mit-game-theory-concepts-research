@@ -97,6 +97,7 @@ def main() -> int:
     lectures = json.loads((ROOT / "analysis/lectures/lecture-path.json").read_text(encoding="utf-8"))
     supplemental = json.loads((ROOT / "analysis/lectures/lecture-evidence.json").read_text(encoding="utf-8"))
     primitives = json.loads((ROOT / "analysis/throughlines/primitives.json").read_text(encoding="utf-8"))
+    derivations = json.loads((ROOT / "analysis/throughlines/derivations.json").read_text(encoding="utf-8"))
     families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
 
     ev_by_concept: dict[str, list[str]] = {}
@@ -135,6 +136,7 @@ def main() -> int:
     theme_words = [words(" ".join(str(t.get(f, "")) for f in ["big_picture", "why_this_theme_matters", "cross_course_argument", "mathematical_spine", "where_analogy_breaks", "lecture_evidence_chain"])) for t in themes]
     subtheme_words = [words(" ".join(str(s.get(f, "")) for f in ["everyday_problem", "hidden_principle", "mathematical_lever", "why_it_matters", "first_principles_walkthrough", "cross_links_and_limits"])) for s in subthemes]
     primitive_words = [words(" ".join(str(p.get(f, "")) for f in ["everyday_setup", "plain_language_principle", "formal_object", "symbol_explanation", "course_appearances", "why_it_matters", "misuse_warning"])) for p in primitives]
+    derivation_words = [words(" ".join(str(d.get(f, "")) for f in ["everyday_setup", "equation", "symbol_by_symbol", "why_it_matters", "common_misread"]) + " " + " ".join(d.get("derivation_steps", []))) for d in derivations]
     family_words = [words(" ".join(str(f.get(k, "")) for k in ["family_problem", "first_principles_pattern", "mathematical_signature", "why_family_matters", "family_walkthrough", "where_analogy_breaks", "lecture_evidence_chain", "paper_family_treatment"])) for f in families]
     deep_evidence = [record for record in evidence if record.get("transcript_teaching_note") and record.get("evidence_boundary")]
     weak_evidence = [
@@ -193,6 +195,11 @@ def main() -> int:
     for primitive, count in zip(primitives, primitive_words):
         if count < 140:
             errors.append(f"primitive {primitive['id']} has low synthesis depth: {count} words")
+    if len(derivations) < 8:
+        errors.append(f"only {len(derivations)} derivation cards")
+    for derivation, count in zip(derivations, derivation_words):
+        if count < 115:
+            errors.append(f"derivation {derivation['id']} has low teaching depth: {count} words")
     for family, count in zip(families, family_words):
         if count < 180:
             errors.append(f"method family {family['id']} has low synthesis depth: {count} words")
@@ -219,6 +226,7 @@ def main() -> int:
         f"- Theme treatment words: min {min(theme_words)}, max {max(theme_words)}",
         f"- Subtheme treatment words: min {min(subtheme_words)}, max {max(subtheme_words)}",
         f"- Primitive treatment words: min {min(primitive_words)}, max {max(primitive_words)}",
+        f"- Derivation-card words: min {min(derivation_words) if derivation_words else 0}, max {max(derivation_words) if derivation_words else 0}",
         f"- Method-family treatment words: min {min(family_words)}, max {max(family_words)}",
         f"- Evidence records with transcript teaching notes: {len(deep_evidence)}",
         f"- Evidence records still marked weak: {len(weak_evidence)}",
