@@ -34,6 +34,11 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Recognition clinic concept links: 33
 - Recognition clinic primitive links: 22
 - Recognition clinic evidence links: 29
+- Math clinic cards: 9
+- Math clinic words: min 177, max 210
+- Math clinic derivation links: 9
+- Math clinic concept links: 26
+- Math clinic evidence links: 26
 - Cross-index concept cards: 33
 - Cross-index lecture links: 60
 - Cross-index subtheme links: 33
@@ -53,7 +58,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Supplemental lecture evidence records: 8
 - Lectures below 2 total evidence anchors: 0
 - Lecture path treatment words: min 30, max 50
-- Lecture detail page words: min 1355, max 5310
+- Lecture detail page words: min 1364, max 5319
 - Errors: 0
 
 ## Lowest Concept Depth

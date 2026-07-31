@@ -104,6 +104,7 @@ def main() -> int:
     families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
     route = json.loads((ROOT / "analysis/throughlines/study-route.json").read_text(encoding="utf-8"))
     clinic = json.loads((ROOT / "analysis/throughlines/recognition-clinic.json").read_text(encoding="utf-8"))
+    math_clinic = json.loads((ROOT / "analysis/throughlines/math-walkthrough-clinic.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
@@ -283,6 +284,40 @@ def main() -> int:
             errors.append(f"recognition clinic {item['id']} missing primitive links")
         if len(linked_evidence) != len(item.get("evidence_ids", [])):
             errors.append(f"recognition clinic {item['id']} missing evidence links")
+    math_clinic_html = (SITE / "math-clinic.html").read_text(encoding="utf-8") if (SITE / "math-clinic.html").exists() else ""
+    math_clinic_cards = 0
+    math_clinic_derivation_links = 0
+    math_clinic_concept_links = 0
+    math_clinic_evidence_links = 0
+    math_clinic_words = []
+    for item in math_clinic:
+        if f'id="{item["id"]}"' in math_clinic_html:
+            math_clinic_cards += 1
+        else:
+            errors.append(f"math clinic {item['id']} not rendered")
+        text = " ".join(
+            str(item.get(k, ""))
+            for k in ["problem_before_math", "failed_shortcut", "plain_english_equation_reading", "worked_numbers", "why_this_changes_reasoning", "transfer_test"]
+        )
+        treatment_words = words(text)
+        math_clinic_words.append(treatment_words)
+        if treatment_words < 120:
+            errors.append(f"math clinic {item['id']} has shallow walkthrough: {treatment_words} words")
+        derivation_id = item.get("derivation_id", "")
+        if f'href="primitives.html#{derivation_id}"' in math_clinic_html:
+            math_clinic_derivation_links += 1
+        else:
+            errors.append(f"math clinic {item['id']} missing derivation link")
+        linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in math_clinic_html]
+        linked_evidence = [eid for eid in item.get("evidence_ids", []) if f'href="evidence.html#{eid}"' in math_clinic_html]
+        math_clinic_concept_links += len(linked_concepts)
+        math_clinic_evidence_links += len(linked_evidence)
+        if len(linked_concepts) != len(item.get("concepts", [])):
+            errors.append(f"math clinic {item['id']} missing concept links")
+        if len(linked_evidence) != len(item.get("evidence_ids", [])):
+            errors.append(f"math clinic {item['id']} missing evidence links")
+    if len(math_clinic) != len(derivations):
+        errors.append(f"math clinic has {len(math_clinic)} cards for {len(derivations)} derivations")
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     cross_concept_cards = 0
     cross_lecture_links = 0
@@ -496,6 +531,11 @@ def main() -> int:
         f"- Recognition clinic concept links: {recognition_concept_links}",
         f"- Recognition clinic primitive links: {recognition_primitive_links}",
         f"- Recognition clinic evidence links: {recognition_evidence_links}",
+        f"- Math clinic cards: {math_clinic_cards}",
+        f"- Math clinic words: min {min(math_clinic_words) if math_clinic_words else 0}, max {max(math_clinic_words) if math_clinic_words else 0}",
+        f"- Math clinic derivation links: {math_clinic_derivation_links}",
+        f"- Math clinic concept links: {math_clinic_concept_links}",
+        f"- Math clinic evidence links: {math_clinic_evidence_links}",
         f"- Cross-index concept cards: {cross_concept_cards}",
         f"- Cross-index lecture links: {cross_lecture_links}",
         f"- Cross-index subtheme links: {cross_subtheme_links}",

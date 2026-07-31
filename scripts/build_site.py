@@ -37,6 +37,7 @@ def page(title: str, body: str, active: str = "", depth: int = 0) -> str:
         ("index.html", "Overview", "overview"),
         ("study-route.html", "Study Route", "study-route"),
         ("recognition.html", "Recognition", "recognition"),
+        ("math-clinic.html", "Math Clinic", "math-clinic"),
         ("cross-reference.html", "Cross Index", "cross-reference"),
         ("limits.html", "Limits", "limits"),
         ("lectures.html", "Lectures", "lectures"),
@@ -210,6 +211,7 @@ def build_index(concepts, themes, evidence, lectures):
 <section><h2>The Big Throughline</h2><p>Game theory studies situations where choosing well means reasoning about other choosers. Equilibrium, credibility, beliefs, auctions, signaling, and common knowledge are different answers to the same pressure: my best move depends on what others do, know, want, and expect.</p></section>
 <section><h2>Use The Study Route</h2><p>The route map gives a compact path through the course: choice, representation, equilibrium, time, information, and design.</p><p><a class="button" href="study-route.html">Open the study route</a></p></section>
 <section><h2>Diagnose A New Problem</h2><p>The recognition clinic teaches how to look at a fresh strategic situation and decide which course idea is actually doing the work.</p><p><a class="button" href="recognition.html">Open the recognition clinic</a></p></section>
+<section><h2>Read The Math As A Move</h2><p>The math clinic turns core equations into problem-driven walkthroughs with failed shortcuts, worked numbers, and transfer tests.</p><p><a class="button" href="math-clinic.html">Open the math clinic</a></p></section>
 <section><h2>Find A Concept By Pressure</h2><p>The cross index lets a reader jump from an everyday problem to the relevant concept, lecture, primitive, subtheme, and evidence record.</p><p><a class="button" href="cross-reference.html">Open the cross index</a></p></section>
 <section><h2>Check The Limits</h2><p>The limits page collects common misunderstandings, student traps, and places where an analogy stops working.</p><p><a class="button" href="limits.html">Open limits and traps</a></p></section>
 <section><h2>Start With The Course Path</h2><p>The lecture path follows the MIT sequence while linking each session to atlas concepts and transcript evidence.</p><p><a class="button" href="lectures.html">Open the lecture path</a></p></section>
@@ -291,6 +293,41 @@ def build_recognition_clinic(clinic, concept_by_id, primitive_by_id, ev_by_id):
   <p>A diagnostic layer for fresh problems. Start with the situation in front of you, ask the simple test question, then jump into the concept, primitive, and transcript evidence that fit.</p>
 </section>""" + "".join(cards)
     write(SITE / "recognition.html", page("Recognition Clinic", body, "recognition"))
+
+
+def build_math_clinic(clinic, deriv_by_id, concept_by_id, ev_by_id):
+    cards = []
+    for item in clinic:
+        derivation = deriv_by_id.get(item["derivation_id"], {})
+        concept_links = "".join(
+            f'<a class="chip" href="concepts/{esc(concept_id)}.html">{esc(concept_by_id[concept_id]["name"])}</a>'
+            for concept_id in item.get("concepts", [])
+            if concept_id in concept_by_id
+        )
+        evidence_links = "".join(
+            f'<li><a href="evidence.html#{esc(ev_id)}">{esc(ev_id)}</a>: {esc(ev_by_id[ev_id]["video_title"])}</li>'
+            for ev_id in item.get("evidence_ids", [])
+            if ev_id in ev_by_id
+        )
+        derivation_link = f'<a class="chip derivation-link" href="primitives.html#{esc(item["derivation_id"])}">{esc(derivation.get("title", item["derivation_id"]))}</a>'
+        cards.append(f"""<article class="wide-card math-clinic-card" id="{esc(item["id"])}">
+  <p class="eyebrow">Math walkthrough clinic</p>
+  <h2>{esc(item["title"])}</h2>
+  <p class="chips">{derivation_link}</p>
+  <p><strong>Problem before math:</strong> {esc(item["problem_before_math"])}</p>
+  <p><strong>Failed shortcut:</strong> {esc(item["failed_shortcut"])}</p>
+  <p><strong>Plain-English equation reading:</strong> {esc(item["plain_english_equation_reading"])}</p>
+  <p><strong>Worked numbers:</strong> {esc(item["worked_numbers"])}</p>
+  <p><strong>Why this changes reasoning:</strong> {esc(item["why_this_changes_reasoning"])}</p>
+  <p><strong>Transfer test:</strong> {esc(item["transfer_test"])}</p>
+  <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
+  <h3>Evidence Trail</h3><ul class="evidence-list">{evidence_links}</ul>
+</article>""")
+    body = """<section class="page-head">
+  <h1>Math Walkthrough Clinic</h1>
+  <p>Core equations treated as reasoning moves. Each card starts with the ordinary problem, shows the shortcut that fails, reads the equation in plain language, and gives a small numerical or concrete test.</p>
+</section>""" + "".join(cards)
+    write(SITE / "math-clinic.html", page("Math Walkthrough Clinic", body, "math-clinic"))
 
 
 def build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence):
@@ -702,6 +739,7 @@ def main():
     families = load("analysis/throughlines/method-families.json")
     route = load("analysis/throughlines/study-route.json")
     clinic = load("analysis/throughlines/recognition-clinic.json")
+    math_clinic = load("analysis/throughlines/math-walkthrough-clinic.json")
     lectures = load("analysis/lectures/lecture-path.json")
     equation_notes = load_optional("analysis/editorial-overrides/equation-walkthrough-notes.json", {})
     worked_examples = load_optional("analysis/editorial-overrides/worked-example-cards.json", {})
@@ -715,6 +753,7 @@ def main():
     build_index(concepts, themes, evidence, lectures)
     build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_by_id)
     build_recognition_clinic(clinic, concept_by_id, primitive_by_id, ev_by_id)
+    build_math_clinic(math_clinic, deriv_by_id, concept_by_id, ev_by_id)
     build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence)
     build_limits(concepts, themes, derivations)
     build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id)

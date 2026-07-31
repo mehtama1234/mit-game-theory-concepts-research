@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Math Walkthrough Clinic · MIT Game Theory Concept Lab</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">MIT Game Theory Concept Lab</a>
+    <nav><a class="" href="index.html">Overview</a><a class="" href="study-route.html">Study Route</a><a class="" href="recognition.html">Recognition</a><a class="active" href="math-clinic.html">Math Clinic</a><a class="" href="cross-reference.html">Cross Index</a><a class="" href="limits.html">Limits</a><a class="" href="lectures.html">Lectures</a><a class="" href="concepts.html">Concepts</a><a class="" href="themes.html">Themes</a><a class="" href="families.html">Method Families</a><a class="" href="primitives.html">Primitives</a><a class="" href="evidence.html">Evidence</a></nav>
+  </header>
+  <main><section class="page-head">
+  <h1>Math Walkthrough Clinic</h1>
+  <p>Core equations treated as reasoning moves. Each card starts with the ordinary problem, shows the shortcut that fails, reads the equation in plain language, and gives a small numerical or concrete test.</p>
+</section><article class="wide-card math-clinic-card" id="math-clinic-dominance">
+  <p class="eyebrow">Math walkthrough clinic</p>
+  <h2>Dominance: the inequality is a universal comparison, not a vibe check</h2>
+  <p class="chips"><a class="chip derivation-link" href="primitives.html#dominance_inequality">Dominance Inequality</a></p>
+  <p><strong>Problem before math:</strong> A player has several moves, and one move looks bad. The danger is deleting it too quickly because it loses in the case that feels most likely.</p>
+  <p><strong>Failed shortcut:</strong> The shortcut is to compare the moves under one opponent action and call the loser dominated. That fails because the opponent may choose a different action, and the deleted move might be useful there.</p>
+  <p><strong>Plain-English equation reading:</strong> Read the dominance inequality as a row-by-row audit. Keep move s over move t only if s gives at least as much payoff as t against every possible opponent move, with a strict advantage somewhere.</p>
+  <p><strong>Worked numbers:</strong> If high price gives payoffs 4 and 2 against the rival&#x27;s two moves, while low price gives 3 and 1, high price dominates low price because 4 is greater than 3 and 2 is greater than 1. If the second comparison were 0 versus 1, dominance would fail.</p>
+  <p><strong>Why this changes reasoning:</strong> The math lets the reader remove a move without first predicting the opponent. That is powerful precisely because the comparison survives every opponent action in the model.</p>
+  <p><strong>Transfer test:</strong> Use this test when you see a strategy deletion step in a paper or lecture. Ask: did the author compare every relevant opponent case, or only the convenient one?</p>
+  <h3>Concept Pages</h3><p class="chips"><a class="chip" href="concepts/dominance.html">Dominance</a><a class="chip" href="concepts/iterated_deletion.html">Iterated Deletion</a></p>
+  <h3>Evidence Trail</h3><ul class="evidence-list"><li><a href="evidence.html#ev-dominance-01">ev-dominance-01</a>: Lecture 3: Dominance</li><li><a href="evidence.html#ev-iterated_deletion-01">ev-iterated_deletion-01</a>: Lecture 4: Rationalizability</li></ul>
+</article><article class="wide-card math-clinic-card" id="math-clinic-expected-utility">
+  <p class="eyebrow">Math walkthrough clinic</p>
+  <h2>Expected utility: one number for a choice made before uncertainty resolves</h2>
+  <p class="chips"><a class="chip derivation-link" href="primitives.html#expected_utility">Expected Utility</a></p>
+  <p><strong>Problem before math:</strong> A player must choose now, but the payoff depends on a state they do not yet know. Looking only at the best possible outcome or the worst possible outcome throws away part of the situation.</p>
+  <p><strong>Failed shortcut:</strong> The shortcut is to pick the action with the biggest payoff in one state. That fails because a rare jackpot and a common modest payoff should not be treated as equally likely.</p>
+  <p><strong>Plain-English equation reading:</strong> Read the expected utility equation as weighted averaging. For each possible state, take the payoff from the action, weight it by how likely that state is, and add the weighted pieces.</p>
+  <p><strong>Worked numbers:</strong> If bidding gives payoff 90 with probability one third and payoff 0 otherwise, its expected payoff is one third times 90 plus two thirds times 0, which equals 30. A safer action worth 25 is worse under this calculation, even though it avoids the zero outcome.</p>
+  <p><strong>Why this changes reasoning:</strong> The equation turns a messy uncertain choice into a comparable quantity while preserving both payoffs and probabilities. That is why it reappears in Bayesian games, auctions, and screening.</p>
+  <p><strong>Transfer test:</strong> Use this test whenever a model chooses before hidden information is revealed. Ask: what are the states, what are the probabilities, and what payoff does this action produce in each state?</p>
+  <h3>Concept Pages</h3><p class="chips"><a class="chip" href="concepts/expected_utility.html">Expected Utility</a><a class="chip" href="concepts/bayesian_games.html">Bayesian Games</a><a class="chip" href="concepts/auctions.html">Auctions</a></p>
+  <h3>Evidence Trail</h3><ul class="evidence-list"><li><a href="evidence.html#ev-expected_utility-01">ev-expected_utility-01</a>: Lecture 1: Introduction to Individual Decision-Making</li><li><a href="evidence.html#ev-bayesian_games-01">ev-bayesian_games-01</a>: Lecture 16: Bayesian Games</li><li><a href="evidence.html#ev-auctions-01">ev-auctions-01</a>: Lecture 18: Auctions</li></ul>
+</article><article class="wide-card math-clinic-card" id="math-clinic-best-response">
+  <p class="eyebrow">Math walkthrough clinic</p>
+  <h2>Best response: the best move only after the outside behavior is fixed</h2>
+  <p class="chips"><a class="chip derivation-link" href="primitives.html#best_response">Best Response</a></p>
+  <p><strong>Problem before math:</strong> A player asks what to do, but the answer depends on what others do. A move cannot be called best in the abstract.</p>
+  <p><strong>Failed shortcut:</strong> The shortcut is to rank a player&#x27;s actions once and use that ranking everywhere. That fails because an action that is best against one opponent move may be terrible against another.</p>
+  <p><strong>Plain-English equation reading:</strong> Read BR_i(a_-i) as a conditional instruction: after everyone else&#x27;s actions are held fixed, look across player i&#x27;s actions and keep the payoff-maximizing ones.</p>
+  <p><strong>Worked numbers:</strong> If a firm earns 8 from producing high quantity when the rival produces low, and 5 from producing low quantity, high is the best response to low. But if the rival produces high and the payoffs switch to 1 for high and 4 for low, low is the best response to high.</p>
+  <p><strong>Why this changes reasoning:</strong> The math prevents the reader from treating strategy as a personality trait. It makes every recommendation conditional on the environment created by other players.</p>
+  <p><strong>Transfer test:</strong> Use this test when a paper says an agent optimally responds. Ask: optimal against what belief, opponent action, or continuation path?</p>
+  <h3>Concept Pages</h3><p class="chips"><a class="chip" href="concepts/best_response.html">Best Response</a><a class="chip" href="concepts/rationalizability.html">Rationalizability</a><a class="chip" href="concepts/imperfect_competition.html">Imperfect Competition</a></p>
+  <h3>Evidence Trail</h3><ul class="evidence-list"><li><a href="evidence.html#ev-best_response-02">ev-best_response-02</a>: Lecture 5: Nash Equilibrium</li><li><a href="evidence.html#ev-rationalizability-01">ev-rationalizability-01</a>: Lecture 4: Rationalizability</li><li><a href="evidence.html#ev-imperfect_competition-01">ev-imperfect_competition-01</a>: Lecture 6: Imperfect Competition</li></ul>
+</article><article class="wide-card math-clinic-card" id="math-clinic-nash">
+  <p class="eyebrow">Math walkthrough clinic</p>
+  <h2>Nash equilibrium: every local best-response check passes at once</h2>
+  <p class="chips"><a class="chip derivation-link" href="primitives.html#nash_equilibrium">Nash Equilibrium</a></p>
+  <p><strong>Problem before math:</strong> A proposed outcome may look plausible when viewed from outside, but each player still has their own private temptation to move away from it.</p>
+  <p><strong>Failed shortcut:</strong> The shortcut is to choose the outcome with the highest total payoff or the most natural story. That fails because a prediction must survive each player&#x27;s unilateral deviation check.</p>
+  <p><strong>Plain-English equation reading:</strong> Read the Nash condition as a loop closure. For every player, the action assigned to that player must be inside the best-response set created by the other players&#x27; assigned actions.</p>
+  <p><strong>Worked numbers:</strong> If both firms choose low price, and either firm would earn more by switching to high price while the other stays low, low-low is not Nash. If neither firm can improve by changing alone from high-high, then high-high passes the Nash test even if both would prefer another coordinated outcome.</p>
+  <p><strong>Why this changes reasoning:</strong> The equation changes prediction from a story about what should happen into a checkable stability claim. It also explains why equilibrium can be inefficient without being internally inconsistent.</p>
+  <p><strong>Transfer test:</strong> Use this test whenever a model reports an equilibrium. Ask for each player: holding everyone else fixed, what exact deviation would improve their payoff?</p>
+  <h3>Concept Pages</h3><p class="chips"><a class="chip" href="concepts/nash_equilibrium.html">Nash Equilibrium</a><a class="chip" href="concepts/mixed_strategies.html">Mixed Strategies</a><a class="chip" href="concepts/bayesian_nash_equilibrium.html">Bayesian Nash Equilibrium</a></p>
+  <h3>Evidence Trail</h3><ul class="evidence-list"><li><a href="evidence.html#ev-nash_equilibrium-01">ev-nash_equilibrium-01</a>: Lecture 5: Nash Equilibrium</li><li><a href="evidence.html#ev-mixed_strategies-01">ev-mixed_strategies-01</a>: Lecture 5: Nash Equilibrium</li><li><a href="evidence.html#ev-bayesian_nash_equilibrium-01">ev-bayesian_nash_equilibrium-01</a>: Lecture 17: Bayesian Nash Equilibrium: Applications</li></ul>
+</article><article class="wide-card math-clinic-card" id="math-clinic-backward-induction">
+  <p class="eyebrow">Math walkthrough clinic</p>
+  <h2>Backward induction: today&#x27;s threat is judged by tomorrow&#x27;s incentives</h2>
+  <p class="chips"><a class="chip derivation-link" href="primitives.html#backward_induction">Backward Induction</a></p>
+  <p><strong>Problem before math:</strong> A player threatens or promises a future action, and the current player reacts to that announcement. The key question is whether the future action would still be attractive later.</p>
+  <p><strong>Failed shortcut:</strong> The shortcut is to take the announced threat as real because it changes current behavior. That fails when the threatener would not want to carry it out after the history reaches that point.</p>
+  <p><strong>Plain-English equation reading:</strong> Read V(node) = max_action V(next node) as solving the tree from the end. At each decision point, replace the branch with the value of the best continuation available to the player moving there.</p>
+  <p><strong>Worked numbers:</strong> If entry leads the incumbent to choose fight for payoff -1 or accommodate for payoff 2, the future incumbent chooses accommodate. The entrant should reason using 2 as the continuation, not the announced fight payoff.</p>
+  <p><strong>Why this changes reasoning:</strong> The recursion makes credibility visible. It strips away future actions that sound scary today but would not be chosen tomorrow.</p>
+  <p><strong>Transfer test:</strong> Use this test when a model contains threats, promises, bargaining delays, or exit options. Ask: what would the acting player choose at the final decision node?</p>
+  <h3>Concept Pages</h3><p class="chips"><a class="chip" href="concepts/backward_induction.html">Backward Induction</a><a class="chip" href="concepts/subgame_perfection.html">Subgame-Perfect Nash Equilibrium</a><a class="chip" href="concepts/bargaining.html">Bargaining</a></p>
+  <h3>Evidence Trail</h3><ul class="evidence-list"><li><a href="evidence.html#ev-backward_induction-02">ev-backward_induction-02</a>: Lecture 2: Representation of Games</li><li><a href="evidence.html#ev-subgame_perfection-01">ev-subgame_perfection-01</a>: Lecture 10: Subgame-Perfect Nash Equilibrium</li><li><a href="evidence.html#ev-bargaining-01">ev-bargaining-01</a>: Lecture 9: Negotiation</li></ul>
+</article><article class="wide-card math-clinic-card" id="math-clinic-discounting">
+  <p class="eyebrow">Math walkthrough clinic</p>
+  <h2>Discounting: cooperation survives only if the future is heavy enough</h2>
+  <p class="chips"><a class="chip derivation-link" href="primitives.html#discounted_sum">Discounted Payoff Sum</a></p>
+  <p><strong>Problem before math:</strong> A player can gain by cheating today, but cheating may destroy future cooperation. The issue is not whether punishment exists; it is whether the future loss is large enough.</p>
+  <p><strong>Failed shortcut:</strong> The shortcut is to say repeated interaction supports cooperation. That fails when players are impatient, the future is short, or punishment is too weak.</p>
+  <p><strong>Plain-English equation reading:</strong> Read the discounted sum as today&#x27;s value of a stream of payoffs. Current payoff counts fully; each later payoff is multiplied by another power of delta, the patience factor.</p>
+  <p><strong>Worked numbers:</strong> If cheating gives an extra 5 today but causes a loss of 2 every future period, patience matters. With delta near zero, those future losses barely count. With delta near one, the repeated future loss can outweigh the one-time gain.</p>
+  <p><strong>Why this changes reasoning:</strong> The formula turns vague future consequences into a comparison. It tells the reader when cooperation, cartel discipline, or bargaining patience can actually be incentive-compatible.</p>
+  <p><strong>Transfer test:</strong> Use this test in repeated-game arguments. Ask: what is the one-shot gain from deviation, what is the future punishment path, and how large must delta be for restraint to make sense?</p>
+  <h3>Concept Pages</h3><p class="chips"><a class="chip" href="concepts/infinitely_repeated_games.html">Infinitely Repeated Games</a><a class="chip" href="concepts/folk_theorem.html">Folk Theorem</a><a class="chip" href="concepts/implicit_cartels.html">Implicit Cartels</a></p>
+  <h3>Evidence Trail</h3><ul class="evidence-list"><li><a href="evidence.html#ev-infinitely_repeated_games-01">ev-infinitely_repeated_games-01</a>: Lecture 13: Infinitely Repeated Games</li><li><a href="evidence.html#ev-folk_theorem-01">ev-folk_theorem-01</a>: Lecture 14: Folk Theorem</li><li><a href="evidence.html#ev-implicit_cartels-01">ev-implicit_cartels-01</a>: Lecture 15: Implicit Cartels</li></ul>
+</article><article class="wide-card math-clinic-card" id="math-clinic-bayes-rule">
+  <p class="eyebrow">Math walkthrough clinic</p>
+  <h2>Bayes rule: beliefs move because evidence favors some hidden types over others</h2>
+  <p class="chips"><a class="chip derivation-link" href="primitives.html#bayes_rule">Bayes Rule</a></p>
+  <p><strong>Problem before math:</strong> A player observes an action or signal and needs to infer what hidden type may have produced it. The observation is useful only because some types are more likely to produce it than others.</p>
+  <p><strong>Failed shortcut:</strong> The shortcut is to update toward the type that feels most vivid after the signal. That fails because updating must compare how likely the same signal is under each possible type.</p>
+  <p><strong>Plain-English equation reading:</strong> Read Bayes rule as reweighting. Start with prior belief in a type, multiply by how likely this signal is if that type is true, then divide by the total chance of seeing the signal.</p>
+  <p><strong>Worked numbers:</strong> Suppose high quality is 40 percent likely. High quality sends an expensive signal 75 percent of the time, and low quality sends it 25 percent of the time. The high-quality weight is .4 times .75 = .30; the low-quality weight is .6 times .25 = .15, so the posterior high-quality belief is .30 divided by .45, or two thirds.</p>
+  <p><strong>Why this changes reasoning:</strong> The equation disciplines belief changes in Bayesian games, signaling, and perfect Bayesian equilibrium. Beliefs become responses to modeled evidence instead of free narrative choices.</p>
+  <p><strong>Transfer test:</strong> Use this test when an action is interpreted as information. Ask: which types could have produced this signal, and how likely was the signal under each type?</p>
+  <h3>Concept Pages</h3><p class="chips"><a class="chip" href="concepts/types_and_beliefs.html">Types And Beliefs</a><a class="chip" href="concepts/perfect_bayesian_equilibrium.html">Perfect Bayesian Equilibrium</a><a class="chip" href="concepts/signaling.html">Signaling</a></p>
+  <h3>Evidence Trail</h3><ul class="evidence-list"><li><a href="evidence.html#ev-types_and_beliefs-01">ev-types_and_beliefs-01</a>: Lecture 16: Bayesian Games</li><li><a href="evidence.html#ev-perfect_bayesian_equilibrium-01">ev-perfect_bayesian_equilibrium-01</a>: Lecture 21: Perfect Bayesian Equilibrium</li><li><a href="evidence.html#ev-signaling-01">ev-signaling-01</a>: Lecture 22: Signaling</li></ul>
+</article><article class="wide-card math-clinic-card" id="math-clinic-auction-payment">
+  <p class="eyebrow">Math walkthrough clinic</p>
+  <h2>Auction expected payment: bid choice mixes price and chance of paying</h2>
+  <p class="chips"><a class="chip derivation-link" href="primitives.html#auction_expected_payment">Auction Expected Payment</a></p>
+  <p><strong>Problem before math:</strong> A bidder chooses a bid before knowing whether they win. The bid changes both the chance of winning and the amount paid if winning.</p>
+  <p><strong>Failed shortcut:</strong> The shortcut is to look only at the payment if the bidder wins. That fails because a very high payment may be attached to a very small or very large winning probability, and incentives depend on both.</p>
+  <p><strong>Plain-English equation reading:</strong> Read expected payment as payment-if-win times probability-of-winning. In richer auction formulas, the same idea is hidden inside integrals or expectations, but the primitive is still price times chance.</p>
+  <p><strong>Worked numbers:</strong> If bidding 10 means paying 10 with a 20 percent chance of winning, expected payment is 2. If bidding 18 means paying 18 with a 70 percent chance of winning, expected payment is 12.6. The higher bid raises both the chance and the expected payment.</p>
+  <p><strong>Why this changes reasoning:</strong> The calculation explains bid shading and revenue comparisons. A bidder trades off a better chance of allocation against a higher payment burden.</p>
+  <p><strong>Transfer test:</strong> Use this test for auctions and ad auctions. Ask: what event triggers payment, what is paid in that event, and how does the bid change the probability of that event?</p>
+  <h3>Concept Pages</h3><p class="chips"><a class="chip" href="concepts/auctions.html">Auctions</a><a class="chip" href="concepts/revenue_equivalence.html">Revenue Equivalence</a><a class="chip" href="concepts/ad_auctions.html">Ad Auctions</a></p>
+  <h3>Evidence Trail</h3><ul class="evidence-list"><li><a href="evidence.html#ev-auctions-01">ev-auctions-01</a>: Lecture 18: Auctions</li><li><a href="evidence.html#ev-revenue_equivalence-01">ev-revenue_equivalence-01</a>: Lecture 19: Revenue Equivalence</li><li><a href="evidence.html#ev-ad_auctions-01">ev-ad_auctions-01</a>: Lecture 20: Ad Auctions</li></ul>
+</article><article class="wide-card math-clinic-card" id="math-clinic-common-knowledge">
+  <p class="eyebrow">Math walkthrough clinic</p>
+  <h2>Common knowledge: coordination needs public recursion, not just shared facts</h2>
+  <p class="chips"><a class="chip derivation-link" href="primitives.html#common_knowledge_recursion">Common Knowledge Recursion</a></p>
+  <p><strong>Problem before math:</strong> Several players privately know the same fact, but they may not know whether the others know it too. Coordination can fail because the fact is not publicly anchored at every level of reasoning.</p>
+  <p><strong>Failed shortcut:</strong> The shortcut is to say everyone knows the fact, so coordination should follow. That fails when each player doubts whether others know, or doubts whether others know that others know.</p>
+  <p><strong>Plain-English equation reading:</strong> Read E, KE, KKE, and the continuing chain as levels of publicness. E is the fact; KE says everyone knows it; KKE says everyone knows everyone knows it; the dots say the chain never stops.</p>
+  <p><strong>Worked numbers:</strong> If two traders both hear a private rumor, each may still wonder whether the other heard it. A public announcement changes the structure because each knows the other heard the same announcement and knows the other can reason from that shared event.</p>
+  <p><strong>Why this changes reasoning:</strong> The recursion explains why public announcements and shared awareness can change strategic behavior even when the underlying fact was already true.</p>
+  <p><strong>Transfer test:</strong> Use this test when coordination seems mysteriously fragile. Ask: is the fact merely true, privately known, mutually known, or common knowledge?</p>
+  <h3>Concept Pages</h3><p class="chips"><a class="chip" href="concepts/common_knowledge.html">Common Knowledge</a><a class="chip" href="concepts/rationalizability.html">Rationalizability</a><a class="chip" href="concepts/nash_equilibrium.html">Nash Equilibrium</a></p>
+  <h3>Evidence Trail</h3><ul class="evidence-list"><li><a href="evidence.html#ev-common_knowledge-01">ev-common_knowledge-01</a>: Lecture 25: Common Knowledge</li><li><a href="evidence.html#ev-rationalizability-01">ev-rationalizability-01</a>: Lecture 4: Rationalizability</li><li><a href="evidence.html#ev-nash_equilibrium-01">ev-nash_equilibrium-01</a>: Lecture 5: Nash Equilibrium</li></ul>
+</article></main>
+</body>
+</html>

@@ -30,6 +30,7 @@ def main() -> int:
     families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
     route = json.loads((ROOT / "analysis/throughlines/study-route.json").read_text(encoding="utf-8"))
     clinic = json.loads((ROOT / "analysis/throughlines/recognition-clinic.json").read_text(encoding="utf-8"))
+    math_clinic = json.loads((ROOT / "analysis/throughlines/math-walkthrough-clinic.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
@@ -44,7 +45,7 @@ def main() -> int:
     }
     supplemental_ids = {record["id"] for record in supplemental}
     themes = json.loads((ROOT / "analysis/themes/theme-map.json").read_text(encoding="utf-8"))
-    required = [SITE / name for name in ["index.html", "study-route.html", "recognition.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
+    required = [SITE / name for name in ["index.html", "study-route.html", "recognition.html", "math-clinic.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
     required.extend(SITE / "lectures" / f"{lecture['id']}.html" for lecture in lectures)
     for path in required:
@@ -57,6 +58,7 @@ def main() -> int:
     families_html = (SITE / "families.html").read_text(encoding="utf-8") if (SITE / "families.html").exists() else ""
     route_html = (SITE / "study-route.html").read_text(encoding="utf-8") if (SITE / "study-route.html").exists() else ""
     recognition_html = (SITE / "recognition.html").read_text(encoding="utf-8") if (SITE / "recognition.html").exists() else ""
+    math_clinic_html = (SITE / "math-clinic.html").read_text(encoding="utf-8") if (SITE / "math-clinic.html").exists() else ""
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     limits_html = (SITE / "limits.html").read_text(encoding="utf-8") if (SITE / "limits.html").exists() else ""
     index_html = (SITE / "index.html").read_text(encoding="utf-8") if (SITE / "index.html").exists() else ""
@@ -64,6 +66,8 @@ def main() -> int:
         errors.append("index page missing study route link")
     if 'href="recognition.html"' not in index_html:
         errors.append("index page missing recognition clinic link")
+    if 'href="math-clinic.html"' not in index_html:
+        errors.append("index page missing math clinic link")
     if 'href="cross-reference.html"' not in index_html:
         errors.append("index page missing cross-reference link")
     if 'href="limits.html"' not in index_html:
@@ -132,6 +136,40 @@ def main() -> int:
                 errors.append(f"recognition clinic {item['id']} references missing evidence: {ev_id}")
             elif f'href="evidence.html#{ev_id}"' not in recognition_html:
                 errors.append(f"recognition clinic {item['id']} missing evidence link: {ev_id}")
+    if len(math_clinic) != len(derivations):
+        errors.append(f"math clinic has {len(math_clinic)} cards for {len(derivations)} derivations")
+    seen_math_derivations = set()
+    for item in math_clinic:
+        derivation_id = item.get("derivation_id", "")
+        if f'id="{item["id"]}"' not in math_clinic_html:
+            errors.append(f"math clinic item not rendered: {item['id']}")
+        if derivation_id not in deriv_by_id:
+            errors.append(f"math clinic {item['id']} references missing derivation: {derivation_id}")
+        else:
+            seen_math_derivations.add(derivation_id)
+            if f'href="primitives.html#{derivation_id}"' not in math_clinic_html:
+                errors.append(f"math clinic {item['id']} missing derivation link: {derivation_id}")
+        for field in ["problem_before_math", "failed_shortcut", "plain_english_equation_reading", "worked_numbers", "why_this_changes_reasoning", "transfer_test"]:
+            value = item.get(field, "")
+            if words(value) < 14:
+                errors.append(f"math clinic {item['id']} has shallow {field}")
+            elif html.escape(value, quote=True) not in math_clinic_html:
+                errors.append(f"math clinic {item['id']} {field} not rendered")
+        if words(" ".join(str(item.get(field, "")) for field in ["problem_before_math", "failed_shortcut", "plain_english_equation_reading", "worked_numbers", "why_this_changes_reasoning", "transfer_test"])) < 120:
+            errors.append(f"math clinic {item['id']} has shallow combined walkthrough")
+        for concept_id in item.get("concepts", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"math clinic {item['id']} references missing concept: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in math_clinic_html:
+                errors.append(f"math clinic {item['id']} missing concept link: {concept_id}")
+        for ev_id in item.get("evidence_ids", []):
+            if ev_id not in ev_by_id:
+                errors.append(f"math clinic {item['id']} references missing evidence: {ev_id}")
+            elif f'href="evidence.html#{ev_id}"' not in math_clinic_html:
+                errors.append(f"math clinic {item['id']} missing evidence link: {ev_id}")
+    missing_math_cards = set(deriv_by_id) - seen_math_derivations
+    if missing_math_cards:
+        errors.append(f"math clinic missing derivation cards: {', '.join(sorted(missing_math_cards))}")
     for concept in concepts:
         if f'id="xref-{concept["id"]}"' not in cross_html:
             errors.append(f"cross index missing concept anchor: {concept['id']}")
