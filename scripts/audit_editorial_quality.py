@@ -95,6 +95,7 @@ def main() -> int:
     subthemes = json.loads((ROOT / "analysis/themes/subtheme-map.json").read_text(encoding="utf-8"))
     evidence = json.loads((ROOT / "analysis/evidence/evidence-ledger.json").read_text(encoding="utf-8"))
     lectures = json.loads((ROOT / "analysis/lectures/lecture-path.json").read_text(encoding="utf-8"))
+    supplemental = json.loads((ROOT / "analysis/lectures/lecture-evidence.json").read_text(encoding="utf-8"))
     primitives = json.loads((ROOT / "analysis/throughlines/primitives.json").read_text(encoding="utf-8"))
     families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
 
@@ -150,6 +151,17 @@ def main() -> int:
         errors.append(f"{len(overlap_records)} evidence windows contain repeated caption overlap")
     if len(lectures) != 25:
         errors.append(f"lecture path has {len(lectures)} lectures")
+    thin_lectures = [
+        lecture["id"]
+        for lecture in lectures
+        if len(lecture.get("evidence_ids", [])) + len(lecture.get("supplemental_evidence_ids", [])) < 2
+    ]
+    if thin_lectures:
+        errors.append(f"lectures with fewer than 2 total evidence anchors: {', '.join(thin_lectures)}")
+    for record in supplemental:
+        for key in ["lecture_argument", "conceptual_payload", "why_span_matters", "local_transcript_window"]:
+            if words(record.get(key, "")) < 10:
+                errors.append(f"supplemental evidence {record['id']} has shallow {key}")
     lecture_words = [words(f"{lecture.get('first_principles_role', '')} {lecture.get('what_to_watch_for', '')}") for lecture in lectures]
     for lecture, count in zip(lectures, lecture_words):
         if count < 30:
@@ -212,6 +224,8 @@ def main() -> int:
         f"- Evidence records still marked weak: {len(weak_evidence)}",
         f"- Evidence windows with repeated caption overlap: {len(overlap_records)}",
         f"- Lecture path entries: {len(lectures)}",
+        f"- Supplemental lecture evidence records: {len(supplemental)}",
+        f"- Lectures below 2 total evidence anchors: {len(thin_lectures)}",
         f"- Lecture path treatment words: min {min(lecture_words)}, max {max(lecture_words)}",
         f"- Lecture detail page words: min {min(lecture_page_words) if lecture_page_words else 0}, max {max(lecture_page_words) if lecture_page_words else 0}",
         f"- Errors: {len(errors)}",

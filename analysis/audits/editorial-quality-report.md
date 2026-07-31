@@ -15,8 +15,10 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Evidence records still marked weak: 0
 - Evidence windows with repeated caption overlap: 0
 - Lecture path entries: 25
+- Supplemental lecture evidence records: 8
+- Lectures below 2 total evidence anchors: 0
 - Lecture path treatment words: min 30, max 50
-- Lecture detail page words: min 1135, max 5190
+- Lecture detail page words: min 1302, max 5210
 - Errors: 0
 
 ## Lowest Concept Depth

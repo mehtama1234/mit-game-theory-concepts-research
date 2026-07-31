@@ -16,6 +16,8 @@ def main() -> int:
     concepts = json.loads((ROOT / "analysis/concepts/concept-atlas.json").read_text(encoding="utf-8"))
     evidence = json.loads((ROOT / "analysis/evidence/evidence-ledger.json").read_text(encoding="utf-8"))
     lectures = json.loads((ROOT / "analysis/lectures/lecture-path.json").read_text(encoding="utf-8"))
+    supplemental = json.loads((ROOT / "analysis/lectures/lecture-evidence.json").read_text(encoding="utf-8"))
+    supplemental_ids = {record["id"] for record in supplemental}
     required = [SITE / name for name in ["index.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
     required.extend(SITE / "lectures" / f"{lecture['id']}.html" for lecture in lectures)
@@ -35,15 +37,24 @@ def main() -> int:
         for key in ["argument_arc", "math_entry_point", "worked_mini_example", "common_failure"]:
             if not lecture.get(key):
                 errors.append(f"lecture missing {key}: {lecture['id']}")
+        total_evidence = len(lecture.get("evidence_ids", [])) + len(lecture.get("supplemental_evidence_ids", []))
+        if total_evidence < 2:
+            errors.append(f"lecture has thin evidence coverage: {lecture['id']} has {total_evidence} anchors")
+        for ev_id in lecture.get("supplemental_evidence_ids", []):
+            if ev_id not in supplemental_ids:
+                errors.append(f"lecture references missing supplemental evidence: {lecture['id']} -> {ev_id}")
         detail = SITE / "lectures" / f"{lecture['id']}.html"
         if detail.exists():
             text = detail.read_text(encoding="utf-8")
-            for heading in ["What This Lecture Teaches", "Where The Math Enters", "Worked Mini-Example", "Mistakes To Avoid", "Transcript Evidence Chain"]:
+            for heading in ["What This Lecture Teaches", "Where The Math Enters", "Worked Mini-Example", "Mistakes To Avoid", "Transcript Evidence Chain", "Supplemental Lecture Evidence"]:
                 if heading not in text:
                     errors.append(f"lecture page {lecture['id']} missing heading: {heading}")
             for ev_id in lecture["evidence_ids"]:
                 if f'id="{ev_id}"' not in text:
                     errors.append(f"lecture page {lecture['id']} missing evidence {ev_id}")
+            for ev_id in lecture.get("supplemental_evidence_ids", []):
+                if f'id="{ev_id}"' not in text:
+                    errors.append(f"lecture page {lecture['id']} missing supplemental evidence {ev_id}")
     for ev in evidence:
         if f'id="{ev["id"]}"' not in evidence_html:
             errors.append(f"missing evidence anchor: {ev['id']}")

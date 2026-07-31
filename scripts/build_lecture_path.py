@@ -142,12 +142,21 @@ def coverage_note(record_count: int, concept_count: int) -> str:
     )
 
 
+def supplemental_coverage_note(concept_record_count: int, supplemental_count: int) -> str:
+    total = concept_record_count + supplemental_count
+    return (
+        f"{total} total lecture evidence {plural(total, 'anchor')} "
+        f"({concept_record_count} concept-linked, {supplemental_count} supplemental)."
+    )
+
+
 def main() -> None:
     index = load("raw-material/youtube/transcript-index.json")
     concepts = load("analysis/concepts/concept-atlas.json")
     evidence = load("analysis/evidence/evidence-ledger.json")
     themes = load("analysis/themes/theme-map.json")
     lecture_overrides = load_overrides("lectures.json")
+    supplemental_overrides = load_overrides("lecture-evidence.json")
     concept_by_id = {concept["id"]: concept for concept in concepts}
     theme_by_id = {theme["id"]: theme for theme in themes}
     evidence_by_title: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -174,6 +183,7 @@ def main() -> None:
         treatment = lecture_overrides.get(key)
         if treatment is None:
             raise ValueError(f"missing hand-crafted lecture treatment for {key}")
+        supplemental_evidence = supplemental_overrides.get(f"lecture-{row['playlist_index']:02d}", [])
         lecture_path.append({
             "id": f"lecture-{row['playlist_index']:02d}",
             "playlist_index": row["playlist_index"],
@@ -199,15 +209,24 @@ def main() -> None:
                 for theme_id in theme_ids
             ],
             "coverage_note": coverage_note(len(records), len(concept_ids)),
+            "total_coverage_note": supplemental_coverage_note(len(records), len(supplemental_evidence)),
             "argument_arc": treatment["argument_arc"],
             "math_entry_point": treatment["math_entry_point"],
             "worked_mini_example": treatment["worked_mini_example"],
             "common_failure": treatment["common_failure"],
+            "supplemental_evidence": supplemental_evidence,
+            "supplemental_evidence_ids": [record["id"] for record in supplemental_evidence],
         })
 
     out = ROOT / "analysis/lectures/lecture-path.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(lecture_path, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    supplemental_out = ROOT / "analysis/lectures/lecture-evidence.json"
+    supplemental_out.write_text(json.dumps([
+        record | {"lecture_id": lecture_id}
+        for lecture_id, records in supplemental_overrides.items()
+        for record in records
+    ], indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"wrote {out.relative_to(ROOT)} with {len(lecture_path)} lectures")
 
 

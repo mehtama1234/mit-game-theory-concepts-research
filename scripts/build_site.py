@@ -110,6 +110,18 @@ def evidence_row(ev: dict[str, Any], prefix: str = "") -> str:
 </article>"""
 
 
+def supplemental_evidence_row(ev: dict[str, Any]) -> str:
+    when = f" {esc(ev['timestamp_start'])}" if ev.get("timestamp_start") else ""
+    return f"""<article class="evidence" id="{esc(ev['id'])}">
+  <h3>{esc(ev['id'])}{when}</h3>
+  <p class="meta">{esc(ev['video_title'])} · <a href="{esc(ev['youtube_url'])}">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> {esc(ev['lecture_argument'])}</p>
+  <p><strong>Conceptual payload:</strong> {esc(ev['conceptual_payload'])}</p>
+  <p><strong>Why this span matters:</strong> {esc(ev['why_span_matters'])}</p>
+  <blockquote>{esc(ev['local_transcript_window'])}</blockquote>
+</article>"""
+
+
 def build_index(concepts, themes, evidence, lectures):
     body = f"""<section class="hero">
   <div>
@@ -168,6 +180,7 @@ def build_lectures(lectures, ev_by_id, concept_by_id):
 
 def build_lecture_detail(lecture, ev_by_id, concept_by_id):
     records = [ev_by_id[eid] for eid in lecture["evidence_ids"] if eid in ev_by_id]
+    supplemental_records = lecture.get("supplemental_evidence", [])
     concept_ids = [concept["id"] for concept in lecture["concepts"]]
     concepts = [concept_by_id[cid] for cid in concept_ids if cid in concept_by_id]
     themes = ", ".join(esc(theme["name"]) for theme in lecture["themes"]) or "Course sequence context"
@@ -186,6 +199,7 @@ def build_lecture_detail(lecture, ev_by_id, concept_by_id):
         for concept in concepts
     )
     evidence_blocks = "".join(evidence_row(record, "../") for record in records)
+    supplemental_blocks = "".join(supplemental_evidence_row(record) for record in supplemental_records)
     concept_mistake_notes = " ".join(concept["student_trap"] for concept in concepts)
     concept_math_notes = " ".join(concept["why_math_has_to_exist"] for concept in concepts)
     recognition_notes = " ".join(concept["recognize_in_new_work"] for concept in concepts) if concepts else "In later work, recognize this lecture by asking where the same strategic pressure returns under a different name."
@@ -199,7 +213,7 @@ def build_lecture_detail(lecture, ev_by_id, concept_by_id):
     ("Problem", lecture["argument_arc"]),
     ("Watch", lecture["what_to_watch_for"]),
     ("Math", lecture["math_entry_point"]),
-    ("Evidence", lecture["coverage_note"]),
+    ("Evidence", lecture.get("total_coverage_note", lecture["coverage_note"])),
 ], "lecture-flow")}
 <section class="treatment">
   <h2>What This Lecture Teaches</h2>
@@ -223,6 +237,10 @@ def build_lecture_detail(lecture, ev_by_id, concept_by_id):
 <section>
   <h2>Transcript Evidence Chain</h2>
   <div class="evidence-stack">{evidence_blocks or '<p>No direct evidence anchors yet.</p>'}</div>
+</section>
+<section>
+  <h2>Supplemental Lecture Evidence</h2>
+  <div class="evidence-stack">{supplemental_blocks or '<p>No supplemental lecture anchors for this page.</p>'}</div>
 </section>
 <section class="wide-card">
   <h2>Source Context</h2>
