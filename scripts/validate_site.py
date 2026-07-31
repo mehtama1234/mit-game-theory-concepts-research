@@ -15,13 +15,22 @@ def main() -> int:
     errors: list[str] = []
     concepts = json.loads((ROOT / "analysis/concepts/concept-atlas.json").read_text(encoding="utf-8"))
     evidence = json.loads((ROOT / "analysis/evidence/evidence-ledger.json").read_text(encoding="utf-8"))
-    required = [SITE / name for name in ["index.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
+    lectures = json.loads((ROOT / "analysis/lectures/lecture-path.json").read_text(encoding="utf-8"))
+    required = [SITE / name for name in ["index.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
     for path in required:
         if not path.exists():
             errors.append(f"missing site file: {path.relative_to(ROOT)}")
     html_files = list(SITE.rglob("*.html"))
     evidence_html = (SITE / "evidence.html").read_text(encoding="utf-8") if (SITE / "evidence.html").exists() else ""
+    lectures_html = (SITE / "lectures.html").read_text(encoding="utf-8") if (SITE / "lectures.html").exists() else ""
+    if len(lectures) != 25:
+        errors.append(f"expected 25 lectures, found {len(lectures)}")
+    for lecture in lectures:
+        if f'id="{lecture["id"]}"' not in lectures_html:
+            errors.append(f"missing lecture anchor: {lecture['id']}")
+        if not lecture.get("first_principles_role") or not lecture.get("what_to_watch_for"):
+            errors.append(f"lecture missing treatment: {lecture['id']}")
     for ev in evidence:
         if f'id="{ev["id"]}"' not in evidence_html:
             errors.append(f"missing evidence anchor: {ev['id']}")

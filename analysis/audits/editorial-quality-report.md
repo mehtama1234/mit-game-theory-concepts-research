@@ -14,6 +14,8 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Evidence records with transcript teaching notes: 62
 - Evidence records still marked weak: 0
 - Evidence windows with repeated caption overlap: 0
+- Lecture path entries: 25
+- Lecture path treatment words: min 30, max 50
 - Errors: 0
 
 ## Lowest Concept Depth

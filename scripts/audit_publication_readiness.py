@@ -21,6 +21,7 @@ def main() -> int:
     themes = json.loads((ROOT / "analysis/themes/theme-map.json").read_text(encoding="utf-8"))
     subthemes = json.loads((ROOT / "analysis/themes/subtheme-map.json").read_text(encoding="utf-8"))
     evidence = json.loads((ROOT / "analysis/evidence/evidence-ledger.json").read_text(encoding="utf-8"))
+    lectures = json.loads((ROOT / "analysis/lectures/lecture-path.json").read_text(encoding="utf-8"))
     primitives = json.loads((ROOT / "analysis/throughlines/primitives.json").read_text(encoding="utf-8"))
     families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
     queue = json.loads((ROOT / "analysis/evidence/evidence-review-queue.json").read_text(encoding="utf-8"))
@@ -52,6 +53,7 @@ def main() -> int:
         f"- Themes: {len(themes)}",
         f"- Subthemes: {len(subthemes)}",
         f"- Evidence records: {len(evidence)}",
+        f"- Lecture path entries: {len(lectures)}",
         f"- Evidence records queued for review: {len(queue)}",
         f"- Mathematical primitives: {len(primitives)}",
         f"- Method families: {len(families)}",

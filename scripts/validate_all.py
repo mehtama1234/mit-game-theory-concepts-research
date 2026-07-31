@@ -16,6 +16,7 @@ def main() -> int:
     try:
         run(["python3", "scripts/build_first_principles_atlas.py"])
         run(["python3", "scripts/validate_first_principles_atlas.py"])
+        run(["python3", "scripts/build_lecture_path.py"])
         run(["python3", "scripts/build_site.py"])
         run(["python3", "scripts/validate_site.py"])
         run(["python3", "scripts/audit_editorial_quality.py"])

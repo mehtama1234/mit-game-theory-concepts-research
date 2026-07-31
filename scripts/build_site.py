@@ -28,6 +28,7 @@ def page(title: str, body: str, active: str = "", depth: int = 0) -> str:
     prefix = "../" * depth
     nav = [
         ("index.html", "Overview", "overview"),
+        ("lectures.html", "Lectures", "lectures"),
         ("concepts.html", "Concepts", "concepts"),
         ("themes.html", "Themes", "themes"),
         ("families.html", "Method Families", "families"),
@@ -105,18 +106,52 @@ def evidence_row(ev: dict[str, Any], prefix: str = "") -> str:
 </article>"""
 
 
-def build_index(concepts, themes, evidence):
+def build_index(concepts, themes, evidence, lectures):
     body = f"""<section class="hero">
   <div>
     <p class="eyebrow">Transcript-backed first-principles research</p>
     <h1>Understand game theory as a small set of ideas about choice, incentives, beliefs, time, rules, and knowledge.</h1>
     <p class="lead">This lab turns MIT 14.12's 25 lectures into a connected concept atlas. It starts with ordinary strategic problems, then introduces the math only when the idea needs it.</p>
   </div>
-  <aside class="stats"><strong>{len(concepts)}</strong><span>concepts</span><strong>{len(themes)}</strong><span>themes</span><strong>{len(evidence)}</strong><span>evidence records</span></aside>
+  <aside class="stats"><strong>{len(lectures)}</strong><span>lectures</span><strong>{len(concepts)}</strong><span>concepts</span><strong>{len(evidence)}</strong><span>evidence records</span></aside>
 </section>
 <section><h2>The Big Throughline</h2><p>Game theory studies situations where choosing well means reasoning about other choosers. Equilibrium, credibility, beliefs, auctions, signaling, and common knowledge are different answers to the same pressure: my best move depends on what others do, know, want, and expect.</p></section>
+<section><h2>Start With The Course Path</h2><p>The lecture path follows the MIT sequence while linking each session to atlas concepts and transcript evidence.</p><p><a class="button" href="lectures.html">Open the lecture path</a></p></section>
 <section><h2>Start With Concepts</h2><div class="grid">{''.join(concept_card(c, evidence_map(evidence)) for c in concepts[:6])}</div><p><a class="button" href="concepts.html">Open the full atlas</a></p></section>"""
     write(SITE / "index.html", page("Overview", body, "overview"))
+
+
+def build_lectures(lectures, ev_by_id):
+    cards = []
+    for lecture in lectures:
+        chips = "".join(
+            f'<a class="chip" href="concepts/{esc(concept["id"])}.html">{esc(concept["name"])}</a>'
+            for concept in lecture["concepts"]
+        )
+        evidence_links = "".join(
+            f'<li><a href="evidence.html#{esc(eid)}">{esc(eid)}</a>: {esc(ev_by_id[eid]["supports_concepts"][0]).replace("_", " ")}</li>'
+            for eid in lecture["evidence_ids"]
+            if eid in ev_by_id
+        )
+        themes = ", ".join(esc(theme["name"]) for theme in lecture["themes"]) or "No direct evidence theme yet"
+        cards.append(f"""<article class="wide-card lecture-card" id="{esc(lecture["id"])}">
+  <p class="eyebrow">Lecture {lecture["playlist_index"]} · {lecture["word_count"]:,} words · {themes}</p>
+  <h2>{esc(lecture["title"])}</h2>
+  <p>{esc(lecture["first_principles_role"])}</p>
+  {flow("How To Read This Lecture", [
+      ("Pressure", lecture["first_principles_role"]),
+      ("Watch", lecture["what_to_watch_for"]),
+      ("Evidence", lecture["coverage_note"]),
+      ("Transcript", lecture["transcript_path"]),
+  ], "lecture-flow")}
+  <h3>Linked Concepts</h3>
+  <p class="chips">{chips or '<span class="chip muted">No direct concept anchors yet</span>'}</p>
+  <h3>Evidence Anchors</h3>
+  <ul class="evidence-list">{evidence_links or '<li>No current evidence anchors for this lecture.</li>'}</ul>
+  <p><a class="button" href="{esc(lecture["youtube_url"])}">Open YouTube lecture</a></p>
+</article>""")
+    body = '<section class="page-head"><h1>Lecture Path</h1><p>Follow the course in order, with each lecture tied to first-principles roles, concepts, and transcript evidence.</p></section>' + "".join(cards)
+    write(SITE / "lectures.html", page("Lectures", body, "lectures"))
 
 
 def build_concepts(concepts, evidence):
@@ -246,7 +281,10 @@ def main():
     evidence = load("analysis/evidence/evidence-ledger.json")
     primitives = load("analysis/throughlines/primitives.json")
     families = load("analysis/throughlines/method-families.json")
-    build_index(concepts, themes, evidence)
+    lectures = load("analysis/lectures/lecture-path.json")
+    ev_by_id = evidence_map(evidence)
+    build_index(concepts, themes, evidence, lectures)
+    build_lectures(lectures, ev_by_id)
     build_concepts(concepts, evidence)
     build_themes(themes, subthemes, concepts)
     build_primitives(primitives)

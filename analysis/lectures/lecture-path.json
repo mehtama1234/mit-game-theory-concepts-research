@@ -1,0 +1,992 @@
+[
+  {
+    "id": "lecture-01",
+    "playlist_index": 1,
+    "title": "Lecture 1: Introduction to Individual Decision-Making",
+    "youtube_url": "https://www.youtube.com/watch?v=WRibE2nt8wM",
+    "duration_seconds": 3436,
+    "word_count": 9945,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/001-WRibE2nt8wM-Lecture 1: Introduction to Individual Decision-Making.txt",
+    "first_principles_role": "Builds the individual-choice foundation: preferences, utility, beliefs, lotteries, and the idea that choices need a payoff language before strategy can begin.",
+    "what_to_watch_for": "Watch for the course separating a person's ranking from the later strategic problem. This is where payoffs stop being arbitrary numbers and start as representations of choice.",
+    "concepts": [
+      {
+        "id": "preferences",
+        "name": "Preferences",
+        "theme_id": "choice_and_payoff",
+        "theme_name": "Choice Under Tradeoffs"
+      },
+      {
+        "id": "utility",
+        "name": "Utility",
+        "theme_id": "choice_and_payoff",
+        "theme_name": "Choice Under Tradeoffs"
+      },
+      {
+        "id": "expected_utility",
+        "name": "Expected Utility",
+        "theme_id": "choice_and_payoff",
+        "theme_name": "Choice Under Tradeoffs"
+      },
+      {
+        "id": "strategic_form_games",
+        "name": "Strategic Form Games",
+        "theme_id": "strategic_dependence",
+        "theme_name": "Strategic Dependence"
+      },
+      {
+        "id": "rationalizability",
+        "name": "Rationalizability",
+        "theme_id": "strategic_dependence",
+        "theme_name": "Strategic Dependence"
+      },
+      {
+        "id": "auctions",
+        "name": "Auctions",
+        "theme_id": "mechanisms_and_markets",
+        "theme_name": "Mechanisms, Auctions, And Markets"
+      }
+    ],
+    "evidence_ids": [
+      "ev-preferences-01",
+      "ev-utility-01",
+      "ev-expected_utility-01",
+      "ev-strategic_form_games-02",
+      "ev-rationalizability-02",
+      "ev-auctions-02"
+    ],
+    "themes": [
+      {
+        "id": "choice_and_payoff",
+        "name": "Choice Under Tradeoffs"
+      },
+      {
+        "id": "strategic_dependence",
+        "name": "Strategic Dependence"
+      },
+      {
+        "id": "mechanisms_and_markets",
+        "name": "Mechanisms, Auctions, And Markets"
+      }
+    ],
+    "coverage_note": "6 transcript evidence anchors connect this lecture to 6 atlas concepts."
+  },
+  {
+    "id": "lecture-02",
+    "playlist_index": 2,
+    "title": "Lecture 2: Representation of Games",
+    "youtube_url": "https://www.youtube.com/watch?v=JAib42oAiKE",
+    "duration_seconds": 4394,
+    "word_count": 12369,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/002-JAib42oAiKE-Lecture 2: Representation of Games.txt",
+    "first_principles_role": "Turns social situations into formal objects: players, histories, strategies, strategy profiles, payoffs, and the difference between trees and compact strategic form.",
+    "what_to_watch_for": "Watch how a representation can hide or reveal timing. The lecture is a warning that a wrong game form can make later equilibrium analysis precise but wrong.",
+    "concepts": [
+      {
+        "id": "preferences",
+        "name": "Preferences",
+        "theme_id": "choice_and_payoff",
+        "theme_name": "Choice Under Tradeoffs"
+      },
+      {
+        "id": "utility",
+        "name": "Utility",
+        "theme_id": "choice_and_payoff",
+        "theme_name": "Choice Under Tradeoffs"
+      },
+      {
+        "id": "strategic_form_games",
+        "name": "Strategic Form Games",
+        "theme_id": "strategic_dependence",
+        "theme_name": "Strategic Dependence"
+      },
+      {
+        "id": "extensive_form_games",
+        "name": "Extensive Form Games",
+        "theme_id": "time_and_credibility",
+        "theme_name": "Time, Threats, And Credibility"
+      },
+      {
+        "id": "backward_induction",
+        "name": "Backward Induction",
+        "theme_id": "time_and_credibility",
+        "theme_name": "Time, Threats, And Credibility"
+      },
+      {
+        "id": "bayesian_games",
+        "name": "Bayesian Games",
+        "theme_id": "private_information",
+        "theme_name": "Private Information And Beliefs"
+      },
+      {
+        "id": "bayesian_nash_equilibrium",
+        "name": "Bayesian Nash Equilibrium",
+        "theme_id": "private_information",
+        "theme_name": "Private Information And Beliefs"
+      }
+    ],
+    "evidence_ids": [
+      "ev-preferences-02",
+      "ev-utility-02",
+      "ev-strategic_form_games-01",
+      "ev-extensive_form_games-01",
+      "ev-backward_induction-02",
+      "ev-bayesian_games-02",
+      "ev-bayesian_nash_equilibrium-02"
+    ],
+    "themes": [
+      {
+        "id": "choice_and_payoff",
+        "name": "Choice Under Tradeoffs"
+      },
+      {
+        "id": "strategic_dependence",
+        "name": "Strategic Dependence"
+      },
+      {
+        "id": "time_and_credibility",
+        "name": "Time, Threats, And Credibility"
+      },
+      {
+        "id": "private_information",
+        "name": "Private Information And Beliefs"
+      }
+    ],
+    "coverage_note": "7 transcript evidence anchors connect this lecture to 7 atlas concepts."
+  },
+  {
+    "id": "lecture-03",
+    "playlist_index": 3,
+    "title": "Lecture 3: Dominance",
+    "youtube_url": "https://www.youtube.com/watch?v=b7BAHSV1EBo",
+    "duration_seconds": 4586,
+    "word_count": 12267,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/003-b7BAHSV1EBo-Lecture 3: Dominance.txt",
+    "first_principles_role": "Introduces pruning: some strategies can be ruled out because another strategy does better across the relevant contingencies.",
+    "what_to_watch_for": "Watch for the distinction between deleting a move by proof and deleting it because it feels unlikely. Dominance is powerful exactly because it avoids belief speculation when it applies.",
+    "concepts": [
+      {
+        "id": "dominance",
+        "name": "Dominance",
+        "theme_id": "strategic_dependence",
+        "theme_name": "Strategic Dependence"
+      }
+    ],
+    "evidence_ids": [
+      "ev-dominance-01"
+    ],
+    "themes": [
+      {
+        "id": "strategic_dependence",
+        "name": "Strategic Dependence"
+      }
+    ],
+    "coverage_note": "1 transcript evidence anchor connects this lecture to 1 atlas concept."
+  },
+  {
+    "id": "lecture-04",
+    "playlist_index": 4,
+    "title": "Lecture 4: Rationalizability",
+    "youtube_url": "https://www.youtube.com/watch?v=ZdwIokL0P_U",
+    "duration_seconds": 4910,
+    "word_count": 13209,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/004-ZdwIokL0P_U-Lecture 4: Rationalizability.txt",
+    "first_principles_role": "Adds beliefs to pruning. A strategy can remain plausible if some coherent belief about others makes it a best response.",
+    "what_to_watch_for": "Watch the course move from strict deletion to belief-supported survival. This is the bridge between dominance and equilibrium.",
+    "concepts": [
+      {
+        "id": "dominance",
+        "name": "Dominance",
+        "theme_id": "strategic_dependence",
+        "theme_name": "Strategic Dependence"
+      },
+      {
+        "id": "iterated_deletion",
+        "name": "Iterated Deletion",
+        "theme_id": "strategic_dependence",
+        "theme_name": "Strategic Dependence"
+      },
+      {
+        "id": "rationalizability",
+        "name": "Rationalizability",
+        "theme_id": "strategic_dependence",
+        "theme_name": "Strategic Dependence"
+      },
+      {
+        "id": "best_response",
+        "name": "Best Response",
+        "theme_id": "equilibrium_reasoning",
+        "theme_name": "Equilibrium As Mutual Consistency"
+      },
+      {
+        "id": "common_knowledge",
+        "name": "Common Knowledge",
+        "theme_id": "communication_and_knowledge",
+        "theme_name": "Communication And Knowledge"
+      }
+    ],
+    "evidence_ids": [
+      "ev-dominance-02",
+      "ev-iterated_deletion-01",
+      "ev-iterated_deletion-02",
+      "ev-rationalizability-01",
+      "ev-best_response-01",
+      "ev-common_knowledge-02"
+    ],
+    "themes": [
+      {
+        "id": "strategic_dependence",
+        "name": "Strategic Dependence"
+      },
+      {
+        "id": "equilibrium_reasoning",
+        "name": "Equilibrium As Mutual Consistency"
+      },
+      {
+        "id": "communication_and_knowledge",
+        "name": "Communication And Knowledge"
+      }
+    ],
+    "coverage_note": "6 transcript evidence anchors connect this lecture to 5 atlas concepts."
+  },
+  {
+    "id": "lecture-05",
+    "playlist_index": 5,
+    "title": "Lecture 5: Nash Equilibrium",
+    "youtube_url": "https://www.youtube.com/watch?v=ftCXguW2k4o",
+    "duration_seconds": 4767,
+    "word_count": 13551,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/005-ftCXguW2k4o-Lecture 5: Nash Equilibrium.txt",
+    "first_principles_role": "Closes the best-response loop: every player must be choosing optimally given the others' choices.",
+    "what_to_watch_for": "Watch for Nash being used as a stability test, not a welfare claim. The central question is whether anyone wants to deviate alone.",
+    "concepts": [
+      {
+        "id": "best_response",
+        "name": "Best Response",
+        "theme_id": "equilibrium_reasoning",
+        "theme_name": "Equilibrium As Mutual Consistency"
+      },
+      {
+        "id": "nash_equilibrium",
+        "name": "Nash Equilibrium",
+        "theme_id": "equilibrium_reasoning",
+        "theme_name": "Equilibrium As Mutual Consistency"
+      },
+      {
+        "id": "mixed_strategies",
+        "name": "Mixed Strategies",
+        "theme_id": "equilibrium_reasoning",
+        "theme_name": "Equilibrium As Mutual Consistency"
+      },
+      {
+        "id": "zero_sum_games",
+        "name": "Zero-Sum Games",
+        "theme_id": "equilibrium_reasoning",
+        "theme_name": "Equilibrium As Mutual Consistency"
+      },
+      {
+        "id": "one_shot_deviation",
+        "name": "One-Shot Deviation Principle",
+        "theme_id": "time_and_credibility",
+        "theme_name": "Time, Threats, And Credibility"
+      }
+    ],
+    "evidence_ids": [
+      "ev-best_response-02",
+      "ev-nash_equilibrium-01",
+      "ev-mixed_strategies-01",
+      "ev-zero_sum_games-02",
+      "ev-one_shot_deviation-02"
+    ],
+    "themes": [
+      {
+        "id": "equilibrium_reasoning",
+        "name": "Equilibrium As Mutual Consistency"
+      },
+      {
+        "id": "time_and_credibility",
+        "name": "Time, Threats, And Credibility"
+      }
+    ],
+    "coverage_note": "5 transcript evidence anchors connect this lecture to 5 atlas concepts."
+  },
+  {
+    "id": "lecture-06",
+    "playlist_index": 6,
+    "title": "Lecture 6: Imperfect Competition",
+    "youtube_url": "https://www.youtube.com/watch?v=79Nqii6nQ5U",
+    "duration_seconds": 4830,
+    "word_count": 13639,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/006-79Nqii6nQ5U-Lecture 6: Imperfect Competition.txt",
+    "first_principles_role": "Applies strategic reasoning to firm competition, where prices or quantities interact through demand and payoff consequences.",
+    "what_to_watch_for": "Watch for payoff mapping in an economic application: the model has to say how a firm's action and rivals' actions jointly determine profit.",
+    "concepts": [],
+    "evidence_ids": [],
+    "themes": [],
+    "coverage_note": "No current evidence anchors point to this lecture; it remains represented through course sequence context."
+  },
+  {
+    "id": "lecture-07",
+    "playlist_index": 7,
+    "title": "Lecture 7: Zero-Sum Games",
+    "youtube_url": "https://www.youtube.com/watch?v=CBCf8iWKFZY",
+    "duration_seconds": 4839,
+    "word_count": 12829,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/007-CBCf8iWKFZY-Lecture 7: Zero-Sum Games.txt",
+    "first_principles_role": "Studies exact conflict, where one player's gain is the other's loss and minimax/security reasoning becomes natural.",
+    "what_to_watch_for": "Watch the boundary: many competitive situations are not zero-sum. The lecture matters because it shows what becomes special when conflict is exact.",
+    "concepts": [
+      {
+        "id": "mixed_strategies",
+        "name": "Mixed Strategies",
+        "theme_id": "equilibrium_reasoning",
+        "theme_name": "Equilibrium As Mutual Consistency"
+      },
+      {
+        "id": "zero_sum_games",
+        "name": "Zero-Sum Games",
+        "theme_id": "equilibrium_reasoning",
+        "theme_name": "Equilibrium As Mutual Consistency"
+      },
+      {
+        "id": "minimax",
+        "name": "Minimax",
+        "theme_id": "equilibrium_reasoning",
+        "theme_name": "Equilibrium As Mutual Consistency"
+      }
+    ],
+    "evidence_ids": [
+      "ev-mixed_strategies-02",
+      "ev-zero_sum_games-01",
+      "ev-minimax-01",
+      "ev-minimax-02"
+    ],
+    "themes": [
+      {
+        "id": "equilibrium_reasoning",
+        "name": "Equilibrium As Mutual Consistency"
+      }
+    ],
+    "coverage_note": "4 transcript evidence anchors connect this lecture to 3 atlas concepts."
+  },
+  {
+    "id": "lecture-08",
+    "playlist_index": 8,
+    "title": "Lecture 8: Backward Induction",
+    "youtube_url": "https://www.youtube.com/watch?v=VHex0a2JFWI",
+    "duration_seconds": 4626,
+    "word_count": 12791,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/008-VHex0a2JFWI-Lecture 8: Backward Induction.txt",
+    "first_principles_role": "Makes credibility calculable by solving later choices first and folding their values back into earlier decisions.",
+    "what_to_watch_for": "Watch for the shift from chronological storytelling to recursive reasoning. The future determines what earlier threats and promises mean.",
+    "concepts": [
+      {
+        "id": "extensive_form_games",
+        "name": "Extensive Form Games",
+        "theme_id": "time_and_credibility",
+        "theme_name": "Time, Threats, And Credibility"
+      },
+      {
+        "id": "backward_induction",
+        "name": "Backward Induction",
+        "theme_id": "time_and_credibility",
+        "theme_name": "Time, Threats, And Credibility"
+      },
+      {
+        "id": "subgame_perfection",
+        "name": "Subgame-Perfect Nash Equilibrium",
+        "theme_id": "time_and_credibility",
+        "theme_name": "Time, Threats, And Credibility"
+      },
+      {
+        "id": "finitely_repeated_games",
+        "name": "Finitely Repeated Games",
+        "theme_id": "repetition_and_cooperation",
+        "theme_name": "Repeated Interaction And Cooperation"
+      }
+    ],
+    "evidence_ids": [
+      "ev-extensive_form_games-02",
+      "ev-backward_induction-01",
+      "ev-subgame_perfection-02",
+      "ev-finitely_repeated_games-02"
+    ],
+    "themes": [
+      {
+        "id": "time_and_credibility",
+        "name": "Time, Threats, And Credibility"
+      },
+      {
+        "id": "repetition_and_cooperation",
+        "name": "Repeated Interaction And Cooperation"
+      }
+    ],
+    "coverage_note": "4 transcript evidence anchors connect this lecture to 4 atlas concepts."
+  },
+  {
+    "id": "lecture-09",
+    "playlist_index": 9,
+    "title": "Lecture 9: Negotiation",
+    "youtube_url": "https://www.youtube.com/watch?v=_09ziyzbinY",
+    "duration_seconds": 4414,
+    "word_count": 11475,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/009-_09ziyzbinY-Lecture 9: Negotiation.txt",
+    "first_principles_role": "Treats bargaining as strategic surplus division shaped by offers, rejection, timing, patience, and outside options.",
+    "what_to_watch_for": "Watch how bargaining power gets modeled as incentives and timing rather than personality or moral entitlement.",
+    "concepts": [
+      {
+        "id": "bargaining",
+        "name": "Bargaining",
+        "theme_id": "time_and_credibility",
+        "theme_name": "Time, Threats, And Credibility"
+      },
+      {
+        "id": "infinitely_repeated_games",
+        "name": "Infinitely Repeated Games",
+        "theme_id": "repetition_and_cooperation",
+        "theme_name": "Repeated Interaction And Cooperation"
+      }
+    ],
+    "evidence_ids": [
+      "ev-bargaining-01",
+      "ev-infinitely_repeated_games-02"
+    ],
+    "themes": [
+      {
+        "id": "time_and_credibility",
+        "name": "Time, Threats, And Credibility"
+      },
+      {
+        "id": "repetition_and_cooperation",
+        "name": "Repeated Interaction And Cooperation"
+      }
+    ],
+    "coverage_note": "2 transcript evidence anchors connect this lecture to 2 atlas concepts."
+  },
+  {
+    "id": "lecture-10",
+    "playlist_index": 10,
+    "title": "Lecture 10: Subgame-Perfect Nash Equilibrium",
+    "youtube_url": "https://www.youtube.com/watch?v=byS0I3U3YoQ",
+    "duration_seconds": 4841,
+    "word_count": 12012,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/010-byS0I3U3YoQ-Lecture 10: Subgame-Perfect Nash Equilibrium.txt",
+    "first_principles_role": "Repairs Nash for dynamic games by requiring continuation behavior to remain rational inside every subgame.",
+    "what_to_watch_for": "Watch for noncredible threats. This lecture asks whether a threat would still be worth carrying out after the threatened history happens.",
+    "concepts": [
+      {
+        "id": "nash_equilibrium",
+        "name": "Nash Equilibrium",
+        "theme_id": "equilibrium_reasoning",
+        "theme_name": "Equilibrium As Mutual Consistency"
+      },
+      {
+        "id": "subgame_perfection",
+        "name": "Subgame-Perfect Nash Equilibrium",
+        "theme_id": "time_and_credibility",
+        "theme_name": "Time, Threats, And Credibility"
+      }
+    ],
+    "evidence_ids": [
+      "ev-nash_equilibrium-02",
+      "ev-subgame_perfection-01"
+    ],
+    "themes": [
+      {
+        "id": "equilibrium_reasoning",
+        "name": "Equilibrium As Mutual Consistency"
+      },
+      {
+        "id": "time_and_credibility",
+        "name": "Time, Threats, And Credibility"
+      }
+    ],
+    "coverage_note": "2 transcript evidence anchors connect this lecture to 2 atlas concepts."
+  },
+  {
+    "id": "lecture-11",
+    "playlist_index": 11,
+    "title": "Lecture 11: One-Shot Deviation Principle and Bargaining",
+    "youtube_url": "https://www.youtube.com/watch?v=iL3XRRI5rQs",
+    "duration_seconds": 4709,
+    "word_count": 12985,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/011-iL3XRRI5rQs-Lecture 11: One-Shot Deviation Principle and Bargaining.txt",
+    "first_principles_role": "Adds a practical dynamic-equilibrium check and returns to bargaining with sharper tools for deviations over time.",
+    "what_to_watch_for": "Watch how a local deviation test can stand in for many possible strategy changes when the theorem conditions are right.",
+    "concepts": [
+      {
+        "id": "one_shot_deviation",
+        "name": "One-Shot Deviation Principle",
+        "theme_id": "time_and_credibility",
+        "theme_name": "Time, Threats, And Credibility"
+      },
+      {
+        "id": "bargaining",
+        "name": "Bargaining",
+        "theme_id": "time_and_credibility",
+        "theme_name": "Time, Threats, And Credibility"
+      }
+    ],
+    "evidence_ids": [
+      "ev-one_shot_deviation-01",
+      "ev-bargaining-02"
+    ],
+    "themes": [
+      {
+        "id": "time_and_credibility",
+        "name": "Time, Threats, And Credibility"
+      }
+    ],
+    "coverage_note": "2 transcript evidence anchors connect this lecture to 2 atlas concepts."
+  },
+  {
+    "id": "lecture-12",
+    "playlist_index": 12,
+    "title": "Lecture 12: Finitely Repeated Games",
+    "youtube_url": "https://www.youtube.com/watch?v=_XM0CRvaWq0",
+    "duration_seconds": 4629,
+    "word_count": 11423,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/012-_XM0CRvaWq0-Lecture 12: Finitely Repeated Games.txt",
+    "first_principles_role": "Shows why a known last round can unravel cooperation even when the game is played many times.",
+    "what_to_watch_for": "Watch the endpoint. Repetition alone is not enough; the future has to retain disciplinary force.",
+    "concepts": [
+      {
+        "id": "finitely_repeated_games",
+        "name": "Finitely Repeated Games",
+        "theme_id": "repetition_and_cooperation",
+        "theme_name": "Repeated Interaction And Cooperation"
+      }
+    ],
+    "evidence_ids": [
+      "ev-finitely_repeated_games-01"
+    ],
+    "themes": [
+      {
+        "id": "repetition_and_cooperation",
+        "name": "Repeated Interaction And Cooperation"
+      }
+    ],
+    "coverage_note": "1 transcript evidence anchor connects this lecture to 1 atlas concept."
+  },
+  {
+    "id": "lecture-13",
+    "playlist_index": 13,
+    "title": "Lecture 13: Infinitely Repeated Games",
+    "youtube_url": "https://www.youtube.com/watch?v=HRZeLYNhOUw",
+    "duration_seconds": 4938,
+    "word_count": 12974,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/013-HRZeLYNhOUw-Lecture 13: Infinitely Repeated Games.txt",
+    "first_principles_role": "Removes the known last round and turns future punishment into a possible enforcement mechanism, where ongoing relationships can change one-shot incentives.",
+    "what_to_watch_for": "Watch the discount factor and continuation value. Cooperation becomes an inequality comparing today's temptation with future loss, not a vague claim that repetition builds trust.",
+    "concepts": [
+      {
+        "id": "infinitely_repeated_games",
+        "name": "Infinitely Repeated Games",
+        "theme_id": "repetition_and_cooperation",
+        "theme_name": "Repeated Interaction And Cooperation"
+      }
+    ],
+    "evidence_ids": [
+      "ev-infinitely_repeated_games-01"
+    ],
+    "themes": [
+      {
+        "id": "repetition_and_cooperation",
+        "name": "Repeated Interaction And Cooperation"
+      }
+    ],
+    "coverage_note": "1 transcript evidence anchor connects this lecture to 1 atlas concept."
+  },
+  {
+    "id": "lecture-14",
+    "playlist_index": 14,
+    "title": "Lecture 14: Folk Theorem",
+    "youtube_url": "https://www.youtube.com/watch?v=3ws34WgJKzk",
+    "duration_seconds": 4658,
+    "word_count": 11322,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/014-3ws34WgJKzk-Lecture 14: Folk Theorem.txt",
+    "first_principles_role": "Explains how patient repeated games can sustain many feasible and individually rational payoff patterns.",
+    "what_to_watch_for": "Watch the tradeoff between possibility and prediction. The theorem expands what can happen, but that can make selection harder.",
+    "concepts": [
+      {
+        "id": "folk_theorem",
+        "name": "Folk Theorem",
+        "theme_id": "repetition_and_cooperation",
+        "theme_name": "Repeated Interaction And Cooperation"
+      }
+    ],
+    "evidence_ids": [
+      "ev-folk_theorem-01",
+      "ev-folk_theorem-02"
+    ],
+    "themes": [
+      {
+        "id": "repetition_and_cooperation",
+        "name": "Repeated Interaction And Cooperation"
+      }
+    ],
+    "coverage_note": "2 transcript evidence anchors connect this lecture to 1 atlas concept."
+  },
+  {
+    "id": "lecture-15",
+    "playlist_index": 15,
+    "title": "Lecture 15: Implicit Cartels",
+    "youtube_url": "https://www.youtube.com/watch?v=9MtmH12aag4",
+    "duration_seconds": 4878,
+    "word_count": 13451,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/015-9MtmH12aag4-Lecture 15: Implicit Cartels.txt",
+    "first_principles_role": "Applies repeated-game enforcement to firms that may sustain collusion without an explicit enforceable contract.",
+    "what_to_watch_for": "Watch self-enforcement. Punishment must be in the punishers' interest too, or the cartel path is just a story.",
+    "concepts": [
+      {
+        "id": "implicit_cartels",
+        "name": "Implicit Cartels",
+        "theme_id": "repetition_and_cooperation",
+        "theme_name": "Repeated Interaction And Cooperation"
+      }
+    ],
+    "evidence_ids": [
+      "ev-implicit_cartels-01",
+      "ev-implicit_cartels-02"
+    ],
+    "themes": [
+      {
+        "id": "repetition_and_cooperation",
+        "name": "Repeated Interaction And Cooperation"
+      }
+    ],
+    "coverage_note": "2 transcript evidence anchors connect this lecture to 1 atlas concept."
+  },
+  {
+    "id": "lecture-16",
+    "playlist_index": 16,
+    "title": "Lecture 16: Bayesian Games",
+    "youtube_url": "https://www.youtube.com/watch?v=-6A59LiKUss",
+    "duration_seconds": 4875,
+    "word_count": 13970,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/016--6A59LiKUss-Lecture 16: Bayesian Games.txt",
+    "first_principles_role": "Introduces hidden types and priors so strategy can be modeled when players do not share the same information.",
+    "what_to_watch_for": "Watch the type space. The model's quality depends on what private information is represented and what beliefs are assigned.",
+    "concepts": [
+      {
+        "id": "expected_utility",
+        "name": "Expected Utility",
+        "theme_id": "choice_and_payoff",
+        "theme_name": "Choice Under Tradeoffs"
+      },
+      {
+        "id": "bayesian_games",
+        "name": "Bayesian Games",
+        "theme_id": "private_information",
+        "theme_name": "Private Information And Beliefs"
+      },
+      {
+        "id": "types_and_beliefs",
+        "name": "Types And Beliefs",
+        "theme_id": "private_information",
+        "theme_name": "Private Information And Beliefs"
+      }
+    ],
+    "evidence_ids": [
+      "ev-expected_utility-02",
+      "ev-bayesian_games-01",
+      "ev-types_and_beliefs-01"
+    ],
+    "themes": [
+      {
+        "id": "choice_and_payoff",
+        "name": "Choice Under Tradeoffs"
+      },
+      {
+        "id": "private_information",
+        "name": "Private Information And Beliefs"
+      }
+    ],
+    "coverage_note": "3 transcript evidence anchors connect this lecture to 3 atlas concepts."
+  },
+  {
+    "id": "lecture-17",
+    "playlist_index": 17,
+    "title": "Lecture 17: Bayesian Nash Equilibrium: Applications",
+    "youtube_url": "https://www.youtube.com/watch?v=9_jcdMsPomQ",
+    "duration_seconds": 4187,
+    "word_count": 12689,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/017-9_jcdMsPomQ-Lecture 17: Bayesian Nash Equilibrium: Applications.txt",
+    "first_principles_role": "Solves applied incomplete-information games by checking expected-payoff best responses for each type.",
+    "what_to_watch_for": "Watch for type-contingent plans. Equilibrium is no longer one action per player; it is a plan for each possible type.",
+    "concepts": [
+      {
+        "id": "bayesian_nash_equilibrium",
+        "name": "Bayesian Nash Equilibrium",
+        "theme_id": "private_information",
+        "theme_name": "Private Information And Beliefs"
+      },
+      {
+        "id": "ad_auctions",
+        "name": "Ad Auctions",
+        "theme_id": "mechanisms_and_markets",
+        "theme_name": "Mechanisms, Auctions, And Markets"
+      }
+    ],
+    "evidence_ids": [
+      "ev-bayesian_nash_equilibrium-01",
+      "ev-ad_auctions-02"
+    ],
+    "themes": [
+      {
+        "id": "private_information",
+        "name": "Private Information And Beliefs"
+      },
+      {
+        "id": "mechanisms_and_markets",
+        "name": "Mechanisms, Auctions, And Markets"
+      }
+    ],
+    "coverage_note": "2 transcript evidence anchors connect this lecture to 2 atlas concepts."
+  },
+  {
+    "id": "lecture-18",
+    "playlist_index": 18,
+    "title": "Lecture 18: Auctions",
+    "youtube_url": "https://www.youtube.com/watch?v=7dTlS_PLo6I",
+    "duration_seconds": 4763,
+    "word_count": 12699,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/018-7dTlS_PLo6I-Lecture 18: Auctions.txt",
+    "first_principles_role": "Turns private values into strategic bids under allocation and payment rules.",
+    "what_to_watch_for": "Watch deviations in bids. A bid is a strategic action shaped by the rule, not a transparent report of value.",
+    "concepts": [
+      {
+        "id": "auctions",
+        "name": "Auctions",
+        "theme_id": "mechanisms_and_markets",
+        "theme_name": "Mechanisms, Auctions, And Markets"
+      },
+      {
+        "id": "revenue_equivalence",
+        "name": "Revenue Equivalence",
+        "theme_id": "mechanisms_and_markets",
+        "theme_name": "Mechanisms, Auctions, And Markets"
+      }
+    ],
+    "evidence_ids": [
+      "ev-auctions-01",
+      "ev-revenue_equivalence-02"
+    ],
+    "themes": [
+      {
+        "id": "mechanisms_and_markets",
+        "name": "Mechanisms, Auctions, And Markets"
+      }
+    ],
+    "coverage_note": "2 transcript evidence anchors connect this lecture to 2 atlas concepts."
+  },
+  {
+    "id": "lecture-19",
+    "playlist_index": 19,
+    "title": "Lecture 19: Revenue Equivalence",
+    "youtube_url": "https://www.youtube.com/watch?v=mu0X3GpDAy8",
+    "duration_seconds": 4820,
+    "word_count": 13032,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/019-mu0X3GpDAy8-Lecture 19: Revenue Equivalence.txt",
+    "first_principles_role": "Shows when different auction formats produce the same expected revenue because strategic bid adjustments offset rule differences.",
+    "what_to_watch_for": "Watch assumptions. The theorem is as much about the conditions for equivalence as about the equivalence itself.",
+    "concepts": [
+      {
+        "id": "revenue_equivalence",
+        "name": "Revenue Equivalence",
+        "theme_id": "mechanisms_and_markets",
+        "theme_name": "Mechanisms, Auctions, And Markets"
+      }
+    ],
+    "evidence_ids": [
+      "ev-revenue_equivalence-01"
+    ],
+    "themes": [
+      {
+        "id": "mechanisms_and_markets",
+        "name": "Mechanisms, Auctions, And Markets"
+      }
+    ],
+    "coverage_note": "1 transcript evidence anchor connects this lecture to 1 atlas concept."
+  },
+  {
+    "id": "lecture-20",
+    "playlist_index": 20,
+    "title": "Lecture 20: Ad Auctions",
+    "youtube_url": "https://www.youtube.com/watch?v=Myfs7LdkV98",
+    "duration_seconds": 4564,
+    "word_count": 12692,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/020-Myfs7LdkV98-Lecture 20: Ad Auctions.txt",
+    "first_principles_role": "Moves auction design into platform markets where rank, clicks, quality, and advertiser value interact.",
+    "what_to_watch_for": "Watch the object being sold. The platform allocates attention and expected clicks, not just a single indivisible item.",
+    "concepts": [
+      {
+        "id": "ad_auctions",
+        "name": "Ad Auctions",
+        "theme_id": "mechanisms_and_markets",
+        "theme_name": "Mechanisms, Auctions, And Markets"
+      }
+    ],
+    "evidence_ids": [
+      "ev-ad_auctions-01"
+    ],
+    "themes": [
+      {
+        "id": "mechanisms_and_markets",
+        "name": "Mechanisms, Auctions, And Markets"
+      }
+    ],
+    "coverage_note": "1 transcript evidence anchor connects this lecture to 1 atlas concept."
+  },
+  {
+    "id": "lecture-21",
+    "playlist_index": 21,
+    "title": "Lecture 21: Perfect Bayesian Equilibrium",
+    "youtube_url": "https://www.youtube.com/watch?v=yDNNcall_ho",
+    "duration_seconds": 4545,
+    "word_count": 12719,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/021-yDNNcall_ho-Lecture 21: Perfect Bayesian Equilibrium.txt",
+    "first_principles_role": "Combines dynamic credibility with belief updating in games where histories can reveal private information and observed actions change what players infer.",
+    "what_to_watch_for": "Watch the equilibrium object: strategies plus beliefs. Either half alone is incomplete because continuation actions depend on what players think the history has revealed.",
+    "concepts": [
+      {
+        "id": "types_and_beliefs",
+        "name": "Types And Beliefs",
+        "theme_id": "private_information",
+        "theme_name": "Private Information And Beliefs"
+      },
+      {
+        "id": "perfect_bayesian_equilibrium",
+        "name": "Perfect Bayesian Equilibrium",
+        "theme_id": "private_information",
+        "theme_name": "Private Information And Beliefs"
+      }
+    ],
+    "evidence_ids": [
+      "ev-types_and_beliefs-02",
+      "ev-perfect_bayesian_equilibrium-01"
+    ],
+    "themes": [
+      {
+        "id": "private_information",
+        "name": "Private Information And Beliefs"
+      }
+    ],
+    "coverage_note": "2 transcript evidence anchors connect this lecture to 2 atlas concepts."
+  },
+  {
+    "id": "lecture-22",
+    "playlist_index": 22,
+    "title": "Lecture 22: Signaling",
+    "youtube_url": "https://www.youtube.com/watch?v=H-wFpqnDrhs",
+    "duration_seconds": 4941,
+    "word_count": 13945,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/022-H-wFpqnDrhs-Lecture 22: Signaling.txt",
+    "first_principles_role": "Studies how privately informed senders can influence receivers through observable actions that may reveal type.",
+    "what_to_watch_for": "Watch imitation. A signal separates types only when the wrong type does not want to copy it.",
+    "concepts": [
+      {
+        "id": "perfect_bayesian_equilibrium",
+        "name": "Perfect Bayesian Equilibrium",
+        "theme_id": "private_information",
+        "theme_name": "Private Information And Beliefs"
+      },
+      {
+        "id": "signaling",
+        "name": "Signaling",
+        "theme_id": "communication_and_knowledge",
+        "theme_name": "Communication And Knowledge"
+      }
+    ],
+    "evidence_ids": [
+      "ev-perfect_bayesian_equilibrium-02",
+      "ev-signaling-01",
+      "ev-signaling-02"
+    ],
+    "themes": [
+      {
+        "id": "private_information",
+        "name": "Private Information And Beliefs"
+      },
+      {
+        "id": "communication_and_knowledge",
+        "name": "Communication And Knowledge"
+      }
+    ],
+    "coverage_note": "3 transcript evidence anchors connect this lecture to 2 atlas concepts."
+  },
+  {
+    "id": "lecture-23",
+    "playlist_index": 23,
+    "title": "Lecture 23: Bargaining with Incomplete Information",
+    "youtube_url": "https://www.youtube.com/watch?v=CFELos-uZbE",
+    "duration_seconds": 4819,
+    "word_count": 14044,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/023-CFELos-uZbE-Lecture 23: Bargaining with Incomplete Information.txt",
+    "first_principles_role": "Adds hidden values or costs to negotiation, making delay and offers partly about learning what the other side knows.",
+    "what_to_watch_for": "Watch how uncertainty changes offers. Delay can be strategic information management, not just impatience or stubbornness.",
+    "concepts": [],
+    "evidence_ids": [],
+    "themes": [],
+    "coverage_note": "No current evidence anchors point to this lecture; it remains represented through course sequence context."
+  },
+  {
+    "id": "lecture-24",
+    "playlist_index": 24,
+    "title": "Lecture 24: Cheap Talk",
+    "youtube_url": "https://www.youtube.com/watch?v=SsdSpzJ-d7s",
+    "duration_seconds": 4121,
+    "word_count": 11644,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/024-SsdSpzJ-d7s-Lecture 24: Cheap Talk.txt",
+    "first_principles_role": "Asks when costless, nonbinding messages can transmit information despite incentives to mislead.",
+    "what_to_watch_for": "Watch preference alignment. Speech works only when the sender benefits from moving the receiver toward a useful action.",
+    "concepts": [
+      {
+        "id": "cheap_talk",
+        "name": "Cheap Talk",
+        "theme_id": "communication_and_knowledge",
+        "theme_name": "Communication And Knowledge"
+      }
+    ],
+    "evidence_ids": [
+      "ev-cheap_talk-01",
+      "ev-cheap_talk-02"
+    ],
+    "themes": [
+      {
+        "id": "communication_and_knowledge",
+        "name": "Communication And Knowledge"
+      }
+    ],
+    "coverage_note": "2 transcript evidence anchors connect this lecture to 1 atlas concept."
+  },
+  {
+    "id": "lecture-25",
+    "playlist_index": 25,
+    "title": "Lecture 25: Common Knowledge",
+    "youtube_url": "https://www.youtube.com/watch?v=YHAY9UY9MgE",
+    "duration_seconds": 3459,
+    "word_count": 8328,
+    "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/025-YHAY9UY9MgE-Lecture 25: Common Knowledge.txt",
+    "first_principles_role": "Climbs from private knowledge to shared higher-order knowledge, where everyone knows and knows that others know.",
+    "what_to_watch_for": "Watch publicness. A fact can be true and individually known without becoming strong enough to coordinate behavior.",
+    "concepts": [
+      {
+        "id": "common_knowledge",
+        "name": "Common Knowledge",
+        "theme_id": "communication_and_knowledge",
+        "theme_name": "Communication And Knowledge"
+      }
+    ],
+    "evidence_ids": [
+      "ev-common_knowledge-01"
+    ],
+    "themes": [
+      {
+        "id": "communication_and_knowledge",
+        "name": "Communication And Knowledge"
+      }
+    ],
+    "coverage_note": "1 transcript evidence anchor connects this lecture to 1 atlas concept."
+  }
+]

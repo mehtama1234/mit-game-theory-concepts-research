@@ -20,10 +20,12 @@ CHROME = Path.home() / ".cache/ms-playwright/chromium_headless_shell-1228/chrome
 
 PAGES = [
     ("desktop-index", "index.html", "1280,900"),
+    ("desktop-lectures", "lectures.html", "1280,900"),
     ("desktop-concepts", "concepts.html", "1280,900"),
     ("desktop-nash-equilibrium", "concepts/nash_equilibrium.html", "1280,900"),
     ("desktop-auctions", "concepts/auctions.html", "1280,900"),
     ("mobile-index", "index.html", "390,844"),
+    ("mobile-lectures", "lectures.html", "390,844"),
     ("mobile-nash-equilibrium", "concepts/nash_equilibrium.html", "390,844"),
 ]
 

@@ -94,6 +94,7 @@ def main() -> int:
     themes = json.loads((ROOT / "analysis/themes/theme-map.json").read_text(encoding="utf-8"))
     subthemes = json.loads((ROOT / "analysis/themes/subtheme-map.json").read_text(encoding="utf-8"))
     evidence = json.loads((ROOT / "analysis/evidence/evidence-ledger.json").read_text(encoding="utf-8"))
+    lectures = json.loads((ROOT / "analysis/lectures/lecture-path.json").read_text(encoding="utf-8"))
     primitives = json.loads((ROOT / "analysis/throughlines/primitives.json").read_text(encoding="utf-8"))
     families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
 
@@ -147,6 +148,12 @@ def main() -> int:
     overlap_records = [record for record in evidence if repeated_adjacent_ngrams(record.get("local_transcript_window", ""))]
     if overlap_records:
         errors.append(f"{len(overlap_records)} evidence windows contain repeated caption overlap")
+    if len(lectures) != 25:
+        errors.append(f"lecture path has {len(lectures)} lectures")
+    lecture_words = [words(f"{lecture.get('first_principles_role', '')} {lecture.get('what_to_watch_for', '')}") for lecture in lectures]
+    for lecture, count in zip(lectures, lecture_words):
+        if count < 30:
+            errors.append(f"lecture {lecture['id']} has shallow path treatment: {count} words")
 
     for theme, count in zip(themes, theme_words):
         if count < 180:
@@ -187,6 +194,8 @@ def main() -> int:
         f"- Evidence records with transcript teaching notes: {len(deep_evidence)}",
         f"- Evidence records still marked weak: {len(weak_evidence)}",
         f"- Evidence windows with repeated caption overlap: {len(overlap_records)}",
+        f"- Lecture path entries: {len(lectures)}",
+        f"- Lecture path treatment words: min {min(lecture_words)}, max {max(lecture_words)}",
         f"- Errors: {len(errors)}",
         "",
         "## Lowest Concept Depth",
