@@ -111,6 +111,11 @@ def main() -> int:
     for ev in evidence:
         for cid in ev["supports_concepts"]:
             ev_by_concept.setdefault(cid, []).append(ev["id"])
+    lecture_by_evidence_id = {
+        ev_id: lecture
+        for lecture in lectures
+        for ev_id in lecture.get("evidence_ids", [])
+    }
 
     rows = []
     concept_pages_with_derivations = 0
@@ -230,6 +235,24 @@ def main() -> int:
         if len(linked_evidence) != len(family.get("course_evidence_ids", [])):
             errors.append(f"method family {family['id']} missing evidence links")
     deep_evidence = [record for record in evidence if record.get("transcript_teaching_note") and record.get("evidence_boundary")]
+    evidence_html = (SITE / "evidence.html").read_text(encoding="utf-8") if (SITE / "evidence.html").exists() else ""
+    evidence_concept_backlinks = 0
+    evidence_subtheme_backlinks = 0
+    evidence_lecture_backlinks = 0
+    for record in evidence:
+        linked_concepts = [cid for cid in record.get("supports_concepts", []) if f'href="concepts/{cid}.html"' in evidence_html]
+        linked_subthemes = [sid for sid in record.get("supports_subthemes", []) if f'href="themes.html#{sid}"' in evidence_html]
+        lecture = lecture_by_evidence_id.get(record["id"])
+        has_lecture = bool(lecture and f'href="lectures/{lecture["id"]}.html"' in evidence_html)
+        evidence_concept_backlinks += len(linked_concepts)
+        evidence_subtheme_backlinks += len(linked_subthemes)
+        evidence_lecture_backlinks += int(has_lecture)
+        if len(linked_concepts) != len(record.get("supports_concepts", [])):
+            errors.append(f"evidence {record['id']} missing concept backlinks")
+        if len(linked_subthemes) != len(record.get("supports_subthemes", [])):
+            errors.append(f"evidence {record['id']} missing subtheme backlinks")
+        if not has_lecture:
+            errors.append(f"evidence {record['id']} missing lecture backlink")
     weak_evidence = [
         record
         for record in evidence
@@ -338,6 +361,9 @@ def main() -> int:
         f"- Method-family primitive links: {family_primitive_links}",
         f"- Method-family evidence links: {family_evidence_links}",
         f"- Evidence records with transcript teaching notes: {len(deep_evidence)}",
+        f"- Evidence concept backlinks: {evidence_concept_backlinks}",
+        f"- Evidence subtheme backlinks: {evidence_subtheme_backlinks}",
+        f"- Evidence lecture backlinks: {evidence_lecture_backlinks}",
         f"- Evidence records still marked weak: {len(weak_evidence)}",
         f"- Evidence windows with repeated caption overlap: {len(overlap_records)}",
         f"- Lecture path entries: {len(lectures)}",

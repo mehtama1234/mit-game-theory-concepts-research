@@ -24,6 +24,9 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Method-family primitive links: 6
 - Method-family evidence links: 6
 - Evidence records with transcript teaching notes: 66
+- Evidence concept backlinks: 66
+- Evidence subtheme backlinks: 66
+- Evidence lecture backlinks: 66
 - Evidence records still marked weak: 0
 - Evidence windows with repeated caption overlap: 0
 - Lecture path entries: 25

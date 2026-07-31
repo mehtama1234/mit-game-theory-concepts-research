@@ -78,6 +78,18 @@ def concept_map(concepts: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
     return {concept["id"]: concept for concept in concepts}
 
 
+def subtheme_map(subthemes: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    return {subtheme["id"]: subtheme for subtheme in subthemes}
+
+
+def lecture_evidence_map(lectures: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    mapping: dict[str, dict[str, Any]] = {}
+    for lecture in lectures:
+        for ev_id in lecture.get("evidence_ids", []):
+            mapping[ev_id] = lecture
+    return mapping
+
+
 def derivation_map(derivations: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
     return {derivation["id"]: derivation for derivation in derivations}
 
@@ -116,7 +128,13 @@ def concept_card(concept: dict[str, Any], ev_by_id: dict[str, dict[str, Any]]) -
 </article>"""
 
 
-def evidence_row(ev: dict[str, Any], prefix: str = "") -> str:
+def evidence_row(
+    ev: dict[str, Any],
+    prefix: str = "",
+    concept_by_id: dict[str, dict[str, Any]] | None = None,
+    subtheme_by_id: dict[str, dict[str, Any]] | None = None,
+    lecture_by_evidence_id: dict[str, dict[str, Any]] | None = None,
+) -> str:
     when = f" {esc(ev['timestamp_start'])}" if ev.get("timestamp_start") else ""
     optional = ""
     for label, key in [
@@ -128,10 +146,36 @@ def evidence_row(ev: dict[str, Any], prefix: str = "") -> str:
     ]:
         if ev.get(key):
             optional += f"  <p><strong>{esc(label)}:</strong> {esc(ev[key])}</p>\n"
+    concept_by_id = concept_by_id or {}
+    subtheme_by_id = subtheme_by_id or {}
+    lecture_by_evidence_id = lecture_by_evidence_id or {}
+    concept_links = "".join(
+        f'<a class="chip" href="{prefix}concepts/{esc(concept_id)}.html">{esc(concept_by_id[concept_id]["name"])}</a>'
+        for concept_id in ev.get("supports_concepts", [])
+        if concept_id in concept_by_id
+    )
+    subtheme_links = "".join(
+        f'<a class="chip" href="{prefix}themes.html#{esc(subtheme_id)}">{esc(subtheme_by_id[subtheme_id]["name"])}</a>'
+        for subtheme_id in ev.get("supports_subthemes", [])
+        if subtheme_id in subtheme_by_id
+    )
+    lecture = lecture_by_evidence_id.get(ev["id"])
+    lecture_link = (
+        f'<a class="chip" href="{prefix}lectures/{esc(lecture["id"])}.html">{esc(lecture["title"])}</a>'
+        if lecture
+        else ""
+    )
+    backlinks = ""
+    if concept_by_id or subtheme_by_id or lecture_by_evidence_id:
+        backlinks = f"""  <p><strong>Supports concepts:</strong> <span class="chips">{concept_links or '<span class="chip muted">No concept links</span>'}</span></p>
+  <p><strong>Supports subthemes:</strong> <span class="chips">{subtheme_links or '<span class="chip muted">No subtheme links</span>'}</span></p>
+  <p><strong>Lecture page:</strong> <span class="chips">{lecture_link or '<span class="chip muted">No lecture page link</span>'}</span></p>
+"""
+    backlink_block = f"{backlinks.rstrip()}\n" if backlinks else ""
     return f"""<article class="evidence" id="{esc(ev['id'])}">
   <h3><a href="{prefix}evidence.html#{esc(ev['id'])}">{esc(ev['id'])}</a>{when}</h3>
   <p class="meta">{esc(ev['video_title'])} · <a href="{esc(ev['youtube_url'])}">YouTube</a></p>
-  <p><strong>Lecture argument:</strong> {esc(ev['lecture_argument'])}</p>
+{backlink_block}  <p><strong>Lecture argument:</strong> {esc(ev['lecture_argument'])}</p>
 {optional.rstrip()}
   <p><strong>Mathematical claim:</strong> {esc(ev['mathematical_claim'])}</p>
   <blockquote>{esc(ev['local_transcript_window'])}</blockquote>
@@ -470,8 +514,10 @@ def build_families(families, concept_by_id, ev_by_id):
     write(SITE / "families.html", page("Method Families", '<section class="page-head"><h1>Method Families</h1></section>' + "".join(cards), "families"))
 
 
-def build_evidence(evidence):
-    body = '<section class="page-head"><h1>Evidence Ledger</h1><p>Transcript evidence is kept separate from synthesis.</p></section><section class="evidence-stack">' + "".join(evidence_row(ev) for ev in evidence) + "</section>"
+def build_evidence(evidence, concept_by_id, subtheme_by_id, lecture_by_evidence_id):
+    body = '<section class="page-head"><h1>Evidence Ledger</h1><p>Transcript evidence is kept separate from synthesis.</p></section><section class="evidence-stack">' + "".join(
+        evidence_row(ev, "", concept_by_id, subtheme_by_id, lecture_by_evidence_id) for ev in evidence
+    ) + "</section>"
     write(SITE / "evidence.html", page("Evidence", body, "evidence"))
 
 
@@ -493,6 +539,8 @@ def main():
     worked_examples = load_optional("analysis/editorial-overrides/worked-example-cards.json", {})
     ev_by_id = evidence_map(evidence)
     concept_by_id = concept_map(concepts)
+    subtheme_by_id = subtheme_map(subthemes)
+    lecture_by_evidence_id = lecture_evidence_map(lectures)
     deriv_by_id = derivation_map(derivations)
     build_index(concepts, themes, evidence, lectures)
     build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id)
@@ -500,7 +548,7 @@ def main():
     build_themes(themes, subthemes, concepts)
     build_primitives(primitives, derivations, concept_by_id)
     build_families(families, concept_by_id, ev_by_id)
-    build_evidence(evidence)
+    build_evidence(evidence, concept_by_id, subtheme_by_id, lecture_by_evidence_id)
     build_assets()
 
 

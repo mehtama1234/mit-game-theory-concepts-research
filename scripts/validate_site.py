@@ -32,6 +32,11 @@ def main() -> int:
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
     deriv_by_id = {derivation["id"]: derivation for derivation in derivations}
+    lecture_by_evidence_id = {
+        ev_id: lecture
+        for lecture in lectures
+        for ev_id in lecture.get("evidence_ids", [])
+    }
     supplemental_ids = {record["id"] for record in supplemental}
     required = [SITE / name for name in ["index.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
@@ -79,6 +84,24 @@ def main() -> int:
     for ev in evidence:
         if f'id="{ev["id"]}"' not in evidence_html:
             errors.append(f"missing evidence anchor: {ev['id']}")
+        for heading in ["Supports concepts", "Supports subthemes", "Lecture page"]:
+            if heading not in evidence_html:
+                errors.append(f"evidence page missing backlink heading: {heading}")
+        for concept_id in ev.get("supports_concepts", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"evidence {ev['id']} references missing concept: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in evidence_html:
+                errors.append(f"evidence {ev['id']} missing concept backlink: {concept_id}")
+        for subtheme_id in ev.get("supports_subthemes", []):
+            if f'href="themes.html#{subtheme_id}"' not in evidence_html:
+                errors.append(f"evidence {ev['id']} missing subtheme backlink: {subtheme_id}")
+        lecture = lecture_by_evidence_id.get(ev["id"])
+        if not lecture:
+            errors.append(f"evidence {ev['id']} missing lecture-page mapping")
+        elif f'href="lectures/{lecture["id"]}.html"' not in evidence_html:
+            errors.append(f"evidence {ev['id']} missing lecture backlink: {lecture['id']}")
+        if re.search(r"Lecture \d+: Lecture \d+:", evidence_html):
+            errors.append("evidence page contains duplicated lecture-number label")
     for subtheme in subthemes:
         if f'id="{subtheme["id"]}"' not in themes_html:
             errors.append(f"missing subtheme anchor: {subtheme['id']}")
