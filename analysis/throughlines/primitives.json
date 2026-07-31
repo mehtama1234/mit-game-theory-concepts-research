@@ -31,6 +31,7 @@
     "concepts_in_atlas": [
       "strategic_form_games",
       "bargaining",
+      "imperfect_competition",
       "ad_auctions"
     ],
     "everyday_setup": "A firm’s profit depends on its own price and a rival’s price; a bargainer’s payoff depends on both the offer and the response; an auction payoff depends on the bid, rivals’ bids, value, and payment rule.",
@@ -50,7 +51,8 @@
     "misuse_failure": "Calling something a best response without naming the belief or opponent action hides the key assumption.",
     "concepts_in_atlas": [
       "best_response",
-      "minimax"
+      "minimax",
+      "imperfect_competition"
     ],
     "everyday_setup": "If a rival sets a high price, one response may be best; if the rival cuts price, another response may be best. The action is not universally good; it is good against a specified situation.",
     "course_appearances": "Best response appears in rationalizability, Nash equilibrium, mixed strategies, minimax reasoning, Bayesian Nash equilibrium, and the deviation checks behind dynamic concepts.",
@@ -160,6 +162,7 @@
       "bayesian_games",
       "types_and_beliefs",
       "bayesian_nash_equilibrium",
+      "screening_and_adverse_selection",
       "auctions",
       "perfect_bayesian_equilibrium",
       "signaling",
@@ -182,6 +185,7 @@
     "misuse_failure": "A mechanism can look efficient on paper while failing because participants have incentives to shade bids or messages.",
     "concepts_in_atlas": [
       "implicit_cartels",
+      "screening_and_adverse_selection",
       "auctions",
       "revenue_equivalence",
       "ad_auctions",

@@ -142,13 +142,15 @@
       "bayesian_games",
       "types_and_beliefs",
       "bayesian_nash_equilibrium",
+      "screening_and_adverse_selection",
       "perfect_bayesian_equilibrium"
     ],
     "course_coverage": {
-      "Lecture 16: Bayesian Games": 2,
+      "Lecture 16: Bayesian Games": 3,
       "Lecture 2: Representation of Games": 2,
       "Lecture 21: Perfect Bayesian Equilibrium": 2,
       "Lecture 17: Bayesian Nash Equilibrium: Applications": 1,
+      "Lecture 23: Bargaining with Incomplete Information": 1,
       "Lecture 22: Signaling": 1
     },
     "cross_course_argument": "Types and beliefs give names to unknown facts and probability stories. Bayesian Nash asks each type to choose optimally before all hidden information is revealed. Perfect Bayesian equilibrium adds time and updating, requiring beliefs and future actions to fit the observed path.",
@@ -165,11 +167,14 @@
       "rules_for_bidding"
     ],
     "core_concepts": [
+      "imperfect_competition",
       "auctions",
       "revenue_equivalence",
       "ad_auctions"
     ],
     "course_coverage": {
+      "Lecture 6: Imperfect Competition": 1,
+      "Lecture 11: One-Shot Deviation Principle and Bargaining": 1,
       "Lecture 18: Auctions": 2,
       "Lecture 1: Introduction to Individual Decision-Making": 1,
       "Lecture 19: Revenue Equivalence": 1,

@@ -320,10 +320,24 @@
     "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/006-79Nqii6nQ5U-Lecture 6: Imperfect Competition.txt",
     "first_principles_role": "Applies strategic reasoning to firm competition, where prices or quantities interact through demand and payoff consequences.",
     "what_to_watch_for": "Watch for payoff mapping in an economic application: the model has to say how a firm's action and rivals' actions jointly determine profit.",
-    "concepts": [],
-    "evidence_ids": [],
-    "themes": [],
-    "coverage_note": "No current evidence anchors point to this lecture; it remains represented through course sequence context."
+    "concepts": [
+      {
+        "id": "imperfect_competition",
+        "name": "Imperfect Competition",
+        "theme_id": "mechanisms_and_markets",
+        "theme_name": "Mechanisms, Auctions, And Markets"
+      }
+    ],
+    "evidence_ids": [
+      "ev-imperfect_competition-01"
+    ],
+    "themes": [
+      {
+        "id": "mechanisms_and_markets",
+        "name": "Mechanisms, Auctions, And Markets"
+      }
+    ],
+    "coverage_note": "1 transcript evidence anchor connects this lecture to 1 atlas concept."
   },
   {
     "id": "lecture-07",
@@ -525,19 +539,30 @@
         "name": "Bargaining",
         "theme_id": "time_and_credibility",
         "theme_name": "Time, Threats, And Credibility"
+      },
+      {
+        "id": "imperfect_competition",
+        "name": "Imperfect Competition",
+        "theme_id": "mechanisms_and_markets",
+        "theme_name": "Mechanisms, Auctions, And Markets"
       }
     ],
     "evidence_ids": [
       "ev-one_shot_deviation-01",
-      "ev-bargaining-02"
+      "ev-bargaining-02",
+      "ev-imperfect_competition-02"
     ],
     "themes": [
       {
         "id": "time_and_credibility",
         "name": "Time, Threats, And Credibility"
+      },
+      {
+        "id": "mechanisms_and_markets",
+        "name": "Mechanisms, Auctions, And Markets"
       }
     ],
-    "coverage_note": "2 transcript evidence anchors connect this lecture to 2 atlas concepts."
+    "coverage_note": "3 transcript evidence anchors connect this lecture to 3 atlas concepts."
   },
   {
     "id": "lecture-12",
@@ -685,12 +710,19 @@
         "name": "Types And Beliefs",
         "theme_id": "private_information",
         "theme_name": "Private Information And Beliefs"
+      },
+      {
+        "id": "screening_and_adverse_selection",
+        "name": "Screening And Adverse Selection",
+        "theme_id": "private_information",
+        "theme_name": "Private Information And Beliefs"
       }
     ],
     "evidence_ids": [
       "ev-expected_utility-02",
       "ev-bayesian_games-01",
-      "ev-types_and_beliefs-01"
+      "ev-types_and_beliefs-01",
+      "ev-screening_and_adverse_selection-01"
     ],
     "themes": [
       {
@@ -702,7 +734,7 @@
         "name": "Private Information And Beliefs"
       }
     ],
-    "coverage_note": "3 transcript evidence anchors connect this lecture to 3 atlas concepts."
+    "coverage_note": "4 transcript evidence anchors connect this lecture to 4 atlas concepts."
   },
   {
     "id": "lecture-17",
@@ -925,10 +957,24 @@
     "transcript_path": "raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/023-CFELos-uZbE-Lecture 23: Bargaining with Incomplete Information.txt",
     "first_principles_role": "Adds hidden values or costs to negotiation, making delay and offers partly about learning what the other side knows.",
     "what_to_watch_for": "Watch how uncertainty changes offers. Delay can be strategic information management, not just impatience or stubbornness.",
-    "concepts": [],
-    "evidence_ids": [],
-    "themes": [],
-    "coverage_note": "No current evidence anchors point to this lecture; it remains represented through course sequence context."
+    "concepts": [
+      {
+        "id": "screening_and_adverse_selection",
+        "name": "Screening And Adverse Selection",
+        "theme_id": "private_information",
+        "theme_name": "Private Information And Beliefs"
+      }
+    ],
+    "evidence_ids": [
+      "ev-screening_and_adverse_selection-02"
+    ],
+    "themes": [
+      {
+        "id": "private_information",
+        "name": "Private Information And Beliefs"
+      }
+    ],
+    "coverage_note": "1 transcript evidence anchor connects this lecture to 1 atlas concept."
   },
   {
     "id": "lecture-24",

@@ -70,6 +70,7 @@
       "backward_induction",
       "bargaining",
       "dominance",
+      "imperfect_competition",
       "iterated_deletion",
       "one_shot_deviation",
       "rationalizability",
@@ -157,6 +158,7 @@
     "connected_concepts": [
       "best_response",
       "expected_utility",
+      "imperfect_competition",
       "minimax",
       "mixed_strategies",
       "nash_equilibrium",
@@ -194,6 +196,7 @@
     ],
     "connected_concepts": [
       "best_response",
+      "imperfect_competition",
       "minimax",
       "mixed_strategies",
       "nash_equilibrium",
@@ -317,7 +320,8 @@
       "bayesian_games",
       "types_and_beliefs",
       "bayesian_nash_equilibrium",
-      "perfect_bayesian_equilibrium"
+      "perfect_bayesian_equilibrium",
+      "screening_and_adverse_selection"
     ],
     "everyday_problem": "One side often knows something the other side cares about. A bidder knows her value, a worker knows ability, a sender knows type, or a player knows a private signal. The problem is how to reason before those facts are publicly known.",
     "hidden_principle": "The hidden principle is conditioning behavior on possible worlds. The model must say what types might exist, what each player believes about them, and what each type would choose.",
@@ -343,6 +347,11 @@
         "concept": "perfect_bayesian_equilibrium",
         "evidence_id": "ev-perfect_bayesian_equilibrium-01",
         "video_title": "Lecture 21: Perfect Bayesian Equilibrium"
+      },
+      {
+        "concept": "screening_and_adverse_selection",
+        "evidence_id": "ev-screening_and_adverse_selection-01",
+        "video_title": "Lecture 16: Bayesian Games"
       }
     ],
     "connected_concepts": [
@@ -350,10 +359,9 @@
       "bayesian_nash_equilibrium",
       "expected_utility",
       "extensive_form_games",
-      "mixed_strategies",
-      "nash_equilibrium",
       "perfect_bayesian_equilibrium",
       "rationalizability",
+      "screening_and_adverse_selection",
       "types_and_beliefs"
     ],
     "first_principles_walkthrough": "List the hidden facts. Assign probabilities to them. For each type, ask which action gives the best expected payoff given beliefs about others. If actions are observed later, update beliefs when possible and check whether future behavior remains rational.",
@@ -366,6 +374,7 @@
     "parent_theme": "mechanisms_and_markets",
     "name": "Rules For Bidding",
     "concepts": [
+      "imperfect_competition",
       "auctions",
       "revenue_equivalence",
       "ad_auctions"
@@ -375,6 +384,11 @@
     "mathematical_lever": "The lever is incentive compatibility and expected payment. Auction models compare how rules map bids and values into allocation probabilities and payments, then ask whether truthful or shaded bidding is optimal.",
     "why_it_matters": "This subtheme turns game theory into market engineering. It explains why small rule changes can alter bidding behavior, seller revenue, efficiency, and platform outcomes.",
     "examples_from_courses": [
+      {
+        "concept": "imperfect_competition",
+        "evidence_id": "ev-imperfect_competition-01",
+        "video_title": "Lecture 6: Imperfect Competition"
+      },
       {
         "concept": "auctions",
         "evidence_id": "ev-auctions-01",
@@ -395,12 +409,15 @@
       "ad_auctions",
       "auctions",
       "bargaining",
+      "best_response",
       "expected_utility",
+      "imperfect_competition",
       "implicit_cartels",
+      "minimax",
       "mixed_strategies",
       "rationalizability",
       "revenue_equivalence",
-      "signaling",
+      "screening_and_adverse_selection",
       "strategic_form_games"
     ],
     "first_principles_walkthrough": "Write the object being allocated, each bidder’s private value, the allocation rule, and the payment rule. Then stand in one bidder’s shoes and ask what bid maximizes payoff given beliefs about others and the consequences of winning.",

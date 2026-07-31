@@ -738,6 +738,82 @@
     ],
     "local_transcript_window": "So now what about the sender? Well, if the sender and receiver had the same preferences, this would be a really easy problem. Of course, the advisor is going to want to tell the decision maker the useful information."
   },
+  "ev-imperfect_competition-01": {
+    "lecture_argument": "The imperfect-competition lecture supports market power as the reason firm choice becomes strategic: a firm is not a price taker when its production decision can affect market outcomes.",
+    "example_or_analogy": "The lecture's everyday picture is a local market such as coffee near MIT, where distance, product differences, patents, or a small number of sellers can make a firm matter to price.",
+    "conceptual_payload": "The payload is the transition from monopoly/perfect-competition extremes to strategic firm interaction. Market power creates the need for payoff mapping and best responses among firms.",
+    "why_span_matters": "This span matters because it anchors Lecture 6 directly in the atlas instead of leaving imperfect competition represented only through later cartel or auction material.",
+    "caveat_or_warning": "The span supports the market-power setup. It does not by itself solve Cournot, Bertrand, or equilibrium quantities; those require the later best-response parts of the lecture.",
+    "evidence_review_status": "hand_rewritten_concept_payload",
+    "confidence": "moderate",
+    "transcript_teaching_note": "This anchor is useful because the lecture explicitly explains why the market application belongs in game theory. A firm with market power is not merely choosing against a fixed background. Its production or price decision can affect the market, and rival firms may also matter. That is the first-principles pressure behind the concept page: once the firm can move outcomes, profit maximization has to be written as a strategic payoff problem.",
+    "evidence_boundary": "The evidence supports the market-power motivation for imperfect competition. It does not establish a specific model's equilibrium or show which real market has market power. It should be used as setup evidence, with model-specific claims supported by the Cournot/Bertrand and best-response spans.",
+    "matched_terms": [
+      "market power",
+      "price taker",
+      "production decisions"
+    ],
+    "timestamp_start": "00:06:51.120",
+    "timestamp_end": "00:07:03.720",
+    "local_transcript_window": "In the case of imperfect competition where we have a few large firms, we normally think of what we say is that these firms have market power. What does market power mean? It's really the opposite of being a price taker."
+  },
+  "ev-imperfect_competition-02": {
+    "lecture_argument": "The later dynamic-games lecture reuses the Cournot entry model to show firm competition as a staged strategic problem: firms first decide whether to enter, then entrants choose quantities.",
+    "example_or_analogy": "The concrete example is firms deciding whether to enter a market and then, after seeing who entered, choosing how much to produce in the market that remains.",
+    "conceptual_payload": "The payload is that imperfect competition can become a multi-stage game. Entry changes which firms play the quantity game, and the later production choices depend on that earlier strategic history.",
+    "why_span_matters": "This second anchor shows the market-competition idea reappearing outside Lecture 6. It connects imperfect competition to extensive-form representation and one-shot deviation checks.",
+    "caveat_or_warning": "The span supports reuse of the Cournot-entry application, not the full derivation of Cournot equilibrium. The detailed price/quantity logic remains anchored in the imperfect-competition lecture itself.",
+    "evidence_review_status": "hand_rewritten_concept_payload",
+    "confidence": "moderate",
+    "transcript_teaching_note": "This anchor matters because it prevents the imperfect-competition concept from being isolated as a one-day application. The lecture on dynamic deviations refers back to the Cournot game with entry costs as a two-stage game: firms enter first and quantities are chosen later by the entrants. That shows how the same market-competition primitive supports later course machinery about histories, continuation behavior, and deviations.",
+    "evidence_boundary": "The evidence supports the connection between firm competition, entry, and staged game representation. It does not prove an entry equilibrium or a one-shot-deviation result by itself; it supplies the market example being reused by the dynamic-game lecture.",
+    "matched_terms": [
+      "Cournot",
+      "entry costs",
+      "quantities"
+    ],
+    "timestamp_start": "00:10:34.720",
+    "timestamp_end": "00:11:04.270",
+    "local_transcript_window": "In that Cournot game with entry costs, that was exactly a multi-stage game that had two stages. In the first stage the firms simultaneously chose whether to enter the market. In the second stage, the firms who had chosen to enter simultaneously chose what quantities to produce."
+  },
+  "ev-screening_and_adverse_selection-01": {
+    "lecture_argument": "The Bayesian-games lecture supports the type-space foundation needed for screening: hidden information is represented by player types and connected to beliefs through a prior.",
+    "example_or_analogy": "The everyday picture is that the other side may be one of several kinds of participant, and the model needs a named object for those hidden kinds before it can ask how offers sort them.",
+    "conceptual_payload": "The payload is the mathematical setup for later adverse selection. Types store hidden mental states or payoff-relevant facts; priors connect those types to the state of the world.",
+    "why_span_matters": "This span matters because screening and adverse selection are not just stories about bad markets. They depend on the Bayesian-game machinery that names hidden types before prices or offers select among them.",
+    "caveat_or_warning": "The span supports the type/prior foundation, not adverse selection by itself. The actual selection and market-breakdown claims require the Lecture 23 evidence record.",
+    "evidence_review_status": "hand_rewritten_concept_payload",
+    "confidence": "moderate",
+    "transcript_teaching_note": "This anchor connects the new screening concept to the course's earlier private-information machinery. The lecture introduces type as an abstract object capturing a player's complete mental state and then adds a prior to connect types with the state of the world. That is exactly what the later screening model needs: before an offer can sort hidden participants, the model must say what hidden participant types exist and what the uninformed side believes about them.",
+    "evidence_boundary": "The evidence supports the type-space and prior foundation. It should not be used as evidence that adverse selection occurs in insurance or bargaining; that stronger claim is supported by the Lecture 23 anchor.",
+    "matched_terms": [
+      "type",
+      "prior",
+      "state of the world"
+    ],
+    "timestamp_start": "00:33:36.560",
+    "timestamp_end": "00:34:51.430",
+    "local_transcript_window": "Harsanyi's key trick is to introduce this abstract object which we call a type. The type of a player is going to capture their complete mental state. What we're missing here is the connection between the types and the state of the world, and we're going to capture that with a prior."
+  },
+  "ev-screening_and_adverse_selection-02": {
+    "lecture_argument": "The bargaining-with-incomplete-information lecture directly supports adverse selection: when a price is offered, the people who accept can be the expensive or high-risk people.",
+    "example_or_analogy": "The lecture uses insurance as the everyday example. The people most willing to buy insurance at a given price may be the people with high expected costs, so the buyer pool changes when the price is posted.",
+    "conceptual_payload": "The payload is selection after an offer. The payoff calculation must be done on the selected participants, not on the original average population, because the rule changes who remains in the market.",
+    "why_span_matters": "This span matters because it gives Lecture 23 a direct concept anchor and captures the central mechanism of adverse selection rather than merely noting that the lecture mentions incomplete information.",
+    "caveat_or_warning": "The span supports the adverse-selection mechanism in the lecture's insurance example. It does not prove that all insurance markets break down or that every bargaining delay comes from adverse selection.",
+    "evidence_review_status": "hand_rewritten_concept_payload",
+    "confidence": "moderate",
+    "transcript_teaching_note": "This is the direct anchor for the new concept. The lecture explains that a posted price does not simply reduce quantity demanded; it changes which people buy. In the insurance example, buyers at that price are the people with high costs, which is the fundamental adverse-selection pressure. The concept page can then explain why that selected pool may make trade harder, but this evidence record itself stays anchored to the selection mechanism.",
+    "evidence_boundary": "The evidence supports adverse selection inside the lecture's insurance example. It should not be stretched into a general empirical claim about insurance, legal bargaining, market breakdown, or used-good markets without separate evidence about actual type distributions and participation behavior.",
+    "matched_terms": [
+      "adverse selection",
+      "high costs",
+      "insurance"
+    ],
+    "timestamp_start": "00:40:55.040",
+    "timestamp_end": "00:41:07.840",
+    "local_transcript_window": "This is the fundamental idea of adverse selection. If I go out into the market and say this is the price I am going to offer, then the people who buy the insurance are going to be the people who are most expensive to insure."
+  },
   "ev-common_knowledge-01": {
     "lecture_argument": "The common-knowledge lecture supports the infinite hierarchy of shared awareness: everyone knows, everyone knows everyone knows, and the chain continues In this specific anchor from Lecture 25: Common Knowledge, the evidence role is definition and setup: it ties the transcript window to Common Knowledge by showing where the lecture needs the idea to make the next strategic step intelligible.",
     "example_or_analogy": "The everyday example is a public announcement that not only informs each person but also tells each person that others were informed too.",
