@@ -13,6 +13,9 @@ CONCEPT_FIELDS = [
     "everyday_problem",
     "first_principles_reason",
     "mathematical_principle",
+    "lecture_depth_walkthrough",
+    "mathematical_intuition",
+    "why_math_has_to_exist",
     "why_it_matters",
     "what_breaks_without_it",
     "naive_problem",
@@ -20,6 +23,8 @@ CONCEPT_FIELDS = [
     "mathematical_object",
     "operation",
     "worked_mini_example",
+    "student_trap",
+    "course_boundary_note",
     "lecture_emphasis",
     "common_misunderstanding",
     "cross_course_connections",
@@ -30,9 +35,14 @@ REQUIRED_HEADINGS = [
     "What real-world problem is this about?",
     "Why does this problem exist?",
     "What is the mathematical idea underneath?",
+    "Lecture-Depth Walkthrough",
+    "Mathematical Intuition",
+    "Why This Mathematical Object Has To Exist",
     "Why is this concept important?",
     "What breaks without it?",
     "Worked Mini-Example",
+    "Where Students Get Stuck",
+    "Where The Idea Stops Working",
     "Common Misunderstanding",
     "How to Recognize This in a New Paper or Model",
     "Transcript Evidence",
@@ -50,6 +60,12 @@ FORBIDDEN = [
     "mini-example: suppose two firms, bidders, negotiators, or speakers face each other",
     "look for the same pressure: someone chooses under strategic dependence",
     "as a label to memorize",
+    "this concept matters because it turns a loose strategic story into a checkable claim",
+    "without this concept, the analysis can name the players and choices",
+    "the naive move is to describe what happened and call it rational",
+    "the simple story fails when another feasible action",
+    "the lecture treats this as a working instrument",
+    "the same primitive returns whenever the course asks whether",
     "the important lecture move is that the instructor is not merely naming",
     "it also helps separate transcript evidence from atlas synthesis",
     "not a lecture label",
@@ -81,7 +97,7 @@ def main() -> int:
         count = words(" ".join(str(concept.get(field, "")) for field in CONCEPT_FIELDS))
         ev_count = len(ev_by_concept.get(concept["id"], []))
         html = (SITE / "concepts" / f"{concept['id']}.html").read_text(encoding="utf-8")
-        if count < 420:
+        if count < 620:
             errors.append(f"concept {concept['id']} has low teaching depth: {count} words")
         if ev_count < 1:
             errors.append(f"concept {concept['id']} has no reviewed evidence")
@@ -94,6 +110,15 @@ def main() -> int:
     for phrase in FORBIDDEN:
         if phrase in site_text:
             errors.append(f"published site contains forbidden phrase: {phrase}")
+
+    for field in [field for field in CONCEPT_FIELDS if field != "mathematical_principle"]:
+        seen: dict[str, list[str]] = {}
+        for concept in concepts:
+            value = str(concept.get(field, "")).strip()
+            seen.setdefault(value, []).append(concept["id"])
+        for value, ids in seen.items():
+            if value and len(ids) > 1:
+                errors.append(f"concept {field} repeated across pages: {', '.join(ids[:4])}")
 
     theme_words = [words(" ".join(str(t.get(f, "")) for f in ["big_picture", "why_this_theme_matters", "cross_course_argument", "mathematical_spine", "where_analogy_breaks", "lecture_evidence_chain"])) for t in themes]
     subtheme_words = [words(" ".join(str(s.get(f, "")) for f in ["everyday_problem", "hidden_principle", "mathematical_lever", "why_it_matters", "first_principles_walkthrough", "cross_links_and_limits"])) for s in subthemes]

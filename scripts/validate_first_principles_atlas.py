@@ -31,6 +31,12 @@ def main() -> int:
         "Mini-example: suppose two firms, bidders, negotiators, or speakers face each other",
         "look for the same pressure: someone chooses under strategic dependence",
         "as a label to memorize",
+        "This concept matters because it turns a loose strategic story into a checkable claim",
+        "Without this concept, the analysis can name the players and choices",
+        "The naive move is to describe what happened and call it rational",
+        "The simple story fails when another feasible action",
+        "The lecture treats this as a working instrument",
+        "The same primitive returns whenever the course asks whether",
         "not a lecture label",
         "The mathematical spine is built from primitives such as",
         "Evidence comes from the listed concept pages",
@@ -51,8 +57,9 @@ def main() -> int:
 
     concept_fields = [
         "plain_language_definition", "everyday_problem", "first_principles_reason", "mathematical_principle",
+        "lecture_depth_walkthrough", "mathematical_intuition", "why_math_has_to_exist",
         "why_it_matters", "what_breaks_without_it", "naive_problem", "failed_simple_approach",
-        "mathematical_object", "operation", "worked_mini_example", "lecture_emphasis",
+        "mathematical_object", "operation", "worked_mini_example", "student_trap", "course_boundary_note", "lecture_emphasis",
         "common_misunderstanding", "cross_course_connections", "recognize_in_new_work",
     ]
     for concept in concepts:
@@ -64,7 +71,7 @@ def main() -> int:
             errors.append(f"concept {concept['id']} has missing theme")
         if len(concept.get("course_evidence_ids", [])) < 1:
             errors.append(f"concept {concept['id']} has no evidence")
-        if sum(words(str(concept.get(field, ""))) for field in concept_fields) < 420:
+        if sum(words(str(concept.get(field, ""))) for field in concept_fields) < 620:
             errors.append(f"concept {concept['id']} is shallow")
         if re.match(r"^(equilibrium|utility|preference|Bayesian|Nash|dominance)\b", concept.get("everyday_problem", ""), re.I):
             errors.append(f"concept {concept['id']} starts with jargon")
@@ -111,6 +118,15 @@ def main() -> int:
         for sub_id in record.get("supports_subthemes", []):
             if sub_id not in subtheme_ids:
                 errors.append(f"evidence {record['id']} missing subtheme {sub_id}")
+
+    for field in [field for field in concept_fields if field != "mathematical_principle"]:
+        seen: dict[str, list[str]] = {}
+        for concept in concepts:
+            value = str(concept.get(field, "")).strip()
+            seen.setdefault(value, []).append(concept["id"])
+        for value, ids in seen.items():
+            if value and len(ids) > 1:
+                errors.append(f"concept {field} repeated across pages: {', '.join(ids[:4])}")
 
     for field in ["lecture_argument", "why_span_matters", "conceptual_payload"]:
         seen: dict[str, list[str]] = {}
