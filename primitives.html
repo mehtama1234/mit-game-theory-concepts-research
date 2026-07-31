@@ -11,36 +11,116 @@
     <a class="brand" href="index.html">MIT Game Theory Concept Lab</a>
     <nav><a class="" href="index.html">Overview</a><a class="" href="concepts.html">Concepts</a><a class="" href="themes.html">Themes</a><a class="" href="families.html">Method Families</a><a class="active" href="primitives.html">Primitives</a><a class="" href="evidence.html">Evidence</a></nav>
   </header>
-  <main><section class="page-head"><h1>Mathematical Primitives</h1></section><article class="wide-card" id="preference"><h2>Preference</h2><p>A way to say which outcome a person would rather have.</p><figure class="learning-diagram primitive-flow">
+  <main><section class="page-head"><h1>Mathematical Primitives</h1></section><article class="wide-card" id="preference">
+  <h2>Preference</h2>
+  <p>A way to say which outcome a person would rather have.</p>
+  <figure class="learning-diagram primitive-flow">
   <figcaption>Equation Breakdown</figcaption>
   <div class="flow-steps"><div class="flow-step"><span>Why Needed</span><p>Choices need an internal ordering; without one, better and worse have no operational meaning.</p></div><div class="flow-step"><span>Formal Object</span><p>A preference relation ranks outcomes, often represented by a utility function u(x).</p></div><div class="flow-step"><span>Equation</span><p>x preferred to y means u(x) &gt; u(y).</p></div><div class="flow-step"><span>Misuse</span><p>Treating utility as literal happiness can mislead; in game theory it is a ranking device for choices.</p></div></div>
-</figure><p>x and y are possible outcomes; u assigns each outcome a number; the larger number records the option the person ranks higher.</p></article><article class="wide-card" id="payoff_mapping"><h2>Payoff Mapping</h2><p>A table that says what each person gets from each combination of choices.</p><figure class="learning-diagram primitive-flow">
+</figure>
+  <h3>Plain-Language Principle</h3><p>Preference is the course’s way of saying that a person can compare outcomes before any strategic machinery starts. The primitive matters because a game cannot explain choice unless there is some stable sense in which one outcome is better for that player than another.</p>
+  <h3>Symbol By Symbol</h3><p>x and y are possible outcomes; u assigns each outcome a number; the larger number records the option the person ranks higher.</p>
+  <h3>Where It Appears</h3><p>Preferences appear first in the opening choice lecture, then reappear whenever payoffs, utilities, outside options, bidder values, or expected utilities are used as inputs to strategic reasoning.</p>
+  <h3>Why Misuse Breaks The Model</h3><p>The common misuse is treating the utility representation as a literal psychological ruler. In this course, different numerical representations can describe the same ordering unless uncertainty or expected utility requires stronger comparisons.</p>
+</article><article class="wide-card" id="payoff_mapping">
+  <h2>Payoff Mapping</h2>
+  <p>A table that says what each person gets from each combination of choices.</p>
+  <figure class="learning-diagram primitive-flow">
   <figcaption>Equation Breakdown</figcaption>
   <div class="flow-steps"><div class="flow-step"><span>Why Needed</span><p>In strategic settings, my result depends on what others do too.</p></div><div class="flow-step"><span>Formal Object</span><p>A payoff function u_i(a_i, a_-i) maps everyone&#x27;s actions to player i&#x27;s payoff.</p></div><div class="flow-step"><span>Equation</span><p>u_i(a_i, a_-i).</p></div><div class="flow-step"><span>Misuse</span><p>A payoff table is not the world itself; it is a simplified representation whose assumptions drive the result.</p></div></div>
-</figure><p>i is one player; a_i is that player&#x27;s action; a_-i means everyone else&#x27;s actions; u_i is the payoff assigned to the whole action profile.</p></article><article class="wide-card" id="best_response"><h2>Best Response</h2><p>The choice that works best given what someone believes others will do.</p><figure class="learning-diagram primitive-flow">
+</figure>
+  <h3>Plain-Language Principle</h3><p>Payoff mapping says that one person’s result is produced by the whole situation, not by that person’s action alone. A game table or tree is a compact machine that turns everyone’s choices into each player’s consequence.</p>
+  <h3>Symbol By Symbol</h3><p>i is one player; a_i is that player&#x27;s action; a_-i means everyone else&#x27;s actions; u_i is the payoff assigned to the whole action profile.</p>
+  <h3>Where It Appears</h3><p>Payoff mapping appears in strategic-form games, extensive-form games, bargaining, ad auctions, and any lecture that asks whether a deviation changes a player’s payoff.</p>
+  <h3>Why Misuse Breaks The Model</h3><p>A payoff map can smuggle in the conclusion if the modeler omits costs, outside options, information, or future consequences. The table is only as honest as the situation it represents.</p>
+</article><article class="wide-card" id="best_response">
+  <h2>Best Response</h2>
+  <p>The choice that works best given what someone believes others will do.</p>
+  <figure class="learning-diagram primitive-flow">
   <figcaption>Equation Breakdown</figcaption>
   <div class="flow-steps"><div class="flow-step"><span>Why Needed</span><p>No strategy is good in isolation; it is good against some expectation about others.</p></div><div class="flow-step"><span>Formal Object</span><p>BR_i(a_-i) is the set of actions for player i that maximize u_i given others&#x27; actions.</p></div><div class="flow-step"><span>Equation</span><p>BR_i(a_-i) = argmax_a u_i(a, a_-i).</p></div><div class="flow-step"><span>Misuse</span><p>Calling something a best response without naming the belief or opponent action hides the key assumption.</p></div></div>
-</figure><p>argmax means choose the action a that makes player i&#x27;s payoff as large as possible when others choose a_-i.</p></article><article class="wide-card" id="mutual_consistency"><h2>Mutual Consistency</h2><p>A situation where each person&#x27;s plan makes sense given everyone else&#x27;s plan.</p><figure class="learning-diagram primitive-flow">
+</figure>
+  <h3>Plain-Language Principle</h3><p>Best response is the one-player optimization step inside game theory, but in everyday words it means: given what I think the others are doing, what should I do?</p>
+  <h3>Symbol By Symbol</h3><p>argmax means choose the action a that makes player i&#x27;s payoff as large as possible when others choose a_-i.</p>
+  <h3>Where It Appears</h3><p>Best response appears in rationalizability, Nash equilibrium, mixed strategies, minimax reasoning, Bayesian Nash equilibrium, and the deviation checks behind dynamic concepts.</p>
+  <h3>Why Misuse Breaks The Model</h3><p>The misuse is naming a best response without naming the belief, opponent action, or information condition. That hides the actual assumption doing the work.</p>
+</article><article class="wide-card" id="mutual_consistency">
+  <h2>Mutual Consistency</h2>
+  <p>A situation where each person&#x27;s plan makes sense given everyone else&#x27;s plan.</p>
+  <figure class="learning-diagram primitive-flow">
   <figcaption>Equation Breakdown</figcaption>
   <div class="flow-steps"><div class="flow-step"><span>Why Needed</span><p>A prediction of strategic behavior must survive every player asking whether they personally want to change.</p></div><div class="flow-step"><span>Formal Object</span><p>Equilibrium requires each strategy to be a best response to the others.</p></div><div class="flow-step"><span>Equation</span><p>a_i in BR_i(a_-i) for every player i.</p></div><div class="flow-step"><span>Misuse</span><p>Equilibrium does not mean fair, efficient, or morally good; it means no one has a one-person reason to move.</p></div></div>
-</figure><p>For each player i, their chosen action a_i must belong to the set of best responses against the other players&#x27; actions.</p></article><article class="wide-card" id="pruning"><h2>Pruning</h2><p>Remove choices that are never worth taking, then reason with the smaller problem.</p><figure class="learning-diagram primitive-flow">
+</figure>
+  <h3>Plain-Language Principle</h3><p>Mutual consistency turns a collection of individual choices into a stable strategic prediction. Everyone’s plan has to make sense given everyone else’s plan.</p>
+  <h3>Symbol By Symbol</h3><p>For each player i, their chosen action a_i must belong to the set of best responses against the other players&#x27; actions.</p>
+  <h3>Where It Appears</h3><p>Mutual consistency appears in Nash equilibrium, mixed strategies, zero-sum games, subgame perfection, infinitely repeated games, folk theorem logic, and Bayesian Nash equilibrium.</p>
+  <h3>Why Misuse Breaks The Model</h3><p>The misuse is reading equilibrium as good, fair, optimal for society, or morally desirable. It only says that unilateral deviation is not profitable under the modeled conditions.</p>
+</article><article class="wide-card" id="pruning">
+  <h2>Pruning</h2>
+  <p>Remove choices that are never worth taking, then reason with the smaller problem.</p>
+  <figure class="learning-diagram primitive-flow">
   <figcaption>Equation Breakdown</figcaption>
   <div class="flow-steps"><div class="flow-step"><span>Why Needed</span><p>Large strategic problems become easier when obviously bad options can be ruled out.</p></div><div class="flow-step"><span>Formal Object</span><p>Dominance compares one strategy against another across possible opponent choices.</p></div><div class="flow-step"><span>Equation</span><p>s dominates t if u_i(s, a_-i) &gt;= u_i(t, a_-i) for all a_-i, with strict inequality somewhere.</p></div><div class="flow-step"><span>Misuse</span><p>Pruning too aggressively can remove behavior that matters when beliefs, weak dominance, or timing are handled differently.</p></div></div>
-</figure><p>The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.</p></article><article class="wide-card" id="backward_recursion"><h2>Backward Recursion</h2><p>Solve the future first, then use that answer to decide what should happen earlier.</p><figure class="learning-diagram primitive-flow">
+</figure>
+  <h3>Plain-Language Principle</h3><p>Pruning removes actions that cannot be justified before solving the whole game. It is the mathematical version of clearing away choices that are never worth taking.</p>
+  <h3>Symbol By Symbol</h3><p>The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.</p>
+  <h3>Where It Appears</h3><p>Pruning appears in dominance, iterated deletion, rationalizability, and as background for equilibrium reasoning because eliminated strategies cannot be serious best responses.</p>
+  <h3>Why Misuse Breaks The Model</h3><p>The misuse is deleting too aggressively, especially with weak dominance or when beliefs matter. A deletion rule can change the remaining game, so the strength and order of the rule must be explicit.</p>
+</article><article class="wide-card" id="backward_recursion">
+  <h2>Backward Recursion</h2>
+  <p>Solve the future first, then use that answer to decide what should happen earlier.</p>
+  <figure class="learning-diagram primitive-flow">
   <figcaption>Equation Breakdown</figcaption>
   <div class="flow-steps"><div class="flow-step"><span>Why Needed</span><p>In sequential games, later credible choices determine earlier incentives.</p></div><div class="flow-step"><span>Formal Object</span><p>Backward induction assigns optimal choices from terminal decision nodes back to the start.</p></div><div class="flow-step"><span>Equation</span><p>V(node) = max_action V(next node).</p></div><div class="flow-step"><span>Misuse</span><p>Backward induction assumes the game tree and payoffs are known and that later threats are credible.</p></div></div>
-</figure><p>V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</p></article><article class="wide-card" id="discounting"><h2>Discounting</h2><p>Future rewards count, but usually count less than rewards right now.</p><figure class="learning-diagram primitive-flow">
+</figure>
+  <h3>Plain-Language Principle</h3><p>Backward recursion says that later incentives determine earlier meaning. To understand a promise or threat now, solve what the player will want when the promised moment arrives.</p>
+  <h3>Symbol By Symbol</h3><p>V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</p>
+  <h3>Where It Appears</h3><p>Backward recursion appears in extensive-form games, backward induction, subgame perfection, one-shot deviation, bargaining, finitely repeated games, and perfect Bayesian equilibrium.</p>
+  <h3>Why Misuse Breaks The Model</h3><p>The misuse is solving backward through a tree that leaves out information, uncertainty, or renegotiation. Backward logic is powerful only after the tree is an honest representation.</p>
+</article><article class="wide-card" id="discounting">
+  <h2>Discounting</h2>
+  <p>Future rewards count, but usually count less than rewards right now.</p>
+  <figure class="learning-diagram primitive-flow">
   <figcaption>Equation Breakdown</figcaption>
   <div class="flow-steps"><div class="flow-step"><span>Why Needed</span><p>Repeated relationships trade off today&#x27;s temptation against tomorrow&#x27;s consequences.</p></div><div class="flow-step"><span>Formal Object</span><p>A discount factor delta weights future payoffs in an intertemporal sum.</p></div><div class="flow-step"><span>Equation</span><p>U = u_0 + delta u_1 + delta^2 u_2 + ...</p></div><div class="flow-step"><span>Misuse</span><p>A cooperation result can disappear when players are impatient or cannot punish future deviations.</p></div></div>
-</figure><p>u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.</p></article><article class="wide-card" id="belief"><h2>Belief</h2><p>A probability story about what kind of situation or opponent you are facing.</p><figure class="learning-diagram primitive-flow">
+</figure>
+  <h3>Plain-Language Principle</h3><p>Discounting is the course’s way to compare now with later. Future payoffs matter, but the discount factor says how much weight the future has relative to the present.</p>
+  <h3>Symbol By Symbol</h3><p>u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.</p>
+  <h3>Where It Appears</h3><p>Discounting appears in bargaining, infinitely repeated games, folk theorem arguments, implicit cartels, and the repeated-game parts of cooperation.</p>
+  <h3>Why Misuse Breaks The Model</h3><p>The misuse is treating future discipline as automatic. If players are impatient, cannot observe cheating, or know the game ends, the discounting inequality can fail.</p>
+</article><article class="wide-card" id="belief">
+  <h2>Belief</h2>
+  <p>A probability story about what kind of situation or opponent you are facing.</p>
+  <figure class="learning-diagram primitive-flow">
   <figcaption>Equation Breakdown</figcaption>
   <div class="flow-steps"><div class="flow-step"><span>Why Needed</span><p>People often choose without knowing another person&#x27;s type, value, cost, or information.</p></div><div class="flow-step"><span>Formal Object</span><p>A belief is a probability distribution over states, types, or histories.</p></div><div class="flow-step"><span>Equation</span><p>E[u(a, theta)] = sum_theta p(theta) u(a, theta).</p></div><div class="flow-step"><span>Misuse</span><p>If beliefs are not tied to information and incentives, the model can rationalize almost anything.</p></div></div>
-</figure><p>theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</p></article><article class="wide-card" id="incentive_compatibility"><h2>Incentive Compatibility</h2><p>Design rules so people want to reveal or do what the rule needs them to reveal or do.</p><figure class="learning-diagram primitive-flow">
+</figure>
+  <h3>Plain-Language Principle</h3><p>Belief is a probability story about hidden facts. It lets a player choose while admitting that they do not know the opponent’s type, value, history, or information.</p>
+  <h3>Symbol By Symbol</h3><p>theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</p>
+  <h3>Where It Appears</h3><p>Belief appears in expected utility, rationalizability, mixed strategies, Bayesian games, types and beliefs, Bayesian Nash equilibrium, auctions, PBE, signaling, and cheap talk.</p>
+  <h3>Why Misuse Breaks The Model</h3><p>The misuse is using beliefs as arbitrary story glue. In dynamic games especially, beliefs must be tied to information, Bayes rule where possible, and the incentives that produced observed behavior.</p>
+</article><article class="wide-card" id="incentive_compatibility">
+  <h2>Incentive Compatibility</h2>
+  <p>Design rules so people want to reveal or do what the rule needs them to reveal or do.</p>
+  <figure class="learning-diagram primitive-flow">
   <figcaption>Equation Breakdown</figcaption>
   <div class="flow-steps"><div class="flow-step"><span>Why Needed</span><p>People with private information may gain by misreporting it.</p></div><div class="flow-step"><span>Formal Object</span><p>Truthful behavior must give at least as much payoff as each profitable lie.</p></div><div class="flow-step"><span>Equation</span><p>u_i(truth) &gt;= u_i(report) for every alternative report.</p></div><div class="flow-step"><span>Misuse</span><p>A mechanism can look efficient on paper while failing because participants have incentives to shade bids or messages.</p></div></div>
-</figure><p>The inequality says a person should not gain by replacing the truthful action with another report.</p></article><article class="wide-card" id="knowledge_recursion"><h2>Knowledge Recursion</h2><p>Not only knowing a fact, but knowing that others know it, and so on.</p><figure class="learning-diagram primitive-flow">
+</figure>
+  <h3>Plain-Language Principle</h3><p>Incentive compatibility asks whether the rule makes desired behavior privately worthwhile. A mechanism cannot simply request honesty, cooperation, or truthful bidding; it must make those actions attractive.</p>
+  <h3>Symbol By Symbol</h3><p>The inequality says a person should not gain by replacing the truthful action with another report.</p>
+  <h3>Where It Appears</h3><p>Incentive compatibility appears in implicit cartels, auctions, revenue equivalence, ad auctions, signaling, and cheap talk, with related logic in folk-theorem punishment constraints.</p>
+  <h3>Why Misuse Breaks The Model</h3><p>The misuse is designing by intention rather than incentives. If misreporting, deviation, or manipulation pays more, the mechanism fails no matter how elegant the rule looks.</p>
+</article><article class="wide-card" id="knowledge_recursion">
+  <h2>Knowledge Recursion</h2>
+  <p>Not only knowing a fact, but knowing that others know it, and so on.</p>
+  <figure class="learning-diagram primitive-flow">
   <figcaption>Equation Breakdown</figcaption>
   <div class="flow-steps"><div class="flow-step"><span>Why Needed</span><p>Coordinated strategic behavior often depends on shared awareness, not private awareness alone.</p></div><div class="flow-step"><span>Formal Object</span><p>Common knowledge means everyone knows, everyone knows everyone knows, and the chain continues.</p></div><div class="flow-step"><span>Equation</span><p>E, KE, KKE, KKKE, ...</p></div><div class="flow-step"><span>Misuse</span><p>Treating public facts as common knowledge can be wrong if people are unsure what others observed.</p></div></div>
-</figure><p>E is the event; K means known by the players; repeated K&#x27;s represent higher-order knowledge.</p></article></main>
+</figure>
+  <h3>Plain-Language Principle</h3><p>Knowledge recursion captures the difference between a fact being true, people knowing it, and people knowing that others know it. Coordination often needs the higher levels, not just the first one.</p>
+  <h3>Symbol By Symbol</h3><p>E is the event; K means known by the players; repeated K&#x27;s represent higher-order knowledge.</p>
+  <h3>Where It Appears</h3><p>Knowledge recursion appears most directly in common knowledge, and indirectly in iterated deletion, rationalizability, equilibrium selection, and communication because players reason about others’ reasoning.</p>
+  <h3>Why Misuse Breaks The Model</h3><p>The misuse is treating widespread knowledge as common knowledge. If players are unsure whether others saw the same fact, the recursive chain can break and coordination may fail.</p>
+</article></main>
 </body>
 </html>
