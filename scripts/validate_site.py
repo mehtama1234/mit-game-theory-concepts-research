@@ -18,6 +18,7 @@ def main() -> int:
     lectures = json.loads((ROOT / "analysis/lectures/lecture-path.json").read_text(encoding="utf-8"))
     required = [SITE / name for name in ["index.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
+    required.extend(SITE / "lectures" / f"{lecture['id']}.html" for lecture in lectures)
     for path in required:
         if not path.exists():
             errors.append(f"missing site file: {path.relative_to(ROOT)}")
@@ -31,6 +32,15 @@ def main() -> int:
             errors.append(f"missing lecture anchor: {lecture['id']}")
         if not lecture.get("first_principles_role") or not lecture.get("what_to_watch_for"):
             errors.append(f"lecture missing treatment: {lecture['id']}")
+        detail = SITE / "lectures" / f"{lecture['id']}.html"
+        if detail.exists():
+            text = detail.read_text(encoding="utf-8")
+            for heading in ["What This Lecture Teaches", "Where The Math Enters", "Mistakes To Avoid", "Transcript Evidence Chain"]:
+                if heading not in text:
+                    errors.append(f"lecture page {lecture['id']} missing heading: {heading}")
+            for ev_id in lecture["evidence_ids"]:
+                if f'id="{ev_id}"' not in text:
+                    errors.append(f"lecture page {lecture['id']} missing evidence {ev_id}")
     for ev in evidence:
         if f'id="{ev["id"]}"' not in evidence_html:
             errors.append(f"missing evidence anchor: {ev['id']}")

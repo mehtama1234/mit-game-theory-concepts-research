@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lecture 23: Bargaining with Incomplete Information · MIT Game Theory Concept Lab</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+    <nav><a class="" href="../index.html">Overview</a><a class="active" href="../lectures.html">Lectures</a><a class="" href="../concepts.html">Concepts</a><a class="" href="../themes.html">Themes</a><a class="" href="../families.html">Method Families</a><a class="" href="../primitives.html">Primitives</a><a class="" href="../evidence.html">Evidence</a></nav>
+  </header>
+  <main><section class="page-head">
+  <p class="eyebrow">Lecture 23 · Private Information And Beliefs</p>
+  <h1>Lecture 23: Bargaining with Incomplete Information</h1>
+  <p>Adds hidden values or costs to negotiation, making delay and offers partly about learning what the other side knows.</p>
+  <p><a class="button" href="https://www.youtube.com/watch?v=CFELos-uZbE">Open YouTube lecture</a></p>
+</section>
+<figure class="learning-diagram lecture-flow">
+  <figcaption>Lecture Study Map</figcaption>
+  <div class="flow-steps"><div class="flow-step"><span>Problem</span><p>Adds hidden values or costs to negotiation, making delay and offers partly about learning what the other side knows.</p></div><div class="flow-step"><span>Watch</span><p>Watch how uncertainty changes offers. Delay can be strategic information management, not just impatience or stubbornness.</p></div><div class="flow-step"><span>Math</span><p>The mathematical object has to exist because ordinary average reasoning lies in selected populations. A cutoff, participation condition, or posterior distribution is needed to say who accepts, who rejects, and what the uninformed side should believe after observing that choice.</p></div><div class="flow-step"><span>Evidence</span><p>1 transcript evidence anchor connects this lecture to 1 atlas concept.</p></div></div>
+</figure>
+<section class="treatment">
+  <h2>What This Lecture Teaches</h2>
+  <p>Adds hidden values or costs to negotiation, making delay and offers partly about learning what the other side knows.</p>
+  <h2>Where The Math Enters</h2>
+  <p>The mathematical object has to exist because ordinary average reasoning lies in selected populations. A cutoff, participation condition, or posterior distribution is needed to say who accepts, who rejects, and what the uninformed side should believe after observing that choice.</p>
+  <h2>Mistakes To Avoid</h2>
+  <p>Students often get stuck by treating hidden information as just another probability. The lecture point is sharper: the action or price changes which hidden types remain in the game, so the probability distribution after participation is not the original distribution.</p>
+  <h2>How To Recognize This Later</h2>
+  <p>Look for models where an offer, price, contract, or test makes different hidden types sort themselves. If changing the rule changes the pool of participants, the screening/adverse-selection primitive is active.</p>
+  <p class="chips"><a class="chip" href="../concepts/screening_and_adverse_selection.html">Screening And Adverse Selection</a></p>
+</section>
+<section>
+  <h2>Concepts In This Lecture</h2>
+  <article class="wide-card">
+  <h3>Screening And Adverse Selection</h3>
+  <p><strong>Problem:</strong> The problem is that a price or offer can change who shows up. A seller, insurer, or bargainer may set a rule thinking about an average customer, but the people who accept are not average; they are selected by the rule itself.</p>
+  <p><strong>Mathematical handle:</strong> The object is an expected payoff under a cutoff rule: a price or offer is accepted only by types for whom accepting is better than rejecting, so the distribution of accepted types changes with the price.</p>
+  <p><strong>What breaks without it:</strong> Without this concept, the course would predict trade whenever buyer value exceeds seller cost. It would miss the reason some trades fail: the terms that attract one type may drive away another or reveal information that changes future bargaining.</p>
+  <p><a href="../concepts/screening_and_adverse_selection.html">Open concept page</a></p>
+</article>
+</section>
+<section>
+  <h2>Transcript Evidence Chain</h2>
+  <div class="evidence-stack"><article class="evidence" id="ev-screening_and_adverse_selection-02">
+  <h3><a href="../evidence.html#ev-screening_and_adverse_selection-02">ev-screening_and_adverse_selection-02</a> 00:40:55.040</h3>
+  <p class="meta">Lecture 23: Bargaining with Incomplete Information · <a href="https://www.youtube.com/watch?v=CFELos-uZbE">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The bargaining-with-incomplete-information lecture directly supports adverse selection: when a price is offered, the people who accept can be the expensive or high-risk people.</p>
+  <p><strong>Example or analogy:</strong> The lecture uses insurance as the everyday example. The people most willing to buy insurance at a given price may be the people with high expected costs, so the buyer pool changes when the price is posted.</p>
+  <p><strong>Conceptual payload:</strong> The payload is selection after an offer. The payoff calculation must be done on the selected participants, not on the original average population, because the rule changes who remains in the market.</p>
+  <p><strong>Why this span matters:</strong> This span matters because it gives Lecture 23 a direct concept anchor and captures the central mechanism of adverse selection rather than merely noting that the lecture mentions incomplete information.</p>
+  <p><strong>Transcript teaching note:</strong> This is the direct anchor for the new concept. The lecture explains that a posted price does not simply reduce quantity demanded; it changes which people buy. In the insurance example, buyers at that price are the people with high costs, which is the fundamental adverse-selection pressure. The concept page can then explain why that selected pool may make trade harder, but this evidence record itself stays anchored to the selection mechanism.</p>
+  <p><strong>Evidence boundary:</strong> The evidence supports adverse selection inside the lecture&#x27;s insurance example. It should not be stretched into a general empirical claim about insurance, legal bargaining, market breakdown, or used-good markets without separate evidence about actual type distributions and participation behavior.</p>
+  <p><strong>Mathematical claim:</strong> A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</p>
+  <blockquote>This is the fundamental idea of adverse selection. If I go out into the market and say this is the price I am going to offer, then the people who buy the insurance are going to be the people who are most expensive to insure.</blockquote>
+</article></div>
+</section>
+<section class="wide-card">
+  <h2>Source Context</h2>
+  <p><strong>Transcript:</strong> raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/023-CFELos-uZbE-Lecture 23: Bargaining with Incomplete Information.txt</p>
+  <p><strong>Words:</strong> 14,044 · <strong>Duration:</strong> 4819 seconds</p>
+</section></main>
+</body>
+</html>

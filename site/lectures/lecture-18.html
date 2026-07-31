@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lecture 18: Auctions · MIT Game Theory Concept Lab</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+    <nav><a class="" href="../index.html">Overview</a><a class="active" href="../lectures.html">Lectures</a><a class="" href="../concepts.html">Concepts</a><a class="" href="../themes.html">Themes</a><a class="" href="../families.html">Method Families</a><a class="" href="../primitives.html">Primitives</a><a class="" href="../evidence.html">Evidence</a></nav>
+  </header>
+  <main><section class="page-head">
+  <p class="eyebrow">Lecture 18 · Mechanisms, Auctions, And Markets</p>
+  <h1>Lecture 18: Auctions</h1>
+  <p>Turns private values into strategic bids under allocation and payment rules.</p>
+  <p><a class="button" href="https://www.youtube.com/watch?v=7dTlS_PLo6I">Open YouTube lecture</a></p>
+</section>
+<figure class="learning-diagram lecture-flow">
+  <figcaption>Lecture Study Map</figcaption>
+  <div class="flow-steps"><div class="flow-step"><span>Problem</span><p>Turns private values into strategic bids under allocation and payment rules.</p></div><div class="flow-step"><span>Watch</span><p>Watch deviations in bids. A bid is a strategic action shaped by the rule, not a transparent report of value.</p></div><div class="flow-step"><span>Math</span><p>The mathematical object has to exist because auction outcomes are created by rules. Values, bids, allocation, and payments have to be represented together so the course can ask how a bidder trades off winning more often against paying more when they win. The mathematical object has to exist because comparing auction formats requires more than comparing labels. Expected revenue depends on allocation probabilities, payment rules, and equilibrium bidding. Revenue equivalence formalizes the conditions under which those pieces line up across mechanisms.</p></div><div class="flow-step"><span>Evidence</span><p>2 transcript evidence anchors connect this lecture to 2 atlas concepts.</p></div></div>
+</figure>
+<section class="treatment">
+  <h2>What This Lecture Teaches</h2>
+  <p>Turns private values into strategic bids under allocation and payment rules.</p>
+  <h2>Where The Math Enters</h2>
+  <p>The mathematical object has to exist because auction outcomes are created by rules. Values, bids, allocation, and payments have to be represented together so the course can ask how a bidder trades off winning more often against paying more when they win. The mathematical object has to exist because comparing auction formats requires more than comparing labels. Expected revenue depends on allocation probabilities, payment rules, and equilibrium bidding. Revenue equivalence formalizes the conditions under which those pieces line up across mechanisms.</p>
+  <h2>Mistakes To Avoid</h2>
+  <p>Students often get stuck by treating bids as direct value reports. In many auctions, bids are strategic actions distorted by payment rules, risk, competition, and beliefs about rivals. Students often get stuck by comparing the rules while holding bids fixed. Equilibrium bids change with the auction format, and those strategic adjustments are exactly what the theorem accounts for.</p>
+  <h2>How To Recognize This Later</h2>
+  <p>Look for allocation and payment rules that transform private values into strategic bids. Look for auction comparisons where allocation sameness and bidder payoff normalization drive payment conclusions.</p>
+  <p class="chips"><a class="chip" href="../concepts/auctions.html">Auctions</a><a class="chip" href="../concepts/revenue_equivalence.html">Revenue Equivalence</a></p>
+</section>
+<section>
+  <h2>Concepts In This Lecture</h2>
+  <article class="wide-card">
+  <h3>Auctions</h3>
+  <p><strong>Problem:</strong> The problem is allocating an object when people know their own values but the seller and rival bidders may not.</p>
+  <p><strong>Mathematical handle:</strong> The object is an auction mechanism: bidder values, bid spaces, allocation rules, and payment rules.</p>
+  <p><strong>What breaks without it:</strong> Without auction theory, the course would miss one of the clearest economic applications of incomplete-information games. It could not explain bid shading, truthful bidding in special formats, or why payment rules change behavior.</p>
+  <p><a href="../concepts/auctions.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>Revenue Equivalence</h3>
+  <p><strong>Problem:</strong> The problem is comparing auction formats that look different: first-price, second-price, English, and others may create different bidding behavior.</p>
+  <p><strong>Mathematical handle:</strong> The object is a theorem linking allocation rules and expected payments under assumptions such as risk neutrality, independent private values, and symmetric bidders.</p>
+  <p><strong>What breaks without it:</strong> Without revenue equivalence, every auction comparison would be treated as an isolated case. The course would miss the deeper structure that makes some formats equivalent and the assumptions that make equivalence fragile.</p>
+  <p><a href="../concepts/revenue_equivalence.html">Open concept page</a></p>
+</article>
+</section>
+<section>
+  <h2>Transcript Evidence Chain</h2>
+  <div class="evidence-stack"><article class="evidence" id="ev-auctions-01">
+  <h3><a href="../evidence.html#ev-auctions-01">ev-auctions-01</a> 00:04:27.199</h3>
+  <p class="meta">Lecture 18: Auctions · <a href="https://www.youtube.com/watch?v=7dTlS_PLo6I">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The auction lecture supports auctions as strategic rules for allocating goods when bidders know private values and choose bids in response to the payment rule In this specific anchor from Lecture 18: Auctions, the evidence role is definition and setup: it ties the transcript window to Auctions by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday case is deciding how much to bid when winning is valuable but paying too much destroys the surplus.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the setup move for Auctions: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.</p>
+  <p><strong>Why this span matters:</strong> This span matters because it shows mechanism design beginning from bidder incentives rather than from the seller’s desired allocation alone For Auctions, this record is anchor 01, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> The auction anchor is strong because it centers on a deviation in bidding: instead of bidding the true valuation, the bidder considers another bid. That is the mechanism-design heart of the lecture. Auction rules are evaluated by asking what bid a participant wants to choose, not by assuming the bid truthfully reports value.</p>
+  <p><strong>Evidence boundary:</strong> The span supports incentive and deviation reasoning in auctions. It mentions bidding above true valuation, but the full conclusion depends on the auction format and payoff comparison outside this short window.</p>
+  <p><strong>Mathematical claim:</strong> Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) &gt;= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.</p>
+  <blockquote>So I&#x27;m contemplating a deviation where instead of bidding B1, instead of bidding V1, I bid B1 prime. So I bid strictly higher than my true valuation.</blockquote>
+</article><article class="evidence" id="ev-revenue_equivalence-02">
+  <h3><a href="../evidence.html#ev-revenue_equivalence-02">ev-revenue_equivalence-02</a> 00:02:39.599</h3>
+  <p class="meta">Lecture 18: Auctions · <a href="https://www.youtube.com/watch?v=7dTlS_PLo6I">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The revenue-equivalence lecture supports the claim that different auction formats can yield the same expected revenue under specific assumptions In this specific anchor from Lecture 18: Auctions, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Revenue Equivalence by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday picture is surprising sameness: rules that look different can balance bidding behavior and payments so the seller’s expected take matches. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the follow-through move for Revenue Equivalence: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.</p>
+  <p><strong>Why this span matters:</strong> This second span matters because it teaches that auction comparisons depend on assumptions, not surface differences between rules For Revenue Equivalence, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This auction anchor supports revenue equivalence by contrasting first-price and second-price auctions through the payment rule. The transcript says the difference is the payment rule, which is exactly why bidders alter strategies and why revenue comparison must account for equilibrium responses.</p>
+  <p><strong>Evidence boundary:</strong> The span supports the payment-rule contrast. It does not prove equivalence; it supplies one mechanism difference that the theorem later analyzes.</p>
+  <p><strong>Mathematical claim:</strong> Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) &gt;= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.</p>
+  <blockquote>the most gets the item. The difference from a first price auction is the payment rule. So in a second price auction, the winning bidder doesn&#x27;t pay</blockquote>
+</article></div>
+</section>
+<section class="wide-card">
+  <h2>Source Context</h2>
+  <p><strong>Transcript:</strong> raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/018-7dTlS_PLo6I-Lecture 18: Auctions.txt</p>
+  <p><strong>Words:</strong> 12,699 · <strong>Duration:</strong> 4763 seconds</p>
+</section></main>
+</body>
+</html>

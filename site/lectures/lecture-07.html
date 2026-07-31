@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lecture 7: Zero-Sum Games · MIT Game Theory Concept Lab</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+    <nav><a class="" href="../index.html">Overview</a><a class="active" href="../lectures.html">Lectures</a><a class="" href="../concepts.html">Concepts</a><a class="" href="../themes.html">Themes</a><a class="" href="../families.html">Method Families</a><a class="" href="../primitives.html">Primitives</a><a class="" href="../evidence.html">Evidence</a></nav>
+  </header>
+  <main><section class="page-head">
+  <p class="eyebrow">Lecture 7 · Equilibrium As Mutual Consistency</p>
+  <h1>Lecture 7: Zero-Sum Games</h1>
+  <p>Studies exact conflict, where one player&#x27;s gain is the other&#x27;s loss and minimax/security reasoning becomes natural.</p>
+  <p><a class="button" href="https://www.youtube.com/watch?v=CBCf8iWKFZY">Open YouTube lecture</a></p>
+</section>
+<figure class="learning-diagram lecture-flow">
+  <figcaption>Lecture Study Map</figcaption>
+  <div class="flow-steps"><div class="flow-step"><span>Problem</span><p>Studies exact conflict, where one player&#x27;s gain is the other&#x27;s loss and minimax/security reasoning becomes natural.</p></div><div class="flow-step"><span>Watch</span><p>Watch the boundary: many competitive situations are not zero-sum. The lecture matters because it shows what becomes special when conflict is exact.</p></div><div class="flow-step"><span>Math</span><p>The mathematical object has to exist because pure actions cannot always carry stable predictions. A probability distribution over actions lets the player control predictability itself. The distribution becomes the strategy because it determines opponents’ expected payoffs before the random action is realized. The mathematical object has to exist because exact conflict has special structure. When one player’s payoff is the negative of the other’s, the model can collapse two objectives into one value seen from opposite sides. That structure justifies security and minimax tools that would be too strong in general games. The mathematical object has to exist because adversarial choice requires a guarantee. The player needs to compare strategies by what the opponent can force against them. Minimax turns that defensive question into a nested optimization: protect the worst case, then choose the best protection.</p></div><div class="flow-step"><span>Evidence</span><p>4 transcript evidence anchors connect this lecture to 3 atlas concepts.</p></div></div>
+</figure>
+<section class="treatment">
+  <h2>What This Lecture Teaches</h2>
+  <p>Studies exact conflict, where one player&#x27;s gain is the other&#x27;s loss and minimax/security reasoning becomes natural.</p>
+  <h2>Where The Math Enters</h2>
+  <p>The mathematical object has to exist because pure actions cannot always carry stable predictions. A probability distribution over actions lets the player control predictability itself. The distribution becomes the strategy because it determines opponents’ expected payoffs before the random action is realized. The mathematical object has to exist because exact conflict has special structure. When one player’s payoff is the negative of the other’s, the model can collapse two objectives into one value seen from opposite sides. That structure justifies security and minimax tools that would be too strong in general games. The mathematical object has to exist because adversarial choice requires a guarantee. The player needs to compare strategies by what the opponent can force against them. Minimax turns that defensive question into a nested optimization: protect the worst case, then choose the best protection.</p>
+  <h2>Mistakes To Avoid</h2>
+  <p>Students often get stuck by asking what the player “really” chooses. The answer is that the random device is part of the strategy; after it realizes an action, the distribution was still the planned commitment. Students often get stuck by calling any rivalry zero-sum. Many competitive economic settings still have joint gains, inefficiencies, or possibilities for collusion. Zero-sum is a payoff structure, not a mood. Students often get stuck by confusing minimax with pessimism. It is not a personality trait; it is the rational response to a modeled opponent whose payoff is opposed to yours.</p>
+  <h2>How To Recognize This Later</h2>
+  <p>Look for indifference equations, randomized play, or models where predictable behavior would be punished. Look for adversarial models where maximizing my payoff is exactly minimizing yours. Look for worst-case guarantees, security levels, or saddle-point reasoning.</p>
+  <p class="chips"><a class="chip" href="../concepts/mixed_strategies.html">Mixed Strategies</a><a class="chip" href="../concepts/zero_sum_games.html">Zero-Sum Games</a><a class="chip" href="../concepts/minimax.html">Minimax</a></p>
+</section>
+<section>
+  <h2>Concepts In This Lecture</h2>
+  <article class="wide-card">
+  <h3>Mixed Strategies</h3>
+  <p><strong>Problem:</strong> The problem is what to predict when choosing one pure action would make a player exploitable or when no pure-action equilibrium exists.</p>
+  <p><strong>Mathematical handle:</strong> The object is a probability distribution over pure strategies, often chosen so the other player has no strict favorite response.</p>
+  <p><strong>What breaks without it:</strong> Without mixed strategies, the course would falsely conclude that some games have no stable prediction simply because no pure action profile works. It would also miss why randomness can be chosen as discipline rather than noise.</p>
+  <p><a href="../concepts/mixed_strategies.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>Zero-Sum Games</h3>
+  <p><strong>Problem:</strong> The problem is pure conflict: one side&#x27;s gain is the other side&#x27;s loss, so cooperation or joint surplus is not the issue.</p>
+  <p><strong>Mathematical handle:</strong> The object is a payoff function where player two&#x27;s payoff is the negative of player one&#x27;s payoff.</p>
+  <p><strong>What breaks without it:</strong> Without the zero-sum distinction, students may apply adversarial security logic to games where cooperation or joint surplus exists. The course needs this special case precisely because its conclusions are sharper than in general games.</p>
+  <p><a href="../concepts/zero_sum_games.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>Minimax</h3>
+  <p><strong>Problem:</strong> The problem is choosing under hostile response: what can I guarantee if the other side tries to hurt me as much as possible?</p>
+  <p><strong>Mathematical handle:</strong> The object is a security calculation: maximize the minimum payoff you can be forced to accept, or minimize the maximum damage the opponent can impose.</p>
+  <p><strong>What breaks without it:</strong> Without minimax, the course could describe conflict but not the logic of protecting against exploitation. It would miss why randomization and worst-case evaluation can produce a stable value in zero-sum games.</p>
+  <p><a href="../concepts/minimax.html">Open concept page</a></p>
+</article>
+</section>
+<section>
+  <h2>Transcript Evidence Chain</h2>
+  <div class="evidence-stack"><article class="evidence" id="ev-mixed_strategies-02">
+  <h3><a href="../evidence.html#ev-mixed_strategies-02">ev-mixed_strategies-02</a> 00:05:27.910</h3>
+  <p class="meta">Lecture 7: Zero-Sum Games · <a href="https://www.youtube.com/watch?v=CBCf8iWKFZY">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The companion evidence supports mixed strategies as deliberate randomization used when predictable pure actions can be exploited or cannot jointly satisfy best response In this specific anchor from Lecture 7: Zero-Sum Games, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Mixed Strategies by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday picture is hiding a pattern in a competitive setting; probabilities become part of strategy because certainty would invite a targeted response. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the follow-through move for Mixed Strategies: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.</p>
+  <p><strong>Why this span matters:</strong> This second span matters because it explains why randomness is a strategic object, not noise added after the model is solved For Mixed Strategies, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This zero-sum anchor supports the indifference logic behind mixing. The transcript mentions being indifferent between a sure amount and a lottery, which is the same expected-utility idea needed when mixed strategies make opponents indifferent. It helps connect randomization to utility comparison under risk.</p>
+  <p><strong>Evidence boundary:</strong> The span is indirect for mixed strategies because it is about lottery indifference. It supports the mathematical intuition, not a full mixed-equilibrium derivation.</p>
+  <p><strong>Mathematical claim:</strong> A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</p>
+  <blockquote>is a linear function. Um so that you are indifferent between say getting $10 for sure and a lottery that</blockquote>
+</article><article class="evidence" id="ev-zero_sum_games-01">
+  <h3><a href="../evidence.html#ev-zero_sum_games-01">ev-zero_sum_games-01</a> 00:04:48.000</h3>
+  <p class="meta">Lecture 7: Zero-Sum Games · <a href="https://www.youtube.com/watch?v=CBCf8iWKFZY">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The zero-sum lecture supports the special conflict case where one player’s gain is exactly the other player’s loss, sharpening equilibrium into value and security reasoning In this specific anchor from Lecture 7: Zero-Sum Games, the evidence role is definition and setup: it ties the transcript window to Zero-Sum Games by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The useful picture is a contest over a fixed pie: improving one side’s payoff mechanically worsens the other side’s payoff.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the setup move for Zero-Sum Games: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.</p>
+  <p><strong>Why this span matters:</strong> This span matters because it marks where general game-theory intuition narrows into adversarial protection For Zero-Sum Games, this record is anchor 01, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This zero-sum anchor is valuable because the instructor explicitly warns that many things are not zero-sum and that game theory moved beyond zero-sum games. That boundary is pedagogically important. It prevents students from treating every conflict as exact payoff opposition.</p>
+  <p><strong>Evidence boundary:</strong> The span supports the boundary of the concept more than the formal definition. It is evidence for when not to apply zero-sum reasoning.</p>
+  <p><strong>Mathematical claim:</strong> Equilibrium requires each strategy to be a best response to the others. The useful relation is `a_i in BR_i(a_-i) for every player i.`. In plain language: For each player i, their chosen action a_i must belong to the set of best responses against the other players&#x27; actions.</p>
+  <blockquote>things are often not zero-sum. Maybe I&#x27;ll say rarely zero-sum. And that&#x27;s why game theory has moved on a bit beyond zero-sum games and looked</blockquote>
+</article><article class="evidence" id="ev-minimax-01">
+  <h3><a href="../evidence.html#ev-minimax-01">ev-minimax-01</a> 00:20:36.360</h3>
+  <p class="meta">Lecture 7: Zero-Sum Games · <a href="https://www.youtube.com/watch?v=CBCf8iWKFZY">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The minimax lecture supports choosing by guarding against the opponent’s most damaging response, especially in zero-sum settings In this specific anchor from Lecture 7: Zero-Sum Games, the evidence role is definition and setup: it ties the transcript window to Minimax by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday example is making a plan after assuming the opponent will inspect it and attack its weakest point.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the setup move for Minimax: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.</p>
+  <p><strong>Why this span matters:</strong> This span matters because it connects best response to worst-case security rather than average-case optimism For Minimax, this record is anchor 01, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This minimax anchor is strong because it states the nested maximum and minimum logic in ordinary words: one player chooses a strategy that makes the other loss as large as possible. The transcript window is exactly the adversarial optimization pattern the concept page explains.</p>
+  <p><strong>Evidence boundary:</strong> The span supports minimax structure. It does not by itself solve a complete zero-sum game or prove a minimax theorem.</p>
+  <p><strong>Mathematical claim:</strong> BR_i(a_-i) is the set of actions for player i that maximize u_i given others&#x27; actions. The useful relation is `BR_i(a_-i) = argmax_a u_i(a, a_-i).`. In plain language: argmax means choose the action a that makes player i&#x27;s payoff as large as possible when others choose a_-i.</p>
+  <blockquote>if player one chooses the strategy that makes my loss as large as possible.&quot; So, we have a maximum here and a minimum here.</blockquote>
+</article><article class="evidence" id="ev-minimax-02">
+  <h3><a href="../evidence.html#ev-minimax-02">ev-minimax-02</a> 01:01:05.640</h3>
+  <p class="meta">Lecture 7: Zero-Sum Games · <a href="https://www.youtube.com/watch?v=CBCf8iWKFZY">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The zero-sum lecture directly supports minimax through the theorem equating worst-case loss and worst-case gain. This is the game-theoretic minimax payload that the earlier imperfect-competition maximum anchor did not provide.</p>
+  <p><strong>Example or analogy:</strong> The useful picture is two sides choosing protective mixed strategies until one player worst-case gain and the other player worst-case loss meet at the same value.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the theorem-level equality behind minimax: in zero-sum games, adversarial protection can produce a shared value from opposite sides.</p>
+  <p><strong>Why this span matters:</strong> This span matters because it replaces a misleading non-game-theoretic maximum record with direct minimax theorem evidence about worst-case gain and loss.</p>
+  <p><strong>Transcript teaching note:</strong> This is the stronger minimax anchor because the transcript explicitly names the minimax theorem and explains the equality between worst-case loss and worst-case gain. It supports the concept page’s claim that minimax is not generic pessimism; it is a zero-sum equality result linking the two players security calculations.</p>
+  <p><strong>Evidence boundary:</strong> The span supports the theorem statement and intuition. It does not include the proof or solve the example from scratch, so proof details remain outside this local evidence record.</p>
+  <p><strong>Mathematical claim:</strong> BR_i(a_-i) is the set of actions for player i that maximize u_i given others&#x27; actions. The useful relation is `BR_i(a_-i) = argmax_a u_i(a, a_-i).`. In plain language: argmax means choose the action a that makes player i&#x27;s payoff as large as possible when others choose a_-i.</p>
+  <blockquote>But now, we have an equality because of the minimax theorem. So, the minimax theorem tells us that the worst case loss from sigma two star must equal the worst case gain from sigma one star.</blockquote>
+</article></div>
+</section>
+<section class="wide-card">
+  <h2>Source Context</h2>
+  <p><strong>Transcript:</strong> raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/007-CBCf8iWKFZY-Lecture 7: Zero-Sum Games.txt</p>
+  <p><strong>Words:</strong> 12,829 · <strong>Duration:</strong> 4839 seconds</p>
+</section></main>
+</body>
+</html>

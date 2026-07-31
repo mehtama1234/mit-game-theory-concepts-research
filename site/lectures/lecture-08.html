@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lecture 8: Backward Induction · MIT Game Theory Concept Lab</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+    <nav><a class="" href="../index.html">Overview</a><a class="active" href="../lectures.html">Lectures</a><a class="" href="../concepts.html">Concepts</a><a class="" href="../themes.html">Themes</a><a class="" href="../families.html">Method Families</a><a class="" href="../primitives.html">Primitives</a><a class="" href="../evidence.html">Evidence</a></nav>
+  </header>
+  <main><section class="page-head">
+  <p class="eyebrow">Lecture 8 · Time, Threats, And Credibility, Repeated Interaction And Cooperation</p>
+  <h1>Lecture 8: Backward Induction</h1>
+  <p>Makes credibility calculable by solving later choices first and folding their values back into earlier decisions.</p>
+  <p><a class="button" href="https://www.youtube.com/watch?v=VHex0a2JFWI">Open YouTube lecture</a></p>
+</section>
+<figure class="learning-diagram lecture-flow">
+  <figcaption>Lecture Study Map</figcaption>
+  <div class="flow-steps"><div class="flow-step"><span>Problem</span><p>Makes credibility calculable by solving later choices first and folding their values back into earlier decisions.</p></div><div class="flow-step"><span>Watch</span><p>Watch for the shift from chronological storytelling to recursive reasoning. The future determines what earlier threats and promises mean.</p></div><div class="flow-step"><span>Math</span><p>The mathematical object has to exist because time and information change what an action means. A flat list of actions cannot say who moved first, what was observed, or which histories a player can distinguish. The tree structure preserves those facts so later credibility and belief questions have a place to attach. The mathematical object has to exist because sequential choice has nested future problems inside current decisions. A continuation value lets the solved future replace a whole subtree. Without that object, the analyst would have to carry every possible future story instead of using the later incentive calculation. The mathematical object has to exist because a dynamic strategy includes plans for histories that may not occur. Those plans can support threats, so they must be checked. Subgame perfection formalizes the demand that continuation behavior is itself equilibrium behavior wherever a real subgame begins. The mathematical object has to exist because a known horizon changes every period’s incentives. The model needs to preserve the number of remaining rounds so last-period logic can be pulled backward. A finite repeated game is not just many one-shot games; it is a time-indexed strategic object.</p></div><div class="flow-step"><span>Evidence</span><p>4 transcript evidence anchors connect this lecture to 4 atlas concepts.</p></div></div>
+</figure>
+<section class="treatment">
+  <h2>What This Lecture Teaches</h2>
+  <p>Makes credibility calculable by solving later choices first and folding their values back into earlier decisions.</p>
+  <h2>Where The Math Enters</h2>
+  <p>The mathematical object has to exist because time and information change what an action means. A flat list of actions cannot say who moved first, what was observed, or which histories a player can distinguish. The tree structure preserves those facts so later credibility and belief questions have a place to attach. The mathematical object has to exist because sequential choice has nested future problems inside current decisions. A continuation value lets the solved future replace a whole subtree. Without that object, the analyst would have to carry every possible future story instead of using the later incentive calculation. The mathematical object has to exist because a dynamic strategy includes plans for histories that may not occur. Those plans can support threats, so they must be checked. Subgame perfection formalizes the demand that continuation behavior is itself equilibrium behavior wherever a real subgame begins. The mathematical object has to exist because a known horizon changes every period’s incentives. The model needs to preserve the number of remaining rounds so last-period logic can be pulled backward. A finite repeated game is not just many one-shot games; it is a time-indexed strategic object.</p>
+  <h2>Mistakes To Avoid</h2>
+  <p>Students often get stuck by assuming a tree automatically means everyone observed every earlier move. Information sets matter because the same physical history and the same known history are not always the same thing. Students often get stuck by reading the tree chronologically. Players live forward, but the analyst solves backward because later incentives determine which earlier expectations are credible. Students often get stuck by ignoring histories that do not occur in equilibrium. Those histories are exactly where empty threats hide, so the course makes students inspect them. Students often get stuck by counting repetitions rather than asking whether the relationship has a strategic future at each date. Ten known rounds and an ongoing relationship are different objects.</p>
+  <h2>How To Recognize This Later</h2>
+  <p>Look for histories, decision nodes, information sets, or any claim where the order of moves changes what behavior can be believed. Look for finite sequential games where the last move can be solved and folded back into earlier choices. Look for dynamic games, off-path histories, or threats where the key question is whether the promised future action would really be optimal. Look for known horizons and unraveling arguments that start at the final period.</p>
+  <p class="chips"><a class="chip" href="../concepts/extensive_form_games.html">Extensive Form Games</a><a class="chip" href="../concepts/backward_induction.html">Backward Induction</a><a class="chip" href="../concepts/subgame_perfection.html">Subgame-Perfect Nash Equilibrium</a><a class="chip" href="../concepts/finitely_repeated_games.html">Finitely Repeated Games</a></p>
+</section>
+<section>
+  <h2>Concepts In This Lecture</h2>
+  <article class="wide-card">
+  <h3>Extensive Form Games</h3>
+  <p><strong>Problem:</strong> The problem is that some games unfold over time. A later choice can depend on an earlier choice, and some players may know more about the history than others.</p>
+  <p><strong>Mathematical handle:</strong> The object is a game tree: decision nodes, branches, histories, information sets, and terminal payoffs.</p>
+  <p><strong>What breaks without it:</strong> Without extensive form, the course could mistake a sequential conflict for a simultaneous one. That would hide credibility, information sets, and the fact that later choices can make earlier announcements meaningful or empty.</p>
+  <p><a href="../concepts/extensive_form_games.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>Backward Induction</h3>
+  <p><strong>Problem:</strong> The problem is that early choices in a tree depend on what later players will actually do, not what they announce they might do.</p>
+  <p><strong>Mathematical handle:</strong> The object is a game tree with continuation values assigned from the terminal nodes backward.</p>
+  <p><strong>What breaks without it:</strong> Without backward induction, a game tree would be a picture of possible histories but not a method for evaluating them. The model could accept plans that later players would abandon once their decision node is reached.</p>
+  <p><a href="../concepts/backward_induction.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>Subgame-Perfect Nash Equilibrium</h3>
+  <p><strong>Problem:</strong> The problem is that Nash equilibrium can allow plans based on threats that would not be carried out if the threatened moment arrived.</p>
+  <p><strong>Mathematical handle:</strong> The object is a Nash equilibrium that also induces a Nash equilibrium in every subgame.</p>
+  <p><strong>What breaks without it:</strong> Without subgame perfection, dynamic models can rest on noncredible threats. A strategy profile may pass the initial Nash test only because it prescribes off-path behavior that nobody would actually choose later.</p>
+  <p><a href="../concepts/subgame_perfection.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>Finitely Repeated Games</h3>
+  <p><strong>Problem:</strong> The problem is whether repeating a game for a known number of rounds changes behavior relative to playing once.</p>
+  <p><strong>Mathematical handle:</strong> The object is a stage game repeated T times with a known final period.</p>
+  <p><strong>What breaks without it:</strong> Without finite repetition, students might overgeneralize from ongoing relationships and assume history always disciplines behavior. The course needs the finite case to show why the endpoint is strategically powerful.</p>
+  <p><a href="../concepts/finitely_repeated_games.html">Open concept page</a></p>
+</article>
+</section>
+<section>
+  <h2>Transcript Evidence Chain</h2>
+  <div class="evidence-stack"><article class="evidence" id="ev-extensive_form_games-02">
+  <h3><a href="../evidence.html#ev-extensive_form_games-02">ev-extensive_form_games-02</a> 00:35:54.160</h3>
+  <p class="meta">Lecture 8: Backward Induction · <a href="https://www.youtube.com/watch?v=VHex0a2JFWI">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The companion transcript span supports extensive form as the representation needed when timing, histories, and information at decision nodes affect what actions mean In this specific anchor from Lecture 8: Backward Induction, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Extensive Form Games by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday picture is a branching plan: a later choice can be conditioned on what happened earlier, so a flat table loses important structure. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the follow-through move for Extensive Form Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.</p>
+  <p><strong>Why this span matters:</strong> This second span matters because backward induction, subgame perfection, and PBE all require the tree-like representation introduced here For Extensive Form Games, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This backward-induction lecture anchor supports extensive form through perfect-information nodes. The transcript says that when the model reaches a node, the player knows they are at that node and can compute optimal play. That is the bridge from representation to solving: the tree must encode what is known at each point.</p>
+  <p><strong>Evidence boundary:</strong> The span supports perfect-information extensive-form reasoning. It should not be generalized to imperfect-information trees where the player may not know which node has been reached.</p>
+  <p><strong>Mathematical claim:</strong> Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</p>
+  <blockquote>this to games of perfect information so that at any node we get to, we know that we&#x27;re at that node and therefore we can compute the optimal play. If we&#x27;re at a</blockquote>
+</article><article class="evidence" id="ev-backward_induction-01">
+  <h3><a href="../evidence.html#ev-backward_induction-01">ev-backward_induction-01</a> 00:04:47.480</h3>
+  <p class="meta">Lecture 8: Backward Induction · <a href="https://www.youtube.com/watch?v=VHex0a2JFWI">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The backward-induction lecture supports solving sequential games from the final decision backward because later incentives determine earlier choices In this specific anchor from Lecture 8: Backward Induction, the evidence role is definition and setup: it ties the transcript window to Backward Induction by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday picture is checking whether a promised later action will actually be attractive when the moment arrives.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the setup move for Backward Induction: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.</p>
+  <p><strong>Why this span matters:</strong> This span matters because it makes credibility a calculation over the game tree, not a statement players can simply announce For Backward Induction, this record is anchor 01, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> The window is introductory but still meaningful: the instructor names backward induction and immediately frames it as a topic best approached through examples. That matches the course’s teaching pattern for dynamic games. The idea is easier to understand by watching a tree collapse from the end than by memorizing the name first.</p>
+  <p><strong>Evidence boundary:</strong> This is a setup anchor, not a complete worked backward-induction solution. It supports the page’s claim about lecture placement and topic introduction; later tree examples would be needed for a full derivation ledger.</p>
+  <p><strong>Mathematical claim:</strong> Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</p>
+  <blockquote>So the topic for today is going to be what&#x27;s called backward induction, but I think the best way to go about it is</blockquote>
+</article><article class="evidence" id="ev-subgame_perfection-02">
+  <h3><a href="../evidence.html#ev-subgame_perfection-02">ev-subgame_perfection-02</a> 01:12:04.840</h3>
+  <p class="meta">Lecture 8: Backward Induction · <a href="https://www.youtube.com/watch?v=VHex0a2JFWI">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The subgame-perfection lecture supports ruling out Nash equilibria that rely on threats or promises that would fail inside a later subgame In this specific anchor from Lecture 8: Backward Induction, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Subgame-Perfect Nash Equilibrium by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday example is a threat that sounds powerful at the start but is not worth carrying out after the relevant history occurs. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the follow-through move for Subgame-Perfect Nash Equilibrium: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.</p>
+  <p><strong>Why this span matters:</strong> This second span matters because it shows why dynamic games need a stronger equilibrium test than one initial deviation check For Subgame-Perfect Nash Equilibrium, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This backward-induction anchor is strong for subgame perfection because it asks whether flooding the market is a credible threat if firm two loses money by doing it. That is the entire motivation for SPNE in plain language: threats matter only if carrying them out later is optimal.</p>
+  <p><strong>Evidence boundary:</strong> The span supports the credibility problem behind subgame perfection. It does not name SPNE in the window, but it supplies the economic reason the refinement is needed.</p>
+  <p><strong>Mathematical claim:</strong> Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</p>
+  <blockquote>don&#x27;t, I&#x27;m going to punish you by flooding the market.&quot; Yes. How would this be a credible threat though because firm two loses money by flooding?</blockquote>
+</article><article class="evidence" id="ev-finitely_repeated_games-02">
+  <h3><a href="../evidence.html#ev-finitely_repeated_games-02">ev-finitely_repeated_games-02</a> 01:12:40.440</h3>
+  <p class="meta">Lecture 8: Backward Induction · <a href="https://www.youtube.com/watch?v=VHex0a2JFWI">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The finite repeated-game lecture supports the known-endpoint problem: when everyone knows the last round, last-period incentives can unravel cooperation backward In this specific anchor from Lecture 8: Backward Induction, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Finitely Repeated Games by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday picture is a relationship with a publicly known final interaction, where punishment after the end is impossible. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the follow-through move for Finitely Repeated Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.</p>
+  <p><strong>Why this span matters:</strong> This second span matters because it shows why repetition alone is not enough; the horizon structure determines whether future discipline exists For Finitely Repeated Games, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This backward-induction anchor previews repeated games as a way to make threats credible. It is useful because it shows the course linking credibility failures in one-shot dynamic games to future repeated interaction. The repeated game is introduced as the later mechanism that may repair credibility.</p>
+  <p><strong>Evidence boundary:</strong> The span supports cross-lecture motivation. It is not a finite repeated-game theorem statement and should be treated as preview evidence.</p>
+  <p><strong>Mathematical claim:</strong> Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</p>
+  <blockquote>in production capacity? I think the best way to make it credible would be to say it&#x27;s a repeated game, and that&#x27;s what we&#x27;ll study later on, right? We&#x27;re</blockquote>
+</article></div>
+</section>
+<section class="wide-card">
+  <h2>Source Context</h2>
+  <p><strong>Transcript:</strong> raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/008-VHex0a2JFWI-Lecture 8: Backward Induction.txt</p>
+  <p><strong>Words:</strong> 12,791 · <strong>Duration:</strong> 4626 seconds</p>
+</section></main>
+</body>
+</html>

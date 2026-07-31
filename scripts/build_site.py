@@ -67,6 +67,10 @@ def evidence_map(evidence: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
     return {record["id"]: record for record in evidence}
 
 
+def concept_map(concepts: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    return {concept["id"]: concept for concept in concepts}
+
+
 def concept_card(concept: dict[str, Any], ev_by_id: dict[str, dict[str, Any]]) -> str:
     ev_items = []
     for ev_id in concept["course_evidence_ids"][:2]:
@@ -121,7 +125,11 @@ def build_index(concepts, themes, evidence, lectures):
     write(SITE / "index.html", page("Overview", body, "overview"))
 
 
-def build_lectures(lectures, ev_by_id):
+def lecture_filename(lecture: dict[str, Any]) -> str:
+    return f"{lecture['id']}.html"
+
+
+def build_lectures(lectures, ev_by_id, concept_by_id):
     cards = []
     for lecture in lectures:
         chips = "".join(
@@ -134,6 +142,7 @@ def build_lectures(lectures, ev_by_id):
             if eid in ev_by_id
         )
         themes = ", ".join(esc(theme["name"]) for theme in lecture["themes"]) or "No direct evidence theme yet"
+        detail_href = f"lectures/{lecture_filename(lecture)}"
         cards.append(f"""<article class="wide-card lecture-card" id="{esc(lecture["id"])}">
   <p class="eyebrow">Lecture {lecture["playlist_index"]} · {lecture["word_count"]:,} words · {themes}</p>
   <h2>{esc(lecture["title"])}</h2>
@@ -148,10 +157,75 @@ def build_lectures(lectures, ev_by_id):
   <p class="chips">{chips or '<span class="chip muted">No direct concept anchors yet</span>'}</p>
   <h3>Evidence Anchors</h3>
   <ul class="evidence-list">{evidence_links or '<li>No current evidence anchors for this lecture.</li>'}</ul>
+  <p><a class="button" href="{esc(detail_href)}">Open lecture study page</a></p>
   <p><a class="button" href="{esc(lecture["youtube_url"])}">Open YouTube lecture</a></p>
 </article>""")
     body = '<section class="page-head"><h1>Lecture Path</h1><p>Follow the course in order, with each lecture tied to first-principles roles, concepts, and transcript evidence.</p></section>' + "".join(cards)
     write(SITE / "lectures.html", page("Lectures", body, "lectures"))
+    for lecture in lectures:
+        build_lecture_detail(lecture, ev_by_id, concept_by_id)
+
+
+def build_lecture_detail(lecture, ev_by_id, concept_by_id):
+    records = [ev_by_id[eid] for eid in lecture["evidence_ids"] if eid in ev_by_id]
+    concept_ids = [concept["id"] for concept in lecture["concepts"]]
+    concepts = [concept_by_id[cid] for cid in concept_ids if cid in concept_by_id]
+    themes = ", ".join(esc(theme["name"]) for theme in lecture["themes"]) or "Course sequence context"
+    concept_links = "".join(
+        f'<a class="chip" href="../concepts/{esc(concept["id"])}.html">{esc(concept["name"])}</a>'
+        for concept in concepts
+    )
+    concept_blocks = "".join(
+        f"""<article class="wide-card">
+  <h3>{esc(concept["name"])}</h3>
+  <p><strong>Problem:</strong> {esc(concept["everyday_problem"])}</p>
+  <p><strong>Mathematical handle:</strong> {esc(concept["mathematical_object"])}</p>
+  <p><strong>What breaks without it:</strong> {esc(concept["what_breaks_without_it"])}</p>
+  <p><a href="../concepts/{esc(concept["id"])}.html">Open concept page</a></p>
+</article>"""
+        for concept in concepts
+    )
+    evidence_blocks = "".join(evidence_row(record, "../") for record in records)
+    mistake_notes = " ".join(concept["student_trap"] for concept in concepts) if concepts else "The main mistake is to watch the lecture as an isolated topic instead of asking what modeling pressure it adds to the course sequence."
+    math_notes = " ".join(concept["why_math_has_to_exist"] for concept in concepts) if concepts else "The mathematical role is sequence context: this lecture prepares later formal tools even when the current evidence map has fewer direct anchors."
+    recognition_notes = " ".join(concept["recognize_in_new_work"] for concept in concepts) if concepts else "In later work, recognize this lecture by asking where the same strategic pressure returns under a different name."
+    body = f"""<section class="page-head">
+  <p class="eyebrow">Lecture {lecture["playlist_index"]} · {themes}</p>
+  <h1>{esc(lecture["title"])}</h1>
+  <p>{esc(lecture["first_principles_role"])}</p>
+  <p><a class="button" href="{esc(lecture["youtube_url"])}">Open YouTube lecture</a></p>
+</section>
+{flow("Lecture Study Map", [
+    ("Problem", lecture["first_principles_role"]),
+    ("Watch", lecture["what_to_watch_for"]),
+    ("Math", math_notes),
+    ("Evidence", lecture["coverage_note"]),
+], "lecture-flow")}
+<section class="treatment">
+  <h2>What This Lecture Teaches</h2>
+  <p>{esc(lecture["first_principles_role"])}</p>
+  <h2>Where The Math Enters</h2>
+  <p>{esc(math_notes)}</p>
+  <h2>Mistakes To Avoid</h2>
+  <p>{esc(mistake_notes)}</p>
+  <h2>How To Recognize This Later</h2>
+  <p>{esc(recognition_notes)}</p>
+  <p class="chips">{concept_links or '<span class="chip muted">No direct concept anchors yet</span>'}</p>
+</section>
+<section>
+  <h2>Concepts In This Lecture</h2>
+  {concept_blocks or '<p>No direct concept anchors yet.</p>'}
+</section>
+<section>
+  <h2>Transcript Evidence Chain</h2>
+  <div class="evidence-stack">{evidence_blocks or '<p>No direct evidence anchors yet.</p>'}</div>
+</section>
+<section class="wide-card">
+  <h2>Source Context</h2>
+  <p><strong>Transcript:</strong> {esc(lecture["transcript_path"])}</p>
+  <p><strong>Words:</strong> {lecture["word_count"]:,} · <strong>Duration:</strong> {lecture["duration_seconds"]} seconds</p>
+</section>"""
+    write(SITE / "lectures" / lecture_filename(lecture), page(lecture["title"], body, "lectures", depth=1))
 
 
 def build_concepts(concepts, evidence):
@@ -283,8 +357,9 @@ def main():
     families = load("analysis/throughlines/method-families.json")
     lectures = load("analysis/lectures/lecture-path.json")
     ev_by_id = evidence_map(evidence)
+    concept_by_id = concept_map(concepts)
     build_index(concepts, themes, evidence, lectures)
-    build_lectures(lectures, ev_by_id)
+    build_lectures(lectures, ev_by_id, concept_by_id)
     build_concepts(concepts, evidence)
     build_themes(themes, subthemes, concepts)
     build_primitives(primitives)

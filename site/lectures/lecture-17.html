@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lecture 17: Bayesian Nash Equilibrium: Applications · MIT Game Theory Concept Lab</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+    <nav><a class="" href="../index.html">Overview</a><a class="active" href="../lectures.html">Lectures</a><a class="" href="../concepts.html">Concepts</a><a class="" href="../themes.html">Themes</a><a class="" href="../families.html">Method Families</a><a class="" href="../primitives.html">Primitives</a><a class="" href="../evidence.html">Evidence</a></nav>
+  </header>
+  <main><section class="page-head">
+  <p class="eyebrow">Lecture 17 · Private Information And Beliefs, Mechanisms, Auctions, And Markets</p>
+  <h1>Lecture 17: Bayesian Nash Equilibrium: Applications</h1>
+  <p>Solves applied incomplete-information games by checking expected-payoff best responses for each type.</p>
+  <p><a class="button" href="https://www.youtube.com/watch?v=9_jcdMsPomQ">Open YouTube lecture</a></p>
+</section>
+<figure class="learning-diagram lecture-flow">
+  <figcaption>Lecture Study Map</figcaption>
+  <div class="flow-steps"><div class="flow-step"><span>Problem</span><p>Solves applied incomplete-information games by checking expected-payoff best responses for each type.</p></div><div class="flow-step"><span>Watch</span><p>Watch for type-contingent plans. Equilibrium is no longer one action per player; it is a plan for each possible type.</p></div><div class="flow-step"><span>Math</span><p>The mathematical object has to exist because hidden types need their own stability checks. A single action per player is not enough; each possible type needs a plan, and each plan must be optimal in expectation. Bayesian Nash equilibrium formalizes mutual consistency across those type-indexed plans. The mathematical object has to exist because platform auctions allocate attention through rankings, clicks, and quality adjustments. A simple highest-bid object misses the product being sold. The ad-auction model keeps bid, position, click probability, and value in the same incentive calculation.</p></div><div class="flow-step"><span>Evidence</span><p>2 transcript evidence anchors connect this lecture to 2 atlas concepts.</p></div></div>
+</figure>
+<section class="treatment">
+  <h2>What This Lecture Teaches</h2>
+  <p>Solves applied incomplete-information games by checking expected-payoff best responses for each type.</p>
+  <h2>Where The Math Enters</h2>
+  <p>The mathematical object has to exist because hidden types need their own stability checks. A single action per player is not enough; each possible type needs a plan, and each plan must be optimal in expectation. Bayesian Nash equilibrium formalizes mutual consistency across those type-indexed plans. The mathematical object has to exist because platform auctions allocate attention through rankings, clicks, and quality adjustments. A simple highest-bid object misses the product being sold. The ad-auction model keeps bid, position, click probability, and value in the same incentive calculation.</p>
+  <h2>Mistakes To Avoid</h2>
+  <p>Students often get stuck by checking only the average player. Bayesian Nash is stricter: a proposed strategy can fail because one particular type wants to deviate, even if the pooled behavior looks reasonable. Students often get stuck by seeing only bids. In sponsored search, the highest bid may not create the highest platform value if relevance and click probability differ.</p>
+  <h2>How To Recognize This Later</h2>
+  <p>Look for type-contingent strategies and expected-payoff best response conditions. Look for markets with ranked slots, click probabilities, quality scores, and generalized second-price style rules.</p>
+  <p class="chips"><a class="chip" href="../concepts/bayesian_nash_equilibrium.html">Bayesian Nash Equilibrium</a><a class="chip" href="../concepts/ad_auctions.html">Ad Auctions</a></p>
+</section>
+<section>
+  <h2>Concepts In This Lecture</h2>
+  <article class="wide-card">
+  <h3>Bayesian Nash Equilibrium</h3>
+  <p><strong>Problem:</strong> The problem is predicting behavior when each possible type of a player may want a different action.</p>
+  <p><strong>Mathematical handle:</strong> The object is a strategy for every type of every player, where each type maximizes expected payoff given beliefs about other types and their strategies.</p>
+  <p><strong>What breaks without it:</strong> Without Bayesian Nash, the course could define types and beliefs but not check whether type-contingent strategies hold together. A proposed bidding or action rule might fail for one hidden type even if it sounds plausible overall.</p>
+  <p><a href="../concepts/bayesian_nash_equilibrium.html">Open concept page</a></p>
+</article><article class="wide-card">
+  <h3>Ad Auctions</h3>
+  <p><strong>Problem:</strong> The problem is selling attention slots, not a single physical object. Position affects clicks, quality affects usefulness, and bids interact with platform rules.</p>
+  <p><strong>Mathematical handle:</strong> The object is a sponsored-search mechanism combining bids, click-through rates, quality scores, allocation order, and per-click payments.</p>
+  <p><strong>What breaks without it:</strong> Without ad auctions, the course would leave mechanism design at textbook allocation. It would miss how online markets mix bidding strategy with measurement, ranking rules, and platform incentives.</p>
+  <p><a href="../concepts/ad_auctions.html">Open concept page</a></p>
+</article>
+</section>
+<section>
+  <h2>Transcript Evidence Chain</h2>
+  <div class="evidence-stack"><article class="evidence" id="ev-bayesian_nash_equilibrium-01">
+  <h3><a href="../evidence.html#ev-bayesian_nash_equilibrium-01">ev-bayesian_nash_equilibrium-01</a> 00:04:46.560</h3>
+  <p class="meta">Lecture 17: Bayesian Nash Equilibrium: Applications · <a href="https://www.youtube.com/watch?v=9_jcdMsPomQ">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The Bayesian Nash lecture supports equilibrium as a strategy for each type, with every type best responding in expected payoff terms to beliefs about other types In this specific anchor from Lecture 17: Bayesian Nash Equilibrium: Applications, the evidence role is definition and setup: it ties the transcript window to Bayesian Nash Equilibrium by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday example is writing a plan for each possible private value before knowing exactly which values others have.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the setup move for Bayesian Nash Equilibrium: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.</p>
+  <p><strong>Why this span matters:</strong> This span matters because it extends Nash stability into worlds where players do not share the same information For Bayesian Nash Equilibrium, this record is anchor 01, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This BNE applications anchor explicitly says the goal is solving for Bayes-Nash equilibrium. It is useful because it marks the transition from defining Bayesian games to computing equilibrium behavior under type uncertainty. The transcript also hints that the hard part is often the setup, which matches the concept page’s emphasis.</p>
+  <p><strong>Evidence boundary:</strong> The span supports lecture objective and BNE framing. It does not itself give the full equilibrium solution in the local window.</p>
+  <p><strong>Mathematical claim:</strong> A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</p>
+  <blockquote>Okay, so now I think the first step, so now our goal is solving for BNE. Bayes-Nash equilibrium. I think sometimes the hardest part, often the</blockquote>
+</article><article class="evidence" id="ev-ad_auctions-02">
+  <h3><a href="../evidence.html#ev-ad_auctions-02">ev-ad_auctions-02</a> 00:26:34.120</h3>
+  <p class="meta">Lecture 17: Bayesian Nash Equilibrium: Applications · <a href="https://www.youtube.com/watch?v=9_jcdMsPomQ">YouTube</a></p>
+  <p><strong>Lecture argument:</strong> The ad-auction lecture supports sponsored-search auctions as mechanisms where bids interact with position, click probability, and quality-like platform adjustments In this specific anchor from Lecture 17: Bayesian Nash Equilibrium: Applications, the evidence role is reuse, boundary, or later-course connection: it ties the transcript window to Ad Auctions by showing where the lecture needs the idea to make the next strategic step intelligible.</p>
+  <p><strong>Example or analogy:</strong> The everyday example is not just who bids highest, but whose ad creates value in a ranked slot where clicks and relevance matter. This second anchor checks that the idea is being used as course machinery rather than appearing once as a term.</p>
+  <p><strong>Conceptual payload:</strong> The payload is the follow-through move for Ad Auctions: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.</p>
+  <p><strong>Why this span matters:</strong> This second span matters because it moves auction theory from textbook objects to platform markets with additional design constraints For Ad Auctions, this record is anchor 02, so it checks a distinct part of the course treatment rather than duplicating the companion evidence item.</p>
+  <p><strong>Transcript teaching note:</strong> This BNE applications anchor gives real-world context for ad auctions by mentioning ads on websites and management through Google and publishers. It supports the course’s move from abstract auction models to platform-mediated advertising markets. The note is application context rather than mechanism proof: it tells readers why ad auctions matter as an economic institution before the later ad-auction lecture adds click, rank, quality, and payment details.</p>
+  <p><strong>Evidence boundary:</strong> The span supports application context. It is not enough to anchor the ad-auction mechanism by itself because it does not discuss bids, clicks, quality, or pricing in this window.</p>
+  <p><strong>Mathematical claim:</strong> Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) &gt;= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.</p>
+  <blockquote>websites, right? So, if you go to the New York Times and you see ads, uh those ads are also, you know, managed through Google and the New York Times if they</blockquote>
+</article></div>
+</section>
+<section class="wide-card">
+  <h2>Source Context</h2>
+  <p><strong>Transcript:</strong> raw-material/youtube/transcripts/mit-14-12-economic-applications-of-game-theory-fall-2025/clean/017-9_jcdMsPomQ-Lecture 17: Bayesian Nash Equilibrium: Applications.txt</p>
+  <p><strong>Words:</strong> 12,689 · <strong>Duration:</strong> 4187 seconds</p>
+</section></main>
+</body>
+</html>

@@ -154,6 +154,20 @@ def main() -> int:
     for lecture, count in zip(lectures, lecture_words):
         if count < 30:
             errors.append(f"lecture {lecture['id']} has shallow path treatment: {count} words")
+    lecture_page_words = []
+    for lecture in lectures:
+        path = SITE / "lectures" / f"{lecture['id']}.html"
+        if not path.exists():
+            errors.append(f"lecture detail page missing: {lecture['id']}")
+            continue
+        text = path.read_text(encoding="utf-8")
+        detail_words = words(text)
+        lecture_page_words.append(detail_words)
+        if detail_words < 450:
+            errors.append(f"lecture detail page {lecture['id']} is shallow: {detail_words} words")
+        for heading in ["What This Lecture Teaches", "Where The Math Enters", "Mistakes To Avoid", "How To Recognize This Later", "Transcript Evidence Chain"]:
+            if heading not in text:
+                errors.append(f"lecture detail page {lecture['id']} missing heading: {heading}")
 
     for theme, count in zip(themes, theme_words):
         if count < 180:
@@ -196,6 +210,7 @@ def main() -> int:
         f"- Evidence windows with repeated caption overlap: {len(overlap_records)}",
         f"- Lecture path entries: {len(lectures)}",
         f"- Lecture path treatment words: min {min(lecture_words)}, max {max(lecture_words)}",
+        f"- Lecture detail page words: min {min(lecture_page_words) if lecture_page_words else 0}, max {max(lecture_page_words) if lecture_page_words else 0}",
         f"- Errors: {len(errors)}",
         "",
         "## Lowest Concept Depth",
