@@ -27,6 +27,7 @@ def main() -> int:
     supplemental = json.loads((ROOT / "analysis/lectures/lecture-evidence.json").read_text(encoding="utf-8"))
     primitives = json.loads((ROOT / "analysis/throughlines/primitives.json").read_text(encoding="utf-8"))
     derivations = json.loads((ROOT / "analysis/throughlines/derivations.json").read_text(encoding="utf-8"))
+    families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
@@ -42,6 +43,7 @@ def main() -> int:
     evidence_html = (SITE / "evidence.html").read_text(encoding="utf-8") if (SITE / "evidence.html").exists() else ""
     lectures_html = (SITE / "lectures.html").read_text(encoding="utf-8") if (SITE / "lectures.html").exists() else ""
     themes_html = (SITE / "themes.html").read_text(encoding="utf-8") if (SITE / "themes.html").exists() else ""
+    families_html = (SITE / "families.html").read_text(encoding="utf-8") if (SITE / "families.html").exists() else ""
     if len(lectures) != 25:
         errors.append(f"expected 25 lectures, found {len(lectures)}")
     for lecture in lectures:
@@ -97,6 +99,23 @@ def main() -> int:
         for example in subtheme.get("examples_from_courses", []):
             if f'href="evidence.html#{example["evidence_id"]}"' not in themes_html:
                 errors.append(f"subtheme {subtheme['id']} missing evidence link: {example['evidence_id']}")
+    for family in families:
+        if f'id="{family["id"]}"' not in families_html:
+            errors.append(f"missing family anchor: {family['id']}")
+        for heading in ["Core Concepts", "Reusable Primitives", "Evidence Trail"]:
+            if heading not in families_html:
+                errors.append(f"families page missing heading: {heading}")
+        for concept_id in family.get("concepts", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"family {family['id']} references missing concept: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in families_html:
+                errors.append(f"family {family['id']} missing concept link: {concept_id}")
+        for primitive_id in family.get("mathematical_primitive", []):
+            if f'href="primitives.html#{primitive_id}"' not in families_html:
+                errors.append(f"family {family['id']} missing primitive link: {primitive_id}")
+        for ev_id in family.get("course_evidence_ids", []):
+            if f'href="evidence.html#{ev_id}"' not in families_html:
+                errors.append(f"family {family['id']} missing evidence link: {ev_id}")
     primitives_html = (SITE / "primitives.html").read_text(encoding="utf-8") if (SITE / "primitives.html").exists() else ""
     for primitive in primitives:
         if f'id="{primitive["id"]}"' not in primitives_html:

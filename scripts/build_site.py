@@ -432,9 +432,23 @@ def build_primitives(primitives, derivations, concept_by_id):
     write(SITE / "primitives.html", page("Primitives", '<section class="page-head"><h1>Mathematical Primitives</h1></section>' + "".join(cards) + derivation_section, "primitives"))
 
 
-def build_families(families):
+def build_families(families, concept_by_id, ev_by_id):
     cards = []
     for family in families:
+        concept_links = "".join(
+            f'<a class="chip" href="concepts/{esc(concept_id)}.html">{esc(concept_by_id[concept_id]["name"])}</a>'
+            for concept_id in family.get("concepts", [])
+            if concept_id in concept_by_id
+        )
+        primitive_links = "".join(
+            f'<a class="chip" href="primitives.html#{esc(primitive_id)}">{esc(primitive_id).replace("_", " ")}</a>'
+            for primitive_id in family.get("mathematical_primitive", [])
+        )
+        evidence_links = "".join(
+            f'<li><a href="evidence.html#{esc(ev_id)}">{esc(ev_id)}</a>: {esc(ev_by_id[ev_id]["video_title"])}</li>'
+            for ev_id in family.get("course_evidence_ids", [])
+            if ev_id in ev_by_id
+        )
         diagram = flow("Method-Family Reading Path", [
             ("Pressure", family["first_principles_problem"]),
             ("Core Move", family["core_move"]),
@@ -449,6 +463,9 @@ def build_families(families):
   <h3>Mathematical Signature</h3><p>{esc(family.get("mathematical_signature", ", ".join(family["mathematical_primitive"])))}</p>
   <h3>Why This Family Matters</h3><p>{esc(family.get("why_family_matters", family["paper_family_treatment"]))}</p>
   <h3>How To Read Papers In This Family</h3><p>{esc(family["paper_family_treatment"])}</p>
+  <h3>Core Concepts</h3><p class="chips">{concept_links}</p>
+  <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
+  <h3>Evidence Trail</h3><ul class="evidence-list">{evidence_links}</ul>
 </article>""")
     write(SITE / "families.html", page("Method Families", '<section class="page-head"><h1>Method Families</h1></section>' + "".join(cards), "families"))
 
@@ -482,7 +499,7 @@ def main():
     build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examples)
     build_themes(themes, subthemes, concepts)
     build_primitives(primitives, derivations, concept_by_id)
-    build_families(families)
+    build_families(families, concept_by_id, ev_by_id)
     build_evidence(evidence)
     build_assets()
 

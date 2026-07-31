@@ -210,6 +210,25 @@ def main() -> int:
             errors.append(f"primitive {primitive['id']} missing concept backlinks")
     derivation_words = [words(" ".join(str(d.get(f, "")) for f in ["everyday_setup", "equation", "symbol_by_symbol", "why_it_matters", "common_misread"]) + " " + " ".join(d.get("derivation_steps", []))) for d in derivations]
     family_words = [words(" ".join(str(f.get(k, "")) for k in ["family_problem", "first_principles_pattern", "mathematical_signature", "why_family_matters", "family_walkthrough", "where_analogy_breaks", "lecture_evidence_chain", "paper_family_treatment"])) for f in families]
+    families_html = (SITE / "families.html").read_text(encoding="utf-8") if (SITE / "families.html").exists() else ""
+    family_concept_links = 0
+    family_primitive_links = 0
+    family_evidence_links = 0
+    for family in families:
+        if f'id="{family["id"]}"' not in families_html:
+            errors.append(f"method family {family['id']} not rendered")
+        linked_concepts = [cid for cid in family.get("concepts", []) if f'href="concepts/{cid}.html"' in families_html]
+        linked_primitives = [pid for pid in family.get("mathematical_primitive", []) if f'href="primitives.html#{pid}"' in families_html]
+        linked_evidence = [eid for eid in family.get("course_evidence_ids", []) if f'href="evidence.html#{eid}"' in families_html]
+        family_concept_links += len(linked_concepts)
+        family_primitive_links += len(linked_primitives)
+        family_evidence_links += len(linked_evidence)
+        if len(linked_concepts) != len(family.get("concepts", [])):
+            errors.append(f"method family {family['id']} missing concept links")
+        if len(linked_primitives) != len(family.get("mathematical_primitive", [])):
+            errors.append(f"method family {family['id']} missing primitive links")
+        if len(linked_evidence) != len(family.get("course_evidence_ids", [])):
+            errors.append(f"method family {family['id']} missing evidence links")
     deep_evidence = [record for record in evidence if record.get("transcript_teaching_note") and record.get("evidence_boundary")]
     weak_evidence = [
         record
@@ -315,6 +334,9 @@ def main() -> int:
         f"- Concept worked-example card words: min {min(worked_example_words) if worked_example_words else 0}, max {max(worked_example_words) if worked_example_words else 0}",
         f"- Lecture pages with derivation links: {lecture_pages_with_derivations}",
         f"- Method-family treatment words: min {min(family_words)}, max {max(family_words)}",
+        f"- Method-family concept links: {family_concept_links}",
+        f"- Method-family primitive links: {family_primitive_links}",
+        f"- Method-family evidence links: {family_evidence_links}",
         f"- Evidence records with transcript teaching notes: {len(deep_evidence)}",
         f"- Evidence records still marked weak: {len(weak_evidence)}",
         f"- Evidence windows with repeated caption overlap: {len(overlap_records)}",
