@@ -124,6 +124,9 @@ def main() -> int:
     subtheme_words = [words(" ".join(str(s.get(f, "")) for f in ["everyday_problem", "hidden_principle", "mathematical_lever", "why_it_matters", "first_principles_walkthrough", "cross_links_and_limits"])) for s in subthemes]
     primitive_words = [words(" ".join(str(p.get(f, "")) for f in ["everyday_setup", "plain_language_principle", "formal_object", "symbol_explanation", "course_appearances", "why_it_matters", "misuse_warning"])) for p in primitives]
     family_words = [words(" ".join(str(f.get(k, "")) for k in ["family_problem", "first_principles_pattern", "mathematical_signature", "why_family_matters", "family_walkthrough", "where_analogy_breaks", "lecture_evidence_chain", "paper_family_treatment"])) for f in families]
+    deep_evidence = [record for record in evidence if record.get("transcript_teaching_note") and record.get("evidence_boundary")]
+    if len(deep_evidence) < 13:
+        errors.append(f"only {len(deep_evidence)} evidence records have transcript teaching notes")
 
     for theme, count in zip(themes, theme_words):
         if count < 180:
@@ -161,6 +164,7 @@ def main() -> int:
         f"- Subtheme treatment words: min {min(subtheme_words)}, max {max(subtheme_words)}",
         f"- Primitive treatment words: min {min(primitive_words)}, max {max(primitive_words)}",
         f"- Method-family treatment words: min {min(family_words)}, max {max(family_words)}",
+        f"- Evidence records with transcript teaching notes: {len(deep_evidence)}",
         f"- Errors: {len(errors)}",
         "",
         "## Lowest Concept Depth",

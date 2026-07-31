@@ -106,6 +106,10 @@ def main() -> int:
             errors.append(f"evidence {record['id']} has shallow example_or_analogy")
         if len(record.get("why_span_matters", "").split()) < 18:
             errors.append(f"evidence {record['id']} has shallow why_span_matters")
+        if record.get("transcript_teaching_note") and len(record["transcript_teaching_note"].split()) < 35:
+            errors.append(f"evidence {record['id']} has shallow transcript_teaching_note")
+        if record.get("evidence_boundary") and len(record["evidence_boundary"].split()) < 20:
+            errors.append(f"evidence {record['id']} has shallow evidence_boundary")
         if not (ROOT / record["transcript_path"]).exists():
             errors.append(f"evidence {record['id']} transcript missing")
         if words(record.get("local_transcript_window", "")) < 8:
@@ -118,6 +122,10 @@ def main() -> int:
         for sub_id in record.get("supports_subthemes", []):
             if sub_id not in subtheme_ids:
                 errors.append(f"evidence {record['id']} missing subtheme {sub_id}")
+
+    deep_evidence = [record for record in evidence if record.get("transcript_teaching_note") and record.get("evidence_boundary")]
+    if len(deep_evidence) < 13:
+        errors.append(f"only {len(deep_evidence)} evidence records have transcript teaching notes")
 
     for field in [field for field in concept_fields if field != "mathematical_principle"]:
         seen: dict[str, list[str]] = {}

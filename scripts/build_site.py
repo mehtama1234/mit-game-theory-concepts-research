@@ -85,10 +85,21 @@ def concept_card(concept: dict[str, Any], ev_by_id: dict[str, dict[str, Any]]) -
 
 def evidence_row(ev: dict[str, Any], prefix: str = "") -> str:
     when = f" {esc(ev['timestamp_start'])}" if ev.get("timestamp_start") else ""
+    optional = ""
+    for label, key in [
+        ("Example or analogy", "example_or_analogy"),
+        ("Conceptual payload", "conceptual_payload"),
+        ("Why this span matters", "why_span_matters"),
+        ("Transcript teaching note", "transcript_teaching_note"),
+        ("Evidence boundary", "evidence_boundary"),
+    ]:
+        if ev.get(key):
+            optional += f"  <p><strong>{esc(label)}:</strong> {esc(ev[key])}</p>\n"
     return f"""<article class="evidence" id="{esc(ev['id'])}">
   <h3><a href="{prefix}evidence.html#{esc(ev['id'])}">{esc(ev['id'])}</a>{when}</h3>
   <p class="meta">{esc(ev['video_title'])} · <a href="{esc(ev['youtube_url'])}">YouTube</a></p>
   <p><strong>Lecture argument:</strong> {esc(ev['lecture_argument'])}</p>
+{optional.rstrip()}
   <p><strong>Mathematical claim:</strong> {esc(ev['mathematical_claim'])}</p>
   <blockquote>{esc(ev['local_transcript_window'])}</blockquote>
 </article>"""
