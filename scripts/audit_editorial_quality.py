@@ -188,7 +188,7 @@ def main() -> int:
             note = equation_notes.get(concept["id"], "")
             note_words = words(note)
             equation_note_words.append(note_words)
-            if note_words < 24:
+            if note_words < 60:
                 errors.append(f"concept {concept['id']} has shallow equation walkthrough note: {note_words} words")
             if note and html_lib.escape(note, quote=True) not in html:
                 errors.append(f"concept {concept['id']} equation walkthrough note not rendered")

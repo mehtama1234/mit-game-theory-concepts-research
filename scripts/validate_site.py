@@ -1166,7 +1166,7 @@ def main() -> int:
         expected_derivations = expected_derivation_ids_for_concept(concept, deriv_by_id)
         if expected_derivations:
             note = equation_notes.get(concept["id"], "")
-            if words(note) < 24:
+            if words(note) < 60:
                 errors.append(f"concept {concept['id']} missing substantial equation walkthrough note")
             elif html.escape(note, quote=True) not in text:
                 errors.append(f"concept {concept['id']} equation walkthrough note not rendered")
