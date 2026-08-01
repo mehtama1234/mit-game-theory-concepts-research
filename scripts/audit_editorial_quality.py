@@ -606,14 +606,28 @@ def main() -> int:
             repair_cards += 1
         else:
             errors.append(f"misconception repair {repair['id']} not rendered")
-        text = " ".join(
-            str(repair.get(k, ""))
-            for k in ["mistaken_belief", "why_it_is_tempting", "first_principles_repair", "diagnostic_question", "what_breaks_if_ignored", "worked_correction", "transfer_test", "evidence_note"]
-        )
+        repair_fields = [
+            "mistaken_belief",
+            "why_it_is_tempting",
+            "first_principles_repair",
+            "diagnostic_question",
+            "what_breaks_if_ignored",
+            "worked_correction",
+            "transfer_test",
+            "wrong_shortcut_pattern",
+            "repair_in_plain_steps",
+            "boundary_warning",
+            "evidence_note",
+        ]
+        text = " ".join(str(repair.get(k, "")) for k in repair_fields)
         treatment_words = words(text)
         repair_words.append(treatment_words)
-        if treatment_words < 260:
+        if treatment_words < 420:
             errors.append(f"misconception repair {repair['id']} has shallow treatment: {treatment_words} words")
+        for field in repair_fields:
+            value = str(repair.get(field, ""))
+            if value and html_lib.escape(value, quote=True) not in repairs_html:
+                errors.append(f"misconception repair {repair['id']} {field} not rendered")
         linked_concepts = [cid for cid in repair.get("concepts", []) if f'href="concepts/{cid}.html"' in repairs_html]
         linked_limits = [cid for cid in repair.get("limit_concepts", []) if f'href="limits.html#limit-{cid}"' in repairs_html]
         linked_drills = [did for did in repair.get("drill_ids", []) if f'href="drills.html#{did}"' in repairs_html]

@@ -608,6 +608,9 @@ def build_misconception_repairs(repairs, concept_by_id, drill_by_id, ev_by_id):
   <p><strong>What breaks if ignored:</strong> {esc(repair["what_breaks_if_ignored"])}</p>
   <p><strong>Worked correction:</strong> {esc(repair["worked_correction"])}</p>
   <p><strong>Transfer test:</strong> {esc(repair["transfer_test"])}</p>
+  <p><strong>Wrong shortcut pattern:</strong> {esc(repair["wrong_shortcut_pattern"])}</p>
+  <p><strong>Repair in plain steps:</strong> {esc(repair["repair_in_plain_steps"])}</p>
+  <p><strong>Boundary warning:</strong> {esc(repair["boundary_warning"])}</p>
   <p><strong>Evidence note:</strong> {esc(repair["evidence_note"])}</p>
   <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
   <h3>Limits And Traps</h3><p class="chips">{limit_links}</p>

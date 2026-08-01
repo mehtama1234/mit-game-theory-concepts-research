@@ -423,7 +423,19 @@ def main() -> int:
     for repair in repairs:
         if f'id="{repair["id"]}"' not in repairs_html:
             errors.append(f"misconception repair not rendered: {repair['id']}")
-        fields = ["mistaken_belief", "why_it_is_tempting", "first_principles_repair", "diagnostic_question", "what_breaks_if_ignored", "worked_correction", "transfer_test", "evidence_note"]
+        fields = [
+            "mistaken_belief",
+            "why_it_is_tempting",
+            "first_principles_repair",
+            "diagnostic_question",
+            "what_breaks_if_ignored",
+            "worked_correction",
+            "transfer_test",
+            "wrong_shortcut_pattern",
+            "repair_in_plain_steps",
+            "boundary_warning",
+            "evidence_note",
+        ]
         for field in fields:
             value = repair.get(field, "")
             minimum = 12 if field in ["mistaken_belief", "diagnostic_question", "evidence_note"] else 24
@@ -431,7 +443,7 @@ def main() -> int:
                 errors.append(f"misconception repair {repair['id']} has shallow {field}")
             elif html.escape(value, quote=True) not in repairs_html:
                 errors.append(f"misconception repair {repair['id']} {field} not rendered")
-        if words(" ".join(str(repair.get(field, "")) for field in fields)) < 260:
+        if words(" ".join(str(repair.get(field, "")) for field in fields)) < 420:
             errors.append(f"misconception repair {repair['id']} has shallow combined treatment")
         for concept_id in repair.get("concepts", []):
             if concept_id not in concept_by_id:
