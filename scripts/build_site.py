@@ -1352,6 +1352,9 @@ def derivation_card(derivation: dict[str, Any]) -> str:
   <h3>Symbol By Symbol</h3><p>{esc(derivation["symbol_by_symbol"])}</p>
   <h3>Why This Relation Matters</h3><p>{esc(derivation["why_it_matters"])}</p>
   <h3>Common Misread</h3><p>{esc(derivation["common_misread"])}</p>
+  <h3>First-Principles Pressure</h3><p>{esc(derivation["first_principles_pressure"])}</p>
+  <h3>Mechanical Reading</h3><p>{esc(derivation["mechanical_reading"])}</p>
+  <h3>Audit Question</h3><p>{esc(derivation["audit_question"])}</p>
 </article>"""
 
 

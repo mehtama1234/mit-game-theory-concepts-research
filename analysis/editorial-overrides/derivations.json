@@ -13,7 +13,10 @@
     ],
     "symbol_by_symbol": "u_i is player i's payoff. s and t are two strategies available to that same player. a_-i means the actions chosen by everyone else. The phrase for every a_-i is the important part: the comparison must survive all opponent actions, not only the one that seems likely.",
     "why_it_matters": "This relation explains why dominance is stronger than a hunch. It lets the course delete a strategy without first solving beliefs or equilibrium, because no belief about the opponent can rescue a strategy that loses across the whole comparison.",
-    "common_misread": "The common mistake is deleting a strategy because it performs badly in the most likely case. That is not dominance. Dominance requires the inequality to hold across every case named by the model."
+    "common_misread": "The common mistake is deleting a strategy because it performs badly in the most likely case. That is not dominance. Dominance requires the inequality to hold across every case named by the model.",
+    "first_principles_pressure": "The pressure behind the inequality is ignorance about what the opponent will do. If one move beats another only under your favorite guess, the conclusion depends on that guess. Dominance is stronger because it says the losing move cannot defend itself under any modeled opponent action.",
+    "mechanical_reading": "Read the equation as a row-by-row or column-by-column inspection. Keep the opponent action fixed, compare the two payoffs, then move to the next opponent action. The strict greater-than in at least one place prevents calling two identical moves a real dominance relation.",
+    "audit_question": "Before deleting a move, ask: did I check every opponent contingency in the model, and am I using strict dominance, weak dominance, or a belief-based argument?"
   },
   {
     "id": "expected_utility",
@@ -29,7 +32,10 @@
     ],
     "symbol_by_symbol": "a is the action being evaluated. theta is the unknown state or type. p(theta) is the probability of that state. u(a, theta) is the payoff if action a is chosen and theta is true. The summation adds the probability-weighted payoffs.",
     "why_it_matters": "This is the bridge from uncertainty to choice. Bayesian games, auctions, and screening problems all need a way to compare actions before hidden information is revealed.",
-    "common_misread": "The formula is not saying the average state actually happens. It is a decision rule for choosing under uncertainty."
+    "common_misread": "The formula is not saying the average state actually happens. It is a decision rule for choosing under uncertainty.",
+    "first_principles_pressure": "The pressure is that action comes before certainty. A bidder, sender, or player must choose while several hidden worlds are still possible. Expected utility gives a disciplined way to let each possible world count in proportion to how seriously the player takes it.",
+    "mechanical_reading": "Read the sum as a weighted checklist. For each possible theta, write the payoff from action a, multiply by the probability of that theta, and add the pieces. High payoff in a rare state can matter less than modest payoff in a likely state.",
+    "audit_question": "Ask whether the probabilities are justified, whether the utility numbers represent risk attitudes correctly, and whether the action is being compared against the same belief distribution."
   },
   {
     "id": "best_response",
@@ -45,7 +51,10 @@
     ],
     "symbol_by_symbol": "BR_i is player i's best-response set. a_-i means the actions of everyone except player i. argmax means the action that makes the payoff as large as possible. u_i is player i's payoff function.",
     "why_it_matters": "Best response is the local engine behind Nash equilibrium, rationalizability, mixed strategies, Bayesian Nash equilibrium, and many deviation checks.",
-    "common_misread": "A best response is always conditional. If the opponent action or belief changes, the best response may change too."
+    "common_misread": "A best response is always conditional. If the opponent action or belief changes, the best response may change too.",
+    "first_principles_pressure": "The pressure is strategic dependence. A move cannot be judged in isolation because its payoff is created with other players' moves. Best response freezes the surrounding strategic world long enough to ask one local question clearly: what would this player choose now?",
+    "mechanical_reading": "Read argmax as a search over the player's available actions. Hold a_-i fixed, compute u_i for each candidate action, and collect the action or actions with the largest value. If two actions tie, the best-response set contains both.",
+    "audit_question": "Ask what was held fixed, what actions were allowed, and whether the paper is treating a best response to one belief as if it were best against all beliefs. Also check whether constraints, information, or timing remove actions that look available in the informal story."
   },
   {
     "id": "nash_equilibrium",
@@ -61,7 +70,10 @@
     ],
     "symbol_by_symbol": "a_i is player i's chosen action. a_-i is everyone else's action. BR_i(a_-i) is the set of best responses against those other actions. The phrase for every player means no one is exempt from the deviation check.",
     "why_it_matters": "It turns strategic prediction into a mutual consistency test. The result can be stable even when it is inefficient, unfair, or socially bad.",
-    "common_misread": "Equilibrium does not mean the best overall outcome. It means no single player wants to move alone under the modeled payoffs."
+    "common_misread": "Equilibrium does not mean the best overall outcome. It means no single player wants to move alone under the modeled payoffs.",
+    "first_principles_pressure": "The pressure is circular prediction. Each player's best move depends on the others, so a prediction must close the loop. Nash equilibrium says the proposed profile is internally consistent because every player is already doing something that survives their own unilateral check.",
+    "mechanical_reading": "Read the condition one player at a time. Take the proposed action a_i, compare it to that player's best-response set against a_-i, and repeat for every player. One failed membership check is enough to reject the proposed equilibrium.",
+    "audit_question": "Ask which deviations are excluded by the model, whether the equilibrium is unique, and whether the result is being oversold as efficient or morally desirable."
   },
   {
     "id": "backward_induction",
@@ -77,7 +89,10 @@
     ],
     "symbol_by_symbol": "V(node) is the value of arriving at a decision point. max_action means choose the action with the highest continuation value. next node is the future decision point or outcome reached by that action.",
     "why_it_matters": "It separates credible future behavior from empty threats. Dynamic games, bargaining, finite repetition, and subgame perfection all depend on this recursive logic.",
-    "common_misread": "Solving backward is only as good as the tree. If the tree leaves out information, renegotiation, or hidden types, the backward calculation can be precise but misleading."
+    "common_misread": "Solving backward is only as good as the tree. If the tree leaves out information, renegotiation, or hidden types, the backward calculation can be precise but misleading.",
+    "first_principles_pressure": "The pressure is credibility over time. A plan announced at the start can contain future actions that the player would abandon when the moment arrives. Backward induction forces every future step to be evaluated from the point where it would actually be chosen.",
+    "mechanical_reading": "Read V(node) as the value inherited by a decision point after later choices have been settled. At each node, the moving player chooses the branch with the highest continuation value, and that chosen value is passed backward to earlier decisions.",
+    "audit_question": "Ask whether every later decision point is really reached with the information assumed, and whether renegotiation, mistakes, or hidden information would change the continuation value."
   },
   {
     "id": "discounted_sum",
@@ -93,7 +108,10 @@
     ],
     "symbol_by_symbol": "U is total discounted payoff. u_0 is payoff now. u_1 is next period's payoff. delta is between zero and one and measures patience. delta squared means a payoff two periods away receives two rounds of discounting.",
     "why_it_matters": "Cooperation, cartel discipline, and bargaining delay all depend on whether discounted future gains or losses outweigh current temptation.",
-    "common_misread": "The formula does not make future punishment automatically powerful. If delta is small, future consequences may barely matter."
+    "common_misread": "The formula does not make future punishment automatically powerful. If delta is small, future consequences may barely matter.",
+    "first_principles_pressure": "The pressure is temptation versus future discipline. A player may gain by cheating today but lose future cooperation, reputation, or market access. Discounting turns that stream of future consequences into a present comparison against the immediate gain.",
+    "mechanical_reading": "Read the powers of delta as distance from now. Today's payoff is not discounted, next period is multiplied once, two periods away twice, and so on. Smaller delta makes the tail shrink quickly; larger delta makes future rewards and punishments carry more weight.",
+    "audit_question": "Ask whether monitoring is good enough to trigger punishment, whether the punishment is credible, and whether the future is long or uncertain enough to matter. A repeated-game claim also needs a comparison to the one-shot deviation gain; patience alone does not prove cooperation."
   },
   {
     "id": "bayes_rule",
@@ -109,7 +127,10 @@
     ],
     "symbol_by_symbol": "P(type | signal) is the updated belief after seeing the signal. P(signal | type) is how likely that signal is for that type. P(type) is the prior belief. P(signal) rescales all type weights so the updated probabilities add to one.",
     "why_it_matters": "PBE, signaling, screening, and Bayesian games need beliefs that respond to observations rather than floating freely.",
-    "common_misread": "Bayes rule does not tell you off-path beliefs when the observed signal has zero probability under the proposed strategy. That is why dynamic information games need careful belief discipline."
+    "common_misread": "Bayes rule does not tell you off-path beliefs when the observed signal has zero probability under the proposed strategy. That is why dynamic information games need careful belief discipline.",
+    "first_principles_pressure": "The pressure is learning from partial evidence. A signal may be more common for one hidden type than another, but it rarely identifies the type with certainty. Bayes rule combines prior belief and signal reliability without pretending the observation speaks for itself.",
+    "mechanical_reading": "Read the numerator as the unnormalized weight for a type after the signal: prior plausibility times how likely that type would generate the signal. Read the denominator as the total signal probability that rescales all type weights into probabilities adding to one.",
+    "audit_question": "Ask whether the likelihoods are specified, whether the denominator includes all relevant types, and whether the paper is using Bayes rule on a path where the signal probability is actually positive."
   },
   {
     "id": "auction_expected_payment",
@@ -125,7 +146,10 @@
     ],
     "symbol_by_symbol": "The payment-if-win comes from the auction format. The probability of winning comes from beliefs about rival bids or values. Their product is the average payment before knowing whether this bid wins.",
     "why_it_matters": "Revenue equivalence, bid shading, first-price auctions, and ad auctions all require separating the price paid from the chance of paying it.",
-    "common_misread": "A higher bid can raise both the chance of winning and the payment made when winning. The bidder's incentive depends on both effects, not one alone."
+    "common_misread": "A higher bid can raise both the chance of winning and the payment made when winning. The bidder's incentive depends on both effects, not one alone.",
+    "first_principles_pressure": "The pressure is that auction choices affect two things at once: the chance of getting the object and the payment if that happens. A bidder who focuses only on price ignores winning probability; a bidder who focuses only on winning ignores the cost of winning.",
+    "mechanical_reading": "Read the expression as expected cost before the uncertainty resolves. The auction rule supplies the payment conditional on winning, while beliefs about rival bids supply the probability of winning. Multiplying them gives the average payment contribution of that bid.",
+    "audit_question": "Ask whether the probability of winning changes with the bid, whether the payment rule is first-price, second-price, or platform-specific, and whether values are independent."
   },
   {
     "id": "common_knowledge_recursion",
@@ -141,6 +165,9 @@
     ],
     "symbol_by_symbol": "E is the event. K is the knowledge operator. KE means everyone knows E. KKE means everyone knows that everyone knows E. The dots mean the chain continues indefinitely.",
     "why_it_matters": "Public announcements, coordination, rationalizability, and equilibrium reasoning often depend on shared awareness rather than private information alone.",
-    "common_misread": "A fact being true or widely known is not enough. Common knowledge requires the recursive publicness that lets players reason about other players' reasoning."
+    "common_misread": "A fact being true or widely known is not enough. Common knowledge requires the recursive publicness that lets players reason about other players' reasoning.",
+    "first_principles_pressure": "The pressure is coordination under higher-order belief. If I know a fact but am unsure whether you know it, I may not act on it. If I know you know it but doubt whether you know that I know it, coordination can still fail.",
+    "mechanical_reading": "Read the sequence as repeated publicness. E is the fact, KE makes it known to everyone, KKE makes everyone's knowledge itself known, and the continuing chain removes every finite level at which doubt about others' reasoning could remain.",
+    "audit_question": "Ask whether the information was publicly observed in a way that supports higher-order knowledge, or whether the paper is confusing shared truth with shared awareness. In coordination examples, test the first level where one player might doubt what another player knows; that is where the recursive chain earns its keep."
   }
 ]

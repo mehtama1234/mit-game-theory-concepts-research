@@ -270,7 +270,24 @@ def main() -> int:
         primitive_backlinks += len(linked)
         if len(linked) != len(primitive.get("concepts_in_atlas", [])):
             errors.append(f"primitive {primitive['id']} missing concept backlinks")
-    derivation_words = [words(" ".join(str(d.get(f, "")) for f in ["everyday_setup", "equation", "symbol_by_symbol", "why_it_matters", "common_misread"]) + " " + " ".join(d.get("derivation_steps", []))) for d in derivations]
+    derivation_fields = [
+        "everyday_setup",
+        "equation",
+        "symbol_by_symbol",
+        "why_it_matters",
+        "common_misread",
+        "first_principles_pressure",
+        "mechanical_reading",
+        "audit_question",
+    ]
+    derivation_words = [words(" ".join(str(d.get(f, "")) for f in derivation_fields) + " " + " ".join(d.get("derivation_steps", []))) for d in derivations]
+    for derivation in derivations:
+        if f'id="{derivation["id"]}"' not in primitives_html:
+            errors.append(f"derivation {derivation['id']} not rendered")
+        for field in derivation_fields:
+            value = str(derivation.get(field, ""))
+            if value and html_lib.escape(value, quote=True) not in primitives_html:
+                errors.append(f"derivation {derivation['id']} {field} not rendered")
     family_fields = [
         "family_problem",
         "first_principles_pattern",
@@ -1176,7 +1193,7 @@ def main() -> int:
     if len(derivations) < 8:
         errors.append(f"only {len(derivations)} derivation cards")
     for derivation, count in zip(derivations, derivation_words):
-        if count < 115:
+        if count < 260:
             errors.append(f"derivation {derivation['id']} has low teaching depth: {count} words")
     for family, count in zip(families, family_words):
         if count < 400:

@@ -1064,9 +1064,29 @@ def main() -> int:
     for derivation in derivations:
         if f'id="{derivation["id"]}"' not in primitives_html:
             errors.append(f"missing derivation anchor: {derivation['id']}")
-        for heading in ["Derivation In Plain English", "Symbol By Symbol", "Why This Relation Matters", "Common Misread"]:
+        derivation_fields = [
+            "everyday_setup",
+            "equation",
+            "symbol_by_symbol",
+            "why_it_matters",
+            "common_misread",
+            "first_principles_pressure",
+            "mechanical_reading",
+            "audit_question",
+        ]
+        for heading in ["Derivation In Plain English", "Symbol By Symbol", "Why This Relation Matters", "Common Misread", "First-Principles Pressure", "Mechanical Reading", "Audit Question"]:
             if heading not in primitives_html:
                 errors.append(f"primitives page missing derivation heading: {heading}")
+        for field in derivation_fields:
+            value = derivation.get(field, "")
+            if field != "equation" and words(value) < 8:
+                errors.append(f"derivation {derivation['id']} has shallow {field}")
+            elif html.escape(value, quote=True) not in primitives_html:
+                errors.append(f"derivation {derivation['id']} {field} not rendered")
+        combined = " ".join(str(derivation.get(field, "")) for field in derivation_fields)
+        combined += " " + " ".join(derivation.get("derivation_steps", []))
+        if words(combined) < 260:
+            errors.append(f"derivation {derivation['id']} has shallow combined treatment")
     for concept in concepts:
         text = (SITE / "concepts" / f"{concept['id']}.html").read_text(encoding="utf-8")
         if 'class="learning-diagram concept-flow"' not in text:

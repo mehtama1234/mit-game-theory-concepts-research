@@ -33,7 +33,7 @@ Playwright render audit for representative desktop and mobile pages.
 - desktop-nash-equilibrium: `concepts/nash_equilibrium.html`, viewport 1280,900, captured 1280x900, 152931 bytes
 - desktop-auctions: `concepts/auctions.html`, viewport 1280,900, captured 1280x900, 133495 bytes
 - desktop-primitives: `primitives.html`, viewport 1280,900, captured 1280x900, 124299 bytes
-- desktop-derivation-expected-utility: `primitives.html#expected_utility`, viewport 1280,900, captured 1280x900, 129763 bytes
+- desktop-derivation-expected-utility: `primitives.html#expected_utility`, viewport 1280,900, captured 1280x900, 147786 bytes
 - mobile-index: `index.html`, viewport 390,844, captured 390x844, 63673 bytes
 - mobile-study-route: `study-route.html`, viewport 390,844, captured 390x844, 55389 bytes
 - mobile-recognition: `recognition.html`, viewport 390,844, captured 390x844, 56797 bytes
