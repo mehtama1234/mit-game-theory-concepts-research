@@ -289,11 +289,11 @@ def main() -> int:
             errors.append(f"recognition clinic {item['id']} not rendered")
         text = " ".join(
             str(item.get(k, ""))
-            for k in ["reader_situation", "diagnostic_question", "first_principles_test", "mathematical_handle", "false_friend", "where_to_go_next"]
+            for k in ["reader_situation", "diagnostic_question", "decision_cue", "first_principles_test", "mathematical_handle", "wrong_diagnosis_cost", "worked_recognition", "false_friend", "transfer_check", "where_to_go_next"]
         )
         treatment_words = words(text)
         recognition_words.append(treatment_words)
-        if treatment_words < 95:
+        if treatment_words < 310:
             errors.append(f"recognition clinic {item['id']} has shallow diagnostic treatment: {treatment_words} words")
         linked_concepts = [cid for cid in item.get("use_these_concepts", []) if f'href="concepts/{cid}.html"' in recognition_html]
         linked_primitives = [pid for pid in item.get("use_these_primitives", []) if f'href="primitives.html#{pid}"' in recognition_html]

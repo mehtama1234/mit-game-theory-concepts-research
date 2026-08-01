@@ -309,9 +309,13 @@ def build_recognition_clinic(clinic, concept_by_id, primitive_by_id, ev_by_id):
   <h2>{esc(item["title"])}</h2>
   <p><strong>Reader situation:</strong> {esc(item["reader_situation"])}</p>
   <p><strong>Diagnostic question:</strong> {esc(item["diagnostic_question"])}</p>
+  <p><strong>Decision cue:</strong> {esc(item["decision_cue"])}</p>
   <p><strong>First-principles test:</strong> {esc(item["first_principles_test"])}</p>
   <p><strong>Mathematical handle:</strong> {esc(item["mathematical_handle"])}</p>
+  <p><strong>Wrong diagnosis cost:</strong> {esc(item["wrong_diagnosis_cost"])}</p>
+  <p><strong>Worked recognition:</strong> {esc(item["worked_recognition"])}</p>
   <p><strong>False friend:</strong> {esc(item["false_friend"])}</p>
+  <p><strong>Transfer check:</strong> {esc(item["transfer_check"])}</p>
   <h3>Use These Concepts</h3><p class="chips">{concept_links}</p>
   <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
   <h3>Evidence Trail</h3><ul class="evidence-list">{evidence_links}</ul>
