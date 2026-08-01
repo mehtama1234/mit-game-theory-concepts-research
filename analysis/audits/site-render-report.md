@@ -25,7 +25,7 @@ Playwright render audit for representative desktop and mobile pages.
 - desktop-worked-transfer: `worked-transfer.html`, viewport 1280,900, captured 1280x900, 143757 bytes
 - desktop-capstone: `capstone.html`, viewport 1280,900, captured 1280x900, 161496 bytes
 - desktop-cross-reference: `cross-reference.html`, viewport 1280,900, captured 1280x900, 107006 bytes
-- desktop-limits: `limits.html`, viewport 1280,900, captured 1280x900, 135162 bytes
+- desktop-limits: `limits.html`, viewport 1280,900, captured 1280x900, 134103 bytes
 - desktop-lectures: `lectures.html`, viewport 1280,900, captured 1280x900, 149163 bytes
 - desktop-lecture-06-detail: `lectures/lecture-06.html`, viewport 1280,900, captured 1280x900, 139381 bytes
 - desktop-concepts: `concepts.html`, viewport 1280,900, captured 1280x900, 156369 bytes

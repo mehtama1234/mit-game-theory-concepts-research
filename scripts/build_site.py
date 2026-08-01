@@ -1081,9 +1081,12 @@ def build_limits(concepts, themes, derivations):
   <h2><a href="concepts/{esc(concept["id"])}.html">{esc(concept["name"])}</a></h2>
   <p><strong>Common misunderstanding:</strong> {esc(concept["common_misunderstanding"])}</p>
   <p><strong>Student trap:</strong> {esc(concept["student_trap"])}</p>
+  <p><strong>Naive pressure:</strong> {esc(concept["naive_problem"])}</p>
   <p><strong>Where the idea stops working:</strong> {esc(concept["course_boundary_note"])}</p>
   <p><strong>What breaks without it:</strong> {esc(concept["what_breaks_without_it"])}</p>
   <p><strong>Failed shortcut:</strong> {esc(concept["failed_simple_approach"])}</p>
+  <p><strong>Lecture emphasis:</strong> {esc(concept["lecture_emphasis"])}</p>
+  <p><strong>Lecture-depth boundary walkthrough:</strong> {esc(concept["lecture_depth_walkthrough"])}</p>
   <p><strong>Why the formal idea has to exist:</strong> {esc(concept["why_math_has_to_exist"])}</p>
   <p><strong>Mathematical intuition:</strong> {esc(concept["mathematical_intuition"])}</p>
   <p><strong>Where it reappears:</strong> {esc(concept["cross_course_connections"])}</p>

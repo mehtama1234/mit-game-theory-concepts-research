@@ -861,9 +861,12 @@ def main() -> int:
         limit_fields = [
             "common_misunderstanding",
             "student_trap",
+            "naive_problem",
             "course_boundary_note",
             "what_breaks_without_it",
             "failed_simple_approach",
+            "lecture_emphasis",
+            "lecture_depth_walkthrough",
             "why_math_has_to_exist",
             "mathematical_intuition",
             "cross_course_connections",
@@ -875,7 +878,7 @@ def main() -> int:
                 errors.append(f"concept {concept['id']} has shallow limit field: {field}")
             elif html.escape(value, quote=True) not in limits_html:
                 errors.append(f"limits page missing {field}: {concept['id']}")
-        if words(" ".join(str(concept.get(field, "")) for field in limit_fields)) < 260:
+        if words(" ".join(str(concept.get(field, "")) for field in limit_fields)) < 400:
             errors.append(f"concept {concept['id']} has shallow combined limit treatment")
     for theme in themes:
         if f'id="theme-limit-{theme["id"]}"' not in limits_html:
