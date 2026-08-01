@@ -106,6 +106,7 @@ def main() -> int:
     clinic = json.loads((ROOT / "analysis/throughlines/recognition-clinic.json").read_text(encoding="utf-8"))
     math_clinic = json.loads((ROOT / "analysis/throughlines/math-walkthrough-clinic.json").read_text(encoding="utf-8"))
     drills = json.loads((ROOT / "analysis/throughlines/problem-drills.json").read_text(encoding="utf-8"))
+    cases = json.loads((ROOT / "analysis/throughlines/case-studies.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
@@ -352,6 +353,49 @@ def main() -> int:
             errors.append(f"problem drill {drill['id']} missing evidence links")
     if len(drills) < 8:
         errors.append(f"only {len(drills)} problem drills")
+    cases_html = (SITE / "cases.html").read_text(encoding="utf-8") if (SITE / "cases.html").exists() else ""
+    case_cards = 0
+    case_concept_links = 0
+    case_primitive_links = 0
+    case_math_links = 0
+    case_drill_links = 0
+    case_evidence_links = 0
+    case_words = []
+    for case in cases:
+        if f'id="{case["id"]}"' in cases_html:
+            case_cards += 1
+        else:
+            errors.append(f"case study {case['id']} not rendered")
+        text = " ".join(
+            str(case.get(k, ""))
+            for k in ["real_world_setup", "first_principles_question", "modeling_path", "mathematical_spine", "worked_walkthrough", "where_simple_story_breaks", "what_to_check_in_transcript"]
+        )
+        treatment_words = words(text)
+        case_words.append(treatment_words)
+        if treatment_words < 170:
+            errors.append(f"case study {case['id']} has shallow treatment: {treatment_words} words")
+        linked_concepts = [cid for cid in case.get("concepts", []) if f'href="concepts/{cid}.html"' in cases_html]
+        linked_primitives = [pid for pid in case.get("primitives", []) if f'href="primitives.html#{pid}"' in cases_html]
+        linked_math = [mid for mid in case.get("math_clinic_ids", []) if f'href="math-clinic.html#{mid}"' in cases_html]
+        linked_drills = [did for did in case.get("drill_ids", []) if f'href="drills.html#{did}"' in cases_html]
+        linked_evidence = [eid for eid in case.get("evidence_ids", []) if f'href="evidence.html#{eid}"' in cases_html]
+        case_concept_links += len(linked_concepts)
+        case_primitive_links += len(linked_primitives)
+        case_math_links += len(linked_math)
+        case_drill_links += len(linked_drills)
+        case_evidence_links += len(linked_evidence)
+        if len(linked_concepts) != len(case.get("concepts", [])):
+            errors.append(f"case study {case['id']} missing concept links")
+        if len(linked_primitives) != len(case.get("primitives", [])):
+            errors.append(f"case study {case['id']} missing primitive links")
+        if len(linked_math) != len(case.get("math_clinic_ids", [])):
+            errors.append(f"case study {case['id']} missing math clinic links")
+        if len(linked_drills) != len(case.get("drill_ids", [])):
+            errors.append(f"case study {case['id']} missing drill links")
+        if len(linked_evidence) != len(case.get("evidence_ids", [])):
+            errors.append(f"case study {case['id']} missing evidence links")
+    if len(cases) < 5:
+        errors.append(f"only {len(cases)} case studies")
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     cross_concept_cards = 0
     cross_lecture_links = 0
@@ -575,6 +619,13 @@ def main() -> int:
         f"- Problem drill concept links: {drill_concept_links}",
         f"- Problem drill primitive links: {drill_primitive_links}",
         f"- Problem drill evidence links: {drill_evidence_links}",
+        f"- Case study cards: {case_cards}",
+        f"- Case study words: min {min(case_words) if case_words else 0}, max {max(case_words) if case_words else 0}",
+        f"- Case study concept links: {case_concept_links}",
+        f"- Case study primitive links: {case_primitive_links}",
+        f"- Case study math clinic links: {case_math_links}",
+        f"- Case study drill links: {case_drill_links}",
+        f"- Case study evidence links: {case_evidence_links}",
         f"- Cross-index concept cards: {cross_concept_cards}",
         f"- Cross-index lecture links: {cross_lecture_links}",
         f"- Cross-index subtheme links: {cross_subtheme_links}",

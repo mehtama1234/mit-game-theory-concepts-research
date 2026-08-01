@@ -44,6 +44,13 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Problem drill concept links: 24
 - Problem drill primitive links: 19
 - Problem drill evidence links: 24
+- Case study cards: 5
+- Case study words: min 189, max 249
+- Case study concept links: 20
+- Case study primitive links: 15
+- Case study math clinic links: 10
+- Case study drill links: 10
+- Case study evidence links: 20
 - Cross-index concept cards: 33
 - Cross-index lecture links: 60
 - Cross-index subtheme links: 33
@@ -63,7 +70,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Supplemental lecture evidence records: 8
 - Lectures below 2 total evidence anchors: 0
 - Lecture path treatment words: min 30, max 50
-- Lecture detail page words: min 1371, max 5326
+- Lecture detail page words: min 1378, max 5333
 - Errors: 0
 
 ## Lowest Concept Depth
