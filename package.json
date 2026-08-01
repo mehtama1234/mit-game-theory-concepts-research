@@ -1,0 +1,18 @@
+{
+  "name": "mit-game-theory-concept-lab",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/prepare_sites_public.mjs && vinext build",
+    "check:site-app": "node scripts/prepare_sites_public.mjs && test -f public/index.html && test -f public/review-guide.html && test -f public/publication-status.html"
+  },
+  "dependencies": {
+    "vinext": "1.0.0-beta.4",
+    "next": "16.2.12",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-rsc": "0.5.32"
+  }
+}

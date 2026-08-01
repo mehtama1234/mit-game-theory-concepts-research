@@ -72,6 +72,7 @@ So the correct completion claim is:
 - generated `site/` branch refreshed to `origin/gh-pages`
 - locally reviewable through the static server
 - public GitHub Pages serving still blocked until the repository/plan/hosting state changes
+- alternate Sites deployment uses `.openai/hosting.json`; do not edit or replace its `project_id`
 
 ## Main Source Artifacts
 
@@ -86,6 +87,9 @@ So the correct completion claim is:
 - `analysis/throughlines/review-guide.json`
 - `analysis/throughlines/publication-status.json`
 - `analysis/editorial-overrides/`
+- `.openai/hosting.json`
+- `package.json`
+- `app/page.tsx`
 
 ## Build Scripts
 
@@ -99,6 +103,18 @@ So the correct completion claim is:
 - `scripts/audit_site_render.py`
 - `scripts/audit_publication_readiness.py`
 - `scripts/validate_all.py`
+- `scripts/prepare_sites_public.mjs`
+
+## Sites Deployment Wrapper
+
+The canonical research site is generated into `site/`. For Sites deployment, the npm wrapper mirrors `site/` into ignored `public/` assets and uses Vinext to build a minimal app.
+
+```bash
+npm run check:site-app
+npm run build
+```
+
+The Sites project id is stored in `.openai/hosting.json`. Treat it as opaque and reuse it exactly.
 
 ## Push And Generated-Site Refresh
 

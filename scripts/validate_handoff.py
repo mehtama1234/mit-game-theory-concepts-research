@@ -41,6 +41,13 @@ def main() -> int:
         "analysis/evidence/evidence-ledger.json",
         "analysis/throughlines/publication-status.json",
         "scripts/validate_handoff.py",
+        ".openai/hosting.json",
+        "package.json",
+        "app/page.tsx",
+        "scripts/prepare_sites_public.mjs",
+        "npm run check:site-app",
+        "npm run build",
+        "The Sites project id is stored in `.openai/hosting.json`.",
     ]
     for phrase in required_phrases:
         if phrase not in text:
@@ -53,6 +60,7 @@ def main() -> int:
         "## Publication Boundary",
         "## Main Source Artifacts",
         "## Build Scripts",
+        "## Sites Deployment Wrapper",
         "## Push And Generated-Site Refresh",
         "## What To Improve Next",
     ]

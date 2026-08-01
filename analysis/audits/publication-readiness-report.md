@@ -6,7 +6,7 @@ This report records local readiness evidence. Remote publication is verified by 
 
 ```text
 $ git log -1 --oneline
-42b7612 Add MIT publication status page
+a21a822 Add MIT project handoff validation
 
 $ git remote -v
 origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (fetch)
@@ -41,6 +41,57 @@ validated 33 concepts, 8 themes, 10 subthemes, 66 evidence records, 10 primitive
 wrote analysis/lectures/lecture-path.json with 25 lectures
 validated 84 html files and 66 evidence anchors
 validated HANDOFF.md and README.md
+
+> check:site-app
+> node scripts/prepare_sites_public.mjs && test -f public/index.html && test -f public/review-guide.html && test -f public/publication-status.html
+
+
+> build
+> node scripts/prepare_sites_public.mjs && vinext build
+
+
+  vinext build  (Vite 8.2.0)
+
+[1/5] analyze client references...
+[2K
+transforming...✓ 213 modules transformed.
+rendering chunks...
+✓ built in 1.11s
+[2/5] analyze server references...
+[2K
+transforming...✓ 70 modules transformed.
+rendering chunks...
+✓ built in 381ms
+[3/5] build rsc environment...
+[2K
+transforming...✓ 208 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 1.93s
+[4/5] build client environment...
+[2K
+transforming...✓ 117 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 1.11s
+[5/5] build ssr environment...
+[2K
+transforming...✓ 71 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 312ms
+[0m
+  Route (app)
+  ─ ? /
+
+  ? Unknown
+
+  ? Some routes could not be classified. vinext currently uses static analysis
+    and cannot detect dynamic API usage (headers(), cookies(), etc.) at build time.
+    Automatic classification will be improved in a future release.
+
+  Build complete. Run `vinext start` to start the production server.
+
 audited editorial quality for 33 concepts; errors: 0
 render-audited 54 screenshots; errors: 0
 + python3 scripts/build_first_principles_atlas.py
@@ -49,6 +100,8 @@ render-audited 54 screenshots; errors: 0
 + python3 scripts/build_site.py
 + python3 scripts/validate_site.py
 + python3 scripts/validate_handoff.py
++ npm run check:site-app
++ npm run build
 + python3 scripts/audit_editorial_quality.py
 + python3 scripts/audit_site_render.py
 ```
