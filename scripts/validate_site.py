@@ -32,6 +32,7 @@ def main() -> int:
     clinic = json.loads((ROOT / "analysis/throughlines/recognition-clinic.json").read_text(encoding="utf-8"))
     math_clinic = json.loads((ROOT / "analysis/throughlines/math-walkthrough-clinic.json").read_text(encoding="utf-8"))
     drills = json.loads((ROOT / "analysis/throughlines/problem-drills.json").read_text(encoding="utf-8"))
+    solutions = json.loads((ROOT / "analysis/throughlines/solution-workshop.json").read_text(encoding="utf-8"))
     cases = json.loads((ROOT / "analysis/throughlines/case-studies.json").read_text(encoding="utf-8"))
     chains = json.loads((ROOT / "analysis/throughlines/argument-chains.json").read_text(encoding="utf-8"))
     repairs = json.loads((ROOT / "analysis/throughlines/misconception-repairs.json").read_text(encoding="utf-8"))
@@ -56,7 +57,7 @@ def main() -> int:
     }
     supplemental_ids = {record["id"] for record in supplemental}
     themes = json.loads((ROOT / "analysis/themes/theme-map.json").read_text(encoding="utf-8"))
-    required = [SITE / name for name in ["index.html", "study-route.html", "recognition.html", "math-clinic.html", "drills.html", "cases.html", "argument-chains.html", "repairs.html", "paper-reading.html", "jargon-decoder.html", "model-building.html", "proof-sketches.html", "assumptions.html", "worked-transfer.html", "capstone.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
+    required = [SITE / name for name in ["index.html", "study-route.html", "recognition.html", "math-clinic.html", "drills.html", "solutions.html", "cases.html", "argument-chains.html", "repairs.html", "paper-reading.html", "jargon-decoder.html", "model-building.html", "proof-sketches.html", "assumptions.html", "worked-transfer.html", "capstone.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
     required.extend(SITE / "lectures" / f"{lecture['id']}.html" for lecture in lectures)
     for path in required:
@@ -71,6 +72,7 @@ def main() -> int:
     recognition_html = (SITE / "recognition.html").read_text(encoding="utf-8") if (SITE / "recognition.html").exists() else ""
     math_clinic_html = (SITE / "math-clinic.html").read_text(encoding="utf-8") if (SITE / "math-clinic.html").exists() else ""
     drills_html = (SITE / "drills.html").read_text(encoding="utf-8") if (SITE / "drills.html").exists() else ""
+    solutions_html = (SITE / "solutions.html").read_text(encoding="utf-8") if (SITE / "solutions.html").exists() else ""
     cases_html = (SITE / "cases.html").read_text(encoding="utf-8") if (SITE / "cases.html").exists() else ""
     chains_html = (SITE / "argument-chains.html").read_text(encoding="utf-8") if (SITE / "argument-chains.html").exists() else ""
     repairs_html = (SITE / "repairs.html").read_text(encoding="utf-8") if (SITE / "repairs.html").exists() else ""
@@ -92,6 +94,8 @@ def main() -> int:
         errors.append("index page missing math clinic link")
     if 'href="drills.html"' not in index_html:
         errors.append("index page missing problem drills link")
+    if 'href="solutions.html"' not in index_html:
+        errors.append("index page missing solution workshop link")
     if 'href="cases.html"' not in index_html:
         errors.append("index page missing case studies link")
     if 'href="argument-chains.html"' not in index_html:
@@ -251,6 +255,56 @@ def main() -> int:
     model_step_by_id = {item["id"]: item for item in workbook}
     proof_by_id = {item["id"]: item for item in proofs}
     assumption_by_id = {item["id"]: item for item in assumptions}
+    if len(solutions) < 8:
+        errors.append(f"solution workshop has only {len(solutions)} cards")
+    for item in solutions:
+        if f'id="{item["id"]}"' not in solutions_html:
+            errors.append(f"solution workshop item not rendered: {item['id']}")
+        fields = ["problem", "ordinary_setup", "model_choice", "worked_solution", "math_check", "assumption_audit", "common_wrong_answer", "transfer_rule"]
+        for field in fields:
+            value = item.get(field, "")
+            if words(value) < 22:
+                errors.append(f"solution workshop {item['id']} has shallow {field}")
+            elif html.escape(value, quote=True) not in solutions_html:
+                errors.append(f"solution workshop {item['id']} {field} not rendered")
+        combined = " ".join(str(item.get(field, "")) for field in fields)
+        if words(combined) < 285:
+            errors.append(f"solution workshop {item['id']} has shallow combined treatment")
+        for concept_id in item.get("concepts", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"solution workshop {item['id']} references missing concept: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in solutions_html:
+                errors.append(f"solution workshop {item['id']} missing concept link: {concept_id}")
+        for primitive_id in item.get("primitives", []):
+            if primitive_id not in primitive_by_id:
+                errors.append(f"solution workshop {item['id']} references missing primitive: {primitive_id}")
+            elif f'href="primitives.html#{primitive_id}"' not in solutions_html:
+                errors.append(f"solution workshop {item['id']} missing primitive link: {primitive_id}")
+        for drill_id in item.get("drill_ids", []):
+            if drill_id not in drill_by_id:
+                errors.append(f"solution workshop {item['id']} references missing drill: {drill_id}")
+            elif f'href="drills.html#{drill_id}"' not in solutions_html:
+                errors.append(f"solution workshop {item['id']} missing drill link: {drill_id}")
+        for case_id in item.get("case_ids", []):
+            if case_id not in case_by_id:
+                errors.append(f"solution workshop {item['id']} references missing case: {case_id}")
+            elif f'href="cases.html#{case_id}"' not in solutions_html:
+                errors.append(f"solution workshop {item['id']} missing case link: {case_id}")
+        for card_id in item.get("math_clinic_ids", []):
+            if card_id not in math_clinic_by_id:
+                errors.append(f"solution workshop {item['id']} references missing math clinic card: {card_id}")
+            elif f'href="math-clinic.html#{card_id}"' not in solutions_html:
+                errors.append(f"solution workshop {item['id']} missing math clinic link: {card_id}")
+        for decoder_id in item.get("decoder_ids", []):
+            if decoder_id not in decoder_by_id:
+                errors.append(f"solution workshop {item['id']} references missing decoder card: {decoder_id}")
+            elif f'href="jargon-decoder.html#{decoder_id}"' not in solutions_html:
+                errors.append(f"solution workshop {item['id']} missing decoder link: {decoder_id}")
+        for ev_id in item.get("evidence_ids", []):
+            if ev_id not in ev_by_id:
+                errors.append(f"solution workshop {item['id']} references missing evidence: {ev_id}")
+            elif f'href="evidence.html#{ev_id}"' not in solutions_html:
+                errors.append(f"solution workshop {item['id']} missing evidence link: {ev_id}")
     if len(cases) < 5:
         errors.append(f"case studies has only {len(cases)} cards")
     for case in cases:

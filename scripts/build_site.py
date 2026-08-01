@@ -39,6 +39,7 @@ def page(title: str, body: str, active: str = "", depth: int = 0) -> str:
         ("recognition.html", "Recognition", "recognition"),
         ("math-clinic.html", "Math Clinic", "math-clinic"),
         ("drills.html", "Drills", "drills"),
+        ("solutions.html", "Solutions", "solutions"),
         ("cases.html", "Cases", "cases"),
         ("argument-chains.html", "Arguments", "argument-chains"),
         ("repairs.html", "Repairs", "repairs"),
@@ -224,6 +225,7 @@ def build_index(concepts, themes, evidence, lectures):
 <section><h2>Diagnose A New Problem</h2><p>The recognition clinic teaches how to look at a fresh strategic situation and decide which course idea is actually doing the work.</p><p><a class="button" href="recognition.html">Open the recognition clinic</a></p></section>
 <section><h2>Read The Math As A Move</h2><p>The math clinic turns core equations into problem-driven walkthroughs with failed shortcuts, worked numbers, and transfer tests.</p><p><a class="button" href="math-clinic.html">Open the math clinic</a></p></section>
 <section><h2>Practice The Move</h2><p>The drills page gives small strategic situations and asks the reader to identify the concept, math move, wrong turn, and transcript evidence.</p><p><a class="button" href="drills.html">Open problem drills</a></p></section>
+<section><h2>Work Full Solutions</h2><p>The solution workshop gives deeper solved problems: choose the model, solve the key comparison, audit assumptions, diagnose the wrong answer, and transfer the lesson to new papers or systems.</p><p><a class="button" href="solutions.html">Open solution workshop</a></p></section>
 <section><h2>Follow A Full Case</h2><p>The case studies combine concepts, primitives, math clinic cards, drills, and transcript evidence inside realistic strategic situations.</p><p><a class="button" href="cases.html">Open case studies</a></p></section>
 <section><h2>Follow The Lecture Argument</h2><p>The argument chains show how transcript-backed claims accumulate across lectures into larger first-principles throughlines.</p><p><a class="button" href="argument-chains.html">Open argument chains</a></p></section>
 <section><h2>Repair Common Misreads</h2><p>The repair map starts from common wrong interpretations and points to the correction, concept pages, limits, drills, and evidence.</p><p><a class="button" href="repairs.html">Open misconception repairs</a></p></section>
@@ -388,6 +390,70 @@ def build_problem_drills(drills, concept_by_id, primitive_by_id, ev_by_id):
   <p>Small transfer problems for checking whether the reader can choose the right concept, name the math move, avoid the common wrong turn, and return to transcript evidence.</p>
 </section>""" + "".join(cards)
     write(SITE / "drills.html", page("Problem Drills", body, "drills"))
+
+
+def build_solution_workshop(solutions, concept_by_id, primitive_by_id, drill_by_id, case_by_id, math_clinic_by_id, decoder_by_id, ev_by_id):
+    cards = []
+    for item in solutions:
+        concept_links = "".join(
+            f'<a class="chip" href="concepts/{esc(concept_id)}.html">{esc(concept_by_id[concept_id]["name"])}</a>'
+            for concept_id in item.get("concepts", [])
+            if concept_id in concept_by_id
+        )
+        primitive_links = "".join(
+            f'<a class="chip" href="primitives.html#{esc(primitive_id)}">{esc(primitive_by_id[primitive_id]["name"])}</a>'
+            for primitive_id in item.get("primitives", [])
+            if primitive_id in primitive_by_id
+        )
+        drill_links = "".join(
+            f'<a class="chip" href="drills.html#{esc(drill_id)}">{esc(drill_by_id[drill_id]["title"])}</a>'
+            for drill_id in item.get("drill_ids", [])
+            if drill_id in drill_by_id
+        )
+        case_links = "".join(
+            f'<a class="chip" href="cases.html#{esc(case_id)}">{esc(case_by_id[case_id]["title"])}</a>'
+            for case_id in item.get("case_ids", [])
+            if case_id in case_by_id
+        )
+        math_links = "".join(
+            f'<a class="chip" href="math-clinic.html#{esc(card_id)}">{esc(math_clinic_by_id[card_id]["title"])}</a>'
+            for card_id in item.get("math_clinic_ids", [])
+            if card_id in math_clinic_by_id
+        )
+        decoder_links = "".join(
+            f'<a class="chip" href="jargon-decoder.html#{esc(decoder_id)}">{esc(decoder_by_id[decoder_id]["term_family"])}</a>'
+            for decoder_id in item.get("decoder_ids", [])
+            if decoder_id in decoder_by_id
+        )
+        evidence_links = "".join(
+            f'<li><a href="evidence.html#{esc(ev_id)}">{esc(ev_id)}</a>: {esc(ev_by_id[ev_id]["video_title"])}</li>'
+            for ev_id in item.get("evidence_ids", [])
+            if ev_id in ev_by_id
+        )
+        cards.append(f"""<article class="wide-card solution-card" id="{esc(item["id"])}">
+  <p class="eyebrow">Solution workshop</p>
+  <h2>{esc(item["title"])}</h2>
+  <p><strong>Problem:</strong> {esc(item["problem"])}</p>
+  <p><strong>Ordinary setup:</strong> {esc(item["ordinary_setup"])}</p>
+  <p><strong>Model choice:</strong> {esc(item["model_choice"])}</p>
+  <p><strong>Worked solution:</strong> {esc(item["worked_solution"])}</p>
+  <p><strong>Math check:</strong> {esc(item["math_check"])}</p>
+  <p><strong>Assumption audit:</strong> {esc(item["assumption_audit"])}</p>
+  <p><strong>Common wrong answer:</strong> {esc(item["common_wrong_answer"])}</p>
+  <p><strong>Transfer rule:</strong> {esc(item["transfer_rule"])}</p>
+  <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
+  <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
+  <h3>Related Drills</h3><p class="chips">{drill_links}</p>
+  <h3>Related Cases</h3><p class="chips">{case_links or '<span class="chip muted">Standalone solution</span>'}</p>
+  <h3>Math Clinic Cards</h3><p class="chips">{math_links}</p>
+  <h3>Decoder Cards</h3><p class="chips">{decoder_links}</p>
+  <h3>Transcript Evidence</h3><ul class="evidence-list">{evidence_links}</ul>
+</article>""")
+    body = """<section class="page-head">
+  <h1>Solution Workshop</h1>
+  <p>Deeper solved problems for learning how to use the course. Each walkthrough starts from an ordinary situation, chooses the game representation, solves the key comparison, audits assumptions, and states a transfer rule for reading new models.</p>
+</section>""" + "".join(cards)
+    write(SITE / "solutions.html", page("Solution Workshop", body, "solutions"))
 
 
 def build_case_studies(cases, concept_by_id, primitive_by_id, math_clinic_by_id, drill_by_id, ev_by_id):
@@ -1323,6 +1389,7 @@ def main():
     clinic = load("analysis/throughlines/recognition-clinic.json")
     math_clinic = load("analysis/throughlines/math-walkthrough-clinic.json")
     drills = load("analysis/throughlines/problem-drills.json")
+    solutions = load("analysis/throughlines/solution-workshop.json")
     cases = load("analysis/throughlines/case-studies.json")
     chains = load("analysis/throughlines/argument-chains.json")
     repairs = load("analysis/throughlines/misconception-repairs.json")
@@ -1357,6 +1424,7 @@ def main():
     build_recognition_clinic(clinic, concept_by_id, primitive_by_id, ev_by_id)
     build_math_clinic(math_clinic, deriv_by_id, concept_by_id, ev_by_id)
     build_problem_drills(drills, concept_by_id, primitive_by_id, ev_by_id)
+    build_solution_workshop(solutions, concept_by_id, primitive_by_id, drill_by_id, case_by_id, math_clinic_by_id, decoder_by_id, ev_by_id)
     build_case_studies(cases, concept_by_id, primitive_by_id, math_clinic_by_id, drill_by_id, ev_by_id)
     build_argument_chains(chains, lecture_by_id, concept_by_id, primitive_by_id, ev_by_id)
     build_misconception_repairs(repairs, concept_by_id, drill_by_id, ev_by_id)

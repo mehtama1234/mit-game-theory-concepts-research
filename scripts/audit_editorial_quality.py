@@ -106,6 +106,7 @@ def main() -> int:
     clinic = json.loads((ROOT / "analysis/throughlines/recognition-clinic.json").read_text(encoding="utf-8"))
     math_clinic = json.loads((ROOT / "analysis/throughlines/math-walkthrough-clinic.json").read_text(encoding="utf-8"))
     drills = json.loads((ROOT / "analysis/throughlines/problem-drills.json").read_text(encoding="utf-8"))
+    solutions = json.loads((ROOT / "analysis/throughlines/solution-workshop.json").read_text(encoding="utf-8"))
     cases = json.loads((ROOT / "analysis/throughlines/case-studies.json").read_text(encoding="utf-8"))
     chains = json.loads((ROOT / "analysis/throughlines/argument-chains.json").read_text(encoding="utf-8"))
     repairs = json.loads((ROOT / "analysis/throughlines/misconception-repairs.json").read_text(encoding="utf-8"))
@@ -362,6 +363,59 @@ def main() -> int:
             errors.append(f"problem drill {drill['id']} missing evidence links")
     if len(drills) < 8:
         errors.append(f"only {len(drills)} problem drills")
+    solutions_html = (SITE / "solutions.html").read_text(encoding="utf-8") if (SITE / "solutions.html").exists() else ""
+    solution_cards = 0
+    solution_concept_links = 0
+    solution_primitive_links = 0
+    solution_drill_links = 0
+    solution_case_links = 0
+    solution_math_links = 0
+    solution_decoder_links = 0
+    solution_evidence_links = 0
+    solution_words = []
+    for item in solutions:
+        if f'id="{item["id"]}"' in solutions_html:
+            solution_cards += 1
+        else:
+            errors.append(f"solution workshop {item['id']} not rendered")
+        text = " ".join(
+            str(item.get(k, ""))
+            for k in ["problem", "ordinary_setup", "model_choice", "worked_solution", "math_check", "assumption_audit", "common_wrong_answer", "transfer_rule"]
+        )
+        treatment_words = words(text)
+        solution_words.append(treatment_words)
+        if treatment_words < 285:
+            errors.append(f"solution workshop {item['id']} has shallow treatment: {treatment_words} words")
+        linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in solutions_html]
+        linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in solutions_html]
+        linked_drills = [did for did in item.get("drill_ids", []) if f'href="drills.html#{did}"' in solutions_html]
+        linked_cases = [cid for cid in item.get("case_ids", []) if f'href="cases.html#{cid}"' in solutions_html]
+        linked_math = [mid for mid in item.get("math_clinic_ids", []) if f'href="math-clinic.html#{mid}"' in solutions_html]
+        linked_decoders = [did for did in item.get("decoder_ids", []) if f'href="jargon-decoder.html#{did}"' in solutions_html]
+        linked_evidence = [eid for eid in item.get("evidence_ids", []) if f'href="evidence.html#{eid}"' in solutions_html]
+        solution_concept_links += len(linked_concepts)
+        solution_primitive_links += len(linked_primitives)
+        solution_drill_links += len(linked_drills)
+        solution_case_links += len(linked_cases)
+        solution_math_links += len(linked_math)
+        solution_decoder_links += len(linked_decoders)
+        solution_evidence_links += len(linked_evidence)
+        if len(linked_concepts) != len(item.get("concepts", [])):
+            errors.append(f"solution workshop {item['id']} missing concept links")
+        if len(linked_primitives) != len(item.get("primitives", [])):
+            errors.append(f"solution workshop {item['id']} missing primitive links")
+        if len(linked_drills) != len(item.get("drill_ids", [])):
+            errors.append(f"solution workshop {item['id']} missing drill links")
+        if len(linked_cases) != len(item.get("case_ids", [])):
+            errors.append(f"solution workshop {item['id']} missing case links")
+        if len(linked_math) != len(item.get("math_clinic_ids", [])):
+            errors.append(f"solution workshop {item['id']} missing math clinic links")
+        if len(linked_decoders) != len(item.get("decoder_ids", [])):
+            errors.append(f"solution workshop {item['id']} missing decoder links")
+        if len(linked_evidence) != len(item.get("evidence_ids", [])):
+            errors.append(f"solution workshop {item['id']} missing evidence links")
+    if len(solutions) < 8:
+        errors.append(f"only {len(solutions)} solution workshop cards")
     cases_html = (SITE / "cases.html").read_text(encoding="utf-8") if (SITE / "cases.html").exists() else ""
     case_cards = 0
     case_concept_links = 0
@@ -1030,6 +1084,15 @@ def main() -> int:
         f"- Problem drill concept links: {drill_concept_links}",
         f"- Problem drill primitive links: {drill_primitive_links}",
         f"- Problem drill evidence links: {drill_evidence_links}",
+        f"- Solution workshop cards: {solution_cards}",
+        f"- Solution workshop words: min {min(solution_words) if solution_words else 0}, max {max(solution_words) if solution_words else 0}",
+        f"- Solution workshop concept links: {solution_concept_links}",
+        f"- Solution workshop primitive links: {solution_primitive_links}",
+        f"- Solution workshop drill links: {solution_drill_links}",
+        f"- Solution workshop case links: {solution_case_links}",
+        f"- Solution workshop math clinic links: {solution_math_links}",
+        f"- Solution workshop decoder links: {solution_decoder_links}",
+        f"- Solution workshop evidence links: {solution_evidence_links}",
         f"- Case study cards: {case_cards}",
         f"- Case study words: min {min(case_words) if case_words else 0}, max {max(case_words) if case_words else 0}",
         f"- Case study concept links: {case_concept_links}",
