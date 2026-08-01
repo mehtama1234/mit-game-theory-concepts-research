@@ -112,6 +112,7 @@ def main() -> int:
     paper_reading = json.loads((ROOT / "analysis/throughlines/paper-reading-guide.json").read_text(encoding="utf-8"))
     jargon_decoder = json.loads((ROOT / "analysis/throughlines/jargon-decoder.json").read_text(encoding="utf-8"))
     workbook = json.loads((ROOT / "analysis/throughlines/model-building-workbook.json").read_text(encoding="utf-8"))
+    proofs = json.loads((ROOT / "analysis/throughlines/proof-sketch-lab.json").read_text(encoding="utf-8"))
     capstones = json.loads((ROOT / "analysis/throughlines/capstone-self-test.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
@@ -607,6 +608,49 @@ def main() -> int:
             errors.append(f"model-building workbook {item['id']} missing evidence links")
     if len(workbook) < 7:
         errors.append(f"only {len(workbook)} model-building workbook cards")
+    proofs_html = (SITE / "proof-sketches.html").read_text(encoding="utf-8") if (SITE / "proof-sketches.html").exists() else ""
+    proof_cards = 0
+    proof_concept_links = 0
+    proof_primitive_links = 0
+    proof_math_links = 0
+    proof_decoder_links = 0
+    proof_evidence_links = 0
+    proof_words = []
+    for item in proofs:
+        if f'id="{item["id"]}"' in proofs_html:
+            proof_cards += 1
+        else:
+            errors.append(f"proof-sketch lab {item['id']} not rendered")
+        text = " ".join(
+            str(item.get(k, ""))
+            for k in ["ordinary_claim", "minimal_setup", "proof_idea", "mathematical_move", "why_it_matters", "where_it_breaks"]
+        )
+        treatment_words = words(text)
+        proof_words.append(treatment_words)
+        if treatment_words < 190:
+            errors.append(f"proof-sketch lab {item['id']} has shallow treatment: {treatment_words} words")
+        linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in proofs_html]
+        linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in proofs_html]
+        linked_math = [mid for mid in item.get("math_clinic_ids", []) if f'href="math-clinic.html#{mid}"' in proofs_html]
+        linked_decoders = [did for did in item.get("decoder_ids", []) if f'href="jargon-decoder.html#{did}"' in proofs_html]
+        linked_evidence = [eid for eid in item.get("evidence_ids", []) if f'href="evidence.html#{eid}"' in proofs_html]
+        proof_concept_links += len(linked_concepts)
+        proof_primitive_links += len(linked_primitives)
+        proof_math_links += len(linked_math)
+        proof_decoder_links += len(linked_decoders)
+        proof_evidence_links += len(linked_evidence)
+        if len(linked_concepts) != len(item.get("concepts", [])):
+            errors.append(f"proof-sketch lab {item['id']} missing concept links")
+        if len(linked_primitives) != len(item.get("primitives", [])):
+            errors.append(f"proof-sketch lab {item['id']} missing primitive links")
+        if len(linked_math) != len(item.get("math_clinic_ids", [])):
+            errors.append(f"proof-sketch lab {item['id']} missing math clinic links")
+        if len(linked_decoders) != len(item.get("decoder_ids", [])):
+            errors.append(f"proof-sketch lab {item['id']} missing decoder links")
+        if len(linked_evidence) != len(item.get("evidence_ids", [])):
+            errors.append(f"proof-sketch lab {item['id']} missing evidence links")
+    if len(proofs) < 8:
+        errors.append(f"only {len(proofs)} proof-sketch cards")
     capstone_html = (SITE / "capstone.html").read_text(encoding="utf-8") if (SITE / "capstone.html").exists() else ""
     capstone_cards = 0
     capstone_concept_links = 0
@@ -923,6 +967,13 @@ def main() -> int:
         f"- Model-building drill links: {workbook_drill_links}",
         f"- Model-building decoder links: {workbook_decoder_links}",
         f"- Model-building evidence links: {workbook_evidence_links}",
+        f"- Proof-sketch lab cards: {proof_cards}",
+        f"- Proof-sketch lab words: min {min(proof_words) if proof_words else 0}, max {max(proof_words) if proof_words else 0}",
+        f"- Proof-sketch concept links: {proof_concept_links}",
+        f"- Proof-sketch primitive links: {proof_primitive_links}",
+        f"- Proof-sketch math clinic links: {proof_math_links}",
+        f"- Proof-sketch decoder links: {proof_decoder_links}",
+        f"- Proof-sketch evidence links: {proof_evidence_links}",
         f"- Capstone self-test cards: {capstone_cards}",
         f"- Capstone self-test words: min {min(capstone_words) if capstone_words else 0}, max {max(capstone_words) if capstone_words else 0}",
         f"- Capstone concept links: {capstone_concept_links}",

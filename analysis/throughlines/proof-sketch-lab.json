@@ -1,0 +1,270 @@
+[
+  {
+    "id": "proof-dominance",
+    "title": "Why a dominated action can be removed without guessing beliefs",
+    "ordinary_claim": "If one action does worse than another no matter what the other side does, the weak action does not need a story about what the other side is likely to do.",
+    "minimal_setup": "One player has at least two available actions. For every relevant action by the opponent, one of the player's actions gives at least as much payoff as the other, and for at least one opponent action it gives strictly more.",
+    "proof_idea": "The proof is just an all-cases comparison. Imagine the opponent's move is revealed after you choose. In every possible case you would be no worse with the dominating action, and in some case you would be better. Since there is no case where the dominated action helps, no belief about the opponent can rescue it.",
+    "mathematical_move": "For actions A and B, show u_i(A, other_action) >= u_i(B, other_action) for every other_action, with strict inequality somewhere. The symbol >= means the comparison must pass in every column or branch being considered.",
+    "why_it_matters": "This result lets the reader safely simplify a strategic problem before solving for equilibrium. It matters because safe deletion is different from deleting an option that merely seems unlikely or unattractive in one guessed scenario.",
+    "where_it_breaks": "The argument fails if the comparison ignores some opponent action, if payoffs were mapped incorrectly, or if deletion changes the game in a way the model did not justify. It also does not say the remaining action is globally good; it only says the removed action was never needed.",
+    "concepts": [
+      "dominance",
+      "iterated_deletion",
+      "rationalizability"
+    ],
+    "primitives": [
+      "pruning",
+      "payoff_mapping",
+      "belief"
+    ],
+    "math_clinic_ids": [
+      "math-clinic-dominance"
+    ],
+    "decoder_ids": [
+      "decode-dominance-pruning",
+      "decode-best-response"
+    ],
+    "evidence_ids": [
+      "ev-dominance-01",
+      "ev-iterated_deletion-01",
+      "ev-rationalizability-01"
+    ]
+  },
+  {
+    "id": "proof-expected-utility",
+    "title": "Why risky choices need weighted payoffs, not a single imagined outcome",
+    "ordinary_claim": "When the result is uncertain, a choice must be judged before knowing which possible world will happen, so the model needs a way to compare whole risky prospects rather than one imagined outcome.",
+    "minimal_setup": "An actor chooses among actions. Each action can lead to several outcomes, each outcome has a payoff, and the model assigns probabilities to those outcomes.",
+    "proof_idea": "The proof idea is averaging before the uncertainty resolves. If one action gives a high payoff only in a rare case and another gives a moderate payoff often, the actor needs one number that respects both payoff size and likelihood. Expected utility is that disciplined weighted average.",
+    "mathematical_move": "E[u] = sum over outcomes of probability(outcome) times utility(outcome). Each term asks how much a possible world matters before it is known: bigger payoff matters more, and higher probability matters more.",
+    "why_it_matters": "This result makes uncertainty part of the choice rather than something discussed after the fact. It is the bridge from preference over finished outcomes to choice among risky actions, auctions, mixed strategies, and Bayesian games.",
+    "where_it_breaks": "The argument depends on the chosen utility scale and probability model. If the actor cares about risk in a way the utility function omits, or if the probabilities are not justified, the expected-utility calculation can look precise while measuring the wrong thing.",
+    "concepts": [
+      "expected_utility",
+      "utility",
+      "mixed_strategies",
+      "bayesian_games"
+    ],
+    "primitives": [
+      "preference",
+      "payoff_mapping",
+      "belief"
+    ],
+    "math_clinic_ids": [
+      "math-clinic-expected-utility"
+    ],
+    "decoder_ids": [
+      "decode-utility-payoff-objective",
+      "decode-mixing-randomization"
+    ],
+    "evidence_ids": [
+      "ev-expected_utility-01",
+      "ev-expected_utility-02",
+      "ev-utility-01"
+    ]
+  },
+  {
+    "id": "proof-nash-equilibrium",
+    "title": "Why Nash equilibrium is a mutual no-deviation check",
+    "ordinary_claim": "A proposed behavior pattern is stable only if every participant, looking at the others' behavior as fixed, has no better individual move.",
+    "minimal_setup": "There are players, each player has actions or strategies, and each player has payoffs for every full combination of choices.",
+    "proof_idea": "The proof idea is circular consistency. Start with a proposed outcome. Take one player at a time and freeze everyone else. If that player can improve by switching, the proposal cannot be stable. If every player fails to find a profitable switch, the proposal survives the local pressure created by all the others.",
+    "mathematical_move": "For every player i, the chosen action a_i must belong to BR_i(a_-i). In words, player i's action is one of the best responses to the other players' actions. The condition must hold for all players at once.",
+    "why_it_matters": "Nash equilibrium gives the course a reusable stability test for simultaneous strategic dependence. It matters because strategic choice is not about finding one best action in isolation; it is about fitting several local best-response checks together.",
+    "where_it_breaks": "The result does not promise fairness, efficiency, uniqueness, or real-world convergence. It also becomes too weak for dynamic or private-information problems unless the model adds later-history or belief consistency checks.",
+    "concepts": [
+      "best_response",
+      "nash_equilibrium",
+      "mixed_strategies",
+      "subgame_perfection"
+    ],
+    "primitives": [
+      "best_response",
+      "mutual_consistency",
+      "payoff_mapping"
+    ],
+    "math_clinic_ids": [
+      "math-clinic-best-response",
+      "math-clinic-nash"
+    ],
+    "decoder_ids": [
+      "decode-best-response",
+      "decode-equilibrium-fixed-point"
+    ],
+    "evidence_ids": [
+      "ev-best_response-02",
+      "ev-nash_equilibrium-01",
+      "ev-mixed_strategies-01"
+    ]
+  },
+  {
+    "id": "proof-backward-induction",
+    "title": "Why a future threat must be tested from the future",
+    "ordinary_claim": "A threat or promise made early is credible only if carrying it out later will still be attractive when the later decision point arrives.",
+    "minimal_setup": "A game has a sequence of choices. At least one player moves after seeing an earlier action, and the later player has more than one possible response.",
+    "proof_idea": "The proof idea is to refuse to be fooled by the beginning of the story. Go to the last real choice first. At that point earlier speeches are already sunk, so the player compares the remaining payoffs. Once the later action is known, earlier players can reason backward about what their first move will cause.",
+    "mathematical_move": "Backward induction assigns a value to each final branch, chooses the best later action, and carries that continuation value back to the previous node. Subgame perfection keeps this logic honest by checking equilibrium behavior after every possible history.",
+    "why_it_matters": "This proof move turns dynamic games into disciplined reasoning about credibility. It explains why threats, promises, bargaining positions, and entry deterrence depend on later incentives, not just announcements.",
+    "where_it_breaks": "The argument changes if players cannot observe earlier moves, if there is uncertainty about payoffs, if commitment devices alter the future choice, or if the game is repeated so reputation and future punishment enter the payoff comparison.",
+    "concepts": [
+      "extensive_form_games",
+      "backward_induction",
+      "subgame_perfection",
+      "bargaining"
+    ],
+    "primitives": [
+      "backward_recursion",
+      "mutual_consistency",
+      "payoff_mapping"
+    ],
+    "math_clinic_ids": [
+      "math-clinic-backward-induction",
+      "math-clinic-nash"
+    ],
+    "decoder_ids": [
+      "decode-subgame-credibility",
+      "decode-strategy-action-plan"
+    ],
+    "evidence_ids": [
+      "ev-extensive_form_games-02",
+      "ev-backward_induction-02",
+      "ev-subgame_perfection-01"
+    ]
+  },
+  {
+    "id": "proof-repeated-discipline",
+    "title": "Why future punishment can change today's temptation",
+    "ordinary_claim": "Cooperation can survive repeated conflict only when the future loss from punishment is large enough to outweigh the one-time gain from cheating.",
+    "minimal_setup": "The same strategic problem repeats. Players can condition later behavior on earlier behavior, and future payoffs are discounted by a factor that says how much tomorrow matters today.",
+    "proof_idea": "The proof compares two lives from the current moment forward. In one life the player cooperates and keeps the future relationship. In the other the player cheats once, earns a current gain, and then faces punishment. Cooperation is stable only if the first life is worth at least as much as the second.",
+    "mathematical_move": "A repeated payoff stream is v0 + delta v1 + delta^2 v2 + ... . The cooperation inequality says the value of staying on the cooperative path must be at least the value of deviating now plus the discounted punishment path.",
+    "why_it_matters": "This result explains how time can become an incentive device. It connects repeated games, folk-theorem logic, implicit cartels, and one-shot deviation checks without pretending cooperation appears automatically.",
+    "where_it_breaks": "The argument fails when the future is too weak, cheating is hard to observe, punishment is not credible, players are short-lived, or outside institutions change the continuation value.",
+    "concepts": [
+      "infinitely_repeated_games",
+      "folk_theorem",
+      "implicit_cartels",
+      "one_shot_deviation"
+    ],
+    "primitives": [
+      "discounting",
+      "incentive_compatibility",
+      "mutual_consistency"
+    ],
+    "math_clinic_ids": [
+      "math-clinic-discounting"
+    ],
+    "decoder_ids": [
+      "decode-discount-factor",
+      "decode-subgame-credibility"
+    ],
+    "evidence_ids": [
+      "ev-infinitely_repeated_games-01",
+      "ev-folk_theorem-01",
+      "ev-one_shot_deviation-01"
+    ]
+  },
+  {
+    "id": "proof-bayes-signaling",
+    "title": "Why evidence changes beliefs only through type likelihoods",
+    "ordinary_claim": "An observed action teaches something about a hidden type only if different hidden types would choose that action with different likelihoods.",
+    "minimal_setup": "There is hidden information, a prior belief over possible types, an observable action or signal, and a receiver who changes behavior after seeing the signal.",
+    "proof_idea": "The proof asks which hidden worlds would have made the observed signal likely. If high-quality sellers often offer a warranty and low-quality sellers rarely do, seeing a warranty should raise belief in high quality. If both types offer the same warranty, the observation carries no separating force.",
+    "mathematical_move": "Bayes rule says posterior probability is proportional to prior probability times likelihood of the observed signal under that type. Perfect Bayesian reasoning then checks whether each type actually wants to send the signal assigned to it.",
+    "why_it_matters": "This result keeps information models honest. It prevents the reader from treating signals as magic proof and shows why signaling, screening, cheap talk, and adverse selection need both belief updating and incentive checks.",
+    "where_it_breaks": "The argument is weak when the signal is off the equilibrium path, when imitation is cheap, when priors are unsupported, or when the model assumes belief updates without explaining which type would have produced the evidence.",
+    "concepts": [
+      "bayesian_games",
+      "types_and_beliefs",
+      "perfect_bayesian_equilibrium",
+      "signaling",
+      "screening_and_adverse_selection"
+    ],
+    "primitives": [
+      "belief",
+      "incentive_compatibility",
+      "mutual_consistency"
+    ],
+    "math_clinic_ids": [
+      "math-clinic-bayes-rule"
+    ],
+    "decoder_ids": [
+      "decode-type-belief-posterior",
+      "decode-incentive-compatibility"
+    ],
+    "evidence_ids": [
+      "ev-bayesian_games-01",
+      "ev-types_and_beliefs-01",
+      "ev-perfect_bayesian_equilibrium-01",
+      "ev-signaling-01"
+    ]
+  },
+  {
+    "id": "proof-revenue-equivalence",
+    "title": "Why different auction formats can produce the same expected payment",
+    "ordinary_claim": "Under strong assumptions, auction formats that allocate the item in the same way can make bidders pay the same amount on average, even if the payment rule looks different.",
+    "minimal_setup": "Bidders have private values drawn from the same environment, the allocation rule gives the object to the same type of bidder, bidders are risk neutral, and the lowest type has the same expected payoff across mechanisms.",
+    "proof_idea": "The proof tracks incentives instead of surface rules. If the same value type has the same chance of winning in two mechanisms, then the payment schedule is pinned down by the requirement that nearby types do not want to pretend to be each other. Different auction language can hide the same incentive geometry.",
+    "mathematical_move": "The envelope-style logic links a bidder's expected payoff change to the allocation probability. Once the allocation rule and the lowest type's payoff are fixed, expected payments are determined. The course version can be read as payment following from allocation plus incentive compatibility.",
+    "why_it_matters": "This result teaches a deeper market-design habit: do not compare auction formats only by their labels. Ask which allocation rule they create, which deviations they prevent, and which assumptions make the payment comparison valid.",
+    "where_it_breaks": "The result can fail with risk aversion, affiliated values, budget constraints, different reserve rules, asymmetric bidders, or richer information. The theorem is powerful exactly because its assumptions are doing real work.",
+    "concepts": [
+      "auctions",
+      "revenue_equivalence",
+      "ad_auctions",
+      "expected_utility"
+    ],
+    "primitives": [
+      "incentive_compatibility",
+      "payoff_mapping",
+      "belief"
+    ],
+    "math_clinic_ids": [
+      "math-clinic-auction-payment",
+      "math-clinic-expected-utility"
+    ],
+    "decoder_ids": [
+      "decode-incentive-compatibility",
+      "decode-utility-payoff-objective"
+    ],
+    "evidence_ids": [
+      "ev-auctions-01",
+      "ev-revenue_equivalence-01",
+      "ev-ad_auctions-01"
+    ]
+  },
+  {
+    "id": "proof-common-knowledge",
+    "title": "Why everyone knowing a fact is weaker than common knowledge",
+    "ordinary_claim": "A fact can be known by each person privately and still fail to coordinate behavior because people may not know that others know it too.",
+    "minimal_setup": "Several players make choices that depend on what others will do. A fact or signal may be private to each player or publicly observed by all players.",
+    "proof_idea": "The proof idea is the ladder of awareness. If I need your action to make my action safe, I need more than the fact itself. I need confidence that you know it, and often confidence that you know I know it. Public announcements can change behavior because they build this shared ladder.",
+    "mathematical_move": "Common knowledge is recursive belief: everyone knows X, everyone knows that everyone knows X, everyone knows that everyone knows that everyone knows X, and so on. The recursion represents shared strategic certainty, not extra physical facts.",
+    "why_it_matters": "This result explains why communication, public signals, cheap talk, and coordination problems cannot be reduced to information delivery. The strategic effect comes from changing what people can rely on others understanding.",
+    "where_it_breaks": "The logic can fail when messages are not public, when players interpret the same message differently, when incentives make cheap talk unreliable, or when only a few layers of belief are needed rather than full common knowledge.",
+    "concepts": [
+      "common_knowledge",
+      "cheap_talk",
+      "rationalizability",
+      "nash_equilibrium"
+    ],
+    "primitives": [
+      "knowledge_recursion",
+      "belief",
+      "mutual_consistency"
+    ],
+    "math_clinic_ids": [
+      "math-clinic-common-knowledge"
+    ],
+    "decoder_ids": [
+      "decode-common-knowledge",
+      "decode-equilibrium-fixed-point"
+    ],
+    "evidence_ids": [
+      "ev-common_knowledge-01",
+      "ev-cheap_talk-01",
+      "ev-rationalizability-01"
+    ]
+  }
+]
