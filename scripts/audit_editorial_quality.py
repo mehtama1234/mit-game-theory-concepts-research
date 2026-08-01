@@ -166,11 +166,12 @@ def main() -> int:
                 "trap",
                 "model_move",
                 "reader_action",
+                "table_check",
                 "boundary_check",
             ]
             card_words = words(" ".join(str(card.get(key, "")) for key in worked_example_fields))
             worked_example_words.append(card_words)
-            if card_words < 170:
+            if card_words < 205:
                 errors.append(f"concept {concept['id']} worked example card is shallow: {card_words} words")
             if "Worked Example Card" not in html:
                 errors.append(f"concept {concept['id']} worked example card not rendered")

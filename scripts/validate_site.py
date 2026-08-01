@@ -1152,6 +1152,7 @@ def main() -> int:
                 "trap",
                 "model_move",
                 "reader_action",
+                "table_check",
                 "boundary_check",
             ]
             for key in worked_example_fields:
@@ -1161,7 +1162,7 @@ def main() -> int:
                 elif html.escape(value, quote=True) not in text:
                     errors.append(f"concept {concept['id']} worked example {key} not rendered")
             combined = " ".join(str(card.get(key, "")) for key in worked_example_fields)
-            if words(combined) < 170:
+            if words(combined) < 205:
                 errors.append(f"concept {concept['id']} worked example card is shallow")
         if "Equation Walkthroughs" not in text:
             errors.append(f"concept page missing derivation section: {concept['id']}")

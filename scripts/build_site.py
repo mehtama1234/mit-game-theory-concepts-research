@@ -1298,6 +1298,7 @@ def worked_example_card(card: dict[str, Any]) -> str:
   <p><strong>Trap:</strong> {esc(card["trap"])}</p>
   <p><strong>Model move:</strong> {esc(card["model_move"])}</p>
   <p><strong>Reader action:</strong> {esc(card["reader_action"])}</p>
+  <p><strong>Numbers / table check:</strong> {esc(card["table_check"])}</p>
   <p><strong>Boundary check:</strong> {esc(card["boundary_check"])}</p>
 </aside>"""
 
