@@ -156,6 +156,7 @@ def main() -> None:
     evidence = load("analysis/evidence/evidence-ledger.json")
     themes = load("analysis/themes/theme-map.json")
     lecture_overrides = load_overrides("lectures.json")
+    lecture_deepening = load_overrides("lecture-deepening.json")
     supplemental_overrides = load_overrides("lecture-evidence.json")
     concept_by_id = {concept["id"]: concept for concept in concepts}
     theme_by_id = {theme["id"]: theme for theme in themes}
@@ -183,6 +184,9 @@ def main() -> None:
         treatment = lecture_overrides.get(key)
         if treatment is None:
             raise ValueError(f"missing hand-crafted lecture treatment for {key}")
+        deepening = lecture_deepening.get(key)
+        if deepening is None:
+            raise ValueError(f"missing hand-crafted lecture deepening for {key}")
         supplemental_evidence = supplemental_overrides.get(f"lecture-{row['playlist_index']:02d}", [])
         lecture_path.append({
             "id": f"lecture-{row['playlist_index']:02d}",
@@ -214,6 +218,10 @@ def main() -> None:
             "math_entry_point": treatment["math_entry_point"],
             "worked_mini_example": treatment["worked_mini_example"],
             "common_failure": treatment["common_failure"],
+            "naive_start": deepening["naive_start"],
+            "tempting_shortcut": deepening["tempting_shortcut"],
+            "durable_lesson": deepening["durable_lesson"],
+            "handoff": deepening["handoff"],
             "supplemental_evidence": supplemental_evidence,
             "supplemental_evidence_ids": [record["id"] for record in supplemental_evidence],
         })

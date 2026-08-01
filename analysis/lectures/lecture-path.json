@@ -75,6 +75,10 @@
     "math_entry_point": "The math enters as representation. A preference ordering becomes a utility function, and uncertain outcomes become expected utility. The point is not to measure happiness; it is to make comparisons precise enough for later strategic checks.",
     "worked_mini_example": "If someone chooses between a sure payment and a lottery, the model needs more than a list of outcomes. It needs a rule for comparing risk, so the lecture turns probability-weighted consequences into a choice object.",
     "common_failure": "The easy mistake is to treat utility as a psychological substance. In this course, utility is a compact ranking device that lets later game models compute what a player would rather do.",
+    "naive_start": "The naive question is: can we just say what people choose and move on? The lecture slows that down because choice is not usable in a model until the alternatives can be compared in a stable way.",
+    "tempting_shortcut": "The tempting shortcut is to treat payoff numbers as direct measurements of pleasure, money, or moral value. That shortcut fails because the later strategic model only needs a disciplined ranking that survives comparisons, lotteries, and counterfactual choices.",
+    "durable_lesson": "The durable lesson is that game theory starts with a language for individual tradeoffs before it talks about strategic conflict. Preferences say what is better than what; utility compresses those rankings into numbers; expected utility adds uncertainty without pretending the numbers are a happiness meter.",
+    "handoff": "This hands off to representation of games: once each player has a payoff language, the next problem is to describe who moves, what they can do, what they know, and how everyone's choices jointly create outcomes.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -165,6 +169,10 @@
     "math_entry_point": "The math enters through the game form. A strategic-form table compresses simultaneous choices; an extensive-form tree exposes order, histories, and information. The representation chooses which constraints the later solution concept can see.",
     "worked_mini_example": "A threat may look persuasive in a payoff table because the table hides timing. Draw the same situation as a tree and the later player may not want to carry out the threat after the history arrives.",
     "common_failure": "The mistake is to think representation is bookkeeping. It is a modeling claim. If the form hides timing or information, the equilibrium calculation can be exact and still answer the wrong question.",
+    "naive_start": "The naive question is: if we know the players and payoffs, is the game already specified? The lecture says no, because timing, information, and strategy spaces decide what the players are actually choosing.",
+    "tempting_shortcut": "The tempting shortcut is to draw the most convenient table and assume the solution concept will fix the rest. That fails when the table hides order, commitment, or private information that a player would use in the real interaction.",
+    "durable_lesson": "The durable lesson is that a game form is an argument about what matters. A strategic-form matrix emphasizes complete plans chosen at once; an extensive-form tree exposes histories and later choices. Neither is neutral bookkeeping.",
+    "handoff": "This hands off to dominance: once the situation has been represented, the first question is whether any option can be rejected before making detailed beliefs about what everyone else will do.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -201,6 +209,10 @@
     "math_entry_point": "The math enters as an inequality across contingencies. A strategy is dominated when another strategy gives at least as much payoff in every relevant case and more in some case.",
     "worked_mini_example": "If one restaurant location earns less than another no matter what a rival does, the worse location can be removed before doing any equilibrium reasoning. The deletion comes from comparison, not intuition.",
     "common_failure": "The mistake is to delete strategies because they seem unlikely. Dominance is stronger: it requires a payoff comparison that survives all opponent actions covered by the model.",
+    "naive_start": "The naive question is: can we solve a game by guessing which actions look sensible? The lecture replaces guesswork with a comparison test that asks whether one action is worse across the relevant cases.",
+    "tempting_shortcut": "The tempting shortcut is to delete actions because they look embarrassing, unlikely, or aggressive. That fails because game theory needs a reason that still holds when the opponent chooses differently from what we expected.",
+    "durable_lesson": "The durable lesson is that dominance is proof-based simplification. If another strategy always does better, the dominated strategy does not need a story about beliefs; it is removed because the payoff comparison itself rules it out.",
+    "handoff": "This hands off to rationalizability: many games do not have obvious dominated actions, so the next question is whether an action can be justified by some coherent belief about the other players.",
     "supplemental_evidence": [
       {
         "id": "lev-lecture-03-01",
@@ -290,6 +302,10 @@
     "math_entry_point": "The math enters through best responses to beliefs. A strategy survives if there is a belief over others' actions that makes it payoff-maximizing for the player.",
     "worked_mini_example": "A move that is not dominant may still be rationalizable if a player reasonably expects the rival to choose a particular action. The model asks whether some belief can make the move optimal.",
     "common_failure": "The mistake is to confuse rationalizable with predicted. Rationalizability says a move can be justified; equilibrium will later require everyone's justifications to fit together.",
+    "naive_start": "The naive question is: if an action is not dominated, should we predict it? The lecture says survival is weaker than prediction because an action may be defensible under some belief without being part of a mutually consistent outcome.",
+    "tempting_shortcut": "The tempting shortcut is to confuse 'could be rational' with 'will happen.' That fails because each player's private justification can point in directions that do not fit together across the whole game.",
+    "durable_lesson": "The durable lesson is that beliefs are part of rational choice. A strategy is rationalizable when there is some belief about others that makes it a best response, so the model separates individual defensibility from collective stability.",
+    "handoff": "This hands off to Nash equilibrium: once individual strategies can be justified by beliefs, the next demand is that those justifications close into one consistent best-response loop.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -358,6 +374,10 @@
     "math_entry_point": "The math enters as mutual best response. For every player, the chosen action or strategy must lie in that player's best-response set against the other players' choices.",
     "worked_mini_example": "Two firms may each like a different price in isolation. A Nash check asks whether either firm would cut or raise price after seeing the rival's chosen price held fixed.",
     "common_failure": "The mistake is to read equilibrium as good, fair, or socially desirable. Nash only says no single player has a profitable one-person deviation.",
+    "naive_start": "The naive question is: does equilibrium mean everyone gets what they want? The lecture redirects the word equilibrium toward stability against one-person deviations, not happiness, fairness, or social success.",
+    "tempting_shortcut": "The tempting shortcut is to pick the outcome with the largest total payoff or the most natural story. That fails because a high-surplus outcome can fall apart if one player can improve while everyone else holds still.",
+    "durable_lesson": "The durable lesson is that Nash equilibrium is a consistency check. Each player's action must be a best response to the others, so the prediction is not a wish; it is a point where unilateral regret has disappeared.",
+    "handoff": "This hands off to imperfect competition: the best-response loop becomes concrete when firms choose prices or quantities and each firm's profit depends on what rivals do.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -394,6 +414,10 @@
     "math_entry_point": "The math enters through firm profit functions and best-response curves. A firm's profit depends on its own choice, rival choices, market demand, and cost, so optimization becomes strategic.",
     "worked_mini_example": "Two sellers of bottled water choose quantities. If one produces more, total quantity rises and price may fall. The other seller's best quantity is therefore tied to the first seller's choice.",
     "common_failure": "The mistake is to treat imperfect competition as monopoly with extra names. The core idea is interaction: each firm has some power, but rivals make that power strategically constrained.",
+    "naive_start": "The naive question is: can we understand firms by studying one firm at a time? The lecture shows why that breaks when each firm's price or quantity changes the market faced by the others.",
+    "tempting_shortcut": "The tempting shortcut is to import monopoly logic and add more firms as decoration. That fails because a rival's action changes demand, price, and profit, so the right object is strategic interaction rather than isolated optimization.",
+    "durable_lesson": "The durable lesson is that market power can be relational. A firm's best move depends on how rivals respond, and the equilibrium captures the mutual adjustment between individual profit motives and market-level consequences.",
+    "handoff": "This hands off to zero-sum games by sharpening a boundary: some competition is exact opposition, but many economic settings mix rivalry with shared surplus and market structure.",
     "supplemental_evidence": [
       {
         "id": "lev-lecture-06-01",
@@ -461,6 +485,10 @@
     "math_entry_point": "The math enters through maxmin, minimax, and mixed strategies. The player compares worst-case payoffs and may randomize to avoid being exploited by a predictable action.",
     "worked_mini_example": "In matching pennies, choosing heads every time can be exploited. Randomizing evenly makes the opponent unable to target a fixed pattern, which gives the player a security value.",
     "common_failure": "The mistake is to apply zero-sum intuition everywhere. Many economic games mix conflict with shared surplus, future cooperation, or side effects, so exact-opposition logic may overstate rivalry.",
+    "naive_start": "The naive question is: is every competitive game basically a fight where one side's gain is the other's loss? The lecture isolates the special case where that is literally true.",
+    "tempting_shortcut": "The tempting shortcut is to use warlike intuition for all strategic settings. That fails because exact opposition creates security-value reasoning that does not automatically apply to bargaining, repeated relationships, or markets with possible gains from trade.",
+    "durable_lesson": "The durable lesson is that zero-sum structure makes caution mathematically precise. A player can ask what payoff is guaranteed against the opponent's best attack, and randomization can protect against being too predictable.",
+    "handoff": "This hands off to backward induction: after studying simultaneous exact conflict, the course turns to time, where future choices can make present promises or threats credible or empty.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -522,6 +550,10 @@
     "math_entry_point": "The math enters as recursive value assignment. At each decision node, the player chooses the branch with the best continuation payoff, and that value is passed backward through the tree.",
     "worked_mini_example": "If a seller threatens to reject a future offer but would accept once that future node arrives, the threat should not shape earlier play. Solving backward exposes that problem.",
     "common_failure": "The mistake is to believe every announced future action. Backward induction asks whether the action will still be optimal when the future decision actually has to be made.",
+    "naive_start": "The naive question is: should we solve a dynamic game by narrating it from the first move forward? The lecture says the last meaningful choice often determines what earlier moves really mean.",
+    "tempting_shortcut": "The tempting shortcut is to take announced threats and promises at face value. That fails because a future action matters only if the player will still want to take it when that future moment arrives.",
+    "durable_lesson": "The durable lesson is that time turns prediction into a recursion. Later optimal choices become continuation values, and those values are folded backward until earlier players can see the real consequences of moving now.",
+    "handoff": "This hands off to negotiation: bargaining is a dynamic problem where offers, refusals, patience, and outside options all depend on what happens after today's choice.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -569,6 +601,10 @@
     "math_entry_point": "The math enters through continuation values and discounting. Waiting can shrink payoffs, so an offer is judged against what each side expects from rejecting and continuing.",
     "worked_mini_example": "A buyer and seller can split value today or wait for another offer tomorrow. If waiting is costly, the side that can credibly wait longer may receive a larger share.",
     "common_failure": "The mistake is to explain bargaining power as confidence or stubbornness. The model asks what each side can get by refusing now and moving to the next bargaining stage.",
+    "naive_start": "The naive question is: does bargaining power come from toughness, confidence, or fairness? The lecture turns bargaining power into payoffs from accepting, rejecting, waiting, and walking away.",
+    "tempting_shortcut": "The tempting shortcut is to explain negotiation outcomes as personality. That fails because a calm player with a good outside option can have more power than a loud player whose next-best alternative is bad.",
+    "durable_lesson": "The durable lesson is that bargaining is a dynamic comparison of continuation values. An offer is attractive or not because of what each side expects from delay, rejection, and future bargaining positions.",
+    "handoff": "This hands off to subgame perfection: if a bargaining path uses future refusals or punishments, those continuation actions must be rational when the later subgame is reached.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -616,6 +652,10 @@
     "math_entry_point": "The math enters by applying Nash equilibrium inside each subgame. A full strategy profile must pass the no-deviation test not only at the start but after relevant histories.",
     "worked_mini_example": "A firm may threaten a price war after entry. Subgame perfection asks whether the price war would actually be profitable once entry has happened, not whether it scares entrants beforehand.",
     "common_failure": "The mistake is to check only the opening node. A dynamic prediction can look stable initially while relying on later behavior no player would want to carry out.",
+    "naive_start": "The naive question is: if a strategy profile is Nash at the start, why ask more? The lecture shows that a profile can be stable initially while relying on later behavior nobody would actually choose.",
+    "tempting_shortcut": "The tempting shortcut is to check incentives only before the game begins. That fails in dynamic games because threats and promises live at later histories, and those histories need their own rationality tests.",
+    "durable_lesson": "The durable lesson is that credibility is local. A strategy must remain a Nash equilibrium inside every relevant subgame, so the solution concept rejects plans that survive only because impossible-looking histories were ignored.",
+    "handoff": "This hands off to the one-shot deviation principle: once dynamic credibility is the standard, the next problem is finding a practical way to check many possible deviations.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -670,6 +710,10 @@
     "math_entry_point": "The math enters as a local deviation test under the theorem's conditions. If no profitable one-shot deviation exists at any history, the strategy can pass the dynamic optimality check.",
     "worked_mini_example": "In an alternating-offer bargain, ask whether a player would gain by rejecting just this offer or changing just this proposal while leaving future behavior fixed.",
     "common_failure": "The mistake is to use the one-shot test without checking the environment. The shortcut is powerful because theorem conditions make local deviations informative, not because all strategy changes are always local.",
+    "naive_start": "The naive question is: must we compare every complete alternative strategy in a dynamic game? The lecture introduces conditions under which checking one local change at a time is enough.",
+    "tempting_shortcut": "The tempting shortcut is to treat the one-shot deviation test as a universal shortcut. That fails because the theorem depends on the structure of the game; without the right conditions, local checks can miss profitable longer deviations.",
+    "durable_lesson": "The durable lesson is that theorems buy convenience by adding assumptions. When the conditions hold, dynamic optimality can be audited history by history with a manageable local test.",
+    "handoff": "This hands off to finitely repeated games: the same dynamic tools now face a setting with a known last period, where backward reasoning can unravel cooperation.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -706,6 +750,10 @@
     "math_entry_point": "The math enters through backward induction over periods. The last stage is solved first; if cooperation fails there, the same logic can roll backward into earlier stages.",
     "worked_mini_example": "Two firms might want to keep prices high for ten rounds, but in round ten there is no later punishment. If round ten unravels, round nine loses its punishment threat too.",
     "common_failure": "The mistake is to think repetition alone creates cooperation. The future must still have disciplinary force, and a known last round can remove that force.",
+    "naive_start": "The naive question is: if people meet many times, should cooperation automatically become easier? The lecture shows that a known final round can remove the future pressure that cooperation needs.",
+    "tempting_shortcut": "The tempting shortcut is to count repetitions and assume trust accumulates mechanically. That fails because players look ahead; if the last round has no future punishment, the unraveling can move backward through the whole game.",
+    "durable_lesson": "The durable lesson is that repetition only matters when the future can discipline the present. A finite horizon with a commonly known endpoint can make future punishment vanish exactly when it is needed.",
+    "handoff": "This hands off to infinitely repeated games: removing the known endpoint allows future punishment and reward to become a real enforcement device again.",
     "supplemental_evidence": [
       {
         "id": "lev-lecture-12-01",
@@ -758,6 +806,10 @@
     "math_entry_point": "The math enters through discounted payoff sums and incentive constraints. A player compares the one-period deviation gain against the present value of future punishment.",
     "worked_mini_example": "A firm can cut price today and steal customers, but rivals may punish with low prices afterward. Cooperation works only if the firm values future profit enough.",
     "common_failure": "The mistake is to say indefinite repetition creates trust by itself. The lecture's claim is an inequality: patience and punishment must make deviation unattractive.",
+    "naive_start": "The naive question is: does no final round mean cooperation is guaranteed? The lecture says no; the future helps only if the loss from future punishment outweighs the immediate gain from cheating.",
+    "tempting_shortcut": "The tempting shortcut is to describe long relationships as trust and stop there. That fails because the model needs an incentive inequality: today's temptation must be smaller than the discounted value lost later.",
+    "durable_lesson": "The durable lesson is that patience can create self-enforcement. Players may cooperate without external contracts when future consequences are valuable enough and punishments are credible enough.",
+    "handoff": "This hands off to the folk theorem: once future incentives can sustain cooperation, the next question is how many payoff patterns can be supported by suitable reward and punishment schemes.",
     "supplemental_evidence": [
       {
         "id": "lev-lecture-13-01",
@@ -811,6 +863,10 @@
     "math_entry_point": "The math enters through feasible payoffs, individual rationality, discount factors, and punishment constructions. The theorem characterizes a set rather than one unique prediction.",
     "worked_mini_example": "If players can reward and punish across a long relationship, they may sustain many different divisions of surplus, not just the one-shot Nash outcome.",
     "common_failure": "The mistake is to treat the folk theorem as a prediction that cooperation happens. It often says many things can happen, which raises a new selection problem.",
+    "naive_start": "The naive question is: does a theorem about repeated games give one clean prediction? The lecture shows the opposite danger: patience can make many outcomes sustainable.",
+    "tempting_shortcut": "The tempting shortcut is to remember the folk theorem as 'cooperation happens.' That fails because the theorem is often about a large set of feasible, individually rational payoffs rather than one selected behavior.",
+    "durable_lesson": "The durable lesson is that possibility is not the same as prediction. Repeated-game incentives can support many arrangements, which is powerful for explanation but creates a selection problem for forecasting. The theorem teaches how enforcement works, while also warning that enforcement alone may not identify which convention players will coordinate on.",
+    "handoff": "This hands off to implicit cartels: the course applies repeated-game enforcement to firms and asks when high prices can be self-enforcing without an explicit contract.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -848,6 +904,10 @@
     "math_entry_point": "The math enters as a cartel incentive constraint. Collusive profit today plus future cooperation is compared with the one-time cheating gain plus future punishment profit.",
     "worked_mini_example": "A gas station could cut price and win customers today. If nearby stations respond with a price war, the discounted future loss may make quiet high pricing self-enforcing.",
     "common_failure": "The mistake is to infer explicit agreement from high prices alone. The model explains an incentive mechanism; real antitrust claims require evidence about communication, monitoring, and market conditions.",
+    "naive_start": "The naive question is: if firms keep prices high together, must there be an explicit agreement? The lecture studies how repeated incentives can sometimes mimic agreement without legal enforceability.",
+    "tempting_shortcut": "The tempting shortcut is to infer collusion directly from high prices or parallel behavior. That fails because market structure, demand shocks, costs, and repeated-game incentives can create similar patterns for different reasons.",
+    "durable_lesson": "The durable lesson is that self-enforcement has two sides. Cheating must be unattractive for the potential cheater, and punishment must also be worthwhile for the firms expected to punish.",
+    "handoff": "This hands off to Bayesian games: after studying repeated behavior under known payoffs, the course adds hidden information about values, costs, and types.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -909,6 +969,10 @@
     "math_entry_point": "The math enters through type spaces and probability distributions. A strategy can become a rule from types to actions, and payoffs are evaluated in expectation over unknown types.",
     "worked_mini_example": "A bidder knows their own value but not a rival's value. The model represents the bidder's value as a type and the rival's unknown value through a prior distribution.",
     "common_failure": "The mistake is to say players are uncertain and leave it there. Bayesian games force the model to name what is hidden, who knows it, and what probabilities others assign.",
+    "naive_start": "The naive question is: can we just say players are uncertain and keep using the same game? The lecture says uncertainty must be modeled: who knows what, what is hidden, and what probabilities are assigned.",
+    "tempting_shortcut": "The tempting shortcut is to use uncertainty as a verbal excuse for anything. That fails because incomplete-information analysis needs a type space, priors, and strategies that specify what each possible type would do.",
+    "durable_lesson": "The durable lesson is that private information changes the object of strategy. A player no longer chooses just an action; the model often needs a rule mapping each type to an action.",
+    "handoff": "This hands off to Bayesian Nash applications: once types and priors are in the model, the next step is checking expected best responses for each type in concrete settings.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -956,6 +1020,10 @@
     "math_entry_point": "The math enters through expected-payoff best responses for type-contingent strategies. Each type asks whether its assigned action maximizes expected utility given the strategy rules of others.",
     "worked_mini_example": "In a first-price auction, a low-value bidder and high-value bidder follow different bidding rules. Bayesian Nash checks the incentive of each value type, not only the average bidder.",
     "common_failure": "The mistake is to check one action per player. With private information, the strategy is a function from types to actions, and each type needs its own deviation check.",
+    "naive_start": "The naive question is: after adding types, can we solve the game by checking the average player? The lecture says each type has its own incentive problem.",
+    "tempting_shortcut": "The tempting shortcut is to collapse a distribution of values into one representative value. That fails because low, middle, and high types may choose different actions and face different profitable deviations.",
+    "durable_lesson": "The durable lesson is that equilibrium under hidden information is a family of best-response checks. Each type's prescribed action must be optimal given beliefs about other players' types and strategies.",
+    "handoff": "This hands off to auctions: bidding environments make private values concrete and show why a strategy is a function from value information to bids.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -999,6 +1067,10 @@
     "math_entry_point": "The math enters through allocation rules, payment rules, values, bids, and expected payoffs. A bidder compares the chance of winning with the surplus left after payment.",
     "worked_mini_example": "In a first-price auction, bidding your full value may win but leaves no surplus. The bidder shades the bid because winning is useful only when the price is below value.",
     "common_failure": "The mistake is to think bids are transparent reports of value. A bid is a strategic action created by the auction format's payment consequences.",
+    "naive_start": "The naive question is: should a bidder simply bid what the object is worth to them? The lecture shows that the payment rule decides whether truth, shading, or distortion is strategically sensible.",
+    "tempting_shortcut": "The tempting shortcut is to read bids as honest value labels. That fails because bids are actions chosen under rules; the same bidder may bid differently in first-price, second-price, or platform auctions.",
+    "durable_lesson": "The durable lesson is that mechanism rules manufacture incentives. Allocation and payment rules determine how private values become strategic bids and whether the bidder wants to reveal or conceal information.",
+    "handoff": "This hands off to revenue equivalence: after comparing auction formats, the next question is when different rules nevertheless produce the same expected revenue.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -1035,6 +1107,10 @@
     "math_entry_point": "The math enters through expected payment functions and allocation probabilities. Under the theorem's conditions, payment differences are pinned down by the same allocation rule and boundary condition.",
     "worked_mini_example": "A first-price auction and second-price auction feel different to bidders, but if the same type wins with the same probability and assumptions hold, expected revenue can match.",
     "common_failure": "The mistake is to remember only the equivalence. The theorem is also a list of conditions; changing risk attitudes, values, symmetry, or allocation rules can break it.",
+    "naive_start": "The naive question is: if auction formats feel different, must seller revenue be different? The lecture shows that under strong conditions, strategic adjustments can make expected payments line up.",
+    "tempting_shortcut": "The tempting shortcut is to treat revenue equivalence as a universal law. That fails because the result depends on assumptions about values, risk, symmetry, allocation rules, and boundary payments.",
+    "durable_lesson": "The durable lesson is that the theorem is a conditions machine. It teaches when surface format differences wash out and, just as importantly, which changes make the equivalence disappear.",
+    "handoff": "This hands off to ad auctions: real platform auctions modify the object being sold, the ranking rule, and the quality information, so the clean theorem becomes a reference point rather than the whole story.",
     "supplemental_evidence": [
       {
         "id": "lev-lecture-19-01",
@@ -1087,6 +1163,10 @@
     "math_entry_point": "The math enters through position values, click-through rates, bids, quality adjustments, and payment rules. A platform ranks ads by a score rather than by value alone.",
     "worked_mini_example": "An advertiser may value a click highly but have a low expected click rate. The platform's rule must decide whether that advertiser deserves a top slot compared with a more clickable ad.",
     "common_failure": "The mistake is to treat ad auctions as ordinary object auctions. The platform allocates probabilistic attention, and the mechanism must account for user response as well as advertiser bids.",
+    "naive_start": "The naive question is: are search ads just auctions for slots? The lecture shows the object is expected user attention, shaped by position, clicks, relevance, quality, and advertiser value.",
+    "tempting_shortcut": "The tempting shortcut is to rank advertisers only by bid. That fails because a high bid on an ad nobody clicks can be worse for the platform than a lower bid attached to a more useful or clickable ad.",
+    "durable_lesson": "The durable lesson is that mechanism design must respect the real resource. In ad markets, the platform allocates probabilistic attention while balancing advertiser incentives, user response, and revenue.",
+    "handoff": "This hands off to perfect Bayesian equilibrium: after mechanisms with hidden values, the course moves to dynamic settings where actions reveal information and beliefs must be updated over time.",
     "supplemental_evidence": [
       {
         "id": "lev-lecture-20-01",
@@ -1146,6 +1226,10 @@
     "math_entry_point": "The math enters as a strategy profile plus a belief system. At each information set, actions must be optimal given beliefs, and beliefs must follow Bayes' rule on path.",
     "worked_mini_example": "After observing a price or signal, a buyer forms a belief about seller type and chooses whether to buy. PBE checks both the seller's signal and the buyer's belief-driven response.",
     "common_failure": "The mistake is to solve only strategies and treat beliefs as commentary. In PBE, beliefs are part of the equilibrium object.",
+    "naive_start": "The naive question is: can we solve a dynamic hidden-information game with strategies alone? The lecture says beliefs are part of the solution because players act based on what histories make them think.",
+    "tempting_shortcut": "The tempting shortcut is to compute actions and leave beliefs implicit. That fails when an observed move changes what a receiver thinks about type, and that changed belief changes the receiver's best response.",
+    "durable_lesson": "The durable lesson is that equilibrium now has two coupled parts: strategies must be optimal given beliefs, and beliefs must be updated consistently where the path of play gives evidence.",
+    "handoff": "This hands off to signaling: once actions can reveal information, the course studies when informed players choose signals that separate, pool, or distort what receivers believe.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -1194,6 +1278,10 @@
     "math_entry_point": "The math enters through sender types, signal choices, receiver beliefs, receiver actions, and incentive constraints that stop one type from profitably mimicking another.",
     "worked_mini_example": "Education can signal ability if high-ability workers find education less costly or more worthwhile. If low-ability workers would copy the same education level, the signal pools rather than separates.",
     "common_failure": "The mistake is to think costly automatically means informative. A signal works only if the wrong type does not want to imitate it under the receiver's response.",
+    "naive_start": "The naive question is: if someone takes a visible action, does it automatically reveal who they are? The lecture says no, because other types may want to imitate the same action.",
+    "tempting_shortcut": "The tempting shortcut is to say costly signals are always credible. That fails because credibility depends on relative incentives: the action must be unattractive enough for the type that should not mimic it.",
+    "durable_lesson": "The durable lesson is that information can be carried by incentive differences. A signal works when the cost-benefit tradeoff differs across types so the receiver can rationally update after seeing it.",
+    "handoff": "This hands off to bargaining with incomplete information: hidden types can make offers and delays informative, so negotiation becomes both surplus division and information management.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -1230,6 +1318,10 @@
     "math_entry_point": "The math enters through types, participation constraints, posted prices, posterior beliefs, and selected pools of participants. The payoff calculation must account for who accepts, not only what price is posted.",
     "worked_mini_example": "An insurer posts a price. The buyers who accept may be the people with the highest expected costs, so raising the price can worsen the pool rather than simply increase revenue per buyer.",
     "common_failure": "The mistake is to reason from the original average population. Screening changes the composition of participants, so the relevant average after the offer may be very different.",
+    "naive_start": "The naive question is: if gains from trade exist, why not bargain to agreement immediately? The lecture shows that hidden values or costs can make delay, screening, and disagreement rational.",
+    "tempting_shortcut": "The tempting shortcut is to calculate from the average participant before the offer. That fails because an offer changes who accepts, so the relevant group after selection can be much riskier, cheaper, or more costly than the original population.",
+    "durable_lesson": "The durable lesson is that private information changes both prices and populations. Bargaining and screening are not only about splitting surplus; they also determine which hidden types enter the transaction.",
+    "handoff": "This hands off to cheap talk: after costly or payoff-relevant signals, the course asks when pure messages can transmit information without direct cost or binding force.",
     "supplemental_evidence": [
       {
         "id": "lev-lecture-23-01",
@@ -1283,6 +1375,10 @@
     "math_entry_point": "The math enters through sender types or states, message rules, receiver actions, and incentive constraints that make truthful or partially informative messages self-enforcing.",
     "worked_mini_example": "An advisor can recommend an action. If the advisor and decision maker want similar outcomes, the message may guide action; if interests conflict sharply, every type may send the same persuasive message.",
     "common_failure": "The mistake is to say cheap talk is always useless or always informative. The lecture's answer is conditional: speech works when incentives make the receiver's interpretation defensible.",
+    "naive_start": "The naive question is: if talk is free and nonbinding, should we ignore it? The lecture says not always; messages can matter when incentives make truthful or partially truthful communication self-enforcing.",
+    "tempting_shortcut": "The tempting shortcut is to label all cheap talk as empty persuasion. That fails when sender and receiver preferences are sufficiently aligned, because the sender may benefit from guiding the receiver toward a better action.",
+    "durable_lesson": "The durable lesson is that credibility can come from alignment, not only cost. A message works when the receiver can believe that the sender wanted to send it in exactly that state.",
+    "handoff": "This hands off to common knowledge: communication does not only transmit facts; public messages can change what everyone knows about what everyone else knows.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -1319,6 +1415,10 @@
     "math_entry_point": "The math enters through recursive knowledge operators. Starting with an event, the model repeatedly applies the idea that everyone knows the event and everyone knows that others know it.",
     "worked_mini_example": "If every firm privately hears a rule change, each may still wonder whether others heard it. A public announcement can change behavior because it also tells everyone that others heard it.",
     "common_failure": "The mistake is to treat true, known, and common knowledge as identical. Strategic coordination can depend on the publicness and higher-order structure of knowledge.",
+    "naive_start": "The naive question is: if everyone knows a fact, why is that not enough for coordination? The lecture shows that strategic behavior may depend on whether everyone knows that everyone knows it, and knows that this is shared.",
+    "tempting_shortcut": "The tempting shortcut is to treat truth, knowledge, and public knowledge as the same thing. That fails because private receipt of the same fact can leave each player uncertain about whether others received it too.",
+    "durable_lesson": "The durable lesson is that publicness is a strategic resource. Common knowledge turns a fact into a coordination object by making higher-order beliefs line up across players.",
+    "handoff": "This completes the course arc by returning to the central primitive: strategic behavior depends not only on payoffs and actions, but on what each player can safely believe others understand.",
     "supplemental_evidence": [
       {
         "id": "lev-lecture-25-01",

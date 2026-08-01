@@ -19,9 +19,11 @@
 </section>
 <figure class="learning-diagram lecture-flow">
   <figcaption>Lecture Study Map</figcaption>
-  <div class="flow-steps"><div class="flow-step"><span>Problem</span><p>The lecture uses incomplete-information representation to solve applied games. Equilibrium is now a plan for each type, and each type must be optimizing against beliefs about other types.</p></div><div class="flow-step"><span>Watch</span><p>Watch for type-contingent plans. Equilibrium is no longer one action per player; it is a plan for each possible type.</p></div><div class="flow-step"><span>Math</span><p>The math enters through expected-payoff best responses for type-contingent strategies. Each type asks whether its assigned action maximizes expected utility given the strategy rules of others.</p></div><div class="flow-step"><span>Evidence</span><p>2 total lecture evidence anchors (2 concept-linked, 0 supplemental).</p></div></div>
+  <div class="flow-steps"><div class="flow-step"><span>Problem</span><p>The lecture uses incomplete-information representation to solve applied games. Equilibrium is now a plan for each type, and each type must be optimizing against beliefs about other types.</p></div><div class="flow-step"><span>Naive Start</span><p>The naive question is: after adding types, can we solve the game by checking the average player? The lecture says each type has its own incentive problem.</p></div><div class="flow-step"><span>Watch</span><p>Watch for type-contingent plans. Equilibrium is no longer one action per player; it is a plan for each possible type.</p></div><div class="flow-step"><span>Math</span><p>The math enters through expected-payoff best responses for type-contingent strategies. Each type asks whether its assigned action maximizes expected utility given the strategy rules of others.</p></div><div class="flow-step"><span>Shortcut</span><p>The tempting shortcut is to collapse a distribution of values into one representative value. That fails because low, middle, and high types may choose different actions and face different profitable deviations.</p></div><div class="flow-step"><span>Evidence</span><p>2 total lecture evidence anchors (2 concept-linked, 0 supplemental).</p></div></div>
 </figure>
 <section class="treatment">
+  <h2>Naive Starting Question</h2>
+  <p>The naive question is: after adding types, can we solve the game by checking the average player? The lecture says each type has its own incentive problem.</p>
   <h2>What This Lecture Teaches</h2>
   <p>The lecture uses incomplete-information representation to solve applied games. Equilibrium is now a plan for each type, and each type must be optimizing against beliefs about other types.</p>
   <h2>Where The Math Enters</h2>
@@ -33,7 +35,12 @@
   <p>In a first-price auction, a low-value bidder and high-value bidder follow different bidding rules. Bayesian Nash checks the incentive of each value type, not only the average bidder.</p>
   <h2>Mistakes To Avoid</h2>
   <p>The mistake is to check one action per player. With private information, the strategy is a function from types to actions, and each type needs its own deviation check.</p>
+  <p>The tempting shortcut is to collapse a distribution of values into one representative value. That fails because low, middle, and high types may choose different actions and face different profitable deviations.</p>
   <p>Students often get stuck by checking only the average player. Bayesian Nash is stricter: a proposed strategy can fail because one particular type wants to deviate, even if the pooled behavior looks reasonable. Students often get stuck by seeing only bids. In sponsored search, the highest bid may not create the highest platform value if relevance and click probability differ.</p>
+  <h2>Durable Lesson</h2>
+  <p>The durable lesson is that equilibrium under hidden information is a family of best-response checks. Each type&#x27;s prescribed action must be optimal given beliefs about other players&#x27; types and strategies.</p>
+  <h2>How This Lecture Hands Off</h2>
+  <p>This hands off to auctions: bidding environments make private values concrete and show why a strategy is a function from value information to bids.</p>
   <h2>How To Recognize This Later</h2>
   <p>Look for type-contingent strategies and expected-payoff best response conditions. Look for markets with ranked slots, click probabilities, quality scores, and generalized second-price style rules.</p>
   <p class="chips"><a class="chip" href="../concepts/bayesian_nash_equilibrium.html">Bayesian Nash Equilibrium</a><a class="chip" href="../concepts/ad_auctions.html">Ad Auctions</a></p>

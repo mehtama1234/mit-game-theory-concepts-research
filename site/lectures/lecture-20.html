@@ -19,9 +19,11 @@
 </section>
 <figure class="learning-diagram lecture-flow">
   <figcaption>Lecture Study Map</figcaption>
-  <div class="flow-steps"><div class="flow-step"><span>Problem</span><p>The lecture moves auction theory into platform markets. The object being allocated is attention or expected clicks across positions, so bids interact with ranking, quality, and click probabilities.</p></div><div class="flow-step"><span>Watch</span><p>Watch the object being sold. The platform allocates attention and expected clicks, not just a single indivisible item.</p></div><div class="flow-step"><span>Math</span><p>The math enters through position values, click-through rates, bids, quality adjustments, and payment rules. A platform ranks ads by a score rather than by value alone.</p></div><div class="flow-step"><span>Evidence</span><p>2 total lecture evidence anchors (1 concept-linked, 1 supplemental).</p></div></div>
+  <div class="flow-steps"><div class="flow-step"><span>Problem</span><p>The lecture moves auction theory into platform markets. The object being allocated is attention or expected clicks across positions, so bids interact with ranking, quality, and click probabilities.</p></div><div class="flow-step"><span>Naive Start</span><p>The naive question is: are search ads just auctions for slots? The lecture shows the object is expected user attention, shaped by position, clicks, relevance, quality, and advertiser value.</p></div><div class="flow-step"><span>Watch</span><p>Watch the object being sold. The platform allocates attention and expected clicks, not just a single indivisible item.</p></div><div class="flow-step"><span>Math</span><p>The math enters through position values, click-through rates, bids, quality adjustments, and payment rules. A platform ranks ads by a score rather than by value alone.</p></div><div class="flow-step"><span>Shortcut</span><p>The tempting shortcut is to rank advertisers only by bid. That fails because a high bid on an ad nobody clicks can be worse for the platform than a lower bid attached to a more useful or clickable ad.</p></div><div class="flow-step"><span>Evidence</span><p>2 total lecture evidence anchors (1 concept-linked, 1 supplemental).</p></div></div>
 </figure>
 <section class="treatment">
+  <h2>Naive Starting Question</h2>
+  <p>The naive question is: are search ads just auctions for slots? The lecture shows the object is expected user attention, shaped by position, clicks, relevance, quality, and advertiser value.</p>
   <h2>What This Lecture Teaches</h2>
   <p>The lecture moves auction theory into platform markets. The object being allocated is attention or expected clicks across positions, so bids interact with ranking, quality, and click probabilities.</p>
   <h2>Where The Math Enters</h2>
@@ -33,7 +35,12 @@
   <p>An advertiser may value a click highly but have a low expected click rate. The platform&#x27;s rule must decide whether that advertiser deserves a top slot compared with a more clickable ad.</p>
   <h2>Mistakes To Avoid</h2>
   <p>The mistake is to treat ad auctions as ordinary object auctions. The platform allocates probabilistic attention, and the mechanism must account for user response as well as advertiser bids.</p>
+  <p>The tempting shortcut is to rank advertisers only by bid. That fails because a high bid on an ad nobody clicks can be worse for the platform than a lower bid attached to a more useful or clickable ad.</p>
   <p>Students often get stuck by seeing only bids. In sponsored search, the highest bid may not create the highest platform value if relevance and click probability differ.</p>
+  <h2>Durable Lesson</h2>
+  <p>The durable lesson is that mechanism design must respect the real resource. In ad markets, the platform allocates probabilistic attention while balancing advertiser incentives, user response, and revenue.</p>
+  <h2>How This Lecture Hands Off</h2>
+  <p>This hands off to perfect Bayesian equilibrium: after mechanisms with hidden values, the course moves to dynamic settings where actions reveal information and beliefs must be updated over time.</p>
   <h2>How To Recognize This Later</h2>
   <p>Look for markets with ranked slots, click probabilities, quality scores, and generalized second-price style rules.</p>
   <p class="chips"><a class="chip" href="../concepts/ad_auctions.html">Ad Auctions</a></p>

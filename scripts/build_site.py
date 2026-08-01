@@ -1159,6 +1159,8 @@ def build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id):
   {flow("How To Read This Lecture", [
       ("Pressure", lecture["first_principles_role"]),
       ("Watch", lecture["what_to_watch_for"]),
+      ("Naive Question", lecture["naive_start"]),
+      ("Shortcut To Avoid", lecture["tempting_shortcut"]),
       ("Evidence", lecture["coverage_note"]),
       ("Transcript", lecture["transcript_path"]),
   ], "lecture-flow")}
@@ -1170,6 +1172,10 @@ def build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id):
   <p>{esc(lecture["worked_mini_example"])}</p>
   <h3>Common Failure</h3>
   <p>{esc(lecture["common_failure"])}</p>
+  <h3>Durable Lesson</h3>
+  <p>{esc(lecture["durable_lesson"])}</p>
+  <h3>Handoff</h3>
+  <p>{esc(lecture["handoff"])}</p>
   <h3>Linked Concepts</h3>
   <p class="chips">{chips or '<span class="chip muted">No direct concept anchors yet</span>'}</p>
   <h3>Evidence Anchors</h3>
@@ -1218,11 +1224,15 @@ def build_lecture_detail(lecture, ev_by_id, concept_by_id, deriv_by_id):
 </section>
 {flow("Lecture Study Map", [
     ("Problem", lecture["argument_arc"]),
+    ("Naive Start", lecture["naive_start"]),
     ("Watch", lecture["what_to_watch_for"]),
     ("Math", lecture["math_entry_point"]),
+    ("Shortcut", lecture["tempting_shortcut"]),
     ("Evidence", lecture.get("total_coverage_note", lecture["coverage_note"])),
 ], "lecture-flow")}
 <section class="treatment">
+  <h2>Naive Starting Question</h2>
+  <p>{esc(lecture["naive_start"])}</p>
   <h2>What This Lecture Teaches</h2>
   <p>{esc(lecture["argument_arc"])}</p>
   <h2>Where The Math Enters</h2>
@@ -1234,7 +1244,12 @@ def build_lecture_detail(lecture, ev_by_id, concept_by_id, deriv_by_id):
   <p>{esc(lecture["worked_mini_example"])}</p>
   <h2>Mistakes To Avoid</h2>
   <p>{esc(lecture["common_failure"])}</p>
+  <p>{esc(lecture["tempting_shortcut"])}</p>
   {f'<p>{esc(concept_mistake_notes)}</p>' if concept_mistake_notes else ''}
+  <h2>Durable Lesson</h2>
+  <p>{esc(lecture["durable_lesson"])}</p>
+  <h2>How This Lecture Hands Off</h2>
+  <p>{esc(lecture["handoff"])}</p>
   <h2>How To Recognize This Later</h2>
   <p>{esc(recognition_notes)}</p>
   <p class="chips">{concept_links or '<span class="chip muted">No direct concept anchors yet</span>'}</p>
