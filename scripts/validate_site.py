@@ -178,7 +178,7 @@ def main() -> int:
     for item in clinic:
         if f'id="{item["id"]}"' not in recognition_html:
             errors.append(f"recognition clinic item not rendered: {item['id']}")
-        fields = ["reader_situation", "diagnostic_question", "decision_cue", "first_principles_test", "mathematical_handle", "wrong_diagnosis_cost", "worked_recognition", "false_friend", "transfer_check", "where_to_go_next"]
+        fields = ["reader_situation", "diagnostic_question", "decision_cue", "first_principles_test", "mathematical_handle", "wrong_diagnosis_cost", "worked_recognition", "false_friend", "transfer_check", "hidden_primitive_to_spot", "boundary_case", "where_to_go_next"]
         for field in fields:
             value = item.get(field, "")
             minimum = 10 if field in ["diagnostic_question", "where_to_go_next"] else 24
@@ -186,7 +186,7 @@ def main() -> int:
                 errors.append(f"recognition clinic {item['id']} has shallow {field}")
             elif html.escape(value, quote=True) not in recognition_html:
                 errors.append(f"recognition clinic {item['id']} {field} not rendered")
-        if words(" ".join(str(item.get(field, "")) for field in fields)) < 310:
+        if words(" ".join(str(item.get(field, "")) for field in fields)) < 430:
             errors.append(f"recognition clinic {item['id']} has shallow combined treatment")
         for concept_id in item.get("use_these_concepts", []):
             if concept_id not in concept_by_id:

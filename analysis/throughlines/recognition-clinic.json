@@ -25,7 +25,9 @@
     "decision_cue": "Use this card when the story has a chooser, outcomes, uncertainty, or tradeoffs, but no other strategic actor is yet changing the payoff. The cue is a missing preference scale, not a missing equilibrium concept.",
     "wrong_diagnosis_cost": "If you call this a game too early, you will invent opponents or incentives that are not doing work. The model then hides the basic question of what the person values and how uncertainty should be counted.",
     "worked_recognition": "In the transit example, first list what the rider ranks: shorter time, lower price, fewer transfers, reliability, or comfort. Only after those wants are represented should the analyst ask whether agencies, taxpayers, or rival riders create strategic dependence.",
-    "transfer_check": "In a new paper, stop at the first objective function and ask whether it represents one actor\u2019s ranking or an interaction among actors. If it is only one actor, diagnose preference and utility before strategy."
+    "transfer_check": "In a new paper, stop at the first objective function and ask whether it represents one actor\u2019s ranking or an interaction among actors. If it is only one actor, diagnose preference and utility before strategy.",
+    "hidden_primitive_to_spot": "The hidden primitive is preference before strategy. Look for language about costs, benefits, reward, welfare, discomfort, risk, or satisfaction, then ask whether the paper has turned those pressures into an ordering. The diagnosis is right when the central missing object is a scoreboard for one chooser, not a reaction pattern among several choosers.",
+    "boundary_case": "Stop using this card when another actor's choice changes the payoff ranking itself. If the rider's value depends on a transit agency's pricing rule, a rival route's congestion, or another player's threat, the problem has moved from preference representation into strategic representation. The preference scale still matters, but it is no longer the whole diagnosis."
   },
   {
     "id": "clinic-representation",
@@ -53,7 +55,9 @@
     "decision_cue": "Use this card when the facts are messy because timing, observation, or available actions are unclear. The cue is that changing the diagram from a table to a tree would change what counts as a sensible solution.",
     "wrong_diagnosis_cost": "If you skip representation, you can solve the wrong game perfectly. A simultaneous table can make later threats look fixed, while a tree can expose that the later player would not carry out the announced action.",
     "worked_recognition": "In an entry-threat story, write the entrant\u2019s choice first and the incumbent\u2019s response second. If the incumbent chooses after seeing entry, credibility lives at that later node, so a tree is the honest representation.",
-    "transfer_check": "When reading a model, ask what the author preserved: simultaneous actions, observed histories, private information, or later decision points. If the representation hides the disputed feature, the solution cannot settle the real question, even when the algebra after that point is correct."
+    "transfer_check": "When reading a model, ask what the author preserved: simultaneous actions, observed histories, private information, or later decision points. If the representation hides the disputed feature, the solution cannot settle the real question, even when the algebra after that point is correct.",
+    "hidden_primitive_to_spot": "The hidden primitive is preserving the right information. A table, tree, or information set is not a drawing choice; it is a claim about what facts matter. Spot this card when the disagreement is about who moves first, who observes what, or whether a later response can condition on an earlier action.",
+    "boundary_case": "Stop using this card once the representation is no longer disputed. If players, actions, timing, information, and payoffs are already clear, the next question is not how to draw the game but which solution test fits it. Representation is the doorway; staying there too long can delay the dominance, equilibrium, or belief check that actually answers the model. The useful handoff is a clean table, tree, or information map."
   },
   {
     "id": "clinic-elimination",
@@ -82,7 +86,9 @@
     "decision_cue": "Use this card when the main task is removing actions before predicting a final outcome. The cue is a comparison that does not need a probability over the opponent because one action loses across every relevant case in the represented game.",
     "wrong_diagnosis_cost": "If you call an unlikely action dominated, you smuggle beliefs into a pruning rule. That can delete strategies that later matter for equilibrium, signaling, or rationalizability, and it makes the reduced game look more certain than the original evidence allowed.",
     "worked_recognition": "In a pricing game, do not delete low price merely because the rival is probably calm. Compare low price and high price against every rival action. If low price wins against an aggressive rival, dominance has failed.",
-    "transfer_check": "In a proof, find the exact set of outside actions used in deletion. If the author has not compared every relevant case, move from dominance language to belief, best-response, or equilibrium language."
+    "transfer_check": "In a proof, find the exact set of outside actions used in deletion. If the author has not compared every relevant case, move from dominance language to belief, best-response, or equilibrium language.",
+    "hidden_primitive_to_spot": "The hidden primitive is safe pruning. The sign that this card fits is not that an action seems silly; it is that one comparison beats it across the whole represented environment. Look for words like always, never, regardless, delete, eliminate, or cannot be rationalized, then inspect whether the paper earned those words with every-case comparisons.",
+    "boundary_case": "Stop using this card when the argument needs a belief about what the opponent will probably do. At that point the paper is no longer pruning by dominance; it is using best response, rationalizability, or equilibrium reasoning. Keeping the distinction matters because dominance claims are stronger and should not borrow certainty from informal expectations. A deleted action should lose by comparison, not by narrative taste."
   },
   {
     "id": "clinic-equilibrium",
@@ -114,7 +120,9 @@
     "decision_cue": "Use this card when each player\u2019s best move depends on what others do and the question is whether a proposed prediction holds together. The cue is a unilateral deviation check against a fully specified candidate outcome.",
     "wrong_diagnosis_cost": "If you confuse equilibrium with welfare, you will reject stable bad outcomes or praise inefficient ones. The model\u2019s prediction claim and the analyst\u2019s welfare judgment become mixed together, so the reader cannot tell what the theorem actually proved.",
     "worked_recognition": "For aggressive pricing, freeze one firm at aggressive and ask whether the other wants to switch. Repeat in the other direction. If neither wants to move alone, the outcome can be equilibrium even if both prefer coordinated softness.",
-    "transfer_check": "When a paper says equilibrium, ask which deviations are allowed. If only one player can move alone, do not infer efficiency, fairness, uniqueness, convergence, or stability against coalitions."
+    "transfer_check": "When a paper says equilibrium, ask which deviations are allowed. If only one player can move alone, do not infer efficiency, fairness, uniqueness, convergence, or stability against coalitions.",
+    "hidden_primitive_to_spot": "The hidden primitive is mutual best response. Look for a proposed outcome that must survive many local checks at once. This card fits when the paper's real work is not ranking actions in isolation but closing a loop: each actor's choice makes the others' choices sensible, and the others' choices make the first actor's choice sensible.",
+    "boundary_case": "Stop using the plain equilibrium card when timing or hidden information is doing the hard work. A static Nash check may miss whether threats remain credible later or whether beliefs are consistent after observed behavior. In those cases, keep mutual consistency as the primitive but move to subgame-perfect, Bayesian, or perfect-Bayesian language. The diagnosis should follow the missing consistency check."
   },
   {
     "id": "clinic-time",
@@ -145,7 +153,9 @@
     "decision_cue": "Use this card when promises, threats, bargaining offers, delays, or future punishments appear. The cue is that today\u2019s statement must be tested at a later decision point where the speaker may face different incentives.",
     "wrong_diagnosis_cost": "If you accept future speech at face value, you can predict deterrence from empty announcements. The model then gives early words more force than later incentives justify and misses the credibility problem the tree was meant to expose.",
     "worked_recognition": "For an incumbent threat, jump to the node after entry and compare fight with accommodate. If accommodate is better there, backward induction says the entrant should not treat the earlier threat as credible without commitment.",
-    "transfer_check": "In any dynamic model, identify the last real choice and solve it first. Then work backward. If a claimed strategy fails at a later subgame, the early prediction needs repair."
+    "transfer_check": "In any dynamic model, identify the last real choice and solve it first. Then work backward. If a claimed strategy fails at a later subgame, the early prediction needs repair.",
+    "hidden_primitive_to_spot": "The hidden primitive is later incentives disciplining earlier speech. Spot this card when a statement today matters only because someone expects an action tomorrow. The key is to ignore the dramatic announcement and jump to the future node where the actor must actually choose. The primitive appears in threats, bargaining deadlines, reputation promises, and staged product or entry decisions.",
+    "boundary_case": "Stop using pure backward reasoning when the later decision maker lacks perfect information about what happened or what type they face. Then the future node cannot be solved only by looking at the tree; beliefs have to enter. Credibility remains the concern, but the right tool may become perfect Bayesian equilibrium or signaling. Also stop when there is no later choice to test; then the issue may be commitment technology, not sequential reasoning."
   },
   {
     "id": "clinic-repetition",
@@ -176,7 +186,9 @@
     "decision_cue": "Use this card when the same players meet over time and today\u2019s action changes future rewards or punishments. The cue is a tradeoff between immediate temptation and continuation value.",
     "wrong_diagnosis_cost": "If repetition is treated as automatic cooperation, finite horizons, weak monitoring, low patience, and noncredible punishment disappear. The repeated-game claim becomes a slogan rather than an incentive calculation.",
     "worked_recognition": "For a tacit cartel, name the gain from secretly cutting price today and the loss from future price wars. Cooperation is plausible only when the discounted future loss is large enough to beat the current gain and the rival can actually detect and punish cheating.",
-    "transfer_check": "When a paper invokes future discipline, locate the deviation payoff, punishment path, monitoring assumption, and discount factor. If one is missing, mark the cooperation claim as incomplete rather than treating repetition as the mechanism by itself."
+    "transfer_check": "When a paper invokes future discipline, locate the deviation payoff, punishment path, monitoring assumption, and discount factor. If one is missing, mark the cooperation claim as incomplete rather than treating repetition as the mechanism by itself.",
+    "hidden_primitive_to_spot": "The hidden primitive is present value of future consequences. This card fits when today's behavior is being held in place by tomorrow's reward or punishment. Look for a comparison between a one-time gain and a stream of future losses, even if the paper calls it reputation, relational contracting, collusion, or long-run discipline. The repeated-game clue is a current action changing a continuation value.",
+    "boundary_case": "Stop using this card as soon as the future cannot be observed, enforced, or valued enough. Repetition alone is not a mechanism; the mechanism is detected deviation plus credible continuation consequences. If those pieces are absent, the right diagnosis may return to one-shot equilibrium or move into private-information monitoring. A long relationship without a credible punishment is just repeated exposure, not discipline."
   },
   {
     "id": "clinic-private-information",
@@ -208,7 +220,9 @@
     "decision_cue": "Use this card when one side knows a value, cost, type, quality, or outside option that others cannot directly observe. The cue is that visible behavior also serves as evidence, because observers must infer what kind of player would choose that action.",
     "wrong_diagnosis_cost": "If you ignore hidden types, you may treat a signal as a simple statement or a belief as arbitrary. The model then misses imitation incentives and unsupported posterior beliefs.",
     "worked_recognition": "For a warranty, ask which seller types find the warranty cheap. If reliable sellers can afford it and unreliable sellers cannot profitably imitate, the warranty can move buyer beliefs. If all types mimic, it cannot separate quality.",
-    "transfer_check": "In a new signaling or Bayesian model, list types, priors, observed actions, and imitation checks. A belief update is disciplined only when those pieces explain why the action came from some types more than others."
+    "transfer_check": "In a new signaling or Bayesian model, list types, priors, observed actions, and imitation checks. A belief update is disciplined only when those pieces explain why the action came from some types more than others.",
+    "hidden_primitive_to_spot": "The hidden primitive is belief over hidden cases. This card fits when the visible action has two meanings at once: it changes payoffs and it changes what observers think is true. Look for type, value, cost, quality, posterior, adverse selection, screening, or any claim that behavior reveals something not directly observed.",
+    "boundary_case": "Stop using this card when the relevant fact is already public to all players at the time of choice. If no one is uncertain about type, value, action history, or signal meaning, belief updating is not doing the work. The model may still involve incentives, but the private-information diagnosis would add machinery without explaining anything. Use this card only when an observer must learn from behavior or messages."
   },
   {
     "id": "clinic-design",
@@ -241,6 +255,8 @@
     "decision_cue": "Use this card when the rules themselves are the object: an auction, ranking system, contract, market protocol, or communication rule. The cue is that changing the rule changes what participants reveal or choose, even when their private values stay fixed.",
     "wrong_diagnosis_cost": "If rules are treated as neutral background, the analyst misses how allocation and payment rules create strategic responses. A mechanism can fail because it rewards hiding, shading, collusion, or low-quality signaling.",
     "worked_recognition": "In an ad auction, separate the bid, quality score, allocation rule, and payment rule. The platform\u2019s goal matters only through the private calculations advertisers make under those rules, because advertisers respond to expected payoff rather than to the platform\u2019s stated objective.",
-    "transfer_check": "For any mechanism, write the rule as input to outcome: private information and actions go in, allocation and payments come out. Then ask whether each participant\u2019s best response produces the intended result."
+    "transfer_check": "For any mechanism, write the rule as input to outcome: private information and actions go in, allocation and payments come out. Then ask whether each participant\u2019s best response produces the intended result.",
+    "hidden_primitive_to_spot": "The hidden primitive is incentive alignment through rules. This card fits when the analyst is not merely predicting behavior under fixed rules but choosing the rule that turns self-interest into useful behavior. Look for allocation, payment, ranking, contract menu, reporting rule, reserve price, or truthfulness language. The mechanism clue is a designer changing consequences so private optimization produces a public target.",
+    "boundary_case": "Stop using this card when the rules are fixed background rather than the object being evaluated. If the paper never asks how changing the rule changes bids, reports, effort, or information, then mechanism design may be too broad a diagnosis. Use ordinary equilibrium, private information, or payoff analysis inside the given rule instead. Do not call every institution design; require a live rule-choice question."
   }
 ]

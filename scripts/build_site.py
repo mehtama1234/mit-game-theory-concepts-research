@@ -319,6 +319,8 @@ def build_recognition_clinic(clinic, concept_by_id, primitive_by_id, ev_by_id):
   <p><strong>Worked recognition:</strong> {esc(item["worked_recognition"])}</p>
   <p><strong>False friend:</strong> {esc(item["false_friend"])}</p>
   <p><strong>Transfer check:</strong> {esc(item["transfer_check"])}</p>
+  <p><strong>Hidden primitive to spot:</strong> {esc(item["hidden_primitive_to_spot"])}</p>
+  <p><strong>Boundary case:</strong> {esc(item["boundary_case"])}</p>
   <h3>Use These Concepts</h3><p class="chips">{concept_links}</p>
   <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
   <h3>Evidence Trail</h3><ul class="evidence-list">{evidence_links}</ul>

@@ -30,7 +30,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Study route primitive links: 16
 - Study route evidence links: 26
 - Recognition clinic cards: 8
-- Recognition clinic words: min 311, max 344
+- Recognition clinic words: min 435, max 457
 - Recognition clinic concept links: 33
 - Recognition clinic primitive links: 22
 - Recognition clinic evidence links: 29
