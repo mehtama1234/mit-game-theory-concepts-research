@@ -583,17 +583,28 @@ def main() -> int:
                 errors.append(f"model-building workbook {item['id']} missing evidence link: {ev_id}")
     if len(proofs) < 8:
         errors.append(f"proof-sketch lab has only {len(proofs)} cards")
+    proof_fields = [
+        "ordinary_claim",
+        "minimal_setup",
+        "proof_idea",
+        "mathematical_move",
+        "why_it_matters",
+        "where_it_breaks",
+        "proof_reading_move",
+        "student_trap",
+        "rebuild_check",
+    ]
     for item in proofs:
         if f'id="{item["id"]}"' not in proofs_html:
             errors.append(f"proof-sketch lab item not rendered: {item['id']}")
-        for field in ["ordinary_claim", "minimal_setup", "proof_idea", "mathematical_move", "why_it_matters", "where_it_breaks"]:
+        for field in proof_fields:
             value = item.get(field, "")
             if words(value) < 18:
                 errors.append(f"proof-sketch lab {item['id']} has shallow {field}")
             elif html.escape(value, quote=True) not in proofs_html:
                 errors.append(f"proof-sketch lab {item['id']} {field} not rendered")
-        combined = " ".join(str(item.get(field, "")) for field in ["ordinary_claim", "minimal_setup", "proof_idea", "mathematical_move", "why_it_matters", "where_it_breaks"])
-        if words(combined) < 190:
+        combined = " ".join(str(item.get(field, "")) for field in proof_fields)
+        if words(combined) < 390:
             errors.append(f"proof-sketch lab {item['id']} has shallow combined treatment")
         for concept_id in item.get("concepts", []):
             if concept_id not in concept_by_id:

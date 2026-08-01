@@ -720,6 +720,17 @@ def main() -> int:
     proof_decoder_links = 0
     proof_evidence_links = 0
     proof_words = []
+    proof_fields = [
+        "ordinary_claim",
+        "minimal_setup",
+        "proof_idea",
+        "mathematical_move",
+        "why_it_matters",
+        "where_it_breaks",
+        "proof_reading_move",
+        "student_trap",
+        "rebuild_check",
+    ]
     for item in proofs:
         if f'id="{item["id"]}"' in proofs_html:
             proof_cards += 1
@@ -727,11 +738,11 @@ def main() -> int:
             errors.append(f"proof-sketch lab {item['id']} not rendered")
         text = " ".join(
             str(item.get(k, ""))
-            for k in ["ordinary_claim", "minimal_setup", "proof_idea", "mathematical_move", "why_it_matters", "where_it_breaks"]
+            for k in proof_fields
         )
         treatment_words = words(text)
         proof_words.append(treatment_words)
-        if treatment_words < 190:
+        if treatment_words < 390:
             errors.append(f"proof-sketch lab {item['id']} has shallow treatment: {treatment_words} words")
         linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in proofs_html]
         linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in proofs_html]
