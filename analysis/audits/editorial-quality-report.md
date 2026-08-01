@@ -82,7 +82,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Paper-reading math clinic links: 15
 - Paper-reading evidence links: 28
 - Jargon decoder cards: 11
-- Jargon decoder words: min 172, max 207
+- Jargon decoder words: min 306, max 337
 - Jargon decoder concept links: 44
 - Jargon decoder primitive links: 33
 - Jargon decoder evidence links: 33

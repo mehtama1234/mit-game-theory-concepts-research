@@ -8,6 +8,9 @@
     "mathematical_object": "A function such as u(outcome), payoff(action pair), or E[u(outcome)]. The function takes a possible result and returns a number; the expectation averages those numbers using probabilities before uncertainty is resolved.",
     "reading_test": "Ask whose score this is, what outcome features enter the score, and whether the score ranks outcomes or also measures meaningful size differences. Then ask whether the actor controls the score directly or only chooses an action that changes which outcome happens.",
     "common_confusion": "The common mistake is treating utility as happiness or moral value. In this course it is usually a compact representation of choice, and the model can be wrong if the chosen score leaves out a real pressure.",
+    "how_to_unpack_in_a_paper": "Translate the score into three everyday pieces: who is choosing, what outcomes are being compared, and what the number is allowed to mean. Then ask whether the paper is using the score as a ranking, an expected value under uncertainty, a welfare target for a designer, or a loss that an algorithm reduces.",
+    "what_the_term_repairs": "This vocabulary repairs vague talk about wanting, preferring, and improving. Instead of saying an actor wants a good outcome, the model specifies the scoreboard used to compare outcomes and then checks actions against that scoreboard.",
+    "where_translation_breaks": "The translation breaks when readers assume one score captures every value in the real setting. Welfare, utility, payoff, and loss can point to different actors and different purposes, so the paper’s objective may not be the social objective a reader cares about.",
     "concepts": [
       "preferences",
       "utility",
@@ -34,6 +37,9 @@
     "mathematical_object": "In a strategic-form game a strategy may be one row or column. In an extensive-form game it is a rule that chooses an action at each decision point belonging to the player. The object is larger than a single observed move.",
     "reading_test": "Ask whether the paper is modeling one immediate choice or a plan over many possible situations. If the claim depends on what happens after a surprise move, you need the strategy at off-path decision points too.",
     "common_confusion": "The trap is calling the observed action the whole strategy. That hides the counterfactual parts of the plan, which are exactly where credibility and subgame-perfect reasoning often live.",
+    "how_to_unpack_in_a_paper": "Separate what happened from what would have happened. In a table, the strategy may be a single listed choice. In a tree or repeated setting, it is a rule for many possible decision points, including histories that the predicted play never reaches.",
+    "what_the_term_repairs": "This vocabulary repairs the mistake of judging a dynamic model only by the visible path. A plan can look sensible on the path while containing unbelievable responses after surprises, so the full strategy is needed for credibility checks.",
+    "where_translation_breaks": "The translation breaks if the model cannot defend what the actor observes at each decision point. A contingent plan is meaningful only after the information available at those contingencies has been specified.",
     "concepts": [
       "strategic_form_games",
       "extensive_form_games",
@@ -60,6 +66,9 @@
     "mathematical_object": "BR_i(a_-i) is the set of player i's best actions against the other players' actions. The subscript i names the actor, and a_-i means the actions of everyone except that actor.",
     "reading_test": "Ask what has been held fixed. If the answer changes when other players change their behavior, then the paper is using a best-response idea rather than a universal ranking of actions.",
     "common_confusion": "The common mistake is treating best response as a globally best action. It is only best against a specified outside behavior, and the same action can stop being best when the outside behavior changes.",
+    "how_to_unpack_in_a_paper": "Find the fixed object before reading the optimization. The fixed object might be another player’s action, a belief about types, a price rule, or a continuation history. Then read the best response as conditional on that object.",
+    "what_the_term_repairs": "This vocabulary repairs the phrase rational action. It forces the reader to ask rational against what, and it exposes the assumption that turns one action into the local winner.",
+    "where_translation_breaks": "The translation breaks when the paper quietly changes what is being held fixed. If the belief, rival move, information set, or action menu changes, the old best-response claim may no longer apply. It also breaks when the author calls a population average optimal; a best response belongs to a particular actor with a particular information condition.",
     "concepts": [
       "best_response",
       "nash_equilibrium",
@@ -86,6 +95,9 @@
     "mathematical_object": "A Nash equilibrium is a strategy profile where each player's strategy is a best response to the others. A fixed point appears because the behavior predicted by the best-response rule matches the behavior being checked.",
     "reading_test": "Ask which deviations are allowed, what information each player has, and whether the equilibrium condition is checked only at the start or after every possible history.",
     "common_confusion": "Equilibrium does not mean good, fair, efficient, inevitable, or learned by real people. It means the modeled participants have no profitable unilateral deviation under the stated rules.",
+    "how_to_unpack_in_a_paper": "Read equilibrium as a checklist, not a mood. Identify the candidate behavior, the allowed deviations, what each player knows, and whether the check is static, dynamic, Bayesian, or sequential. Then ask whether every player or type passes the relevant deviation test. If there are multiple equilibria, look for the extra selection story rather than pretending the word equilibrium selected one outcome by itself.",
+    "what_the_term_repairs": "This vocabulary repairs loose claims of stability. A pattern is not stable because it sounds balanced; it is stable because the model cannot find a profitable allowed move away from it for any participant covered by the solution concept.",
+    "where_translation_breaks": "The translation breaks when the reader imports welfare or inevitability. Equilibrium can be inefficient, fragile, one of many, or behaviorally unrealistic if learning, mistakes, institutions, or omitted deviations matter. A careful reader should ask what empirical or institutional story would make this equilibrium the relevant one.",
     "concepts": [
       "nash_equilibrium",
       "subgame_perfection",
@@ -112,6 +124,9 @@
     "mathematical_object": "A strategy is dominated when another strategy gives a payoff at least as high against every opponent action and strictly higher somewhere. Iterated deletion repeats that comparison after earlier deletions shrink the game.",
     "reading_test": "Ask whether the paper has checked all relevant opponent actions or only the action that seems likely. Dominance needs the stronger all-cases comparison; otherwise the paper is making a belief-based argument, not a dominance argument.",
     "common_confusion": "The common mistake is deleting a strategy because it seems unlikely or unattractive in one scenario. That is not dominance. Safe pruning requires the strategy to lose the comparison across the whole stated choice environment.",
+    "how_to_unpack_in_a_paper": "Look for the quantifier. Dominance needs a comparison across every relevant opponent action or state, not just the scenario the author expects. If the claim uses iteration, check what was removed in each round and whether the rule is strict or weak.",
+    "what_the_term_repairs": "This vocabulary repairs overlarge action spaces. It gives the analyst a justified way to remove choices before full equilibrium analysis, while keeping deletion separate from prediction.",
+    "where_translation_breaks": "The translation breaks when deletion depends on a belief, an omitted action, or weak dominance treated casually. In those cases the pruning may be order-sensitive or may require a different concept such as rationalizability. It also breaks if the payoff map is incomplete, because a missing contingency can be exactly where the supposedly dominated action is useful.",
     "concepts": [
       "dominance",
       "iterated_deletion",
@@ -138,6 +153,9 @@
     "mathematical_object": "A mixed strategy assigns probabilities to actions. In many two-player examples, the mixing probability is found by making the opponent's relevant choices have equal expected payoff, so the opponent has no strict reason to prefer one over the other.",
     "reading_test": "Ask who is being made indifferent. If the paper chooses player A's mixing probability, that probability often comes from equalizing player B's payoffs, because A's randomization shapes B's incentives.",
     "common_confusion": "The trap is thinking the player is personally unsure or does not care. Mixing is a strategic commitment to probabilities; indifference is often a condition created in the opponent's payoff comparison.",
+    "how_to_unpack_in_a_paper": "Ask whose probabilities are being chosen and whose payoffs are being equalized. In many mixed-equilibrium calculations, one player’s mixing rate is solved by making the other player indifferent among the actions they use. Then check whether unused actions earn no more than the used actions, because an omitted profitable pure action would break the proposed mixture.",
+    "what_the_term_repairs": "This vocabulary repairs the assumption that stable behavior must be deterministic. In some games, any predictable pure action invites exploitation, so randomness becomes the disciplined object rather than noise.",
+    "where_translation_breaks": "The translation breaks when observed frequencies are treated as proof of intentional mixing. Data may reflect learning, mistakes, heterogeneity, or changing environments rather than an equilibrium distribution chosen by a player. The term also breaks if players cannot actually commit to or implement the probability distribution the model assigns.",
     "concepts": [
       "mixed_strategies",
       "minimax",
@@ -164,6 +182,9 @@
     "mathematical_object": "Backward induction solves later decision nodes first and carries their values back to earlier choices. Subgame perfection requires equilibrium behavior not only on the predicted path but also inside each proper continuation game.",
     "reading_test": "Find the future moment where the promised action would be taken. If the actor would rather do something else at that moment, the threat or promise needs commitment, reputation, or changed payoffs to become credible.",
     "common_confusion": "The common mistake is evaluating the whole plan only from the beginning. Credibility is tested at the later node, after earlier moves have already happened.",
+    "how_to_unpack_in_a_paper": "Jump to the future history where the promised action would be taken. Ask what the actor observes there, what actions remain available, and whether carrying out the earlier statement is still best at that later moment. If the paper uses subgame perfection, verify that the history begins a proper subgame; if beliefs matter there, the paper may need a belief-based refinement instead.",
+    "what_the_term_repairs": "This vocabulary repairs empty threats and promises. It prevents a model from counting speech at the beginning as credible unless the later incentives make the speech worth honoring.",
+    "where_translation_breaks": "The translation breaks when the tree omits hidden information, renegotiation, commitment devices, or reputation. Backward logic is only as reliable as the histories and information structure being solved. A precise backward solution can still be the wrong lesson if the represented future is not the future the players face.",
     "concepts": [
       "extensive_form_games",
       "backward_induction",
@@ -190,6 +211,9 @@
     "mathematical_object": "A repeated value often looks like v0 + delta v1 + delta^2 v2 + ... . Delta is the weight on one-period-ahead value, and powers of delta make farther futures count less today.",
     "reading_test": "Compare the one-time gain from deviating with the discounted stream lost after punishment. If the future loss is smaller than the immediate gain, the proposed cooperation is not held together by repetition.",
     "common_confusion": "The trap is saying the future matters without checking how much. Repetition is not magic; it works through a numerical comparison between present temptation and future discipline.",
+    "how_to_unpack_in_a_paper": "Rewrite the claim as a comparison between deviation today and continuation tomorrow. Identify the one-time gain, the future punishment or lost surplus, the discount factor, and whether the deviation is observed soon enough to trigger consequences.",
+    "what_the_term_repairs": "This vocabulary repairs vague talk about relationships and patience. It turns future discipline into a present-value calculation that can succeed or fail depending on monitoring, horizon, and how strongly players value tomorrow.",
+    "where_translation_breaks": "The translation breaks when the future is treated as automatically powerful. A low discount factor, noisy monitoring, a known final period, or weak punishment can make repeated interaction strategically close to a one-shot problem. It also breaks when continuation value is named but not computed; the term must eventually cash out as a comparison against present temptation. Watch for papers that cite patience while leaving observability or punishment credibility implicit.",
     "concepts": [
       "infinitely_repeated_games",
       "folk_theorem",
@@ -216,6 +240,9 @@
     "mathematical_object": "A prior belief is the probability before the signal. A posterior belief is the probability after the signal. Bayes rule updates by asking how likely the observed evidence would be under each hidden type.",
     "reading_test": "Ask what is hidden, who knows it, what is observed, and how the observation changes beliefs. Then ask whether the strategy and beliefs fit together in equilibrium.",
     "common_confusion": "The common mistake is treating beliefs as opinions floating outside the model. In Bayesian games and signaling models, beliefs are formal objects that change payoffs and determine which actions are sensible.",
+    "how_to_unpack_in_a_paper": "Name the hidden variable first: type, value, cost, signal, or history. Then identify the prior, the observed evidence, the posterior, and the action that becomes sensible under that posterior. If the paper says Bayesian, look for the update rule or the reason updating is constrained.",
+    "what_the_term_repairs": "This vocabulary repairs the habit of treating uncertainty as background noise. It puts missing information inside the strategic model so actions can depend on what players believe rather than on what the analyst knows afterward.",
+    "where_translation_breaks": "The translation breaks when beliefs are chosen only to support a desired conclusion. Off-path observations, unjustified priors, and type spaces that omit important cases can make a belief-based explanation too flexible. It also breaks when the paper forgets that different types may choose different actions, so one observed move may select the population being inferred from.",
     "concepts": [
       "bayesian_games",
       "types_and_beliefs",
@@ -242,6 +269,9 @@
     "mathematical_object": "An incentive constraint compares the payoff from the intended action with the payoff from a deviation. Truthfulness means truthful reporting gives at least as much payoff as every relevant false report.",
     "reading_test": "Find the deviation the actor might prefer. If the paper does not compare the intended behavior against that deviation, the mechanism claim is incomplete even if the rule is clearly described.",
     "common_confusion": "The trap is reading incentive compatibility as a statement about character. It is not saying people are honest; it is saying the rule makes honesty or self-selection the best move inside the model.",
+    "how_to_unpack_in_a_paper": "Write the intended behavior beside the best tempting deviation. For truthfulness, compare honest reporting against each false report. For self-selection, compare the contract meant for a type against the contracts that type might imitate. Then ask whether the inequality must hold for every type, every report, or only for the subset of agents the mechanism actually serves.",
+    "what_the_term_repairs": "This vocabulary repairs design by wishful thinking. It forces the mechanism designer to prove that participants prefer the intended behavior using their own payoff comparison, not the designer’s hope.",
+    "where_translation_breaks": "The translation breaks when important deviations are omitted or when the rule assumes information the designer cannot observe. Incentive compatibility is always relative to a stated action menu, information structure, and payoff model. A mechanism that blocks one lie may still fail if another unmodeled manipulation remains profitable.",
     "concepts": [
       "auctions",
       "revenue_equivalence",
@@ -268,6 +298,9 @@
     "mathematical_object": "The object is recursive belief: I know X, I know you know X, I know you know I know X, and the chain continues. Common knowledge is the idealized endpoint of that recursion.",
     "reading_test": "Ask whether the action requires private information or shared confidence. If people must coordinate on what others will infer, then the paper is about higher-order belief, not just data transmission.",
     "common_confusion": "The common mistake is treating public and private signals as equivalent because they contain the same fact. In strategic settings, who knows that others know can matter as much as the fact itself.",
+    "how_to_unpack_in_a_paper": "Track the level of shared awareness the result needs. First ask who knows the fact. Then ask who knows that others know it, and whether the protocol or public event keeps that chain going far enough for the coordination claim.",
+    "what_the_term_repairs": "This vocabulary repairs the idea that information is only about facts. In coordination problems, the publicness of a fact can be the strategic ingredient because it lets players rely on others relying on the same fact. It also explains why a message can matter even when it repeats information everyone privately suspected.",
+    "where_translation_breaks": "The translation breaks when a paper treats private, mutual, public, and common knowledge as interchangeable. If coordinated action requires higher-order confidence, identical private messages may not substitute for a public announcement.",
     "concepts": [
       "common_knowledge",
       "cheap_talk",

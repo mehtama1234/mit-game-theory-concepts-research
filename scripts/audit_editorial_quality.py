@@ -630,13 +630,21 @@ def main() -> int:
             decoder_cards += 1
         else:
             errors.append(f"jargon decoder {item['id']} not rendered")
-        text = " ".join(
-            str(item.get(k, ""))
-            for k in ["where_reader_sees_it", "plain_translation", "first_principles_pressure", "mathematical_object", "reading_test", "common_confusion"]
-        )
+        decoder_fields = [
+            "where_reader_sees_it",
+            "plain_translation",
+            "first_principles_pressure",
+            "mathematical_object",
+            "reading_test",
+            "common_confusion",
+            "how_to_unpack_in_a_paper",
+            "what_the_term_repairs",
+            "where_translation_breaks",
+        ]
+        text = " ".join(str(item.get(k, "")) for k in decoder_fields)
         treatment_words = words(text)
         decoder_words.append(treatment_words)
-        if treatment_words < 145:
+        if treatment_words < 300:
             errors.append(f"jargon decoder {item['id']} has shallow treatment: {treatment_words} words")
         linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in jargon_decoder_html]
         linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in jargon_decoder_html]

@@ -495,14 +495,25 @@ def main() -> int:
     for item in jargon_decoder:
         if f'id="{item["id"]}"' not in jargon_decoder_html:
             errors.append(f"jargon decoder item not rendered: {item['id']}")
-        for field in ["where_reader_sees_it", "plain_translation", "first_principles_pressure", "mathematical_object", "reading_test", "common_confusion"]:
+        decoder_fields = [
+            "where_reader_sees_it",
+            "plain_translation",
+            "first_principles_pressure",
+            "mathematical_object",
+            "reading_test",
+            "common_confusion",
+            "how_to_unpack_in_a_paper",
+            "what_the_term_repairs",
+            "where_translation_breaks",
+        ]
+        for field in decoder_fields:
             value = item.get(field, "")
             if words(value) < 16:
                 errors.append(f"jargon decoder {item['id']} has shallow {field}")
             elif html.escape(value, quote=True) not in jargon_decoder_html:
                 errors.append(f"jargon decoder {item['id']} {field} not rendered")
-        combined = " ".join(str(item.get(field, "")) for field in ["where_reader_sees_it", "plain_translation", "first_principles_pressure", "mathematical_object", "reading_test", "common_confusion"])
-        if words(combined) < 145:
+        combined = " ".join(str(item.get(field, "")) for field in decoder_fields)
+        if words(combined) < 300:
             errors.append(f"jargon decoder {item['id']} has shallow combined treatment")
         for concept_id in item.get("concepts", []):
             if concept_id not in concept_by_id:

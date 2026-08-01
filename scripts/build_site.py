@@ -708,6 +708,9 @@ def build_jargon_decoder(decoder, concept_by_id, primitive_by_id, ev_by_id):
   <p><strong>Mathematical object:</strong> {esc(item["mathematical_object"])}</p>
   <p><strong>Reading test:</strong> {esc(item["reading_test"])}</p>
   <p><strong>Common confusion:</strong> {esc(item["common_confusion"])}</p>
+  <p><strong>How to unpack it in a paper:</strong> {esc(item["how_to_unpack_in_a_paper"])}</p>
+  <p><strong>What this term repairs:</strong> {esc(item["what_the_term_repairs"])}</p>
+  <p><strong>Where the translation breaks:</strong> {esc(item["where_translation_breaks"])}</p>
   <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
   <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
   <h3>Transcript Evidence</h3><ul class="evidence-list">{evidence_links}</ul>
