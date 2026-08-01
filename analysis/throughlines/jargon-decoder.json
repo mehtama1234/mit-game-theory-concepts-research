@@ -1,0 +1,288 @@
+[
+  {
+    "id": "decode-utility-payoff-objective",
+    "term_family": "Utility, payoff, reward, objective, loss, welfare",
+    "where_reader_sees_it": "A paper says an agent maximizes utility, a firm has a payoff, a platform optimizes welfare, or a model minimizes loss.",
+    "plain_translation": "Someone's wants have been turned into a score. The score is not the person; it is a measuring stick the model uses so different outcomes can be compared.",
+    "first_principles_pressure": "Choice needs comparison. If the actor cannot say which outcome is better, equal, or worse, there is no way to say which action is sensible. Numbers let the model compare outcomes, average risky futures, and check whether a different action would be preferred.",
+    "mathematical_object": "A function such as u(outcome), payoff(action pair), or E[u(outcome)]. The function takes a possible result and returns a number; the expectation averages those numbers using probabilities before uncertainty is resolved.",
+    "reading_test": "Ask whose score this is, what outcome features enter the score, and whether the score ranks outcomes or also measures meaningful size differences. Then ask whether the actor controls the score directly or only chooses an action that changes which outcome happens.",
+    "common_confusion": "The common mistake is treating utility as happiness or moral value. In this course it is usually a compact representation of choice, and the model can be wrong if the chosen score leaves out a real pressure.",
+    "concepts": [
+      "preferences",
+      "utility",
+      "expected_utility",
+      "strategic_form_games"
+    ],
+    "primitives": [
+      "preference",
+      "payoff_mapping",
+      "belief"
+    ],
+    "evidence_ids": [
+      "ev-preferences-01",
+      "ev-utility-01",
+      "ev-expected_utility-01"
+    ]
+  },
+  {
+    "id": "decode-strategy-action-plan",
+    "term_family": "Action, strategy, plan, policy, contingent plan",
+    "where_reader_sees_it": "A paper lists actions in a matrix, strategies in a game tree, or policies that tell an agent what to do after different histories.",
+    "plain_translation": "An action is a move now. A strategy is a full plan for what the actor would do whenever the model says the actor might have to choose.",
+    "first_principles_pressure": "Other people need to reason about what you would do even at moments that may never arrive. A dynamic game cannot judge a threat, promise, or response by looking only at the path that actually happens; it needs the whole plan so future incentives are explicit.",
+    "mathematical_object": "In a strategic-form game a strategy may be one row or column. In an extensive-form game it is a rule that chooses an action at each decision point belonging to the player. The object is larger than a single observed move.",
+    "reading_test": "Ask whether the paper is modeling one immediate choice or a plan over many possible situations. If the claim depends on what happens after a surprise move, you need the strategy at off-path decision points too.",
+    "common_confusion": "The trap is calling the observed action the whole strategy. That hides the counterfactual parts of the plan, which are exactly where credibility and subgame-perfect reasoning often live.",
+    "concepts": [
+      "strategic_form_games",
+      "extensive_form_games",
+      "backward_induction",
+      "subgame_perfection"
+    ],
+    "primitives": [
+      "payoff_mapping",
+      "backward_recursion",
+      "mutual_consistency"
+    ],
+    "evidence_ids": [
+      "ev-strategic_form_games-01",
+      "ev-extensive_form_games-01",
+      "ev-backward_induction-02"
+    ]
+  },
+  {
+    "id": "decode-best-response",
+    "term_family": "Best response, deviation, unilateral improvement",
+    "where_reader_sees_it": "A paper checks whether a player wants to deviate, computes best-response curves, or says no unilateral deviation is profitable.",
+    "plain_translation": "Hold everyone else's behavior fixed and ask what this one actor would most like to do. It is a local test, not a statement about what is best for everyone.",
+    "first_principles_pressure": "In a strategic situation, an action is not good in isolation. Its value depends on what the other actors do. Best response exists because each participant faces a different local problem once the rest of the environment is treated as fixed.",
+    "mathematical_object": "BR_i(a_-i) is the set of player i's best actions against the other players' actions. The subscript i names the actor, and a_-i means the actions of everyone except that actor.",
+    "reading_test": "Ask what has been held fixed. If the answer changes when other players change their behavior, then the paper is using a best-response idea rather than a universal ranking of actions.",
+    "common_confusion": "The common mistake is treating best response as a globally best action. It is only best against a specified outside behavior, and the same action can stop being best when the outside behavior changes.",
+    "concepts": [
+      "best_response",
+      "nash_equilibrium",
+      "rationalizability",
+      "mixed_strategies"
+    ],
+    "primitives": [
+      "best_response",
+      "mutual_consistency",
+      "payoff_mapping"
+    ],
+    "evidence_ids": [
+      "ev-best_response-01",
+      "ev-best_response-02",
+      "ev-nash_equilibrium-01"
+    ]
+  },
+  {
+    "id": "decode-equilibrium-fixed-point",
+    "term_family": "Equilibrium, fixed point, stable outcome, self-consistency",
+    "where_reader_sees_it": "A paper says an outcome is stable, an equilibrium exists, a fixed point is reached, or strategies are mutually consistent.",
+    "plain_translation": "The proposed behavior survives everyone checking whether they personally want to move away from it. It is a no-one-wants-to-change test inside the model.",
+    "first_principles_pressure": "Strategic reasoning is circular: my best move depends on yours, and yours depends on mine. Equilibrium is the mathematical way to stop that circle at a pattern where all local best-response checks fit together.",
+    "mathematical_object": "A Nash equilibrium is a strategy profile where each player's strategy is a best response to the others. A fixed point appears because the behavior predicted by the best-response rule matches the behavior being checked.",
+    "reading_test": "Ask which deviations are allowed, what information each player has, and whether the equilibrium condition is checked only at the start or after every possible history.",
+    "common_confusion": "Equilibrium does not mean good, fair, efficient, inevitable, or learned by real people. It means the modeled participants have no profitable unilateral deviation under the stated rules.",
+    "concepts": [
+      "nash_equilibrium",
+      "subgame_perfection",
+      "bayesian_nash_equilibrium",
+      "perfect_bayesian_equilibrium"
+    ],
+    "primitives": [
+      "mutual_consistency",
+      "best_response",
+      "belief"
+    ],
+    "evidence_ids": [
+      "ev-nash_equilibrium-01",
+      "ev-subgame_perfection-01",
+      "ev-bayesian_nash_equilibrium-01"
+    ]
+  },
+  {
+    "id": "decode-dominance-pruning",
+    "term_family": "Dominance, dominated strategy, deletion, elimination, pruning",
+    "where_reader_sees_it": "A paper removes actions, says one option is dominated, iteratively deletes strategies, or narrows the possible set before solving for equilibrium.",
+    "plain_translation": "Some option is never worth keeping because another option does at least as well in every relevant case and better in some case.",
+    "first_principles_pressure": "Reasoning can explode when each person has many possible actions and many beliefs about others. Dominance is a safe deletion rule: it removes choices that cannot be defended no matter what the other side does.",
+    "mathematical_object": "A strategy is dominated when another strategy gives a payoff at least as high against every opponent action and strictly higher somewhere. Iterated deletion repeats that comparison after earlier deletions shrink the game.",
+    "reading_test": "Ask whether the paper has checked all relevant opponent actions or only the action that seems likely. Dominance needs the stronger all-cases comparison; otherwise the paper is making a belief-based argument, not a dominance argument.",
+    "common_confusion": "The common mistake is deleting a strategy because it seems unlikely or unattractive in one scenario. That is not dominance. Safe pruning requires the strategy to lose the comparison across the whole stated choice environment.",
+    "concepts": [
+      "dominance",
+      "iterated_deletion",
+      "rationalizability",
+      "strategic_form_games"
+    ],
+    "primitives": [
+      "pruning",
+      "payoff_mapping",
+      "belief"
+    ],
+    "evidence_ids": [
+      "ev-dominance-01",
+      "ev-iterated_deletion-01",
+      "ev-rationalizability-01"
+    ]
+  },
+  {
+    "id": "decode-mixing-randomization",
+    "term_family": "Mixed strategy, randomization, probability distribution, indifference",
+    "where_reader_sees_it": "A paper says players mix, randomize, use a probability distribution over actions, or make opponents indifferent.",
+    "plain_translation": "The actor is not choosing one move for sure. The actor is choosing a lottery over moves, often because being predictable would be exploitable.",
+    "first_principles_pressure": "Some conflicts have no stable pure move. If each side can exploit a predictable choice, stability may require controlled unpredictability. The probabilities are chosen so the other side cannot gain by switching its own action.",
+    "mathematical_object": "A mixed strategy assigns probabilities to actions. In many two-player examples, the mixing probability is found by making the opponent's relevant choices have equal expected payoff, so the opponent has no strict reason to prefer one over the other.",
+    "reading_test": "Ask who is being made indifferent. If the paper chooses player A's mixing probability, that probability often comes from equalizing player B's payoffs, because A's randomization shapes B's incentives.",
+    "common_confusion": "The trap is thinking the player is personally unsure or does not care. Mixing is a strategic commitment to probabilities; indifference is often a condition created in the opponent's payoff comparison.",
+    "concepts": [
+      "mixed_strategies",
+      "minimax",
+      "nash_equilibrium",
+      "expected_utility"
+    ],
+    "primitives": [
+      "belief",
+      "payoff_mapping",
+      "mutual_consistency"
+    ],
+    "evidence_ids": [
+      "ev-mixed_strategies-01",
+      "ev-minimax-01",
+      "ev-expected_utility-01"
+    ]
+  },
+  {
+    "id": "decode-subgame-credibility",
+    "term_family": "Subgame, credible threat, backward induction, sequential rationality",
+    "where_reader_sees_it": "A paper discusses future histories, threats, promises, subgames, dynamic consistency, sequential rationality, backward induction, or whether a plan remains believable after an unexpected move.",
+    "plain_translation": "A plan must still make sense when the future decision point actually arrives. A threat is not credible just because it was announced earlier.",
+    "first_principles_pressure": "Time creates a gap between what someone wants others to believe now and what that person will want to do later. Dynamic game theory exists because future incentives can undo present claims.",
+    "mathematical_object": "Backward induction solves later decision nodes first and carries their values back to earlier choices. Subgame perfection requires equilibrium behavior not only on the predicted path but also inside each proper continuation game.",
+    "reading_test": "Find the future moment where the promised action would be taken. If the actor would rather do something else at that moment, the threat or promise needs commitment, reputation, or changed payoffs to become credible.",
+    "common_confusion": "The common mistake is evaluating the whole plan only from the beginning. Credibility is tested at the later node, after earlier moves have already happened.",
+    "concepts": [
+      "extensive_form_games",
+      "backward_induction",
+      "subgame_perfection",
+      "one_shot_deviation"
+    ],
+    "primitives": [
+      "backward_recursion",
+      "mutual_consistency",
+      "discounting"
+    ],
+    "evidence_ids": [
+      "ev-extensive_form_games-02",
+      "ev-backward_induction-02",
+      "ev-one_shot_deviation-01"
+    ]
+  },
+  {
+    "id": "decode-discount-factor",
+    "term_family": "Discount factor, patience, continuation value, present value",
+    "where_reader_sees_it": "A paper uses delta, patience, long-run payoff, continuation value, repeated interaction, future punishment, or relational contracting.",
+    "plain_translation": "Future consequences are being converted into today's decision. A high discount factor means the future weighs heavily; a low one means tomorrow barely disciplines today.",
+    "first_principles_pressure": "Repeated interaction changes incentives only if future gains and losses matter enough now. A short-term temptation can be resisted when the future relationship is valuable, but the same temptation wins when the future is weak or unlikely.",
+    "mathematical_object": "A repeated value often looks like v0 + delta v1 + delta^2 v2 + ... . Delta is the weight on one-period-ahead value, and powers of delta make farther futures count less today.",
+    "reading_test": "Compare the one-time gain from deviating with the discounted stream lost after punishment. If the future loss is smaller than the immediate gain, the proposed cooperation is not held together by repetition.",
+    "common_confusion": "The trap is saying the future matters without checking how much. Repetition is not magic; it works through a numerical comparison between present temptation and future discipline.",
+    "concepts": [
+      "infinitely_repeated_games",
+      "folk_theorem",
+      "implicit_cartels",
+      "one_shot_deviation"
+    ],
+    "primitives": [
+      "discounting",
+      "incentive_compatibility",
+      "mutual_consistency"
+    ],
+    "evidence_ids": [
+      "ev-infinitely_repeated_games-01",
+      "ev-folk_theorem-01",
+      "ev-implicit_cartels-01"
+    ]
+  },
+  {
+    "id": "decode-type-belief-posterior",
+    "term_family": "Type, prior, posterior, belief, signal, information set",
+    "where_reader_sees_it": "A paper describes hidden types, prior distributions, posterior beliefs, observed signals, Bayesian updating, or private information.",
+    "plain_translation": "The model is keeping track of what someone does not know. A type is a hidden kind of actor or state; a belief is a probability over which hidden case is true.",
+    "first_principles_pressure": "People often choose while missing information that another person has. The action they observe may be both a move and a clue, so the model needs a way to update beliefs after evidence appears.",
+    "mathematical_object": "A prior belief is the probability before the signal. A posterior belief is the probability after the signal. Bayes rule updates by asking how likely the observed evidence would be under each hidden type.",
+    "reading_test": "Ask what is hidden, who knows it, what is observed, and how the observation changes beliefs. Then ask whether the strategy and beliefs fit together in equilibrium.",
+    "common_confusion": "The common mistake is treating beliefs as opinions floating outside the model. In Bayesian games and signaling models, beliefs are formal objects that change payoffs and determine which actions are sensible.",
+    "concepts": [
+      "bayesian_games",
+      "types_and_beliefs",
+      "signaling",
+      "perfect_bayesian_equilibrium"
+    ],
+    "primitives": [
+      "belief",
+      "incentive_compatibility",
+      "mutual_consistency"
+    ],
+    "evidence_ids": [
+      "ev-bayesian_games-01",
+      "ev-types_and_beliefs-01",
+      "ev-signaling-01"
+    ]
+  },
+  {
+    "id": "decode-incentive-compatibility",
+    "term_family": "Incentive compatible, truthful, no profitable misreport, self-selection",
+    "where_reader_sees_it": "A paper says a mechanism is truthful, incentive compatible, strategy-proof, self-selecting, or robust to misreporting.",
+    "plain_translation": "The rule is designed so the actor gets the best result by doing the behavior the designer wants, such as telling the truth or choosing the contract meant for their type.",
+    "first_principles_pressure": "A designer cannot simply demand honesty when participants have private information and their own goals. The rule has to make the desired behavior personally attractive compared with lying, hiding, or imitating someone else.",
+    "mathematical_object": "An incentive constraint compares the payoff from the intended action with the payoff from a deviation. Truthfulness means truthful reporting gives at least as much payoff as every relevant false report.",
+    "reading_test": "Find the deviation the actor might prefer. If the paper does not compare the intended behavior against that deviation, the mechanism claim is incomplete even if the rule is clearly described.",
+    "common_confusion": "The trap is reading incentive compatibility as a statement about character. It is not saying people are honest; it is saying the rule makes honesty or self-selection the best move inside the model.",
+    "concepts": [
+      "auctions",
+      "revenue_equivalence",
+      "screening_and_adverse_selection",
+      "ad_auctions"
+    ],
+    "primitives": [
+      "incentive_compatibility",
+      "payoff_mapping",
+      "belief"
+    ],
+    "evidence_ids": [
+      "ev-auctions-01",
+      "ev-revenue_equivalence-01",
+      "ev-screening_and_adverse_selection-01"
+    ]
+  },
+  {
+    "id": "decode-common-knowledge",
+    "term_family": "Common knowledge, public signal, higher-order belief, shared awareness",
+    "where_reader_sees_it": "A paper talks about public announcements, common knowledge, higher-order beliefs, shared signals, coordination, or communication protocols.",
+    "plain_translation": "It is not only that people know a fact. They know that others know it, know that others know that they know it, and so on enough for coordinated reasoning.",
+    "first_principles_pressure": "Coordinated action can fail when everyone privately knows the same fact but cannot rely on everyone else knowing it too. Public information changes behavior by changing the layers of mutual awareness, not necessarily by changing the physical fact.",
+    "mathematical_object": "The object is recursive belief: I know X, I know you know X, I know you know I know X, and the chain continues. Common knowledge is the idealized endpoint of that recursion.",
+    "reading_test": "Ask whether the action requires private information or shared confidence. If people must coordinate on what others will infer, then the paper is about higher-order belief, not just data transmission.",
+    "common_confusion": "The common mistake is treating public and private signals as equivalent because they contain the same fact. In strategic settings, who knows that others know can matter as much as the fact itself.",
+    "concepts": [
+      "common_knowledge",
+      "cheap_talk",
+      "rationalizability",
+      "nash_equilibrium"
+    ],
+    "primitives": [
+      "knowledge_recursion",
+      "belief",
+      "mutual_consistency"
+    ],
+    "evidence_ids": [
+      "ev-common_knowledge-01",
+      "ev-cheap_talk-01",
+      "ev-rationalizability-01"
+    ]
+  }
+]

@@ -72,6 +72,11 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Paper-reading drill links: 14
 - Paper-reading math clinic links: 15
 - Paper-reading evidence links: 28
+- Jargon decoder cards: 11
+- Jargon decoder words: min 172, max 207
+- Jargon decoder concept links: 44
+- Jargon decoder primitive links: 33
+- Jargon decoder evidence links: 33
 - Cross-index concept cards: 33
 - Cross-index lecture links: 60
 - Cross-index subtheme links: 33
@@ -91,7 +96,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Supplemental lecture evidence records: 8
 - Lectures below 2 total evidence anchors: 0
 - Lecture path treatment words: min 30, max 50
-- Lecture detail page words: min 1402, max 5357
+- Lecture detail page words: min 1410, max 5365
 - Errors: 0
 
 ## Lowest Concept Depth

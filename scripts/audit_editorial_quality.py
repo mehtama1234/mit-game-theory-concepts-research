@@ -110,6 +110,7 @@ def main() -> int:
     chains = json.loads((ROOT / "analysis/throughlines/argument-chains.json").read_text(encoding="utf-8"))
     repairs = json.loads((ROOT / "analysis/throughlines/misconception-repairs.json").read_text(encoding="utf-8"))
     paper_reading = json.loads((ROOT / "analysis/throughlines/paper-reading-guide.json").read_text(encoding="utf-8"))
+    jargon_decoder = json.loads((ROOT / "analysis/throughlines/jargon-decoder.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
@@ -528,6 +529,39 @@ def main() -> int:
             errors.append(f"paper-reading guide {guide['id']} missing evidence links")
     if len(paper_reading) < 7:
         errors.append(f"only {len(paper_reading)} paper-reading guides")
+    jargon_decoder_html = (SITE / "jargon-decoder.html").read_text(encoding="utf-8") if (SITE / "jargon-decoder.html").exists() else ""
+    decoder_cards = 0
+    decoder_concept_links = 0
+    decoder_primitive_links = 0
+    decoder_evidence_links = 0
+    decoder_words = []
+    for item in jargon_decoder:
+        if f'id="{item["id"]}"' in jargon_decoder_html:
+            decoder_cards += 1
+        else:
+            errors.append(f"jargon decoder {item['id']} not rendered")
+        text = " ".join(
+            str(item.get(k, ""))
+            for k in ["where_reader_sees_it", "plain_translation", "first_principles_pressure", "mathematical_object", "reading_test", "common_confusion"]
+        )
+        treatment_words = words(text)
+        decoder_words.append(treatment_words)
+        if treatment_words < 145:
+            errors.append(f"jargon decoder {item['id']} has shallow treatment: {treatment_words} words")
+        linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in jargon_decoder_html]
+        linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in jargon_decoder_html]
+        linked_evidence = [eid for eid in item.get("evidence_ids", []) if f'href="evidence.html#{eid}"' in jargon_decoder_html]
+        decoder_concept_links += len(linked_concepts)
+        decoder_primitive_links += len(linked_primitives)
+        decoder_evidence_links += len(linked_evidence)
+        if len(linked_concepts) != len(item.get("concepts", [])):
+            errors.append(f"jargon decoder {item['id']} missing concept links")
+        if len(linked_primitives) != len(item.get("primitives", [])):
+            errors.append(f"jargon decoder {item['id']} missing primitive links")
+        if len(linked_evidence) != len(item.get("evidence_ids", [])):
+            errors.append(f"jargon decoder {item['id']} missing evidence links")
+    if len(jargon_decoder) < 10:
+        errors.append(f"only {len(jargon_decoder)} jargon decoder cards")
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     cross_concept_cards = 0
     cross_lecture_links = 0
@@ -779,6 +813,11 @@ def main() -> int:
         f"- Paper-reading drill links: {paper_drill_links}",
         f"- Paper-reading math clinic links: {paper_math_links}",
         f"- Paper-reading evidence links: {paper_evidence_links}",
+        f"- Jargon decoder cards: {decoder_cards}",
+        f"- Jargon decoder words: min {min(decoder_words) if decoder_words else 0}, max {max(decoder_words) if decoder_words else 0}",
+        f"- Jargon decoder concept links: {decoder_concept_links}",
+        f"- Jargon decoder primitive links: {decoder_primitive_links}",
+        f"- Jargon decoder evidence links: {decoder_evidence_links}",
         f"- Cross-index concept cards: {cross_concept_cards}",
         f"- Cross-index lecture links: {cross_lecture_links}",
         f"- Cross-index subtheme links: {cross_subtheme_links}",
