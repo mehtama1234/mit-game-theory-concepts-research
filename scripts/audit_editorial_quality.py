@@ -48,6 +48,7 @@ REQUIRED_HEADINGS = [
     "Where The Idea Stops Working",
     "Common Misunderstanding",
     "How to Recognize This in a New Paper or Model",
+    "Bottom-Line Diagnostic",
     "Transcript Evidence",
 ]
 
@@ -119,6 +120,7 @@ def main() -> int:
     capstones = json.loads((ROOT / "analysis/throughlines/capstone-self-test.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
+    concept_diagnostics = json.loads((ROOT / "analysis/editorial-overrides/concept-diagnostics.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
     deriv_by_id = {derivation["id"]: derivation for derivation in derivations}
 
@@ -145,11 +147,16 @@ def main() -> int:
     equation_note_words = []
     worked_example_words = []
     for concept in concepts:
-        count = words(" ".join(str(concept.get(field, "")) for field in CONCEPT_FIELDS))
+        diagnostic = concept_diagnostics.get(concept["id"], "")
+        count = words(" ".join(str(concept.get(field, "")) for field in CONCEPT_FIELDS) + " " + diagnostic)
         ev_count = len(ev_by_concept.get(concept["id"], []))
         html = (SITE / "concepts" / f"{concept['id']}.html").read_text(encoding="utf-8")
-        if count < 620:
+        if count < 660:
             errors.append(f"concept {concept['id']} has low teaching depth: {count} words")
+        if words(diagnostic) < 35:
+            errors.append(f"concept {concept['id']} has shallow bottom-line diagnostic")
+        elif html_lib.escape(diagnostic, quote=True) not in html:
+            errors.append(f"concept {concept['id']} bottom-line diagnostic not rendered")
         if ev_count < 1:
             errors.append(f"concept {concept['id']} has no reviewed evidence")
         for heading in REQUIRED_HEADINGS:

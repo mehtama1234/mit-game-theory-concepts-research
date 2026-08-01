@@ -1303,7 +1303,7 @@ def worked_example_card(card: dict[str, Any]) -> str:
 </aside>"""
 
 
-def build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examples):
+def build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examples, concept_diagnostics):
     ev_by_id = evidence_map(evidence)
     concept_ids = {c["id"] for c in concepts}
     body = f'<section class="page-head"><h1>Concept Atlas</h1><p>Each page explains the strategic pressure, the mathematical object, what breaks without it, and transcript evidence.</p></section><section class="grid">{"".join(concept_card(c, ev_by_id) for c in concepts)}</section>'
@@ -1319,6 +1319,7 @@ def build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examp
         deriv_html = derivation_links(deriv_ids, deriv_by_id, "../")
         equation_note = equation_notes.get(concept["id"], "")
         worked_card = worked_examples.get(concept["id"], {})
+        diagnostic = concept_diagnostics.get(concept["id"], "")
         diagram = flow("First-Principles Map", [
             ("Problem", concept["everyday_problem"]),
             ("Constraint", concept["first_principles_reason"]),
@@ -1339,6 +1340,7 @@ def build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examp
             ("Where The Idea Stops Working", concept["course_boundary_note"]),
             ("Common Misunderstanding", concept["common_misunderstanding"]),
             ("How to Recognize This in a New Paper or Model", concept["recognize_in_new_work"]),
+            ("Bottom-Line Diagnostic", diagnostic),
             ("Connected Concepts", concept["cross_course_connections"]),
         ]
         treatment = "".join(f"<h2>{esc(h)}</h2><p>{esc(text)}</p>" for h, text in sections)
@@ -1543,6 +1545,7 @@ def main():
     lectures = load("analysis/lectures/lecture-path.json")
     equation_notes = load_optional("analysis/editorial-overrides/equation-walkthrough-notes.json", {})
     worked_examples = load_optional("analysis/editorial-overrides/worked-example-cards.json", {})
+    concept_diagnostics = load_optional("analysis/editorial-overrides/concept-diagnostics.json", {})
     ev_by_id = evidence_map(evidence)
     concept_by_id = concept_map(concepts)
     lecture_by_id = {lecture["id"]: lecture for lecture in lectures}
@@ -1578,7 +1581,7 @@ def main():
     build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence)
     build_limits(concepts, themes, derivations)
     build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id)
-    build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examples)
+    build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examples, concept_diagnostics)
     build_themes(themes, subthemes, concepts)
     build_primitives(primitives, derivations, concept_by_id)
     build_families(families, concept_by_id, ev_by_id)

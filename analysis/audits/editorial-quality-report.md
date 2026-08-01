@@ -5,7 +5,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 ## Summary
 
 - Concepts audited: 33
-- Concept teaching words: min 621, max 919
+- Concept teaching words: min 670, max 961
 - Evidence per concept: min 2, max 2
 - Theme treatment words: min 401, max 423
 - Subtheme treatment words: min 402, max 421
@@ -150,16 +150,16 @@ This static audit checks explanatory depth, required teaching sections, evidence
 
 ## Lowest Concept Depth
 
-- rationalizability: 621 teaching words, 2 evidence records
-- ad_auctions: 623 teaching words, 2 evidence records
-- types_and_beliefs: 624 teaching words, 2 evidence records
-- bayesian_games: 625 teaching words, 2 evidence records
-- auctions: 625 teaching words, 2 evidence records
-- finitely_repeated_games: 626 teaching words, 2 evidence records
-- signaling: 627 teaching words, 2 evidence records
-- subgame_perfection: 630 teaching words, 2 evidence records
-- implicit_cartels: 630 teaching words, 2 evidence records
-- revenue_equivalence: 630 teaching words, 2 evidence records
+- rationalizability: 670 teaching words, 2 evidence records
+- cheap_talk: 673 teaching words, 2 evidence records
+- auctions: 674 teaching words, 2 evidence records
+- signaling: 675 teaching words, 2 evidence records
+- common_knowledge: 675 teaching words, 2 evidence records
+- revenue_equivalence: 676 teaching words, 2 evidence records
+- infinitely_repeated_games: 677 teaching words, 2 evidence records
+- implicit_cartels: 677 teaching words, 2 evidence records
+- extensive_form_games: 679 teaching words, 2 evidence records
+- backward_induction: 679 teaching words, 2 evidence records
 
 ## Errors
 

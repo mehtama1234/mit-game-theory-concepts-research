@@ -45,6 +45,7 @@ def main() -> int:
     capstones = json.loads((ROOT / "analysis/throughlines/capstone-self-test.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
+    concept_diagnostics = json.loads((ROOT / "analysis/editorial-overrides/concept-diagnostics.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
     deriv_by_id = {derivation["id"]: derivation for derivation in derivations}
     primitive_by_id = {primitive["id"]: primitive for primitive in primitives}
@@ -1166,6 +1167,13 @@ def main() -> int:
                 errors.append(f"concept {concept['id']} worked example card is shallow")
         if "Equation Walkthroughs" not in text:
             errors.append(f"concept page missing derivation section: {concept['id']}")
+        diagnostic = concept_diagnostics.get(concept["id"], "")
+        if words(diagnostic) < 35:
+            errors.append(f"concept {concept['id']} missing substantial bottom-line diagnostic")
+        elif html.escape(diagnostic, quote=True) not in text:
+            errors.append(f"concept {concept['id']} bottom-line diagnostic not rendered")
+        if "Bottom-Line Diagnostic" not in text:
+            errors.append(f"concept page missing bottom-line diagnostic section: {concept['id']}")
         expected_derivations = expected_derivation_ids_for_concept(concept, deriv_by_id)
         if expected_derivations:
             note = equation_notes.get(concept["id"], "")
