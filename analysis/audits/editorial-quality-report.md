@@ -57,6 +57,12 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Argument chain concept links: 29
 - Argument chain primitive links: 19
 - Argument chain evidence links: 29
+- Misconception repair cards: 8
+- Misconception repair words: min 126, max 167
+- Misconception repair concept links: 25
+- Misconception repair limit links: 24
+- Misconception repair drill links: 8
+- Misconception repair evidence links: 25
 - Cross-index concept cards: 33
 - Cross-index lecture links: 60
 - Cross-index subtheme links: 33
@@ -76,7 +82,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Supplemental lecture evidence records: 8
 - Lectures below 2 total evidence anchors: 0
 - Lecture path treatment words: min 30, max 50
-- Lecture detail page words: min 1386, max 5341
+- Lecture detail page words: min 1393, max 5348
 - Errors: 0
 
 ## Lowest Concept Depth

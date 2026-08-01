@@ -108,6 +108,7 @@ def main() -> int:
     drills = json.loads((ROOT / "analysis/throughlines/problem-drills.json").read_text(encoding="utf-8"))
     cases = json.loads((ROOT / "analysis/throughlines/case-studies.json").read_text(encoding="utf-8"))
     chains = json.loads((ROOT / "analysis/throughlines/argument-chains.json").read_text(encoding="utf-8"))
+    repairs = json.loads((ROOT / "analysis/throughlines/misconception-repairs.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
@@ -435,6 +436,44 @@ def main() -> int:
             errors.append(f"argument chain {chain['id']} missing evidence links")
     if len(chains) < 6:
         errors.append(f"only {len(chains)} argument chains")
+    repairs_html = (SITE / "repairs.html").read_text(encoding="utf-8") if (SITE / "repairs.html").exists() else ""
+    repair_cards = 0
+    repair_concept_links = 0
+    repair_limit_links = 0
+    repair_drill_links = 0
+    repair_evidence_links = 0
+    repair_words = []
+    for repair in repairs:
+        if f'id="{repair["id"]}"' in repairs_html:
+            repair_cards += 1
+        else:
+            errors.append(f"misconception repair {repair['id']} not rendered")
+        text = " ".join(
+            str(repair.get(k, ""))
+            for k in ["mistaken_belief", "why_it_is_tempting", "first_principles_repair", "diagnostic_question", "what_to_do_instead", "evidence_note"]
+        )
+        treatment_words = words(text)
+        repair_words.append(treatment_words)
+        if treatment_words < 120:
+            errors.append(f"misconception repair {repair['id']} has shallow treatment: {treatment_words} words")
+        linked_concepts = [cid for cid in repair.get("concepts", []) if f'href="concepts/{cid}.html"' in repairs_html]
+        linked_limits = [cid for cid in repair.get("limit_concepts", []) if f'href="limits.html#limit-{cid}"' in repairs_html]
+        linked_drills = [did for did in repair.get("drill_ids", []) if f'href="drills.html#{did}"' in repairs_html]
+        linked_evidence = [eid for eid in repair.get("evidence_ids", []) if f'href="evidence.html#{eid}"' in repairs_html]
+        repair_concept_links += len(linked_concepts)
+        repair_limit_links += len(linked_limits)
+        repair_drill_links += len(linked_drills)
+        repair_evidence_links += len(linked_evidence)
+        if len(linked_concepts) != len(repair.get("concepts", [])):
+            errors.append(f"misconception repair {repair['id']} missing concept links")
+        if len(linked_limits) != len(repair.get("limit_concepts", [])):
+            errors.append(f"misconception repair {repair['id']} missing limit links")
+        if len(linked_drills) != len(repair.get("drill_ids", [])):
+            errors.append(f"misconception repair {repair['id']} missing drill links")
+        if len(linked_evidence) != len(repair.get("evidence_ids", [])):
+            errors.append(f"misconception repair {repair['id']} missing evidence links")
+    if len(repairs) < 8:
+        errors.append(f"only {len(repairs)} misconception repairs")
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     cross_concept_cards = 0
     cross_lecture_links = 0
@@ -671,6 +710,12 @@ def main() -> int:
         f"- Argument chain concept links: {chain_concept_links}",
         f"- Argument chain primitive links: {chain_primitive_links}",
         f"- Argument chain evidence links: {chain_evidence_links}",
+        f"- Misconception repair cards: {repair_cards}",
+        f"- Misconception repair words: min {min(repair_words) if repair_words else 0}, max {max(repair_words) if repair_words else 0}",
+        f"- Misconception repair concept links: {repair_concept_links}",
+        f"- Misconception repair limit links: {repair_limit_links}",
+        f"- Misconception repair drill links: {repair_drill_links}",
+        f"- Misconception repair evidence links: {repair_evidence_links}",
         f"- Cross-index concept cards: {cross_concept_cards}",
         f"- Cross-index lecture links: {cross_lecture_links}",
         f"- Cross-index subtheme links: {cross_subtheme_links}",

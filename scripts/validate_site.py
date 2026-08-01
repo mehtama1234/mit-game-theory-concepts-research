@@ -34,6 +34,7 @@ def main() -> int:
     drills = json.loads((ROOT / "analysis/throughlines/problem-drills.json").read_text(encoding="utf-8"))
     cases = json.loads((ROOT / "analysis/throughlines/case-studies.json").read_text(encoding="utf-8"))
     chains = json.loads((ROOT / "analysis/throughlines/argument-chains.json").read_text(encoding="utf-8"))
+    repairs = json.loads((ROOT / "analysis/throughlines/misconception-repairs.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
@@ -48,7 +49,7 @@ def main() -> int:
     }
     supplemental_ids = {record["id"] for record in supplemental}
     themes = json.loads((ROOT / "analysis/themes/theme-map.json").read_text(encoding="utf-8"))
-    required = [SITE / name for name in ["index.html", "study-route.html", "recognition.html", "math-clinic.html", "drills.html", "cases.html", "argument-chains.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
+    required = [SITE / name for name in ["index.html", "study-route.html", "recognition.html", "math-clinic.html", "drills.html", "cases.html", "argument-chains.html", "repairs.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
     required.extend(SITE / "lectures" / f"{lecture['id']}.html" for lecture in lectures)
     for path in required:
@@ -65,6 +66,7 @@ def main() -> int:
     drills_html = (SITE / "drills.html").read_text(encoding="utf-8") if (SITE / "drills.html").exists() else ""
     cases_html = (SITE / "cases.html").read_text(encoding="utf-8") if (SITE / "cases.html").exists() else ""
     chains_html = (SITE / "argument-chains.html").read_text(encoding="utf-8") if (SITE / "argument-chains.html").exists() else ""
+    repairs_html = (SITE / "repairs.html").read_text(encoding="utf-8") if (SITE / "repairs.html").exists() else ""
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     limits_html = (SITE / "limits.html").read_text(encoding="utf-8") if (SITE / "limits.html").exists() else ""
     index_html = (SITE / "index.html").read_text(encoding="utf-8") if (SITE / "index.html").exists() else ""
@@ -80,6 +82,8 @@ def main() -> int:
         errors.append("index page missing case studies link")
     if 'href="argument-chains.html"' not in index_html:
         errors.append("index page missing argument chains link")
+    if 'href="repairs.html"' not in index_html:
+        errors.append("index page missing misconception repairs link")
     if 'href="cross-reference.html"' not in index_html:
         errors.append("index page missing cross-reference link")
     if 'href="limits.html"' not in index_html:
@@ -290,6 +294,39 @@ def main() -> int:
                 errors.append(f"argument chain {chain['id']} references missing evidence: {ev_id}")
             elif f'href="evidence.html#{ev_id}"' not in chains_html:
                 errors.append(f"argument chain {chain['id']} missing evidence link: {ev_id}")
+    if len(repairs) < 8:
+        errors.append(f"misconception repairs has only {len(repairs)} cards")
+    for repair in repairs:
+        if f'id="{repair["id"]}"' not in repairs_html:
+            errors.append(f"misconception repair not rendered: {repair['id']}")
+        for field in ["mistaken_belief", "why_it_is_tempting", "first_principles_repair", "diagnostic_question", "what_to_do_instead", "evidence_note"]:
+            value = repair.get(field, "")
+            if words(value) < 12:
+                errors.append(f"misconception repair {repair['id']} has shallow {field}")
+            elif html.escape(value, quote=True) not in repairs_html:
+                errors.append(f"misconception repair {repair['id']} {field} not rendered")
+        if words(" ".join(str(repair.get(field, "")) for field in ["mistaken_belief", "why_it_is_tempting", "first_principles_repair", "diagnostic_question", "what_to_do_instead", "evidence_note"])) < 120:
+            errors.append(f"misconception repair {repair['id']} has shallow combined treatment")
+        for concept_id in repair.get("concepts", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"misconception repair {repair['id']} references missing concept: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in repairs_html:
+                errors.append(f"misconception repair {repair['id']} missing concept link: {concept_id}")
+        for concept_id in repair.get("limit_concepts", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"misconception repair {repair['id']} references missing limit concept: {concept_id}")
+            elif f'href="limits.html#limit-{concept_id}"' not in repairs_html:
+                errors.append(f"misconception repair {repair['id']} missing limit link: {concept_id}")
+        for drill_id in repair.get("drill_ids", []):
+            if drill_id not in drill_by_id:
+                errors.append(f"misconception repair {repair['id']} references missing drill: {drill_id}")
+            elif f'href="drills.html#{drill_id}"' not in repairs_html:
+                errors.append(f"misconception repair {repair['id']} missing drill link: {drill_id}")
+        for ev_id in repair.get("evidence_ids", []):
+            if ev_id not in ev_by_id:
+                errors.append(f"misconception repair {repair['id']} references missing evidence: {ev_id}")
+            elif f'href="evidence.html#{ev_id}"' not in repairs_html:
+                errors.append(f"misconception repair {repair['id']} missing evidence link: {ev_id}")
     for concept in concepts:
         if f'id="xref-{concept["id"]}"' not in cross_html:
             errors.append(f"cross index missing concept anchor: {concept['id']}")

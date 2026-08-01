@@ -41,6 +41,7 @@ def page(title: str, body: str, active: str = "", depth: int = 0) -> str:
         ("drills.html", "Drills", "drills"),
         ("cases.html", "Cases", "cases"),
         ("argument-chains.html", "Arguments", "argument-chains"),
+        ("repairs.html", "Repairs", "repairs"),
         ("cross-reference.html", "Cross Index", "cross-reference"),
         ("limits.html", "Limits", "limits"),
         ("lectures.html", "Lectures", "lectures"),
@@ -218,6 +219,7 @@ def build_index(concepts, themes, evidence, lectures):
 <section><h2>Practice The Move</h2><p>The drills page gives small strategic situations and asks the reader to identify the concept, math move, wrong turn, and transcript evidence.</p><p><a class="button" href="drills.html">Open problem drills</a></p></section>
 <section><h2>Follow A Full Case</h2><p>The case studies combine concepts, primitives, math clinic cards, drills, and transcript evidence inside realistic strategic situations.</p><p><a class="button" href="cases.html">Open case studies</a></p></section>
 <section><h2>Follow The Lecture Argument</h2><p>The argument chains show how transcript-backed claims accumulate across lectures into larger first-principles throughlines.</p><p><a class="button" href="argument-chains.html">Open argument chains</a></p></section>
+<section><h2>Repair Common Misreads</h2><p>The repair map starts from common wrong interpretations and points to the correction, concept pages, limits, drills, and evidence.</p><p><a class="button" href="repairs.html">Open misconception repairs</a></p></section>
 <section><h2>Find A Concept By Pressure</h2><p>The cross index lets a reader jump from an everyday problem to the relevant concept, lecture, primitive, subtheme, and evidence record.</p><p><a class="button" href="cross-reference.html">Open the cross index</a></p></section>
 <section><h2>Check The Limits</h2><p>The limits page collects common misunderstandings, student traps, and places where an analogy stops working.</p><p><a class="button" href="limits.html">Open limits and traps</a></p></section>
 <section><h2>Start With The Course Path</h2><p>The lecture path follows the MIT sequence while linking each session to atlas concepts and transcript evidence.</p><p><a class="button" href="lectures.html">Open the lecture path</a></p></section>
@@ -467,6 +469,49 @@ def build_argument_chains(chains, lecture_by_id, concept_by_id, primitive_by_id,
   <p>Transcript-backed chains that show how the course builds larger ideas across lectures. Each chain keeps synthesis separate from the evidence records that support it.</p>
 </section>""" + "".join(cards)
     write(SITE / "argument-chains.html", page("Lecture Argument Chains", body, "argument-chains"))
+
+
+def build_misconception_repairs(repairs, concept_by_id, drill_by_id, ev_by_id):
+    cards = []
+    for repair in repairs:
+        concept_links = "".join(
+            f'<a class="chip" href="concepts/{esc(concept_id)}.html">{esc(concept_by_id[concept_id]["name"])}</a>'
+            for concept_id in repair.get("concepts", [])
+            if concept_id in concept_by_id
+        )
+        drill_links = "".join(
+            f'<a class="chip" href="drills.html#{esc(drill_id)}">{esc(drill_by_id[drill_id]["title"])}</a>'
+            for drill_id in repair.get("drill_ids", [])
+            if drill_id in drill_by_id
+        )
+        limit_links = "".join(
+            f'<a class="chip" href="limits.html#limit-{esc(concept_id)}">{esc(concept_by_id[concept_id]["name"])}</a>'
+            for concept_id in repair.get("limit_concepts", [])
+            if concept_id in concept_by_id
+        )
+        evidence_links = "".join(
+            f'<li><a href="evidence.html#{esc(ev_id)}">{esc(ev_id)}</a>: {esc(ev_by_id[ev_id]["video_title"])}</li>'
+            for ev_id in repair.get("evidence_ids", [])
+            if ev_id in ev_by_id
+        )
+        cards.append(f"""<article class="wide-card repair-card" id="{esc(repair["id"])}">
+  <p class="eyebrow">Misconception repair</p>
+  <h2>{esc(repair["mistaken_belief"])}</h2>
+  <p><strong>Why it is tempting:</strong> {esc(repair["why_it_is_tempting"])}</p>
+  <p><strong>First-principles repair:</strong> {esc(repair["first_principles_repair"])}</p>
+  <p><strong>Diagnostic question:</strong> {esc(repair["diagnostic_question"])}</p>
+  <p><strong>What to do instead:</strong> {esc(repair["what_to_do_instead"])}</p>
+  <p><strong>Evidence note:</strong> {esc(repair["evidence_note"])}</p>
+  <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
+  <h3>Limits And Traps</h3><p class="chips">{limit_links}</p>
+  <h3>Practice Drill</h3><p class="chips">{drill_links}</p>
+  <h3>Transcript Evidence</h3><ul class="evidence-list">{evidence_links}</ul>
+</article>""")
+    body = """<section class="page-head">
+  <h1>Misconception Repairs</h1>
+  <p>A correction map for common wrong turns. Start from the mistaken belief, then follow the repair into concepts, limits, drills, and transcript evidence.</p>
+</section>""" + "".join(cards)
+    write(SITE / "repairs.html", page("Misconception Repairs", body, "repairs"))
 
 
 def build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence):
@@ -882,6 +927,7 @@ def main():
     drills = load("analysis/throughlines/problem-drills.json")
     cases = load("analysis/throughlines/case-studies.json")
     chains = load("analysis/throughlines/argument-chains.json")
+    repairs = load("analysis/throughlines/misconception-repairs.json")
     lectures = load("analysis/lectures/lecture-path.json")
     equation_notes = load_optional("analysis/editorial-overrides/equation-walkthrough-notes.json", {})
     worked_examples = load_optional("analysis/editorial-overrides/worked-example-cards.json", {})
@@ -901,6 +947,7 @@ def main():
     build_problem_drills(drills, concept_by_id, primitive_by_id, ev_by_id)
     build_case_studies(cases, concept_by_id, primitive_by_id, math_clinic_by_id, drill_by_id, ev_by_id)
     build_argument_chains(chains, lecture_by_id, concept_by_id, primitive_by_id, ev_by_id)
+    build_misconception_repairs(repairs, concept_by_id, drill_by_id, ev_by_id)
     build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence)
     build_limits(concepts, themes, derivations)
     build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id)

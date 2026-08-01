@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Misconception Repairs · MIT Game Theory Concept Lab</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">MIT Game Theory Concept Lab</a>
+    <nav><a class="" href="index.html">Overview</a><a class="" href="study-route.html">Study Route</a><a class="" href="recognition.html">Recognition</a><a class="" href="math-clinic.html">Math Clinic</a><a class="" href="drills.html">Drills</a><a class="" href="cases.html">Cases</a><a class="" href="argument-chains.html">Arguments</a><a class="active" href="repairs.html">Repairs</a><a class="" href="cross-reference.html">Cross Index</a><a class="" href="limits.html">Limits</a><a class="" href="lectures.html">Lectures</a><a class="" href="concepts.html">Concepts</a><a class="" href="themes.html">Themes</a><a class="" href="families.html">Method Families</a><a class="" href="primitives.html">Primitives</a><a class="" href="evidence.html">Evidence</a></nav>
+  </header>
+  <main><section class="page-head">
+  <h1>Misconception Repairs</h1>
+  <p>A correction map for common wrong turns. Start from the mistaken belief, then follow the repair into concepts, limits, drills, and transcript evidence.</p>
+</section><article class="wide-card repair-card" id="repair-payoff-is-happiness">
+  <p class="eyebrow">Misconception repair</p>
+  <h2>A payoff or utility number is a direct measurement of happiness, so a bigger number always means more real-world well-being in a literal unit.</h2>
+  <p><strong>Why it is tempting:</strong> The course writes utilities as numbers, and numbers feel like measurements. It is natural to read them like dollars, inches, or points on a scoreboard.</p>
+  <p><strong>First-principles repair:</strong> Utility is usually a model&#x27;s way to preserve choice order and support calculation. The number is meaningful inside the chosen representation, but it does not automatically measure psychological happiness or compare welfare across people.</p>
+  <p><strong>Diagnostic question:</strong> Am I using this number to preserve a ranking inside a model, or am I making a stronger real-world welfare claim that the model has not justified?</p>
+  <p><strong>What to do instead:</strong> State what the utility representation is allowed to compare. If the argument needs interpersonal welfare, risk attitudes, or money-to-utility conversion, make that assumption explicit instead of letting the number silently do it.</p>
+  <p><strong>Evidence note:</strong> The early decision-making evidence supports utility as a representation used before later payoff-table and expected-utility calculations.</p>
+  <h3>Concept Pages</h3><p class="chips"><a class="chip" href="concepts/preferences.html">Preferences</a><a class="chip" href="concepts/utility.html">Utility</a><a class="chip" href="concepts/expected_utility.html">Expected Utility</a></p>
+  <h3>Limits And Traps</h3><p class="chips"><a class="chip" href="limits.html#limit-preferences">Preferences</a><a class="chip" href="limits.html#limit-utility">Utility</a><a class="chip" href="limits.html#limit-expected_utility">Expected Utility</a></p>
+  <h3>Practice Drill</h3><p class="chips"><a class="chip" href="drills.html#drill-payoff-before-strategy">Separate wants from strategy before solving</a></p>
+  <h3>Transcript Evidence</h3><ul class="evidence-list"><li><a href="evidence.html#ev-preferences-01">ev-preferences-01</a>: Lecture 1: Introduction to Individual Decision-Making</li><li><a href="evidence.html#ev-utility-01">ev-utility-01</a>: Lecture 1: Introduction to Individual Decision-Making</li><li><a href="evidence.html#ev-expected_utility-01">ev-expected_utility-01</a>: Lecture 1: Introduction to Individual Decision-Making</li></ul>
+</article><article class="wide-card repair-card" id="repair-dominance-is-likely-bad">
+  <p class="eyebrow">Misconception repair</p>
+  <h2>A strategy can be deleted as dominated because it looks bad in the case that seems most likely.</h2>
+  <p><strong>Why it is tempting:</strong> Students often bring an informal prediction into the comparison. Once a move looks unattractive under that favorite prediction, deletion feels safe.</p>
+  <p><strong>First-principles repair:</strong> Dominance is not a prediction about what the opponent will probably do. It is a universal comparison across every relevant opponent action in the model. If the supposedly bad move is useful in even one relevant case, dominance has not been shown.</p>
+  <p><strong>Diagnostic question:</strong> Did I compare this action against the alternative under every opponent action, or only under the scenario I expect?</p>
+  <p><strong>What to do instead:</strong> Use the dominance inequality first. If it fails, keep the action alive and move to beliefs, best responses, rationalizability, or equilibrium instead of forcing deletion.</p>
+  <p><strong>Evidence note:</strong> The dominance and rationalizability evidence anchors support the distinction between strict pruning and belief-based plausibility.</p>
+  <h3>Concept Pages</h3><p class="chips"><a class="chip" href="concepts/dominance.html">Dominance</a><a class="chip" href="concepts/iterated_deletion.html">Iterated Deletion</a><a class="chip" href="concepts/rationalizability.html">Rationalizability</a></p>
+  <h3>Limits And Traps</h3><p class="chips"><a class="chip" href="limits.html#limit-dominance">Dominance</a><a class="chip" href="limits.html#limit-iterated_deletion">Iterated Deletion</a><a class="chip" href="limits.html#limit-rationalizability">Rationalizability</a></p>
+  <h3>Practice Drill</h3><p class="chips"><a class="chip" href="drills.html#drill-delete-or-keep">Delete only after every comparison passes</a></p>
+  <h3>Transcript Evidence</h3><ul class="evidence-list"><li><a href="evidence.html#ev-dominance-01">ev-dominance-01</a>: Lecture 3: Dominance</li><li><a href="evidence.html#ev-iterated_deletion-01">ev-iterated_deletion-01</a>: Lecture 4: Rationalizability</li><li><a href="evidence.html#ev-rationalizability-01">ev-rationalizability-01</a>: Lecture 4: Rationalizability</li></ul>
+</article><article class="wide-card repair-card" id="repair-equilibrium-is-good">
+  <p class="eyebrow">Misconception repair</p>
+  <h2>If an outcome is a Nash equilibrium, it must be good, fair, efficient, or what the group collectively wants.</h2>
+  <p><strong>Why it is tempting:</strong> The word equilibrium sounds like balance or social order. It is easy to import a positive meaning that the mathematical test does not contain.</p>
+  <p><strong>First-principles repair:</strong> Nash equilibrium is a unilateral deviation test. It says no single player wants to move alone, holding the others fixed. It does not say the outcome is socially best, fair, stable against coalitions, or morally desirable.</p>
+  <p><strong>Diagnostic question:</strong> Am I checking individual incentives to deviate, or am I smuggling in a welfare judgment about the whole outcome?</p>
+  <p><strong>What to do instead:</strong> First test best responses player by player. Then, if welfare matters, ask a separate welfare or efficiency question rather than treating equilibrium as an endorsement.</p>
+  <p><strong>Evidence note:</strong> The best-response and Nash evidence anchors support equilibrium as mutual consistency, while imperfect-competition examples show stable outcomes can still be socially unattractive.</p>
+  <h3>Concept Pages</h3><p class="chips"><a class="chip" href="concepts/best_response.html">Best Response</a><a class="chip" href="concepts/nash_equilibrium.html">Nash Equilibrium</a><a class="chip" href="concepts/imperfect_competition.html">Imperfect Competition</a></p>
+  <h3>Limits And Traps</h3><p class="chips"><a class="chip" href="limits.html#limit-best_response">Best Response</a><a class="chip" href="limits.html#limit-nash_equilibrium">Nash Equilibrium</a><a class="chip" href="limits.html#limit-imperfect_competition">Imperfect Competition</a></p>
+  <h3>Practice Drill</h3><p class="chips"><a class="chip" href="drills.html#drill-stable-not-good">Check stability without confusing it with goodness</a></p>
+  <h3>Transcript Evidence</h3><ul class="evidence-list"><li><a href="evidence.html#ev-best_response-02">ev-best_response-02</a>: Lecture 5: Nash Equilibrium</li><li><a href="evidence.html#ev-nash_equilibrium-01">ev-nash_equilibrium-01</a>: Lecture 5: Nash Equilibrium</li><li><a href="evidence.html#ev-imperfect_competition-01">ev-imperfect_competition-01</a>: Lecture 6: Imperfect Competition</li></ul>
+</article><article class="wide-card repair-card" id="repair-threats-are-automatically-credible">
+  <p class="eyebrow">Misconception repair</p>
+  <h2>A threat should be treated as real because it is announced before the other player chooses.</h2>
+  <p><strong>Why it is tempting:</strong> Announcements happen early in the story, and early statements can feel like fixed constraints on later behavior.</p>
+  <p><strong>First-principles repair:</strong> A future action is credible only if the player would still want to take it when the future decision point arrives. Sequential reasoning asks the later self, not only the earlier announcement.</p>
+  <p><strong>Diagnostic question:</strong> At the node where the threat must be carried out, is carrying it out still better for the player who made the threat?</p>
+  <p><strong>What to do instead:</strong> Draw the tree, solve the later decision first, and then use that continuation to interpret the earlier move. If the threat fails later incentives, do not let it drive the initial prediction.</p>
+  <p><strong>Evidence note:</strong> The extensive-form, backward-induction, and subgame-perfection evidence anchors support the course&#x27;s credibility test for dynamic games.</p>
+  <h3>Concept Pages</h3><p class="chips"><a class="chip" href="concepts/extensive_form_games.html">Extensive Form Games</a><a class="chip" href="concepts/backward_induction.html">Backward Induction</a><a class="chip" href="concepts/subgame_perfection.html">Subgame-Perfect Nash Equilibrium</a></p>
+  <h3>Limits And Traps</h3><p class="chips"><a class="chip" href="limits.html#limit-extensive_form_games">Extensive Form Games</a><a class="chip" href="limits.html#limit-backward_induction">Backward Induction</a><a class="chip" href="limits.html#limit-subgame_perfection">Subgame-Perfect Nash Equilibrium</a></p>
+  <h3>Practice Drill</h3><p class="chips"><a class="chip" href="drills.html#drill-table-or-tree">Choose the representation before choosing the solution</a></p>
+  <h3>Transcript Evidence</h3><ul class="evidence-list"><li><a href="evidence.html#ev-extensive_form_games-01">ev-extensive_form_games-01</a>: Lecture 2: Representation of Games</li><li><a href="evidence.html#ev-backward_induction-02">ev-backward_induction-02</a>: Lecture 2: Representation of Games</li><li><a href="evidence.html#ev-subgame_perfection-01">ev-subgame_perfection-01</a>: Lecture 10: Subgame-Perfect Nash Equilibrium</li></ul>
+</article><article class="wide-card repair-card" id="repair-repetition-guarantees-cooperation">
+  <p class="eyebrow">Misconception repair</p>
+  <h2>If players interact repeatedly, cooperation should follow because people care about the relationship.</h2>
+  <p><strong>Why it is tempting:</strong> Repeated interaction feels socially richer than a one-shot encounter, so it is tempting to treat the future as automatically disciplining behavior.</p>
+  <p><strong>First-principles repair:</strong> Repetition only helps when future consequences are strong enough. The model compares today&#x27;s deviation gain with the discounted future loss from punishment or lost cooperation.</p>
+  <p><strong>Diagnostic question:</strong> What is the one-time gain from cheating, what future loss follows, and how much does the player value that future?</p>
+  <p><strong>What to do instead:</strong> Write the incentive comparison. Cooperation is supported only if the discounted value of staying on the cooperative path beats deviation plus punishment.</p>
+  <p><strong>Evidence note:</strong> The repeated-game, folk-theorem, and cartel evidence anchors support future discipline as an incentive calculation, not a general claim about relationships.</p>
+  <h3>Concept Pages</h3><p class="chips"><a class="chip" href="concepts/infinitely_repeated_games.html">Infinitely Repeated Games</a><a class="chip" href="concepts/folk_theorem.html">Folk Theorem</a><a class="chip" href="concepts/implicit_cartels.html">Implicit Cartels</a></p>
+  <h3>Limits And Traps</h3><p class="chips"><a class="chip" href="limits.html#limit-infinitely_repeated_games">Infinitely Repeated Games</a><a class="chip" href="limits.html#limit-folk_theorem">Folk Theorem</a><a class="chip" href="limits.html#limit-implicit_cartels">Implicit Cartels</a></p>
+  <h3>Practice Drill</h3><p class="chips"><a class="chip" href="drills.html#drill-future-discipline">Compare today&#x27;s temptation with tomorrow&#x27;s punishment</a></p>
+  <h3>Transcript Evidence</h3><ul class="evidence-list"><li><a href="evidence.html#ev-infinitely_repeated_games-01">ev-infinitely_repeated_games-01</a>: Lecture 13: Infinitely Repeated Games</li><li><a href="evidence.html#ev-folk_theorem-01">ev-folk_theorem-01</a>: Lecture 14: Folk Theorem</li><li><a href="evidence.html#ev-implicit_cartels-01">ev-implicit_cartels-01</a>: Lecture 15: Implicit Cartels</li></ul>
+</article><article class="wide-card repair-card" id="repair-beliefs-are-free">
+  <p class="eyebrow">Misconception repair</p>
+  <h2>In Bayesian or signaling models, beliefs can be chosen freely to make the desired story work.</h2>
+  <p><strong>Why it is tempting:</strong> Beliefs are not directly observed, so they can feel like adjustable narrative glue.</p>
+  <p><strong>First-principles repair:</strong> Beliefs are part of the model&#x27;s discipline. They must be tied to types, priors, observed actions, Bayes&#x27; rule where applicable, and the incentives that make different types choose different actions.</p>
+  <p><strong>Diagnostic question:</strong> Does this belief follow from the modeled type distribution and observed behavior, or is it being inserted just to rescue the conclusion?</p>
+  <p><strong>What to do instead:</strong> List the possible types, ask how likely each action is under each type, update beliefs where the path has positive probability, and separately check whether each type wants to imitate or separate.</p>
+  <p><strong>Evidence note:</strong> The type, perfect-Bayesian-equilibrium, signaling, and screening evidence anchors support beliefs as disciplined responses to hidden information and observed behavior.</p>
+  <h3>Concept Pages</h3><p class="chips"><a class="chip" href="concepts/types_and_beliefs.html">Types And Beliefs</a><a class="chip" href="concepts/perfect_bayesian_equilibrium.html">Perfect Bayesian Equilibrium</a><a class="chip" href="concepts/signaling.html">Signaling</a><a class="chip" href="concepts/screening_and_adverse_selection.html">Screening And Adverse Selection</a></p>
+  <h3>Limits And Traps</h3><p class="chips"><a class="chip" href="limits.html#limit-types_and_beliefs">Types And Beliefs</a><a class="chip" href="limits.html#limit-perfect_bayesian_equilibrium">Perfect Bayesian Equilibrium</a><a class="chip" href="limits.html#limit-signaling">Signaling</a></p>
+  <h3>Practice Drill</h3><p class="chips"><a class="chip" href="drills.html#drill-hidden-type">Treat behavior as both choice and evidence</a></p>
+  <h3>Transcript Evidence</h3><ul class="evidence-list"><li><a href="evidence.html#ev-types_and_beliefs-01">ev-types_and_beliefs-01</a>: Lecture 16: Bayesian Games</li><li><a href="evidence.html#ev-perfect_bayesian_equilibrium-01">ev-perfect_bayesian_equilibrium-01</a>: Lecture 21: Perfect Bayesian Equilibrium</li><li><a href="evidence.html#ev-signaling-01">ev-signaling-01</a>: Lecture 22: Signaling</li><li><a href="evidence.html#ev-screening_and_adverse_selection-01">ev-screening_and_adverse_selection-01</a>: Lecture 16: Bayesian Games</li></ul>
+</article><article class="wide-card repair-card" id="repair-auctions-are-highest-bid-only">
+  <p class="eyebrow">Misconception repair</p>
+  <h2>Auction analysis is just about who bids the most and how much the winner pays.</h2>
+  <p><strong>Why it is tempting:</strong> Many everyday auctions are described by the visible winning bid, so the rule behind allocation and payment can disappear from view.</p>
+  <p><strong>First-principles repair:</strong> Auction rules are incentive machines. A bidder responds to the probability of winning, payment if winning, private value, information about rivals, and any quality or ranking rule built into the mechanism.</p>
+  <p><strong>Diagnostic question:</strong> How does the rule change allocation, payment, winning probability, and the reason to reveal or shade private value?</p>
+  <p><strong>What to do instead:</strong> Separate allocation from payment. Then ask how a bidder&#x27;s action changes both the chance of winning and the amount paid conditional on winning.</p>
+  <p><strong>Evidence note:</strong> The auction, revenue-equivalence, and ad-auction evidence anchors support treating auction formats as rule systems that shape incentives.</p>
+  <h3>Concept Pages</h3><p class="chips"><a class="chip" href="concepts/auctions.html">Auctions</a><a class="chip" href="concepts/revenue_equivalence.html">Revenue Equivalence</a><a class="chip" href="concepts/ad_auctions.html">Ad Auctions</a></p>
+  <h3>Limits And Traps</h3><p class="chips"><a class="chip" href="limits.html#limit-auctions">Auctions</a><a class="chip" href="limits.html#limit-revenue_equivalence">Revenue Equivalence</a><a class="chip" href="limits.html#limit-ad_auctions">Ad Auctions</a></p>
+  <h3>Practice Drill</h3><p class="chips"><a class="chip" href="drills.html#drill-auction-rule">Read auction rules as incentive machines</a></p>
+  <h3>Transcript Evidence</h3><ul class="evidence-list"><li><a href="evidence.html#ev-auctions-01">ev-auctions-01</a>: Lecture 18: Auctions</li><li><a href="evidence.html#ev-revenue_equivalence-01">ev-revenue_equivalence-01</a>: Lecture 19: Revenue Equivalence</li><li><a href="evidence.html#ev-ad_auctions-01">ev-ad_auctions-01</a>: Lecture 20: Ad Auctions</li></ul>
+</article><article class="wide-card repair-card" id="repair-everyone-knows-is-common-knowledge">
+  <p class="eyebrow">Misconception repair</p>
+  <h2>If every player privately knows the same fact, then the fact is common knowledge.</h2>
+  <p><strong>Why it is tempting:</strong> The phrase everyone knows sounds complete. It hides the higher-order question of whether everyone knows that everyone knows.</p>
+  <p><strong>First-principles repair:</strong> Common knowledge is recursive publicness. Players need not only the fact, but confidence that others know it, know that others know it, and so on.</p>
+  <p><strong>Diagnostic question:</strong> Is the fact merely true, privately known by all, mutually known, or publicly anchored through the recursive chain?</p>
+  <p><strong>What to do instead:</strong> Track the levels of knowledge explicitly. If coordination depends on what players believe about other players&#x27; beliefs, a public announcement can matter even when it adds no new first-order fact.</p>
+  <p><strong>Evidence note:</strong> The common-knowledge and cheap-talk evidence anchors support the distinction between private information, publicness, and coordination through shared awareness.</p>
+  <h3>Concept Pages</h3><p class="chips"><a class="chip" href="concepts/common_knowledge.html">Common Knowledge</a><a class="chip" href="concepts/cheap_talk.html">Cheap Talk</a><a class="chip" href="concepts/nash_equilibrium.html">Nash Equilibrium</a></p>
+  <h3>Limits And Traps</h3><p class="chips"><a class="chip" href="limits.html#limit-common_knowledge">Common Knowledge</a><a class="chip" href="limits.html#limit-cheap_talk">Cheap Talk</a><a class="chip" href="limits.html#limit-nash_equilibrium">Nash Equilibrium</a></p>
+  <h3>Practice Drill</h3><p class="chips"><a class="chip" href="drills.html#drill-public-awareness">Distinguish private knowledge from common knowledge</a></p>
+  <h3>Transcript Evidence</h3><ul class="evidence-list"><li><a href="evidence.html#ev-common_knowledge-01">ev-common_knowledge-01</a>: Lecture 25: Common Knowledge</li><li><a href="evidence.html#ev-cheap_talk-01">ev-cheap_talk-01</a>: Lecture 24: Cheap Talk</li><li><a href="evidence.html#ev-nash_equilibrium-01">ev-nash_equilibrium-01</a>: Lecture 5: Nash Equilibrium</li></ul>
+</article></main>
+</body>
+</html>
