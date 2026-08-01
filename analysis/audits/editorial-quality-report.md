@@ -101,7 +101,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Proof-sketch decoder links: 16
 - Proof-sketch evidence links: 25
 - Assumption-audit lab cards: 7
-- Assumption-audit lab words: min 196, max 210
+- Assumption-audit lab words: min 360, max 373
 - Assumption-audit concept links: 28
 - Assumption-audit primitive links: 21
 - Assumption-audit proof-sketch links: 14

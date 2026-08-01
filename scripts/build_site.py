@@ -868,6 +868,9 @@ def build_assumption_audit_lab(audits, concept_by_id, primitive_by_id, proof_by_
   <p><strong>What changes if false:</strong> {esc(item["what_changes_if_false"])}</p>
   <p><strong>Mathematical symptom:</strong> {esc(item["mathematical_symptom"])}</p>
   <p><strong>Repair move:</strong> {esc(item["repair_move"])}</p>
+  <p><strong>Naive overread:</strong> {esc(item["naive_overread"])}</p>
+  <p><strong>Stress test:</strong> {esc(item["stress_test"])}</p>
+  <p><strong>Transfer red flag:</strong> {esc(item["transfer_red_flag"])}</p>
   <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
   <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
   <h3>Proof Sketches</h3><p class="chips">{proof_links}</p>

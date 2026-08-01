@@ -8,6 +8,9 @@
     "what_changes_if_false": "A threat can look irrational when reputation was omitted, cooperation can look impossible when future relationships were omitted, and an auction rule can look truthful when bidder risk or budget constraints were omitted.",
     "mathematical_symptom": "The symptom is a payoff inequality whose sign depends on an unstated term. If adding a cost c, future value delta V, or outside option O changes the sign, the original conclusion was assumption-sensitive.",
     "repair_move": "State the payoff boundary explicitly: this result holds if the listed payoff components are the only strategic consequences that matter. Then add a sensitivity sentence naming the most dangerous omitted term.",
+    "naive_overread": "The naive overread is to treat a payoff table as if it already contains everything humans or firms care about. A payoff entry is only a compressed modeling claim. It may leave out reputation, search costs, legal risk, future access, or the platform objective that would change the behavior.",
+    "stress_test": "Add one omitted term in plain language and ask whether the comparison flips. For example, add a future relationship value to a one-shot payoff, or add budget risk to an auction payoff. If the sign changes, the result is not wrong, but it is local to the simpler payoff map.",
+    "transfer_red_flag": "When a paper exports a result from a clean classroom game to a market, institution, or platform, check whether the payoff definition travels too. If the new setting has reputational, dynamic, or regulatory consequences absent from the model, mark the conclusion as assumption-sensitive. A strong transfer should say why those omitted consequences are small, constant, or irrelevant to the comparison being made.",
     "concepts": [
       "utility",
       "expected_utility",
@@ -46,6 +49,9 @@
     "what_changes_if_false": "A Nash equilibrium may disappear after adding a missing strategy, a mechanism may stop being truthful after adding a misreport, and a bargaining result may change after adding a walk-away option.",
     "mathematical_symptom": "The symptom is a best-response or incentive-compatibility claim over a narrow set A_i. If a larger feasible set A_i' contains a profitable deviation, the original no-deviation statement no longer proves stability.",
     "repair_move": "Name the action boundary and rerun the local deviation check. If the omitted move is important but intentionally excluded, explain what institution, technology, or timing rule rules it out.",
+    "naive_overread": "The naive overread is to say no one wants to deviate when the model only checked the moves it happened to list. Stability is only meaningful relative to the action menu. A missing action can make the no-deviation statement technically true and practically misleading.",
+    "stress_test": "Add the most tempting omitted move and rerun the local check. In an auction, add a misreport or budget constraint. In bargaining, add delay or exit. In competition, add entry, capacity, or price discrimination. If the result changes, the action set was doing hidden work. Then ask whether an institution truly blocks the new move or whether the original model simply forgot it.",
+    "transfer_red_flag": "Watch for phrases like cannot, may not, or assume away. Those often mark institutions that restrict the action set. If the real setting does not have the same restriction, the model's equilibrium or incentive claim may not transfer. The fastest practical check is to ask a domain expert what a participant would actually try if the modeled outcome hurt them.",
     "concepts": [
       "best_response",
       "nash_equilibrium",
@@ -84,6 +90,9 @@
     "what_changes_if_false": "A threat may be treated as binding when it is not, a punishment may be assumed after an unobserved deviation, or a simultaneous Nash check may be used where backward induction or subgame perfection is required.",
     "mathematical_symptom": "The symptom is a solution concept that ignores a later node or an information set. If the model needs a continuation value or subgame check but uses only a one-shot profile, the timing assumption is doing hidden work.",
     "repair_move": "Replace the flat representation with a tree when order and observation matter. Then solve from the last meaningful choice backward and state which histories are being checked.",
+    "naive_overread": "The naive overread is to treat timing as presentation rather than substance. In strategic problems, the order of moves changes what can be believed, what can be punished, and which responses are available. A simultaneous table can hide a credibility problem.",
+    "stress_test": "Move one action earlier or later and ask whether the best response changes. Then remove an observation and ask whether the punishment or response can still be conditioned on it. If either change affects the result, timing and observation are load-bearing assumptions. Also test commitment separately from timing, because moving first is not the same as being able to bind later behavior.",
+    "transfer_red_flag": "When a paper says agents observe, commit, announce, threaten, punish, or respond, check whether the formal game gives them that timing and information. If the prose is sequential but the model is static, the compression needs justification. A good compression should explain why solving the reduced table gives the same incentives as solving the visible timeline.",
     "concepts": [
       "extensive_form_games",
       "backward_induction",
@@ -122,6 +131,9 @@
     "what_changes_if_false": "A signal may look persuasive without an imitation check, cheap talk may look informative without incentive alignment, and a Bayesian equilibrium may use beliefs that do not match the proposed strategies.",
     "mathematical_symptom": "The symptom is a posterior probability or equilibrium belief that appears without Bayes-rule support. On observed paths, posterior belief should be proportional to prior times likelihood of the observed signal under each type.",
     "repair_move": "Write the belief update in words before symbols: this observation is more likely under type H than type L, so belief in H rises. If the observation is off path, mark the belief as an assumption and test whether the result depends on it.",
+    "naive_overread": "The naive overread is to treat beliefs as flexible explanations for whatever behavior the model wants. In a disciplined private-information model, beliefs are part of the mechanism: they come from priors, signals, strategies, or explicit off-path assumptions.",
+    "stress_test": "Change the prior, alter the likelihood of the signal under each type, or let an imitator type send the same signal. Then ask whether the posterior and chosen action still move the same way. If the result flips, the belief source is carrying the conclusion. For off-path behavior, try two plausible beliefs and see whether the equilibrium survives both.",
+    "transfer_red_flag": "Look for belief statements that appear after the equilibrium is announced. If a paper does not say how the receiver got the belief, or whether the belief is on path or off path, treat the information argument as incomplete until that source is named. The audit should also ask whether the same observed action could have been sent by an imitator type. If imitation is easy, the belief update needs more than the observed action itself.",
     "concepts": [
       "bayesian_games",
       "types_and_beliefs",
@@ -161,6 +173,9 @@
     "what_changes_if_false": "Cooperation can collapse if cheating is hidden, noisy signals create mistaken punishment, or the punishment hurts the punisher so much that it is not credible. The same discount factor can support cooperation under clear monitoring and fail under noisy monitoring.",
     "mathematical_symptom": "The symptom is a discounting inequality that includes a punishment value without proving the punishment can be triggered and sustained. The continuation value must be feasible under the information and incentives of the repeated game.",
     "repair_move": "Add the monitoring assumption and the punishment credibility check beside the discount-factor calculation. If monitoring is imperfect, weaken the claim or mark it as requiring a richer repeated-game model.",
+    "naive_overread": "The naive overread is to say future punishment supports cooperation because the relationship repeats. Repetition only matters if deviation is detected, punishment is triggered, and carrying out punishment remains rational when the future arrives.",
+    "stress_test": "Introduce noisy monitoring or delayed observation. Ask whether players can tell cheating from bad luck, and whether the proposed punishment would punish the wrong person too often. Then check whether the punishment path is still a best response for the punishers. If punishment is costly to carry out, rerun the continuation check from the punisher's later point of view.",
+    "transfer_red_flag": "In applications to cartels, platforms, or relationships, watch for claims that rely on retaliation without showing what signal reveals the deviation. If the monitoring technology is vague, the repeated-game conclusion is not yet earned. Also ask whether punishment is legal, affordable, and distinguishable from ordinary competitive response in the real setting. If punishment cannot be separated from market noise, the model needs a noise-aware version.",
     "concepts": [
       "infinitely_repeated_games",
       "folk_theorem",
@@ -200,6 +215,9 @@
     "what_changes_if_false": "Revenue equivalence can fail, truthful reporting can stop being attractive, and a ranking rule that appears efficient can distort incentives once quality scores, budgets, or correlated values matter.",
     "mathematical_symptom": "The symptom is an expected-payment or incentive-compatibility result that skips the environment. If the allocation probability, lowest-type payoff, or deviation set changes, expected payments need not remain equivalent.",
     "repair_move": "State the auction environment before comparing formats. Then separate the allocation rule from the payment rule and identify which assumption would change the bidder's expected payoff comparison first. If the environment differs, downgrade the theorem to an analogy or rebuild the incentive comparison.",
+    "naive_overread": "The naive overread is to think an auction theorem belongs to the auction label. The theorem usually belongs to a precise environment: private values, symmetry, risk neutrality, independent signals, a given allocation rule, and a particular payment rule.",
+    "stress_test": "Change one environmental feature at a time: make bidders risk averse, add budgets, correlate values, add reserve prices, or alter quality scoring. Then ask whether the same allocation probabilities and payment comparisons survive. This reveals which assumption actually powers the theorem. If expected revenue changes, trace whether the cause was allocation, payment, entry, risk, or information.",
+    "transfer_red_flag": "When a paper moves from textbook auctions to ad auctions, procurement, platforms, or data markets, check whether values, budgets, quality scores, and repeated participation still match the theorem assumptions. Familiar auction vocabulary is not enough. The audit should identify the first theorem assumption that fails before using the theorem as guidance. That failed assumption should determine which calculation gets rebuilt first.",
     "concepts": [
       "auctions",
       "revenue_equivalence",
@@ -238,6 +256,9 @@
     "what_changes_if_false": "A coordination result can fail if the signal is private rather than public. A cheap-talk result can fail if the sender's incentives point away from truthful communication.",
     "mathematical_symptom": "The symptom is a common-knowledge or cheap-talk claim that treats information as a fact transfer only. The missing object is higher-order belief or an incentive comparison for the sender's message.",
     "repair_move": "Mark the message type explicitly: public announcement, private signal, costly signal, or cheap talk. Then test whether behavior relies on shared awareness, belief updating, or incentive-aligned communication. If two roles are mixed, split them before applying common-knowledge or signaling logic.",
+    "naive_overread": "The naive overread is to treat all information as data transfer. In games, a message can coordinate, reveal, mislead, or merely repeat a fact publicly. Those functions require different assumptions about who hears it and why the sender would say it.",
+    "stress_test": "Turn a public message into separate private messages and ask whether coordination still works. Then make the message costless and ask whether the sender would still tell the truth. If either change breaks the result, publicness or incentive alignment was doing real work. Next reverse the test: make a cheap message public and ask whether publicness alone fixes the sender's incentive problem.",
+    "transfer_red_flag": "Watch for papers that move between signaling, cheap talk, and common knowledge without changing the assumptions. A costly signal, a cheap message, and a public announcement are not interchangeable even when the sentence communicated is the same. The audit should ask whether the result needs credibility, publicness, or both. If it needs both, each must be justified separately.",
     "concepts": [
       "common_knowledge",
       "cheap_talk",

@@ -769,13 +769,21 @@ def main() -> int:
             assumption_cards += 1
         else:
             errors.append(f"assumption-audit lab {item['id']} not rendered")
-        text = " ".join(
-            str(item.get(k, ""))
-            for k in ["hidden_assumption", "why_it_exists", "audit_test", "what_changes_if_false", "mathematical_symptom", "repair_move"]
-        )
+        assumption_fields = [
+            "hidden_assumption",
+            "why_it_exists",
+            "audit_test",
+            "what_changes_if_false",
+            "mathematical_symptom",
+            "repair_move",
+            "naive_overread",
+            "stress_test",
+            "transfer_red_flag",
+        ]
+        text = " ".join(str(item.get(k, "")) for k in assumption_fields)
         treatment_words = words(text)
         assumption_words.append(treatment_words)
-        if treatment_words < 190:
+        if treatment_words < 360:
             errors.append(f"assumption-audit lab {item['id']} has shallow treatment: {treatment_words} words")
         linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in assumptions_html]
         linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in assumptions_html]

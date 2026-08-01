@@ -625,14 +625,25 @@ def main() -> int:
     for item in assumptions:
         if f'id="{item["id"]}"' not in assumptions_html:
             errors.append(f"assumption-audit lab item not rendered: {item['id']}")
-        for field in ["hidden_assumption", "why_it_exists", "audit_test", "what_changes_if_false", "mathematical_symptom", "repair_move"]:
+        assumption_fields = [
+            "hidden_assumption",
+            "why_it_exists",
+            "audit_test",
+            "what_changes_if_false",
+            "mathematical_symptom",
+            "repair_move",
+            "naive_overread",
+            "stress_test",
+            "transfer_red_flag",
+        ]
+        for field in assumption_fields:
             value = item.get(field, "")
             if words(value) < 18:
                 errors.append(f"assumption-audit lab {item['id']} has shallow {field}")
             elif html.escape(value, quote=True) not in assumptions_html:
                 errors.append(f"assumption-audit lab {item['id']} {field} not rendered")
-        combined = " ".join(str(item.get(field, "")) for field in ["hidden_assumption", "why_it_exists", "audit_test", "what_changes_if_false", "mathematical_symptom", "repair_move"])
-        if words(combined) < 190:
+        combined = " ".join(str(item.get(field, "")) for field in assumption_fields)
+        if words(combined) < 360:
             errors.append(f"assumption-audit lab {item['id']} has shallow combined treatment")
         for concept_id in item.get("concepts", []):
             if concept_id not in concept_by_id:
