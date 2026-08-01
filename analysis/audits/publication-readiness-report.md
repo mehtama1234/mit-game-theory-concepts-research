@@ -6,7 +6,7 @@ This report records local readiness evidence. Remote publication is verified by 
 
 ```text
 $ git log -1 --oneline
-4cde3f9 Deepen MIT jargon decoder
+d156d55 Deepen MIT recognition clinic
 
 $ git remote -v
 origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (fetch)
