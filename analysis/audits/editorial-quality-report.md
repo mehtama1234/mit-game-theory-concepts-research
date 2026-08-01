@@ -109,7 +109,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Assumption-audit decoder links: 14
 - Assumption-audit evidence links: 23
 - Worked transfer cards: 6
-- Worked transfer words: min 228, max 309
+- Worked transfer words: min 434, max 482
 - Worked transfer concept links: 24
 - Worked transfer primitive links: 18
 - Worked transfer model-building links: 18

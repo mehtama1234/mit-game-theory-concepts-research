@@ -939,6 +939,9 @@ def build_worked_transfer_examples(examples, concept_by_id, primitive_by_id, mod
   <p><strong>Assumption check:</strong> {esc(item["assumption_check"])}</p>
   <p><strong>Evidence bridge:</strong> {esc(item["evidence_bridge"])}</p>
   <p><strong>Transfer lesson:</strong> {esc(item["transfer_lesson"])}</p>
+  <p><strong>Lecture pattern mapped:</strong> {esc(item["lecture_pattern_mapped"])}</p>
+  <p><strong>Step-by-step transfer:</strong> {esc(item["step_by_step_transfer"])}</p>
+  <p><strong>Where transfer breaks:</strong> {esc(item["where_transfer_breaks"])}</p>
   <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
   <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
   <h3>Model-Building Steps</h3><p class="chips">{model_links}</p>

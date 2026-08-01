@@ -844,6 +844,18 @@ def main() -> int:
     transfer_decoder_links = 0
     transfer_evidence_links = 0
     transfer_words = []
+    transfer_fields = [
+        "new_situation",
+        "model_construction",
+        "first_principles_solution",
+        "math_move",
+        "assumption_check",
+        "evidence_bridge",
+        "transfer_lesson",
+        "lecture_pattern_mapped",
+        "step_by_step_transfer",
+        "where_transfer_breaks",
+    ]
     for item in worked_transfer:
         if f'id="{item["id"]}"' in worked_transfer_html:
             transfer_cards += 1
@@ -851,11 +863,11 @@ def main() -> int:
             errors.append(f"worked transfer example {item['id']} not rendered")
         text = " ".join(
             str(item.get(k, ""))
-            for k in ["new_situation", "model_construction", "first_principles_solution", "math_move", "assumption_check", "evidence_bridge", "transfer_lesson"]
+            for k in transfer_fields
         )
         treatment_words = words(text)
         transfer_words.append(treatment_words)
-        if treatment_words < 220:
+        if treatment_words < 430:
             errors.append(f"worked transfer example {item['id']} has shallow treatment: {treatment_words} words")
         linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in worked_transfer_html]
         linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in worked_transfer_html]

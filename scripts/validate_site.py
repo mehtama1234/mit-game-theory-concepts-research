@@ -700,18 +700,29 @@ def main() -> int:
                 errors.append(f"assumption-audit lab {item['id']} missing evidence link: {ev_id}")
     if len(worked_transfer) < 6:
         errors.append(f"worked transfer examples has only {len(worked_transfer)} cards")
+    transfer_fields = [
+        "new_situation",
+        "model_construction",
+        "first_principles_solution",
+        "math_move",
+        "assumption_check",
+        "evidence_bridge",
+        "transfer_lesson",
+        "lecture_pattern_mapped",
+        "step_by_step_transfer",
+        "where_transfer_breaks",
+    ]
     for item in worked_transfer:
         if f'id="{item["id"]}"' not in worked_transfer_html:
             errors.append(f"worked transfer example not rendered: {item['id']}")
-        fields = ["new_situation", "model_construction", "first_principles_solution", "math_move", "assumption_check", "evidence_bridge", "transfer_lesson"]
-        for field in fields:
+        for field in transfer_fields:
             value = item.get(field, "")
             if words(value) < 18:
                 errors.append(f"worked transfer example {item['id']} has shallow {field}")
             elif html.escape(value, quote=True) not in worked_transfer_html:
                 errors.append(f"worked transfer example {item['id']} {field} not rendered")
-        combined = " ".join(str(item.get(field, "")) for field in fields)
-        if words(combined) < 220:
+        combined = " ".join(str(item.get(field, "")) for field in transfer_fields)
+        if words(combined) < 430:
             errors.append(f"worked transfer example {item['id']} has shallow combined treatment")
         for concept_id in item.get("concepts", []):
             if concept_id not in concept_by_id:
