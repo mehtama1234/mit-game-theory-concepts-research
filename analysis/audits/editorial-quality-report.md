@@ -35,7 +35,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Recognition clinic primitive links: 22
 - Recognition clinic evidence links: 29
 - Math clinic cards: 9
-- Math clinic words: min 332, max 352
+- Math clinic words: min 422, max 442
 - Math clinic derivation links: 9
 - Math clinic concept links: 26
 - Math clinic evidence links: 26

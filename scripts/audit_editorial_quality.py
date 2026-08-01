@@ -399,12 +399,18 @@ def main() -> int:
             errors.append(f"math clinic {item['id']} not rendered")
         text = " ".join(
             str(item.get(k, ""))
-            for k in ["problem_before_math", "failed_shortcut", "plain_english_equation_reading", "symbol_by_symbol", "worked_numbers", "why_math_has_to_exist", "assumption_check", "why_this_changes_reasoning", "misuse_repair", "transfer_test"]
+            for k in ["problem_before_math", "failed_shortcut", "plain_english_equation_reading", "symbol_by_symbol", "worked_numbers", "why_math_has_to_exist", "assumption_check", "why_this_changes_reasoning", "misuse_repair", "transfer_test", "symbol_trap", "paper_reading_use"]
         )
         treatment_words = words(text)
         math_clinic_words.append(treatment_words)
-        if treatment_words < 330:
+        if treatment_words < 420:
             errors.append(f"math clinic {item['id']} has shallow walkthrough: {treatment_words} words")
+        for field in ["symbol_trap", "paper_reading_use"]:
+            value = item.get(field, "")
+            if words(value) < 28:
+                errors.append(f"math clinic {item['id']} has shallow {field}")
+            elif html_lib.escape(value, quote=True) not in math_clinic_html:
+                errors.append(f"math clinic {item['id']} {field} not rendered")
         derivation_id = item.get("derivation_id", "")
         if f'href="primitives.html#{derivation_id}"' in math_clinic_html:
             math_clinic_derivation_links += 1

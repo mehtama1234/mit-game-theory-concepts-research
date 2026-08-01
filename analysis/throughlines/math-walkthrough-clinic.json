@@ -13,6 +13,8 @@
     "why_math_has_to_exist": "The math exists because intuition is too eager to delete. A universal inequality forces the analyst to prove that a move has no strategic defense anywhere in the represented game before removing it from later reasoning.",
     "assumption_check": "Check that the opponent action set is complete, the payoffs are mapped correctly, and the comparison uses the same player in every row. If any rival action is missing, the deletion may be invalid.",
     "misuse_repair": "If you catch yourself saying the action is probably bad, stop calling it dominance. Keep the action alive and move to beliefs, expected utility, best responses, or rationalizability.",
+    "symbol_trap": "The trap is to read the inequality as one comparison rather than a family of comparisons. The opponent case is not decoration; it is the thing that must vary while the dominance claim keeps surviving.",
+    "paper_reading_use": "In a paper, dominance is a license to remove an action before prediction. Read that license narrowly. If the author deletes a strategy, find the table, state, or opponent-action set that makes the deletion universal. If the deletion depends on probability language, the author has left dominance and entered belief-based reasoning.",
     "concepts": ["dominance", "iterated_deletion"],
     "evidence_ids": ["ev-dominance-01", "ev-iterated_deletion-01"]
   },
@@ -30,6 +32,8 @@
     "why_math_has_to_exist": "The math exists because choice happens before uncertainty is resolved. Without weighted averaging, a reader may chase the best possible ending, fear only the worst ending, or ignore how likely each ending is.",
     "assumption_check": "Check where the probabilities come from, whether the payoff numbers represent the same objective across states, and whether the chooser is being modeled as expected-utility maximizing rather than using another risk rule.",
     "misuse_repair": "If the argument focuses on a vivid jackpot or vivid loss, rebuild the state table. Put each payoff beside its probability, then compare actions only after the weighted values are computed.",
+    "symbol_trap": "The trap is to treat the average as if it describes one actual future. It does not. It is a before-the-fact comparison number built from many possible futures and their probabilities.",
+    "paper_reading_use": "In a paper, use expected utility to audit risky choice claims. Find the states, the probability source, and the payoff in each state. If any one of those is vague, the expected-value conclusion is less solid than the formula makes it look. Also check whether the paper is assuming risk neutrality or a utility curve that already encodes risk attitude.",
     "concepts": ["expected_utility", "bayesian_games", "auctions"],
     "evidence_ids": ["ev-expected_utility-01", "ev-bayesian_games-01", "ev-auctions-01"]
   },
@@ -47,6 +51,8 @@
     "why_math_has_to_exist": "The math exists because no strategic action is best in empty space. A choice becomes best only after the environment created by other players, beliefs, or histories is pinned down.",
     "assumption_check": "Check that the player has the listed actions available, that the outside behavior is really being held fixed, and that payoffs include everything the player cares about at that moment. If information is hidden, the fixed object may be a belief rather than a known action.",
     "misuse_repair": "If a model says an action is optimal without saying against what, supply the missing condition. Ask whether the same action remains best under a different rival move, belief, or later history.",
+    "symbol_trap": "The trap is to forget the minus-i object. BR_i is not a personality label for player i; it is a response to the other players' fixed actions, beliefs, or continuation path.",
+    "paper_reading_use": "In a paper, every optimal-response claim should answer optimal against what. Look for the fixed environment before trusting the maximization. If the environment changes, the best-response calculation must be run again. This is especially important when the fixed object is a belief or continuation value rather than a visible opponent move.",
     "concepts": ["best_response", "rationalizability", "imperfect_competition"],
     "evidence_ids": ["ev-best_response-02", "ev-rationalizability-01", "ev-imperfect_competition-01"]
   },
@@ -64,6 +70,8 @@
     "why_math_has_to_exist": "The math exists because a prediction must survive inside each player's own incentives. A story can sound plausible from outside but fail because one player has a profitable private escape.",
     "assumption_check": "Check which deviations are allowed, whether the game is one-shot or dynamic, and whether players know the payoff structure. Nash does not test coalitions, histories, hidden types, or welfare unless those are added separately.",
     "misuse_repair": "If you are tempted to call the equilibrium good, rewrite the claim as a deviation test. Then ask a separate welfare question instead of loading moral meaning into Nash stability.",
+    "symbol_trap": "The trap is to read one player's inequality as the whole equilibrium. Nash requires the same style of no-profitable-deviation check for every player covered by the model.",
+    "paper_reading_use": "In a paper, an equilibrium claim should come with a candidate profile and a deviation set. Ask which deviations were checked, whether the equilibrium is unique, and whether the author separately argues that this equilibrium is reached or selected. If welfare or learning is claimed, demand a separate argument beyond the Nash inequalities.",
     "concepts": ["nash_equilibrium", "mixed_strategies", "bayesian_nash_equilibrium"],
     "evidence_ids": ["ev-nash_equilibrium-01", "ev-mixed_strategies-01", "ev-bayesian_nash_equilibrium-01"]
   },
@@ -81,6 +89,8 @@
     "why_math_has_to_exist": "The math exists because time lets early speech and later incentives diverge. Backward recursion prevents an announced plan from counting unless it would actually be chosen when the later moment arrives.",
     "assumption_check": "Check the order of moves, who observes what history, and whether the later player can commit in advance. If commitment or outside reputation changes the later payoff, the tree must include it rather than treating the simple backward-induction result as final.",
     "misuse_repair": "If a threat seems powerful, jump to the node where it is carried out. Compare the remaining actions there. Only feed the threat backward if it wins that later comparison.",
+    "symbol_trap": "The trap is to treat the max at a future node as if it were chosen by the earlier player. The mover at that later node chooses the continuation, so the earlier player must anticipate that later self-interest.",
+    "paper_reading_use": "In a paper, backward induction tells you to inspect timing before accepting a commitment story. Find the last real choice, solve it, and only then move to earlier claims about deterrence, bargaining, or promises.",
     "concepts": ["backward_induction", "subgame_perfection", "bargaining"],
     "evidence_ids": ["ev-backward_induction-02", "ev-subgame_perfection-01", "ev-bargaining-01"]
   },
@@ -98,6 +108,8 @@
     "why_math_has_to_exist": "The math exists because future consequences are not all equally powerful. A punishment ten periods away cannot be treated like a payoff now unless the model states how much the player values the future.",
     "assumption_check": "Check whether the horizon is finite or indefinite, whether cheating is observed, whether punishment is credible, and whether the discount factor is high enough for the claimed cooperation.",
     "misuse_repair": "If the argument says cooperation follows from repetition, ask for the incentive inequality. The repeated relationship matters only through the discounted comparison between deviation and continuation, plus the credibility of punishment.",
+    "symbol_trap": "The trap is to see many future terms and assume they are automatically large. The powers of delta may shrink those future payoffs sharply, especially when the player is impatient or punishment starts late.",
+    "paper_reading_use": "In a paper, discounting should force a threshold claim. Ask how patient players must be, when punishment begins, and whether the future path is credible. Repetition is not the proof; the discounted inequality is. A serious repeated-game argument should identify the one-shot gain, the continuation loss, and the delta range that makes restraint rational.",
     "concepts": ["infinitely_repeated_games", "folk_theorem", "implicit_cartels"],
     "evidence_ids": ["ev-infinitely_repeated_games-01", "ev-folk_theorem-01", "ev-implicit_cartels-01"]
   },
@@ -115,6 +127,8 @@
     "why_math_has_to_exist": "The math exists because evidence is comparative. A signal supports a type only relative to how likely that same signal would have been under other types in the model.",
     "assumption_check": "Check that the prior is stated, the possible types are exhaustive enough for the model, and the signal likelihoods are justified by incentives or data rather than inserted to get the desired posterior.",
     "misuse_repair": "If a signal feels persuasive, ask whether it is actually more likely under the claimed type. If every type would send it, Bayes' rule gives little reason to move beliefs.",
+    "symbol_trap": "The trap is to update from the signal's story rather than from its likelihood under each type. The denominator matters because it counts all the ways the same signal could have appeared.",
+    "paper_reading_use": "In a paper, Bayes rule should make belief updates accountable. Find the prior, the likelihood for every relevant type, and the observed signal. If the likelihoods are asserted rather than derived from incentives or data, mark the posterior as fragile. For strategic signals, ask why each type would or would not choose the observed signal.",
     "concepts": ["types_and_beliefs", "perfect_bayesian_equilibrium", "signaling"],
     "evidence_ids": ["ev-types_and_beliefs-01", "ev-perfect_bayesian_equilibrium-01", "ev-signaling-01"]
   },
@@ -132,6 +146,8 @@
     "why_math_has_to_exist": "The math exists because bids change both prices and chances. Looking only at the price paid after winning misses the strategic value of raising or lowering the probability of winning.",
     "assumption_check": "Check the auction format, what determines allocation, whether payment occurs only on winning, and whether quality scores or reserve prices change the probability or payment calculation.",
     "misuse_repair": "If an auction explanation focuses only on the winning bid, split the rule into allocation probability and conditional payment. Then recompute expected payment from both pieces before making a revenue or bidding claim.",
+    "symbol_trap": "The trap is to read payment as the posted price alone. Expected payment is conditional payment times the chance that the condition occurs, and both pieces can move when the bid changes.",
+    "paper_reading_use": "In a paper, auction payment formulas should be read as incentive machinery. Separate allocation probability, conditional payment, and bidder value before accepting a revenue, truthfulness, or bid-shading claim. If quality scores or reserve prices enter, treat them as changing either the chance of winning, the payment if winning, or both.",
     "concepts": ["auctions", "revenue_equivalence", "ad_auctions"],
     "evidence_ids": ["ev-auctions-01", "ev-revenue_equivalence-01", "ev-ad_auctions-01"]
   },
@@ -149,6 +165,8 @@
     "why_math_has_to_exist": "The math exists because coordination can fail even when the fact itself is shared privately. Players may need confidence about other players' confidence before acting together on a risky shared move.",
     "assumption_check": "Check whether the signal is public, whether all players interpret it the same way, and whether the payoff problem actually requires coordinated beliefs rather than only private information.",
     "misuse_repair": "If someone says everyone knows, ask which level they mean. A public announcement can matter because it upgrades private or mutual knowledge into a shared recursive anchor that players can safely use for coordination.",
+    "symbol_trap": "The trap is to stop at the first K. Knowing the fact is not the same as knowing that others know, or knowing that others know that others know. Coordination may need the chain.",
+    "paper_reading_use": "In a paper, common-knowledge claims should identify the public event or protocol that creates shared recursion. If the information is private, noisy, or interpreted differently, the common-knowledge conclusion is too strong. Ask whether coordinated action needs first-order knowledge only, or whether it needs confidence that others are reasoning from the same public fact.",
     "concepts": ["common_knowledge", "rationalizability", "nash_equilibrium"],
     "evidence_ids": ["ev-common_knowledge-01", "ev-rationalizability-01", "ev-nash_equilibrium-01"]
   }

@@ -362,6 +362,8 @@ def build_math_clinic(clinic, deriv_by_id, concept_by_id, ev_by_id):
   <p><strong>Why this changes reasoning:</strong> {esc(item["why_this_changes_reasoning"])}</p>
   <p><strong>Misuse repair:</strong> {esc(item["misuse_repair"])}</p>
   <p><strong>Transfer test:</strong> {esc(item["transfer_test"])}</p>
+  <p><strong>Symbol trap:</strong> {esc(item["symbol_trap"])}</p>
+  <p><strong>Paper-reading use:</strong> {esc(item["paper_reading_use"])}</p>
   <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
   <h3>Evidence Trail</h3><ul class="evidence-list">{evidence_links}</ul>
 </article>""")
