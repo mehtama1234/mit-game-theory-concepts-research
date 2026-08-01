@@ -1407,6 +1407,7 @@ def derivation_card(derivation: dict[str, Any]) -> str:
   <h3>Common Misread</h3><p>{esc(derivation["common_misread"])}</p>
   <h3>First-Principles Pressure</h3><p>{esc(derivation["first_principles_pressure"])}</p>
   <h3>Mechanical Reading</h3><p>{esc(derivation["mechanical_reading"])}</p>
+  <h3>Tiny Worked Check</h3><p>{esc(derivation["tiny_worked_check"])}</p>
   <h3>Audit Question</h3><p>{esc(derivation["audit_question"])}</p>
 </article>"""
 

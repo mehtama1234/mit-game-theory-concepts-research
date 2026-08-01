@@ -195,7 +195,7 @@ def main() -> int:
             errors.append(f"derivation {derivation['id']} has too few steps")
         if not str(derivation.get("equation", "")).strip():
             errors.append(f"derivation {derivation['id']} has empty equation")
-        for field in ["everyday_setup", "symbol_by_symbol", "why_it_matters", "common_misread"]:
+        for field in ["everyday_setup", "symbol_by_symbol", "why_it_matters", "common_misread", "tiny_worked_check"]:
             if words(str(derivation.get(field, ""))) < 10:
                 errors.append(f"derivation {derivation['id']} has shallow {field}")
 

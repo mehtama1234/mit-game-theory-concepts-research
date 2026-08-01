@@ -292,6 +292,7 @@ def main() -> int:
         "common_misread",
         "first_principles_pressure",
         "mechanical_reading",
+        "tiny_worked_check",
         "audit_question",
     ]
     derivation_words = [words(" ".join(str(d.get(f, "")) for f in derivation_fields) + " " + " ".join(d.get("derivation_steps", []))) for d in derivations]
@@ -1313,7 +1314,7 @@ def main() -> int:
     if len(derivations) < 8:
         errors.append(f"only {len(derivations)} derivation cards")
     for derivation, count in zip(derivations, derivation_words):
-        if count < 260:
+        if count < 340:
             errors.append(f"derivation {derivation['id']} has low teaching depth: {count} words")
     for family, count in zip(families, family_words):
         if count < 400:

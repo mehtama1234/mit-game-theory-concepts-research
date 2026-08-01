@@ -1117,9 +1117,10 @@ def main() -> int:
             "common_misread",
             "first_principles_pressure",
             "mechanical_reading",
+            "tiny_worked_check",
             "audit_question",
         ]
-        for heading in ["Derivation In Plain English", "Symbol By Symbol", "Why This Relation Matters", "Common Misread", "First-Principles Pressure", "Mechanical Reading", "Audit Question"]:
+        for heading in ["Derivation In Plain English", "Symbol By Symbol", "Why This Relation Matters", "Common Misread", "First-Principles Pressure", "Mechanical Reading", "Tiny Worked Check", "Audit Question"]:
             if heading not in primitives_html:
                 errors.append(f"primitives page missing derivation heading: {heading}")
         for field in derivation_fields:
@@ -1130,7 +1131,7 @@ def main() -> int:
                 errors.append(f"derivation {derivation['id']} {field} not rendered")
         combined = " ".join(str(derivation.get(field, "")) for field in derivation_fields)
         combined += " " + " ".join(derivation.get("derivation_steps", []))
-        if words(combined) < 260:
+        if words(combined) < 340:
             errors.append(f"derivation {derivation['id']} has shallow combined treatment")
     for concept in concepts:
         text = (SITE / "concepts" / f"{concept['id']}.html").read_text(encoding="utf-8")
