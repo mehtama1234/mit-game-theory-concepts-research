@@ -122,12 +122,12 @@ npm run build
 
 The Sites project id is stored in `.openai/hosting.json`. Treat it as opaque and reuse it exactly.
 
-Current deployed Sites version:
+Current Sites deployment:
 
 - project id: `appgprj_6a6e49173ac081919d10d18ab8e47e9d`
-- version 2: `appgprj_6a6e49173ac081919d10d18ab8e47e9d~appgver_cc5f30a361a08191bd2c9dbb3f346a30`
-- deployment: `appgdep_6a6e4f5303d48191928feb0774123c5e`
+- URL: `https://mit-game-theory-concept-lab.manish694182.chatgpt.site`
 - access: owner-only custom access; unauthenticated HTTP checks return `401`
+- exact latest version and deployment ids should be checked with the Sites deployment status tool after each deploy
 
 ## Push And Generated-Site Refresh
 

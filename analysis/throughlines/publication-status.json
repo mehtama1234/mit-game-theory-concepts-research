@@ -40,8 +40,8 @@
     "title": "Sites production deployment",
     "state": "Deployed owner-only production URL",
     "plain_language_status": "The lab has a production Sites deployment at https://mit-game-theory-concept-lab.manish694182.chatgpt.site. The site is configured as owner-only custom access, so unauthenticated requests return 401 rather than the page body.",
-    "evidence_to_check": "Use the Sites deployment status for version 2 and the production URL. A normal curl should show 401 because the deployment is private; authenticated owner access should open the site in a browser.",
-    "proof_command": "Sites deployment status returned succeeded for deployment appgdep_6a6e4f5303d48191928feb0774123c5e, version appgver_cc5f30a361a08191bd2c9dbb3f346a30, and URL https://mit-game-theory-concept-lab.manish694182.chatgpt.site",
+    "evidence_to_check": "Use the Sites deployment status and the production URL. A normal curl should show 401 because the deployment is private; authenticated owner access should open the site in a browser.",
+    "proof_command": "Sites deployment status returned succeeded and URL https://mit-game-theory-concept-lab.manish694182.chatgpt.site for the owner-only production deployment.",
     "review_links": ["publication-status.html", "review-guide.html", "index.html"]
   },
   {

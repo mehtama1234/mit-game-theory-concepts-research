@@ -6,7 +6,7 @@ This report records local readiness evidence. Remote publication is verified by 
 
 ```text
 $ git log -1 --oneline
-a46a50d Fix Sites build metadata
+e989757 Record Sites production deployment status
 
 $ git remote -v
 origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (fetch)
@@ -56,30 +56,30 @@ validated HANDOFF.md and README.md
 [2K
 transforming...✓ 213 modules transformed.
 rendering chunks...
-✓ built in 1.96s
+✓ built in 1.33s
 [2/5] analyze server references...
 [2K
 transforming...✓ 70 modules transformed.
 rendering chunks...
-✓ built in 575ms
+✓ built in 347ms
 [3/5] build rsc environment...
 [2K
 transforming...✓ 208 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 2.74s
+✓ built in 1.70s
 [4/5] build client environment...
 [2K
 transforming...✓ 117 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 1.79s
+✓ built in 1.32s
 [5/5] build ssr environment...
 [2K
 transforming...✓ 71 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 957ms
+✓ built in 429ms
 [0m
   Route (app)
   ─ ? /
