@@ -535,14 +535,26 @@ def main() -> int:
     for item in workbook:
         if f'id="{item["id"]}"' not in workbook_html:
             errors.append(f"model-building workbook item not rendered: {item['id']}")
-        for field in ["ordinary_question", "formal_slot", "why_this_slot_exists", "construction_move", "math_check", "failure_if_skipped", "worked_prompt"]:
+        workbook_fields = [
+            "ordinary_question",
+            "formal_slot",
+            "why_this_slot_exists",
+            "construction_move",
+            "math_check",
+            "failure_if_skipped",
+            "worked_prompt",
+            "naive_shortcut",
+            "step_by_step_use",
+            "transfer_check",
+        ]
+        for field in workbook_fields:
             value = item.get(field, "")
             if words(value) < 16:
                 errors.append(f"model-building workbook {item['id']} has shallow {field}")
             elif html.escape(value, quote=True) not in workbook_html:
                 errors.append(f"model-building workbook {item['id']} {field} not rendered")
-        combined = " ".join(str(item.get(field, "")) for field in ["ordinary_question", "formal_slot", "why_this_slot_exists", "construction_move", "math_check", "failure_if_skipped", "worked_prompt"])
-        if words(combined) < 185:
+        combined = " ".join(str(item.get(field, "")) for field in workbook_fields)
+        if words(combined) < 360:
             errors.append(f"model-building workbook {item['id']} has shallow combined treatment")
         for concept_id in item.get("concepts", []):
             if concept_id not in concept_by_id:

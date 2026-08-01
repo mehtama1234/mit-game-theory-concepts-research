@@ -673,13 +673,22 @@ def main() -> int:
             workbook_cards += 1
         else:
             errors.append(f"model-building workbook {item['id']} not rendered")
-        text = " ".join(
-            str(item.get(k, ""))
-            for k in ["ordinary_question", "formal_slot", "why_this_slot_exists", "construction_move", "math_check", "failure_if_skipped", "worked_prompt"]
-        )
+        workbook_fields = [
+            "ordinary_question",
+            "formal_slot",
+            "why_this_slot_exists",
+            "construction_move",
+            "math_check",
+            "failure_if_skipped",
+            "worked_prompt",
+            "naive_shortcut",
+            "step_by_step_use",
+            "transfer_check",
+        ]
+        text = " ".join(str(item.get(k, "")) for k in workbook_fields)
         treatment_words = words(text)
         workbook_words.append(treatment_words)
-        if treatment_words < 185:
+        if treatment_words < 360:
             errors.append(f"model-building workbook {item['id']} has shallow treatment: {treatment_words} words")
         linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in workbook_html]
         linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in workbook_html]
