@@ -884,9 +884,25 @@ def main() -> int:
             errors.append(f"missing lecture anchor: {lecture['id']}")
         if not lecture.get("first_principles_role") or not lecture.get("what_to_watch_for"):
             errors.append(f"lecture missing treatment: {lecture['id']}")
-        for key in ["argument_arc", "math_entry_point", "worked_mini_example", "common_failure"]:
+        lecture_path_fields = [
+            "first_principles_role",
+            "what_to_watch_for",
+            "argument_arc",
+            "math_entry_point",
+            "worked_mini_example",
+            "common_failure",
+        ]
+        for heading in ["Argument Arc", "Where The Math Enters", "Worked Mini-Example", "Common Failure"]:
+            if heading not in lectures_html:
+                errors.append(f"lectures page missing path heading: {heading}")
+        for key in lecture_path_fields:
             if not lecture.get(key):
                 errors.append(f"lecture missing {key}: {lecture['id']}")
+            elif html.escape(str(lecture[key]), quote=True) not in lectures_html:
+                errors.append(f"lecture path missing rendered {key}: {lecture['id']}")
+        combined_path = " ".join(str(lecture.get(field, "")) for field in lecture_path_fields)
+        if words(combined_path) < 130:
+            errors.append(f"lecture {lecture['id']} has shallow path card treatment")
         total_evidence = len(lecture.get("evidence_ids", [])) + len(lecture.get("supplemental_evidence_ids", []))
         if total_evidence < 2:
             errors.append(f"lecture has thin evidence coverage: {lecture['id']} has {total_evidence} anchors")

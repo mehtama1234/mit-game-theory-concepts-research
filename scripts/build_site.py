@@ -1138,6 +1138,14 @@ def build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id):
       ("Evidence", lecture["coverage_note"]),
       ("Transcript", lecture["transcript_path"]),
   ], "lecture-flow")}
+  <h3>Argument Arc</h3>
+  <p>{esc(lecture["argument_arc"])}</p>
+  <h3>Where The Math Enters</h3>
+  <p>{esc(lecture["math_entry_point"])}</p>
+  <h3>Worked Mini-Example</h3>
+  <p>{esc(lecture["worked_mini_example"])}</p>
+  <h3>Common Failure</h3>
+  <p>{esc(lecture["common_failure"])}</p>
   <h3>Linked Concepts</h3>
   <p class="chips">{chips or '<span class="chip muted">No direct concept anchors yet</span>'}</p>
   <h3>Evidence Anchors</h3>

@@ -144,7 +144,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Lecture path entries: 25
 - Supplemental lecture evidence records: 8
 - Lectures below 2 total evidence anchors: 0
-- Lecture path treatment words: min 30, max 50
+- Lecture path treatment words: min 138, max 195
 - Lecture detail page words: min 1458, max 5413
 - Errors: 0
 

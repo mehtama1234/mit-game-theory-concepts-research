@@ -1153,10 +1153,23 @@ def main() -> int:
         for key in ["lecture_argument", "conceptual_payload", "why_span_matters", "local_transcript_window"]:
             if words(record.get(key, "")) < 10:
                 errors.append(f"supplemental evidence {record['id']} has shallow {key}")
-    lecture_words = [words(f"{lecture.get('first_principles_role', '')} {lecture.get('what_to_watch_for', '')}") for lecture in lectures]
+    lecture_path_fields = [
+        "first_principles_role",
+        "what_to_watch_for",
+        "argument_arc",
+        "math_entry_point",
+        "worked_mini_example",
+        "common_failure",
+    ]
+    lectures_html = (SITE / "lectures.html").read_text(encoding="utf-8") if (SITE / "lectures.html").exists() else ""
+    lecture_words = [words(" ".join(str(lecture.get(field, "")) for field in lecture_path_fields)) for lecture in lectures]
     for lecture, count in zip(lectures, lecture_words):
-        if count < 30:
+        if count < 130:
             errors.append(f"lecture {lecture['id']} has shallow path treatment: {count} words")
+        for field in lecture_path_fields:
+            value = str(lecture.get(field, ""))
+            if value and html_lib.escape(value, quote=True) not in lectures_html:
+                errors.append(f"lecture path {lecture['id']} {field} not rendered")
         treatment_count = words(" ".join(str(lecture.get(field, "")) for field in ["argument_arc", "math_entry_point", "worked_mini_example", "common_failure"]))
         if treatment_count < 90:
             errors.append(f"lecture {lecture['id']} has shallow hand-authored treatment: {treatment_count} words")
