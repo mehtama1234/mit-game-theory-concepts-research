@@ -282,7 +282,7 @@ def main() -> int:
     for item in solutions:
         if f'id="{item["id"]}"' not in solutions_html:
             errors.append(f"solution workshop item not rendered: {item['id']}")
-        fields = ["problem", "ordinary_setup", "model_choice", "worked_solution", "math_check", "assumption_audit", "common_wrong_answer", "transfer_rule"]
+        fields = ["problem", "ordinary_setup", "model_choice", "worked_solution", "math_check", "assumption_audit", "common_wrong_answer", "transfer_rule", "reasoning_trace", "overclaim_audit"]
         for field in fields:
             value = item.get(field, "")
             if words(value) < 22:
@@ -290,7 +290,7 @@ def main() -> int:
             elif html.escape(value, quote=True) not in solutions_html:
                 errors.append(f"solution workshop {item['id']} {field} not rendered")
         combined = " ".join(str(item.get(field, "")) for field in fields)
-        if words(combined) < 285:
+        if words(combined) < 440:
             errors.append(f"solution workshop {item['id']} has shallow combined treatment")
         for concept_id in item.get("concepts", []):
             if concept_id not in concept_by_id:

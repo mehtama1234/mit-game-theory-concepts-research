@@ -476,12 +476,18 @@ def main() -> int:
             errors.append(f"solution workshop {item['id']} not rendered")
         text = " ".join(
             str(item.get(k, ""))
-            for k in ["problem", "ordinary_setup", "model_choice", "worked_solution", "math_check", "assumption_audit", "common_wrong_answer", "transfer_rule"]
+            for k in ["problem", "ordinary_setup", "model_choice", "worked_solution", "math_check", "assumption_audit", "common_wrong_answer", "transfer_rule", "reasoning_trace", "overclaim_audit"]
         )
         treatment_words = words(text)
         solution_words.append(treatment_words)
-        if treatment_words < 285:
+        if treatment_words < 440:
             errors.append(f"solution workshop {item['id']} has shallow treatment: {treatment_words} words")
+        for field in ["reasoning_trace", "overclaim_audit"]:
+            value = item.get(field, "")
+            if words(value) < 45:
+                errors.append(f"solution workshop {item['id']} has shallow {field}")
+            elif html_lib.escape(value, quote=True) not in solutions_html:
+                errors.append(f"solution workshop {item['id']} {field} not rendered")
         linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in solutions_html]
         linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in solutions_html]
         linked_drills = [did for did in item.get("drill_ids", []) if f'href="drills.html#{did}"' in solutions_html]

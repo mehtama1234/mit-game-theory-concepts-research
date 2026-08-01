@@ -45,7 +45,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Problem drill primitive links: 19
 - Problem drill evidence links: 24
 - Solution workshop cards: 8
-- Solution workshop words: min 303, max 359
+- Solution workshop words: min 446, max 492
 - Solution workshop concept links: 32
 - Solution workshop primitive links: 24
 - Solution workshop drill links: 16

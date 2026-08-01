@@ -465,6 +465,8 @@ def build_solution_workshop(solutions, concept_by_id, primitive_by_id, drill_by_
   <p><strong>Assumption audit:</strong> {esc(item["assumption_audit"])}</p>
   <p><strong>Common wrong answer:</strong> {esc(item["common_wrong_answer"])}</p>
   <p><strong>Transfer rule:</strong> {esc(item["transfer_rule"])}</p>
+  <p><strong>Reasoning trace:</strong> {esc(item["reasoning_trace"])}</p>
+  <p><strong>Overclaim audit:</strong> {esc(item["overclaim_audit"])}</p>
   <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
   <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
   <h3>Related Drills</h3><p class="chips">{drill_links}</p>
