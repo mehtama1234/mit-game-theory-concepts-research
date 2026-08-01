@@ -354,11 +354,11 @@ def main() -> int:
             errors.append(f"problem drill {drill['id']} not rendered")
         text = " ".join(
             str(drill.get(k, ""))
-            for k in ["scenario", "reader_task", "first_principles_answer", "math_move", "common_wrong_turn", "evidence_checkpoint"]
+            for k in ["scenario", "reader_task", "setup_pressure", "first_principles_answer", "math_move", "worked_resolution", "assumption_check", "common_wrong_turn", "transfer_prompt", "evidence_checkpoint"]
         )
         treatment_words = words(text)
         drill_words.append(treatment_words)
-        if treatment_words < 105:
+        if treatment_words < 285:
             errors.append(f"problem drill {drill['id']} has shallow treatment: {treatment_words} words")
         linked_concepts = [cid for cid in drill.get("concepts", []) if f'href="concepts/{cid}.html"' in drills_html]
         linked_primitives = [pid for pid in drill.get("primitives", []) if f'href="primitives.html#{pid}"' in drills_html]

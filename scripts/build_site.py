@@ -382,9 +382,13 @@ def build_problem_drills(drills, concept_by_id, primitive_by_id, ev_by_id):
   <h2>{esc(drill["title"])}</h2>
   <p><strong>Scenario:</strong> {esc(drill["scenario"])}</p>
   <p><strong>Reader task:</strong> {esc(drill["reader_task"])}</p>
+  <p><strong>Setup pressure:</strong> {esc(drill["setup_pressure"])}</p>
   <p><strong>First-principles answer:</strong> {esc(drill["first_principles_answer"])}</p>
   <p><strong>Math move:</strong> {esc(drill["math_move"])}</p>
+  <p><strong>Worked resolution:</strong> {esc(drill["worked_resolution"])}</p>
+  <p><strong>Assumption check:</strong> {esc(drill["assumption_check"])}</p>
   <p><strong>Common wrong turn:</strong> {esc(drill["common_wrong_turn"])}</p>
+  <p><strong>Transfer prompt:</strong> {esc(drill["transfer_prompt"])}</p>
   <p><strong>Evidence checkpoint:</strong> {esc(drill["evidence_checkpoint"])}</p>
   <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
   <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>

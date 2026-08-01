@@ -230,13 +230,15 @@ def main() -> int:
     for drill in drills:
         if f'id="{drill["id"]}"' not in drills_html:
             errors.append(f"problem drill not rendered: {drill['id']}")
-        for field in ["scenario", "reader_task", "first_principles_answer", "math_move", "common_wrong_turn", "evidence_checkpoint"]:
+        fields = ["scenario", "reader_task", "setup_pressure", "first_principles_answer", "math_move", "worked_resolution", "assumption_check", "common_wrong_turn", "transfer_prompt", "evidence_checkpoint"]
+        for field in fields:
             value = drill.get(field, "")
-            if words(value) < 12:
+            minimum = 12 if field in ["scenario", "reader_task", "evidence_checkpoint"] else 24
+            if words(value) < minimum:
                 errors.append(f"problem drill {drill['id']} has shallow {field}")
             elif html.escape(value, quote=True) not in drills_html:
                 errors.append(f"problem drill {drill['id']} {field} not rendered")
-        if words(" ".join(str(drill.get(field, "")) for field in ["scenario", "first_principles_answer", "math_move", "common_wrong_turn", "evidence_checkpoint"])) < 105:
+        if words(" ".join(str(drill.get(field, "")) for field in fields)) < 285:
             errors.append(f"problem drill {drill['id']} has shallow combined treatment")
         for concept_id in drill.get("concepts", []):
             if concept_id not in concept_by_id:

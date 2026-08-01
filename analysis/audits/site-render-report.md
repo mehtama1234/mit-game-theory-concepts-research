@@ -12,7 +12,7 @@ Playwright render audit for representative desktop and mobile pages.
 - desktop-study-route: `study-route.html`, viewport 1280,900, captured 1280x900, 149361 bytes
 - desktop-recognition: `recognition.html`, viewport 1280,900, captured 1280x900, 151160 bytes
 - desktop-math-clinic: `math-clinic.html`, viewport 1280,900, captured 1280x900, 144019 bytes
-- desktop-drills: `drills.html`, viewport 1280,900, captured 1280x900, 133988 bytes
+- desktop-drills: `drills.html`, viewport 1280,900, captured 1280x900, 148307 bytes
 - desktop-solutions: `solutions.html`, viewport 1280,900, captured 1280x900, 155765 bytes
 - desktop-cases: `cases.html`, viewport 1280,900, captured 1280x900, 148459 bytes
 - desktop-argument-chains: `argument-chains.html`, viewport 1280,900, captured 1280x900, 130902 bytes
