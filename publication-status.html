@@ -42,6 +42,13 @@
   <p><strong>Evidence to check:</strong> Use the GitHub Pages API or repository Pages settings. The current API response has been `422 Your current plan does not support GitHub Pages for this repository.`</p>
   <p><strong>Proof command:</strong> <code>POST /repos/mehtama1234/mit-game-theory-concepts-research/pages with source gh-pages returns 422 plan limitation</code></p>
   <h3>Review links</h3><p class="chips"><a class="chip" href="publication-status.html">publication-status.html</a><a class="chip" href="review-guide.html">review-guide.html</a></p>
+</article><article class="wide-card status-card" id="status-sites-production">
+  <p class="eyebrow">Deployed owner-only production URL</p>
+  <h2>Sites production deployment</h2>
+  <p><strong>Status:</strong> The lab has a production Sites deployment at https://mit-game-theory-concept-lab.manish694182.chatgpt.site. The site is configured as owner-only custom access, so unauthenticated requests return 401 rather than the page body.</p>
+  <p><strong>Evidence to check:</strong> Use the Sites deployment status for version 2 and the production URL. A normal curl should show 401 because the deployment is private; authenticated owner access should open the site in a browser.</p>
+  <p><strong>Proof command:</strong> <code>Sites deployment status returned succeeded for deployment appgdep_6a6e4f5303d48191928feb0774123c5e, version appgver_cc5f30a361a08191bd2c9dbb3f346a30, and URL https://mit-game-theory-concept-lab.manish694182.chatgpt.site</code></p>
+  <h3>Review links</h3><p class="chips"><a class="chip" href="publication-status.html">publication-status.html</a><a class="chip" href="review-guide.html">review-guide.html</a><a class="chip" href="index.html">index.html</a></p>
 </article><article class="wide-card status-card" id="status-no-overclaim">
   <p class="eyebrow">Required completion caveat</p>
   <h2>Completion claim boundary</h2>
