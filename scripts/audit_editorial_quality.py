@@ -522,11 +522,11 @@ def main() -> int:
             errors.append(f"misconception repair {repair['id']} not rendered")
         text = " ".join(
             str(repair.get(k, ""))
-            for k in ["mistaken_belief", "why_it_is_tempting", "first_principles_repair", "diagnostic_question", "what_to_do_instead", "evidence_note"]
+            for k in ["mistaken_belief", "why_it_is_tempting", "first_principles_repair", "diagnostic_question", "what_breaks_if_ignored", "worked_correction", "transfer_test", "evidence_note"]
         )
         treatment_words = words(text)
         repair_words.append(treatment_words)
-        if treatment_words < 120:
+        if treatment_words < 260:
             errors.append(f"misconception repair {repair['id']} has shallow treatment: {treatment_words} words")
         linked_concepts = [cid for cid in repair.get("concepts", []) if f'href="concepts/{cid}.html"' in repairs_html]
         linked_limits = [cid for cid in repair.get("limit_concepts", []) if f'href="limits.html#limit-{cid}"' in repairs_html]

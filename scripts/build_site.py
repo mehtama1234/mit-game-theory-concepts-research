@@ -585,7 +585,9 @@ def build_misconception_repairs(repairs, concept_by_id, drill_by_id, ev_by_id):
   <p><strong>Why it is tempting:</strong> {esc(repair["why_it_is_tempting"])}</p>
   <p><strong>First-principles repair:</strong> {esc(repair["first_principles_repair"])}</p>
   <p><strong>Diagnostic question:</strong> {esc(repair["diagnostic_question"])}</p>
-  <p><strong>What to do instead:</strong> {esc(repair["what_to_do_instead"])}</p>
+  <p><strong>What breaks if ignored:</strong> {esc(repair["what_breaks_if_ignored"])}</p>
+  <p><strong>Worked correction:</strong> {esc(repair["worked_correction"])}</p>
+  <p><strong>Transfer test:</strong> {esc(repair["transfer_test"])}</p>
   <p><strong>Evidence note:</strong> {esc(repair["evidence_note"])}</p>
   <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
   <h3>Limits And Traps</h3><p class="chips">{limit_links}</p>

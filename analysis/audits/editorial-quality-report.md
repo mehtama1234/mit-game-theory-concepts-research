@@ -67,7 +67,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Argument chain primitive links: 19
 - Argument chain evidence links: 29
 - Misconception repair cards: 8
-- Misconception repair words: min 126, max 167
+- Misconception repair words: min 270, max 309
 - Misconception repair concept links: 25
 - Misconception repair limit links: 24
 - Misconception repair drill links: 8
