@@ -77,6 +77,13 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Jargon decoder concept links: 44
 - Jargon decoder primitive links: 33
 - Jargon decoder evidence links: 33
+- Model-building workbook cards: 7
+- Model-building workbook words: min 185, max 226
+- Model-building concept links: 28
+- Model-building primitive links: 22
+- Model-building drill links: 14
+- Model-building decoder links: 20
+- Model-building evidence links: 25
 - Capstone self-test cards: 6
 - Capstone self-test words: min 209, max 265
 - Capstone concept links: 24
@@ -105,7 +112,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Supplemental lecture evidence records: 8
 - Lectures below 2 total evidence anchors: 0
 - Lecture path treatment words: min 30, max 50
-- Lecture detail page words: min 1417, max 5372
+- Lecture detail page words: min 1426, max 5381
 - Errors: 0
 
 ## Lowest Concept Depth

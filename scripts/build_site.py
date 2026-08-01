@@ -44,6 +44,7 @@ def page(title: str, body: str, active: str = "", depth: int = 0) -> str:
         ("repairs.html", "Repairs", "repairs"),
         ("paper-reading.html", "Paper Reading", "paper-reading"),
         ("jargon-decoder.html", "Decoder", "jargon-decoder"),
+        ("model-building.html", "Model Building", "model-building"),
         ("capstone.html", "Capstone", "capstone"),
         ("cross-reference.html", "Cross Index", "cross-reference"),
         ("limits.html", "Limits", "limits"),
@@ -225,6 +226,7 @@ def build_index(concepts, themes, evidence, lectures):
 <section><h2>Repair Common Misreads</h2><p>The repair map starts from common wrong interpretations and points to the correction, concept pages, limits, drills, and evidence.</p><p><a class="button" href="repairs.html">Open misconception repairs</a></p></section>
 <section><h2>Read New Papers And Models</h2><p>The paper-reading guide teaches how to recognize game-theory primitives when a paper uses different vocabulary for objectives, equilibrium, timing, information, mechanisms, or shared knowledge.</p><p><a class="button" href="paper-reading.html">Open paper-reading guide</a></p></section>
 <section><h2>Decode The Vocabulary</h2><p>The jargon decoder translates course and paper terms into everyday pressure, mathematical object, reading test, common confusion, and transcript-backed links.</p><p><a class="button" href="jargon-decoder.html">Open the decoder</a></p></section>
+<section><h2>Build The Model</h2><p>The model-building workbook walks from an ordinary situation to players, actions, timing, information, payoffs, solution concept, and model boundaries.</p><p><a class="button" href="model-building.html">Open model-building workbook</a></p></section>
 <section><h2>Prove You Can Use It</h2><p>The capstone self-test gives transfer scenarios that force the reader to choose the model, read the math, avoid the wrong answer, and cite transcript evidence.</p><p><a class="button" href="capstone.html">Open the capstone</a></p></section>
 <section><h2>Find A Concept By Pressure</h2><p>The cross index lets a reader jump from an everyday problem to the relevant concept, lecture, primitive, subtheme, and evidence record.</p><p><a class="button" href="cross-reference.html">Open the cross index</a></p></section>
 <section><h2>Check The Limits</h2><p>The limits page collects common misunderstandings, student traps, and places where an analogy stops working.</p><p><a class="button" href="limits.html">Open limits and traps</a></p></section>
@@ -619,6 +621,57 @@ def build_jargon_decoder(decoder, concept_by_id, primitive_by_id, ev_by_id):
   <p>A plain-language bridge for terms that appear in lectures, problem sets, and papers. Each card translates the term family into the everyday problem, the mathematical object, a reading test, and the confusion to avoid.</p>
 </section>""" + "".join(cards)
     write(SITE / "jargon-decoder.html", page("Jargon Decoder", body, "jargon-decoder"))
+
+
+def build_model_building_workbook(workbook, concept_by_id, primitive_by_id, drill_by_id, decoder_by_id, ev_by_id):
+    cards = []
+    for item in workbook:
+        concept_links = "".join(
+            f'<a class="chip" href="concepts/{esc(concept_id)}.html">{esc(concept_by_id[concept_id]["name"])}</a>'
+            for concept_id in item.get("concepts", [])
+            if concept_id in concept_by_id
+        )
+        primitive_links = "".join(
+            f'<a class="chip" href="primitives.html#{esc(primitive_id)}">{esc(primitive_by_id[primitive_id]["name"])}</a>'
+            for primitive_id in item.get("primitives", [])
+            if primitive_id in primitive_by_id
+        )
+        drill_links = "".join(
+            f'<a class="chip" href="drills.html#{esc(drill_id)}">{esc(drill_by_id[drill_id]["title"])}</a>'
+            for drill_id in item.get("drill_ids", [])
+            if drill_id in drill_by_id
+        )
+        decoder_links = "".join(
+            f'<a class="chip" href="jargon-decoder.html#{esc(decoder_id)}">{esc(decoder_by_id[decoder_id]["term_family"])}</a>'
+            for decoder_id in item.get("decoder_ids", [])
+            if decoder_id in decoder_by_id
+        )
+        evidence_links = "".join(
+            f'<li><a href="evidence.html#{esc(ev_id)}">{esc(ev_id)}</a>: {esc(ev_by_id[ev_id]["video_title"])}</li>'
+            for ev_id in item.get("evidence_ids", [])
+            if ev_id in ev_by_id
+        )
+        cards.append(f"""<article class="wide-card model-building-card" id="{esc(item["id"])}">
+  <p class="eyebrow">Model-building workbook</p>
+  <h2>{esc(item["title"])}</h2>
+  <p><strong>Ordinary question:</strong> {esc(item["ordinary_question"])}</p>
+  <p><strong>Formal slot:</strong> {esc(item["formal_slot"])}</p>
+  <p><strong>Why this slot exists:</strong> {esc(item["why_this_slot_exists"])}</p>
+  <p><strong>Construction move:</strong> {esc(item["construction_move"])}</p>
+  <p><strong>Math check:</strong> {esc(item["math_check"])}</p>
+  <p><strong>Failure if skipped:</strong> {esc(item["failure_if_skipped"])}</p>
+  <p><strong>Worked prompt:</strong> {esc(item["worked_prompt"])}</p>
+  <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
+  <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
+  <h3>Practice Drills</h3><p class="chips">{drill_links}</p>
+  <h3>Decoder Cards</h3><p class="chips">{decoder_links}</p>
+  <h3>Transcript Evidence</h3><ul class="evidence-list">{evidence_links}</ul>
+</article>""")
+    body = """<section class="page-head">
+  <h1>Model-Building Workbook</h1>
+  <p>A from-scratch checklist for turning an ordinary strategic situation into a usable game model. Each step names the everyday question, the formal slot, the math check, the failure mode, and transcript-backed links.</p>
+</section>""" + "".join(cards)
+    write(SITE / "model-building.html", page("Model-Building Workbook", body, "model-building"))
 
 
 def build_capstone_self_test(capstones, concept_by_id, primitive_by_id, case_by_id, drill_by_id, paper_by_id, decoder_by_id, ev_by_id):
@@ -1100,6 +1153,7 @@ def main():
     repairs = load("analysis/throughlines/misconception-repairs.json")
     paper_reading = load("analysis/throughlines/paper-reading-guide.json")
     jargon_decoder = load("analysis/throughlines/jargon-decoder.json")
+    workbook = load("analysis/throughlines/model-building-workbook.json")
     capstones = load("analysis/throughlines/capstone-self-test.json")
     lectures = load("analysis/lectures/lecture-path.json")
     equation_notes = load_optional("analysis/editorial-overrides/equation-walkthrough-notes.json", {})
@@ -1127,6 +1181,7 @@ def main():
     build_misconception_repairs(repairs, concept_by_id, drill_by_id, ev_by_id)
     build_paper_reading_guide(paper_reading, concept_by_id, primitive_by_id, family_by_id, case_by_id, drill_by_id, math_clinic_by_id, ev_by_id)
     build_jargon_decoder(jargon_decoder, concept_by_id, primitive_by_id, ev_by_id)
+    build_model_building_workbook(workbook, concept_by_id, primitive_by_id, drill_by_id, decoder_by_id, ev_by_id)
     build_capstone_self_test(capstones, concept_by_id, primitive_by_id, case_by_id, drill_by_id, paper_by_id, decoder_by_id, ev_by_id)
     build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence)
     build_limits(concepts, themes, derivations)

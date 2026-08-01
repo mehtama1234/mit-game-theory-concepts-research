@@ -111,6 +111,7 @@ def main() -> int:
     repairs = json.loads((ROOT / "analysis/throughlines/misconception-repairs.json").read_text(encoding="utf-8"))
     paper_reading = json.loads((ROOT / "analysis/throughlines/paper-reading-guide.json").read_text(encoding="utf-8"))
     jargon_decoder = json.loads((ROOT / "analysis/throughlines/jargon-decoder.json").read_text(encoding="utf-8"))
+    workbook = json.loads((ROOT / "analysis/throughlines/model-building-workbook.json").read_text(encoding="utf-8"))
     capstones = json.loads((ROOT / "analysis/throughlines/capstone-self-test.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
@@ -563,6 +564,49 @@ def main() -> int:
             errors.append(f"jargon decoder {item['id']} missing evidence links")
     if len(jargon_decoder) < 10:
         errors.append(f"only {len(jargon_decoder)} jargon decoder cards")
+    workbook_html = (SITE / "model-building.html").read_text(encoding="utf-8") if (SITE / "model-building.html").exists() else ""
+    workbook_cards = 0
+    workbook_concept_links = 0
+    workbook_primitive_links = 0
+    workbook_drill_links = 0
+    workbook_decoder_links = 0
+    workbook_evidence_links = 0
+    workbook_words = []
+    for item in workbook:
+        if f'id="{item["id"]}"' in workbook_html:
+            workbook_cards += 1
+        else:
+            errors.append(f"model-building workbook {item['id']} not rendered")
+        text = " ".join(
+            str(item.get(k, ""))
+            for k in ["ordinary_question", "formal_slot", "why_this_slot_exists", "construction_move", "math_check", "failure_if_skipped", "worked_prompt"]
+        )
+        treatment_words = words(text)
+        workbook_words.append(treatment_words)
+        if treatment_words < 185:
+            errors.append(f"model-building workbook {item['id']} has shallow treatment: {treatment_words} words")
+        linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in workbook_html]
+        linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in workbook_html]
+        linked_drills = [did for did in item.get("drill_ids", []) if f'href="drills.html#{did}"' in workbook_html]
+        linked_decoders = [did for did in item.get("decoder_ids", []) if f'href="jargon-decoder.html#{did}"' in workbook_html]
+        linked_evidence = [eid for eid in item.get("evidence_ids", []) if f'href="evidence.html#{eid}"' in workbook_html]
+        workbook_concept_links += len(linked_concepts)
+        workbook_primitive_links += len(linked_primitives)
+        workbook_drill_links += len(linked_drills)
+        workbook_decoder_links += len(linked_decoders)
+        workbook_evidence_links += len(linked_evidence)
+        if len(linked_concepts) != len(item.get("concepts", [])):
+            errors.append(f"model-building workbook {item['id']} missing concept links")
+        if len(linked_primitives) != len(item.get("primitives", [])):
+            errors.append(f"model-building workbook {item['id']} missing primitive links")
+        if len(linked_drills) != len(item.get("drill_ids", [])):
+            errors.append(f"model-building workbook {item['id']} missing drill links")
+        if len(linked_decoders) != len(item.get("decoder_ids", [])):
+            errors.append(f"model-building workbook {item['id']} missing decoder links")
+        if len(linked_evidence) != len(item.get("evidence_ids", [])):
+            errors.append(f"model-building workbook {item['id']} missing evidence links")
+    if len(workbook) < 7:
+        errors.append(f"only {len(workbook)} model-building workbook cards")
     capstone_html = (SITE / "capstone.html").read_text(encoding="utf-8") if (SITE / "capstone.html").exists() else ""
     capstone_cards = 0
     capstone_concept_links = 0
@@ -872,6 +916,13 @@ def main() -> int:
         f"- Jargon decoder concept links: {decoder_concept_links}",
         f"- Jargon decoder primitive links: {decoder_primitive_links}",
         f"- Jargon decoder evidence links: {decoder_evidence_links}",
+        f"- Model-building workbook cards: {workbook_cards}",
+        f"- Model-building workbook words: min {min(workbook_words) if workbook_words else 0}, max {max(workbook_words) if workbook_words else 0}",
+        f"- Model-building concept links: {workbook_concept_links}",
+        f"- Model-building primitive links: {workbook_primitive_links}",
+        f"- Model-building drill links: {workbook_drill_links}",
+        f"- Model-building decoder links: {workbook_decoder_links}",
+        f"- Model-building evidence links: {workbook_evidence_links}",
         f"- Capstone self-test cards: {capstone_cards}",
         f"- Capstone self-test words: min {min(capstone_words) if capstone_words else 0}, max {max(capstone_words) if capstone_words else 0}",
         f"- Capstone concept links: {capstone_concept_links}",

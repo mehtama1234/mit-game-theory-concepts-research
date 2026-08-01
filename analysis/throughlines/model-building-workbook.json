@@ -1,0 +1,258 @@
+[
+  {
+    "id": "model-step-players",
+    "title": "Name the decision makers before naming the game",
+    "ordinary_question": "Who can make a choice that changes what happens? Start with people, firms, platforms, regulators, bidders, sellers, buyers, or committees before writing down any formal object.",
+    "formal_slot": "Players. A player is not necessarily a person; it is any decision-making unit whose action the model treats as chosen rather than automatic.",
+    "why_this_slot_exists": "Strategic dependence only exists when more than one chooser matters. If a character in the story cannot affect outcomes, they may be context rather than a player. If a hidden actor can change payoffs, leaving them out makes the model explain the wrong pressure.",
+    "construction_move": "List every candidate actor, then delete actors whose behavior is fixed by the setup. For each remaining actor, write one sentence beginning with: this actor chooses whether to...",
+    "math_check": "A payoff function needs a player index, such as u_i, because each actor can rank the same outcome differently. The subscript is the reminder that the model is tracking separate points of view.",
+    "failure_if_skipped": "The analysis starts optimizing a blended story. You may accidentally use the platform's objective to explain bidder behavior, or use social welfare to explain a firm's price choice.",
+    "worked_prompt": "In an ad auction, the platform designs the rule, advertisers bid, and users react to ad quality. Decide which of those are active players in the model you need for the question being asked.",
+    "concepts": [
+      "preferences",
+      "utility",
+      "strategic_form_games",
+      "auctions"
+    ],
+    "primitives": [
+      "preference",
+      "payoff_mapping"
+    ],
+    "drill_ids": [
+      "drill-payoff-before-strategy",
+      "drill-auction-rule"
+    ],
+    "decoder_ids": [
+      "decode-utility-payoff-objective",
+      "decode-strategy-action-plan"
+    ],
+    "evidence_ids": [
+      "ev-preferences-01",
+      "ev-strategic_form_games-01",
+      "ev-auctions-01"
+    ]
+  },
+  {
+    "id": "model-step-actions",
+    "title": "Separate what can be chosen from what merely happens",
+    "ordinary_question": "What choices are actually available at the moment of decision? Do not include hopes, outcomes, labels, or states of the world as actions unless the actor can directly choose them.",
+    "formal_slot": "Actions or strategies. In a one-shot table this may be one move; in a game tree it may be a complete plan for many possible future decision points.",
+    "why_this_slot_exists": "A model can only test deviations among choices that were available. If the choice set is too wide, the model invents impossible behavior. If it is too narrow, the model hides the deviation that would break the proposed answer.",
+    "construction_move": "For each player, write a short menu of available moves. Then ask whether the player chooses once, chooses after observing something, or chooses a plan for several possible histories.",
+    "math_check": "Best-response reasoning compares payoffs across feasible actions. The word feasible matters: BR_i(a_-i) is chosen from player i's action set, not from every imaginable thing the player might want.",
+    "failure_if_skipped": "You can call an outcome stable even though a missing feasible deviation would overturn it. You can also blame a player for not choosing an option that the model never actually allowed.",
+    "worked_prompt": "In an entry-threat story, the entrant chooses enter or stay out first. The incumbent chooses fight or accommodate only if entry occurs. That timing means a tree is clearer than a single flat list.",
+    "concepts": [
+      "strategic_form_games",
+      "extensive_form_games",
+      "best_response",
+      "backward_induction"
+    ],
+    "primitives": [
+      "best_response",
+      "backward_recursion",
+      "payoff_mapping"
+    ],
+    "drill_ids": [
+      "drill-table-or-tree",
+      "drill-stable-not-good"
+    ],
+    "decoder_ids": [
+      "decode-strategy-action-plan",
+      "decode-best-response",
+      "decode-subgame-credibility"
+    ],
+    "evidence_ids": [
+      "ev-strategic_form_games-01",
+      "ev-extensive_form_games-01",
+      "ev-best_response-02"
+    ]
+  },
+  {
+    "id": "model-step-timing",
+    "title": "Choose table or tree by asking when choices are seen",
+    "ordinary_question": "Do people choose at the same time, or does someone move after seeing an earlier action? The answer decides whether the model needs simultaneous reasoning or backward reasoning.",
+    "formal_slot": "Game form. A strategic-form table compresses choices into one simultaneous comparison. An extensive-form tree shows the order of moves, information available at each node, and later decision points.",
+    "why_this_slot_exists": "Time changes incentives. A threat made before entry may not be attractive after entry. A promise made before bargaining may not survive when the last offer is on the table. The representation has to expose the moment where incentives are tested.",
+    "construction_move": "Draw the calendar before solving. Mark who moves first, what later players observe, and which histories would never be reached if everyone followed the predicted path.",
+    "math_check": "Backward induction reads a tree from the end toward the beginning. Subgame perfection then asks whether the proposed strategy remains an equilibrium inside every continuation game.",
+    "failure_if_skipped": "The model treats cheap threats as if they were commitments. It may predict behavior from the opening announcement while ignoring the later payoff comparison that makes the announcement unbelievable.",
+    "worked_prompt": "For a platform ban threat, ask whether the platform can precommit to the ban or will choose later after seeing seller behavior and current revenue. Those are different games.",
+    "concepts": [
+      "extensive_form_games",
+      "backward_induction",
+      "subgame_perfection",
+      "bargaining"
+    ],
+    "primitives": [
+      "backward_recursion",
+      "mutual_consistency",
+      "discounting"
+    ],
+    "drill_ids": [
+      "drill-table-or-tree",
+      "drill-future-discipline"
+    ],
+    "decoder_ids": [
+      "decode-subgame-credibility",
+      "decode-strategy-action-plan",
+      "decode-equilibrium-fixed-point"
+    ],
+    "evidence_ids": [
+      "ev-extensive_form_games-02",
+      "ev-backward_induction-02",
+      "ev-subgame_perfection-01"
+    ]
+  },
+  {
+    "id": "model-step-information",
+    "title": "Write down who knows what at the moment of choice",
+    "ordinary_question": "What does each decision maker know, what do they only guess, and what can they observe before acting?",
+    "formal_slot": "Information structure. This includes hidden types, beliefs, signals, information sets, prior probabilities, posterior probabilities, and public or private announcements.",
+    "why_this_slot_exists": "People cannot condition their choices on facts they do not know. When information is hidden, actions become evidence, and beliefs become part of the strategic environment rather than background commentary.",
+    "construction_move": "For every decision point, write: this actor knows..., this actor does not know..., this actor observes..., and this actor believes... . Then ask whether the observed behavior should update those beliefs.",
+    "math_check": "Bayes rule updates beliefs after observed evidence. Perfect Bayesian equilibrium adds the requirement that strategies are sensible given beliefs and beliefs are consistent with strategies wherever the path provides evidence.",
+    "failure_if_skipped": "The model either gives actors impossible knowledge or forgets that observed actions can reveal hidden types. Both errors can make signaling, screening, and communication claims look easier than they are.",
+    "worked_prompt": "In a warranty model, buyers do not directly observe product quality. They observe the warranty and ask which seller type would find that action attractive enough to choose.",
+    "concepts": [
+      "bayesian_games",
+      "types_and_beliefs",
+      "perfect_bayesian_equilibrium",
+      "signaling"
+    ],
+    "primitives": [
+      "belief",
+      "incentive_compatibility",
+      "mutual_consistency"
+    ],
+    "drill_ids": [
+      "drill-hidden-type",
+      "drill-public-awareness"
+    ],
+    "decoder_ids": [
+      "decode-type-belief-posterior",
+      "decode-incentive-compatibility",
+      "decode-common-knowledge"
+    ],
+    "evidence_ids": [
+      "ev-bayesian_games-01",
+      "ev-types_and_beliefs-01",
+      "ev-perfect_bayesian_equilibrium-01",
+      "ev-signaling-01"
+    ]
+  },
+  {
+    "id": "model-step-payoffs",
+    "title": "Translate consequences into separate payoff comparisons",
+    "ordinary_question": "What does each actor gain or lose from each possible outcome, including money, delay, risk, reputation, future punishment, and missed outside options?",
+    "formal_slot": "Payoff mapping. The model maps an action profile, history, or outcome into a payoff number for each player.",
+    "why_this_slot_exists": "Game theory cannot infer behavior from labels like cooperate, defect, honest, aggressive, or fair. It needs to know what those choices cost and benefit each actor. The same visible action can mean different incentives under different payoff mappings.",
+    "construction_move": "Write each outcome in ordinary language, then write what each player cares about in that outcome. Only after that should you assign numbers or inequalities.",
+    "math_check": "A payoff vector lists one payoff for each player. Expected utility averages payoff numbers across uncertain outcomes. Repeated games add continuation values, where future payoffs are discounted before being compared with present temptation.",
+    "failure_if_skipped": "The model borrows moral or narrative meaning as if it were a payoff. That can make cooperation seem automatic, threats seem powerful, or truth telling seem natural without checking the actual incentives.",
+    "worked_prompt": "In a repeated cartel, the payoff from undercutting today must be compared with the future payoff loss after punishment. High current profit alone does not settle the model.",
+    "concepts": [
+      "utility",
+      "expected_utility",
+      "infinitely_repeated_games",
+      "folk_theorem"
+    ],
+    "primitives": [
+      "payoff_mapping",
+      "discounting",
+      "preference"
+    ],
+    "drill_ids": [
+      "drill-payoff-before-strategy",
+      "drill-future-discipline"
+    ],
+    "decoder_ids": [
+      "decode-utility-payoff-objective",
+      "decode-discount-factor",
+      "decode-incentive-compatibility"
+    ],
+    "evidence_ids": [
+      "ev-utility-01",
+      "ev-expected_utility-01",
+      "ev-infinitely_repeated_games-01",
+      "ev-folk_theorem-01"
+    ]
+  },
+  {
+    "id": "model-step-solution-concept",
+    "title": "Pick the solution test after the model shape is clear",
+    "ordinary_question": "What kind of stability or rationality question is appropriate for this model: deletion, best response, Nash equilibrium, subgame perfection, Bayesian equilibrium, or incentive compatibility?",
+    "formal_slot": "Solution concept. This is the rule for deciding which behavior patterns count as internally stable or defensible in the model.",
+    "why_this_slot_exists": "Different model shapes create different failure modes. Simultaneous interaction needs mutual best-response checks. Dynamic interaction needs credibility after later histories. Hidden information needs beliefs. Designed rules need incentive constraints.",
+    "construction_move": "Do not start by saying Nash. First ask whether the game has timing, hidden information, repeated future incentives, or rule design. Then choose the weakest test that answers the actual question and state what deviations it checks.",
+    "math_check": "Nash checks unilateral deviations at the strategy profile. Subgame perfection checks continuation games. Bayesian equilibrium checks strategies against beliefs. Incentive compatibility checks intended behavior against misreports or off-menu deviations.",
+    "failure_if_skipped": "A paper or explanation can sound formal while using the wrong stability test. The most common error is applying a simultaneous equilibrium label to a dynamic or information problem that needs extra consistency checks.",
+    "worked_prompt": "A seller-signal problem usually cannot stop at Nash equilibrium because buyers' beliefs after observed behavior matter. The solution concept has to include both optimal actions and belief consistency.",
+    "concepts": [
+      "nash_equilibrium",
+      "subgame_perfection",
+      "bayesian_nash_equilibrium",
+      "perfect_bayesian_equilibrium"
+    ],
+    "primitives": [
+      "mutual_consistency",
+      "best_response",
+      "belief",
+      "incentive_compatibility"
+    ],
+    "drill_ids": [
+      "drill-stable-not-good",
+      "drill-hidden-type"
+    ],
+    "decoder_ids": [
+      "decode-equilibrium-fixed-point",
+      "decode-best-response",
+      "decode-type-belief-posterior"
+    ],
+    "evidence_ids": [
+      "ev-nash_equilibrium-01",
+      "ev-subgame_perfection-01",
+      "ev-bayesian_nash_equilibrium-01",
+      "ev-perfect_bayesian_equilibrium-01"
+    ]
+  },
+  {
+    "id": "model-step-limits",
+    "title": "State the boundary where the model stops earning trust",
+    "ordinary_question": "What real detail has been simplified away, and would the answer survive if that detail returned?",
+    "formal_slot": "Model boundary. This includes missing actors, omitted actions, simplified payoffs, assumed beliefs, monitoring assumptions, commitment assumptions, and distributional assumptions.",
+    "why_this_slot_exists": "A model is a controlled simplification. It earns trust by making the right pressure visible, not by pretending every real-world detail is inside the equations. The boundary statement tells the reader which omitted detail would most likely change the answer.",
+    "construction_move": "After solving, write one sentence of the form: this answer depends on... . Then name the assumption whose failure would most directly change the result, such as monitoring, commitment, private information, risk neutrality, or the set of feasible deviations.",
+    "math_check": "Every inequality, best-response condition, or belief update has premises. Change the action set, payoff numbers, information structure, or discount factor, and the sign of the comparison can change.",
+    "failure_if_skipped": "The reader exports a classroom conclusion as a universal law. Cooperation, truth telling, deterrence, or revenue equivalence may disappear once monitoring, commitment, risk, or hidden information changes. Without the boundary, the site teaches vocabulary but not judgment.",
+    "worked_prompt": "Revenue equivalence depends on assumptions about bidder values and auction environment. If those assumptions change, the theorem may stop applying even though the auction vocabulary stays familiar.",
+    "concepts": [
+      "revenue_equivalence",
+      "implicit_cartels",
+      "screening_and_adverse_selection",
+      "common_knowledge"
+    ],
+    "primitives": [
+      "payoff_mapping",
+      "belief",
+      "knowledge_recursion",
+      "incentive_compatibility"
+    ],
+    "drill_ids": [
+      "drill-auction-rule",
+      "drill-public-awareness"
+    ],
+    "decoder_ids": [
+      "decode-incentive-compatibility",
+      "decode-common-knowledge",
+      "decode-discount-factor"
+    ],
+    "evidence_ids": [
+      "ev-revenue_equivalence-01",
+      "ev-implicit_cartels-01",
+      "ev-screening_and_adverse_selection-01",
+      "ev-common_knowledge-01"
+    ]
+  }
+]
