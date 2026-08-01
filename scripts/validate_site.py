@@ -539,6 +539,8 @@ def main() -> int:
             "how_to_unpack_in_a_paper",
             "what_the_term_repairs",
             "where_translation_breaks",
+            "why_the_word_has_to_exist",
+            "math_in_plain_sight",
         ]
         for field in decoder_fields:
             value = item.get(field, "")
@@ -547,7 +549,7 @@ def main() -> int:
             elif html.escape(value, quote=True) not in jargon_decoder_html:
                 errors.append(f"jargon decoder {item['id']} {field} not rendered")
         combined = " ".join(str(item.get(field, "")) for field in decoder_fields)
-        if words(combined) < 300:
+        if words(combined) < 410:
             errors.append(f"jargon decoder {item['id']} has shallow combined treatment")
         for concept_id in item.get("concepts", []):
             if concept_id not in concept_by_id:

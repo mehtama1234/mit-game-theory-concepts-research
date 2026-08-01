@@ -11,6 +11,8 @@
     "how_to_unpack_in_a_paper": "Translate the score into three everyday pieces: who is choosing, what outcomes are being compared, and what the number is allowed to mean. Then ask whether the paper is using the score as a ranking, an expected value under uncertainty, a welfare target for a designer, or a loss that an algorithm reduces.",
     "what_the_term_repairs": "This vocabulary repairs vague talk about wanting, preferring, and improving. Instead of saying an actor wants a good outcome, the model specifies the scoreboard used to compare outcomes and then checks actions against that scoreboard.",
     "where_translation_breaks": "The translation breaks when readers assume one score captures every value in the real setting. Welfare, utility, payoff, and loss can point to different actors and different purposes, so the paper’s objective may not be the social objective a reader cares about.",
+    "why_the_word_has_to_exist": "The word exists because ordinary language says people want things, but a model needs a sharper object before it can compare choices. Utility and payoff are the bookkeeping device that lets the analyst ask whether changing an action changes the actor's score.",
+    "math_in_plain_sight": "When you see u, payoff, reward, or loss, read it as a scoreboard. When you see an expectation, read it as averaging possible scoreboards before the uncertainty is revealed. The math matters because it separates ranking outcomes from predicting which outcome will actually occur.",
     "concepts": [
       "preferences",
       "utility",
@@ -40,6 +42,8 @@
     "how_to_unpack_in_a_paper": "Separate what happened from what would have happened. In a table, the strategy may be a single listed choice. In a tree or repeated setting, it is a rule for many possible decision points, including histories that the predicted play never reaches.",
     "what_the_term_repairs": "This vocabulary repairs the mistake of judging a dynamic model only by the visible path. A plan can look sensible on the path while containing unbelievable responses after surprises, so the full strategy is needed for credibility checks.",
     "where_translation_breaks": "The translation breaks if the model cannot defend what the actor observes at each decision point. A contingent plan is meaningful only after the information available at those contingencies has been specified.",
+    "why_the_word_has_to_exist": "The word strategy exists because a one-time move is too small for many games. Other players need to reason about your response after surprises, refusals, delays, or new information. The full plan makes those hidden branches visible enough to test.",
+    "math_in_plain_sight": "When a paper writes a strategy as a function from histories or information sets to actions, read it as an if-this-happens-then-do-that rule. The notation matters because it makes the off-path parts of a plan part of the object being judged. Always ask which histories share the same information, because a plan cannot condition on details the actor does not observe.",
     "concepts": [
       "strategic_form_games",
       "extensive_form_games",
@@ -69,6 +73,8 @@
     "how_to_unpack_in_a_paper": "Find the fixed object before reading the optimization. The fixed object might be another player’s action, a belief about types, a price rule, or a continuation history. Then read the best response as conditional on that object.",
     "what_the_term_repairs": "This vocabulary repairs the phrase rational action. It forces the reader to ask rational against what, and it exposes the assumption that turns one action into the local winner.",
     "where_translation_breaks": "The translation breaks when the paper quietly changes what is being held fixed. If the belief, rival move, information set, or action menu changes, the old best-response claim may no longer apply. It also breaks when the author calls a population average optimal; a best response belongs to a particular actor with a particular information condition.",
+    "why_the_word_has_to_exist": "Best response exists because strategic choice is conditional. The same move can be smart against one rival action and foolish against another. The term forces the author to name the environment around the actor before calling a choice rational.",
+    "math_in_plain_sight": "When you see BR_i(a_-i), read it as player i's best available replies after everyone else's actions are frozen. The subscript names whose local problem is being solved; the minus sign reminds you that the comparison depends on the rest of the players. If the paper changes beliefs, prices, or histories, rerun the local comparison instead of carrying over the old answer.",
     "concepts": [
       "best_response",
       "nash_equilibrium",
@@ -98,6 +104,8 @@
     "how_to_unpack_in_a_paper": "Read equilibrium as a checklist, not a mood. Identify the candidate behavior, the allowed deviations, what each player knows, and whether the check is static, dynamic, Bayesian, or sequential. Then ask whether every player or type passes the relevant deviation test. If there are multiple equilibria, look for the extra selection story rather than pretending the word equilibrium selected one outcome by itself.",
     "what_the_term_repairs": "This vocabulary repairs loose claims of stability. A pattern is not stable because it sounds balanced; it is stable because the model cannot find a profitable allowed move away from it for any participant covered by the solution concept.",
     "where_translation_breaks": "The translation breaks when the reader imports welfare or inevitability. Equilibrium can be inefficient, fragile, one of many, or behaviorally unrealistic if learning, mistakes, institutions, or omitted deviations matter. A careful reader should ask what empirical or institutional story would make this equilibrium the relevant one.",
+    "why_the_word_has_to_exist": "Equilibrium exists because individual best-response checks can chase one another in a circle. The word names a point where the circle closes: each person is choosing well given the others, and the others are also choosing well given that person.",
+    "math_in_plain_sight": "When a paper says a profile is an equilibrium, read the formula as many best-response tests stacked together. The fixed-point language means the behavior produced by the response rule is the same behavior that was put into the rule for checking. If there are several closing points, the math has not yet explained which one the world should select.",
     "concepts": [
       "nash_equilibrium",
       "subgame_perfection",
@@ -127,6 +135,8 @@
     "how_to_unpack_in_a_paper": "Look for the quantifier. Dominance needs a comparison across every relevant opponent action or state, not just the scenario the author expects. If the claim uses iteration, check what was removed in each round and whether the rule is strict or weak.",
     "what_the_term_repairs": "This vocabulary repairs overlarge action spaces. It gives the analyst a justified way to remove choices before full equilibrium analysis, while keeping deletion separate from prediction.",
     "where_translation_breaks": "The translation breaks when deletion depends on a belief, an omitted action, or weak dominance treated casually. In those cases the pruning may be order-sensitive or may require a different concept such as rationalizability. It also breaks if the payoff map is incomplete, because a missing contingency can be exactly where the supposedly dominated action is useful.",
+    "why_the_word_has_to_exist": "Dominance exists because some choices are indefensible before beliefs about others even enter. If one option loses to another across every relevant case, keeping it only clutters the reasoning. The term marks a rare situation where deletion does not require predicting the opponent.",
+    "math_in_plain_sight": "When you see a dominance inequality, read every opponent action as a separate column in a checklist. The candidate survivor must do at least as well in each column and better somewhere. The phrase for all is the heart of the math, not decoration. If a paper deletes choices round by round, track the order because weak deletion can depend on earlier pruning.",
     "concepts": [
       "dominance",
       "iterated_deletion",
@@ -156,6 +166,8 @@
     "how_to_unpack_in_a_paper": "Ask whose probabilities are being chosen and whose payoffs are being equalized. In many mixed-equilibrium calculations, one player’s mixing rate is solved by making the other player indifferent among the actions they use. Then check whether unused actions earn no more than the used actions, because an omitted profitable pure action would break the proposed mixture.",
     "what_the_term_repairs": "This vocabulary repairs the assumption that stable behavior must be deterministic. In some games, any predictable pure action invites exploitation, so randomness becomes the disciplined object rather than noise.",
     "where_translation_breaks": "The translation breaks when observed frequencies are treated as proof of intentional mixing. Data may reflect learning, mistakes, heterogeneity, or changing environments rather than an equilibrium distribution chosen by a player. The term also breaks if players cannot actually commit to or implement the probability distribution the model assigns.",
+    "why_the_word_has_to_exist": "Mixed strategy exists because some games punish predictability. If every fixed move can be exploited, the stable object cannot be a single move. It has to be a pattern of probabilities that denies the other side an easy target.",
+    "math_in_plain_sight": "When you see a probability on each action, read it as controlled unpredictability. When the paper solves by indifference, remember whose payoff is being equalized: often my randomization is chosen to remove your strict reason to switch actions. Also check unused actions; they must not secretly earn more than the actions receiving positive probability.",
     "concepts": [
       "mixed_strategies",
       "minimax",
@@ -185,6 +197,8 @@
     "how_to_unpack_in_a_paper": "Jump to the future history where the promised action would be taken. Ask what the actor observes there, what actions remain available, and whether carrying out the earlier statement is still best at that later moment. If the paper uses subgame perfection, verify that the history begins a proper subgame; if beliefs matter there, the paper may need a belief-based refinement instead.",
     "what_the_term_repairs": "This vocabulary repairs empty threats and promises. It prevents a model from counting speech at the beginning as credible unless the later incentives make the speech worth honoring.",
     "where_translation_breaks": "The translation breaks when the tree omits hidden information, renegotiation, commitment devices, or reputation. Backward logic is only as reliable as the histories and information structure being solved. A precise backward solution can still be the wrong lesson if the represented future is not the future the players face.",
+    "why_the_word_has_to_exist": "Subgame and credibility language exists because early words can be cheap. A plan that sounds intimidating at the beginning may become unattractive after the future history arrives. The vocabulary forces the reader to test the later self, not only the earlier announcement.",
+    "math_in_plain_sight": "When you see backward induction, read the tree from the end toward the start. Each later node sends a value back to the earlier node. When you see subgame perfection, read it as equilibrium checked again inside every proper continuation problem. If a history is not a proper subgame because information is pooled, the paper needs a belief-based tool instead.",
     "concepts": [
       "extensive_form_games",
       "backward_induction",
@@ -214,6 +228,8 @@
     "how_to_unpack_in_a_paper": "Rewrite the claim as a comparison between deviation today and continuation tomorrow. Identify the one-time gain, the future punishment or lost surplus, the discount factor, and whether the deviation is observed soon enough to trigger consequences.",
     "what_the_term_repairs": "This vocabulary repairs vague talk about relationships and patience. It turns future discipline into a present-value calculation that can succeed or fail depending on monitoring, horizon, and how strongly players value tomorrow.",
     "where_translation_breaks": "The translation breaks when the future is treated as automatically powerful. A low discount factor, noisy monitoring, a known final period, or weak punishment can make repeated interaction strategically close to a one-shot problem. It also breaks when continuation value is named but not computed; the term must eventually cash out as a comparison against present temptation. Watch for papers that cite patience while leaving observability or punishment credibility implicit.",
+    "why_the_word_has_to_exist": "Discounting exists because tomorrow is not the same as today in a present choice. People may die, leave, forget, lose trust, or care less about delayed payoffs. The term turns the vague shadow of the future into a weight.",
+    "math_in_plain_sight": "When you see delta, read it as the current weight on next period. Delta squared is the weight on the period after that. The series matters because many small future losses can beat one tempting gain only if the weights stay large enough. The useful paper check is to isolate the one-period temptation before summing the promised future discipline.",
     "concepts": [
       "infinitely_repeated_games",
       "folk_theorem",
@@ -243,6 +259,8 @@
     "how_to_unpack_in_a_paper": "Name the hidden variable first: type, value, cost, signal, or history. Then identify the prior, the observed evidence, the posterior, and the action that becomes sensible under that posterior. If the paper says Bayesian, look for the update rule or the reason updating is constrained.",
     "what_the_term_repairs": "This vocabulary repairs the habit of treating uncertainty as background noise. It puts missing information inside the strategic model so actions can depend on what players believe rather than on what the analyst knows afterward.",
     "where_translation_breaks": "The translation breaks when beliefs are chosen only to support a desired conclusion. Off-path observations, unjustified priors, and type spaces that omit important cases can make a belief-based explanation too flexible. It also breaks when the paper forgets that different types may choose different actions, so one observed move may select the population being inferred from.",
+    "why_the_word_has_to_exist": "Type and belief language exists because the analyst may know more than the modeled players know. The model needs a separate object for each player's uncertainty, otherwise it accidentally lets everyone act as if hidden information were already public.",
+    "math_in_plain_sight": "When you see a prior, read it as the guess before the clue. When you see a posterior, read it as the revised guess after the clue. Bayes rule matters because it prevents the paper from updating beliefs in a way that ignores how likely the clue was under each hidden case. If the observation was chosen strategically, ask which types would have produced it on purpose.",
     "concepts": [
       "bayesian_games",
       "types_and_beliefs",
@@ -272,6 +290,8 @@
     "how_to_unpack_in_a_paper": "Write the intended behavior beside the best tempting deviation. For truthfulness, compare honest reporting against each false report. For self-selection, compare the contract meant for a type against the contracts that type might imitate. Then ask whether the inequality must hold for every type, every report, or only for the subset of agents the mechanism actually serves.",
     "what_the_term_repairs": "This vocabulary repairs design by wishful thinking. It forces the mechanism designer to prove that participants prefer the intended behavior using their own payoff comparison, not the designer’s hope.",
     "where_translation_breaks": "The translation breaks when important deviations are omitted or when the rule assumes information the designer cannot observe. Incentive compatibility is always relative to a stated action menu, information structure, and payoff model. A mechanism that blocks one lie may still fail if another unmodeled manipulation remains profitable.",
+    "why_the_word_has_to_exist": "Incentive compatibility exists because rules do not enforce themselves. A designer may want truth, effort, or self-selection, but participants compare consequences from their own point of view. The word names the requirement that the rule make the intended behavior personally best.",
+    "math_in_plain_sight": "When you see an incentive constraint, read it as intended payoff at least as large as deviation payoff. The inequality matters because the designer's preferred behavior must survive the participant's private comparison, not just appear in the instructions. Strong papers name the deviation set; weak ones prove honesty only against the easiest lie.",
     "concepts": [
       "auctions",
       "revenue_equivalence",
@@ -301,6 +321,8 @@
     "how_to_unpack_in_a_paper": "Track the level of shared awareness the result needs. First ask who knows the fact. Then ask who knows that others know it, and whether the protocol or public event keeps that chain going far enough for the coordination claim.",
     "what_the_term_repairs": "This vocabulary repairs the idea that information is only about facts. In coordination problems, the publicness of a fact can be the strategic ingredient because it lets players rely on others relying on the same fact. It also explains why a message can matter even when it repeats information everyone privately suspected.",
     "where_translation_breaks": "The translation breaks when a paper treats private, mutual, public, and common knowledge as interchangeable. If coordinated action requires higher-order confidence, identical private messages may not substitute for a public announcement.",
+    "why_the_word_has_to_exist": "Common knowledge exists because coordination can require confidence about confidence. It may not be enough that everyone has the fact; each person may need to know that others can rely on the same fact when choosing.",
+    "math_in_plain_sight": "When you see higher-order belief, read each layer as one more sentence about what someone knows that others know. The recursion matters because coordinated action can depend on the chain, while ordinary information only records who received the fact. The practical test is whether a private duplicate message would produce the same reasoning; if not, publicness is doing the work. Also ask whether people interpret the signal the same way, because shared receipt without shared meaning may still fail to coordinate behavior.",
     "concepts": [
       "common_knowledge",
       "cheap_talk",

@@ -733,12 +733,20 @@ def main() -> int:
             "how_to_unpack_in_a_paper",
             "what_the_term_repairs",
             "where_translation_breaks",
+            "why_the_word_has_to_exist",
+            "math_in_plain_sight",
         ]
         text = " ".join(str(item.get(k, "")) for k in decoder_fields)
         treatment_words = words(text)
         decoder_words.append(treatment_words)
-        if treatment_words < 300:
+        if treatment_words < 410:
             errors.append(f"jargon decoder {item['id']} has shallow treatment: {treatment_words} words")
+        for field in ["why_the_word_has_to_exist", "math_in_plain_sight"]:
+            value = item.get(field, "")
+            if words(value) < 30:
+                errors.append(f"jargon decoder {item['id']} has shallow {field}")
+            elif html_lib.escape(value, quote=True) not in jargon_decoder_html:
+                errors.append(f"jargon decoder {item['id']} {field} not rendered")
         linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in jargon_decoder_html]
         linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in jargon_decoder_html]
         linked_evidence = [eid for eid in item.get("evidence_ids", []) if f'href="evidence.html#{eid}"' in jargon_decoder_html]
