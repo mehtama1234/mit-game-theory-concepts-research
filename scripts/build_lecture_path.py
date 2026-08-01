@@ -157,6 +157,8 @@ def main() -> None:
     themes = load("analysis/themes/theme-map.json")
     lecture_overrides = load_overrides("lectures.json")
     lecture_deepening = load_overrides("lecture-deepening.json")
+    lecture_reader_work = load_overrides("lecture-reader-work.json")
+    lecture_self_tests = load_overrides("lecture-self-tests.json")
     supplemental_overrides = load_overrides("lecture-evidence.json")
     concept_by_id = {concept["id"]: concept for concept in concepts}
     theme_by_id = {theme["id"]: theme for theme in themes}
@@ -187,6 +189,12 @@ def main() -> None:
         deepening = lecture_deepening.get(key)
         if deepening is None:
             raise ValueError(f"missing hand-crafted lecture deepening for {key}")
+        reader_work = lecture_reader_work.get(key)
+        if reader_work is None:
+            raise ValueError(f"missing hand-crafted lecture reader work for {key}")
+        reader_self_test = lecture_self_tests.get(key)
+        if reader_self_test is None:
+            raise ValueError(f"missing hand-crafted lecture self-test for {key}")
         supplemental_evidence = supplemental_overrides.get(f"lecture-{row['playlist_index']:02d}", [])
         lecture_path.append({
             "id": f"lecture-{row['playlist_index']:02d}",
@@ -222,6 +230,8 @@ def main() -> None:
             "tempting_shortcut": deepening["tempting_shortcut"],
             "durable_lesson": deepening["durable_lesson"],
             "handoff": deepening["handoff"],
+            "reader_work": reader_work,
+            "reader_self_test": reader_self_test,
             "supplemental_evidence": supplemental_evidence,
             "supplemental_evidence_ids": [record["id"] for record in supplemental_evidence],
         })

@@ -79,6 +79,8 @@
     "tempting_shortcut": "The tempting shortcut is to treat payoff numbers as direct measurements of pleasure, money, or moral value. That shortcut fails because the later strategic model only needs a disciplined ranking that survives comparisons, lotteries, and counterfactual choices.",
     "durable_lesson": "The durable lesson is that game theory starts with a language for individual tradeoffs before it talks about strategic conflict. Preferences say what is better than what; utility compresses those rankings into numbers; expected utility adds uncertainty without pretending the numbers are a happiness meter.",
     "handoff": "This hands off to representation of games: once each player has a payoff language, the next problem is to describe who moves, what they can do, what they know, and how everyone's choices jointly create outcomes.",
+    "reader_work": "While reading this lecture, build a small preference table before writing any utility numbers. Mark which comparisons are rankings, which comparisons involve uncertainty, and which claims would change if the utility scale were stretched. The work is to separate choice order from psychological interpretation.",
+    "reader_self_test": "Self-test: explain why two different utility scales can represent the same preference ordering, then give one situation where the spacing between utility numbers would start to matter. If you cannot separate ranking from scale, the later payoff tables will feel more objective than they are.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -173,6 +175,8 @@
     "tempting_shortcut": "The tempting shortcut is to draw the most convenient table and assume the solution concept will fix the rest. That fails when the table hides order, commitment, or private information that a player would use in the real interaction.",
     "durable_lesson": "The durable lesson is that a game form is an argument about what matters. A strategic-form matrix emphasizes complete plans chosen at once; an extensive-form tree exposes histories and later choices. Neither is neutral bookkeeping.",
     "handoff": "This hands off to dominance: once the situation has been represented, the first question is whether any option can be rejected before making detailed beliefs about what everyone else will do.",
+    "reader_work": "For each example, redraw the situation twice: once as a compact action table and once as a timeline. Then write what each representation hides. The work is to notice that representation is already an argument about timing, information, and available choices.",
+    "reader_self_test": "Self-test: take one example and say what would change if the move order were reversed or if one player could not observe an earlier action. If the answer changes, the representation is doing real modeling work rather than simply drawing the story.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -213,6 +217,8 @@
     "tempting_shortcut": "The tempting shortcut is to delete actions because they look embarrassing, unlikely, or aggressive. That fails because game theory needs a reason that still holds when the opponent chooses differently from what we expected.",
     "durable_lesson": "The durable lesson is that dominance is proof-based simplification. If another strategy always does better, the dominated strategy does not need a story about beliefs; it is removed because the payoff comparison itself rules it out.",
     "handoff": "This hands off to rationalizability: many games do not have obvious dominated actions, so the next question is whether an action can be justified by some coherent belief about the other players.",
+    "reader_work": "Make a column-by-column deletion log. For every proposed dominated action, record the rival contingency, the two payoffs being compared, and whether the inequality survives. The work is to earn the deletion by proof instead of by taste or plausibility.",
+    "reader_self_test": "Self-test: find one action you want to delete and prove the deletion without using the word likely. If your explanation depends on what you expect the opponent to do, you are making a belief argument, not a dominance argument.",
     "supplemental_evidence": [
       {
         "id": "lev-lecture-03-01",
@@ -306,6 +312,8 @@
     "tempting_shortcut": "The tempting shortcut is to confuse 'could be rational' with 'will happen.' That fails because each player's private justification can point in directions that do not fit together across the whole game.",
     "durable_lesson": "The durable lesson is that beliefs are part of rational choice. A strategy is rationalizable when there is some belief about others that makes it a best response, so the model separates individual defensibility from collective stability.",
     "handoff": "This hands off to Nash equilibrium: once individual strategies can be justified by beliefs, the next demand is that those justifications close into one consistent best-response loop.",
+    "reader_work": "Pick one action that looks odd and try to rescue it with a belief about the other player. If no belief makes it optimal, identify the payoff comparison that blocks it. The work is to distinguish individual defensibility from final prediction.",
+    "reader_self_test": "Self-test: defend an action that is not your favorite prediction by constructing a belief that makes it optimal. Then state why that defense still falls short of equilibrium. This checks whether you understand survival under belief as weaker than mutual consistency.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -378,6 +386,8 @@
     "tempting_shortcut": "The tempting shortcut is to pick the outcome with the largest total payoff or the most natural story. That fails because a high-surplus outcome can fall apart if one player can improve while everyone else holds still.",
     "durable_lesson": "The durable lesson is that Nash equilibrium is a consistency check. Each player's action must be a best response to the others, so the prediction is not a wish; it is a point where unilateral regret has disappeared.",
     "handoff": "This hands off to imperfect competition: the best-response loop becomes concrete when firms choose prices or quantities and each firm's profit depends on what rivals do.",
+    "reader_work": "Take every proposed outcome and run a one-player deviation audit. Freeze everyone else, test one player, then move to the next player. The work is to stop asking whether the outcome feels good and ask whether unilateral regret remains.",
+    "reader_self_test": "Self-test: reject one tempting outcome by identifying exactly one profitable unilateral deviation. Then find one outcome where that same one-player switch test fails for every player. This separates Nash stability from efficiency or moral appeal.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -418,6 +428,8 @@
     "tempting_shortcut": "The tempting shortcut is to import monopoly logic and add more firms as decoration. That fails because a rival's action changes demand, price, and profit, so the right object is strategic interaction rather than isolated optimization.",
     "durable_lesson": "The durable lesson is that market power can be relational. A firm's best move depends on how rivals respond, and the equilibrium captures the mutual adjustment between individual profit motives and market-level consequences.",
     "handoff": "This hands off to zero-sum games by sharpening a boundary: some competition is exact opposition, but many economic settings mix rivalry with shared surplus and market structure.",
+    "reader_work": "Write each firm's profit as depending on its own choice and the rival's choice before solving anything. Then derive a best response against a named rival action. The work is to see market power as relational rather than as isolated monopoly logic.",
+    "reader_self_test": "Self-test: write a sentence that begins, 'my firm's best output depends on your output because...' and finish it with demand, price, or cost. If the rival disappears from the sentence, you have slipped back into single-agent optimization.",
     "supplemental_evidence": [
       {
         "id": "lev-lecture-06-01",
@@ -489,6 +501,8 @@
     "tempting_shortcut": "The tempting shortcut is to use warlike intuition for all strategic settings. That fails because exact opposition creates security-value reasoning that does not automatically apply to bargaining, repeated relationships, or markets with possible gains from trade.",
     "durable_lesson": "The durable lesson is that zero-sum structure makes caution mathematically precise. A player can ask what payoff is guaranteed against the opponent's best attack, and randomization can protect against being too predictable.",
     "handoff": "This hands off to backward induction: after studying simultaneous exact conflict, the course turns to time, where future choices can make present promises or threats credible or empty.",
+    "reader_work": "Add the players' payoffs in each cell before using zero-sum language. If the total is fixed, compute what each action protects against; if not, name the shared gains or losses. The work is to keep security reasoning inside its proper boundary.",
+    "reader_self_test": "Self-test: show why randomizing can protect a player from being targeted. Then name one economic setting from the course that is competitive but not zero-sum. This checks both the power and the boundary of minimax-style reasoning.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -554,6 +568,8 @@
     "tempting_shortcut": "The tempting shortcut is to take announced threats and promises at face value. That fails because a future action matters only if the player will still want to take it when that future moment arrives.",
     "durable_lesson": "The durable lesson is that time turns prediction into a recursion. Later optimal choices become continuation values, and those values are folded backward until earlier players can see the real consequences of moving now.",
     "handoff": "This hands off to negotiation: bargaining is a dynamic problem where offers, refusals, patience, and outside options all depend on what happens after today's choice.",
+    "reader_work": "Start from the last decision nodes and write the action the future player will actually want there. Replace those nodes with values before moving earlier. The work is to make present threats answer to future incentives instead of narrative force.",
+    "reader_self_test": "Self-test: identify a threat in the lecture and solve the node where that threat would be executed. If the threatened action is not optimal there, explain how the earlier story changes. This is the core credibility move.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -605,6 +621,8 @@
     "tempting_shortcut": "The tempting shortcut is to explain negotiation outcomes as personality. That fails because a calm player with a good outside option can have more power than a loud player whose next-best alternative is bad.",
     "durable_lesson": "The durable lesson is that bargaining is a dynamic comparison of continuation values. An offer is attractive or not because of what each side expects from delay, rejection, and future bargaining positions.",
     "handoff": "This hands off to subgame perfection: if a bargaining path uses future refusals or punishments, those continuation actions must be rational when the later subgame is reached.",
+    "reader_work": "Separate total surplus, each side's outside option, and the cost of waiting. Then change one of those three inputs and trace how the bargaining position changes. The work is to translate toughness into continuation values rather than personality.",
+    "reader_self_test": "Self-test: change only one outside option or waiting cost and predict how the split should move. If your answer uses toughness without changing a continuation payoff, you have left the model and returned to informal personality language. Then state which side's threat point actually improved.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -656,6 +674,8 @@
     "tempting_shortcut": "The tempting shortcut is to check incentives only before the game begins. That fails in dynamic games because threats and promises live at later histories, and those histories need their own rationality tests.",
     "durable_lesson": "The durable lesson is that credibility is local. A strategy must remain a Nash equilibrium inside every relevant subgame, so the solution concept rejects plans that survive only because impossible-looking histories were ignored.",
     "handoff": "This hands off to the one-shot deviation principle: once dynamic credibility is the standard, the next problem is finding a practical way to check many possible deviations.",
+    "reader_work": "For every threat or promise, jump to the history where it would be carried out and solve from there. The work is to test credibility locally, not just at the initial node where the threat changes behavior.",
+    "reader_self_test": "Self-test: name a Nash-looking strategy profile that relies on a later threat. Then test the threat inside the subgame after the relevant history. If it fails there, explain why Nash at the start was too weak.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -714,6 +734,8 @@
     "tempting_shortcut": "The tempting shortcut is to treat the one-shot deviation test as a universal shortcut. That fails because the theorem depends on the structure of the game; without the right conditions, local checks can miss profitable longer deviations.",
     "durable_lesson": "The durable lesson is that theorems buy convenience by adding assumptions. When the conditions hold, dynamic optimality can be audited history by history with a manageable local test.",
     "handoff": "This hands off to finitely repeated games: the same dynamic tools now face a setting with a known last period, where backward reasoning can unravel cooperation.",
+    "reader_work": "Choose a history and change exactly one current action while keeping the continuation plan fixed. Record the immediate gain and future loss. The work is to understand why a local deviation test is powerful only under the theorem's conditions.",
+    "reader_self_test": "Self-test: choose one history and compare the planned action with exactly one current deviation. Then say which theorem condition makes this local check informative. If you cannot name the condition, the shortcut is being used mechanically.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -754,6 +776,8 @@
     "tempting_shortcut": "The tempting shortcut is to count repetitions and assume trust accumulates mechanically. That fails because players look ahead; if the last round has no future punishment, the unraveling can move backward through the whole game.",
     "durable_lesson": "The durable lesson is that repetition only matters when the future can discipline the present. A finite horizon with a commonly known endpoint can make future punishment vanish exactly when it is needed.",
     "handoff": "This hands off to infinitely repeated games: removing the known endpoint allows future punishment and reward to become a real enforcement device again.",
+    "reader_work": "Solve the final period first and write what future punishment is unavailable there. Then move one period earlier and repeat. The work is to see how a known endpoint can travel backward through incentives. If cooperation survives in your notes, name the extra force stopping the unraveling.",
+    "reader_self_test": "Self-test: write the final-round incentive first, then explain how that final answer affects the previous round. If you still predict cooperation, name the extra ingredient that blocks backward unraveling, such as reputation outside the modeled game.",
     "supplemental_evidence": [
       {
         "id": "lev-lecture-12-01",
@@ -810,6 +834,8 @@
     "tempting_shortcut": "The tempting shortcut is to describe long relationships as trust and stop there. That fails because the model needs an incentive inequality: today's temptation must be smaller than the discounted value lost later.",
     "durable_lesson": "The durable lesson is that patience can create self-enforcement. Players may cooperate without external contracts when future consequences are valuable enough and punishments are credible enough.",
     "handoff": "This hands off to the folk theorem: once future incentives can sustain cooperation, the next question is how many payoff patterns can be supported by suitable reward and punishment schemes.",
+    "reader_work": "Write the cooperate path and the cheat-then-punish path side by side with discount factors attached. The work is to compare today's temptation with the present value of future consequences, not simply to say repetition creates trust.",
+    "reader_self_test": "Self-test: write the deviation gain on one side and the discounted punishment value on the other. Then lower the discount factor and say which side becomes harder to satisfy. This turns 'long relationship' into an incentive inequality.",
     "supplemental_evidence": [
       {
         "id": "lev-lecture-13-01",
@@ -867,6 +893,8 @@
     "tempting_shortcut": "The tempting shortcut is to remember the folk theorem as 'cooperation happens.' That fails because the theorem is often about a large set of feasible, individually rational payoffs rather than one selected behavior.",
     "durable_lesson": "The durable lesson is that possibility is not the same as prediction. Repeated-game incentives can support many arrangements, which is powerful for explanation but creates a selection problem for forecasting. The theorem teaches how enforcement works, while also warning that enforcement alone may not identify which convention players will coordinate on.",
     "handoff": "This hands off to implicit cartels: the course applies repeated-game enforcement to firms and asks when high prices can be self-enforcing without an explicit contract.",
+    "reader_work": "Pick one candidate long-run payoff and check three gates: feasibility, individual rationality, and punishment credibility. The work is to treat the theorem as a supportability test, then separately ask what selects one supported outcome.",
+    "reader_self_test": "Self-test: pick a payoff vector and classify it as infeasible, feasible but not individually rational, or potentially supportable. Then explain why supportable does not mean selected. This checks the theorem's central possibility-versus-prediction distinction. Add the punishment story that would make the payoff self-enforcing.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -908,6 +936,8 @@
     "tempting_shortcut": "The tempting shortcut is to infer collusion directly from high prices or parallel behavior. That fails because market structure, demand shocks, costs, and repeated-game incentives can create similar patterns for different reasons.",
     "durable_lesson": "The durable lesson is that self-enforcement has two sides. Cheating must be unattractive for the potential cheater, and punishment must also be worthwhile for the firms expected to punish.",
     "handoff": "This hands off to Bayesian games: after studying repeated behavior under known payoffs, the course adds hidden information about values, costs, and types.",
+    "reader_work": "Name the cheating gain, the monitoring signal, and the punishment that rivals are supposed to impose. Then ask whether punishment is itself profitable. The work is to separate a repeated-game mechanism from legal evidence of explicit agreement. Also mark whether demand shocks could be mistaken for cheating, because monitoring quality is part of the incentive story.",
+    "reader_self_test": "Self-test: describe a high-price pattern twice: once as explicit agreement and once as tacit repeated-game discipline. Then list what evidence would distinguish the two. This prevents the model from being mistaken for a legal conclusion.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -973,6 +1003,8 @@
     "tempting_shortcut": "The tempting shortcut is to use uncertainty as a verbal excuse for anything. That fails because incomplete-information analysis needs a type space, priors, and strategies that specify what each possible type would do.",
     "durable_lesson": "The durable lesson is that private information changes the object of strategy. A player no longer chooses just an action; the model often needs a rule mapping each type to an action.",
     "handoff": "This hands off to Bayesian Nash applications: once types and priors are in the model, the next step is checking expected best responses for each type in concrete settings.",
+    "reader_work": "Before solving, list the hidden types, who observes each type, and the prior probabilities. Then write a strategy as a rule for every type. The work is to stop using uncertainty as a vague excuse and put it into the model.",
+    "reader_self_test": "Self-test: rewrite a complete-information strategy as a type-contingent rule. Then identify the prior belief that lets other players reason about hidden types. If there is no type rule, the private-information structure is not yet modeled.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -1024,6 +1056,8 @@
     "tempting_shortcut": "The tempting shortcut is to collapse a distribution of values into one representative value. That fails because low, middle, and high types may choose different actions and face different profitable deviations.",
     "durable_lesson": "The durable lesson is that equilibrium under hidden information is a family of best-response checks. Each type's prescribed action must be optimal given beliefs about other players' types and strategies.",
     "handoff": "This hands off to auctions: bidding environments make private values concrete and show why a strategy is a function from value information to bids.",
+    "reader_work": "Check incentives type by type. Hold the other players' type-contingent rules fixed and ask whether each type wants to deviate. The work is to avoid hiding a failed low-type or high-type incentive inside an average-player calculation. If one type fails, the whole strategy rule fails even when the average payoff looks fine.",
+    "reader_self_test": "Self-test: choose two types and check their deviations separately. If one type wants to deviate while another does not, explain why an average-player check would miss the failure. This is the applied BNE audit.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -1071,6 +1105,8 @@
     "tempting_shortcut": "The tempting shortcut is to read bids as honest value labels. That fails because bids are actions chosen under rules; the same bidder may bid differently in first-price, second-price, or platform auctions.",
     "durable_lesson": "The durable lesson is that mechanism rules manufacture incentives. Allocation and payment rules determine how private values become strategic bids and whether the bidder wants to reveal or conceal information.",
     "handoff": "This hands off to revenue equivalence: after comparing auction formats, the next question is when different rules nevertheless produce the same expected revenue.",
+    "reader_work": "Split each bid into chance of winning, payment if winning, and value if winning. Then change the auction format and repeat the split. The work is to see a bid as a strategic response to rules, not as a transparent value label.",
+    "reader_self_test": "Self-test: compare two bids by writing how each changes winning probability and surplus if winning. Then repeat after changing the payment rule. If the same bid logic survives every format, you are probably ignoring the mechanism. Name whether the bidder pays their own bid, another bid, or a platform price.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -1111,6 +1147,8 @@
     "tempting_shortcut": "The tempting shortcut is to treat revenue equivalence as a universal law. That fails because the result depends on assumptions about values, risk, symmetry, allocation rules, and boundary payments.",
     "durable_lesson": "The durable lesson is that the theorem is a conditions machine. It teaches when surface format differences wash out and, just as importantly, which changes make the equivalence disappear.",
     "handoff": "This hands off to ad auctions: real platform auctions modify the object being sold, the ranking rule, and the quality information, so the clean theorem becomes a reference point rather than the whole story.",
+    "reader_work": "Before applying the theorem, write the assumptions as a checklist: allocation rule, lowest-type payoff, symmetry, independence, risk neutrality, and entry conditions. The work is to learn what makes equivalence fragile, not just what makes it elegant.",
+    "reader_self_test": "Self-test: take a proposed use of revenue equivalence and strike out one assumption, such as risk neutrality or symmetry. Then explain which step of the equivalence story breaks. The theorem is learned by testing its failure points. Do not call formats equivalent until the allocation rule also matches.",
     "supplemental_evidence": [
       {
         "id": "lev-lecture-19-01",
@@ -1167,6 +1205,8 @@
     "tempting_shortcut": "The tempting shortcut is to rank advertisers only by bid. That fails because a high bid on an ad nobody clicks can be worse for the platform than a lower bid attached to a more useful or clickable ad.",
     "durable_lesson": "The durable lesson is that mechanism design must respect the real resource. In ad markets, the platform allocates probabilistic attention while balancing advertiser incentives, user response, and revenue.",
     "handoff": "This hands off to perfect Bayesian equilibrium: after mechanisms with hidden values, the course moves to dynamic settings where actions reveal information and beliefs must be updated over time.",
+    "reader_work": "Separate bid, quality score, click probability, slot allocation, and payment. Then ask which piece changes under the platform rule being discussed. The work is to keep user attention, advertiser incentives, and platform revenue from collapsing into one score.",
+    "reader_self_test": "Self-test: trace one advertiser through ranking, click prediction, allocation, and payment. Then change only the quality score and say what moves. This checks whether you understand the platform mechanism as more than highest-bid-wins.",
     "supplemental_evidence": [
       {
         "id": "lev-lecture-20-01",
@@ -1230,6 +1270,8 @@
     "tempting_shortcut": "The tempting shortcut is to compute actions and leave beliefs implicit. That fails when an observed move changes what a receiver thinks about type, and that changed belief changes the receiver's best response.",
     "durable_lesson": "The durable lesson is that equilibrium now has two coupled parts: strategies must be optimal given beliefs, and beliefs must be updated consistently where the path of play gives evidence.",
     "handoff": "This hands off to signaling: once actions can reveal information, the course studies when informed players choose signals that separate, pool, or distort what receivers believe.",
+    "reader_work": "Write strategies and beliefs in pairs. After every observed action, ask whether Bayes rule pins down the belief and whether the action is optimal under that belief. The work is to keep off-path assumptions visible.",
+    "reader_self_test": "Self-test: after an observed action, write both the receiver's belief and the receiver's best response. Then mark whether the belief was pinned down by Bayes rule or chosen off path. This keeps belief discipline visible.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -1282,6 +1324,8 @@
     "tempting_shortcut": "The tempting shortcut is to say costly signals are always credible. That fails because credibility depends on relative incentives: the action must be unattractive enough for the type that should not mimic it.",
     "durable_lesson": "The durable lesson is that information can be carried by incentive differences. A signal works when the cost-benefit tradeoff differs across types so the receiver can rationally update after seeing it.",
     "handoff": "This hands off to bargaining with incomplete information: hidden types can make offers and delays informative, so negotiation becomes both surplus division and information management.",
+    "reader_work": "For each type, compare the payoff from sending the signal with the payoff from imitating another type's signal. Then update the receiver's belief from the behavior that survives. The work is to see information as an incentive pattern. If both types choose the same signal, label the result pooling before claiming anything was revealed.",
+    "reader_self_test": "Self-test: test whether the low type wants to imitate the high type's signal and whether the high type wants to separate. If both types prefer the same visible action, explain why the receiver should not infer separation.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -1322,6 +1366,8 @@
     "tempting_shortcut": "The tempting shortcut is to calculate from the average participant before the offer. That fails because an offer changes who accepts, so the relevant group after selection can be much riskier, cheaper, or more costly than the original population.",
     "durable_lesson": "The durable lesson is that private information changes both prices and populations. Bargaining and screening are not only about splitting surplus; they also determine which hidden types enter the transaction.",
     "handoff": "This hands off to cheap talk: after costly or payoff-relevant signals, the course asks when pure messages can transmit information without direct cost or binding force.",
+    "reader_work": "After any offer or price, recompute who accepts. Do not reuse the original population average. The work is to see bargaining as selection plus surplus division, where the act of accepting can reveal hidden type.",
+    "reader_self_test": "Self-test: after a proposed offer, recalculate the set of types who accept. Then compare that selected group with the original population. If they differ, explain how the offer changed information as well as surplus.",
     "supplemental_evidence": [
       {
         "id": "lev-lecture-23-01",
@@ -1379,6 +1425,8 @@
     "tempting_shortcut": "The tempting shortcut is to label all cheap talk as empty persuasion. That fails when sender and receiver preferences are sufficiently aligned, because the sender may benefit from guiding the receiver toward a better action.",
     "durable_lesson": "The durable lesson is that credibility can come from alignment, not only cost. A message works when the receiver can believe that the sender wanted to send it in exactly that state.",
     "handoff": "This hands off to common knowledge: communication does not only transmit facts; public messages can change what everyone knows about what everyone else knows.",
+    "reader_work": "Write what each sender type wants the receiver to do, then ask what message each type would send. The work is to decide whether words separate types, pool types, or become uninformative because incentives point every type to the same message.",
+    "reader_self_test": "Self-test: write the message each sender type would like to send, then ask what the receiver should infer. If all types send the same message, explain why the message pools information rather than revealing it. If messages differ, name the alignment that keeps them credible.",
     "supplemental_evidence": [],
     "supplemental_evidence_ids": []
   },
@@ -1419,6 +1467,8 @@
     "tempting_shortcut": "The tempting shortcut is to treat truth, knowledge, and public knowledge as the same thing. That fails because private receipt of the same fact can leave each player uncertain about whether others received it too.",
     "durable_lesson": "The durable lesson is that publicness is a strategic resource. Common knowledge turns a fact into a coordination object by making higher-order beliefs line up across players.",
     "handoff": "This completes the course arc by returning to the central primitive: strategic behavior depends not only on payoffs and actions, but on what each player can safely believe others understand.",
+    "reader_work": "For every fact in the example, label whether it is private, mutual, public, or common knowledge. Then name the coordinated action that needs higher-order confidence. The work is to distinguish shared information from shared awareness.",
+    "reader_self_test": "Self-test: construct a case where everyone privately knows the fact but no one knows whether everyone else knows. Then add a public announcement and explain which belief levels change. This tests the difference between truth and publicness.",
     "supplemental_evidence": [
       {
         "id": "lev-lecture-25-01",

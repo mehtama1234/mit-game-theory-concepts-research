@@ -1164,6 +1164,8 @@ def build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id):
       ("Watch", lecture["what_to_watch_for"]),
       ("Naive Question", lecture["naive_start"]),
       ("Shortcut To Avoid", lecture["tempting_shortcut"]),
+      ("Reader Work", lecture["reader_work"]),
+      ("Self-Test", lecture["reader_self_test"]),
       ("Evidence", lecture["coverage_note"]),
       ("Transcript", lecture["transcript_path"]),
   ], "lecture-flow")}
@@ -1177,6 +1179,10 @@ def build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id):
   <p>{esc(lecture["common_failure"])}</p>
   <h3>Durable Lesson</h3>
   <p>{esc(lecture["durable_lesson"])}</p>
+  <h3>Reader Work</h3>
+  <p>{esc(lecture["reader_work"])}</p>
+  <h3>Reader Self-Test</h3>
+  <p>{esc(lecture["reader_self_test"])}</p>
   <h3>Handoff</h3>
   <p>{esc(lecture["handoff"])}</p>
   <h3>Linked Concepts</h3>
@@ -1231,6 +1237,8 @@ def build_lecture_detail(lecture, ev_by_id, concept_by_id, deriv_by_id):
     ("Watch", lecture["what_to_watch_for"]),
     ("Math", lecture["math_entry_point"]),
     ("Shortcut", lecture["tempting_shortcut"]),
+    ("Reader Work", lecture["reader_work"]),
+    ("Self-Test", lecture["reader_self_test"]),
     ("Evidence", lecture.get("total_coverage_note", lecture["coverage_note"])),
 ], "lecture-flow")}
 <section class="treatment">
@@ -1251,6 +1259,10 @@ def build_lecture_detail(lecture, ev_by_id, concept_by_id, deriv_by_id):
   {f'<p>{esc(concept_mistake_notes)}</p>' if concept_mistake_notes else ''}
   <h2>Durable Lesson</h2>
   <p>{esc(lecture["durable_lesson"])}</p>
+  <h2>Reader Work</h2>
+  <p>{esc(lecture["reader_work"])}</p>
+  <h2>Reader Self-Test</h2>
+  <p>{esc(lecture["reader_self_test"])}</p>
   <h2>How This Lecture Hands Off</h2>
   <p>{esc(lecture["handoff"])}</p>
   <h2>How To Recognize This Later</h2>

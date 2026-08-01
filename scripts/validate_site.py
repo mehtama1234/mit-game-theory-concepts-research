@@ -920,8 +920,10 @@ def main() -> int:
             "math_entry_point",
             "worked_mini_example",
             "common_failure",
+            "reader_work",
+            "reader_self_test",
         ]
-        for heading in ["Argument Arc", "Where The Math Enters", "Worked Mini-Example", "Common Failure"]:
+        for heading in ["Argument Arc", "Where The Math Enters", "Worked Mini-Example", "Common Failure", "Reader Work", "Reader Self-Test"]:
             if heading not in lectures_html:
                 errors.append(f"lectures page missing path heading: {heading}")
         for key in lecture_path_fields:
@@ -930,7 +932,7 @@ def main() -> int:
             elif html.escape(str(lecture[key]), quote=True) not in lectures_html:
                 errors.append(f"lecture path missing rendered {key}: {lecture['id']}")
         combined_path = " ".join(str(lecture.get(field, "")) for field in lecture_path_fields)
-        if words(combined_path) < 130:
+        if words(combined_path) < 210:
             errors.append(f"lecture {lecture['id']} has shallow path card treatment")
         total_evidence = len(lecture.get("evidence_ids", [])) + len(lecture.get("supplemental_evidence_ids", []))
         if total_evidence < 2:

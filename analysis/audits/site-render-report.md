@@ -27,7 +27,7 @@ Playwright render audit for representative desktop and mobile pages.
 - desktop-cross-reference: `cross-reference.html`, viewport 1280,900, captured 1280x900, 107006 bytes
 - desktop-limits: `limits.html`, viewport 1280,900, captured 1280x900, 134103 bytes
 - desktop-lectures: `lectures.html`, viewport 1280,900, captured 1280x900, 164461 bytes
-- desktop-lecture-06-detail: `lectures/lecture-06.html`, viewport 1280,900, captured 1280x900, 160377 bytes
+- desktop-lecture-06-detail: `lectures/lecture-06.html`, viewport 1280,900, captured 1280x900, 172303 bytes
 - desktop-concepts: `concepts.html`, viewport 1280,900, captured 1280x900, 156369 bytes
 - desktop-imperfect-competition: `concepts/imperfect_competition.html`, viewport 1280,900, captured 1280x900, 187593 bytes
 - desktop-nash-equilibrium: `concepts/nash_equilibrium.html`, viewport 1280,900, captured 1280x900, 152931 bytes

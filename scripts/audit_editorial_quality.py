@@ -1267,18 +1267,20 @@ def main() -> int:
         "tempting_shortcut",
         "durable_lesson",
         "handoff",
+        "reader_work",
+        "reader_self_test",
     ]
     lectures_html = (SITE / "lectures.html").read_text(encoding="utf-8") if (SITE / "lectures.html").exists() else ""
     lecture_words = [words(" ".join(str(lecture.get(field, "")) for field in lecture_path_fields)) for lecture in lectures]
     for lecture, count in zip(lectures, lecture_words):
-        if count < 260:
+        if count < 340:
             errors.append(f"lecture {lecture['id']} has shallow path treatment: {count} words")
         for field in lecture_path_fields:
             value = str(lecture.get(field, ""))
             if value and html_lib.escape(value, quote=True) not in lectures_html:
                 errors.append(f"lecture path {lecture['id']} {field} not rendered")
-        treatment_count = words(" ".join(str(lecture.get(field, "")) for field in ["argument_arc", "math_entry_point", "worked_mini_example", "common_failure", "naive_start", "tempting_shortcut", "durable_lesson", "handoff"]))
-        if treatment_count < 220:
+        treatment_count = words(" ".join(str(lecture.get(field, "")) for field in ["argument_arc", "math_entry_point", "worked_mini_example", "common_failure", "naive_start", "tempting_shortcut", "durable_lesson", "handoff", "reader_work", "reader_self_test"]))
+        if treatment_count < 300:
             errors.append(f"lecture {lecture['id']} has shallow hand-authored treatment: {treatment_count} words")
     lecture_page_words = []
     lecture_pages_with_derivations = 0
