@@ -1002,6 +1002,9 @@ def build_capstone_self_test(capstones, concept_by_id, primitive_by_id, case_by_
   <p><strong>Evidence check:</strong> {esc(item["evidence_check"])}</p>
   <p><strong>What a wrong answer reveals:</strong> {esc(item["what_wrong_answer_reveals"])}</p>
   <p><strong>Transfer prompt:</strong> {esc(item["transfer_prompt"])}</p>
+  <p><strong>Minimum passing answer:</strong> {esc(item["minimum_passing_answer"])}</p>
+  <p><strong>Self-audit checklist:</strong> {esc(item["self_audit_checklist"])}</p>
+  <p><strong>Transfer failure mode:</strong> {esc(item["transfer_failure_mode"])}</p>
   <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
   <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
   <h3>Case Study</h3><p class="chips">{case_links}</p>

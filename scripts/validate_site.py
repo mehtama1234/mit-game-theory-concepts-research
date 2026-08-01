@@ -750,17 +750,29 @@ def main() -> int:
                 errors.append(f"worked transfer example {item['id']} missing evidence link: {ev_id}")
     if len(capstones) < 6:
         errors.append(f"capstone self-test has only {len(capstones)} cards")
+    capstone_fields = [
+        "scenario",
+        "reader_task",
+        "expected_reasoning",
+        "math_check",
+        "evidence_check",
+        "what_wrong_answer_reveals",
+        "transfer_prompt",
+        "minimum_passing_answer",
+        "self_audit_checklist",
+        "transfer_failure_mode",
+    ]
     for item in capstones:
         if f'id="{item["id"]}"' not in capstone_html:
             errors.append(f"capstone self-test item not rendered: {item['id']}")
-        for field in ["scenario", "reader_task", "expected_reasoning", "math_check", "evidence_check", "what_wrong_answer_reveals", "transfer_prompt"]:
+        for field in capstone_fields:
             value = item.get(field, "")
             if words(value) < 16:
                 errors.append(f"capstone self-test {item['id']} has shallow {field}")
             elif html.escape(value, quote=True) not in capstone_html:
                 errors.append(f"capstone self-test {item['id']} {field} not rendered")
-        combined = " ".join(str(item.get(field, "")) for field in ["scenario", "reader_task", "expected_reasoning", "math_check", "evidence_check", "what_wrong_answer_reveals", "transfer_prompt"])
-        if words(combined) < 185:
+        combined = " ".join(str(item.get(field, "")) for field in capstone_fields)
+        if words(combined) < 400:
             errors.append(f"capstone self-test {item['id']} has shallow combined treatment")
         for concept_id in item.get("concepts", []):
             if concept_id not in concept_by_id:

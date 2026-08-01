@@ -897,6 +897,18 @@ def main() -> int:
     capstone_decoder_links = 0
     capstone_evidence_links = 0
     capstone_words = []
+    capstone_fields = [
+        "scenario",
+        "reader_task",
+        "expected_reasoning",
+        "math_check",
+        "evidence_check",
+        "what_wrong_answer_reveals",
+        "transfer_prompt",
+        "minimum_passing_answer",
+        "self_audit_checklist",
+        "transfer_failure_mode",
+    ]
     for item in capstones:
         if f'id="{item["id"]}"' in capstone_html:
             capstone_cards += 1
@@ -904,11 +916,11 @@ def main() -> int:
             errors.append(f"capstone self-test {item['id']} not rendered")
         text = " ".join(
             str(item.get(k, ""))
-            for k in ["scenario", "reader_task", "expected_reasoning", "math_check", "evidence_check", "what_wrong_answer_reveals", "transfer_prompt"]
+            for k in capstone_fields
         )
         treatment_words = words(text)
         capstone_words.append(treatment_words)
-        if treatment_words < 185:
+        if treatment_words < 400:
             errors.append(f"capstone self-test {item['id']} has shallow treatment: {treatment_words} words")
         linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in capstone_html]
         linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in capstone_html]
