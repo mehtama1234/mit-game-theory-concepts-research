@@ -35,6 +35,7 @@ def page(title: str, body: str, active: str = "", depth: int = 0) -> str:
     prefix = "../" * depth
     nav = [
         ("index.html", "Overview", "overview"),
+        ("review-guide.html", "Review Guide", "review-guide"),
         ("study-route.html", "Study Route", "study-route"),
         ("recognition.html", "Recognition", "recognition"),
         ("math-clinic.html", "Math Clinic", "math-clinic"),
@@ -221,6 +222,7 @@ def build_index(concepts, themes, evidence, lectures):
   <aside class="stats"><strong>{len(lectures)}</strong><span>lectures</span><strong>{len(concepts)}</strong><span>concepts</span><strong>{len(evidence)}</strong><span>evidence records</span></aside>
 </section>
 <section><h2>The Big Throughline</h2><p>Game theory studies situations where choosing well means reasoning about other choosers. Equilibrium, credibility, beliefs, auctions, signaling, and common knowledge are different answers to the same pressure: my best move depends on what others do, know, want, and expect.</p></section>
+<section><h2>Review The Work</h2><p>The review guide gives a concrete audit path through the strongest and most failure-prone parts of the lab: first-principles depth, lecture faithfulness, math clarity, reader practice, and publication state.</p><p><a class="button" href="review-guide.html">Open the review guide</a></p></section>
 <section><h2>Use The Study Route</h2><p>The route map gives a compact path through the course: choice, representation, equilibrium, time, information, and design.</p><p><a class="button" href="study-route.html">Open the study route</a></p></section>
 <section><h2>Diagnose A New Problem</h2><p>The recognition clinic teaches how to look at a fresh strategic situation and decide which course idea is actually doing the work.</p><p><a class="button" href="recognition.html">Open the recognition clinic</a></p></section>
 <section><h2>Read The Math As A Move</h2><p>The math clinic turns core equations into problem-driven walkthroughs with failed shortcuts, worked numbers, and transfer tests.</p><p><a class="button" href="math-clinic.html">Open the math clinic</a></p></section>
@@ -241,6 +243,40 @@ def build_index(concepts, themes, evidence, lectures):
 <section><h2>Start With The Course Path</h2><p>The lecture path follows the MIT sequence while linking each session to atlas concepts and transcript evidence.</p><p><a class="button" href="lectures.html">Open the lecture path</a></p></section>
 <section><h2>Start With Concepts</h2><div class="grid">{''.join(concept_card(c, evidence_map(evidence)) for c in concepts[:6])}</div><p><a class="button" href="concepts.html">Open the full atlas</a></p></section>"""
     write(SITE / "index.html", page("Overview", body, "overview"))
+
+
+def build_review_guide(review_cards, concept_by_id, ev_by_id):
+    cards = []
+    for item in review_cards:
+        page_links = "".join(
+            f'<a class="chip" href="{esc(path)}">{esc(path)}</a>'
+            for path in item.get("pages", [])
+        )
+        concept_links = "".join(
+            f'<a class="chip" href="concepts/{esc(concept_id)}.html">{esc(concept_by_id[concept_id]["name"])}</a>'
+            for concept_id in item.get("concept_ids", [])
+            if concept_id in concept_by_id
+        )
+        evidence_links = "".join(
+            f'<li><a href="evidence.html#{esc(ev_id)}">{esc(ev_id)}</a>: {esc(ev_by_id[ev_id]["video_title"])}</li>'
+            for ev_id in item.get("evidence_ids", [])
+            if ev_id in ev_by_id
+        )
+        cards.append(f"""<article class="wide-card review-card" id="{esc(item["id"])}">
+  <h2>{esc(item["title"])}</h2>
+  <p><strong>Review question:</strong> {esc(item["review_question"])}</p>
+  <p><strong>What to read:</strong> {esc(item["what_to_read"])}</p>
+  <p><strong>Proof to seek:</strong> {esc(item["proof_to_seek"])}</p>
+  <p><strong>Warning sign:</strong> {esc(item["warning_sign"])}</p>
+  <h3>Pages to inspect</h3><p class="chips">{page_links}</p>
+  <h3>Concept anchors</h3><p class="chips">{concept_links}</p>
+  <h3>Evidence anchors</h3><ul class="evidence-list">{evidence_links}</ul>
+</article>""")
+    body = """<section class="page-head">
+  <h1>Review Guide</h1>
+  <p>A concrete audit route for checking whether the lab is intellectually built, lecture-faithful, usable, and honestly published.</p>
+</section>""" + "".join(cards)
+    write(SITE / "review-guide.html", page("Review Guide", body, "review-guide"))
 
 
 def build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_by_id):
@@ -1542,6 +1578,7 @@ def main():
     assumptions = load("analysis/throughlines/assumption-audit-lab.json")
     worked_transfer = load("analysis/throughlines/worked-transfer-examples.json")
     capstones = load("analysis/throughlines/capstone-self-test.json")
+    review_cards = load("analysis/throughlines/review-guide.json")
     lectures = load("analysis/lectures/lecture-path.json")
     equation_notes = load_optional("analysis/editorial-overrides/equation-walkthrough-notes.json", {})
     worked_examples = load_optional("analysis/editorial-overrides/worked-example-cards.json", {})
@@ -1563,6 +1600,7 @@ def main():
     proof_by_id = {item["id"]: item for item in proofs}
     assumption_by_id = {item["id"]: item for item in assumptions}
     build_index(concepts, themes, evidence, lectures)
+    build_review_guide(review_cards, concept_by_id, ev_by_id)
     build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_by_id)
     build_recognition_clinic(clinic, concept_by_id, primitive_by_id, ev_by_id)
     build_math_clinic(math_clinic, deriv_by_id, concept_by_id, ev_by_id)

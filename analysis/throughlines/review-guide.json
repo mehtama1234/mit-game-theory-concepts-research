@@ -1,0 +1,68 @@
+[
+  {
+    "id": "review-first-principles-depth",
+    "title": "First-principles depth check",
+    "review_question": "Can a reader understand why the idea has to exist before seeing the formal name?",
+    "what_to_read": "Read one low-level choice concept, one equilibrium concept, and one information concept. In each page, check whether the ordinary problem appears before the mathematical object, and whether the math is introduced as a tool for that problem rather than as decoration.",
+    "proof_to_seek": "A strong page should name the real-world pressure, the failed simple shortcut, the mathematical object, the operation performed on that object, a worked example, a common misunderstanding, and the bottom-line diagnostic. The reader should be able to restate the concept without relying on the course vocabulary.",
+    "warning_sign": "A weak page will sound correct but generic: it will say the concept helps solve games, improves prediction, or captures incentives without showing the specific constraint that forces the concept to appear.",
+    "pages": ["concepts/preferences.html", "concepts/nash_equilibrium.html", "concepts/types_and_beliefs.html"],
+    "concept_ids": ["preferences", "nash_equilibrium", "types_and_beliefs"],
+    "evidence_ids": ["ev-preferences-01", "ev-nash_equilibrium-01", "ev-types_and_beliefs-01"]
+  },
+  {
+    "id": "review-lecture-faithfulness",
+    "title": "Lecture-faithfulness check",
+    "review_question": "Do the pages preserve lecture arguments, not just keywords from the transcript?",
+    "what_to_read": "Open a lecture detail page and then follow its evidence links. Compare the lecture argument, conceptual payload, and transcript window against the concept page that cites the evidence.",
+    "proof_to_seek": "The evidence record should paraphrase what the lecture is doing, why that span matters, and which concept it supports. It should not merely say that a term appeared. A reader should see how a local lecture moment became an atlas claim.",
+    "warning_sign": "A weak evidence record will be interchangeable across concepts, or it will cite a timestamp without explaining the lecturer's argument, example, caveat, or mathematical move. The giveaway is that swapping the evidence record onto another concept page would not obviously break the explanation.",
+    "pages": ["lectures/lecture-06.html", "evidence.html", "concepts/nash_equilibrium.html"],
+    "concept_ids": ["best_response", "nash_equilibrium", "mixed_strategies"],
+    "evidence_ids": ["ev-best_response-01", "ev-nash_equilibrium-01", "ev-mixed_strategies-01"]
+  },
+  {
+    "id": "review-cross-course-argument",
+    "title": "Throughline and transfer check",
+    "review_question": "Can the lab connect separate lectures into one reusable idea without flattening their differences?",
+    "what_to_read": "Start with the argument chains, then open the cross index and one primitive page. Check whether the same primitive is shown in different situations and whether the page says where the analogy stops.",
+    "proof_to_seek": "The page should show a chain of reasoning across lecture moments, not a list of labels. The transfer should explain the shared pressure, the mathematical lever, and the limit where the comparison stops being valid.",
+    "warning_sign": "A weak throughline will say two topics are connected because they both involve strategy, beliefs, or incentives, but it will not identify the exact primitive being reused. It will also fail to explain where the analogy breaks, which is usually where the real learning happens.",
+    "pages": ["argument-chains.html", "cross-reference.html", "primitives.html"],
+    "concept_ids": ["dominance", "rationalizability", "bayesian_nash_equilibrium"],
+    "evidence_ids": ["ev-dominance-01", "ev-rationalizability-01", "ev-bayesian_nash_equilibrium-01"]
+  },
+  {
+    "id": "review-math-plain-language",
+    "title": "Math-as-meaning check",
+    "review_question": "Does each equation explain a strategic move in plain language?",
+    "what_to_read": "Use the math clinic and a concept page with an equation walkthrough. Check whether every symbol is explained and whether the page says what would break without that relation.",
+    "proof_to_seek": "A strong treatment should turn symbols into a comparison a person can reason about: compare this action against that action, this belief against that state, or today's gain against tomorrow's punishment. The math should earn its place by doing work that prose alone would blur.",
+    "warning_sign": "A weak treatment will display a formula and then repeat the formula in words without explaining why that relation is the right object for the problem. If the same explanation could sit under a different equation, the math has not been made meaningful.",
+    "pages": ["math-clinic.html", "concepts/expected_utility.html", "concepts/infinitely_repeated_games.html"],
+    "concept_ids": ["expected_utility", "mixed_strategies", "infinitely_repeated_games"],
+    "evidence_ids": ["ev-expected_utility-01", "ev-mixed_strategies-02", "ev-infinitely_repeated_games-01"]
+  },
+  {
+    "id": "review-reader-practice",
+    "title": "Reader-usefulness check",
+    "review_question": "Can a reader use the lab on a new situation rather than only recognize definitions?",
+    "what_to_read": "Open the model-building workbook, solution workshop, worked transfer examples, and capstone. Check whether each card asks the reader to choose a model, inspect assumptions, avoid a false diagnosis, and connect back to transcript evidence.",
+    "proof_to_seek": "A strong practice surface should make the reader decide what the players are, what choices are available, what information is hidden, what payoff comparison matters, and which assumption could change the answer. The answer should require a model-building judgment before any equilibrium label becomes useful.",
+    "warning_sign": "A weak practice surface will ask for recall instead of diagnosis. It will name the right concept but not force the reader to justify why this model, not another nearby model, fits the situation.",
+    "pages": ["model-building.html", "solutions.html", "worked-transfer.html", "capstone.html"],
+    "concept_ids": ["screening_and_adverse_selection", "ad_auctions", "common_knowledge"],
+    "evidence_ids": ["ev-screening_and_adverse_selection-01", "ev-ad_auctions-01", "ev-common_knowledge-01"]
+  },
+  {
+    "id": "review-publication-state",
+    "title": "Publication-state check",
+    "review_question": "Is the repository synced, and is public hosting actually enabled?",
+    "what_to_read": "Check the readiness report, git branch state, remote branch hashes, and the generated review page. Separate the pushed repository state from GitHub Pages serving, because those are different claims and must be proven by different evidence.",
+    "proof_to_seek": "The repo is complete only when local validation passes, main is pushed, the generated site branch is refreshed, and the hosting state is stated honestly. If Pages is blocked by the private-repo plan, that must remain visible instead of being hidden behind a successful push.",
+    "warning_sign": "A weak completion claim will say deployed or running merely because gh-pages exists. A real publication claim needs an accessible URL or an explicit statement that public Pages is blocked.",
+    "pages": ["review-guide.html", "index.html", "evidence.html"],
+    "concept_ids": ["strategic_form_games", "subgame_perfection", "perfect_bayesian_equilibrium"],
+    "evidence_ids": ["ev-strategic_form_games-01", "ev-subgame_perfection-01", "ev-perfect_bayesian_equilibrium-01"]
+  }
+]

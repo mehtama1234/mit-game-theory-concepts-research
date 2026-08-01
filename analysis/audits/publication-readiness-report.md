@@ -6,7 +6,7 @@ This report records local readiness evidence. Remote publication is verified by 
 
 ```text
 $ git log -1 --oneline
-8543c24 Deepen MIT concept bottom-line diagnostics
+0c6373b Update MIT readiness after concept-diagnostic depth
 
 $ git remote -v
 origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (fetch)
@@ -29,16 +29,17 @@ origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (pus
 - Mathematical primitives: 10
 - Derivation cards: 9
 - Method families: 3
-- Site HTML files: 82
+- Review guide cards: 6
+- Site HTML files: 83
 
 ## Validation Evidence
 
 ```text
 validated 33 concepts, 8 themes, 10 subthemes, 66 evidence records, 10 primitives, 9 derivations, 3 method families
 wrote analysis/lectures/lecture-path.json with 25 lectures
-validated 82 html files and 66 evidence anchors
+validated 83 html files and 66 evidence anchors
 audited editorial quality for 33 concepts; errors: 0
-render-audited 50 screenshots; errors: 0
+render-audited 52 screenshots; errors: 0
 + python3 scripts/build_first_principles_atlas.py
 + python3 scripts/validate_first_principles_atlas.py
 + python3 scripts/build_lecture_path.py
@@ -54,8 +55,10 @@ render-audited 50 screenshots; errors: 0
 - First-principles concept atlas: proven structurally by `scripts/validate_first_principles_atlas.py`; prose uses required hand-crafted overrides.
 - Evidence discipline: every concept has two transcript evidence records with local transcript windows and YouTube links.
 - Generic-template guard: validators reject the original template phrases in generated concept prose and published HTML.
+- Reviewability: `review-guide.html` gives an explicit route for checking first-principles depth, lecture faithfulness, math clarity, reader practice, and publication state.
 - Reader-facing site: proven by static generation, link validation, evidence-anchor validation, diagrams, and screenshot render audit.
-- Remote sync: verified outside this report by `git status --short --branch`, `git log -1 --oneline`, and the push result.
+- Remote sync: verified outside this report by `git status --short --branch`, `git log -1 --oneline`, remote branch hashes, and the push result.
+- Public hosting: a pushed `gh-pages` branch is not the same as an enabled public Pages URL; hosting status must be checked separately.
 
 ## Browser Tooling
 
@@ -64,4 +67,4 @@ render-audited 50 screenshots; errors: 0
 
 ## Current Conclusion
 
-Local research/build readiness is stronger than the first committed pass: the atlas now has hand-authored synthesis for themes, subthemes, primitives, method families, and evidence payloads, with validators that reject the older generic patterns.
+Local research/build readiness is stronger than the first committed pass: the atlas now has hand-authored synthesis for themes, subthemes, primitives, method families, evidence payloads, and a reviewer-facing audit route, with validators that reject the older generic patterns.

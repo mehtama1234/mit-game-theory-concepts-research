@@ -118,6 +118,7 @@ def main() -> int:
     assumptions = json.loads((ROOT / "analysis/throughlines/assumption-audit-lab.json").read_text(encoding="utf-8"))
     worked_transfer = json.loads((ROOT / "analysis/throughlines/worked-transfer-examples.json").read_text(encoding="utf-8"))
     capstones = json.loads((ROOT / "analysis/throughlines/capstone-self-test.json").read_text(encoding="utf-8"))
+    review_cards = json.loads((ROOT / "analysis/throughlines/review-guide.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_diagnostics = json.loads((ROOT / "analysis/editorial-overrides/concept-diagnostics.json").read_text(encoding="utf-8"))
@@ -1122,6 +1123,37 @@ def main() -> int:
             errors.append(f"capstone self-test {item['id']} missing evidence links")
     if len(capstones) < 6:
         errors.append(f"only {len(capstones)} capstone self-tests")
+    review_html = (SITE / "review-guide.html").read_text(encoding="utf-8") if (SITE / "review-guide.html").exists() else ""
+    review_fields = ["review_question", "what_to_read", "proof_to_seek", "warning_sign"]
+    review_words = []
+    review_page_links = 0
+    review_concept_links = 0
+    review_evidence_links = 0
+    for item in review_cards:
+        if f'id="{item["id"]}"' not in review_html:
+            errors.append(f"review guide {item['id']} not rendered")
+        treatment_words = words(" ".join(str(item.get(k, "")) for k in review_fields))
+        review_words.append(treatment_words)
+        if treatment_words < 120:
+            errors.append(f"review guide {item['id']} has shallow treatment: {treatment_words} words")
+        for field in review_fields:
+            value = str(item.get(field, ""))
+            if html_lib.escape(value, quote=True) not in review_html:
+                errors.append(f"review guide {item['id']} {field} not rendered")
+        linked_pages = [path for path in item.get("pages", []) if f'href="{path}"' in review_html]
+        linked_concepts = [cid for cid in item.get("concept_ids", []) if f'href="concepts/{cid}.html"' in review_html]
+        linked_evidence = [eid for eid in item.get("evidence_ids", []) if f'href="evidence.html#{eid}"' in review_html]
+        review_page_links += len(linked_pages)
+        review_concept_links += len(linked_concepts)
+        review_evidence_links += len(linked_evidence)
+        if len(linked_pages) != len(item.get("pages", [])):
+            errors.append(f"review guide {item['id']} missing page links")
+        if len(linked_concepts) != len(item.get("concept_ids", [])):
+            errors.append(f"review guide {item['id']} missing concept links")
+        if len(linked_evidence) != len(item.get("evidence_ids", [])):
+            errors.append(f"review guide {item['id']} missing evidence links")
+    if len(review_cards) < 6:
+        errors.append(f"only {len(review_cards)} review guide cards")
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     cross_concept_cards = 0
     cross_lecture_links = 0
@@ -1468,6 +1500,11 @@ def main() -> int:
         f"- Capstone paper-reading links: {capstone_paper_links}",
         f"- Capstone decoder links: {capstone_decoder_links}",
         f"- Capstone evidence links: {capstone_evidence_links}",
+        f"- Review guide cards: {len(review_cards)}",
+        f"- Review guide words: min {min(review_words) if review_words else 0}, max {max(review_words) if review_words else 0}",
+        f"- Review guide page links: {review_page_links}",
+        f"- Review guide concept links: {review_concept_links}",
+        f"- Review guide evidence links: {review_evidence_links}",
         f"- Cross-index concept cards: {cross_concept_cards}",
         f"- Cross-index lecture links: {cross_lecture_links}",
         f"- Cross-index subtheme links: {cross_subtheme_links}",

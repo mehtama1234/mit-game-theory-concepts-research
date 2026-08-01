@@ -43,6 +43,7 @@ def main() -> int:
     assumptions = json.loads((ROOT / "analysis/throughlines/assumption-audit-lab.json").read_text(encoding="utf-8"))
     worked_transfer = json.loads((ROOT / "analysis/throughlines/worked-transfer-examples.json").read_text(encoding="utf-8"))
     capstones = json.loads((ROOT / "analysis/throughlines/capstone-self-test.json").read_text(encoding="utf-8"))
+    review_cards = json.loads((ROOT / "analysis/throughlines/review-guide.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_diagnostics = json.loads((ROOT / "analysis/editorial-overrides/concept-diagnostics.json").read_text(encoding="utf-8"))
@@ -58,7 +59,7 @@ def main() -> int:
     }
     supplemental_ids = {record["id"] for record in supplemental}
     themes = json.loads((ROOT / "analysis/themes/theme-map.json").read_text(encoding="utf-8"))
-    required = [SITE / name for name in ["index.html", "study-route.html", "recognition.html", "math-clinic.html", "drills.html", "solutions.html", "cases.html", "argument-chains.html", "repairs.html", "paper-reading.html", "jargon-decoder.html", "model-building.html", "proof-sketches.html", "assumptions.html", "worked-transfer.html", "capstone.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
+    required = [SITE / name for name in ["index.html", "review-guide.html", "study-route.html", "recognition.html", "math-clinic.html", "drills.html", "solutions.html", "cases.html", "argument-chains.html", "repairs.html", "paper-reading.html", "jargon-decoder.html", "model-building.html", "proof-sketches.html", "assumptions.html", "worked-transfer.html", "capstone.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
     required.extend(SITE / "lectures" / f"{lecture['id']}.html" for lecture in lectures)
     for path in required:
@@ -87,6 +88,9 @@ def main() -> int:
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     limits_html = (SITE / "limits.html").read_text(encoding="utf-8") if (SITE / "limits.html").exists() else ""
     index_html = (SITE / "index.html").read_text(encoding="utf-8") if (SITE / "index.html").exists() else ""
+    review_html = (SITE / "review-guide.html").read_text(encoding="utf-8") if (SITE / "review-guide.html").exists() else ""
+    if 'href="review-guide.html"' not in index_html:
+        errors.append("index page missing review guide link")
     if 'href="study-route.html"' not in index_html:
         errors.append("index page missing study route link")
     if 'href="recognition.html"' not in index_html:
@@ -131,6 +135,34 @@ def main() -> int:
             lectures_by_concept.setdefault(concept["id"], []).append(lecture)
     if len(lectures) != 25:
         errors.append(f"expected 25 lectures, found {len(lectures)}")
+    if len(review_cards) < 6:
+        errors.append(f"review guide has too few cards: {len(review_cards)}")
+    for item in review_cards:
+        if f'id="{item["id"]}"' not in review_html:
+            errors.append(f"review guide item not rendered: {item['id']}")
+        fields = ["review_question", "what_to_read", "proof_to_seek", "warning_sign"]
+        for field in fields:
+            value = item.get(field, "")
+            minimum = 10 if field == "review_question" else 28
+            if words(value) < minimum:
+                errors.append(f"review guide {item['id']} has shallow {field}")
+            elif html.escape(value, quote=True) not in review_html:
+                errors.append(f"review guide {item['id']} {field} not rendered")
+        for page_name in item.get("pages", []):
+            if not (SITE / page_name).exists():
+                errors.append(f"review guide {item['id']} references missing page: {page_name}")
+            elif f'href="{html.escape(page_name, quote=True)}"' not in review_html:
+                errors.append(f"review guide {item['id']} missing page link: {page_name}")
+        for concept_id in item.get("concept_ids", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"review guide {item['id']} references missing concept: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in review_html:
+                errors.append(f"review guide {item['id']} missing concept link: {concept_id}")
+        for ev_id in item.get("evidence_ids", []):
+            if ev_id not in ev_by_id:
+                errors.append(f"review guide {item['id']} references missing evidence: {ev_id}")
+            elif f'href="evidence.html#{ev_id}"' not in review_html:
+                errors.append(f"review guide {item['id']} missing evidence link: {ev_id}")
     for item in route:
         if f'id="{item["id"]}"' not in route_html:
             errors.append(f"study route item not rendered: {item['id']}")

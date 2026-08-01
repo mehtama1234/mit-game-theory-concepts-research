@@ -126,6 +126,11 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Capstone paper-reading links: 12
 - Capstone decoder links: 18
 - Capstone evidence links: 22
+- Review guide cards: 6
+- Review guide words: min 123, max 137
+- Review guide page links: 19
+- Review guide concept links: 18
+- Review guide evidence links: 18
 - Cross-index concept cards: 33
 - Cross-index lecture links: 60
 - Cross-index subtheme links: 33
@@ -145,7 +150,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Supplemental lecture evidence records: 8
 - Lectures below 2 total evidence anchors: 0
 - Lecture path treatment words: min 348, max 441
-- Lecture detail page words: min 1879, max 5873
+- Lecture detail page words: min 1888, max 5882
 - Errors: 0
 
 ## Lowest Concept Depth
