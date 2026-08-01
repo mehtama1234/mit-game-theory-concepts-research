@@ -6,7 +6,7 @@ This report records local readiness evidence. Remote publication is verified by 
 
 ```text
 $ git log -1 --oneline
-3b5e224 Add MIT worked transfer examples
+87153bf Add MIT solution workshop
 
 $ git remote -v
 origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (fetch)
@@ -29,16 +29,16 @@ origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (pus
 - Mathematical primitives: 10
 - Derivation cards: 9
 - Method families: 3
-- Site HTML files: 81
+- Site HTML files: 82
 
 ## Validation Evidence
 
 ```text
 validated 33 concepts, 8 themes, 10 subthemes, 66 evidence records, 10 primitives, 9 derivations, 3 method families
 wrote analysis/lectures/lecture-path.json with 25 lectures
-validated 81 html files and 66 evidence anchors
+validated 82 html files and 66 evidence anchors
 audited editorial quality for 33 concepts; errors: 0
-render-audited 48 screenshots; errors: 0
+render-audited 50 screenshots; errors: 0
 + python3 scripts/build_first_principles_atlas.py
 + python3 scripts/validate_first_principles_atlas.py
 + python3 scripts/build_lecture_path.py
