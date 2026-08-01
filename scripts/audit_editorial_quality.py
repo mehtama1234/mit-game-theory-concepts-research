@@ -809,12 +809,17 @@ def main() -> int:
             "naive_shortcut",
             "step_by_step_use",
             "transfer_check",
+            "model_audit_protocol",
         ]
         text = " ".join(str(item.get(k, "")) for k in workbook_fields)
         treatment_words = words(text)
         workbook_words.append(treatment_words)
-        if treatment_words < 360:
+        if treatment_words < 430:
             errors.append(f"model-building workbook {item['id']} has shallow treatment: {treatment_words} words")
+        if words(item.get("model_audit_protocol", "")) < 35:
+            errors.append(f"model-building workbook {item['id']} has shallow model audit protocol")
+        if html_lib.escape(str(item.get("model_audit_protocol", "")), quote=True) not in workbook_html:
+            errors.append(f"model-building workbook {item['id']} model audit protocol not rendered")
         linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in workbook_html]
         linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in workbook_html]
         linked_drills = [did for did in item.get("drill_ids", []) if f'href="drills.html#{did}"' in workbook_html]

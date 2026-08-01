@@ -87,7 +87,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Jargon decoder primitive links: 33
 - Jargon decoder evidence links: 33
 - Model-building workbook cards: 7
-- Model-building workbook words: min 367, max 391
+- Model-building workbook words: min 435, max 455
 - Model-building concept links: 28
 - Model-building primitive links: 22
 - Model-building drill links: 14

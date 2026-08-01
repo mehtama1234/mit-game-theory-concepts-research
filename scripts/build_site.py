@@ -785,6 +785,7 @@ def build_model_building_workbook(workbook, concept_by_id, primitive_by_id, dril
   <p><strong>Naive shortcut:</strong> {esc(item["naive_shortcut"])}</p>
   <p><strong>Step-by-step use:</strong> {esc(item["step_by_step_use"])}</p>
   <p><strong>Transfer check:</strong> {esc(item["transfer_check"])}</p>
+  <p><strong>Model audit protocol:</strong> {esc(item["model_audit_protocol"])}</p>
   <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
   <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
   <h3>Practice Drills</h3><p class="chips">{drill_links}</p>
