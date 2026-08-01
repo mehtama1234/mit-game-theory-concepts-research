@@ -61,7 +61,7 @@
     "what_to_read": "Check the readiness report, git branch state, remote branch hashes, and the generated review page. Separate the pushed repository state from GitHub Pages serving, because those are different claims and must be proven by different evidence.",
     "proof_to_seek": "The repo is complete only when local validation passes, main is pushed, the generated site branch is refreshed, and the hosting state is stated honestly. If Pages is blocked by the private-repo plan, that must remain visible instead of being hidden behind a successful push.",
     "warning_sign": "A weak completion claim will say deployed or running merely because gh-pages exists. A real publication claim needs an accessible URL or an explicit statement that public Pages is blocked.",
-    "pages": ["review-guide.html", "index.html", "evidence.html"],
+    "pages": ["publication-status.html", "review-guide.html", "index.html"],
     "concept_ids": ["strategic_form_games", "subgame_perfection", "perfect_bayesian_equilibrium"],
     "evidence_ids": ["ev-strategic_form_games-01", "ev-subgame_perfection-01", "ev-perfect_bayesian_equilibrium-01"]
   }

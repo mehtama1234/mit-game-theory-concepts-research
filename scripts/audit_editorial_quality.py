@@ -119,6 +119,7 @@ def main() -> int:
     worked_transfer = json.loads((ROOT / "analysis/throughlines/worked-transfer-examples.json").read_text(encoding="utf-8"))
     capstones = json.loads((ROOT / "analysis/throughlines/capstone-self-test.json").read_text(encoding="utf-8"))
     review_cards = json.loads((ROOT / "analysis/throughlines/review-guide.json").read_text(encoding="utf-8"))
+    publication_status = json.loads((ROOT / "analysis/throughlines/publication-status.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_diagnostics = json.loads((ROOT / "analysis/editorial-overrides/concept-diagnostics.json").read_text(encoding="utf-8"))
@@ -1154,6 +1155,29 @@ def main() -> int:
             errors.append(f"review guide {item['id']} missing evidence links")
     if len(review_cards) < 6:
         errors.append(f"only {len(review_cards)} review guide cards")
+    status_html = (SITE / "publication-status.html").read_text(encoding="utf-8") if (SITE / "publication-status.html").exists() else ""
+    status_fields = ["state", "plain_language_status", "evidence_to_check", "proof_command"]
+    status_words = []
+    status_links = 0
+    for item in publication_status:
+        if f'id="{item["id"]}"' not in status_html:
+            errors.append(f"publication status {item['id']} not rendered")
+        treatment_words = words(" ".join(str(item.get(k, "")) for k in status_fields))
+        status_words.append(treatment_words)
+        if treatment_words < 70:
+            errors.append(f"publication status {item['id']} has shallow treatment: {treatment_words} words")
+        for field in status_fields:
+            value = str(item.get(field, ""))
+            if html_lib.escape(value, quote=True) not in status_html:
+                errors.append(f"publication status {item['id']} {field} not rendered")
+        linked_pages = [path for path in item.get("review_links", []) if f'href="{path}"' in status_html]
+        status_links += len(linked_pages)
+        if len(linked_pages) != len(item.get("review_links", [])):
+            errors.append(f"publication status {item['id']} missing review links")
+    if len(publication_status) < 5:
+        errors.append(f"only {len(publication_status)} publication status cards")
+    if "Your current plan does not support GitHub Pages" not in status_html:
+        errors.append("publication status missing exact Pages blocker wording")
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     cross_concept_cards = 0
     cross_lecture_links = 0
@@ -1505,6 +1529,9 @@ def main() -> int:
         f"- Review guide page links: {review_page_links}",
         f"- Review guide concept links: {review_concept_links}",
         f"- Review guide evidence links: {review_evidence_links}",
+        f"- Publication status cards: {len(publication_status)}",
+        f"- Publication status words: min {min(status_words) if status_words else 0}, max {max(status_words) if status_words else 0}",
+        f"- Publication status review links: {status_links}",
         f"- Cross-index concept cards: {cross_concept_cards}",
         f"- Cross-index lecture links: {cross_lecture_links}",
         f"- Cross-index subtheme links: {cross_subtheme_links}",

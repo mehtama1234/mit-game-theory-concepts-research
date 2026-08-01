@@ -1,0 +1,47 @@
+[
+  {
+    "id": "status-built-locally",
+    "title": "Built and reviewable locally",
+    "state": "Proven locally now",
+    "plain_language_status": "The site is generated as static HTML in the repository and can be reviewed from the local server. This proves the build artifacts exist and render on this machine; it does not by itself prove public hosting.",
+    "evidence_to_check": "Run the full validation command, open the local server, and inspect representative pages such as the review guide, concept atlas, lectures, and evidence ledger.",
+    "proof_command": "python3 scripts/build_first_principles_atlas.py && python3 scripts/build_lecture_path.py && python3 scripts/build_site.py && python3 scripts/validate_all.py && python3 -m py_compile scripts/*.py && git diff --check",
+    "review_links": ["review-guide.html", "concepts.html", "lectures.html", "evidence.html"]
+  },
+  {
+    "id": "status-main-pushed",
+    "title": "Main branch pushed",
+    "state": "Proven after push verification",
+    "plain_language_status": "The source repository has an origin remote, and the current work is intended to land on origin/main. The honest proof is the final branch hash and a clean status after the push, not the fact that a commit exists locally.",
+    "evidence_to_check": "Compare `git status --short --branch`, `git log -1 --oneline`, and `git ls-remote --heads origin main`. The local branch should be clean against origin/main after the push completes.",
+    "proof_command": "git status --short --branch && git log -1 --oneline && git ls-remote --heads origin main",
+    "review_links": ["review-guide.html", "index.html"]
+  },
+  {
+    "id": "status-gh-pages-refreshed",
+    "title": "Generated site branch refreshed",
+    "state": "Proven after gh-pages push verification",
+    "plain_language_status": "The generated `site/` directory is split and pushed to the `gh-pages` branch. This proves the static files are present on the hosting branch; it still does not prove GitHub Pages is enabled for public serving.",
+    "evidence_to_check": "Check the remote gh-pages hash and list expected files from origin/gh-pages. The branch should contain `index.html`, `review-guide.html`, `publication-status.html`, and representative concept pages.",
+    "proof_command": "git ls-remote --heads origin gh-pages && git ls-tree -r --name-only origin/gh-pages | rg '^(index.html|review-guide.html|publication-status.html|concepts/ad_auctions.html)$'",
+    "review_links": ["publication-status.html", "review-guide.html", "concepts/ad_auctions.html"]
+  },
+  {
+    "id": "status-public-pages",
+    "title": "Public GitHub Pages serving",
+    "state": "Blocked by current GitHub plan/private-repo state",
+    "plain_language_status": "A public URL is not currently proven. The repository can push `main` and `gh-pages`, but GitHub Pages creation returns a plan limitation for this private repository. The correct claim is pushed and locally reviewable, not publicly running.",
+    "evidence_to_check": "Use the GitHub Pages API or repository Pages settings. The current API response has been `422 Your current plan does not support GitHub Pages for this repository.`",
+    "proof_command": "POST /repos/mehtama1234/mit-game-theory-concepts-research/pages with source gh-pages returns 422 plan limitation",
+    "review_links": ["publication-status.html", "review-guide.html"]
+  },
+  {
+    "id": "status-no-overclaim",
+    "title": "Completion claim boundary",
+    "state": "Required completion caveat",
+    "plain_language_status": "The lab can be treated as locally built, validated, pushed, and reviewable when the commands pass and branch hashes match. It cannot be called publicly deployed until an accessible Pages URL or another hosting target is verified.",
+    "evidence_to_check": "Any final report should separate local build proof, remote branch proof, generated-site-branch proof, and public-hosting proof. Missing public hosting evidence means the public-running part remains incomplete.",
+    "proof_command": "Final report must include git status, latest commit, remote branch hashes, local URL check, and Pages blocker or public URL proof.",
+    "review_links": ["publication-status.html", "review-guide.html", "index.html"]
+  }
+]
