@@ -35,6 +35,7 @@ def main() -> int:
     cases = json.loads((ROOT / "analysis/throughlines/case-studies.json").read_text(encoding="utf-8"))
     chains = json.loads((ROOT / "analysis/throughlines/argument-chains.json").read_text(encoding="utf-8"))
     repairs = json.loads((ROOT / "analysis/throughlines/misconception-repairs.json").read_text(encoding="utf-8"))
+    paper_reading = json.loads((ROOT / "analysis/throughlines/paper-reading-guide.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
@@ -49,7 +50,7 @@ def main() -> int:
     }
     supplemental_ids = {record["id"] for record in supplemental}
     themes = json.loads((ROOT / "analysis/themes/theme-map.json").read_text(encoding="utf-8"))
-    required = [SITE / name for name in ["index.html", "study-route.html", "recognition.html", "math-clinic.html", "drills.html", "cases.html", "argument-chains.html", "repairs.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
+    required = [SITE / name for name in ["index.html", "study-route.html", "recognition.html", "math-clinic.html", "drills.html", "cases.html", "argument-chains.html", "repairs.html", "paper-reading.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
     required.extend(SITE / "lectures" / f"{lecture['id']}.html" for lecture in lectures)
     for path in required:
@@ -67,6 +68,7 @@ def main() -> int:
     cases_html = (SITE / "cases.html").read_text(encoding="utf-8") if (SITE / "cases.html").exists() else ""
     chains_html = (SITE / "argument-chains.html").read_text(encoding="utf-8") if (SITE / "argument-chains.html").exists() else ""
     repairs_html = (SITE / "repairs.html").read_text(encoding="utf-8") if (SITE / "repairs.html").exists() else ""
+    paper_reading_html = (SITE / "paper-reading.html").read_text(encoding="utf-8") if (SITE / "paper-reading.html").exists() else ""
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     limits_html = (SITE / "limits.html").read_text(encoding="utf-8") if (SITE / "limits.html").exists() else ""
     index_html = (SITE / "index.html").read_text(encoding="utf-8") if (SITE / "index.html").exists() else ""
@@ -84,6 +86,8 @@ def main() -> int:
         errors.append("index page missing argument chains link")
     if 'href="repairs.html"' not in index_html:
         errors.append("index page missing misconception repairs link")
+    if 'href="paper-reading.html"' not in index_html:
+        errors.append("index page missing paper-reading guide link")
     if 'href="cross-reference.html"' not in index_html:
         errors.append("index page missing cross-reference link")
     if 'href="limits.html"' not in index_html:
@@ -216,6 +220,8 @@ def main() -> int:
                 errors.append(f"problem drill {drill['id']} missing evidence link: {ev_id}")
     math_clinic_by_id = {item["id"]: item for item in math_clinic}
     drill_by_id = {drill["id"]: drill for drill in drills}
+    family_by_id = {family["id"]: family for family in families}
+    case_by_id = {case["id"]: case for case in cases}
     if len(cases) < 5:
         errors.append(f"case studies has only {len(cases)} cards")
     for case in cases:
@@ -327,6 +333,55 @@ def main() -> int:
                 errors.append(f"misconception repair {repair['id']} references missing evidence: {ev_id}")
             elif f'href="evidence.html#{ev_id}"' not in repairs_html:
                 errors.append(f"misconception repair {repair['id']} missing evidence link: {ev_id}")
+    if len(paper_reading) < 7:
+        errors.append(f"paper-reading guide has only {len(paper_reading)} cards")
+    for guide in paper_reading:
+        if f'id="{guide["id"]}"' not in paper_reading_html:
+            errors.append(f"paper-reading guide not rendered: {guide['id']}")
+        for field in ["paper_signal", "everyday_reading", "first_principles_test", "mathematical_handle", "what_to_check_in_the_model", "common_misread", "course_bridge"]:
+            value = guide.get(field, "")
+            if words(value) < 16:
+                errors.append(f"paper-reading guide {guide['id']} has shallow {field}")
+            elif html.escape(value, quote=True) not in paper_reading_html:
+                errors.append(f"paper-reading guide {guide['id']} {field} not rendered")
+        combined = " ".join(str(guide.get(field, "")) for field in ["paper_signal", "everyday_reading", "first_principles_test", "mathematical_handle", "what_to_check_in_the_model", "common_misread", "course_bridge"])
+        if words(combined) < 190:
+            errors.append(f"paper-reading guide {guide['id']} has shallow combined treatment")
+        for concept_id in guide.get("concepts", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"paper-reading guide {guide['id']} references missing concept: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in paper_reading_html:
+                errors.append(f"paper-reading guide {guide['id']} missing concept link: {concept_id}")
+        for primitive_id in guide.get("primitives", []):
+            if primitive_id not in primitive_by_id:
+                errors.append(f"paper-reading guide {guide['id']} references missing primitive: {primitive_id}")
+            elif f'href="primitives.html#{primitive_id}"' not in paper_reading_html:
+                errors.append(f"paper-reading guide {guide['id']} missing primitive link: {primitive_id}")
+        for family_id in guide.get("family_ids", []):
+            if family_id not in family_by_id:
+                errors.append(f"paper-reading guide {guide['id']} references missing method family: {family_id}")
+            elif f'href="families.html#{family_id}"' not in paper_reading_html:
+                errors.append(f"paper-reading guide {guide['id']} missing family link: {family_id}")
+        for case_id in guide.get("case_ids", []):
+            if case_id not in case_by_id:
+                errors.append(f"paper-reading guide {guide['id']} references missing case: {case_id}")
+            elif f'href="cases.html#{case_id}"' not in paper_reading_html:
+                errors.append(f"paper-reading guide {guide['id']} missing case link: {case_id}")
+        for drill_id in guide.get("drill_ids", []):
+            if drill_id not in drill_by_id:
+                errors.append(f"paper-reading guide {guide['id']} references missing drill: {drill_id}")
+            elif f'href="drills.html#{drill_id}"' not in paper_reading_html:
+                errors.append(f"paper-reading guide {guide['id']} missing drill link: {drill_id}")
+        for card_id in guide.get("math_clinic_ids", []):
+            if card_id not in math_clinic_by_id:
+                errors.append(f"paper-reading guide {guide['id']} references missing math clinic card: {card_id}")
+            elif f'href="math-clinic.html#{card_id}"' not in paper_reading_html:
+                errors.append(f"paper-reading guide {guide['id']} missing math clinic link: {card_id}")
+        for ev_id in guide.get("evidence_ids", []):
+            if ev_id not in ev_by_id:
+                errors.append(f"paper-reading guide {guide['id']} references missing evidence: {ev_id}")
+            elif f'href="evidence.html#{ev_id}"' not in paper_reading_html:
+                errors.append(f"paper-reading guide {guide['id']} missing evidence link: {ev_id}")
     for concept in concepts:
         if f'id="xref-{concept["id"]}"' not in cross_html:
             errors.append(f"cross index missing concept anchor: {concept['id']}")

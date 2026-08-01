@@ -109,6 +109,7 @@ def main() -> int:
     cases = json.loads((ROOT / "analysis/throughlines/case-studies.json").read_text(encoding="utf-8"))
     chains = json.loads((ROOT / "analysis/throughlines/argument-chains.json").read_text(encoding="utf-8"))
     repairs = json.loads((ROOT / "analysis/throughlines/misconception-repairs.json").read_text(encoding="utf-8"))
+    paper_reading = json.loads((ROOT / "analysis/throughlines/paper-reading-guide.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
@@ -474,6 +475,59 @@ def main() -> int:
             errors.append(f"misconception repair {repair['id']} missing evidence links")
     if len(repairs) < 8:
         errors.append(f"only {len(repairs)} misconception repairs")
+    paper_reading_html = (SITE / "paper-reading.html").read_text(encoding="utf-8") if (SITE / "paper-reading.html").exists() else ""
+    paper_cards = 0
+    paper_concept_links = 0
+    paper_primitive_links = 0
+    paper_family_links = 0
+    paper_case_links = 0
+    paper_drill_links = 0
+    paper_math_links = 0
+    paper_evidence_links = 0
+    paper_words = []
+    for guide in paper_reading:
+        if f'id="{guide["id"]}"' in paper_reading_html:
+            paper_cards += 1
+        else:
+            errors.append(f"paper-reading guide {guide['id']} not rendered")
+        text = " ".join(
+            str(guide.get(k, ""))
+            for k in ["paper_signal", "everyday_reading", "first_principles_test", "mathematical_handle", "what_to_check_in_the_model", "common_misread", "course_bridge"]
+        )
+        treatment_words = words(text)
+        paper_words.append(treatment_words)
+        if treatment_words < 190:
+            errors.append(f"paper-reading guide {guide['id']} has shallow treatment: {treatment_words} words")
+        linked_concepts = [cid for cid in guide.get("concepts", []) if f'href="concepts/{cid}.html"' in paper_reading_html]
+        linked_primitives = [pid for pid in guide.get("primitives", []) if f'href="primitives.html#{pid}"' in paper_reading_html]
+        linked_families = [fid for fid in guide.get("family_ids", []) if f'href="families.html#{fid}"' in paper_reading_html]
+        linked_cases = [cid for cid in guide.get("case_ids", []) if f'href="cases.html#{cid}"' in paper_reading_html]
+        linked_drills = [did for did in guide.get("drill_ids", []) if f'href="drills.html#{did}"' in paper_reading_html]
+        linked_math = [mid for mid in guide.get("math_clinic_ids", []) if f'href="math-clinic.html#{mid}"' in paper_reading_html]
+        linked_evidence = [eid for eid in guide.get("evidence_ids", []) if f'href="evidence.html#{eid}"' in paper_reading_html]
+        paper_concept_links += len(linked_concepts)
+        paper_primitive_links += len(linked_primitives)
+        paper_family_links += len(linked_families)
+        paper_case_links += len(linked_cases)
+        paper_drill_links += len(linked_drills)
+        paper_math_links += len(linked_math)
+        paper_evidence_links += len(linked_evidence)
+        if len(linked_concepts) != len(guide.get("concepts", [])):
+            errors.append(f"paper-reading guide {guide['id']} missing concept links")
+        if len(linked_primitives) != len(guide.get("primitives", [])):
+            errors.append(f"paper-reading guide {guide['id']} missing primitive links")
+        if len(linked_families) != len(guide.get("family_ids", [])):
+            errors.append(f"paper-reading guide {guide['id']} missing family links")
+        if len(linked_cases) != len(guide.get("case_ids", [])):
+            errors.append(f"paper-reading guide {guide['id']} missing case links")
+        if len(linked_drills) != len(guide.get("drill_ids", [])):
+            errors.append(f"paper-reading guide {guide['id']} missing drill links")
+        if len(linked_math) != len(guide.get("math_clinic_ids", [])):
+            errors.append(f"paper-reading guide {guide['id']} missing math clinic links")
+        if len(linked_evidence) != len(guide.get("evidence_ids", [])):
+            errors.append(f"paper-reading guide {guide['id']} missing evidence links")
+    if len(paper_reading) < 7:
+        errors.append(f"only {len(paper_reading)} paper-reading guides")
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     cross_concept_cards = 0
     cross_lecture_links = 0
@@ -716,6 +770,15 @@ def main() -> int:
         f"- Misconception repair limit links: {repair_limit_links}",
         f"- Misconception repair drill links: {repair_drill_links}",
         f"- Misconception repair evidence links: {repair_evidence_links}",
+        f"- Paper-reading guide cards: {paper_cards}",
+        f"- Paper-reading guide words: min {min(paper_words) if paper_words else 0}, max {max(paper_words) if paper_words else 0}",
+        f"- Paper-reading concept links: {paper_concept_links}",
+        f"- Paper-reading primitive links: {paper_primitive_links}",
+        f"- Paper-reading family links: {paper_family_links}",
+        f"- Paper-reading case links: {paper_case_links}",
+        f"- Paper-reading drill links: {paper_drill_links}",
+        f"- Paper-reading math clinic links: {paper_math_links}",
+        f"- Paper-reading evidence links: {paper_evidence_links}",
         f"- Cross-index concept cards: {cross_concept_cards}",
         f"- Cross-index lecture links: {cross_lecture_links}",
         f"- Cross-index subtheme links: {cross_subtheme_links}",

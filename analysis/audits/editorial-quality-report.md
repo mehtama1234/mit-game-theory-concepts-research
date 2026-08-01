@@ -63,6 +63,15 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Misconception repair limit links: 24
 - Misconception repair drill links: 8
 - Misconception repair evidence links: 25
+- Paper-reading guide cards: 7
+- Paper-reading guide words: min 309, max 356
+- Paper-reading concept links: 38
+- Paper-reading primitive links: 22
+- Paper-reading family links: 12
+- Paper-reading case links: 11
+- Paper-reading drill links: 14
+- Paper-reading math clinic links: 15
+- Paper-reading evidence links: 28
 - Cross-index concept cards: 33
 - Cross-index lecture links: 60
 - Cross-index subtheme links: 33
@@ -82,7 +91,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Supplemental lecture evidence records: 8
 - Lectures below 2 total evidence anchors: 0
 - Lecture path treatment words: min 30, max 50
-- Lecture detail page words: min 1393, max 5348
+- Lecture detail page words: min 1402, max 5357
 - Errors: 0
 
 ## Lowest Concept Depth

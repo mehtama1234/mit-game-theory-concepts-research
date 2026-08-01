@@ -42,6 +42,7 @@ def page(title: str, body: str, active: str = "", depth: int = 0) -> str:
         ("cases.html", "Cases", "cases"),
         ("argument-chains.html", "Arguments", "argument-chains"),
         ("repairs.html", "Repairs", "repairs"),
+        ("paper-reading.html", "Paper Reading", "paper-reading"),
         ("cross-reference.html", "Cross Index", "cross-reference"),
         ("limits.html", "Limits", "limits"),
         ("lectures.html", "Lectures", "lectures"),
@@ -220,6 +221,7 @@ def build_index(concepts, themes, evidence, lectures):
 <section><h2>Follow A Full Case</h2><p>The case studies combine concepts, primitives, math clinic cards, drills, and transcript evidence inside realistic strategic situations.</p><p><a class="button" href="cases.html">Open case studies</a></p></section>
 <section><h2>Follow The Lecture Argument</h2><p>The argument chains show how transcript-backed claims accumulate across lectures into larger first-principles throughlines.</p><p><a class="button" href="argument-chains.html">Open argument chains</a></p></section>
 <section><h2>Repair Common Misreads</h2><p>The repair map starts from common wrong interpretations and points to the correction, concept pages, limits, drills, and evidence.</p><p><a class="button" href="repairs.html">Open misconception repairs</a></p></section>
+<section><h2>Read New Papers And Models</h2><p>The paper-reading guide teaches how to recognize game-theory primitives when a paper uses different vocabulary for objectives, equilibrium, timing, information, mechanisms, or shared knowledge.</p><p><a class="button" href="paper-reading.html">Open paper-reading guide</a></p></section>
 <section><h2>Find A Concept By Pressure</h2><p>The cross index lets a reader jump from an everyday problem to the relevant concept, lecture, primitive, subtheme, and evidence record.</p><p><a class="button" href="cross-reference.html">Open the cross index</a></p></section>
 <section><h2>Check The Limits</h2><p>The limits page collects common misunderstandings, student traps, and places where an analogy stops working.</p><p><a class="button" href="limits.html">Open limits and traps</a></p></section>
 <section><h2>Start With The Course Path</h2><p>The lecture path follows the MIT sequence while linking each session to atlas concepts and transcript evidence.</p><p><a class="button" href="lectures.html">Open the lecture path</a></p></section>
@@ -512,6 +514,69 @@ def build_misconception_repairs(repairs, concept_by_id, drill_by_id, ev_by_id):
   <p>A correction map for common wrong turns. Start from the mistaken belief, then follow the repair into concepts, limits, drills, and transcript evidence.</p>
 </section>""" + "".join(cards)
     write(SITE / "repairs.html", page("Misconception Repairs", body, "repairs"))
+
+
+def build_paper_reading_guide(guides, concept_by_id, primitive_by_id, family_by_id, case_by_id, drill_by_id, math_clinic_by_id, ev_by_id):
+    cards = []
+    for guide in guides:
+        concept_links = "".join(
+            f'<a class="chip" href="concepts/{esc(concept_id)}.html">{esc(concept_by_id[concept_id]["name"])}</a>'
+            for concept_id in guide.get("concepts", [])
+            if concept_id in concept_by_id
+        )
+        primitive_links = "".join(
+            f'<a class="chip" href="primitives.html#{esc(primitive_id)}">{esc(primitive_by_id[primitive_id]["name"])}</a>'
+            for primitive_id in guide.get("primitives", [])
+            if primitive_id in primitive_by_id
+        )
+        family_links = "".join(
+            f'<a class="chip" href="families.html#{esc(family_id)}">{esc(family_by_id[family_id]["name"])}</a>'
+            for family_id in guide.get("family_ids", [])
+            if family_id in family_by_id
+        )
+        case_links = "".join(
+            f'<a class="chip" href="cases.html#{esc(case_id)}">{esc(case_by_id[case_id]["title"])}</a>'
+            for case_id in guide.get("case_ids", [])
+            if case_id in case_by_id
+        )
+        drill_links = "".join(
+            f'<a class="chip" href="drills.html#{esc(drill_id)}">{esc(drill_by_id[drill_id]["title"])}</a>'
+            for drill_id in guide.get("drill_ids", [])
+            if drill_id in drill_by_id
+        )
+        math_links = "".join(
+            f'<a class="chip" href="math-clinic.html#{esc(card_id)}">{esc(math_clinic_by_id[card_id]["title"])}</a>'
+            for card_id in guide.get("math_clinic_ids", [])
+            if card_id in math_clinic_by_id
+        )
+        evidence_links = "".join(
+            f'<li><a href="evidence.html#{esc(ev_id)}">{esc(ev_id)}</a>: {esc(ev_by_id[ev_id]["video_title"])}</li>'
+            for ev_id in guide.get("evidence_ids", [])
+            if ev_id in ev_by_id
+        )
+        cards.append(f"""<article class="wide-card paper-reading-card" id="{esc(guide["id"])}">
+  <p class="eyebrow">Paper reading guide</p>
+  <h2>{esc(guide["title"])}</h2>
+  <p><strong>Paper signal:</strong> {esc(guide["paper_signal"])}</p>
+  <p><strong>Everyday reading:</strong> {esc(guide["everyday_reading"])}</p>
+  <p><strong>First-principles test:</strong> {esc(guide["first_principles_test"])}</p>
+  <p><strong>Mathematical handle:</strong> {esc(guide["mathematical_handle"])}</p>
+  <p><strong>What to check in the model:</strong> {esc(guide["what_to_check_in_the_model"])}</p>
+  <p><strong>Common misread:</strong> {esc(guide["common_misread"])}</p>
+  <p><strong>Course bridge:</strong> {esc(guide["course_bridge"])}</p>
+  <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
+  <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
+  <h3>Method Families</h3><p class="chips">{family_links}</p>
+  <h3>Case Studies</h3><p class="chips">{case_links}</p>
+  <h3>Practice Drills</h3><p class="chips">{drill_links}</p>
+  <h3>Math Clinic Cards</h3><p class="chips">{math_links}</p>
+  <h3>Transcript Evidence</h3><ul class="evidence-list">{evidence_links}</ul>
+</article>""")
+    body = """<section class="page-head">
+  <h1>Paper Reading Guide</h1>
+  <p>A transfer layer for new papers, models, and applied writeups. Each card starts from the wording a reader may see, then maps it back to the course's ordinary problem, mathematical handle, common misread, and transcript-backed concepts.</p>
+</section>""" + "".join(cards)
+    write(SITE / "paper-reading.html", page("Paper Reading Guide", body, "paper-reading"))
 
 
 def build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence):
@@ -928,6 +993,7 @@ def main():
     cases = load("analysis/throughlines/case-studies.json")
     chains = load("analysis/throughlines/argument-chains.json")
     repairs = load("analysis/throughlines/misconception-repairs.json")
+    paper_reading = load("analysis/throughlines/paper-reading-guide.json")
     lectures = load("analysis/lectures/lecture-path.json")
     equation_notes = load_optional("analysis/editorial-overrides/equation-walkthrough-notes.json", {})
     worked_examples = load_optional("analysis/editorial-overrides/worked-example-cards.json", {})
@@ -940,6 +1006,8 @@ def main():
     deriv_by_id = derivation_map(derivations)
     math_clinic_by_id = {item["id"]: item for item in math_clinic}
     drill_by_id = {item["id"]: item for item in drills}
+    family_by_id = {item["id"]: item for item in families}
+    case_by_id = {item["id"]: item for item in cases}
     build_index(concepts, themes, evidence, lectures)
     build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_by_id)
     build_recognition_clinic(clinic, concept_by_id, primitive_by_id, ev_by_id)
@@ -948,6 +1016,7 @@ def main():
     build_case_studies(cases, concept_by_id, primitive_by_id, math_clinic_by_id, drill_by_id, ev_by_id)
     build_argument_chains(chains, lecture_by_id, concept_by_id, primitive_by_id, ev_by_id)
     build_misconception_repairs(repairs, concept_by_id, drill_by_id, ev_by_id)
+    build_paper_reading_guide(paper_reading, concept_by_id, primitive_by_id, family_by_id, case_by_id, drill_by_id, math_clinic_by_id, ev_by_id)
     build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence)
     build_limits(concepts, themes, derivations)
     build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id)

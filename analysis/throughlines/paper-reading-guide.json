@@ -1,0 +1,317 @@
+[
+  {
+    "id": "read-payoff-object",
+    "title": "When a paper hides wants inside an objective function",
+    "paper_signal": "Look for words like objective, loss, reward, utility, welfare, payoff, preference, cost, risk, surplus, or social value. The paper may sound technical, but first ask whose want is being turned into a number.",
+    "everyday_reading": "The ordinary problem is that people, firms, platforms, or algorithms cannot compare actions until their wants are put on a common scale. A paper may call that scale a loss function, reward, payoff, or welfare objective. In game theory language the same move is a payoff or utility representation: it converts messy preferences into numbers that can be compared across possible choices.",
+    "first_principles_test": "Ask what would have to be true for the number to mean anything. If a larger number means the actor likes the outcome more, the paper is using the number as a ranking device. If the number also averages across uncertainty, then the paper has moved from ranking finished outcomes to judging risky choices before the world is revealed.",
+    "mathematical_handle": "The mathematical object is a function, such as u(outcome) or E[u(outcome)]. The function takes a possible world and returns a number; the expectation weights those numbers by how likely the worlds are. The concept behind the math is not decoration: it is the bridge from a story about wanting to a calculation about choosing.",
+    "what_to_check_in_the_model": "Check whether the paper explains who owns the objective, whether the scale is ordinal or cardinal, whether uncertainty is averaged honestly, and whether the objective is a proxy for something harder to measure. A mechanism-design paper may choose the rule, but the players still choose using their own payoffs, so keep the designer's objective separate from participant incentives.",
+    "common_misread": "Do not treat the objective as the truth. It is a modeling commitment. If the payoff omits delay, risk, private information, outside options, or strategic responses, the algebra can be correct while answering the wrong human question.",
+    "course_bridge": "The opening MIT lectures build this reading habit before games become complicated: preferences become utility, utilities become payoffs in strategic-form games, and expected utility explains choices before uncertainty resolves. Later auction and mechanism lectures reuse the same move when rules turn private values and payments into incentives.",
+    "concepts": [
+      "preferences",
+      "utility",
+      "expected_utility",
+      "strategic_form_games",
+      "auctions"
+    ],
+    "primitives": [
+      "preference",
+      "payoff_mapping",
+      "belief"
+    ],
+    "family_ids": [
+      "mechanism_family"
+    ],
+    "case_ids": [
+      "case-ad-auction-design"
+    ],
+    "drill_ids": [
+      "drill-payoff-before-strategy",
+      "drill-auction-rule"
+    ],
+    "math_clinic_ids": [
+      "math-clinic-expected-utility",
+      "math-clinic-auction-payment"
+    ],
+    "evidence_ids": [
+      "ev-preferences-01",
+      "ev-utility-01",
+      "ev-expected_utility-01",
+      "ev-auctions-01"
+    ]
+  },
+  {
+    "id": "read-equilibrium-claim",
+    "title": "When a paper says equilibrium, fixed point, stability, or no one wants to move",
+    "paper_signal": "Look for equilibrium, fixed point, stable outcome, mutual best response, self-consistent behavior, no profitable deviation, stationary behavior, or convergence to a stable rule. Those phrases usually mean the paper is asking whether everyone can be content at once, given everyone else.",
+    "everyday_reading": "The ordinary problem is that one person's best action depends on the actions of others. A plan that looks good alone may stop being good once everyone reacts. Equilibrium is the discipline of checking whether the proposed outcome survives that circular pressure: each participant looks around, takes the others as given, and still has no better move.",
+    "first_principles_test": "Freeze everyone except one actor. Does that actor want to change? Repeat the same check for every actor. If every local check passes, the outcome is stable in the narrow equilibrium sense. If one actor can improve, the paper has either not found an equilibrium or is using a different notion of stability.",
+    "mathematical_handle": "The mathematical handle is a best-response condition: a_i is in BR_i(a_-i). In plain language, player i's action is among the best actions against the other actions. Nash equilibrium asks that this be true for all players at the same time. A fixed point appears because each person's chosen action must match what the best-response rule recommends.",
+    "what_to_check_in_the_model": "Check whether the paper proves existence, computes a candidate, or merely assumes equilibrium behavior. Then check the information structure, timing, and allowed deviations. A Nash claim in a simultaneous model is weaker than a subgame-perfect claim in a dynamic model, and a mixed equilibrium is not the same thing as people being indifferent about the real world.",
+    "common_misread": "Equilibrium does not mean fair, efficient, morally good, globally optimal, or likely after any learning process. It means no modeled participant has a unilateral profitable deviation under the model's exact rules.",
+    "course_bridge": "The MIT sequence moves from dominance and rationalizability into best response and Nash equilibrium, then shows why dynamic and incomplete-information games need stronger versions. This is the same reading move behind subgame perfection, Bayesian Nash equilibrium, and perfect Bayesian equilibrium.",
+    "concepts": [
+      "best_response",
+      "nash_equilibrium",
+      "mixed_strategies",
+      "subgame_perfection",
+      "bayesian_nash_equilibrium",
+      "perfect_bayesian_equilibrium"
+    ],
+    "primitives": [
+      "best_response",
+      "mutual_consistency",
+      "belief"
+    ],
+    "family_ids": [
+      "equilibrium_family",
+      "information_family"
+    ],
+    "case_ids": [
+      "case-entry-threat",
+      "case-used-car-signal"
+    ],
+    "drill_ids": [
+      "drill-stable-not-good",
+      "drill-hidden-type"
+    ],
+    "math_clinic_ids": [
+      "math-clinic-best-response",
+      "math-clinic-nash",
+      "math-clinic-bayes-rule"
+    ],
+    "evidence_ids": [
+      "ev-best_response-02",
+      "ev-nash_equilibrium-01",
+      "ev-subgame_perfection-01",
+      "ev-perfect_bayesian_equilibrium-01"
+    ]
+  },
+  {
+    "id": "read-dynamic-credibility",
+    "title": "When a paper studies threats, promises, timing, or commitment",
+    "paper_signal": "Look for extensive form, sequential game, commitment, credible threat, credible promise, dynamic incentive, subgame, backward induction, renegotiation, or one-shot deviation. The paper is probably asking whether today's announced plan remains believable when tomorrow arrives.",
+    "everyday_reading": "The ordinary problem is that time separates words from later incentives. A firm can threaten a price war, a government can promise not to bail someone out, and a negotiator can announce a final offer. The key question is not whether the sentence was spoken. The key question is whether carrying it out will still be the speaker's best move at the later moment.",
+    "first_principles_test": "Jump to the future point where the threat or promise must be executed. At that point, ignore the earlier speech and compare the remaining choices. If the announced action is not best at that future point, earlier players should not treat it as credible unless some commitment device changed the later payoff.",
+    "mathematical_handle": "The mathematical handle is backward reasoning on a tree. Backward induction solves the last decision first, then passes the resulting value back to earlier nodes. Subgame perfection keeps Nash-style stability but applies it after every possible history, including histories that might not occur if everyone follows the predicted path.",
+    "what_to_check_in_the_model": "Check whether the model gives the actor an actual commitment device, changes future payoffs, or simply assumes the threat is believed. In dynamic papers, also check whether off-path histories matter: a claim can look stable along the main story while failing when the model asks what happens after an unexpected move.",
+    "common_misread": "Do not read every threat as a constraint. A threat only constrains behavior if the future actor would actually want to carry it out, or if some institution, contract, reputation, or technology changes the future choice set.",
+    "course_bridge": "The MIT lectures on extensive-form games, backward induction, subgame-perfect Nash equilibrium, bargaining, and one-shot deviation all teach the same discipline: future incentives discipline present claims. Repeated games then show how future punishment can make present cooperation credible when the future is valuable enough.",
+    "concepts": [
+      "extensive_form_games",
+      "backward_induction",
+      "subgame_perfection",
+      "one_shot_deviation",
+      "bargaining",
+      "infinitely_repeated_games"
+    ],
+    "primitives": [
+      "backward_recursion",
+      "discounting",
+      "mutual_consistency",
+      "payoff_mapping"
+    ],
+    "family_ids": [
+      "equilibrium_family"
+    ],
+    "case_ids": [
+      "case-entry-threat",
+      "case-cartel-discipline"
+    ],
+    "drill_ids": [
+      "drill-table-or-tree",
+      "drill-future-discipline"
+    ],
+    "math_clinic_ids": [
+      "math-clinic-backward-induction",
+      "math-clinic-discounting"
+    ],
+    "evidence_ids": [
+      "ev-extensive_form_games-02",
+      "ev-backward_induction-02",
+      "ev-subgame_perfection-01",
+      "ev-one_shot_deviation-01"
+    ]
+  },
+  {
+    "id": "read-repeated-incentives",
+    "title": "When cooperation depends on the shadow of future punishment",
+    "paper_signal": "Look for repeated game, folk theorem, relational contract, reputation, collusion, dynamic enforcement, trigger strategy, patience, discount factor, or long-run incentive. These signals mean today's gain is being compared with tomorrow's consequences.",
+    "everyday_reading": "The ordinary problem is that many relationships are not one-shot. A supplier can cheat once and lose future business, firms can undercut a cartel today and face price punishment later, and online platforms can reward or exclude future participants. Repetition creates a new kind of discipline: people may give up a short-term gain to preserve a valuable future.",
+    "first_principles_test": "Separate the immediate temptation from the future loss. If cheating today gives a small extra payoff but triggers a long stream of lower payoffs later, cooperation can be stable. If the future is too unlikely, too small, or too far away, the punishment cannot hold the arrangement together.",
+    "mathematical_handle": "The mathematical handle is discounted value. A repeated payoff stream is read as today plus delta times tomorrow plus delta squared times the next period, and so on. Delta is the weight placed on future payoffs. The inequality compares one-time cheating against the value of preserving the cooperative path.",
+    "what_to_check_in_the_model": "Check what the punishment is, whether it is itself credible, how patient the players must be, and whether monitoring is good enough to identify cheating. A paper may claim cooperation, but the claim depends on the future being sufficiently valuable and on the punishment path also passing its own incentive check.",
+    "common_misread": "Do not say repetition automatically creates cooperation. Repetition only helps when future value, detection, and credible punishment are strong enough. Without those pieces, repeated interaction may simply repeat the one-shot conflict.",
+    "course_bridge": "The course's repeated-game lectures connect discounting, folk theorem logic, implicit cartels, and one-shot deviation. They show how the same equilibrium idea changes when a current action changes tomorrow's continuation value.",
+    "concepts": [
+      "infinitely_repeated_games",
+      "folk_theorem",
+      "implicit_cartels",
+      "one_shot_deviation",
+      "subgame_perfection"
+    ],
+    "primitives": [
+      "discounting",
+      "incentive_compatibility",
+      "mutual_consistency"
+    ],
+    "family_ids": [
+      "equilibrium_family",
+      "mechanism_family"
+    ],
+    "case_ids": [
+      "case-cartel-discipline"
+    ],
+    "drill_ids": [
+      "drill-future-discipline",
+      "drill-stable-not-good"
+    ],
+    "math_clinic_ids": [
+      "math-clinic-discounting",
+      "math-clinic-nash"
+    ],
+    "evidence_ids": [
+      "ev-infinitely_repeated_games-01",
+      "ev-folk_theorem-01",
+      "ev-implicit_cartels-01",
+      "ev-one_shot_deviation-01"
+    ]
+  },
+  {
+    "id": "read-private-information",
+    "title": "When actions are also evidence about hidden information",
+    "paper_signal": "Look for type, signal, screening, adverse selection, posterior, belief update, private information, asymmetric information, separating, pooling, or perfect Bayesian equilibrium. These terms signal that choices are not just actions; they are clues.",
+    "everyday_reading": "The ordinary problem is that one side knows something the other side does not. A seller knows product quality, a worker knows effort cost, a bidder knows value, and a sender knows what message serves them. Once information is hidden, behavior has two jobs: it changes payoffs directly and it changes what other people believe.",
+    "first_principles_test": "Ask what each actor knows at the moment of choice, what others can observe, and how the observation should change beliefs. If two hidden types can cheaply imitate the same behavior, the behavior cannot reveal the type. If imitation is costly for one type and cheap for another, the action may become an informative signal.",
+    "mathematical_handle": "The mathematical handle is a belief over possible hidden types plus Bayes rule for updating that belief after observed behavior. In equilibrium, strategies and beliefs have to fit together: the action must be optimal given beliefs, and the beliefs must be consistent with the strategy wherever the observed path gives enough information.",
+    "what_to_check_in_the_model": "Check whether the paper states the type space, prior beliefs, observed signals, and off-path beliefs. In signaling and screening work, inspect the incentive constraints: a proposed separating outcome only works if each type prefers its assigned action to imitating the other type.",
+    "common_misread": "Do not treat messages or actions as automatically truthful. A signal works because lying or imitation changes payoffs, not because the model assumes honesty. Cheap talk can transmit information only under specific alignment or strategic conditions.",
+    "course_bridge": "The Bayesian games, types and beliefs, perfect Bayesian equilibrium, signaling, cheap talk, and adverse-selection lectures all teach this reading move. They turn hidden information from background color into an explicit object that affects action, belief, and stability.",
+    "concepts": [
+      "bayesian_games",
+      "types_and_beliefs",
+      "perfect_bayesian_equilibrium",
+      "signaling",
+      "cheap_talk",
+      "screening_and_adverse_selection"
+    ],
+    "primitives": [
+      "belief",
+      "incentive_compatibility",
+      "mutual_consistency"
+    ],
+    "family_ids": [
+      "information_family",
+      "mechanism_family"
+    ],
+    "case_ids": [
+      "case-used-car-signal",
+      "case-public-announcement"
+    ],
+    "drill_ids": [
+      "drill-hidden-type",
+      "drill-public-awareness"
+    ],
+    "math_clinic_ids": [
+      "math-clinic-bayes-rule",
+      "math-clinic-common-knowledge"
+    ],
+    "evidence_ids": [
+      "ev-bayesian_games-01",
+      "ev-types_and_beliefs-01",
+      "ev-signaling-01",
+      "ev-screening_and_adverse_selection-01"
+    ]
+  },
+  {
+    "id": "read-mechanism-market-design",
+    "title": "When the paper changes the rules instead of only predicting play",
+    "paper_signal": "Look for mechanism, auction format, allocation rule, payment rule, incentive compatibility, truthful bidding, revenue equivalence, market design, reserve price, ranking rule, or platform design. The paper is probably treating rules as the object being engineered.",
+    "everyday_reading": "The ordinary problem is that a designer cannot directly command private values, effort, or truthfulness. The designer can choose rules: who gets the object, who pays what, what information is requested, and what happens after reports arrive. Good rules make self-interested behavior reveal or produce the outcome the designer needs.",
+    "first_principles_test": "Read the rule from the participant's point of view. If I report truthfully, what do I get and pay? If I shade, hide, or imitate someone else, what changes? A mechanism claim is serious only when the desired behavior is not just requested but made attractive by the rule itself.",
+    "mathematical_handle": "The mathematical handle is an incentive constraint. A truthful or assigned action must give at least as much payoff as the best misreport or deviation. In auctions, expected payment and allocation probabilities connect private value to bidding behavior; in ad auctions, ranking and payment rules turn platform design into strategic incentives.",
+    "what_to_check_in_the_model": "Check whether the paper distinguishes the allocation rule from the payment rule, whether it proves truthful behavior or assumes it, whether participants are risk-neutral or risk-averse, and whether the revenue or welfare claim depends on distributional assumptions. Also check whether the mechanism remains sensible when values are correlated or information is richer than the model allows.",
+    "common_misread": "Do not treat a well-designed rule as a moral instruction. Mechanisms work by changing consequences, not by asking participants to be good. If the incentive constraint fails, the intended outcome can collapse even when the rule sounds reasonable.",
+    "course_bridge": "The auction and ad-auction lectures show this shift most directly: instead of taking the game as fixed, the analyst chooses the game form. Earlier payoff, best-response, and Bayesian concepts still matter because the participants solve the designed game using their own incentives and beliefs.",
+    "concepts": [
+      "auctions",
+      "revenue_equivalence",
+      "ad_auctions",
+      "screening_and_adverse_selection",
+      "expected_utility"
+    ],
+    "primitives": [
+      "incentive_compatibility",
+      "payoff_mapping",
+      "belief"
+    ],
+    "family_ids": [
+      "mechanism_family",
+      "information_family"
+    ],
+    "case_ids": [
+      "case-ad-auction-design",
+      "case-used-car-signal"
+    ],
+    "drill_ids": [
+      "drill-auction-rule",
+      "drill-payoff-before-strategy"
+    ],
+    "math_clinic_ids": [
+      "math-clinic-auction-payment",
+      "math-clinic-expected-utility"
+    ],
+    "evidence_ids": [
+      "ev-auctions-01",
+      "ev-revenue_equivalence-01",
+      "ev-ad_auctions-01",
+      "ev-screening_and_adverse_selection-01"
+    ]
+  },
+  {
+    "id": "read-common-knowledge",
+    "title": "When everyone knowing is not enough",
+    "paper_signal": "Look for common knowledge, higher-order belief, public signal, announcement, coordination, p-belief, global games, cheap talk, or information structure. These signals mean the paper cares not only about facts, but about who knows that others know them.",
+    "everyday_reading": "The ordinary problem is that coordinated action often requires more than private awareness. If I know a bridge is unsafe but do not know whether you know, I may still hesitate. If a public announcement makes the same fact visible to everyone, it can change behavior because everyone can reason about everyone else's awareness.",
+    "first_principles_test": "Ask how many layers of awareness the action requires. Does each person need the fact, or do they also need confidence that others have the fact and will expect them to act on it? If the latter, the paper is about knowledge recursion rather than just information delivery.",
+    "mathematical_handle": "The mathematical handle is recursive belief: I know X, I know that you know X, I know that you know that I know X, and so on. Common knowledge is the limiting version of that recursion. The point of the math is to represent coordinated certainty that cannot be captured by counting informed individuals one by one.",
+    "what_to_check_in_the_model": "Check whether the signal is public or private, whether messages are costless or costly, and whether the equilibrium relies on shared interpretation of the signal. In communication papers, also check whether incentives are aligned enough for words to carry information instead of strategic noise.",
+    "common_misread": "Do not confuse a true fact with a coordinating fact. A private fact can be true and still fail to move behavior if people cannot rely on others having the same awareness. Publicity changes the strategic environment, not the physical fact.",
+    "course_bridge": "The common-knowledge and cheap-talk lectures make this point explicit, while rationalizability and Nash equilibrium rely on related layers of reasoning about others. The public-announcement case turns the abstract recursion into a concrete reading test.",
+    "concepts": [
+      "common_knowledge",
+      "cheap_talk",
+      "rationalizability",
+      "nash_equilibrium",
+      "types_and_beliefs"
+    ],
+    "primitives": [
+      "knowledge_recursion",
+      "belief",
+      "mutual_consistency"
+    ],
+    "family_ids": [
+      "information_family",
+      "equilibrium_family"
+    ],
+    "case_ids": [
+      "case-public-announcement"
+    ],
+    "drill_ids": [
+      "drill-public-awareness",
+      "drill-hidden-type"
+    ],
+    "math_clinic_ids": [
+      "math-clinic-common-knowledge",
+      "math-clinic-bayes-rule"
+    ],
+    "evidence_ids": [
+      "ev-common_knowledge-01",
+      "ev-cheap_talk-01",
+      "ev-rationalizability-01",
+      "ev-nash_equilibrium-01"
+    ]
+  }
+]
