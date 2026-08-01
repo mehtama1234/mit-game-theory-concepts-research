@@ -893,6 +893,26 @@ def main() -> int:
             errors.append(f"missing primitive anchor: {primitive['id']}")
         if "Concept Pages Using This Primitive" not in primitives_html:
             errors.append("primitives page missing concept backlink heading")
+        primitive_fields = [
+            "everyday_setup",
+            "plain_language_principle",
+            "formal_object",
+            "symbol_explanation",
+            "first_principles_pressure",
+            "worked_micro_case",
+            "course_appearances",
+            "why_it_matters",
+            "transfer_test",
+            "misuse_warning",
+        ]
+        for field in primitive_fields:
+            value = primitive.get(field, "")
+            if words(value) < 8:
+                errors.append(f"primitive {primitive['id']} has shallow {field}")
+            elif html.escape(value, quote=True) not in primitives_html:
+                errors.append(f"primitive {primitive['id']} missing rendered field: {field}")
+        if words(" ".join(str(primitive.get(field, "")) for field in primitive_fields)) < 320:
+            errors.append(f"primitive {primitive['id']} has shallow combined treatment")
         for concept_id in primitive.get("concepts_in_atlas", []):
             if concept_id not in concept_by_id:
                 errors.append(f"primitive {primitive['id']} references missing concept: {concept_id}")

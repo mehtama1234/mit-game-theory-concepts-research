@@ -1345,10 +1345,15 @@ def build_primitives(primitives, derivations, concept_by_id):
         cards.append(f"""<article class="wide-card" id="{esc(primitive["id"])}">
   <h2>{esc(primitive["name"])}</h2>
   <p>{esc(primitive["plain_language"])}</p>
+  <h3>Everyday Setup</h3><p>{esc(primitive["everyday_setup"])}</p>
   {diagram}
   <h3>Plain-Language Principle</h3><p>{esc(primitive.get("plain_language_principle", primitive["why_it_exists"]))}</p>
   <h3>Symbol By Symbol</h3><p>{esc(primitive["symbol_explanation"])}</p>
+  <h3>First-Principles Pressure</h3><p>{esc(primitive["first_principles_pressure"])}</p>
+  <h3>Worked Micro-Case</h3><p>{esc(primitive["worked_micro_case"])}</p>
   <h3>Where It Appears</h3><p>{esc(primitive["course_appearances"])}</p>
+  <h3>Why This Primitive Matters</h3><p>{esc(primitive["why_it_matters"])}</p>
+  <h3>Transfer Test</h3><p>{esc(primitive["transfer_test"])}</p>
   <h3>Concept Pages Using This Primitive</h3><p class="chips">{concept_links or '<span class="chip muted">No linked concept pages yet</span>'}</p>
   <h3>Why Misuse Breaks The Model</h3><p>{esc(primitive.get("misuse_warning", primitive["misuse_failure"]))}</p>
 </article>""")

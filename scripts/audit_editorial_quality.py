@@ -224,7 +224,19 @@ def main() -> int:
             errors.append(f"subtheme {subtheme['id']} missing concept links")
         if len(linked_evidence) != len(subtheme.get("examples_from_courses", [])):
             errors.append(f"subtheme {subtheme['id']} missing evidence links")
-    primitive_words = [words(" ".join(str(p.get(f, "")) for f in ["everyday_setup", "plain_language_principle", "formal_object", "symbol_explanation", "course_appearances", "why_it_matters", "misuse_warning"])) for p in primitives]
+    primitive_fields = [
+        "everyday_setup",
+        "plain_language_principle",
+        "formal_object",
+        "symbol_explanation",
+        "first_principles_pressure",
+        "worked_micro_case",
+        "course_appearances",
+        "why_it_matters",
+        "transfer_test",
+        "misuse_warning",
+    ]
+    primitive_words = [words(" ".join(str(p.get(f, "")) for f in primitive_fields)) for p in primitives]
     primitives_html = (SITE / "primitives.html").read_text(encoding="utf-8") if (SITE / "primitives.html").exists() else ""
     primitive_backlinks = 0
     for primitive in primitives:
@@ -1047,7 +1059,7 @@ def main() -> int:
         if count < 180:
             errors.append(f"subtheme {subtheme['id']} has low synthesis depth: {count} words")
     for primitive, count in zip(primitives, primitive_words):
-        if count < 140:
+        if count < 320:
             errors.append(f"primitive {primitive['id']} has low synthesis depth: {count} words")
     if len(derivations) < 8:
         errors.append(f"only {len(derivations)} derivation cards")
