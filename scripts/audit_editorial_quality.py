@@ -239,7 +239,17 @@ def main() -> int:
     derivation_words = [words(" ".join(str(d.get(f, "")) for f in ["everyday_setup", "equation", "symbol_by_symbol", "why_it_matters", "common_misread"]) + " " + " ".join(d.get("derivation_steps", []))) for d in derivations]
     family_words = [words(" ".join(str(f.get(k, "")) for k in ["family_problem", "first_principles_pattern", "mathematical_signature", "why_family_matters", "family_walkthrough", "where_analogy_breaks", "lecture_evidence_chain", "paper_family_treatment"])) for f in families]
     route_html = (SITE / "study-route.html").read_text(encoding="utf-8") if (SITE / "study-route.html").exists() else ""
-    route_words = [words(" ".join(str(item.get(k, "")) for k in ["reader_question", "plain_language_goal", "checkpoint"])) for item in route]
+    route_fields = [
+        "reader_question",
+        "plain_language_goal",
+        "problem_pressure",
+        "why_this_stage_comes_now",
+        "mathematical_lever",
+        "misuse_warning",
+        "bridge_to_next_stage",
+        "checkpoint",
+    ]
+    route_words = [words(" ".join(str(item.get(k, "")) for k in route_fields)) for item in route]
     route_lecture_links = 0
     route_concept_links = 0
     route_primitive_links = 0
@@ -255,7 +265,8 @@ def main() -> int:
         route_concept_links += len(linked_concepts)
         route_primitive_links += len(linked_primitives)
         route_evidence_links += len(linked_evidence)
-        if words(" ".join(str(item.get(k, "")) for k in ["reader_question", "plain_language_goal", "checkpoint"])) < 35:
+        route_text = " ".join(str(item.get(k, "")) for k in route_fields)
+        if words(route_text) < 210:
             errors.append(f"study route {item['id']} has shallow orientation text")
         if len(linked_lectures) != len(item.get("lectures", [])):
             errors.append(f"study route {item['id']} missing lecture links")

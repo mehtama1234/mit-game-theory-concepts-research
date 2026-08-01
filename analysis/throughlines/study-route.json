@@ -4,54 +4,31 @@
     "title": "Start With Choice Before Strategy",
     "reader_question": "What does a player want before anyone else enters the story?",
     "plain_language_goal": "Learn why preferences, utility, and expected utility are the measuring tools underneath every later payoff table.",
-    "lectures": [
-      "lecture-01",
-      "lecture-02"
-    ],
-    "concepts": [
-      "preferences",
-      "utility",
-      "expected_utility"
-    ],
-    "primitives": [
-      "preference",
-      "belief"
-    ],
-    "evidence": [
-      "ev-preferences-01",
-      "ev-utility-01",
-      "ev-expected_utility-01"
-    ],
+    "problem_pressure": "The course starts with one chooser because strategic math has nothing to stand on until the model knows what outcomes mean to that chooser. A payoff number is not raw happiness, money, or moral value by itself. It is a compact way to preserve a ranking of outcomes, and uncertainty forces the ranking to include possible futures that have not happened yet.",
+    "why_this_stage_comes_now": "If a reader skips this stage, every later game table looks more objective than it is. The later analysis of firms, bidders, senders, receivers, and cartels all depends on the same hidden step: someone decided what each outcome is worth to each player. This stage teaches that payoffs are constructed objects, not facts handed down by the universe.",
+    "mathematical_lever": "The lever is mapping outcomes to ordered numbers, then weighting uncertain outcomes by their chances. In plain words, the math lets a choice made before uncertainty resolves be compared as one expected value rather than as a pile of disconnected possible endings.",
+    "misuse_warning": "The common misuse is treating utility as a psychological meter or treating expected utility as a promise about what will happen. It is neither. It is a disciplined way to compare actions before the uncertain state is known.",
+    "bridge_to_next_stage": "Once each player's payoff meaning is explicit, the next question is how to represent a situation where several choosers affect one another. That is why the route moves from individual choice to tables, trees, actions, and deletion rules.",
+    "lectures": ["lecture-01", "lecture-02"],
+    "concepts": ["preferences", "utility", "expected_utility"],
+    "primitives": ["preference", "belief"],
+    "evidence": ["ev-preferences-01", "ev-utility-01", "ev-expected_utility-01"],
     "checkpoint": "You should be able to explain why a payoff number is not raw happiness and why uncertainty requires weighting possible outcomes before choosing."
   },
   {
     "id": "route-representation",
     "title": "Represent The Strategic Situation",
-    "reader_question": "What object keeps everyone's choices, timing, and payoffs visible?",
+    "reader_question": "What object keeps everyone's choices, timing, information, and payoffs visible?",
     "plain_language_goal": "Move from one-person choice to game representation: tables for simultaneous dependence, trees for time and information.",
-    "lectures": [
-      "lecture-02",
-      "lecture-03",
-      "lecture-04"
-    ],
-    "concepts": [
-      "strategic_form_games",
-      "extensive_form_games",
-      "dominance",
-      "iterated_deletion",
-      "rationalizability"
-    ],
-    "primitives": [
-      "payoff_mapping",
-      "pruning",
-      "belief"
-    ],
-    "evidence": [
-      "ev-strategic_form_games-01",
-      "ev-extensive_form_games-01",
-      "ev-dominance-01",
-      "ev-rationalizability-01"
-    ],
+    "problem_pressure": "Strategic confusion usually begins before any equilibrium calculation. The analyst has to decide who chooses, what each person can choose, whether choices happen at the same time, what each player observes, and what each outcome pays. A flat story hides these pieces; a game representation makes them inspectable.",
+    "why_this_stage_comes_now": "Representation comes before solution because the wrong representation answers the wrong question cleanly. A payoff table is useful when the issue is simultaneous dependence. A tree is needed when timing, later choices, and observed history matter. Dominance and rationalizability then show that some actions can be ruled out before full mutual consistency is demanded.",
+    "mathematical_lever": "The lever is structured bookkeeping: actions become rows, columns, branches, or information sets; payoffs become entries at outcomes; pruning uses inequalities to remove actions that cannot be defended. The math matters because it prevents the reader from smuggling timing or beliefs into an informal story.",
+    "misuse_warning": "The common misuse is solving the model that is easiest to draw. A table can make a threat look fixed even when it should be tested later in a tree. A deletion step can also be too strong if it quietly assumes beliefs or ignores a rival action.",
+    "bridge_to_next_stage": "After the game object is visible and obviously indefensible actions are removed, the next problem is prediction: can the remaining proposed behavior survive every player's incentive to change alone in the represented situation?",
+    "lectures": ["lecture-02", "lecture-03", "lecture-04"],
+    "concepts": ["strategic_form_games", "extensive_form_games", "dominance", "iterated_deletion", "rationalizability"],
+    "primitives": ["payoff_mapping", "pruning", "belief"],
+    "evidence": ["ev-strategic_form_games-01", "ev-extensive_form_games-01", "ev-dominance-01", "ev-rationalizability-01"],
     "checkpoint": "You should be able to say why judging one action alone is usually wrong, and when an action can be removed before equilibrium is solved."
   },
   {
@@ -59,27 +36,15 @@
     "title": "Make Predictions Survive Deviations",
     "reader_question": "Can each player look at the proposed outcome and still want to stay put?",
     "plain_language_goal": "Understand equilibrium as a mutual consistency test, then see why conflict and randomization require sharper versions of the same idea.",
-    "lectures": [
-      "lecture-05",
-      "lecture-07"
-    ],
-    "concepts": [
-      "best_response",
-      "nash_equilibrium",
-      "mixed_strategies",
-      "zero_sum_games",
-      "minimax"
-    ],
-    "primitives": [
-      "best_response",
-      "mutual_consistency"
-    ],
-    "evidence": [
-      "ev-best_response-01",
-      "ev-nash_equilibrium-01",
-      "ev-mixed_strategies-01",
-      "ev-minimax-01"
-    ],
+    "problem_pressure": "A strategic prediction is fragile because every player may want to change once they see what the others are doing. The course therefore needs a stability test. The point is not to find the nicest outcome, the fairest outcome, or the outcome with the largest total payoff. The point is to ask whether anyone has a unilateral reason to move away.",
+    "why_this_stage_comes_now": "Equilibrium comes after representation because best responses need a defined action set and payoff table. It also comes before dynamic and information-rich models because Nash gives the base deviation idea that later concepts repair: subgame perfection adds later-history checks, Bayesian equilibrium adds type-contingent beliefs, and mixed strategies handle situations where predictable pure actions are exploitable.",
+    "mathematical_lever": "The lever is the best-response comparison. Hold everyone else fixed, ask what one player would choose, and require the proposed outcome to pass that check for every player. In zero-sum or adversarial settings, randomization can be the stable plan because it removes the opponent's obvious target.",
+    "misuse_warning": "The common misuse is reading equilibrium as endorsement. A Nash equilibrium can be inefficient, unfair, or unpleasant. It can also be one of several equilibria. Stability under unilateral deviation is a narrower claim than social goodness or uniqueness.",
+    "bridge_to_next_stage": "Once the reader understands one-shot stability, the next question is whether a plan remains stable at future decision points. That is where threats, promises, bargaining, finite endings, and repeated punishment enter.",
+    "lectures": ["lecture-05", "lecture-07"],
+    "concepts": ["best_response", "nash_equilibrium", "mixed_strategies", "zero_sum_games", "minimax"],
+    "primitives": ["best_response", "mutual_consistency"],
+    "evidence": ["ev-best_response-01", "ev-nash_equilibrium-01", "ev-mixed_strategies-01", "ev-minimax-01"],
     "checkpoint": "You should be able to distinguish a stable prediction from a good social outcome, and explain why randomization can be strategic rather than confused."
   },
   {
@@ -87,38 +52,15 @@
     "title": "Test Time, Threats, And Patience",
     "reader_question": "Will a promised future action still make sense when the future arrives?",
     "plain_language_goal": "Use backward reasoning, subgame checks, bargaining logic, and repeated-game discipline to separate credible plans from empty announcements.",
-    "lectures": [
-      "lecture-08",
-      "lecture-09",
-      "lecture-10",
-      "lecture-11",
-      "lecture-12",
-      "lecture-13",
-      "lecture-14",
-      "lecture-15"
-    ],
-    "concepts": [
-      "backward_induction",
-      "subgame_perfection",
-      "one_shot_deviation",
-      "bargaining",
-      "finitely_repeated_games",
-      "infinitely_repeated_games",
-      "folk_theorem",
-      "implicit_cartels"
-    ],
-    "primitives": [
-      "backward_recursion",
-      "discounting",
-      "payoff_mapping"
-    ],
-    "evidence": [
-      "ev-backward_induction-01",
-      "ev-subgame_perfection-01",
-      "ev-bargaining-01",
-      "ev-infinitely_repeated_games-01",
-      "ev-implicit_cartels-01"
-    ],
+    "problem_pressure": "Time creates a special kind of strategic trap: a person can announce a future action today that will no longer be attractive when the future arrives. The course uses dynamic games to make that future moment visible. It then uses repeated games to show when the future can discipline the present instead of merely undermining promises.",
+    "why_this_stage_comes_now": "This stage follows equilibrium because dynamic games need equilibrium logic at more than one point in the tree. A threat must pass the later best-response test, not just the initial announcement test. Repetition then changes the calculation by adding future rewards and punishments, but only when monitoring, patience, and credible punishment are strong enough.",
+    "mathematical_lever": "The levers are backward recursion and discounting. Backward recursion solves later decisions before earlier ones. Discounting compares today's temptation with tomorrow's punishment by shrinking future payoffs according to how much players care about later periods.",
+    "misuse_warning": "The common misuse is saying either all threats work because they were announced or all cooperation works because the game repeats. The course is stricter: threats require future credibility, and repeated cooperation requires an incentive inequality that actually beats deviation.",
+    "bridge_to_next_stage": "After time is handled, the route turns to hidden information. Future incentives are not enough when players do not know types, costs, values, histories, signals, or what others have heard.",
+    "lectures": ["lecture-08", "lecture-09", "lecture-10", "lecture-11", "lecture-12", "lecture-13", "lecture-14", "lecture-15"],
+    "concepts": ["backward_induction", "subgame_perfection", "one_shot_deviation", "bargaining", "finitely_repeated_games", "infinitely_repeated_games", "folk_theorem", "implicit_cartels"],
+    "primitives": ["backward_recursion", "discounting", "payoff_mapping"],
+    "evidence": ["ev-backward_induction-01", "ev-subgame_perfection-01", "ev-bargaining-01", "ev-infinitely_repeated_games-01", "ev-implicit_cartels-01"],
     "checkpoint": "You should be able to explain why a known last round can unravel cooperation, and why an indefinite future can sometimes discipline today's temptation."
   },
   {
@@ -126,35 +68,15 @@
     "title": "Reason With Hidden Information",
     "reader_question": "What changes when players know different values, costs, types, histories, or facts that other players cannot directly see?",
     "plain_language_goal": "Track types, beliefs, updating, signaling, cheap talk, and common knowledge without treating beliefs as arbitrary story glue.",
-    "lectures": [
-      "lecture-16",
-      "lecture-17",
-      "lecture-21",
-      "lecture-22",
-      "lecture-24",
-      "lecture-25"
-    ],
-    "concepts": [
-      "bayesian_games",
-      "types_and_beliefs",
-      "bayesian_nash_equilibrium",
-      "perfect_bayesian_equilibrium",
-      "signaling",
-      "cheap_talk",
-      "common_knowledge"
-    ],
-    "primitives": [
-      "belief",
-      "incentive_compatibility",
-      "knowledge_recursion"
-    ],
-    "evidence": [
-      "ev-bayesian_games-01",
-      "ev-bayesian_nash_equilibrium-01",
-      "ev-perfect_bayesian_equilibrium-01",
-      "ev-signaling-01",
-      "ev-common_knowledge-01"
-    ],
+    "problem_pressure": "Many strategic situations are hard because behavior is also evidence. A warranty may be both a promise and a clue about quality. A message may be useful or empty depending on the speaker's incentives. A public announcement may matter even when the underlying fact was already privately known.",
+    "why_this_stage_comes_now": "Information comes after the basic timing and equilibrium ideas because hidden information makes every earlier object conditional. Actions can depend on type, beliefs must be updated from observed behavior, and equilibrium must say what players believe at information sets as well as what they choose.",
+    "mathematical_lever": "The levers are beliefs, Bayes-style updating, incentive compatibility, and knowledge recursion. Beliefs represent uncertainty over hidden types or states. Incentive compatibility asks whether the predicted type really wants to take the predicted action. Knowledge recursion tracks the layers of what everyone knows about what everyone knows.",
+    "misuse_warning": "The common misuse is treating beliefs as free story glue. In a disciplined model, beliefs need a source: priors, signals, observed actions, public announcements, or equilibrium restrictions. If any type can cheaply imitate the same signal, the signal does not reveal type by magic.",
+    "bridge_to_next_stage": "Once hidden information is visible, rule design becomes the natural next step. Auctions, screening, and market mechanisms are attempts to build rules that make privately informed people reveal or act on information in useful ways.",
+    "lectures": ["lecture-16", "lecture-17", "lecture-21", "lecture-22", "lecture-24", "lecture-25"],
+    "concepts": ["bayesian_games", "types_and_beliefs", "bayesian_nash_equilibrium", "perfect_bayesian_equilibrium", "signaling", "cheap_talk", "common_knowledge"],
+    "primitives": ["belief", "incentive_compatibility", "knowledge_recursion"],
+    "evidence": ["ev-bayesian_games-01", "ev-bayesian_nash_equilibrium-01", "ev-perfect_bayesian_equilibrium-01", "ev-signaling-01", "ev-common_knowledge-01"],
     "checkpoint": "You should be able to explain why the same visible action can mean different things depending on type, cost, belief updating, and publicness."
   },
   {
@@ -162,32 +84,15 @@
     "title": "Read Rules As Incentive Machines",
     "reader_question": "How do auction and market rules change what strategic people choose?",
     "plain_language_goal": "See mechanism and auction topics as design problems: the rule must make the desired behavior privately sensible.",
-    "lectures": [
-      "lecture-06",
-      "lecture-18",
-      "lecture-19",
-      "lecture-20",
-      "lecture-23"
-    ],
-    "concepts": [
-      "imperfect_competition",
-      "screening_and_adverse_selection",
-      "auctions",
-      "revenue_equivalence",
-      "ad_auctions"
-    ],
-    "primitives": [
-      "payoff_mapping",
-      "incentive_compatibility",
-      "belief"
-    ],
-    "evidence": [
-      "ev-imperfect_competition-01",
-      "ev-screening_and_adverse_selection-01",
-      "ev-auctions-01",
-      "ev-revenue_equivalence-01",
-      "ev-ad_auctions-01"
-    ],
+    "problem_pressure": "Rules do not merely describe a market; they shape what selfish participants find worth doing. A payment rule changes bids. A ranking rule changes ad design. A screening rule changes who participates. The design problem is to make the private best response line up with the public or platform goal.",
+    "why_this_stage_comes_now": "Design belongs near the end because it uses almost every previous primitive. The designer needs payoffs, beliefs, incentives, information, and equilibrium responses. Auctions and screening are not isolated topics; they are places where the course asks how rules convert hidden values and strategic actions into allocation and payment outcomes.",
+    "mathematical_lever": "The levers are allocation rules, payment rules, expected utility, and incentive compatibility. In plain language, the math separates who gets the object, what they pay, what they privately know, and whether telling the truth or bidding in a certain way is actually in their interest.",
+    "misuse_warning": "The common misuse is trusting the label of a mechanism. Calling something a second-price auction, ad auction, or screening device is not enough. The reader must inspect the actual allocation rule, payment rule, information environment, and deviation opportunities.",
+    "bridge_to_next_stage": "This stage closes the route by turning game theory into model-reading discipline. A reader should now be able to open a new paper or system design and ask what choices, incentives, beliefs, timing, and rules are doing the real work.",
+    "lectures": ["lecture-06", "lecture-18", "lecture-19", "lecture-20", "lecture-23"],
+    "concepts": ["imperfect_competition", "screening_and_adverse_selection", "auctions", "revenue_equivalence", "ad_auctions"],
+    "primitives": ["payoff_mapping", "incentive_compatibility", "belief"],
+    "evidence": ["ev-imperfect_competition-01", "ev-screening_and_adverse_selection-01", "ev-auctions-01", "ev-revenue_equivalence-01", "ev-ad_auctions-01"],
     "checkpoint": "You should be able to ask, for any rule, what a participant can gain by shading, hiding, misreporting, entering, or leaving."
   }
 ]

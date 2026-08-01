@@ -133,11 +133,18 @@ def main() -> int:
     for item in route:
         if f'id="{item["id"]}"' not in route_html:
             errors.append(f"study route item not rendered: {item['id']}")
-        for field in ["reader_question", "plain_language_goal", "checkpoint"]:
-            if words(item.get(field, "")) < 10:
+        for field in ["reader_question", "plain_language_goal", "problem_pressure", "why_this_stage_comes_now", "mathematical_lever", "misuse_warning", "bridge_to_next_stage", "checkpoint"]:
+            minimum = 10 if field in ["reader_question", "plain_language_goal", "checkpoint"] else 30
+            if words(item.get(field, "")) < minimum:
                 errors.append(f"study route {item['id']} has shallow {field}")
             elif html.escape(item[field], quote=True) not in route_html:
                 errors.append(f"study route {item['id']} {field} not rendered")
+        combined = " ".join(
+            str(item.get(field, ""))
+            for field in ["reader_question", "plain_language_goal", "problem_pressure", "why_this_stage_comes_now", "mathematical_lever", "misuse_warning", "bridge_to_next_stage", "checkpoint"]
+        )
+        if words(combined) < 210:
+            errors.append(f"study route {item['id']} has shallow combined route treatment")
         for lecture_id in item.get("lectures", []):
             if lecture_id not in lecture_by_id:
                 errors.append(f"study route {item['id']} references missing lecture: {lecture_id}")

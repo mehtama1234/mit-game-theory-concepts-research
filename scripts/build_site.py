@@ -271,6 +271,11 @@ def build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_b
   <h2>{esc(item["title"])}</h2>
   <p><strong>Reader question:</strong> {esc(item["reader_question"])}</p>
   <p><strong>Plain-language goal:</strong> {esc(item["plain_language_goal"])}</p>
+  <p><strong>Problem pressure:</strong> {esc(item["problem_pressure"])}</p>
+  <p><strong>Why this stage comes now:</strong> {esc(item["why_this_stage_comes_now"])}</p>
+  <p><strong>Mathematical lever:</strong> {esc(item["mathematical_lever"])}</p>
+  <p><strong>Misuse warning:</strong> {esc(item["misuse_warning"])}</p>
+  <p><strong>Bridge to next stage:</strong> {esc(item["bridge_to_next_stage"])}</p>
   <h3>Lectures</h3><p class="chips">{lecture_links}</p>
   <h3>Concepts</h3><p class="chips">{concept_links}</p>
   <h3>Primitives</h3><p class="chips">{primitive_links}</p>
