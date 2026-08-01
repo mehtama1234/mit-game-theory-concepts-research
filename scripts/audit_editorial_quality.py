@@ -114,6 +114,7 @@ def main() -> int:
     workbook = json.loads((ROOT / "analysis/throughlines/model-building-workbook.json").read_text(encoding="utf-8"))
     proofs = json.loads((ROOT / "analysis/throughlines/proof-sketch-lab.json").read_text(encoding="utf-8"))
     assumptions = json.loads((ROOT / "analysis/throughlines/assumption-audit-lab.json").read_text(encoding="utf-8"))
+    worked_transfer = json.loads((ROOT / "analysis/throughlines/worked-transfer-examples.json").read_text(encoding="utf-8"))
     capstones = json.loads((ROOT / "analysis/throughlines/capstone-self-test.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
@@ -700,6 +701,59 @@ def main() -> int:
             errors.append(f"assumption-audit lab {item['id']} missing evidence links")
     if len(assumptions) < 7:
         errors.append(f"only {len(assumptions)} assumption-audit cards")
+    worked_transfer_html = (SITE / "worked-transfer.html").read_text(encoding="utf-8") if (SITE / "worked-transfer.html").exists() else ""
+    transfer_cards = 0
+    transfer_concept_links = 0
+    transfer_primitive_links = 0
+    transfer_model_links = 0
+    transfer_proof_links = 0
+    transfer_assumption_links = 0
+    transfer_decoder_links = 0
+    transfer_evidence_links = 0
+    transfer_words = []
+    for item in worked_transfer:
+        if f'id="{item["id"]}"' in worked_transfer_html:
+            transfer_cards += 1
+        else:
+            errors.append(f"worked transfer example {item['id']} not rendered")
+        text = " ".join(
+            str(item.get(k, ""))
+            for k in ["new_situation", "model_construction", "first_principles_solution", "math_move", "assumption_check", "evidence_bridge", "transfer_lesson"]
+        )
+        treatment_words = words(text)
+        transfer_words.append(treatment_words)
+        if treatment_words < 220:
+            errors.append(f"worked transfer example {item['id']} has shallow treatment: {treatment_words} words")
+        linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in worked_transfer_html]
+        linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in worked_transfer_html]
+        linked_models = [mid for mid in item.get("model_step_ids", []) if f'href="model-building.html#{mid}"' in worked_transfer_html]
+        linked_proofs = [pid for pid in item.get("proof_ids", []) if f'href="proof-sketches.html#{pid}"' in worked_transfer_html]
+        linked_assumptions = [aid for aid in item.get("assumption_ids", []) if f'href="assumptions.html#{aid}"' in worked_transfer_html]
+        linked_decoders = [did for did in item.get("decoder_ids", []) if f'href="jargon-decoder.html#{did}"' in worked_transfer_html]
+        linked_evidence = [eid for eid in item.get("evidence_ids", []) if f'href="evidence.html#{eid}"' in worked_transfer_html]
+        transfer_concept_links += len(linked_concepts)
+        transfer_primitive_links += len(linked_primitives)
+        transfer_model_links += len(linked_models)
+        transfer_proof_links += len(linked_proofs)
+        transfer_assumption_links += len(linked_assumptions)
+        transfer_decoder_links += len(linked_decoders)
+        transfer_evidence_links += len(linked_evidence)
+        if len(linked_concepts) != len(item.get("concepts", [])):
+            errors.append(f"worked transfer example {item['id']} missing concept links")
+        if len(linked_primitives) != len(item.get("primitives", [])):
+            errors.append(f"worked transfer example {item['id']} missing primitive links")
+        if len(linked_models) != len(item.get("model_step_ids", [])):
+            errors.append(f"worked transfer example {item['id']} missing model-building links")
+        if len(linked_proofs) != len(item.get("proof_ids", [])):
+            errors.append(f"worked transfer example {item['id']} missing proof-sketch links")
+        if len(linked_assumptions) != len(item.get("assumption_ids", [])):
+            errors.append(f"worked transfer example {item['id']} missing assumption-audit links")
+        if len(linked_decoders) != len(item.get("decoder_ids", [])):
+            errors.append(f"worked transfer example {item['id']} missing decoder links")
+        if len(linked_evidence) != len(item.get("evidence_ids", [])):
+            errors.append(f"worked transfer example {item['id']} missing evidence links")
+    if len(worked_transfer) < 6:
+        errors.append(f"only {len(worked_transfer)} worked transfer examples")
     capstone_html = (SITE / "capstone.html").read_text(encoding="utf-8") if (SITE / "capstone.html").exists() else ""
     capstone_cards = 0
     capstone_concept_links = 0
@@ -1031,6 +1085,15 @@ def main() -> int:
         f"- Assumption-audit model-building links: {assumption_model_links}",
         f"- Assumption-audit decoder links: {assumption_decoder_links}",
         f"- Assumption-audit evidence links: {assumption_evidence_links}",
+        f"- Worked transfer cards: {transfer_cards}",
+        f"- Worked transfer words: min {min(transfer_words) if transfer_words else 0}, max {max(transfer_words) if transfer_words else 0}",
+        f"- Worked transfer concept links: {transfer_concept_links}",
+        f"- Worked transfer primitive links: {transfer_primitive_links}",
+        f"- Worked transfer model-building links: {transfer_model_links}",
+        f"- Worked transfer proof-sketch links: {transfer_proof_links}",
+        f"- Worked transfer assumption-audit links: {transfer_assumption_links}",
+        f"- Worked transfer decoder links: {transfer_decoder_links}",
+        f"- Worked transfer evidence links: {transfer_evidence_links}",
         f"- Capstone self-test cards: {capstone_cards}",
         f"- Capstone self-test words: min {min(capstone_words) if capstone_words else 0}, max {max(capstone_words) if capstone_words else 0}",
         f"- Capstone concept links: {capstone_concept_links}",

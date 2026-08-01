@@ -99,6 +99,15 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Assumption-audit model-building links: 14
 - Assumption-audit decoder links: 14
 - Assumption-audit evidence links: 23
+- Worked transfer cards: 6
+- Worked transfer words: min 228, max 309
+- Worked transfer concept links: 24
+- Worked transfer primitive links: 18
+- Worked transfer model-building links: 18
+- Worked transfer proof-sketch links: 12
+- Worked transfer assumption-audit links: 15
+- Worked transfer decoder links: 12
+- Worked transfer evidence links: 24
 - Capstone self-test cards: 6
 - Capstone self-test words: min 209, max 265
 - Capstone concept links: 24
@@ -127,7 +136,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Supplemental lecture evidence records: 8
 - Lectures below 2 total evidence anchors: 0
 - Lecture path treatment words: min 30, max 50
-- Lecture detail page words: min 1442, max 5397
+- Lecture detail page words: min 1451, max 5406
 - Errors: 0
 
 ## Lowest Concept Depth

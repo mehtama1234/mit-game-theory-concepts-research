@@ -40,6 +40,7 @@ def main() -> int:
     workbook = json.loads((ROOT / "analysis/throughlines/model-building-workbook.json").read_text(encoding="utf-8"))
     proofs = json.loads((ROOT / "analysis/throughlines/proof-sketch-lab.json").read_text(encoding="utf-8"))
     assumptions = json.loads((ROOT / "analysis/throughlines/assumption-audit-lab.json").read_text(encoding="utf-8"))
+    worked_transfer = json.loads((ROOT / "analysis/throughlines/worked-transfer-examples.json").read_text(encoding="utf-8"))
     capstones = json.loads((ROOT / "analysis/throughlines/capstone-self-test.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
@@ -55,7 +56,7 @@ def main() -> int:
     }
     supplemental_ids = {record["id"] for record in supplemental}
     themes = json.loads((ROOT / "analysis/themes/theme-map.json").read_text(encoding="utf-8"))
-    required = [SITE / name for name in ["index.html", "study-route.html", "recognition.html", "math-clinic.html", "drills.html", "cases.html", "argument-chains.html", "repairs.html", "paper-reading.html", "jargon-decoder.html", "model-building.html", "proof-sketches.html", "assumptions.html", "capstone.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
+    required = [SITE / name for name in ["index.html", "study-route.html", "recognition.html", "math-clinic.html", "drills.html", "cases.html", "argument-chains.html", "repairs.html", "paper-reading.html", "jargon-decoder.html", "model-building.html", "proof-sketches.html", "assumptions.html", "worked-transfer.html", "capstone.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
     required.extend(SITE / "lectures" / f"{lecture['id']}.html" for lecture in lectures)
     for path in required:
@@ -78,6 +79,7 @@ def main() -> int:
     workbook_html = (SITE / "model-building.html").read_text(encoding="utf-8") if (SITE / "model-building.html").exists() else ""
     proofs_html = (SITE / "proof-sketches.html").read_text(encoding="utf-8") if (SITE / "proof-sketches.html").exists() else ""
     assumptions_html = (SITE / "assumptions.html").read_text(encoding="utf-8") if (SITE / "assumptions.html").exists() else ""
+    worked_transfer_html = (SITE / "worked-transfer.html").read_text(encoding="utf-8") if (SITE / "worked-transfer.html").exists() else ""
     capstone_html = (SITE / "capstone.html").read_text(encoding="utf-8") if (SITE / "capstone.html").exists() else ""
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     limits_html = (SITE / "limits.html").read_text(encoding="utf-8") if (SITE / "limits.html").exists() else ""
@@ -106,6 +108,8 @@ def main() -> int:
         errors.append("index page missing proof-sketch lab link")
     if 'href="assumptions.html"' not in index_html:
         errors.append("index page missing assumption-audit lab link")
+    if 'href="worked-transfer.html"' not in index_html:
+        errors.append("index page missing worked-transfer examples link")
     if 'href="capstone.html"' not in index_html:
         errors.append("index page missing capstone link")
     if 'href="cross-reference.html"' not in index_html:
@@ -246,6 +250,7 @@ def main() -> int:
     decoder_by_id = {item["id"]: item for item in jargon_decoder}
     model_step_by_id = {item["id"]: item for item in workbook}
     proof_by_id = {item["id"]: item for item in proofs}
+    assumption_by_id = {item["id"]: item for item in assumptions}
     if len(cases) < 5:
         errors.append(f"case studies has only {len(cases)} cards")
     for case in cases:
@@ -557,6 +562,56 @@ def main() -> int:
                 errors.append(f"assumption-audit lab {item['id']} references missing evidence: {ev_id}")
             elif f'href="evidence.html#{ev_id}"' not in assumptions_html:
                 errors.append(f"assumption-audit lab {item['id']} missing evidence link: {ev_id}")
+    if len(worked_transfer) < 6:
+        errors.append(f"worked transfer examples has only {len(worked_transfer)} cards")
+    for item in worked_transfer:
+        if f'id="{item["id"]}"' not in worked_transfer_html:
+            errors.append(f"worked transfer example not rendered: {item['id']}")
+        fields = ["new_situation", "model_construction", "first_principles_solution", "math_move", "assumption_check", "evidence_bridge", "transfer_lesson"]
+        for field in fields:
+            value = item.get(field, "")
+            if words(value) < 18:
+                errors.append(f"worked transfer example {item['id']} has shallow {field}")
+            elif html.escape(value, quote=True) not in worked_transfer_html:
+                errors.append(f"worked transfer example {item['id']} {field} not rendered")
+        combined = " ".join(str(item.get(field, "")) for field in fields)
+        if words(combined) < 220:
+            errors.append(f"worked transfer example {item['id']} has shallow combined treatment")
+        for concept_id in item.get("concepts", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"worked transfer example {item['id']} references missing concept: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in worked_transfer_html:
+                errors.append(f"worked transfer example {item['id']} missing concept link: {concept_id}")
+        for primitive_id in item.get("primitives", []):
+            if primitive_id not in primitive_by_id:
+                errors.append(f"worked transfer example {item['id']} references missing primitive: {primitive_id}")
+            elif f'href="primitives.html#{primitive_id}"' not in worked_transfer_html:
+                errors.append(f"worked transfer example {item['id']} missing primitive link: {primitive_id}")
+        for step_id in item.get("model_step_ids", []):
+            if step_id not in model_step_by_id:
+                errors.append(f"worked transfer example {item['id']} references missing model-building step: {step_id}")
+            elif f'href="model-building.html#{step_id}"' not in worked_transfer_html:
+                errors.append(f"worked transfer example {item['id']} missing model-building link: {step_id}")
+        for proof_id in item.get("proof_ids", []):
+            if proof_id not in proof_by_id:
+                errors.append(f"worked transfer example {item['id']} references missing proof sketch: {proof_id}")
+            elif f'href="proof-sketches.html#{proof_id}"' not in worked_transfer_html:
+                errors.append(f"worked transfer example {item['id']} missing proof-sketch link: {proof_id}")
+        for assumption_id in item.get("assumption_ids", []):
+            if assumption_id not in assumption_by_id:
+                errors.append(f"worked transfer example {item['id']} references missing assumption audit: {assumption_id}")
+            elif f'href="assumptions.html#{assumption_id}"' not in worked_transfer_html:
+                errors.append(f"worked transfer example {item['id']} missing assumption-audit link: {assumption_id}")
+        for decoder_id in item.get("decoder_ids", []):
+            if decoder_id not in decoder_by_id:
+                errors.append(f"worked transfer example {item['id']} references missing decoder card: {decoder_id}")
+            elif f'href="jargon-decoder.html#{decoder_id}"' not in worked_transfer_html:
+                errors.append(f"worked transfer example {item['id']} missing decoder link: {decoder_id}")
+        for ev_id in item.get("evidence_ids", []):
+            if ev_id not in ev_by_id:
+                errors.append(f"worked transfer example {item['id']} references missing evidence: {ev_id}")
+            elif f'href="evidence.html#{ev_id}"' not in worked_transfer_html:
+                errors.append(f"worked transfer example {item['id']} missing evidence link: {ev_id}")
     if len(capstones) < 6:
         errors.append(f"capstone self-test has only {len(capstones)} cards")
     for item in capstones:
