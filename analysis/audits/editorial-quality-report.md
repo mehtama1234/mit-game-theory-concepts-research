@@ -134,7 +134,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Limits concept cards: 33
 - Limits theme cards: 8
 - Limits derivation cards: 9
-- Limits concept words: min 111, max 201
+- Limits concept words: min 270, max 419
 - Evidence records with transcript teaching notes: 66
 - Evidence concept backlinks: 66
 - Evidence subtheme backlinks: 66

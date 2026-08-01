@@ -1059,6 +1059,11 @@ def build_limits(concepts, themes, derivations):
   <p><strong>Student trap:</strong> {esc(concept["student_trap"])}</p>
   <p><strong>Where the idea stops working:</strong> {esc(concept["course_boundary_note"])}</p>
   <p><strong>What breaks without it:</strong> {esc(concept["what_breaks_without_it"])}</p>
+  <p><strong>Failed shortcut:</strong> {esc(concept["failed_simple_approach"])}</p>
+  <p><strong>Why the formal idea has to exist:</strong> {esc(concept["why_math_has_to_exist"])}</p>
+  <p><strong>Mathematical intuition:</strong> {esc(concept["mathematical_intuition"])}</p>
+  <p><strong>Where it reappears:</strong> {esc(concept["cross_course_connections"])}</p>
+  <p><strong>How to recognize it elsewhere:</strong> {esc(concept["recognize_in_new_work"])}</p>
 </article>""")
     theme_cards = []
     for theme in themes:

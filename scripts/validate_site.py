@@ -766,12 +766,25 @@ def main() -> int:
             errors.append(f"limits page missing concept limit card: {concept['id']}")
         if f'href="concepts/{concept["id"]}.html"' not in limits_html:
             errors.append(f"limits page missing concept link: {concept['id']}")
-        for field in ["common_misunderstanding", "student_trap", "course_boundary_note", "what_breaks_without_it"]:
+        limit_fields = [
+            "common_misunderstanding",
+            "student_trap",
+            "course_boundary_note",
+            "what_breaks_without_it",
+            "failed_simple_approach",
+            "why_math_has_to_exist",
+            "mathematical_intuition",
+            "cross_course_connections",
+            "recognize_in_new_work",
+        ]
+        for field in limit_fields:
             value = concept.get(field, "")
-            if words(value) < 12:
+            if words(value) < 8:
                 errors.append(f"concept {concept['id']} has shallow limit field: {field}")
             elif html.escape(value, quote=True) not in limits_html:
                 errors.append(f"limits page missing {field}: {concept['id']}")
+        if words(" ".join(str(concept.get(field, "")) for field in limit_fields)) < 260:
+            errors.append(f"concept {concept['id']} has shallow combined limit treatment")
     for theme in themes:
         if f'id="theme-limit-{theme["id"]}"' not in limits_html:
             errors.append(f"limits page missing theme limit card: {theme['id']}")
