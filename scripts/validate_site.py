@@ -319,16 +319,28 @@ def main() -> int:
                 errors.append(f"solution workshop {item['id']} missing evidence link: {ev_id}")
     if len(cases) < 5:
         errors.append(f"case studies has only {len(cases)} cards")
+    case_fields = [
+        "real_world_setup",
+        "first_principles_question",
+        "modeling_path",
+        "mathematical_spine",
+        "worked_walkthrough",
+        "where_simple_story_breaks",
+        "what_to_check_in_transcript",
+        "why_this_case_matters",
+        "transfer_lesson",
+        "failure_audit",
+    ]
     for case in cases:
         if f'id="{case["id"]}"' not in cases_html:
             errors.append(f"case study not rendered: {case['id']}")
-        for field in ["real_world_setup", "first_principles_question", "modeling_path", "mathematical_spine", "worked_walkthrough", "where_simple_story_breaks", "what_to_check_in_transcript"]:
+        for field in case_fields:
             value = case.get(field, "")
             if words(value) < 14:
                 errors.append(f"case study {case['id']} has shallow {field}")
             elif html.escape(value, quote=True) not in cases_html:
                 errors.append(f"case study {case['id']} {field} not rendered")
-        if words(" ".join(str(case.get(field, "")) for field in ["real_world_setup", "modeling_path", "mathematical_spine", "worked_walkthrough", "where_simple_story_breaks", "what_to_check_in_transcript"])) < 170:
+        if words(" ".join(str(case.get(field, "")) for field in case_fields)) < 390:
             errors.append(f"case study {case['id']} has shallow combined treatment")
         for concept_id in case.get("concepts", []):
             if concept_id not in concept_by_id:

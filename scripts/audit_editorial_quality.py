@@ -447,6 +447,18 @@ def main() -> int:
     case_drill_links = 0
     case_evidence_links = 0
     case_words = []
+    case_fields = [
+        "real_world_setup",
+        "first_principles_question",
+        "modeling_path",
+        "mathematical_spine",
+        "worked_walkthrough",
+        "where_simple_story_breaks",
+        "what_to_check_in_transcript",
+        "why_this_case_matters",
+        "transfer_lesson",
+        "failure_audit",
+    ]
     for case in cases:
         if f'id="{case["id"]}"' in cases_html:
             case_cards += 1
@@ -454,11 +466,11 @@ def main() -> int:
             errors.append(f"case study {case['id']} not rendered")
         text = " ".join(
             str(case.get(k, ""))
-            for k in ["real_world_setup", "first_principles_question", "modeling_path", "mathematical_spine", "worked_walkthrough", "where_simple_story_breaks", "what_to_check_in_transcript"]
+            for k in case_fields
         )
         treatment_words = words(text)
         case_words.append(treatment_words)
-        if treatment_words < 170:
+        if treatment_words < 390:
             errors.append(f"case study {case['id']} has shallow treatment: {treatment_words} words")
         linked_concepts = [cid for cid in case.get("concepts", []) if f'href="concepts/{cid}.html"' in cases_html]
         linked_primitives = [pid for pid in case.get("primitives", []) if f'href="primitives.html#{pid}"' in cases_html]

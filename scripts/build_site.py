@@ -511,6 +511,9 @@ def build_case_studies(cases, concept_by_id, primitive_by_id, math_clinic_by_id,
   <p><strong>Worked walkthrough:</strong> {esc(case["worked_walkthrough"])}</p>
   <p><strong>Where the simple story breaks:</strong> {esc(case["where_simple_story_breaks"])}</p>
   <p><strong>What to check in transcript:</strong> {esc(case["what_to_check_in_transcript"])}</p>
+  <p><strong>Why this case matters:</strong> {esc(case["why_this_case_matters"])}</p>
+  <p><strong>Transfer lesson:</strong> {esc(case["transfer_lesson"])}</p>
+  <p><strong>Failure audit:</strong> {esc(case["failure_audit"])}</p>
   <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
   <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
   <h3>Math Clinic Cards</h3><p class="chips">{math_links}</p>

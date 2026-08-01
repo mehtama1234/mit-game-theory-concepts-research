@@ -54,7 +54,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Solution workshop decoder links: 16
 - Solution workshop evidence links: 32
 - Case study cards: 5
-- Case study words: min 189, max 249
+- Case study words: min 413, max 448
 - Case study concept links: 20
 - Case study primitive links: 15
 - Case study math clinic links: 10
