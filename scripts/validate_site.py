@@ -480,14 +480,14 @@ def main() -> int:
     for guide in paper_reading:
         if f'id="{guide["id"]}"' not in paper_reading_html:
             errors.append(f"paper-reading guide not rendered: {guide['id']}")
-        for field in ["paper_signal", "everyday_reading", "first_principles_test", "mathematical_handle", "what_to_check_in_the_model", "common_misread", "course_bridge"]:
+        for field in ["paper_signal", "everyday_reading", "first_principles_test", "mathematical_handle", "what_to_check_in_the_model", "common_misread", "course_bridge", "paper_section_audit", "claim_to_mechanism_check", "transfer_failure_warning"]:
             value = guide.get(field, "")
             if words(value) < 16:
                 errors.append(f"paper-reading guide {guide['id']} has shallow {field}")
             elif html.escape(value, quote=True) not in paper_reading_html:
                 errors.append(f"paper-reading guide {guide['id']} {field} not rendered")
-        combined = " ".join(str(guide.get(field, "")) for field in ["paper_signal", "everyday_reading", "first_principles_test", "mathematical_handle", "what_to_check_in_the_model", "common_misread", "course_bridge"])
-        if words(combined) < 190:
+        combined = " ".join(str(guide.get(field, "")) for field in ["paper_signal", "everyday_reading", "first_principles_test", "mathematical_handle", "what_to_check_in_the_model", "common_misread", "course_bridge", "paper_section_audit", "claim_to_mechanism_check", "transfer_failure_warning"])
+        if words(combined) < 420:
             errors.append(f"paper-reading guide {guide['id']} has shallow combined treatment")
         for concept_id in guide.get("concepts", []):
             if concept_id not in concept_by_id:

@@ -670,12 +670,18 @@ def main() -> int:
             errors.append(f"paper-reading guide {guide['id']} not rendered")
         text = " ".join(
             str(guide.get(k, ""))
-            for k in ["paper_signal", "everyday_reading", "first_principles_test", "mathematical_handle", "what_to_check_in_the_model", "common_misread", "course_bridge"]
+            for k in ["paper_signal", "everyday_reading", "first_principles_test", "mathematical_handle", "what_to_check_in_the_model", "common_misread", "course_bridge", "paper_section_audit", "claim_to_mechanism_check", "transfer_failure_warning"]
         )
         treatment_words = words(text)
         paper_words.append(treatment_words)
-        if treatment_words < 190:
+        if treatment_words < 420:
             errors.append(f"paper-reading guide {guide['id']} has shallow treatment: {treatment_words} words")
+        for field in ["paper_section_audit", "claim_to_mechanism_check", "transfer_failure_warning"]:
+            value = guide.get(field, "")
+            if words(value) < 35:
+                errors.append(f"paper-reading guide {guide['id']} has shallow {field}")
+            elif html_lib.escape(value, quote=True) not in paper_reading_html:
+                errors.append(f"paper-reading guide {guide['id']} {field} not rendered")
         linked_concepts = [cid for cid in guide.get("concepts", []) if f'href="concepts/{cid}.html"' in paper_reading_html]
         linked_primitives = [pid for pid in guide.get("primitives", []) if f'href="primitives.html#{pid}"' in paper_reading_html]
         linked_families = [fid for fid in guide.get("family_ids", []) if f'href="families.html#{fid}"' in paper_reading_html]

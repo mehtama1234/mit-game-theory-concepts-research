@@ -73,7 +73,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Misconception repair drill links: 8
 - Misconception repair evidence links: 25
 - Paper-reading guide cards: 7
-- Paper-reading guide words: min 309, max 356
+- Paper-reading guide words: min 486, max 561
 - Paper-reading concept links: 38
 - Paper-reading primitive links: 22
 - Paper-reading family links: 12

@@ -675,6 +675,9 @@ def build_paper_reading_guide(guides, concept_by_id, primitive_by_id, family_by_
   <p><strong>What to check in the model:</strong> {esc(guide["what_to_check_in_the_model"])}</p>
   <p><strong>Common misread:</strong> {esc(guide["common_misread"])}</p>
   <p><strong>Course bridge:</strong> {esc(guide["course_bridge"])}</p>
+  <p><strong>Paper section audit:</strong> {esc(guide["paper_section_audit"])}</p>
+  <p><strong>Claim-to-mechanism check:</strong> {esc(guide["claim_to_mechanism_check"])}</p>
+  <p><strong>Transfer failure warning:</strong> {esc(guide["transfer_failure_warning"])}</p>
   <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
   <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
   <h3>Method Families</h3><p class="chips">{family_links}</p>
