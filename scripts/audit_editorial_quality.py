@@ -201,7 +201,18 @@ def main() -> int:
             if value and len(ids) > 1:
                 errors.append(f"concept {field} repeated across pages: {', '.join(ids[:4])}")
 
-    theme_words = [words(" ".join(str(t.get(f, "")) for f in ["big_picture", "why_this_theme_matters", "cross_course_argument", "mathematical_spine", "where_analogy_breaks", "lecture_evidence_chain"])) for t in themes]
+    theme_fields = [
+        "big_picture",
+        "why_this_theme_matters",
+        "cross_course_argument",
+        "mathematical_spine",
+        "where_analogy_breaks",
+        "lecture_evidence_chain",
+        "diagnostic_question",
+        "paper_reading_use",
+        "transfer_boundary",
+    ]
+    theme_words = [words(" ".join(str(t.get(f, "")) for f in theme_fields)) for t in themes]
     subtheme_words = [words(" ".join(str(s.get(f, "")) for f in ["everyday_problem", "hidden_principle", "mathematical_lever", "why_it_matters", "first_principles_walkthrough", "cross_links_and_limits"])) for s in subthemes]
     themes_html = (SITE / "themes.html").read_text(encoding="utf-8") if (SITE / "themes.html").exists() else ""
     rendered_subthemes = 0
@@ -1125,7 +1136,7 @@ def main() -> int:
             lecture_pages_with_derivations += 1
 
     for theme, count in zip(themes, theme_words):
-        if count < 180:
+        if count < 400:
             errors.append(f"theme {theme['id']} has low synthesis depth: {count} words")
     for subtheme, count in zip(subthemes, subtheme_words):
         if count < 180:

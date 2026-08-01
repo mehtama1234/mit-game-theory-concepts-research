@@ -1328,6 +1328,9 @@ def build_themes(themes, subthemes, concepts):
   <h3>Why This Theme Matters</h3><p>{esc(theme["why_this_theme_matters"])}</p>
   <h3>Cross-Course Argument</h3><p>{esc(theme["cross_course_argument"])}</p>
   <h3>Lecture Evidence Chain</h3><p>{esc(theme["lecture_evidence_chain"])}</p>
+  <h3>Diagnostic Question</h3><p>{esc(theme["diagnostic_question"])}</p>
+  <h3>Paper-Reading Use</h3><p>{esc(theme["paper_reading_use"])}</p>
+  <h3>Transfer Boundary</h3><p>{esc(theme["transfer_boundary"])}</p>
   <h3>Subthemes</h3><ul>{subs}</ul>
   <section class="subtheme-stack">{''.join(subtheme_cards)}</section>
 </article>""")

@@ -7,7 +7,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Concepts audited: 33
 - Concept teaching words: min 621, max 919
 - Evidence per concept: min 2, max 2
-- Theme treatment words: min 196, max 280
+- Theme treatment words: min 401, max 423
 - Subtheme treatment words: min 189, max 238
 - Rendered subtheme study cards: 10
 - Subtheme concept links: 33

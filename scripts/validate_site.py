@@ -930,6 +930,32 @@ def main() -> int:
             errors.append(f"evidence {ev['id']} missing lecture backlink: {lecture['id']}")
         if re.search(r"Lecture \d+: Lecture \d+:", evidence_html):
             errors.append("evidence page contains duplicated lecture-number label")
+    theme_fields = [
+        "big_picture",
+        "why_this_theme_matters",
+        "cross_course_argument",
+        "mathematical_spine",
+        "where_analogy_breaks",
+        "lecture_evidence_chain",
+        "diagnostic_question",
+        "paper_reading_use",
+        "transfer_boundary",
+    ]
+    for theme in themes:
+        if f'id="{theme["id"]}"' not in themes_html:
+            errors.append(f"missing theme anchor: {theme['id']}")
+        for heading in ["Why This Theme Matters", "Cross-Course Argument", "Lecture Evidence Chain", "Diagnostic Question", "Paper-Reading Use", "Transfer Boundary"]:
+            if heading not in themes_html:
+                errors.append(f"themes page missing theme heading: {heading}")
+        for field in theme_fields:
+            value = theme.get(field, "")
+            if words(value) < 18:
+                errors.append(f"theme {theme['id']} has shallow {field}")
+            elif html.escape(value, quote=True) not in themes_html:
+                errors.append(f"theme {theme['id']} {field} not rendered")
+        combined = " ".join(str(theme.get(field, "")) for field in theme_fields)
+        if words(combined) < 400:
+            errors.append(f"theme {theme['id']} has shallow combined treatment")
     for subtheme in subthemes:
         if f'id="{subtheme["id"]}"' not in themes_html:
             errors.append(f"missing subtheme anchor: {subtheme['id']}")
