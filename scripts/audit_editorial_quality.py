@@ -159,13 +159,14 @@ def main() -> int:
         if not card:
             errors.append(f"concept {concept['id']} missing worked example card")
         else:
-            card_words = words(" ".join(str(card.get(key, "")) for key in ["setup", "walkthrough", "lesson", "trap"]))
+            worked_example_fields = ["setup", "walkthrough", "lesson", "trap", "model_move", "boundary_check"]
+            card_words = words(" ".join(str(card.get(key, "")) for key in worked_example_fields))
             worked_example_words.append(card_words)
-            if card_words < 55:
+            if card_words < 125:
                 errors.append(f"concept {concept['id']} worked example card is shallow: {card_words} words")
             if "Worked Example Card" not in html:
                 errors.append(f"concept {concept['id']} worked example card not rendered")
-            for key in ["setup", "walkthrough", "lesson", "trap"]:
+            for key in worked_example_fields:
                 value = str(card.get(key, ""))
                 if words(value) < 8:
                     errors.append(f"concept {concept['id']} has shallow worked example {key}")
