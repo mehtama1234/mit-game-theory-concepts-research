@@ -104,10 +104,11 @@ So the correct completion claim is:
 - `scripts/audit_publication_readiness.py`
 - `scripts/validate_all.py`
 - `scripts/prepare_sites_public.mjs`
+- `scripts/finalize_sites_dist.mjs`
 
 ## Sites Deployment Wrapper
 
-The canonical research site is generated into `site/`. For Sites deployment, the npm wrapper mirrors `site/` into ignored `public/` assets and uses Vinext to build a minimal app.
+The canonical research site is generated into `site/`. For Sites deployment, the npm wrapper mirrors `site/` into ignored `public/` assets, uses Vinext to build a minimal app, and copies `.openai/hosting.json` into `dist/.openai/hosting.json`.
 
 ```bash
 npm run check:site-app

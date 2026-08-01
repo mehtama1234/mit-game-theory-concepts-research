@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/prepare_sites_public.mjs && vinext build",
+    "build": "node scripts/prepare_sites_public.mjs && vinext build && node scripts/finalize_sites_dist.mjs",
     "check:site-app": "node scripts/prepare_sites_public.mjs && test -f public/index.html && test -f public/review-guide.html && test -f public/publication-status.html"
   },
   "dependencies": {

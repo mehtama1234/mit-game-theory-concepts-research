@@ -6,7 +6,7 @@ This report records local readiness evidence. Remote publication is verified by 
 
 ```text
 $ git log -1 --oneline
-a21a822 Add MIT project handoff validation
+fb28867 Add Sites deployment wrapper
 
 $ git remote -v
 origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (fetch)
@@ -47,7 +47,7 @@ validated HANDOFF.md and README.md
 
 
 > build
-> node scripts/prepare_sites_public.mjs && vinext build
+> node scripts/prepare_sites_public.mjs && vinext build && node scripts/finalize_sites_dist.mjs
 
 
   vinext build  (Vite 8.2.0)
@@ -56,30 +56,30 @@ validated HANDOFF.md and README.md
 [2K
 transforming...✓ 213 modules transformed.
 rendering chunks...
-✓ built in 1.11s
+✓ built in 1.19s
 [2/5] analyze server references...
 [2K
 transforming...✓ 70 modules transformed.
 rendering chunks...
-✓ built in 381ms
+✓ built in 430ms
 [3/5] build rsc environment...
 [2K
 transforming...✓ 208 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 1.93s
+✓ built in 1.52s
 [4/5] build client environment...
 [2K
 transforming...✓ 117 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 1.11s
+✓ built in 1.18s
 [5/5] build ssr environment...
 [2K
 transforming...✓ 71 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 312ms
+✓ built in 376ms
 [0m
   Route (app)
   ─ ? /

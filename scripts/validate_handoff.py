@@ -45,8 +45,10 @@ def main() -> int:
         "package.json",
         "app/page.tsx",
         "scripts/prepare_sites_public.mjs",
+        "scripts/finalize_sites_dist.mjs",
         "npm run check:site-app",
         "npm run build",
+        "dist/.openai/hosting.json",
         "The Sites project id is stored in `.openai/hosting.json`.",
     ]
     for phrase in required_phrases:
