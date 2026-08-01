@@ -433,12 +433,18 @@ def main() -> int:
             errors.append(f"problem drill {drill['id']} not rendered")
         text = " ".join(
             str(drill.get(k, ""))
-            for k in ["scenario", "reader_task", "setup_pressure", "first_principles_answer", "math_move", "worked_resolution", "assumption_check", "common_wrong_turn", "transfer_prompt", "evidence_checkpoint"]
+            for k in ["scenario", "reader_task", "setup_pressure", "first_principles_answer", "math_move", "worked_resolution", "assumption_check", "common_wrong_turn", "transfer_prompt", "evidence_checkpoint", "solve_from_scratch", "answer_breaks_if"]
         )
         treatment_words = words(text)
         drill_words.append(treatment_words)
-        if treatment_words < 285:
+        if treatment_words < 430:
             errors.append(f"problem drill {drill['id']} has shallow treatment: {treatment_words} words")
+        for field in ["solve_from_scratch", "answer_breaks_if"]:
+            value = drill.get(field, "")
+            if words(value) < 40:
+                errors.append(f"problem drill {drill['id']} has shallow {field}")
+            elif html_lib.escape(value, quote=True) not in drills_html:
+                errors.append(f"problem drill {drill['id']} {field} not rendered")
         linked_concepts = [cid for cid in drill.get("concepts", []) if f'href="concepts/{cid}.html"' in drills_html]
         linked_primitives = [pid for pid in drill.get("primitives", []) if f'href="primitives.html#{pid}"' in drills_html]
         linked_evidence = [eid for eid in drill.get("evidence_ids", []) if f'href="evidence.html#{eid}"' in drills_html]

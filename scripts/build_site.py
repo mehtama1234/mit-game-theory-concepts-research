@@ -403,6 +403,8 @@ def build_problem_drills(drills, concept_by_id, primitive_by_id, ev_by_id):
   <p><strong>Common wrong turn:</strong> {esc(drill["common_wrong_turn"])}</p>
   <p><strong>Transfer prompt:</strong> {esc(drill["transfer_prompt"])}</p>
   <p><strong>Evidence checkpoint:</strong> {esc(drill["evidence_checkpoint"])}</p>
+  <p><strong>Solve from scratch:</strong> {esc(drill["solve_from_scratch"])}</p>
+  <p><strong>Answer breaks if:</strong> {esc(drill["answer_breaks_if"])}</p>
   <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
   <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
   <h3>Transcript Evidence</h3><ul class="evidence-list">{evidence_links}</ul>

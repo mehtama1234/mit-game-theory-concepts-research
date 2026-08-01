@@ -40,7 +40,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Math clinic concept links: 26
 - Math clinic evidence links: 26
 - Problem drill cards: 8
-- Problem drill words: min 301, max 356
+- Problem drill words: min 431, max 471
 - Problem drill concept links: 24
 - Problem drill primitive links: 19
 - Problem drill evidence links: 24

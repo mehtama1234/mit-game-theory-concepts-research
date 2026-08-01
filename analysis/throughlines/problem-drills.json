@@ -12,6 +12,8 @@
     "common_wrong_turn": "Jumping straight to incentives or equilibrium hides the simpler missing object: what the chooser is trying to get. It also makes later strategic conclusions look objective even though the payoff construction was never defended.",
     "transfer_prompt": "When reading a new model, find the first payoff table and ask: what preference ranking created these numbers, and what real-world comparison would fail if the ranking were wrong?",
     "evidence_checkpoint": "The early decision-making evidence anchors the idea that the course builds individual choice language before representing strategic games.",
+    "solve_from_scratch": "Solve this by writing the outcome list before writing any game table. Put the rider in the center, list the concrete outcomes, then mark which comparisons are about time, price, transfers, risk, or comfort. Only after the ranking is visible should you introduce another actor. If no other actor changes the ranking, the drill ends with preferences and utility rather than equilibrium.",
+    "answer_breaks_if": "The answer breaks if the city, transit agencies, taxpayers, or rival riders directly change the rider's payoff through their own choices. Then the preference map is only the first layer. The problem must be expanded into a strategic interaction because the rider's best option now depends on how someone else acts.",
     "concepts": ["preferences", "utility", "expected_utility"],
     "primitives": ["preference", "payoff_mapping"],
     "evidence_ids": ["ev-preferences-01", "ev-utility-01", "ev-expected_utility-01"]
@@ -29,6 +31,8 @@
     "common_wrong_turn": "Treating the threat as a fixed payoff-table entry makes an empty threat look like a real constraint. The wrong representation lets early speech do work that later incentives would not support.",
     "transfer_prompt": "For any threat in a paper, mark the date when it is spoken and the date when it must be carried out. If those dates differ, test the later node before believing the earlier speech.",
     "evidence_checkpoint": "The representation and backward-induction evidence anchors support the course's shift from games as tables to games as time-ordered decision problems.",
+    "solve_from_scratch": "Solve this by drawing time before payoffs. First mark the entrant's choice. Then mark the incumbent's later choice after entry is observed. At the later node, compare fight with accommodate using only payoffs that matter after entry has happened. Carry that later answer backward to the entrant's original decision, so the threat is judged by future incentives rather than by its announcement.",
+    "answer_breaks_if": "The answer breaks if the incumbent has a real commitment device, a reputation payoff in other markets, or a contract that changes the later comparison. In that case fight may become credible for reasons outside the simple tree, and the representation has to include those extra payoffs before backward induction is trusted.",
     "concepts": ["extensive_form_games", "backward_induction", "subgame_perfection"],
     "primitives": ["backward_recursion", "mutual_consistency"],
     "evidence_ids": ["ev-extensive_form_games-01", "ev-backward_induction-02", "ev-subgame_perfection-01"]
@@ -46,6 +50,8 @@
     "common_wrong_turn": "Deleting a move because it loses in the most salient case confuses dominance with prediction. That shortcut turns a model-free deletion rule into an unstated belief assumption.",
     "transfer_prompt": "When reading a proof that deletes strategies, underline the comparison set. If the proof does not compare against every relevant opponent action, keep the strategy alive and ask what belief or equilibrium argument replaces dominance.",
     "evidence_checkpoint": "The dominance and rationalizability evidence anchors support the distinction between ruling out impossible-to-justify moves and reasoning from beliefs.",
+    "solve_from_scratch": "Solve this as a grid checklist. Write each rival action as a separate column and compare the two pricing actions inside every column. Do not average columns, guess which column is likely, or use a story about the rival's mood. Dominance asks whether one action survives all columns. If each price wins somewhere, both remain live for later reasoning.",
+    "answer_breaks_if": "The answer breaks if the rival action list is incomplete or if the payoff numbers already include an unstated belief about the rival. A dominance conclusion also breaks if the author switches from strict to weak dominance without warning, because deletion may then depend on order or on what remains after previous pruning.",
     "concepts": ["dominance", "iterated_deletion", "rationalizability"],
     "primitives": ["pruning", "belief"],
     "evidence_ids": ["ev-dominance-01", "ev-iterated_deletion-01", "ev-rationalizability-01"]
@@ -63,6 +69,8 @@
     "common_wrong_turn": "Rejecting an equilibrium because it is inefficient mistakes a prediction test for a social-desirability test. The model can predict an outcome precisely because every individual escape route is blocked.",
     "transfer_prompt": "In a new model, write two headings: unilateral stability and welfare. Do not let a result under one heading answer the other unless the paper explicitly proves the connection.",
     "evidence_checkpoint": "The Nash and best-response evidence anchors support the course's distinction between stable prediction and desirable outcome.",
+    "solve_from_scratch": "Solve this by running two separate tests. First, run the stability test: hold firm B fixed at aggressive and ask whether firm A improves by moving alone, then reverse the roles. Second, run the welfare comparison: compare aggressive-aggressive with soft-soft for both firms together. Keeping those tests separate is the point of the drill.",
+    "answer_breaks_if": "The answer breaks if firms can make binding agreements, move sequentially, punish later, or coordinate through an institution that changes unilateral incentives. Then the one-shot Nash diagnosis is incomplete. It may still be a useful baseline, but it no longer proves what happens in the richer setting. The diagnostic repair is to name the new escape route and choose the concept that tests it.",
     "concepts": ["best_response", "nash_equilibrium", "imperfect_competition"],
     "primitives": ["best_response", "mutual_consistency", "payoff_mapping"],
     "evidence_ids": ["ev-best_response-02", "ev-nash_equilibrium-01", "ev-imperfect_competition-01"]
@@ -80,6 +88,8 @@
     "common_wrong_turn": "Saying cooperation is possible because the game repeats skips the actual incentive comparison. Repetition supplies possible future consequences; it does not automatically make those consequences strong enough.",
     "transfer_prompt": "When a paper invokes future discipline, locate the deviation payoff, cooperative continuation payoff, punishment continuation payoff, monitoring rule, and discount factor. The mechanism lives in that comparison.",
     "evidence_checkpoint": "The repeated-games and cartel evidence anchors support the course's focus on future incentives as a mechanism, not a slogan.",
+    "solve_from_scratch": "Solve this by writing the incentive inequality in words first. Left side: value from staying cooperative today and keeping the future relationship. Right side: one-time cheating gain today plus the discounted value after punishment begins. Then inspect monitoring and credibility. The future only disciplines the present if cheating is detected and the punishment path is itself rational to carry out. Label the exact period where cheating is observed, because delayed detection weakens the punishment.",
+    "answer_breaks_if": "The answer breaks if cheating cannot be observed, if the punishment hurts the punisher too much to be credible, if the relationship has a known final period, or if the discount factor is too low. In any of those cases, repeated contact may not create enough continuation value to hold cooperation together.",
     "concepts": ["infinitely_repeated_games", "folk_theorem", "implicit_cartels"],
     "primitives": ["discounting", "incentive_compatibility"],
     "evidence_ids": ["ev-infinitely_repeated_games-01", "ev-folk_theorem-01", "ev-implicit_cartels-01"]
@@ -97,6 +107,8 @@
     "common_wrong_turn": "Treating the warranty as a direct statement of quality ignores the incentive problem: low-quality sellers may want to imitate unless the cost structure stops them.",
     "transfer_prompt": "When a paper calls an action a signal, ask which type finds the action cheaper or more valuable, and write the imitation check before accepting the interpretation.",
     "evidence_checkpoint": "The Bayesian, type, and signaling evidence anchors support the course's treatment of hidden information as a joint problem of choice and interpretation.",
+    "solve_from_scratch": "Solve this by making a type-by-action table. Put reliable and unreliable sellers in separate rows, warranty and no warranty in columns, and write the payoff comparison for each type. Then ask what buyers should believe after seeing warranty. The signal works only if the action is chosen differently by different types for payoff reasons. After the table, write the posterior in words: warranty makes reliability more likely only because mimicry is too costly.",
+    "answer_breaks_if": "The answer breaks if unreliable sellers can mimic cheaply, if buyers do not observe the warranty, if repair costs do not differ by type, or if the price premium makes warranty attractive for everyone. Then the same action no longer separates types, so belief updating cannot carry the claimed information. The repair is to write the mimic payoff explicitly before accepting the signal.",
     "concepts": ["types_and_beliefs", "perfect_bayesian_equilibrium", "signaling"],
     "primitives": ["belief", "incentive_compatibility"],
     "evidence_ids": ["ev-types_and_beliefs-01", "ev-perfect_bayesian_equilibrium-01", "ev-signaling-01"]
@@ -114,6 +126,8 @@
     "common_wrong_turn": "Looking only at the winning bid misses the strategic response created by the allocation rule. The mechanism is the whole mapping from bids and qualities to slots and payments.",
     "transfer_prompt": "For any auction-like system, write the allocation rule and payment rule in plain language before solving. Then ask what action each participant can change to improve expected payoff.",
     "evidence_checkpoint": "The auction, revenue-equivalence, and ad-auction evidence anchors support the course's treatment of rules as incentive-shaping objects.",
+    "solve_from_scratch": "Solve this by separating the rule into inputs and outputs. Inputs are bid, estimated click quality, and advertiser value. Outputs are slot allocation, probability of winning, payment, and expected surplus. Then ask how changing one input changes expected payoff. A mechanism-design answer has to show how private calculations under the rule create the platform's intended ranking. Read quality weighting as a price-like incentive, because it rewards some ad designs and penalizes others.",
+    "answer_breaks_if": "The answer breaks if quality scores are manipulable in an unmodeled way, if advertisers have budget constraints, if the payment rule is not what the paper assumes, or if revenue-equivalence assumptions fail. Auction vocabulary alone is not proof that bidders have the intended incentives. The repair is to recompute expected payoff under the actual allocation and payment rule, not under the auction label.",
     "concepts": ["auctions", "revenue_equivalence", "ad_auctions"],
     "primitives": ["incentive_compatibility", "belief", "payoff_mapping"],
     "evidence_ids": ["ev-auctions-01", "ev-revenue_equivalence-01", "ev-ad_auctions-01"]
@@ -131,6 +145,8 @@
     "common_wrong_turn": "Saying the announcement adds no information because the fact was already true ignores the publicness needed for coordination. The relevant object is not just the fact; it is shared awareness of the fact.",
     "transfer_prompt": "When a model uses a public signal, ask whether it changes first-order belief, higher-order belief, credibility, or all three. Do not collapse private knowledge and common knowledge.",
     "evidence_checkpoint": "The common-knowledge evidence anchor supports the course's distinction between knowing a fact and sharing the recursive awareness needed for strategic coordination.",
+    "solve_from_scratch": "Solve this by listing belief layers. Before the announcement, write: each trader may know the policy fact, but may not know whether others know it. After the public announcement, write: each trader knows others heard the same message and can expect them to reason from it. The action changes because the shared reasoning base changes. Keep the physical fact and the public event on separate lines.",
+    "answer_breaks_if": "The answer breaks if the announcement is not actually public, if traders interpret it differently, if the source is not trusted, or if the payoff does not depend on coordinated expectations. In those cases, the fact may spread without becoming the common starting point needed for strategic coordination. The repair is to model the message as private, noisy, or noncredible instead of common knowledge.",
     "concepts": ["common_knowledge", "cheap_talk", "nash_equilibrium"],
     "primitives": ["knowledge_recursion", "belief", "mutual_consistency"],
     "evidence_ids": ["ev-common_knowledge-01", "ev-cheap_talk-01", "ev-nash_equilibrium-01"]
