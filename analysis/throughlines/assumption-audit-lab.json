@@ -1,0 +1,270 @@
+[
+  {
+    "id": "assumption-payoff-completeness",
+    "title": "Are the payoffs measuring the pressure that actually drives choice?",
+    "hidden_assumption": "The payoff numbers include the consequences the actor actually cares about, and separate actors are not being silently merged into one objective.",
+    "why_it_exists": "Every solution test reads incentives through payoffs. If reputation, delay, risk, outside options, punishment, or private costs are missing, the model may solve a clean mathematical problem that is not the real strategic problem.",
+    "audit_test": "For each player, write what they gain and lose in ordinary words before looking at equations. Then ask which omitted consequence would most likely reverse the comparison between two actions, and whether that consequence belongs to one player or to the designer.",
+    "what_changes_if_false": "A threat can look irrational when reputation was omitted, cooperation can look impossible when future relationships were omitted, and an auction rule can look truthful when bidder risk or budget constraints were omitted.",
+    "mathematical_symptom": "The symptom is a payoff inequality whose sign depends on an unstated term. If adding a cost c, future value delta V, or outside option O changes the sign, the original conclusion was assumption-sensitive.",
+    "repair_move": "State the payoff boundary explicitly: this result holds if the listed payoff components are the only strategic consequences that matter. Then add a sensitivity sentence naming the most dangerous omitted term.",
+    "concepts": [
+      "utility",
+      "expected_utility",
+      "strategic_form_games",
+      "infinitely_repeated_games"
+    ],
+    "primitives": [
+      "payoff_mapping",
+      "preference",
+      "discounting"
+    ],
+    "proof_ids": [
+      "proof-expected-utility",
+      "proof-repeated-discipline"
+    ],
+    "model_step_ids": [
+      "model-step-payoffs",
+      "model-step-limits"
+    ],
+    "decoder_ids": [
+      "decode-utility-payoff-objective",
+      "decode-discount-factor"
+    ],
+    "evidence_ids": [
+      "ev-utility-01",
+      "ev-expected_utility-01",
+      "ev-infinitely_repeated_games-01"
+    ]
+  },
+  {
+    "id": "assumption-action-set",
+    "title": "Did the model include the deviations that could break the answer?",
+    "hidden_assumption": "The listed action set contains every relevant move a player could use to improve their situation inside the question being asked.",
+    "why_it_exists": "Equilibrium and incentive checks only compare available deviations. A conclusion can pass because the dangerous action was never allowed into the model, not because the behavior is truly stable.",
+    "audit_test": "After a proposed solution, ask every player: what would you try instead if you wanted to exploit this outcome? If that move is plausible in the real setting but absent from the model, mark the claim as incomplete and decide whether the omission is an intentional rule or an accidental shortcut.",
+    "what_changes_if_false": "A Nash equilibrium may disappear after adding a missing strategy, a mechanism may stop being truthful after adding a misreport, and a bargaining result may change after adding a walk-away option.",
+    "mathematical_symptom": "The symptom is a best-response or incentive-compatibility claim over a narrow set A_i. If a larger feasible set A_i' contains a profitable deviation, the original no-deviation statement no longer proves stability.",
+    "repair_move": "Name the action boundary and rerun the local deviation check. If the omitted move is important but intentionally excluded, explain what institution, technology, or timing rule rules it out.",
+    "concepts": [
+      "best_response",
+      "nash_equilibrium",
+      "auctions",
+      "bargaining"
+    ],
+    "primitives": [
+      "best_response",
+      "mutual_consistency",
+      "incentive_compatibility"
+    ],
+    "proof_ids": [
+      "proof-nash-equilibrium",
+      "proof-revenue-equivalence"
+    ],
+    "model_step_ids": [
+      "model-step-actions",
+      "model-step-solution-concept"
+    ],
+    "decoder_ids": [
+      "decode-best-response",
+      "decode-incentive-compatibility"
+    ],
+    "evidence_ids": [
+      "ev-best_response-02",
+      "ev-nash_equilibrium-01",
+      "ev-auctions-01"
+    ]
+  },
+  {
+    "id": "assumption-timing-observation",
+    "title": "Does the timing match what actors can observe before choosing?",
+    "hidden_assumption": "The game form correctly states who moves first, who observes what, and whether later choices are made after earlier events are known.",
+    "why_it_exists": "Timing determines credibility. A move that is attractive before an event may be unattractive after the event, and a response that requires observation cannot be chosen if the actor does not see the relevant history.",
+    "audit_test": "Draw a small calendar. At each point write who chooses, what they have seen, and what they still do not know. If two events are ordered in the real story but simultaneous in the model, ask whether that compression changes incentives.",
+    "what_changes_if_false": "A threat may be treated as binding when it is not, a punishment may be assumed after an unobserved deviation, or a simultaneous Nash check may be used where backward induction or subgame perfection is required.",
+    "mathematical_symptom": "The symptom is a solution concept that ignores a later node or an information set. If the model needs a continuation value or subgame check but uses only a one-shot profile, the timing assumption is doing hidden work.",
+    "repair_move": "Replace the flat representation with a tree when order and observation matter. Then solve from the last meaningful choice backward and state which histories are being checked.",
+    "concepts": [
+      "extensive_form_games",
+      "backward_induction",
+      "subgame_perfection",
+      "one_shot_deviation"
+    ],
+    "primitives": [
+      "backward_recursion",
+      "mutual_consistency",
+      "discounting"
+    ],
+    "proof_ids": [
+      "proof-backward-induction",
+      "proof-repeated-discipline"
+    ],
+    "model_step_ids": [
+      "model-step-timing",
+      "model-step-solution-concept"
+    ],
+    "decoder_ids": [
+      "decode-subgame-credibility",
+      "decode-strategy-action-plan"
+    ],
+    "evidence_ids": [
+      "ev-extensive_form_games-02",
+      "ev-backward_induction-02",
+      "ev-subgame_perfection-01"
+    ]
+  },
+  {
+    "id": "assumption-belief-source",
+    "title": "Where did the beliefs come from?",
+    "hidden_assumption": "Beliefs are either given by the model, updated from observed evidence, or constrained by the strategies that would have produced the observations.",
+    "why_it_exists": "Private-information games do not work if beliefs float freely. What a buyer, bidder, or receiver believes changes which action is sensible, and the observed action should usually be connected to which type would have chosen it.",
+    "audit_test": "For every belief, ask whether it is a prior, a posterior after evidence, or an off-path belief. If it is a posterior, ask what likelihood comparison made it move.",
+    "what_changes_if_false": "A signal may look persuasive without an imitation check, cheap talk may look informative without incentive alignment, and a Bayesian equilibrium may use beliefs that do not match the proposed strategies.",
+    "mathematical_symptom": "The symptom is a posterior probability or equilibrium belief that appears without Bayes-rule support. On observed paths, posterior belief should be proportional to prior times likelihood of the observed signal under each type.",
+    "repair_move": "Write the belief update in words before symbols: this observation is more likely under type H than type L, so belief in H rises. If the observation is off path, mark the belief as an assumption and test whether the result depends on it.",
+    "concepts": [
+      "bayesian_games",
+      "types_and_beliefs",
+      "perfect_bayesian_equilibrium",
+      "signaling"
+    ],
+    "primitives": [
+      "belief",
+      "incentive_compatibility",
+      "mutual_consistency"
+    ],
+    "proof_ids": [
+      "proof-bayes-signaling",
+      "proof-common-knowledge"
+    ],
+    "model_step_ids": [
+      "model-step-information",
+      "model-step-solution-concept"
+    ],
+    "decoder_ids": [
+      "decode-type-belief-posterior",
+      "decode-common-knowledge"
+    ],
+    "evidence_ids": [
+      "ev-bayesian_games-01",
+      "ev-types_and_beliefs-01",
+      "ev-perfect_bayesian_equilibrium-01",
+      "ev-signaling-01"
+    ]
+  },
+  {
+    "id": "assumption-monitoring-punishment",
+    "title": "Can players actually observe and punish the behavior?",
+    "hidden_assumption": "The repeated-game punishment can be triggered by observable behavior, and the punishment path is itself credible when it starts.",
+    "why_it_exists": "Future punishment disciplines present temptation only if players can detect enough about the deviation and will actually want to carry out the punishment afterward. The future cannot threaten the present if nobody can tell whether the triggering event happened.",
+    "audit_test": "Ask what the deviator gains today, what signal reveals the deviation, what punishment follows, and why the punishers will not abandon the punishment when the future arrives. Then ask whether a false alarm would punish an innocent player.",
+    "what_changes_if_false": "Cooperation can collapse if cheating is hidden, noisy signals create mistaken punishment, or the punishment hurts the punisher so much that it is not credible. The same discount factor can support cooperation under clear monitoring and fail under noisy monitoring.",
+    "mathematical_symptom": "The symptom is a discounting inequality that includes a punishment value without proving the punishment can be triggered and sustained. The continuation value must be feasible under the information and incentives of the repeated game.",
+    "repair_move": "Add the monitoring assumption and the punishment credibility check beside the discount-factor calculation. If monitoring is imperfect, weaken the claim or mark it as requiring a richer repeated-game model.",
+    "concepts": [
+      "infinitely_repeated_games",
+      "folk_theorem",
+      "implicit_cartels",
+      "one_shot_deviation"
+    ],
+    "primitives": [
+      "discounting",
+      "incentive_compatibility",
+      "mutual_consistency"
+    ],
+    "proof_ids": [
+      "proof-repeated-discipline",
+      "proof-backward-induction"
+    ],
+    "model_step_ids": [
+      "model-step-timing",
+      "model-step-payoffs"
+    ],
+    "decoder_ids": [
+      "decode-discount-factor",
+      "decode-subgame-credibility"
+    ],
+    "evidence_ids": [
+      "ev-infinitely_repeated_games-01",
+      "ev-folk_theorem-01",
+      "ev-implicit_cartels-01",
+      "ev-one_shot_deviation-01"
+    ]
+  },
+  {
+    "id": "assumption-auction-environment",
+    "title": "Which auction assumptions make the theorem work?",
+    "hidden_assumption": "The bidders, values, risk attitudes, allocation rule, payment rule, and information environment match the conditions needed for the auction result.",
+    "why_it_exists": "Auction results often look broader than they are because the format labels are familiar. Revenue equivalence, truthful bidding, and ad-auction ranking claims rely on specific assumptions about values, reports, and incentives. The theorem lives in the environment, not in the word auction.",
+    "audit_test": "Ask whether values are private or common, whether bidders are symmetric, whether bidders are risk neutral, whether budgets matter, and whether the same bidder type receives the object with the same probability across formats. Then ask which of those answers the lecture theorem needed.",
+    "what_changes_if_false": "Revenue equivalence can fail, truthful reporting can stop being attractive, and a ranking rule that appears efficient can distort incentives once quality scores, budgets, or correlated values matter.",
+    "mathematical_symptom": "The symptom is an expected-payment or incentive-compatibility result that skips the environment. If the allocation probability, lowest-type payoff, or deviation set changes, expected payments need not remain equivalent.",
+    "repair_move": "State the auction environment before comparing formats. Then separate the allocation rule from the payment rule and identify which assumption would change the bidder's expected payoff comparison first. If the environment differs, downgrade the theorem to an analogy or rebuild the incentive comparison.",
+    "concepts": [
+      "auctions",
+      "revenue_equivalence",
+      "ad_auctions",
+      "expected_utility"
+    ],
+    "primitives": [
+      "incentive_compatibility",
+      "payoff_mapping",
+      "belief"
+    ],
+    "proof_ids": [
+      "proof-revenue-equivalence",
+      "proof-expected-utility"
+    ],
+    "model_step_ids": [
+      "model-step-payoffs",
+      "model-step-limits"
+    ],
+    "decoder_ids": [
+      "decode-incentive-compatibility",
+      "decode-utility-payoff-objective"
+    ],
+    "evidence_ids": [
+      "ev-auctions-01",
+      "ev-revenue_equivalence-01",
+      "ev-ad_auctions-01"
+    ]
+  },
+  {
+    "id": "assumption-publicness-alignment",
+    "title": "Is the message public, private, credible, or just cheap talk?",
+    "hidden_assumption": "The model correctly distinguishes a public signal from separate private signals, and it does not treat costless words as automatically informative.",
+    "why_it_exists": "Information changes strategic behavior through what people know about what others know. Communication also depends on incentives: a sender may want the receiver to believe something even when it is not true. Publicness and credibility are separate assumptions.",
+    "audit_test": "Ask who hears the message, whether everyone knows who heard it, whether the sender pays a cost for lying, and whether sender and receiver interests are aligned enough for the message to carry information. Then separate shared awareness from truthful content.",
+    "what_changes_if_false": "A coordination result can fail if the signal is private rather than public. A cheap-talk result can fail if the sender's incentives point away from truthful communication.",
+    "mathematical_symptom": "The symptom is a common-knowledge or cheap-talk claim that treats information as a fact transfer only. The missing object is higher-order belief or an incentive comparison for the sender's message.",
+    "repair_move": "Mark the message type explicitly: public announcement, private signal, costly signal, or cheap talk. Then test whether behavior relies on shared awareness, belief updating, or incentive-aligned communication. If two roles are mixed, split them before applying common-knowledge or signaling logic.",
+    "concepts": [
+      "common_knowledge",
+      "cheap_talk",
+      "signaling",
+      "rationalizability"
+    ],
+    "primitives": [
+      "knowledge_recursion",
+      "belief",
+      "incentive_compatibility"
+    ],
+    "proof_ids": [
+      "proof-common-knowledge",
+      "proof-bayes-signaling"
+    ],
+    "model_step_ids": [
+      "model-step-information",
+      "model-step-limits"
+    ],
+    "decoder_ids": [
+      "decode-common-knowledge",
+      "decode-type-belief-posterior"
+    ],
+    "evidence_ids": [
+      "ev-common_knowledge-01",
+      "ev-cheap_talk-01",
+      "ev-signaling-01"
+    ]
+  }
+]

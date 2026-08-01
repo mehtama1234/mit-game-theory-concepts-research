@@ -113,6 +113,7 @@ def main() -> int:
     jargon_decoder = json.loads((ROOT / "analysis/throughlines/jargon-decoder.json").read_text(encoding="utf-8"))
     workbook = json.loads((ROOT / "analysis/throughlines/model-building-workbook.json").read_text(encoding="utf-8"))
     proofs = json.loads((ROOT / "analysis/throughlines/proof-sketch-lab.json").read_text(encoding="utf-8"))
+    assumptions = json.loads((ROOT / "analysis/throughlines/assumption-audit-lab.json").read_text(encoding="utf-8"))
     capstones = json.loads((ROOT / "analysis/throughlines/capstone-self-test.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
@@ -651,6 +652,54 @@ def main() -> int:
             errors.append(f"proof-sketch lab {item['id']} missing evidence links")
     if len(proofs) < 8:
         errors.append(f"only {len(proofs)} proof-sketch cards")
+    assumptions_html = (SITE / "assumptions.html").read_text(encoding="utf-8") if (SITE / "assumptions.html").exists() else ""
+    assumption_cards = 0
+    assumption_concept_links = 0
+    assumption_primitive_links = 0
+    assumption_proof_links = 0
+    assumption_model_links = 0
+    assumption_decoder_links = 0
+    assumption_evidence_links = 0
+    assumption_words = []
+    for item in assumptions:
+        if f'id="{item["id"]}"' in assumptions_html:
+            assumption_cards += 1
+        else:
+            errors.append(f"assumption-audit lab {item['id']} not rendered")
+        text = " ".join(
+            str(item.get(k, ""))
+            for k in ["hidden_assumption", "why_it_exists", "audit_test", "what_changes_if_false", "mathematical_symptom", "repair_move"]
+        )
+        treatment_words = words(text)
+        assumption_words.append(treatment_words)
+        if treatment_words < 190:
+            errors.append(f"assumption-audit lab {item['id']} has shallow treatment: {treatment_words} words")
+        linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in assumptions_html]
+        linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in assumptions_html]
+        linked_proofs = [pid for pid in item.get("proof_ids", []) if f'href="proof-sketches.html#{pid}"' in assumptions_html]
+        linked_models = [mid for mid in item.get("model_step_ids", []) if f'href="model-building.html#{mid}"' in assumptions_html]
+        linked_decoders = [did for did in item.get("decoder_ids", []) if f'href="jargon-decoder.html#{did}"' in assumptions_html]
+        linked_evidence = [eid for eid in item.get("evidence_ids", []) if f'href="evidence.html#{eid}"' in assumptions_html]
+        assumption_concept_links += len(linked_concepts)
+        assumption_primitive_links += len(linked_primitives)
+        assumption_proof_links += len(linked_proofs)
+        assumption_model_links += len(linked_models)
+        assumption_decoder_links += len(linked_decoders)
+        assumption_evidence_links += len(linked_evidence)
+        if len(linked_concepts) != len(item.get("concepts", [])):
+            errors.append(f"assumption-audit lab {item['id']} missing concept links")
+        if len(linked_primitives) != len(item.get("primitives", [])):
+            errors.append(f"assumption-audit lab {item['id']} missing primitive links")
+        if len(linked_proofs) != len(item.get("proof_ids", [])):
+            errors.append(f"assumption-audit lab {item['id']} missing proof-sketch links")
+        if len(linked_models) != len(item.get("model_step_ids", [])):
+            errors.append(f"assumption-audit lab {item['id']} missing model-building links")
+        if len(linked_decoders) != len(item.get("decoder_ids", [])):
+            errors.append(f"assumption-audit lab {item['id']} missing decoder links")
+        if len(linked_evidence) != len(item.get("evidence_ids", [])):
+            errors.append(f"assumption-audit lab {item['id']} missing evidence links")
+    if len(assumptions) < 7:
+        errors.append(f"only {len(assumptions)} assumption-audit cards")
     capstone_html = (SITE / "capstone.html").read_text(encoding="utf-8") if (SITE / "capstone.html").exists() else ""
     capstone_cards = 0
     capstone_concept_links = 0
@@ -974,6 +1023,14 @@ def main() -> int:
         f"- Proof-sketch math clinic links: {proof_math_links}",
         f"- Proof-sketch decoder links: {proof_decoder_links}",
         f"- Proof-sketch evidence links: {proof_evidence_links}",
+        f"- Assumption-audit lab cards: {assumption_cards}",
+        f"- Assumption-audit lab words: min {min(assumption_words) if assumption_words else 0}, max {max(assumption_words) if assumption_words else 0}",
+        f"- Assumption-audit concept links: {assumption_concept_links}",
+        f"- Assumption-audit primitive links: {assumption_primitive_links}",
+        f"- Assumption-audit proof-sketch links: {assumption_proof_links}",
+        f"- Assumption-audit model-building links: {assumption_model_links}",
+        f"- Assumption-audit decoder links: {assumption_decoder_links}",
+        f"- Assumption-audit evidence links: {assumption_evidence_links}",
         f"- Capstone self-test cards: {capstone_cards}",
         f"- Capstone self-test words: min {min(capstone_words) if capstone_words else 0}, max {max(capstone_words) if capstone_words else 0}",
         f"- Capstone concept links: {capstone_concept_links}",

@@ -46,6 +46,7 @@ def page(title: str, body: str, active: str = "", depth: int = 0) -> str:
         ("jargon-decoder.html", "Decoder", "jargon-decoder"),
         ("model-building.html", "Model Building", "model-building"),
         ("proof-sketches.html", "Proof Sketches", "proof-sketches"),
+        ("assumptions.html", "Assumptions", "assumptions"),
         ("capstone.html", "Capstone", "capstone"),
         ("cross-reference.html", "Cross Index", "cross-reference"),
         ("limits.html", "Limits", "limits"),
@@ -229,6 +230,7 @@ def build_index(concepts, themes, evidence, lectures):
 <section><h2>Decode The Vocabulary</h2><p>The jargon decoder translates course and paper terms into everyday pressure, mathematical object, reading test, common confusion, and transcript-backed links.</p><p><a class="button" href="jargon-decoder.html">Open the decoder</a></p></section>
 <section><h2>Build The Model</h2><p>The model-building workbook walks from an ordinary situation to players, actions, timing, information, payoffs, solution concept, and model boundaries.</p><p><a class="button" href="model-building.html">Open model-building workbook</a></p></section>
 <section><h2>Understand Why Results Are True</h2><p>The proof-sketch lab explains core theorem-like moves in everyday language: what setup is needed, why the result follows, which math relation does the work, and where it breaks.</p><p><a class="button" href="proof-sketches.html">Open proof sketches</a></p></section>
+<section><h2>Audit The Assumptions</h2><p>The assumption-audit lab teaches how to check whether payoff, action, timing, belief, monitoring, auction, and communication assumptions are doing hidden work.</p><p><a class="button" href="assumptions.html">Open assumption audits</a></p></section>
 <section><h2>Prove You Can Use It</h2><p>The capstone self-test gives transfer scenarios that force the reader to choose the model, read the math, avoid the wrong answer, and cite transcript evidence.</p><p><a class="button" href="capstone.html">Open the capstone</a></p></section>
 <section><h2>Find A Concept By Pressure</h2><p>The cross index lets a reader jump from an everyday problem to the relevant concept, lecture, primitive, subtheme, and evidence record.</p><p><a class="button" href="cross-reference.html">Open the cross index</a></p></section>
 <section><h2>Check The Limits</h2><p>The limits page collects common misunderstandings, student traps, and places where an analogy stops working.</p><p><a class="button" href="limits.html">Open limits and traps</a></p></section>
@@ -726,6 +728,62 @@ def build_proof_sketch_lab(proofs, concept_by_id, primitive_by_id, math_clinic_b
     write(SITE / "proof-sketches.html", page("Proof-Sketch Lab", body, "proof-sketches"))
 
 
+def build_assumption_audit_lab(audits, concept_by_id, primitive_by_id, proof_by_id, model_step_by_id, decoder_by_id, ev_by_id):
+    cards = []
+    for item in audits:
+        concept_links = "".join(
+            f'<a class="chip" href="concepts/{esc(concept_id)}.html">{esc(concept_by_id[concept_id]["name"])}</a>'
+            for concept_id in item.get("concepts", [])
+            if concept_id in concept_by_id
+        )
+        primitive_links = "".join(
+            f'<a class="chip" href="primitives.html#{esc(primitive_id)}">{esc(primitive_by_id[primitive_id]["name"])}</a>'
+            for primitive_id in item.get("primitives", [])
+            if primitive_id in primitive_by_id
+        )
+        proof_links = "".join(
+            f'<a class="chip" href="proof-sketches.html#{esc(proof_id)}">{esc(proof_by_id[proof_id]["title"])}</a>'
+            for proof_id in item.get("proof_ids", [])
+            if proof_id in proof_by_id
+        )
+        model_links = "".join(
+            f'<a class="chip" href="model-building.html#{esc(step_id)}">{esc(model_step_by_id[step_id]["title"])}</a>'
+            for step_id in item.get("model_step_ids", [])
+            if step_id in model_step_by_id
+        )
+        decoder_links = "".join(
+            f'<a class="chip" href="jargon-decoder.html#{esc(decoder_id)}">{esc(decoder_by_id[decoder_id]["term_family"])}</a>'
+            for decoder_id in item.get("decoder_ids", [])
+            if decoder_id in decoder_by_id
+        )
+        evidence_links = "".join(
+            f'<li><a href="evidence.html#{esc(ev_id)}">{esc(ev_id)}</a>: {esc(ev_by_id[ev_id]["video_title"])}</li>'
+            for ev_id in item.get("evidence_ids", [])
+            if ev_id in ev_by_id
+        )
+        cards.append(f"""<article class="wide-card assumption-card" id="{esc(item["id"])}">
+  <p class="eyebrow">Assumption audit</p>
+  <h2>{esc(item["title"])}</h2>
+  <p><strong>Hidden assumption:</strong> {esc(item["hidden_assumption"])}</p>
+  <p><strong>Why it exists:</strong> {esc(item["why_it_exists"])}</p>
+  <p><strong>Audit test:</strong> {esc(item["audit_test"])}</p>
+  <p><strong>What changes if false:</strong> {esc(item["what_changes_if_false"])}</p>
+  <p><strong>Mathematical symptom:</strong> {esc(item["mathematical_symptom"])}</p>
+  <p><strong>Repair move:</strong> {esc(item["repair_move"])}</p>
+  <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
+  <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
+  <h3>Proof Sketches</h3><p class="chips">{proof_links}</p>
+  <h3>Model-Building Steps</h3><p class="chips">{model_links}</p>
+  <h3>Decoder Cards</h3><p class="chips">{decoder_links}</p>
+  <h3>Transcript Evidence</h3><ul class="evidence-list">{evidence_links}</ul>
+</article>""")
+    body = """<section class="page-head">
+  <h1>Assumption-Audit Lab</h1>
+  <p>A guardrail for using game-theory results outside the lecture example. Each card names a hidden assumption, explains why the math needs it, gives an audit test, and shows what changes when it fails.</p>
+</section>""" + "".join(cards)
+    write(SITE / "assumptions.html", page("Assumption-Audit Lab", body, "assumptions"))
+
+
 def build_capstone_self_test(capstones, concept_by_id, primitive_by_id, case_by_id, drill_by_id, paper_by_id, decoder_by_id, ev_by_id):
     cards = []
     for item in capstones:
@@ -1207,6 +1265,7 @@ def main():
     jargon_decoder = load("analysis/throughlines/jargon-decoder.json")
     workbook = load("analysis/throughlines/model-building-workbook.json")
     proofs = load("analysis/throughlines/proof-sketch-lab.json")
+    assumptions = load("analysis/throughlines/assumption-audit-lab.json")
     capstones = load("analysis/throughlines/capstone-self-test.json")
     lectures = load("analysis/lectures/lecture-path.json")
     equation_notes = load_optional("analysis/editorial-overrides/equation-walkthrough-notes.json", {})
@@ -1224,6 +1283,8 @@ def main():
     case_by_id = {item["id"]: item for item in cases}
     paper_by_id = {item["id"]: item for item in paper_reading}
     decoder_by_id = {item["id"]: item for item in jargon_decoder}
+    model_step_by_id = {item["id"]: item for item in workbook}
+    proof_by_id = {item["id"]: item for item in proofs}
     build_index(concepts, themes, evidence, lectures)
     build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_by_id)
     build_recognition_clinic(clinic, concept_by_id, primitive_by_id, ev_by_id)
@@ -1236,6 +1297,7 @@ def main():
     build_jargon_decoder(jargon_decoder, concept_by_id, primitive_by_id, ev_by_id)
     build_model_building_workbook(workbook, concept_by_id, primitive_by_id, drill_by_id, decoder_by_id, ev_by_id)
     build_proof_sketch_lab(proofs, concept_by_id, primitive_by_id, math_clinic_by_id, decoder_by_id, ev_by_id)
+    build_assumption_audit_lab(assumptions, concept_by_id, primitive_by_id, proof_by_id, model_step_by_id, decoder_by_id, ev_by_id)
     build_capstone_self_test(capstones, concept_by_id, primitive_by_id, case_by_id, drill_by_id, paper_by_id, decoder_by_id, ev_by_id)
     build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence)
     build_limits(concepts, themes, derivations)
