@@ -6,7 +6,7 @@ This report records local readiness evidence. Remote publication is verified by 
 
 ```text
 $ git log -1 --oneline
-e7967cf Deepen MIT concept worked examples
+a2585a2 Deepen MIT lecture path cards
 
 $ git remote -v
 origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (fetch)
