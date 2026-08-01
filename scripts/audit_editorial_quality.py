@@ -107,6 +107,7 @@ def main() -> int:
     math_clinic = json.loads((ROOT / "analysis/throughlines/math-walkthrough-clinic.json").read_text(encoding="utf-8"))
     drills = json.loads((ROOT / "analysis/throughlines/problem-drills.json").read_text(encoding="utf-8"))
     cases = json.loads((ROOT / "analysis/throughlines/case-studies.json").read_text(encoding="utf-8"))
+    chains = json.loads((ROOT / "analysis/throughlines/argument-chains.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
@@ -396,6 +397,44 @@ def main() -> int:
             errors.append(f"case study {case['id']} missing evidence links")
     if len(cases) < 5:
         errors.append(f"only {len(cases)} case studies")
+    chains_html = (SITE / "argument-chains.html").read_text(encoding="utf-8") if (SITE / "argument-chains.html").exists() else ""
+    chain_cards = 0
+    chain_lecture_links = 0
+    chain_concept_links = 0
+    chain_primitive_links = 0
+    chain_evidence_links = 0
+    chain_words = []
+    for chain in chains:
+        if f'id="{chain["id"]}"' in chains_html:
+            chain_cards += 1
+        else:
+            errors.append(f"argument chain {chain['id']} not rendered")
+        text = " ".join(
+            str(chain.get(k, ""))
+            for k in ["chain_question", "plain_language_thesis", "first_principles_payoff", "where_to_be_careful"]
+        ) + " " + " ".join(chain.get("argument_steps", []))
+        treatment_words = words(text)
+        chain_words.append(treatment_words)
+        if treatment_words < 170:
+            errors.append(f"argument chain {chain['id']} has shallow treatment: {treatment_words} words")
+        linked_lectures = [lid for lid in chain.get("lecture_sequence", []) if f'href="lectures/{lid}.html"' in chains_html]
+        linked_concepts = [cid for cid in chain.get("concepts", []) if f'href="concepts/{cid}.html"' in chains_html]
+        linked_primitives = [pid for pid in chain.get("primitives", []) if f'href="primitives.html#{pid}"' in chains_html]
+        linked_evidence = [eid for eid in chain.get("evidence_ids", []) if f'href="evidence.html#{eid}"' in chains_html]
+        chain_lecture_links += len(linked_lectures)
+        chain_concept_links += len(linked_concepts)
+        chain_primitive_links += len(linked_primitives)
+        chain_evidence_links += len(linked_evidence)
+        if len(linked_lectures) != len(chain.get("lecture_sequence", [])):
+            errors.append(f"argument chain {chain['id']} missing lecture links")
+        if len(linked_concepts) != len(chain.get("concepts", [])):
+            errors.append(f"argument chain {chain['id']} missing concept links")
+        if len(linked_primitives) != len(chain.get("primitives", [])):
+            errors.append(f"argument chain {chain['id']} missing primitive links")
+        if len(linked_evidence) != len(chain.get("evidence_ids", [])):
+            errors.append(f"argument chain {chain['id']} missing evidence links")
+    if len(chains) < 6:
+        errors.append(f"only {len(chains)} argument chains")
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     cross_concept_cards = 0
     cross_lecture_links = 0
@@ -626,6 +665,12 @@ def main() -> int:
         f"- Case study math clinic links: {case_math_links}",
         f"- Case study drill links: {case_drill_links}",
         f"- Case study evidence links: {case_evidence_links}",
+        f"- Argument chain cards: {chain_cards}",
+        f"- Argument chain words: min {min(chain_words) if chain_words else 0}, max {max(chain_words) if chain_words else 0}",
+        f"- Argument chain lecture links: {chain_lecture_links}",
+        f"- Argument chain concept links: {chain_concept_links}",
+        f"- Argument chain primitive links: {chain_primitive_links}",
+        f"- Argument chain evidence links: {chain_evidence_links}",
         f"- Cross-index concept cards: {cross_concept_cards}",
         f"- Cross-index lecture links: {cross_lecture_links}",
         f"- Cross-index subtheme links: {cross_subtheme_links}",

@@ -33,6 +33,7 @@ def main() -> int:
     math_clinic = json.loads((ROOT / "analysis/throughlines/math-walkthrough-clinic.json").read_text(encoding="utf-8"))
     drills = json.loads((ROOT / "analysis/throughlines/problem-drills.json").read_text(encoding="utf-8"))
     cases = json.loads((ROOT / "analysis/throughlines/case-studies.json").read_text(encoding="utf-8"))
+    chains = json.loads((ROOT / "analysis/throughlines/argument-chains.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
@@ -47,7 +48,7 @@ def main() -> int:
     }
     supplemental_ids = {record["id"] for record in supplemental}
     themes = json.loads((ROOT / "analysis/themes/theme-map.json").read_text(encoding="utf-8"))
-    required = [SITE / name for name in ["index.html", "study-route.html", "recognition.html", "math-clinic.html", "drills.html", "cases.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
+    required = [SITE / name for name in ["index.html", "study-route.html", "recognition.html", "math-clinic.html", "drills.html", "cases.html", "argument-chains.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
     required.extend(SITE / "lectures" / f"{lecture['id']}.html" for lecture in lectures)
     for path in required:
@@ -63,6 +64,7 @@ def main() -> int:
     math_clinic_html = (SITE / "math-clinic.html").read_text(encoding="utf-8") if (SITE / "math-clinic.html").exists() else ""
     drills_html = (SITE / "drills.html").read_text(encoding="utf-8") if (SITE / "drills.html").exists() else ""
     cases_html = (SITE / "cases.html").read_text(encoding="utf-8") if (SITE / "cases.html").exists() else ""
+    chains_html = (SITE / "argument-chains.html").read_text(encoding="utf-8") if (SITE / "argument-chains.html").exists() else ""
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     limits_html = (SITE / "limits.html").read_text(encoding="utf-8") if (SITE / "limits.html").exists() else ""
     index_html = (SITE / "index.html").read_text(encoding="utf-8") if (SITE / "index.html").exists() else ""
@@ -76,6 +78,8 @@ def main() -> int:
         errors.append("index page missing problem drills link")
     if 'href="cases.html"' not in index_html:
         errors.append("index page missing case studies link")
+    if 'href="argument-chains.html"' not in index_html:
+        errors.append("index page missing argument chains link")
     if 'href="cross-reference.html"' not in index_html:
         errors.append("index page missing cross-reference link")
     if 'href="limits.html"' not in index_html:
@@ -246,6 +250,46 @@ def main() -> int:
                 errors.append(f"case study {case['id']} references missing evidence: {ev_id}")
             elif f'href="evidence.html#{ev_id}"' not in cases_html:
                 errors.append(f"case study {case['id']} missing evidence link: {ev_id}")
+    if len(chains) < 6:
+        errors.append(f"argument chains has only {len(chains)} cards")
+    for chain in chains:
+        if f'id="{chain["id"]}"' not in chains_html:
+            errors.append(f"argument chain not rendered: {chain['id']}")
+        for field in ["chain_question", "plain_language_thesis", "first_principles_payoff", "where_to_be_careful"]:
+            value = chain.get(field, "")
+            if words(value) < 14:
+                errors.append(f"argument chain {chain['id']} has shallow {field}")
+            elif html.escape(value, quote=True) not in chains_html:
+                errors.append(f"argument chain {chain['id']} {field} not rendered")
+        if len(chain.get("argument_steps", [])) < 3:
+            errors.append(f"argument chain {chain['id']} has too few steps")
+        for step in chain.get("argument_steps", []):
+            if words(step) < 12:
+                errors.append(f"argument chain {chain['id']} has shallow step")
+            elif html.escape(step, quote=True) not in chains_html:
+                errors.append(f"argument chain {chain['id']} step not rendered")
+        if words(" ".join(str(chain.get(field, "")) for field in ["chain_question", "plain_language_thesis", "first_principles_payoff", "where_to_be_careful"]) + " " + " ".join(chain.get("argument_steps", []))) < 170:
+            errors.append(f"argument chain {chain['id']} has shallow combined treatment")
+        for lecture_id in chain.get("lecture_sequence", []):
+            if lecture_id not in lecture_by_id:
+                errors.append(f"argument chain {chain['id']} references missing lecture: {lecture_id}")
+            elif f'href="lectures/{lecture_id}.html"' not in chains_html:
+                errors.append(f"argument chain {chain['id']} missing lecture link: {lecture_id}")
+        for concept_id in chain.get("concepts", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"argument chain {chain['id']} references missing concept: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in chains_html:
+                errors.append(f"argument chain {chain['id']} missing concept link: {concept_id}")
+        for primitive_id in chain.get("primitives", []):
+            if primitive_id not in primitive_by_id:
+                errors.append(f"argument chain {chain['id']} references missing primitive: {primitive_id}")
+            elif f'href="primitives.html#{primitive_id}"' not in chains_html:
+                errors.append(f"argument chain {chain['id']} missing primitive link: {primitive_id}")
+        for ev_id in chain.get("evidence_ids", []):
+            if ev_id not in ev_by_id:
+                errors.append(f"argument chain {chain['id']} references missing evidence: {ev_id}")
+            elif f'href="evidence.html#{ev_id}"' not in chains_html:
+                errors.append(f"argument chain {chain['id']} missing evidence link: {ev_id}")
     for concept in concepts:
         if f'id="xref-{concept["id"]}"' not in cross_html:
             errors.append(f"cross index missing concept anchor: {concept['id']}")
