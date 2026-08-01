@@ -33,7 +33,7 @@ Playwright render audit for representative desktop and mobile pages.
 - desktop-nash-equilibrium: `concepts/nash_equilibrium.html`, viewport 1280,900, captured 1280x900, 152931 bytes
 - desktop-auctions: `concepts/auctions.html`, viewport 1280,900, captured 1280x900, 133495 bytes
 - desktop-primitives: `primitives.html`, viewport 1280,900, captured 1280x900, 124299 bytes
-- desktop-derivation-expected-utility: `primitives.html#expected_utility`, viewport 1280,900, captured 1280x900, 147786 bytes
+- desktop-derivation-expected-utility: `primitives.html#expected_utility`, viewport 1280,900, captured 1280x900, 147790 bytes
 - mobile-index: `index.html`, viewport 390,844, captured 390x844, 63673 bytes
 - mobile-study-route: `study-route.html`, viewport 390,844, captured 390x844, 55389 bytes
 - mobile-recognition: `recognition.html`, viewport 390,844, captured 390x844, 56797 bytes
@@ -57,7 +57,7 @@ Playwright render audit for representative desktop and mobile pages.
 - mobile-screening-adverse-selection: `concepts/screening_and_adverse_selection.html`, viewport 390,844, captured 390x844, 57648 bytes
 - mobile-nash-equilibrium: `concepts/nash_equilibrium.html`, viewport 390,844, captured 390x844, 62309 bytes
 - mobile-primitives: `primitives.html`, viewport 390,844, captured 390x844, 51472 bytes
-- mobile-derivation-bayes-rule: `primitives.html#bayes_rule`, viewport 390,844, captured 390x844, 74064 bytes
+- mobile-derivation-bayes-rule: `primitives.html#bayes_rule`, viewport 390,844, captured 390x844, 73954 bytes
 
 ## Errors
 

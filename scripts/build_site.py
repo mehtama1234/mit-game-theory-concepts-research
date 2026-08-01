@@ -1436,6 +1436,7 @@ def build_primitives(primitives, derivations, concept_by_id):
   <h3>Where It Appears</h3><p>{esc(primitive["course_appearances"])}</p>
   <h3>Why This Primitive Matters</h3><p>{esc(primitive["why_it_matters"])}</p>
   <h3>Transfer Test</h3><p>{esc(primitive["transfer_test"])}</p>
+  <h3>Recognize It In A New Model</h3><p>{esc(primitive["recognize_in_new_model"])}</p>
   <h3>Concept Pages Using This Primitive</h3><p class="chips">{concept_links or '<span class="chip muted">No linked concept pages yet</span>'}</p>
   <h3>Why Misuse Breaks The Model</h3><p>{esc(primitive.get("misuse_warning", primitive["misuse_failure"]))}</p>
 </article>""")

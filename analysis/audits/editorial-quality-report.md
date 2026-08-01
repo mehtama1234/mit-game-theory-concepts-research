@@ -12,7 +12,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Rendered subtheme study cards: 10
 - Subtheme concept links: 33
 - Subtheme evidence links: 33
-- Primitive treatment words: min 322, max 353
+- Primitive treatment words: min 390, max 423
 - Primitive-to-concept backlinks: 47
 - Derivation-card words: min 267, max 379
 - Concept pages with derivation links: 30

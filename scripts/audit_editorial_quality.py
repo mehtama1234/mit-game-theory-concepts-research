@@ -257,6 +257,7 @@ def main() -> int:
         "course_appearances",
         "why_it_matters",
         "transfer_test",
+        "recognize_in_new_model",
         "misuse_warning",
     ]
     primitive_words = [words(" ".join(str(p.get(f, "")) for f in primitive_fields)) for p in primitives]
@@ -271,6 +272,10 @@ def main() -> int:
         primitive_backlinks += len(linked)
         if len(linked) != len(primitive.get("concepts_in_atlas", [])):
             errors.append(f"primitive {primitive['id']} missing concept backlinks")
+        if words(primitive.get("recognize_in_new_model", "")) < 45:
+            errors.append(f"primitive {primitive['id']} has shallow recognition guidance")
+        if html_lib.escape(str(primitive.get("recognize_in_new_model", "")), quote=True) not in primitives_html:
+            errors.append(f"primitive {primitive['id']} recognition guidance not rendered")
     derivation_fields = [
         "everyday_setup",
         "equation",
@@ -1295,7 +1300,7 @@ def main() -> int:
         if count < 400:
             errors.append(f"subtheme {subtheme['id']} has low synthesis depth: {count} words")
     for primitive, count in zip(primitives, primitive_words):
-        if count < 320:
+        if count < 390:
             errors.append(f"primitive {primitive['id']} has low synthesis depth: {count} words")
     if len(derivations) < 8:
         errors.append(f"only {len(derivations)} derivation cards")
