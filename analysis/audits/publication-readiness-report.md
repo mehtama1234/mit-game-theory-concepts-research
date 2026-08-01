@@ -6,7 +6,7 @@ This report records local readiness evidence. Remote publication is verified by 
 
 ```text
 $ git log -1 --oneline
-efda6c8 Deepen MIT model-building workbook
+f69e7c0 Deepen MIT assumption-audit lab
 
 $ git remote -v
 origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (fetch)
