@@ -24,7 +24,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Method-family primitive links: 6
 - Method-family evidence links: 6
 - Study route cards: 6
-- Study route words: min 273, max 296
+- Study route words: min 400, max 421
 - Study route lecture links: 26
 - Study route concept links: 33
 - Study route primitive links: 16

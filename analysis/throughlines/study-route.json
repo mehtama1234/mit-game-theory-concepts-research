@@ -13,7 +13,10 @@
     "concepts": ["preferences", "utility", "expected_utility"],
     "primitives": ["preference", "belief"],
     "evidence": ["ev-preferences-01", "ev-utility-01", "ev-expected_utility-01"],
-    "checkpoint": "You should be able to explain why a payoff number is not raw happiness and why uncertainty requires weighting possible outcomes before choosing."
+    "checkpoint": "You should be able to explain why a payoff number is not raw happiness and why uncertainty requires weighting possible outcomes before choosing.",
+    "active_study_move": "For each early example, rewrite the outcome in plain language before looking at the number. Say who is choosing, what alternatives are being compared, and what uncertainty remains. Then explain what information the utility number keeps and what information it throws away.",
+    "proof_of_understanding": "You understand this stage when you can take a new payoff table and reverse-engineer the preference claim behind each entry without treating the entries as interpersonal happiness units. You should also be able to say when changing the scale preserves the model and when risk makes the scale matter.",
+    "transfer_warning": "When moving to papers or systems, do not trust objectives until you know what preference or welfare claim they encode. A clean-looking reward, payoff, or loss can hide the most important modeling assumption."
   },
   {
     "id": "route-representation",
@@ -29,7 +32,10 @@
     "concepts": ["strategic_form_games", "extensive_form_games", "dominance", "iterated_deletion", "rationalizability"],
     "primitives": ["payoff_mapping", "pruning", "belief"],
     "evidence": ["ev-strategic_form_games-01", "ev-extensive_form_games-01", "ev-dominance-01", "ev-rationalizability-01"],
-    "checkpoint": "You should be able to say why judging one action alone is usually wrong, and when an action can be removed before equilibrium is solved."
+    "checkpoint": "You should be able to say why judging one action alone is usually wrong, and when an action can be removed before equilibrium is solved.",
+    "active_study_move": "Take each example and draw both the compact table and the time-aware tree when possible. Mark which facts disappear in the table and which facts become visible in the tree. Then run one dominance comparison by holding each opponent action fixed.",
+    "proof_of_understanding": "You understand this stage when you can explain why the same story can produce different analysis depending on whether timing, observation, and histories are represented explicitly. You should be able to point to the exact row, branch, or information set where the modeling choice changes incentives.",
+    "transfer_warning": "In a new paper, inspect the representation before the theorem. If the form hides timing or information, later algebra may be precise while answering the wrong strategic question. A compact normal form is useful only after the lost timing and observation facts have been judged irrelevant or encoded in strategies."
   },
   {
     "id": "route-equilibrium",
@@ -45,7 +51,10 @@
     "concepts": ["best_response", "nash_equilibrium", "mixed_strategies", "zero_sum_games", "minimax"],
     "primitives": ["best_response", "mutual_consistency"],
     "evidence": ["ev-best_response-01", "ev-nash_equilibrium-01", "ev-mixed_strategies-01", "ev-minimax-01"],
-    "checkpoint": "You should be able to distinguish a stable prediction from a good social outcome, and explain why randomization can be strategic rather than confused."
+    "checkpoint": "You should be able to distinguish a stable prediction from a good social outcome, and explain why randomization can be strategic rather than confused.",
+    "active_study_move": "For every claimed prediction, freeze all but one player and list that player's deviations. Repeat until each player has been checked. In mixed or zero-sum examples, ask what pure action would be exploited if the player became predictable.",
+    "proof_of_understanding": "You understand this stage when you can reject a plausible-sounding outcome because one player has a profitable unilateral deviation, while also refusing to call every equilibrium good. You should be able to write the deviation that fails and the payoff comparison that makes it fail.",
+    "transfer_warning": "When reading applied work, separate stability, welfare, uniqueness, and robustness. Equilibrium language proves much less than readers often import into it. If a paper needs welfare or policy force, look for an added argument beyond the no-deviation check."
   },
   {
     "id": "route-time",
@@ -61,7 +70,10 @@
     "concepts": ["backward_induction", "subgame_perfection", "one_shot_deviation", "bargaining", "finitely_repeated_games", "infinitely_repeated_games", "folk_theorem", "implicit_cartels"],
     "primitives": ["backward_recursion", "discounting", "payoff_mapping"],
     "evidence": ["ev-backward_induction-01", "ev-subgame_perfection-01", "ev-bargaining-01", "ev-infinitely_repeated_games-01", "ev-implicit_cartels-01"],
-    "checkpoint": "You should be able to explain why a known last round can unravel cooperation, and why an indefinite future can sometimes discipline today's temptation."
+    "checkpoint": "You should be able to explain why a known last round can unravel cooperation, and why an indefinite future can sometimes discipline today's temptation without making cooperation automatic.",
+    "active_study_move": "When a future action matters, jump to the future node first and ask what the player wants there. For repeated games, write the current deviation gain and the discounted punishment loss in words before looking at formulas.",
+    "proof_of_understanding": "You understand this stage when you can tell the difference between a threat that is merely announced, a threat made credible by future payoffs, and a punishment path that is itself worth carrying out after the relevant history occurs.",
+    "transfer_warning": "Do not let dynamic language substitute for dynamic incentives. Contracts, reputations, deadlines, monitoring, and outside options must be inside the payoff logic before time-based claims should be trusted. If a model says the future disciplines behavior, ask who observes deviation and why punishment remains optimal later."
   },
   {
     "id": "route-information",
@@ -77,7 +89,10 @@
     "concepts": ["bayesian_games", "types_and_beliefs", "bayesian_nash_equilibrium", "perfect_bayesian_equilibrium", "signaling", "cheap_talk", "common_knowledge"],
     "primitives": ["belief", "incentive_compatibility", "knowledge_recursion"],
     "evidence": ["ev-bayesian_games-01", "ev-bayesian_nash_equilibrium-01", "ev-perfect_bayesian_equilibrium-01", "ev-signaling-01", "ev-common_knowledge-01"],
-    "checkpoint": "You should be able to explain why the same visible action can mean different things depending on type, cost, belief updating, and publicness."
+    "checkpoint": "You should be able to explain why the same visible action can mean different things depending on type, cost, belief updating, and publicness.",
+    "active_study_move": "For each information example, name the hidden fact, list possible types, and say what each type wants the receiver to believe. Then ask whether the observed action actually separates types or whether all types would imitate it.",
+    "proof_of_understanding": "You understand this stage when you can trace a belief from prior to signal to posterior, while noticing when off-path beliefs or cheap messages need extra discipline. You should be able to say which type wants to imitate and what prevents or permits that imitation.",
+    "transfer_warning": "In new papers, beliefs are the danger zone. If a result depends on priors, likelihoods, off-path beliefs, or unverified publicness, mark the conclusion as assumption-sensitive. Strong conclusions need either evidence for those beliefs or a robustness check showing they are not doing all the work."
   },
   {
     "id": "route-design",
@@ -93,6 +108,9 @@
     "concepts": ["imperfect_competition", "screening_and_adverse_selection", "auctions", "revenue_equivalence", "ad_auctions"],
     "primitives": ["payoff_mapping", "incentive_compatibility", "belief"],
     "evidence": ["ev-imperfect_competition-01", "ev-screening_and_adverse_selection-01", "ev-auctions-01", "ev-revenue_equivalence-01", "ev-ad_auctions-01"],
-    "checkpoint": "You should be able to ask, for any rule, what a participant can gain by shading, hiding, misreporting, entering, or leaving."
+    "checkpoint": "You should be able to ask, for any rule, what a participant can gain by shading, hiding, misreporting, entering, or leaving, and which assumption blocks that deviation.",
+    "active_study_move": "For each mechanism, split the rule into allocation, payment, information, and participation. Then stand inside one participant's incentives and compare truthful or intended behavior with the best manipulation the rule permits under the stated assumptions.",
+    "proof_of_understanding": "You understand this stage when you can explain why a rule's label is less important than the deviation incentives it creates for privately informed participants. You should be able to identify the allocation rule, payment rule, information assumption, and best manipulation attempt.",
+    "transfer_warning": "When moving to real platforms or markets, check budgets, measurement error, repeated play, quality scores, entry, and collusion before importing a clean auction or mechanism theorem. The theorem transfers only if the real institution preserves the incentive constraints that made the clean rule work."
   }
 ]

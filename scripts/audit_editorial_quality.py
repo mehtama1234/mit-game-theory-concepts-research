@@ -313,6 +313,9 @@ def main() -> int:
         "mathematical_lever",
         "misuse_warning",
         "bridge_to_next_stage",
+        "active_study_move",
+        "proof_of_understanding",
+        "transfer_warning",
         "checkpoint",
     ]
     route_words = [words(" ".join(str(item.get(k, "")) for k in route_fields)) for item in route]
@@ -332,8 +335,12 @@ def main() -> int:
         route_primitive_links += len(linked_primitives)
         route_evidence_links += len(linked_evidence)
         route_text = " ".join(str(item.get(k, "")) for k in route_fields)
-        if words(route_text) < 210:
+        if words(route_text) < 400:
             errors.append(f"study route {item['id']} has shallow orientation text")
+        for field in route_fields:
+            value = str(item.get(field, ""))
+            if value and html_lib.escape(value, quote=True) not in route_html:
+                errors.append(f"study route {item['id']} {field} not rendered")
         if len(linked_lectures) != len(item.get("lectures", [])):
             errors.append(f"study route {item['id']} missing lecture links")
         if len(linked_concepts) != len(item.get("concepts", [])):

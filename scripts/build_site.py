@@ -276,6 +276,9 @@ def build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_b
   <p><strong>Mathematical lever:</strong> {esc(item["mathematical_lever"])}</p>
   <p><strong>Misuse warning:</strong> {esc(item["misuse_warning"])}</p>
   <p><strong>Bridge to next stage:</strong> {esc(item["bridge_to_next_stage"])}</p>
+  <p><strong>Active study move:</strong> {esc(item["active_study_move"])}</p>
+  <p><strong>Proof of understanding:</strong> {esc(item["proof_of_understanding"])}</p>
+  <p><strong>Transfer warning:</strong> {esc(item["transfer_warning"])}</p>
   <h3>Lectures</h3><p class="chips">{lecture_links}</p>
   <h3>Concepts</h3><p class="chips">{concept_links}</p>
   <h3>Primitives</h3><p class="chips">{primitive_links}</p>
