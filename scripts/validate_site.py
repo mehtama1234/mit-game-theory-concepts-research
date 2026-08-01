@@ -360,9 +360,20 @@ def main() -> int:
     for chain in chains:
         if f'id="{chain["id"]}"' not in chains_html:
             errors.append(f"argument chain not rendered: {chain['id']}")
-        for field in ["chain_question", "plain_language_thesis", "first_principles_payoff", "where_to_be_careful"]:
+        chain_fields = [
+            "chain_question",
+            "plain_language_thesis",
+            "first_principles_payoff",
+            "where_to_be_careful",
+            "hidden_assumption",
+            "failed_shortcut",
+            "lecture_handoff",
+            "where_the_analogy_breaks",
+            "reader_test",
+        ]
+        for field in chain_fields:
             value = chain.get(field, "")
-            if words(value) < 14:
+            if words(value) < 22:
                 errors.append(f"argument chain {chain['id']} has shallow {field}")
             elif html.escape(value, quote=True) not in chains_html:
                 errors.append(f"argument chain {chain['id']} {field} not rendered")
@@ -373,7 +384,7 @@ def main() -> int:
                 errors.append(f"argument chain {chain['id']} has shallow step")
             elif html.escape(step, quote=True) not in chains_html:
                 errors.append(f"argument chain {chain['id']} step not rendered")
-        if words(" ".join(str(chain.get(field, "")) for field in ["chain_question", "plain_language_thesis", "first_principles_payoff", "where_to_be_careful"]) + " " + " ".join(chain.get("argument_steps", []))) < 170:
+        if words(" ".join(str(chain.get(field, "")) for field in chain_fields) + " " + " ".join(chain.get("argument_steps", []))) < 430:
             errors.append(f"argument chain {chain['id']} has shallow combined treatment")
         for lecture_id in chain.get("lecture_sequence", []):
             if lecture_id not in lecture_by_id:

@@ -61,7 +61,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Case study drill links: 10
 - Case study evidence links: 20
 - Argument chain cards: 6
-- Argument chain words: min 177, max 207
+- Argument chain words: min 463, max 511
 - Argument chain lecture links: 23
 - Argument chain concept links: 29
 - Argument chain primitive links: 19

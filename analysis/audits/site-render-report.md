@@ -15,7 +15,7 @@ Playwright render audit for representative desktop and mobile pages.
 - desktop-drills: `drills.html`, viewport 1280,900, captured 1280x900, 148307 bytes
 - desktop-solutions: `solutions.html`, viewport 1280,900, captured 1280x900, 155765 bytes
 - desktop-cases: `cases.html`, viewport 1280,900, captured 1280x900, 148459 bytes
-- desktop-argument-chains: `argument-chains.html`, viewport 1280,900, captured 1280x900, 130902 bytes
+- desktop-argument-chains: `argument-chains.html`, viewport 1280,900, captured 1280x900, 135750 bytes
 - desktop-repairs: `repairs.html`, viewport 1280,900, captured 1280x900, 140875 bytes
 - desktop-paper-reading: `paper-reading.html`, viewport 1280,900, captured 1280x900, 167422 bytes
 - desktop-jargon-decoder: `jargon-decoder.html`, viewport 1280,900, captured 1280x900, 153913 bytes

@@ -482,13 +482,21 @@ def main() -> int:
             chain_cards += 1
         else:
             errors.append(f"argument chain {chain['id']} not rendered")
-        text = " ".join(
-            str(chain.get(k, ""))
-            for k in ["chain_question", "plain_language_thesis", "first_principles_payoff", "where_to_be_careful"]
-        ) + " " + " ".join(chain.get("argument_steps", []))
+        chain_fields = [
+            "chain_question",
+            "plain_language_thesis",
+            "first_principles_payoff",
+            "where_to_be_careful",
+            "hidden_assumption",
+            "failed_shortcut",
+            "lecture_handoff",
+            "where_the_analogy_breaks",
+            "reader_test",
+        ]
+        text = " ".join(str(chain.get(k, "")) for k in chain_fields) + " " + " ".join(chain.get("argument_steps", []))
         treatment_words = words(text)
         chain_words.append(treatment_words)
-        if treatment_words < 170:
+        if treatment_words < 430:
             errors.append(f"argument chain {chain['id']} has shallow treatment: {treatment_words} words")
         linked_lectures = [lid for lid in chain.get("lecture_sequence", []) if f'href="lectures/{lid}.html"' in chains_html]
         linked_concepts = [cid for cid in chain.get("concepts", []) if f'href="concepts/{cid}.html"' in chains_html]

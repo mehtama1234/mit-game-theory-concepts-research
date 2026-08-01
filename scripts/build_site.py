@@ -557,6 +557,11 @@ def build_argument_chains(chains, lecture_by_id, concept_by_id, primitive_by_id,
   <h3>Argument Steps</h3><ol>{steps}</ol>
   <p><strong>First-principles payoff:</strong> {esc(chain["first_principles_payoff"])}</p>
   <p><strong>Where to be careful:</strong> {esc(chain["where_to_be_careful"])}</p>
+  <p><strong>Hidden assumption:</strong> {esc(chain["hidden_assumption"])}</p>
+  <p><strong>Failed shortcut:</strong> {esc(chain["failed_shortcut"])}</p>
+  <p><strong>Lecture handoff:</strong> {esc(chain["lecture_handoff"])}</p>
+  <p><strong>Where the analogy breaks:</strong> {esc(chain["where_the_analogy_breaks"])}</p>
+  <p><strong>Reader test:</strong> {esc(chain["reader_test"])}</p>
   <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
   <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
   <h3>Transcript Evidence</h3><ul class="evidence-list">{evidence_links}</ul>

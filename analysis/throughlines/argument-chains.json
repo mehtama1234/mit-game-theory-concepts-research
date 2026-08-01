@@ -2,7 +2,7 @@
   {
     "id": "chain-choice-to-game",
     "title": "From individual wants to strategic representation",
-    "chain_question": "How does the course move from one person's ranking of outcomes to a game where several people's choices interact?",
+    "chain_question": "How does the course move from one person's ranking of outcomes to a game where several people's choices interact, and why must those two modeling steps stay separate?",
     "plain_language_thesis": "The course does not begin with equilibrium because equilibrium needs ingredients. First the reader needs a way to say what one person wants, then a way to record how multiple people's actions jointly determine payoffs.",
     "lecture_sequence": ["lecture-01", "lecture-02"],
     "argument_steps": [
@@ -12,6 +12,11 @@
     ],
     "first_principles_payoff": "This chain matters because many mistakes come from solving too early. A reader who cannot distinguish preference representation from game representation will confuse a person's objective with a strategic prediction.",
     "where_to_be_careful": "A payoff table can look objective, but it is already a modeling choice. The transcript evidence supports the setup, not every later equilibrium claim.",
+    "hidden_assumption": "The chain assumes that the analyst has separated two jobs that everyday language often merges: describing what a person wants and describing the strategic situation around that person. Utility numbers are not discovered facts like temperatures. They are a disciplined way to preserve a ranking of outcomes so later game descriptions can use the ranking without pretending to measure inner feelings directly.",
+    "failed_shortcut": "The tempting shortcut is to draw a payoff matrix immediately and start looking for the answer. That skips the question of whose preferences the numbers represent, whether uncertainty has already been averaged into expected utility, and whether timing or information should be in a tree rather than a table. The shortcut makes the later solution look precise while the model itself is still underbuilt.",
+    "lecture_handoff": "Lecture 1 supplies the language for one chooser: outcomes, preference comparisons, utility, and expected utility under uncertainty. Lecture 2 then asks what changes when one chooser's outcome depends on other choosers. The handoff is the move from a personal ranking to an environment where the same action can mean different things because other people move too.",
+    "where_the_analogy_breaks": "It is useful to say that a game is built from individual wants, but a game is not just a pile of wants. Once actions interact, timing, observability, and available moves become part of the object. Two games can use the same payoff numbers and still require different reasoning because the players see different information or move in a different order.",
+    "reader_test": "When reading a new model, first underline the sentence that defines what each player wants. Then underline the sentence that defines how actions jointly produce outcomes. If those two pieces are mixed together or one is missing, do not solve yet. Rebuild the preference side and the game-representation side separately, then ask whether a table, tree, or uncertainty model is the right container.",
     "concepts": ["preferences", "utility", "expected_utility", "strategic_form_games", "extensive_form_games"],
     "primitives": ["preference", "payoff_mapping", "belief"],
     "evidence_ids": ["ev-preferences-01", "ev-utility-01", "ev-expected_utility-01", "ev-strategic_form_games-01", "ev-extensive_form_games-01"]
@@ -19,7 +24,7 @@
   {
     "id": "chain-pruning-to-equilibrium",
     "title": "From deleting impossible moves to stable predictions",
-    "chain_question": "How does the course move from ruling out bad moves to asking which surviving plans can be mutually consistent?",
+    "chain_question": "How does the course move from ruling out bad moves to asking which surviving plans can be mutually consistent across all players at the same time?",
     "plain_language_thesis": "Dominance and rationalizability shrink the game before full prediction. Nash equilibrium then asks for a stronger object: not merely a surviving move, but a whole profile where every player's assigned action survives their own deviation check. The course is tightening the standard of explanation one lecture at a time.",
     "lecture_sequence": ["lecture-03", "lecture-04", "lecture-05"],
     "argument_steps": [
@@ -30,6 +35,11 @@
     ],
     "first_principles_payoff": "This chain matters because it separates plausibility from prediction. A strategy can be rationalizable without being part of a Nash equilibrium, and that distinction prevents the reader from overclaiming.",
     "where_to_be_careful": "Deletion is not prediction. Equilibrium is not social goodness. The chain supports increasingly demanding consistency tests, not a moral ranking of outcomes.",
+    "hidden_assumption": "The chain assumes that each move is being judged against the right comparison set. Dominance compares one action against another across all rival actions. Rationalizability asks whether some coherent belief can make an action best. Nash equilibrium asks whether the assigned actions fit together when everyone performs the same deviation check. These are different tests, not different names for one idea.",
+    "failed_shortcut": "The easy mistake is to treat every survivor as a prediction or every equilibrium as the unique lesson of the game. Deleting dominated moves can clean the table, but it does not tell the reader which surviving belief will be held. Nash can identify a stable profile, but it does not say the profile is fair, efficient, or likely without further modeling work.",
+    "lecture_handoff": "Lecture 3 teaches a no-belief deletion rule: if an action loses no matter what the other side does, remove it. Lecture 4 permits beliefs and asks which actions can still be justified. Lecture 5 closes the circle by replacing possible beliefs with the actual actions assigned in the candidate prediction. The course is steadily raising the burden of consistency.",
+    "where_the_analogy_breaks": "Dominance, rationalizability, and Nash all feel like filters, but they filter for different reasons. Dominance is a safety test, rationalizability is a possible-justification test, and Nash is a mutual-fit test. Treating them as one ladder toward truth hides cases where a rationalizable action cannot belong to any Nash equilibrium or where several Nash equilibria remain.",
+    "reader_test": "For any proposed solution, ask three questions in order. Is any action worse no matter what rivals do? Can the surviving action be a best response to some belief? If the model claims Nash, does each player still prefer the assigned action after holding the others fixed? The answer should change when the consistency requirement changes.",
     "concepts": ["dominance", "iterated_deletion", "rationalizability", "best_response", "nash_equilibrium"],
     "primitives": ["pruning", "belief", "best_response", "mutual_consistency"],
     "evidence_ids": ["ev-dominance-01", "ev-iterated_deletion-01", "ev-rationalizability-01", "ev-best_response-02", "ev-nash_equilibrium-01"]
@@ -37,7 +47,7 @@
   {
     "id": "chain-time-to-credibility",
     "title": "From game trees to credible future behavior",
-    "chain_question": "How does timing change what threats, promises, bargains, and planned deviations mean once later incentives are checked?",
+    "chain_question": "How does timing change what threats, promises, bargains, and planned deviations mean once the player who acts later gets to compare their remaining choices?",
     "plain_language_thesis": "The course's time logic is that a future action only matters if the player would still choose it when the future arrives. Trees expose that test; backward induction and subgame perfection enforce it.",
     "lecture_sequence": ["lecture-08", "lecture-09", "lecture-10", "lecture-11"],
     "argument_steps": [
@@ -48,6 +58,11 @@
     ],
     "first_principles_payoff": "This chain matters because strategic language is full of announcements that may not survive later incentives. The math forces the reader to test the later self, not just the earlier speech.",
     "where_to_be_careful": "Backward reasoning depends on the tree being the right tree. Hidden information, renegotiation, or omitted actions can make a precise backward calculation misleading.",
+    "hidden_assumption": "The chain assumes that later choices can be evaluated from the later decision point itself. That means the tree must say who moves, what they know, and what actions are still available at each history. A threat or promise only has strategic force if the player who must carry it out would still want to carry it out when that moment is reached.",
+    "failed_shortcut": "The common shortcut is to take an early statement literally: one player says they will punish, reject, delay, or make a hard offer, and the analyst treats the statement as part of the prediction. Dynamic game theory asks a colder question. At the later node, after the earlier drama has already happened, is carrying out that statement still the best remaining choice?",
+    "lecture_handoff": "Backward induction gives the basic end-to-start habit. Bargaining uses that habit to price delay, outside options, and future offers. Subgame perfection turns the habit into a requirement for every proper continuation game. The one-shot deviation principle then compresses the check by asking whether any single local departure would pay.",
+    "where_the_analogy_breaks": "Backward induction is powerful in perfect-information trees, but not every time problem is a clean visible tree. Hidden types, unobserved actions, renegotiation, or reputation can change the later payoff comparison. The analogy breaks when the model silently assumes the later player sees more, commits more, or controls more than the actual setting allows.",
+    "reader_test": "When a dynamic argument mentions a threat, promise, or bargain, jump to the future node where it would be honored. Ignore the earlier speech for one minute and compare the remaining payoffs there. If the promised action loses at that node, the argument needs commitment, reputation, outside enforcement, or a different tree before it can be credible.",
     "concepts": ["backward_induction", "bargaining", "subgame_perfection", "one_shot_deviation"],
     "primitives": ["backward_recursion", "discounting", "mutual_consistency"],
     "evidence_ids": ["ev-backward_induction-02", "ev-bargaining-01", "ev-subgame_perfection-01", "ev-one_shot_deviation-01"]
@@ -55,7 +70,7 @@
   {
     "id": "chain-repetition-to-cooperation",
     "title": "From one-shot incentives to repeated cooperation",
-    "chain_question": "When can future interaction discipline present temptation rather than merely adding more rounds of the same one-shot problem?",
+    "chain_question": "When can future interaction discipline present temptation rather than merely adding more rounds of the same one-shot problem with the same short-run incentives?",
     "plain_language_thesis": "The repeated-game lectures show that cooperation is not magic. It is an incentive comparison: today's gain from deviation must be smaller than the discounted future loss from punishment or lost cooperation. Repetition matters only when the future changes what today's self wants to do.",
     "lecture_sequence": ["lecture-12", "lecture-13", "lecture-14", "lecture-15"],
     "argument_steps": [
@@ -66,7 +81,12 @@
       "Across the chain, the same question keeps returning: does a proposed cooperative path remain better than the best one-time deviation plus the punishment that follows?"
     ],
     "first_principles_payoff": "This chain matters because it turns a vague phrase like long-term relationship into a checkable inequality about temptation, punishment, and patience.",
-    "where_to_be_careful": "The future does not automatically discipline behavior. Monitoring failures, weak punishment, short horizons, or low patience can collapse the cooperative story.",
+    "where_to_be_careful": "The future does not automatically discipline behavior. Monitoring failures, weak punishment, short horizons, or low patience can collapse the cooperative story even when the repeated setting sounds relationship-like.",
+    "hidden_assumption": "The chain assumes that players can connect today's action to tomorrow's consequence. For future punishment to change present behavior, the deviation must be observed well enough, the punishment must be credible later, and the future must matter enough today. Repetition alone is just more opportunities to make the same short-run choice unless those links are present.",
+    "failed_shortcut": "The tempting shortcut is to say that repeated interaction creates trust. The lectures make the claim sharper: repeated interaction creates a possible enforcement technology. Trust survives only when the gain from cheating now is smaller than the discounted loss from worse future play. If monitoring is noisy or the future is cheap, the warm story falls apart.",
+    "lecture_handoff": "Finite repetition starts with the warning case: a known final round can unravel cooperation backward. Infinite repetition removes the fixed end and lets future losses enter today's comparison. The folk theorem then explains why many payoff paths can survive when patience and punishment are strong. Cartel examples show the same logic in market behavior.",
+    "where_the_analogy_breaks": "Repeated games resemble relationships, but the model's relationship is narrower than ordinary social trust. It usually needs specified actions, observed histories, and punishment rules. Real relationships may include law, norms, communication, identity, and mistakes. Those additions can strengthen or weaken cooperation, but they must be modeled rather than smuggled into the repeated-game label.",
+    "reader_test": "Take any repeated-cooperation claim and write two columns: cheat today, then face tomorrow; cooperate today, then continue the relationship. Put the one-time gain in the first column and the discounted future loss beside it. If the argument cannot fill both columns, it has not yet shown why repetition changes the present incentive.",
     "concepts": ["finitely_repeated_games", "infinitely_repeated_games", "folk_theorem", "implicit_cartels"],
     "primitives": ["discounting", "incentive_compatibility", "mutual_consistency"],
     "evidence_ids": ["ev-finitely_repeated_games-01", "ev-infinitely_repeated_games-01", "ev-folk_theorem-01", "ev-implicit_cartels-01"]
@@ -74,7 +94,7 @@
   {
     "id": "chain-private-information-to-signals",
     "title": "From hidden types to signals and belief discipline",
-    "chain_question": "How does the course reason when players do not know who or what they are facing?",
+    "chain_question": "How does the course reason when players do not know who or what they are facing, but must still choose actions and interpret observed behavior?",
     "plain_language_thesis": "Private information turns action into evidence. The course first names hidden types and beliefs, then asks which strategies and belief updates can fit together in Bayesian and signaling environments.",
     "lecture_sequence": ["lecture-16", "lecture-17", "lecture-21", "lecture-22", "lecture-23", "lecture-24"],
     "argument_steps": [
@@ -85,6 +105,11 @@
     ],
     "first_principles_payoff": "This chain matters because it explains why the same visible action can be both a choice and a clue. The model must discipline both the sender's incentive and the receiver's belief.",
     "where_to_be_careful": "Beliefs are not free decorations. If a signal is off path or easy to imitate, the evidence supports only part of the story and the equilibrium claim needs extra care.",
+    "hidden_assumption": "The chain assumes that hidden information changes both sides of the model. The informed player chooses while knowing something others do not. The uninformed player responds using beliefs about what that choice means. A complete explanation must discipline the action and the belief update together, because either side can make the story collapse.",
+    "failed_shortcut": "The easy shortcut is to treat a signal as self-explanatory: high education means high ability, a tough demand means strong bargaining position, or a message means honest intent. The course's logic asks whether the signal is cheaper, more useful, or more attractive for one hidden type than another. If all types would send the same signal, observation alone teaches little.",
+    "lecture_handoff": "Bayesian games introduce type uncertainty and beliefs before moves are observed. Bayesian Nash equilibrium asks each type to choose optimally against beliefs about other types. Perfect Bayesian equilibrium adds histories and belief updating over time. Screening, signaling, bargaining with incomplete information, and cheap talk then explore different ways actions or messages might reveal, hide, or fake private information.",
+    "where_the_analogy_breaks": "Calling an action a signal can overstate what has been proved. Some signals are costly and separate types; some are cheap messages that pool everyone together; some are off the predicted path and need extra belief rules. The analogy breaks when the reader forgets to ask who would want to imitate whom.",
+    "reader_test": "When a paper says an action reveals information, list the hidden types and ask which type would most want to take that action. Then ask what the receiver believes after seeing it and whether the sender would still choose it under that receiver response. A real signaling argument must survive both questions.",
     "concepts": ["bayesian_games", "types_and_beliefs", "bayesian_nash_equilibrium", "perfect_bayesian_equilibrium", "screening_and_adverse_selection", "signaling", "cheap_talk"],
     "primitives": ["belief", "incentive_compatibility", "backward_recursion"],
     "evidence_ids": ["ev-bayesian_games-01", "ev-types_and_beliefs-01", "ev-bayesian_nash_equilibrium-01", "ev-perfect_bayesian_equilibrium-01", "ev-screening_and_adverse_selection-01", "ev-signaling-01", "ev-cheap_talk-01"]
@@ -92,7 +117,7 @@
   {
     "id": "chain-rules-to-markets",
     "title": "From fixed games to rules as incentive machines",
-    "chain_question": "How does the course move from solving games to designing rules that shape strategic behavior?",
+    "chain_question": "How does the course move from solving games with fixed rules to designing rules that shape strategic behavior before players ever choose?",
     "plain_language_thesis": "Auctions and market applications show game theory as design. The rule is no longer background; it is the object that changes bids, allocation, payments, and information revelation. The reader has to inspect the institution before interpreting the strategic behavior inside it.",
     "lecture_sequence": ["lecture-06", "lecture-18", "lecture-19", "lecture-20"],
     "argument_steps": [
@@ -104,6 +129,11 @@
     ],
     "first_principles_payoff": "This chain matters because it teaches the reader to inspect the rule before judging the outcome. The same participants can behave differently when the allocation or payment rule changes.",
     "where_to_be_careful": "A mechanism result can be precise but assumption-heavy. Private values, risk neutrality, independent signals, quality scoring, and bidder behavior all determine how far the conclusion travels.",
+    "hidden_assumption": "The chain assumes that rules do not merely record behavior; they create the environment in which behavior is sensible. A bidder's best move depends on how winners are chosen and what winners pay. A firm's best price or quantity depends on how rivals react. The institution is part of the incentive map, not background decoration.",
+    "failed_shortcut": "The common shortcut is to judge a market outcome by the visible winner, price, or allocation alone. That misses the rule that produced it. In an auction, the same value can lead to different bids under first-price, second-price, reserve-price, or quality-weighted rules. In competition, the same demand curve can produce different outcomes depending on whether firms choose prices or quantities.",
+    "lecture_handoff": "Imperfect competition shows that market rules determine how rival decisions meet. Auction lectures make allocation and payment rules explicit. Revenue equivalence isolates the assumptions under which different auction formats can yield the same expected revenue. Ad auctions then add platform-specific scoring and position value, showing how design details become strategic forces.",
+    "where_the_analogy_breaks": "It is useful to call rules incentive machines, but machines work only under their design assumptions. Revenue equivalence does not license every auction to be treated the same. Ad auction rankings are not simple highest-bid contests. Market models can omit budgets, learning, collusion, platform objectives, or legal constraints that change the actual incentives.",
+    "reader_test": "Before interpreting any market or mechanism result, write the allocation rule, the payment rule, the information each participant has, and the objective each participant is modeled as pursuing. Then change one rule in imagination. If the predicted behavior changes, the result is about the mechanism, not just about the people inside it.",
     "concepts": ["imperfect_competition", "auctions", "revenue_equivalence", "ad_auctions"],
     "primitives": ["payoff_mapping", "belief", "incentive_compatibility"],
     "evidence_ids": ["ev-imperfect_competition-01", "ev-auctions-01", "ev-revenue_equivalence-01", "ev-ad_auctions-01"]
