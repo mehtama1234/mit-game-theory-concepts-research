@@ -860,6 +860,7 @@ def main() -> int:
         "proof_reading_move",
         "student_trap",
         "rebuild_check",
+        "why_the_move_is_legitimate",
     ]
     for item in proofs:
         if f'id="{item["id"]}"' in proofs_html:
@@ -872,8 +873,12 @@ def main() -> int:
         )
         treatment_words = words(text)
         proof_words.append(treatment_words)
-        if treatment_words < 390:
+        if treatment_words < 470:
             errors.append(f"proof-sketch lab {item['id']} has shallow treatment: {treatment_words} words")
+        if words(item.get("why_the_move_is_legitimate", "")) < 45:
+            errors.append(f"proof-sketch lab {item['id']} has shallow legitimacy note")
+        if html_lib.escape(str(item.get("why_the_move_is_legitimate", "")), quote=True) not in proofs_html:
+            errors.append(f"proof-sketch lab {item['id']} legitimacy note not rendered")
         linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in proofs_html]
         linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in proofs_html]
         linked_math = [mid for mid in item.get("math_clinic_ids", []) if f'href="math-clinic.html#{mid}"' in proofs_html]

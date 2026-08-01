@@ -839,6 +839,7 @@ def build_proof_sketch_lab(proofs, concept_by_id, primitive_by_id, math_clinic_b
   <p><strong>Proof-reading move:</strong> {esc(item["proof_reading_move"])}</p>
   <p><strong>Student trap:</strong> {esc(item["student_trap"])}</p>
   <p><strong>Rebuild check:</strong> {esc(item["rebuild_check"])}</p>
+  <p><strong>Why the move is legitimate:</strong> {esc(item["why_the_move_is_legitimate"])}</p>
   <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
   <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
   <h3>Math Clinic Cards</h3><p class="chips">{math_links}</p>
