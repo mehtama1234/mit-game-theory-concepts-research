@@ -6,7 +6,7 @@ This report records local readiness evidence. Remote publication is verified by 
 
 ```text
 $ git log -1 --oneline
-e813116 Deepen MIT capstone grading rubrics
+bc5b55f Deepen MIT proof-sketch legitimacy notes
 
 $ git remote -v
 origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (fetch)
