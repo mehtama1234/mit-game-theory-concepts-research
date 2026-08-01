@@ -2,7 +2,7 @@
 
 This repository contains a transcript-backed, first-principles concept lab for MIT 14.12 Economic Applications of Game Theory, Fall 2025.
 
-The current deliverable is a local and remotely pushed static research site. It is not honestly a public-running GitHub Pages site until GitHub Pages serving is enabled and verified.
+The current deliverable is a local, remotely pushed, and Sites-deployed static research site. It is not honestly a public GitHub Pages site until GitHub Pages serving is enabled and verified.
 
 ## What Is Built
 
@@ -32,6 +32,10 @@ Open:
 - `http://127.0.0.1:8899/publication-status.html`
 - `http://127.0.0.1:8899/concepts/ad_auctions.html`
 - `http://127.0.0.1:8899/evidence.html`
+
+Owner-only Sites production URL:
+
+- `https://mit-game-theory-concept-lab.manish694182.chatgpt.site`
 
 ## Validation Command
 
@@ -71,6 +75,7 @@ So the correct completion claim is:
 - committed and pushed to `origin/main`
 - generated `site/` branch refreshed to `origin/gh-pages`
 - locally reviewable through the static server
+- deployed to owner-only Sites production at `https://mit-game-theory-concept-lab.manish694182.chatgpt.site`
 - public GitHub Pages serving still blocked until the repository/plan/hosting state changes
 - alternate Sites deployment uses `.openai/hosting.json`; do not edit or replace its `project_id`
 
@@ -116,6 +121,13 @@ npm run build
 ```
 
 The Sites project id is stored in `.openai/hosting.json`. Treat it as opaque and reuse it exactly.
+
+Current deployed Sites version:
+
+- project id: `appgprj_6a6e49173ac081919d10d18ab8e47e9d`
+- version 2: `appgprj_6a6e49173ac081919d10d18ab8e47e9d~appgver_cc5f30a361a08191bd2c9dbb3f346a30`
+- deployment: `appgdep_6a6e4f5303d48191928feb0774123c5e`
+- access: owner-only custom access; unauthenticated HTTP checks return `401`
 
 ## Push And Generated-Site Refresh
 

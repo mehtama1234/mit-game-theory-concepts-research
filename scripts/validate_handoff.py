@@ -50,6 +50,9 @@ def main() -> int:
         "npm run build",
         "dist/.openai/hosting.json",
         "The Sites project id is stored in `.openai/hosting.json`.",
+        "https://mit-game-theory-concept-lab.manish694182.chatgpt.site",
+        "appgdep_6a6e4f5303d48191928feb0774123c5e",
+        "owner-only custom access",
     ]
     for phrase in required_phrases:
         if phrase not in text:

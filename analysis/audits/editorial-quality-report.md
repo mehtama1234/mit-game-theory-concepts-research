@@ -131,9 +131,9 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Review guide page links: 19
 - Review guide concept links: 18
 - Review guide evidence links: 18
-- Publication status cards: 5
+- Publication status cards: 6
 - Publication status words: min 88, max 100
-- Publication status review links: 14
+- Publication status review links: 17
 - Cross-index concept cards: 33
 - Cross-index lecture links: 60
 - Cross-index subtheme links: 33
