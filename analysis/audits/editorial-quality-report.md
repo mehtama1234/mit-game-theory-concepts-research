@@ -77,6 +77,15 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Jargon decoder concept links: 44
 - Jargon decoder primitive links: 33
 - Jargon decoder evidence links: 33
+- Capstone self-test cards: 6
+- Capstone self-test words: min 209, max 265
+- Capstone concept links: 24
+- Capstone primitive links: 18
+- Capstone case links: 6
+- Capstone drill links: 12
+- Capstone paper-reading links: 12
+- Capstone decoder links: 18
+- Capstone evidence links: 22
 - Cross-index concept cards: 33
 - Cross-index lecture links: 60
 - Cross-index subtheme links: 33
@@ -96,7 +105,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Supplemental lecture evidence records: 8
 - Lectures below 2 total evidence anchors: 0
 - Lecture path treatment words: min 30, max 50
-- Lecture detail page words: min 1410, max 5365
+- Lecture detail page words: min 1417, max 5372
 - Errors: 0
 
 ## Lowest Concept Depth

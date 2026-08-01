@@ -111,6 +111,7 @@ def main() -> int:
     repairs = json.loads((ROOT / "analysis/throughlines/misconception-repairs.json").read_text(encoding="utf-8"))
     paper_reading = json.loads((ROOT / "analysis/throughlines/paper-reading-guide.json").read_text(encoding="utf-8"))
     jargon_decoder = json.loads((ROOT / "analysis/throughlines/jargon-decoder.json").read_text(encoding="utf-8"))
+    capstones = json.loads((ROOT / "analysis/throughlines/capstone-self-test.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
@@ -562,6 +563,59 @@ def main() -> int:
             errors.append(f"jargon decoder {item['id']} missing evidence links")
     if len(jargon_decoder) < 10:
         errors.append(f"only {len(jargon_decoder)} jargon decoder cards")
+    capstone_html = (SITE / "capstone.html").read_text(encoding="utf-8") if (SITE / "capstone.html").exists() else ""
+    capstone_cards = 0
+    capstone_concept_links = 0
+    capstone_primitive_links = 0
+    capstone_case_links = 0
+    capstone_drill_links = 0
+    capstone_paper_links = 0
+    capstone_decoder_links = 0
+    capstone_evidence_links = 0
+    capstone_words = []
+    for item in capstones:
+        if f'id="{item["id"]}"' in capstone_html:
+            capstone_cards += 1
+        else:
+            errors.append(f"capstone self-test {item['id']} not rendered")
+        text = " ".join(
+            str(item.get(k, ""))
+            for k in ["scenario", "reader_task", "expected_reasoning", "math_check", "evidence_check", "what_wrong_answer_reveals", "transfer_prompt"]
+        )
+        treatment_words = words(text)
+        capstone_words.append(treatment_words)
+        if treatment_words < 185:
+            errors.append(f"capstone self-test {item['id']} has shallow treatment: {treatment_words} words")
+        linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in capstone_html]
+        linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in capstone_html]
+        linked_cases = [cid for cid in item.get("case_ids", []) if f'href="cases.html#{cid}"' in capstone_html]
+        linked_drills = [did for did in item.get("drill_ids", []) if f'href="drills.html#{did}"' in capstone_html]
+        linked_papers = [pid for pid in item.get("paper_reading_ids", []) if f'href="paper-reading.html#{pid}"' in capstone_html]
+        linked_decoders = [did for did in item.get("decoder_ids", []) if f'href="jargon-decoder.html#{did}"' in capstone_html]
+        linked_evidence = [eid for eid in item.get("evidence_ids", []) if f'href="evidence.html#{eid}"' in capstone_html]
+        capstone_concept_links += len(linked_concepts)
+        capstone_primitive_links += len(linked_primitives)
+        capstone_case_links += len(linked_cases)
+        capstone_drill_links += len(linked_drills)
+        capstone_paper_links += len(linked_papers)
+        capstone_decoder_links += len(linked_decoders)
+        capstone_evidence_links += len(linked_evidence)
+        if len(linked_concepts) != len(item.get("concepts", [])):
+            errors.append(f"capstone self-test {item['id']} missing concept links")
+        if len(linked_primitives) != len(item.get("primitives", [])):
+            errors.append(f"capstone self-test {item['id']} missing primitive links")
+        if len(linked_cases) != len(item.get("case_ids", [])):
+            errors.append(f"capstone self-test {item['id']} missing case links")
+        if len(linked_drills) != len(item.get("drill_ids", [])):
+            errors.append(f"capstone self-test {item['id']} missing drill links")
+        if len(linked_papers) != len(item.get("paper_reading_ids", [])):
+            errors.append(f"capstone self-test {item['id']} missing paper-reading links")
+        if len(linked_decoders) != len(item.get("decoder_ids", [])):
+            errors.append(f"capstone self-test {item['id']} missing decoder links")
+        if len(linked_evidence) != len(item.get("evidence_ids", [])):
+            errors.append(f"capstone self-test {item['id']} missing evidence links")
+    if len(capstones) < 6:
+        errors.append(f"only {len(capstones)} capstone self-tests")
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     cross_concept_cards = 0
     cross_lecture_links = 0
@@ -818,6 +872,15 @@ def main() -> int:
         f"- Jargon decoder concept links: {decoder_concept_links}",
         f"- Jargon decoder primitive links: {decoder_primitive_links}",
         f"- Jargon decoder evidence links: {decoder_evidence_links}",
+        f"- Capstone self-test cards: {capstone_cards}",
+        f"- Capstone self-test words: min {min(capstone_words) if capstone_words else 0}, max {max(capstone_words) if capstone_words else 0}",
+        f"- Capstone concept links: {capstone_concept_links}",
+        f"- Capstone primitive links: {capstone_primitive_links}",
+        f"- Capstone case links: {capstone_case_links}",
+        f"- Capstone drill links: {capstone_drill_links}",
+        f"- Capstone paper-reading links: {capstone_paper_links}",
+        f"- Capstone decoder links: {capstone_decoder_links}",
+        f"- Capstone evidence links: {capstone_evidence_links}",
         f"- Cross-index concept cards: {cross_concept_cards}",
         f"- Cross-index lecture links: {cross_lecture_links}",
         f"- Cross-index subtheme links: {cross_subtheme_links}",

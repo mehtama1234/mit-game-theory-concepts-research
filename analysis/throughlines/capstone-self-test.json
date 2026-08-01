@@ -1,0 +1,264 @@
+[
+  {
+    "id": "capstone-entry-threat",
+    "title": "Diagnose whether a threat changes entry behavior",
+    "scenario": "A dominant firm announces that if a small competitor enters, it will start a costly price war. The entrant must decide whether the announcement should keep it out.",
+    "reader_task": "Decide whether the announcement is a credible strategic constraint or just cheap language. Name the representation, the future decision point, and the mathematical check that decides the case.",
+    "expected_reasoning": "Represent the situation as a sequence, not only as a payoff table. First locate the later moment when the incumbent would actually choose fight or accommodate. Then compare the incumbent's payoffs at that later node. If fighting is worse once entry has happened, the earlier threat should not be believed unless some commitment device changes the later payoffs.",
+    "math_check": "Use backward induction: solve the final choice first, assign that continuation value to the earlier branch, then let the entrant compare entering against staying out. The math matters because the current announcement is tested by future incentives, not by how forceful it sounds.",
+    "evidence_check": "Use the extensive-form and backward-induction evidence records to confirm that the lecture treats trees as devices for exposing future choice points. Use the subgame-perfect evidence to check that credibility is evaluated inside later subgames.",
+    "what_wrong_answer_reveals": "If the reader says the entrant should stay out because the incumbent threatened to fight, they are confusing speech with commitment. If they solve only the starting node, they are missing the reason dynamic games need backward reasoning.",
+    "transfer_prompt": "Apply the same test to a platform that threatens to ban sellers after a rule violation. What future payoff would make the ban credible, and what future payoff would make it empty?",
+    "concepts": [
+      "extensive_form_games",
+      "backward_induction",
+      "subgame_perfection",
+      "imperfect_competition"
+    ],
+    "primitives": [
+      "backward_recursion",
+      "mutual_consistency",
+      "payoff_mapping"
+    ],
+    "case_ids": [
+      "case-entry-threat"
+    ],
+    "drill_ids": [
+      "drill-table-or-tree",
+      "drill-stable-not-good"
+    ],
+    "paper_reading_ids": [
+      "read-dynamic-credibility",
+      "read-equilibrium-claim"
+    ],
+    "decoder_ids": [
+      "decode-strategy-action-plan",
+      "decode-subgame-credibility",
+      "decode-equilibrium-fixed-point"
+    ],
+    "evidence_ids": [
+      "ev-extensive_form_games-02",
+      "ev-backward_induction-02",
+      "ev-subgame_perfection-01"
+    ]
+  },
+  {
+    "id": "capstone-auction-rule",
+    "title": "Read an auction rule as an incentive machine",
+    "scenario": "A marketplace changes its ad auction so bids, quality scores, and payment rules jointly determine which ad appears and what the winner pays.",
+    "reader_task": "Separate the designer's goal from each bidder's goal, then explain whether truthful or shaded bidding is encouraged by the rule.",
+    "expected_reasoning": "Start by identifying what the platform controls: allocation and payment rules. Then read from the bidder's point of view. A bidder compares the payoff from one report with the payoff from another report, taking into account both chance of winning and price paid. The rule matters only through the incentives it creates for participants who care about their own values and costs.",
+    "math_check": "The core check is an incentive constraint: payoff from intended behavior must be at least as high as payoff from a misreport. In auction examples, expected payment combines the probability of winning with the price conditional on winning, so bid choice cannot be judged by price alone.",
+    "evidence_check": "Use the auction, revenue-equivalence, and ad-auction evidence records to confirm that the lectures connect allocation, payment, and incentives rather than treating auction formats as labels.",
+    "what_wrong_answer_reveals": "If the reader says the platform can simply ask bidders to be truthful, they are missing the private-information problem. If they look only at the winning price, they are ignoring how the rule changes the probability of winning.",
+    "transfer_prompt": "Apply the same reasoning to a hiring platform that asks applicants to report skills. What rule would make truthful reporting attractive, and what hidden information might still break the design?",
+    "concepts": [
+      "auctions",
+      "revenue_equivalence",
+      "ad_auctions",
+      "expected_utility"
+    ],
+    "primitives": [
+      "incentive_compatibility",
+      "payoff_mapping",
+      "belief"
+    ],
+    "case_ids": [
+      "case-ad-auction-design"
+    ],
+    "drill_ids": [
+      "drill-auction-rule",
+      "drill-payoff-before-strategy"
+    ],
+    "paper_reading_ids": [
+      "read-mechanism-market-design",
+      "read-payoff-object"
+    ],
+    "decoder_ids": [
+      "decode-incentive-compatibility",
+      "decode-utility-payoff-objective",
+      "decode-type-belief-posterior"
+    ],
+    "evidence_ids": [
+      "ev-auctions-01",
+      "ev-revenue_equivalence-01",
+      "ev-ad_auctions-01"
+    ]
+  },
+  {
+    "id": "capstone-signal-hidden-type",
+    "title": "Tell whether an action really reveals hidden information",
+    "scenario": "A seller offers a warranty and claims that only high-quality sellers would be willing to do so. Buyers update their beliefs after observing the warranty.",
+    "reader_task": "Decide whether the warranty separates high-quality sellers from low-quality sellers or whether both types would imitate it.",
+    "expected_reasoning": "Identify the hidden types, the action buyers observe, and the payoff from imitating. A signal works only if the cost or benefit of the action differs across types enough that one type wants the action and the other does not. If both types want the same visible action, observing it cannot teach buyers which type they face.",
+    "math_check": "Use Bayes rule for beliefs on observed paths and incentive constraints for type behavior. The separating story requires two comparisons: the high type prefers the signal to hiding, and the low type prefers not to imitate the signal. Beliefs and actions must fit together.",
+    "evidence_check": "Use the types-and-beliefs, perfect-Bayesian-equilibrium, signaling, and screening evidence records. They show that hidden information changes both what people do and what others infer from what they see.",
+    "what_wrong_answer_reveals": "If the reader says the warranty proves quality by itself, they are skipping the imitation check. If they update beliefs without asking how likely each type was to choose the warranty, they are using belief language without Bayesian discipline.",
+    "transfer_prompt": "Apply the same test to a startup founder buying an expensive certification. When would the certification reveal ability, and when would it become a badge that every type buys?",
+    "concepts": [
+      "types_and_beliefs",
+      "perfect_bayesian_equilibrium",
+      "signaling",
+      "screening_and_adverse_selection"
+    ],
+    "primitives": [
+      "belief",
+      "incentive_compatibility",
+      "mutual_consistency"
+    ],
+    "case_ids": [
+      "case-used-car-signal"
+    ],
+    "drill_ids": [
+      "drill-hidden-type",
+      "drill-public-awareness"
+    ],
+    "paper_reading_ids": [
+      "read-private-information",
+      "read-common-knowledge"
+    ],
+    "decoder_ids": [
+      "decode-type-belief-posterior",
+      "decode-incentive-compatibility",
+      "decode-common-knowledge"
+    ],
+    "evidence_ids": [
+      "ev-types_and_beliefs-01",
+      "ev-perfect_bayesian_equilibrium-01",
+      "ev-signaling-01",
+      "ev-screening_and_adverse_selection-01"
+    ]
+  },
+  {
+    "id": "capstone-repeated-cooperation",
+    "title": "Check whether future punishment can support cooperation",
+    "scenario": "Two firms can keep prices high each month, but either firm can secretly undercut this month and earn a short-term gain before the other responds.",
+    "reader_task": "Decide whether cooperation can be stable, name the immediate temptation, name the future punishment, and state exactly what comparison the model must pass.",
+    "expected_reasoning": "Separate the immediate temptation from the future discipline. Cooperation is possible only if the value lost from future punishment is large enough to outweigh the one-time gain from cheating. Then check whether the punishment is itself credible when the future arrives.",
+    "math_check": "Use the discounted-value inequality. Today's cheating gain is compared with a stream of future losses weighted by delta, delta squared, and later powers. A higher delta means future consequences matter more today; a lower delta makes the temptation harder to discipline.",
+    "evidence_check": "Use the repeated-game, folk-theorem, implicit-cartel, and one-shot-deviation evidence records. They show that repetition changes incentives by changing continuation values, not by making players nicer.",
+    "what_wrong_answer_reveals": "If the reader says repetition automatically creates cooperation, they are missing the discount-factor comparison. If they specify a punishment but never check that the punishment is credible, they are importing the dynamic-credibility error into repeated games.",
+    "transfer_prompt": "Apply the same reasoning to creators on a shared platform who could copy each other's work once. What makes future exclusion strong enough to discourage copying?",
+    "concepts": [
+      "infinitely_repeated_games",
+      "folk_theorem",
+      "implicit_cartels",
+      "one_shot_deviation"
+    ],
+    "primitives": [
+      "discounting",
+      "incentive_compatibility",
+      "mutual_consistency"
+    ],
+    "case_ids": [
+      "case-cartel-discipline"
+    ],
+    "drill_ids": [
+      "drill-future-discipline",
+      "drill-stable-not-good"
+    ],
+    "paper_reading_ids": [
+      "read-repeated-incentives",
+      "read-dynamic-credibility"
+    ],
+    "decoder_ids": [
+      "decode-discount-factor",
+      "decode-subgame-credibility",
+      "decode-equilibrium-fixed-point"
+    ],
+    "evidence_ids": [
+      "ev-infinitely_repeated_games-01",
+      "ev-folk_theorem-01",
+      "ev-implicit_cartels-01",
+      "ev-one_shot_deviation-01"
+    ]
+  },
+  {
+    "id": "capstone-public-announcement",
+    "title": "Distinguish private information from shared awareness",
+    "scenario": "Several people privately receive the same warning about a coordination problem, but only later does a public announcement reveal that everyone received it.",
+    "reader_task": "Explain why the public announcement can change behavior even if it contains no new physical fact.",
+    "expected_reasoning": "The key is not only who knows the fact. The key is who knows that others know, and who knows that others know that they know. Coordination often depends on shared confidence about other people's awareness. A public announcement can create that shared ladder of belief.",
+    "math_check": "Use knowledge recursion. Common knowledge is not a larger pile of private facts; it is a recursive condition about mutual awareness. The mathematical idea exists because coordinated action can require beliefs about beliefs, not only beliefs about the world.",
+    "evidence_check": "Use common-knowledge, cheap-talk, rationalizability, and Nash evidence. These records connect public information, strategic communication, and the layers of reasoning needed when choices depend on what others know.",
+    "what_wrong_answer_reveals": "If the reader says the announcement should not matter because everyone already knew the fact, they are treating information as individual storage rather than shared strategic structure. If they assume words always persuade, they are missing cheap-talk incentives.",
+    "transfer_prompt": "Apply the same test to a bank run warning or a platform outage notice. When does publicness change behavior even before anyone's private fact changes?",
+    "concepts": [
+      "common_knowledge",
+      "cheap_talk",
+      "rationalizability",
+      "nash_equilibrium"
+    ],
+    "primitives": [
+      "knowledge_recursion",
+      "belief",
+      "mutual_consistency"
+    ],
+    "case_ids": [
+      "case-public-announcement"
+    ],
+    "drill_ids": [
+      "drill-public-awareness",
+      "drill-hidden-type"
+    ],
+    "paper_reading_ids": [
+      "read-common-knowledge",
+      "read-private-information"
+    ],
+    "decoder_ids": [
+      "decode-common-knowledge",
+      "decode-type-belief-posterior",
+      "decode-equilibrium-fixed-point"
+    ],
+    "evidence_ids": [
+      "ev-common_knowledge-01",
+      "ev-cheap_talk-01",
+      "ev-rationalizability-01",
+      "ev-nash_equilibrium-01"
+    ]
+  },
+  {
+    "id": "capstone-mixing-conflict",
+    "title": "Recognize when randomness is strategic rather than indecision",
+    "scenario": "Two competitors each have a move that works well only when the other side fails to predict it. No single pure move remains stable.",
+    "reader_task": "Explain why the model may ask players to randomize, and identify whose payoffs are equalized when the mixing probability is chosen.",
+    "expected_reasoning": "Predictability creates exploitation. If one pure action can be countered, a stable pattern may require a lottery over actions. The randomization is chosen so the other side cannot improve by switching to a different response. This is a discipline on incentives, not a claim that the player is confused.",
+    "math_check": "Set the opponent's expected payoffs from their relevant actions equal, then solve for the mixing probability that makes the opponent indifferent. The reason this feels backwards is that one player's probability controls the other player's comparison.",
+    "evidence_check": "Use the mixed-strategy, minimax, expected-utility, and Nash evidence records to check the distinction between uncertainty, randomization, and mutual best response.",
+    "what_wrong_answer_reveals": "If the reader says mixed strategies mean the player does not care, they are missing the strategic role of probability. If they equalize the wrong player's payoffs, they will solve the wrong incentive problem.",
+    "transfer_prompt": "Apply the same reasoning to cybersecurity defenses that randomize inspection times. Whose behavior is the randomization meant to discipline?",
+    "concepts": [
+      "mixed_strategies",
+      "minimax",
+      "nash_equilibrium",
+      "expected_utility"
+    ],
+    "primitives": [
+      "belief",
+      "payoff_mapping",
+      "mutual_consistency"
+    ],
+    "case_ids": [
+      "case-public-announcement"
+    ],
+    "drill_ids": [
+      "drill-stable-not-good",
+      "drill-payoff-before-strategy"
+    ],
+    "paper_reading_ids": [
+      "read-equilibrium-claim",
+      "read-payoff-object"
+    ],
+    "decoder_ids": [
+      "decode-mixing-randomization",
+      "decode-best-response",
+      "decode-equilibrium-fixed-point"
+    ],
+    "evidence_ids": [
+      "ev-mixed_strategies-01",
+      "ev-minimax-01",
+      "ev-nash_equilibrium-01",
+      "ev-expected_utility-01"
+    ]
+  }
+]

@@ -37,6 +37,7 @@ def main() -> int:
     repairs = json.loads((ROOT / "analysis/throughlines/misconception-repairs.json").read_text(encoding="utf-8"))
     paper_reading = json.loads((ROOT / "analysis/throughlines/paper-reading-guide.json").read_text(encoding="utf-8"))
     jargon_decoder = json.loads((ROOT / "analysis/throughlines/jargon-decoder.json").read_text(encoding="utf-8"))
+    capstones = json.loads((ROOT / "analysis/throughlines/capstone-self-test.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_by_id = {concept["id"]: concept for concept in concepts}
@@ -51,7 +52,7 @@ def main() -> int:
     }
     supplemental_ids = {record["id"] for record in supplemental}
     themes = json.loads((ROOT / "analysis/themes/theme-map.json").read_text(encoding="utf-8"))
-    required = [SITE / name for name in ["index.html", "study-route.html", "recognition.html", "math-clinic.html", "drills.html", "cases.html", "argument-chains.html", "repairs.html", "paper-reading.html", "jargon-decoder.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
+    required = [SITE / name for name in ["index.html", "study-route.html", "recognition.html", "math-clinic.html", "drills.html", "cases.html", "argument-chains.html", "repairs.html", "paper-reading.html", "jargon-decoder.html", "capstone.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
     required.extend(SITE / "lectures" / f"{lecture['id']}.html" for lecture in lectures)
     for path in required:
@@ -71,6 +72,7 @@ def main() -> int:
     repairs_html = (SITE / "repairs.html").read_text(encoding="utf-8") if (SITE / "repairs.html").exists() else ""
     paper_reading_html = (SITE / "paper-reading.html").read_text(encoding="utf-8") if (SITE / "paper-reading.html").exists() else ""
     jargon_decoder_html = (SITE / "jargon-decoder.html").read_text(encoding="utf-8") if (SITE / "jargon-decoder.html").exists() else ""
+    capstone_html = (SITE / "capstone.html").read_text(encoding="utf-8") if (SITE / "capstone.html").exists() else ""
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     limits_html = (SITE / "limits.html").read_text(encoding="utf-8") if (SITE / "limits.html").exists() else ""
     index_html = (SITE / "index.html").read_text(encoding="utf-8") if (SITE / "index.html").exists() else ""
@@ -92,6 +94,8 @@ def main() -> int:
         errors.append("index page missing paper-reading guide link")
     if 'href="jargon-decoder.html"' not in index_html:
         errors.append("index page missing jargon decoder link")
+    if 'href="capstone.html"' not in index_html:
+        errors.append("index page missing capstone link")
     if 'href="cross-reference.html"' not in index_html:
         errors.append("index page missing cross-reference link")
     if 'href="limits.html"' not in index_html:
@@ -226,6 +230,8 @@ def main() -> int:
     drill_by_id = {drill["id"]: drill for drill in drills}
     family_by_id = {family["id"]: family for family in families}
     case_by_id = {case["id"]: case for case in cases}
+    paper_by_id = {item["id"]: item for item in paper_reading}
+    decoder_by_id = {item["id"]: item for item in jargon_decoder}
     if len(cases) < 5:
         errors.append(f"case studies has only {len(cases)} cards")
     for case in cases:
@@ -415,6 +421,55 @@ def main() -> int:
                 errors.append(f"jargon decoder {item['id']} references missing evidence: {ev_id}")
             elif f'href="evidence.html#{ev_id}"' not in jargon_decoder_html:
                 errors.append(f"jargon decoder {item['id']} missing evidence link: {ev_id}")
+    if len(capstones) < 6:
+        errors.append(f"capstone self-test has only {len(capstones)} cards")
+    for item in capstones:
+        if f'id="{item["id"]}"' not in capstone_html:
+            errors.append(f"capstone self-test item not rendered: {item['id']}")
+        for field in ["scenario", "reader_task", "expected_reasoning", "math_check", "evidence_check", "what_wrong_answer_reveals", "transfer_prompt"]:
+            value = item.get(field, "")
+            if words(value) < 16:
+                errors.append(f"capstone self-test {item['id']} has shallow {field}")
+            elif html.escape(value, quote=True) not in capstone_html:
+                errors.append(f"capstone self-test {item['id']} {field} not rendered")
+        combined = " ".join(str(item.get(field, "")) for field in ["scenario", "reader_task", "expected_reasoning", "math_check", "evidence_check", "what_wrong_answer_reveals", "transfer_prompt"])
+        if words(combined) < 185:
+            errors.append(f"capstone self-test {item['id']} has shallow combined treatment")
+        for concept_id in item.get("concepts", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"capstone self-test {item['id']} references missing concept: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in capstone_html:
+                errors.append(f"capstone self-test {item['id']} missing concept link: {concept_id}")
+        for primitive_id in item.get("primitives", []):
+            if primitive_id not in primitive_by_id:
+                errors.append(f"capstone self-test {item['id']} references missing primitive: {primitive_id}")
+            elif f'href="primitives.html#{primitive_id}"' not in capstone_html:
+                errors.append(f"capstone self-test {item['id']} missing primitive link: {primitive_id}")
+        for case_id in item.get("case_ids", []):
+            if case_id not in case_by_id:
+                errors.append(f"capstone self-test {item['id']} references missing case: {case_id}")
+            elif f'href="cases.html#{case_id}"' not in capstone_html:
+                errors.append(f"capstone self-test {item['id']} missing case link: {case_id}")
+        for drill_id in item.get("drill_ids", []):
+            if drill_id not in drill_by_id:
+                errors.append(f"capstone self-test {item['id']} references missing drill: {drill_id}")
+            elif f'href="drills.html#{drill_id}"' not in capstone_html:
+                errors.append(f"capstone self-test {item['id']} missing drill link: {drill_id}")
+        for paper_id in item.get("paper_reading_ids", []):
+            if paper_id not in paper_by_id:
+                errors.append(f"capstone self-test {item['id']} references missing paper-reading card: {paper_id}")
+            elif f'href="paper-reading.html#{paper_id}"' not in capstone_html:
+                errors.append(f"capstone self-test {item['id']} missing paper-reading link: {paper_id}")
+        for decoder_id in item.get("decoder_ids", []):
+            if decoder_id not in decoder_by_id:
+                errors.append(f"capstone self-test {item['id']} references missing decoder card: {decoder_id}")
+            elif f'href="jargon-decoder.html#{decoder_id}"' not in capstone_html:
+                errors.append(f"capstone self-test {item['id']} missing decoder link: {decoder_id}")
+        for ev_id in item.get("evidence_ids", []):
+            if ev_id not in ev_by_id:
+                errors.append(f"capstone self-test {item['id']} references missing evidence: {ev_id}")
+            elif f'href="evidence.html#{ev_id}"' not in capstone_html:
+                errors.append(f"capstone self-test {item['id']} missing evidence link: {ev_id}")
     for concept in concepts:
         if f'id="xref-{concept["id"]}"' not in cross_html:
             errors.append(f"cross index missing concept anchor: {concept['id']}")
