@@ -1318,6 +1318,9 @@ def build_themes(themes, subthemes, concepts):
   <p><strong>Why it matters:</strong> {esc(subtheme["why_it_matters"])}</p>
   <p><strong>First-principles walkthrough:</strong> {esc(subtheme["first_principles_walkthrough"])}</p>
   <p><strong>Cross-links and limits:</strong> {esc(subtheme["cross_links_and_limits"])}</p>
+  <p><strong>Recognition pattern:</strong> {esc(subtheme["recognition_pattern"])}</p>
+  <p><strong>Paper-reading move:</strong> {esc(subtheme["paper_reading_move"])}</p>
+  <p><strong>Boundary test:</strong> {esc(subtheme["boundary_test"])}</p>
   <h4>Concept Pages</h4><p class="chips">{concept_links}</p>
   <h4>Evidence Trail</h4><ul class="evidence-list">{evidence_notes}</ul>
 </article>""")

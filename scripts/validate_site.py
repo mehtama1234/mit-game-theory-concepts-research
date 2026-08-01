@@ -959,15 +959,29 @@ def main() -> int:
     for subtheme in subthemes:
         if f'id="{subtheme["id"]}"' not in themes_html:
             errors.append(f"missing subtheme anchor: {subtheme['id']}")
-        for heading in ["Everyday problem", "Hidden principle", "Mathematical lever", "Why it matters", "First-principles walkthrough", "Cross-links and limits", "Concept Pages", "Evidence Trail"]:
+        subtheme_fields = [
+            "everyday_problem",
+            "hidden_principle",
+            "mathematical_lever",
+            "why_it_matters",
+            "first_principles_walkthrough",
+            "cross_links_and_limits",
+            "recognition_pattern",
+            "paper_reading_move",
+            "boundary_test",
+        ]
+        for heading in ["Everyday problem", "Hidden principle", "Mathematical lever", "Why it matters", "First-principles walkthrough", "Cross-links and limits", "Recognition pattern", "Paper-reading move", "Boundary test", "Concept Pages", "Evidence Trail"]:
             if heading not in themes_html:
                 errors.append(f"themes page missing subtheme heading: {heading}")
-        for field in ["everyday_problem", "hidden_principle", "mathematical_lever", "why_it_matters", "first_principles_walkthrough", "cross_links_and_limits"]:
+        for field in subtheme_fields:
             value = subtheme.get(field, "")
             if words(value) < 18:
                 errors.append(f"subtheme {subtheme['id']} has shallow {field}")
             elif html.escape(value, quote=True) not in themes_html:
                 errors.append(f"subtheme {subtheme['id']} {field} not rendered")
+        combined = " ".join(str(subtheme.get(field, "")) for field in subtheme_fields)
+        if words(combined) < 400:
+            errors.append(f"subtheme {subtheme['id']} has shallow combined treatment")
         for concept_id in subtheme.get("concepts", []):
             if concept_id not in concept_by_id:
                 errors.append(f"subtheme {subtheme['id']} references missing concept: {concept_id}")

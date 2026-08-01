@@ -213,7 +213,18 @@ def main() -> int:
         "transfer_boundary",
     ]
     theme_words = [words(" ".join(str(t.get(f, "")) for f in theme_fields)) for t in themes]
-    subtheme_words = [words(" ".join(str(s.get(f, "")) for f in ["everyday_problem", "hidden_principle", "mathematical_lever", "why_it_matters", "first_principles_walkthrough", "cross_links_and_limits"])) for s in subthemes]
+    subtheme_fields = [
+        "everyday_problem",
+        "hidden_principle",
+        "mathematical_lever",
+        "why_it_matters",
+        "first_principles_walkthrough",
+        "cross_links_and_limits",
+        "recognition_pattern",
+        "paper_reading_move",
+        "boundary_test",
+    ]
+    subtheme_words = [words(" ".join(str(s.get(f, "")) for f in subtheme_fields)) for s in subthemes]
     themes_html = (SITE / "themes.html").read_text(encoding="utf-8") if (SITE / "themes.html").exists() else ""
     rendered_subthemes = 0
     subtheme_concept_links = 0
@@ -223,7 +234,7 @@ def main() -> int:
             rendered_subthemes += 1
         else:
             errors.append(f"subtheme {subtheme['id']} not rendered on themes page")
-        for field in ["everyday_problem", "hidden_principle", "mathematical_lever", "why_it_matters", "first_principles_walkthrough", "cross_links_and_limits"]:
+        for field in subtheme_fields:
             value = str(subtheme.get(field, ""))
             if value and html_lib.escape(value, quote=True) not in themes_html:
                 errors.append(f"subtheme {subtheme['id']} {field} not rendered")
@@ -1139,7 +1150,7 @@ def main() -> int:
         if count < 400:
             errors.append(f"theme {theme['id']} has low synthesis depth: {count} words")
     for subtheme, count in zip(subthemes, subtheme_words):
-        if count < 180:
+        if count < 400:
             errors.append(f"subtheme {subtheme['id']} has low synthesis depth: {count} words")
     for primitive, count in zip(primitives, primitive_words):
         if count < 320:
