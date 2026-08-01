@@ -350,8 +350,12 @@ def build_math_clinic(clinic, deriv_by_id, concept_by_id, ev_by_id):
   <p><strong>Problem before math:</strong> {esc(item["problem_before_math"])}</p>
   <p><strong>Failed shortcut:</strong> {esc(item["failed_shortcut"])}</p>
   <p><strong>Plain-English equation reading:</strong> {esc(item["plain_english_equation_reading"])}</p>
+  <p><strong>Symbol by symbol:</strong> {esc(item["symbol_by_symbol"])}</p>
   <p><strong>Worked numbers:</strong> {esc(item["worked_numbers"])}</p>
+  <p><strong>Why the math has to exist:</strong> {esc(item["why_math_has_to_exist"])}</p>
+  <p><strong>Assumption check:</strong> {esc(item["assumption_check"])}</p>
   <p><strong>Why this changes reasoning:</strong> {esc(item["why_this_changes_reasoning"])}</p>
+  <p><strong>Misuse repair:</strong> {esc(item["misuse_repair"])}</p>
   <p><strong>Transfer test:</strong> {esc(item["transfer_test"])}</p>
   <h3>Concept Pages</h3><p class="chips">{concept_links}</p>
   <h3>Evidence Trail</h3><ul class="evidence-list">{evidence_links}</ul>

@@ -206,13 +206,14 @@ def main() -> int:
             seen_math_derivations.add(derivation_id)
             if f'href="primitives.html#{derivation_id}"' not in math_clinic_html:
                 errors.append(f"math clinic {item['id']} missing derivation link: {derivation_id}")
-        for field in ["problem_before_math", "failed_shortcut", "plain_english_equation_reading", "worked_numbers", "why_this_changes_reasoning", "transfer_test"]:
+        fields = ["problem_before_math", "failed_shortcut", "plain_english_equation_reading", "symbol_by_symbol", "worked_numbers", "why_math_has_to_exist", "assumption_check", "why_this_changes_reasoning", "misuse_repair", "transfer_test"]
+        for field in fields:
             value = item.get(field, "")
-            if words(value) < 14:
+            if words(value) < 22:
                 errors.append(f"math clinic {item['id']} has shallow {field}")
             elif html.escape(value, quote=True) not in math_clinic_html:
                 errors.append(f"math clinic {item['id']} {field} not rendered")
-        if words(" ".join(str(item.get(field, "")) for field in ["problem_before_math", "failed_shortcut", "plain_english_equation_reading", "worked_numbers", "why_this_changes_reasoning", "transfer_test"])) < 120:
+        if words(" ".join(str(item.get(field, "")) for field in fields)) < 330:
             errors.append(f"math clinic {item['id']} has shallow combined walkthrough")
         for concept_id in item.get("concepts", []):
             if concept_id not in concept_by_id:
