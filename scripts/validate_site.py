@@ -682,6 +682,8 @@ def main() -> int:
             "naive_overread",
             "stress_test",
             "transfer_red_flag",
+            "evidence_that_would_change_mind",
+            "narrow_claim_after_audit",
         ]
         for field in assumption_fields:
             value = item.get(field, "")
@@ -690,7 +692,7 @@ def main() -> int:
             elif html.escape(value, quote=True) not in assumptions_html:
                 errors.append(f"assumption-audit lab {item['id']} {field} not rendered")
         combined = " ".join(str(item.get(field, "")) for field in assumption_fields)
-        if words(combined) < 360:
+        if words(combined) < 470:
             errors.append(f"assumption-audit lab {item['id']} has shallow combined treatment")
         for concept_id in item.get("concepts", []):
             if concept_id not in concept_by_id:

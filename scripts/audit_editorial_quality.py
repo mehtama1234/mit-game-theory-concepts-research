@@ -915,12 +915,20 @@ def main() -> int:
             "naive_overread",
             "stress_test",
             "transfer_red_flag",
+            "evidence_that_would_change_mind",
+            "narrow_claim_after_audit",
         ]
         text = " ".join(str(item.get(k, "")) for k in assumption_fields)
         treatment_words = words(text)
         assumption_words.append(treatment_words)
-        if treatment_words < 360:
+        if treatment_words < 470:
             errors.append(f"assumption-audit lab {item['id']} has shallow treatment: {treatment_words} words")
+        for field in ["evidence_that_would_change_mind", "narrow_claim_after_audit"]:
+            value = item.get(field, "")
+            if words(value) < 35:
+                errors.append(f"assumption-audit lab {item['id']} has shallow {field}")
+            elif html_lib.escape(value, quote=True) not in assumptions_html:
+                errors.append(f"assumption-audit lab {item['id']} {field} not rendered")
         linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in assumptions_html]
         linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in assumptions_html]
         linked_proofs = [pid for pid in item.get("proof_ids", []) if f'href="proof-sketches.html#{pid}"' in assumptions_html]
