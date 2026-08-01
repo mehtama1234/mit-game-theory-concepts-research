@@ -65,6 +65,7 @@ def main() -> int:
         f"- Method families: {len(families)}",
         f"- Review guide cards: {len(review_cards)}",
         f"- Publication status cards: {len(publication_status)}",
+        f"- Root handoff present: {(ROOT / 'HANDOFF.md').exists()}",
         f"- Site HTML files: {len(list(SITE.rglob('*.html')))}",
         "",
         "## Validation Evidence",
@@ -81,6 +82,7 @@ def main() -> int:
         "- Generic-template guard: validators reject the original template phrases in generated concept prose and published HTML.",
         "- Reviewability: `review-guide.html` gives an explicit route for checking first-principles depth, lecture faithfulness, math clarity, reader practice, and publication state.",
         "- Publication status: `publication-status.html` separates local build proof, remote branch proof, generated-site-branch proof, and public-hosting proof.",
+        "- Handoff: `HANDOFF.md` gives a durable root-level review and continuation guide.",
         "- Reader-facing site: proven by static generation, link validation, evidence-anchor validation, diagrams, and screenshot render audit.",
         "- Remote sync: verified outside this report by `git status --short --branch`, `git log -1 --oneline`, remote branch hashes, and the push result.",
         "- Public hosting: a pushed `gh-pages` branch is not the same as an enabled public Pages URL; hosting status must be checked separately.",
@@ -92,7 +94,7 @@ def main() -> int:
         "",
         "## Current Conclusion",
         "",
-        "Local research/build readiness is stronger than the first committed pass: the atlas now has hand-authored synthesis for themes, subthemes, primitives, method families, evidence payloads, a reviewer-facing audit route, and an explicit publication-status surface, with validators that reject the older generic patterns.",
+        "Local research/build readiness is stronger than the first committed pass: the atlas now has hand-authored synthesis for themes, subthemes, primitives, method families, evidence payloads, a reviewer-facing audit route, an explicit publication-status surface, and a root handoff, with validators that reject the older generic patterns.",
         "",
     ]
     REPORT.parent.mkdir(parents=True, exist_ok=True)

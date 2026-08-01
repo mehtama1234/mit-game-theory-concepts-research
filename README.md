@@ -13,3 +13,8 @@ The working standard is the Stanford course concept-atlas pattern:
 - cite transcript-backed evidence for concepts, themes, and subthemes
 - validate JSON artifacts and site links before committing
 
+Current reviewer handoff:
+
+- `HANDOFF.md`
+- `site/review-guide.html`
+- `site/publication-status.html`
