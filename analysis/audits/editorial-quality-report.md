@@ -19,7 +19,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Concept equation note words: min 30, max 37
 - Concept worked-example card words: min 70, max 106
 - Lecture pages with derivation links: 25
-- Method-family treatment words: min 234, max 297
+- Method-family treatment words: min 495, max 585
 - Method-family concept links: 15
 - Method-family primitive links: 6
 - Method-family evidence links: 6

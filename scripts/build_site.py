@@ -1415,10 +1415,18 @@ def build_families(families, concept_by_id, ev_by_id):
   <h2>{esc(family["name"])}</h2>
   <p>{esc(family["plain_language_family_summary"])}</p>
   {diagram}
+  <h3>Family Problem</h3><p>{esc(family["family_problem"])}</p>
+  <h3>First-Principles Pattern</h3><p>{esc(family["first_principles_pattern"])}</p>
   <h3>Family Walkthrough</h3><p>{esc(family["family_walkthrough"])}</p>
   <h3>Mathematical Signature</h3><p>{esc(family.get("mathematical_signature", ", ".join(family["mathematical_primitive"])))}</p>
   <h3>Why This Family Matters</h3><p>{esc(family.get("why_family_matters", family["paper_family_treatment"]))}</p>
+  <h3>Where The Analogy Breaks</h3><p>{esc(family["where_analogy_breaks"])}</p>
+  <h3>Lecture Evidence Chain</h3><p>{esc(family["lecture_evidence_chain"])}</p>
   <h3>How To Read Papers In This Family</h3><p>{esc(family["paper_family_treatment"])}</p>
+  <h3>Naive Failure Case</h3><p>{esc(family["naive_failure_case"])}</p>
+  <h3>Worked Model Pattern</h3><p>{esc(family["worked_model_pattern"])}</p>
+  <h3>Paper Diagnostic</h3><p>{esc(family["paper_diagnostic"])}</p>
+  <h3>Transfer Boundary</h3><p>{esc(family["transfer_boundary"])}</p>
   <h3>Core Concepts</h3><p class="chips">{concept_links}</p>
   <h3>Reusable Primitives</h3><p class="chips">{primitive_links}</p>
   <h3>Evidence Trail</h3><ul class="evidence-list">{evidence_links}</ul>

@@ -993,9 +993,32 @@ def main() -> int:
     for family in families:
         if f'id="{family["id"]}"' not in families_html:
             errors.append(f"missing family anchor: {family['id']}")
-        for heading in ["Core Concepts", "Reusable Primitives", "Evidence Trail"]:
+        family_fields = [
+            "family_problem",
+            "first_principles_pattern",
+            "mathematical_signature",
+            "why_family_matters",
+            "family_walkthrough",
+            "where_analogy_breaks",
+            "lecture_evidence_chain",
+            "paper_family_treatment",
+            "naive_failure_case",
+            "worked_model_pattern",
+            "paper_diagnostic",
+            "transfer_boundary",
+        ]
+        for heading in ["Family Problem", "First-Principles Pattern", "Family Walkthrough", "Mathematical Signature", "Why This Family Matters", "Where The Analogy Breaks", "Lecture Evidence Chain", "How To Read Papers In This Family", "Naive Failure Case", "Worked Model Pattern", "Paper Diagnostic", "Transfer Boundary", "Core Concepts", "Reusable Primitives", "Evidence Trail"]:
             if heading not in families_html:
                 errors.append(f"families page missing heading: {heading}")
+        for field in family_fields:
+            value = family.get(field, "")
+            if words(value) < 18:
+                errors.append(f"family {family['id']} has shallow {field}")
+            elif html.escape(value, quote=True) not in families_html:
+                errors.append(f"family {family['id']} {field} not rendered")
+        combined = " ".join(str(family.get(field, "")) for field in family_fields)
+        if words(combined) < 400:
+            errors.append(f"family {family['id']} has shallow combined treatment")
         for concept_id in family.get("concepts", []):
             if concept_id not in concept_by_id:
                 errors.append(f"family {family['id']} references missing concept: {concept_id}")

@@ -271,7 +271,21 @@ def main() -> int:
         if len(linked) != len(primitive.get("concepts_in_atlas", [])):
             errors.append(f"primitive {primitive['id']} missing concept backlinks")
     derivation_words = [words(" ".join(str(d.get(f, "")) for f in ["everyday_setup", "equation", "symbol_by_symbol", "why_it_matters", "common_misread"]) + " " + " ".join(d.get("derivation_steps", []))) for d in derivations]
-    family_words = [words(" ".join(str(f.get(k, "")) for k in ["family_problem", "first_principles_pattern", "mathematical_signature", "why_family_matters", "family_walkthrough", "where_analogy_breaks", "lecture_evidence_chain", "paper_family_treatment"])) for f in families]
+    family_fields = [
+        "family_problem",
+        "first_principles_pattern",
+        "mathematical_signature",
+        "why_family_matters",
+        "family_walkthrough",
+        "where_analogy_breaks",
+        "lecture_evidence_chain",
+        "paper_family_treatment",
+        "naive_failure_case",
+        "worked_model_pattern",
+        "paper_diagnostic",
+        "transfer_boundary",
+    ]
+    family_words = [words(" ".join(str(f.get(k, "")) for k in family_fields)) for f in families]
     route_html = (SITE / "study-route.html").read_text(encoding="utf-8") if (SITE / "study-route.html").exists() else ""
     route_fields = [
         "reader_question",
@@ -1061,6 +1075,10 @@ def main() -> int:
     for family in families:
         if f'id="{family["id"]}"' not in families_html:
             errors.append(f"method family {family['id']} not rendered")
+        for field in family_fields:
+            value = str(family.get(field, ""))
+            if value and html_lib.escape(value, quote=True) not in families_html:
+                errors.append(f"method family {family['id']} {field} not rendered")
         linked_concepts = [cid for cid in family.get("concepts", []) if f'href="concepts/{cid}.html"' in families_html]
         linked_primitives = [pid for pid in family.get("mathematical_primitive", []) if f'href="primitives.html#{pid}"' in families_html]
         linked_evidence = [eid for eid in family.get("course_evidence_ids", []) if f'href="evidence.html#{eid}"' in families_html]
@@ -1161,7 +1179,7 @@ def main() -> int:
         if count < 115:
             errors.append(f"derivation {derivation['id']} has low teaching depth: {count} words")
     for family, count in zip(families, family_words):
-        if count < 180:
+        if count < 400:
             errors.append(f"method family {family['id']} has low synthesis depth: {count} words")
 
     for field in ["lecture_argument", "why_span_matters", "conceptual_payload"]:
