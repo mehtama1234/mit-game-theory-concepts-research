@@ -118,7 +118,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Worked transfer decoder links: 12
 - Worked transfer evidence links: 24
 - Capstone self-test cards: 6
-- Capstone self-test words: min 415, max 432
+- Capstone self-test words: min 488, max 506
 - Capstone concept links: 24
 - Capstone primitive links: 18
 - Capstone case links: 6

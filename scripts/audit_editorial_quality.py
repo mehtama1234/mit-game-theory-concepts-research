@@ -1046,6 +1046,7 @@ def main() -> int:
         "minimum_passing_answer",
         "self_audit_checklist",
         "transfer_failure_mode",
+        "grading_rubric",
     ]
     for item in capstones:
         if f'id="{item["id"]}"' in capstone_html:
@@ -1058,8 +1059,12 @@ def main() -> int:
         )
         treatment_words = words(text)
         capstone_words.append(treatment_words)
-        if treatment_words < 400:
+        if treatment_words < 470:
             errors.append(f"capstone self-test {item['id']} has shallow treatment: {treatment_words} words")
+        if words(item.get("grading_rubric", "")) < 45:
+            errors.append(f"capstone self-test {item['id']} has shallow grading rubric")
+        if html_lib.escape(str(item.get("grading_rubric", "")), quote=True) not in capstone_html:
+            errors.append(f"capstone self-test {item['id']} grading rubric not rendered")
         linked_concepts = [cid for cid in item.get("concepts", []) if f'href="concepts/{cid}.html"' in capstone_html]
         linked_primitives = [pid for pid in item.get("primitives", []) if f'href="primitives.html#{pid}"' in capstone_html]
         linked_cases = [cid for cid in item.get("case_ids", []) if f'href="cases.html#{cid}"' in capstone_html]
