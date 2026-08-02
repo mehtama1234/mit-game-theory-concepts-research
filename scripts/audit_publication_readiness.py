@@ -94,6 +94,7 @@ def main() -> int:
         "- Evidence discipline: every concept has two transcript evidence records with local transcript windows and YouTube links.",
         "- Generic-template guard: validators reject the original template phrases in generated concept prose and published HTML.",
         "- Course-wide first-principles essay layer: `first-principles.html` gives plain-language long-form explanations of the whole course, a structured cross-field application map, and an everyday glossary for core vocabulary.",
+        "- Plain-language style gate: `scripts/audit_plain_language.py` rejects banned filler, shallow essay sections, missing everyday setup, and missing limits or mistake language.",
         "- First-principles concept integration: every concept page links back to relevant course essays, application maps, or glossary entries.",
         "- Reviewability: `review-guide.html` gives an explicit route for checking first-principles depth, lecture faithfulness, math clarity, reader practice, and publication state.",
         "- Publication status: `publication-status.html` separates local build proof, remote branch proof, generated-site-branch proof, and public-hosting proof.",

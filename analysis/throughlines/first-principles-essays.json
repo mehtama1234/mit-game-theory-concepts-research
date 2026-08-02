@@ -14,7 +14,7 @@
       },
       {
         "heading": "Why the course keeps adding structure",
-        "body": "A one-shot simultaneous game is a clean starting point, but it hides too much. Some decisions happen in order. Then timing matters. Some relationships repeat. Then the future can reward or punish present behavior. Some people know facts that others do not. Then beliefs matter. Some institutions set rules before people act. Then design matters. Some messages are cheap and some signals are costly. Then communication has to be read through incentives. The course is not a pile of separate topics. It is one question repeated under richer conditions: when each person reacts to others, what can we honestly predict, design, or explain?"
+        "body": "A one-shot simultaneous game is a clean starting point, but it hides too much. Some decisions happen in order. Then timing matters. Some relationships repeat. Then the future can reward or punish present behavior. Some people know facts that others do not. Then beliefs matter. Some institutions set rules before people act. Then design matters. Some messages are cheap and some signals are costly. Then communication has to be read through incentives. The course is not a pile of separate topics. It is one question repeated under richer conditions: when each person reacts to others, what can we honestly predict, design, or explain? The mistake is to carry an answer from one setting into another after timing, information, or rules have changed."
       }
     ],
     "applications": [
@@ -44,7 +44,7 @@
       },
       {
         "heading": "The beginner mistake",
-        "body": "The common mistake is to treat the payoff table as if it came from nature. It did not. Someone chose what counts. The table is useful because it forces the writer to be explicit. It is dangerous when the writer forgets what was left outside the table."
+        "body": "The common mistake is to treat the payoff table as if it came from nature. It did not. Someone chose what counts. The table is useful because it forces the writer to be explicit. It is dangerous when the writer forgets what was left outside the table. A careful reader should ask whether risk, fairness, budget limits, outside harm, pride, fear, or future reputation has been hidden. If one of those forces matters in the real setting, the payoff table may need to be rebuilt before the solution deserves trust."
       }
     ],
     "applications": [
@@ -66,7 +66,7 @@
     "sections": [
       {
         "heading": "The plain idea",
-        "body": "Suppose everyone can see the proposed pattern of behavior. If one person would rather change while the others stay put, the pattern is not stable. If nobody wants to change alone, the pattern passes the equilibrium test. This is useful because it separates wishful thinking from a prediction that survives individual incentives."
+        "body": "Suppose everyone can see the proposed pattern of behavior. If one person would rather change while the others stay put, the pattern is not stable. If nobody wants to change alone, the pattern passes the equilibrium test. This is useful because it separates wishful thinking from a prediction that survives individual incentives. The beginner mistake is to skip the one-person deviation check and call an outcome stable because it sounds balanced. Stability has to be earned by checking each chooser's reason to stay."
       },
       {
         "heading": "Why bad outcomes can be stable",
@@ -104,7 +104,7 @@
       },
       {
         "heading": "The last-period lesson",
-        "body": "A known final round can unravel cooperation. In the last round, future punishment is gone. If cooperation needs future punishment, it may fail there. Once the last round is solved, the next-to-last round may also lose its discipline, and the logic can move backward. This is why finite and infinite repetition teach different lessons."
+        "body": "A known final round can unravel cooperation. In the last round, future punishment is gone. If cooperation needs future punishment, it may fail there. Once the last round is solved, the next-to-last round may also lose its discipline, and the logic can move backward. This is why finite and infinite repetition teach different lessons. The mistake is to say repeated contact creates cooperation without checking the endpoint, patience, observation, and punishment. If any of those pieces breaks, the cooperative story can break too."
       }
     ],
     "applications": [
@@ -134,7 +134,7 @@
       },
       {
         "heading": "Messages are not all the same",
-        "body": "A costly signal can separate types because different people face different costs or benefits from sending it. Cheap talk is different. If a message is free and cannot be verified, it persuades only when incentives make truthful speech possible. The model asks when words change beliefs and when they are only noise."
+        "body": "A costly signal can separate types because different people face different costs or benefits from sending it. Cheap talk is different. If a message is free and cannot be verified, it persuades only when incentives make truthful speech possible. The model asks when words change beliefs and when they are only noise. The common mistake is to treat every message as information. A message becomes useful only after the receiver can explain why the sender would choose that message instead of a more convenient lie."
       }
     ],
     "applications": [
@@ -160,7 +160,7 @@
       },
       {
         "heading": "Why auctions are central",
-        "body": "An auction is a compact laboratory for hidden values, incentives, information, and rules. A first-price auction, second-price auction, common-value auction, reserve price, and ad auction all change what a bid means. The same person may bid differently under different rules because the payment rule changes the cost of winning."
+        "body": "An auction is a compact laboratory for hidden values, incentives, information, and rules. A first-price auction, second-price auction, common-value auction, reserve price, and ad auction all change what a bid means. The same person may bid differently under different rules because the payment rule changes the cost of winning. The beginner mistake is to look only at who values the object most. The rule decides how hard people shade, whether truthful bidding is attractive, and what information winning itself reveals."
       },
       {
         "heading": "Why revenue equivalence is fragile",
@@ -194,7 +194,7 @@
       },
       {
         "heading": "What existence does and does not give you",
-        "body": "An existence proof can be very important even when it does not tell you which equilibrium people will play or how quickly they will find it. It says the model is not empty. It also warns you to check uniqueness, learning, computation, and interpretation separately. A topological proof can guarantee a stable point under assumptions, but it cannot by itself tell you whether the stable point is good, easy to reach, or relevant to the real setting."
+        "body": "An existence proof can be very important even when it does not tell you which equilibrium people will play or how quickly they will find it. It says the model is not empty. It also warns you to check uniqueness, learning, computation, and interpretation separately. A topological proof can guarantee a stable point under assumptions, but it cannot by itself tell you whether the stable point is good, easy to reach, or relevant to the real setting. The mistake is to treat existence as if it were selection, prediction, or welfare."
       }
     ],
     "applications": [
@@ -220,11 +220,11 @@
       },
       {
         "heading": "It improves criticism",
-        "body": "Game theory is useful even when you reject a model. It gives you precise questions for rejection. Which payoff is wrong? Which action was omitted? Which information assumption fails? Which future consequence was ignored? Which rule changes incentives? A vague objection says the model is unrealistic. A first-principles objection says exactly where the model loses the real problem."
+        "body": "Game theory is useful even when you reject a model. It gives you precise questions for rejection. Which payoff is wrong? Which action was omitted? Which information assumption fails? Which future consequence was ignored? Which rule changes incentives? A vague objection says the model is unrealistic. A first-principles objection says exactly where the model loses the real problem. That is a better criticism because it can be checked, repaired, or compared with another model instead of ending the discussion with a complaint."
       },
       {
         "heading": "It helps design better settings",
-        "body": "If behavior responds to incentives, better outcomes often require better settings rather than louder wishes. Rules, timing, information, penalties, verification, repeated contact, and outside options can change what people find worth doing. The practical value of the course is not memorizing names. It is learning how to rebuild the situation so good behavior is easier to sustain."
+        "body": "If behavior responds to incentives, better outcomes often require better settings rather than louder wishes. Rules, timing, information, penalties, verification, repeated contact, and outside options can change what people find worth doing. The practical value of the course is not memorizing names. It is learning how to rebuild the situation so good behavior is easier to sustain. The mistake is to ask for a better outcome while leaving the old incentives untouched. In many settings the durable fix is institutional, not verbal."
       }
     ],
     "applications": [
@@ -254,7 +254,7 @@
       },
       {
         "heading": "The practical reading test",
-        "body": "When reading any model, translate it back into everyday language. A player is a decision maker. An action is something that person can choose. A payoff is the comparison the model says the person cares about. Information is what the person can observe before choosing. Timing is the order in which choices and observations happen. If you cannot translate those parts back into the real setting, the formal model may be doing more hiding than explaining."
+        "body": "When reading any model, translate it back into everyday language. A player is a decision maker. An action is something that person can choose. A payoff is the comparison the model says the person cares about. Information is what the person can observe before choosing. Timing is the order in which choices and observations happen. If you cannot translate those parts back into the real setting, the formal model may be doing more hiding than explaining. The mistake is to admire a clean representation before checking whether it kept the real pressure."
       }
     ],
     "applications": [
@@ -314,7 +314,7 @@
       },
       {
         "heading": "Why zero-sum games are special",
-        "body": "In a zero-sum game, one side's gain is the other side's loss. That makes security reasoning clean. A player can ask what result they can guarantee against the worst response. But most social and economic settings are not zero-sum. There may be gains from trade, future cooperation, side payments, or rule changes. The security logic is powerful when interests are directly opposed and incomplete when the setting has room for joint improvement."
+        "body": "In a zero-sum game, one side's gain is the other side's loss. That makes security reasoning clean. A player can ask what result they can guarantee against the worst response. But most social and economic settings are not zero-sum. There may be gains from trade, future cooperation, side payments, or rule changes. The security logic is powerful when interests are directly opposed and incomplete when the setting has room for joint improvement. The mistake is to call every conflict zero-sum and miss the rule change that could help both sides."
       }
     ],
     "applications": [
@@ -344,7 +344,7 @@
       },
       {
         "heading": "Why subgame perfection tightens equilibrium",
-        "body": "A Nash equilibrium can include a threat that would not be used if the threatened path happened. Subgame perfection removes that kind of weak support. It says the plan must be sensible not only at the start, but after every history where a real decision remains. The result is a cleaner test of credibility. It does not make people honest. It checks whether later incentives support the claimed plan."
+        "body": "A Nash equilibrium can include a threat that would not be used if the threatened path happened. Subgame perfection removes that kind of weak support. It says the plan must be sensible not only at the start, but after every history where a real decision remains. The result is a cleaner test of credibility. It does not make people honest. It checks whether later incentives support the claimed plan. The mistake is to believe an early statement without walking forward to the later node where the statement would have to be honored."
       }
     ],
     "applications": [
@@ -434,7 +434,7 @@
       },
       {
         "heading": "Ad auctions add platform design",
-        "body": "Ad auctions are not only textbook auctions with internet labels. Platforms care about bids, relevance, user attention, budget constraints, pacing, and repeated participation. The rule may combine bid and quality. The advertiser may care about clicks, conversions, or long-run learning. The platform may care about revenue and user experience. The first-principles move is to identify the objective and rule before borrowing a textbook result. A result about one object sold once may not travel cleanly to repeated automated bidding for attention."
+        "body": "Ad auctions are not only textbook auctions with internet labels. Platforms care about bids, relevance, user attention, budget constraints, pacing, and repeated participation. The rule may combine bid and quality. The advertiser may care about clicks, conversions, or long-run learning. The platform may care about revenue and user experience. The first-principles move is to identify the objective and rule before borrowing a textbook result. A result about one object sold once may not travel cleanly to repeated automated bidding for attention. The mistake is to use the auction name while ignoring the platform rule that changes what bidding means."
       }
     ],
     "applications": [

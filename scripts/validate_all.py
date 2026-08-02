@@ -23,6 +23,7 @@ def main() -> int:
         run(["npm", "run", "check:site-app"])
         run(["npm", "run", "build"])
         run(["python3", "scripts/audit_editorial_quality.py"])
+        run(["python3", "scripts/audit_plain_language.py"])
         run(["python3", "scripts/audit_site_render.py"])
     except subprocess.CalledProcessError as exc:
         return exc.returncode

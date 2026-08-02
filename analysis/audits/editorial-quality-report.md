@@ -22,7 +22,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Concept equation note words: min 65, max 77
 - Concept worked-example card words: min 208, max 239
 - First-principles essay cards: 16
-- First-principles essay words: min 301, max 436
+- First-principles essay words: min 301, max 455
 - First-principles application cards: 32
 - First-principles concept links: 86
 - Cross-field application map cards: 6
