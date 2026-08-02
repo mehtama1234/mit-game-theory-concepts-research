@@ -27,6 +27,7 @@ def main() -> int:
     derivations = json.loads((ROOT / "analysis/throughlines/derivations.json").read_text(encoding="utf-8"))
     families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
     first_principles_essays = json.loads((ROOT / "analysis/throughlines/first-principles-essays.json").read_text(encoding="utf-8"))
+    why_matters = json.loads((ROOT / "analysis/throughlines/why-matters-checkpoints.json").read_text(encoding="utf-8"))
     application_map = json.loads((ROOT / "analysis/throughlines/application-map.json").read_text(encoding="utf-8"))
     everyday_glossary = json.loads((ROOT / "analysis/throughlines/everyday-glossary.json").read_text(encoding="utf-8"))
     review_cards = json.loads((ROOT / "analysis/throughlines/review-guide.json").read_text(encoding="utf-8"))
@@ -73,6 +74,7 @@ def main() -> int:
         f"- Derivation cards: {len(derivations)}",
         f"- Method families: {len(families)}",
         f"- First-principles essay cards: {len(first_principles_essays)}",
+        f"- Why-it-matters checkpoints: {len(why_matters)}",
         f"- Cross-field application map cards: {len(application_map)}",
         f"- Everyday glossary terms: {len(everyday_glossary)}",
         f"- Concepts covered by first-principles layer: {len(first_principles_coverage & {concept['id'] for concept in concepts})}",
@@ -93,7 +95,7 @@ def main() -> int:
         "- First-principles concept atlas: proven structurally by `scripts/validate_first_principles_atlas.py`; prose uses required hand-crafted overrides.",
         "- Evidence discipline: every concept has two transcript evidence records with local transcript windows and YouTube links.",
         "- Generic-template guard: validators reject the original template phrases in generated concept prose and published HTML.",
-        "- Course-wide first-principles essay layer: `first-principles.html` gives plain-language long-form explanations of the whole course, a structured cross-field application map, and an everyday glossary for core vocabulary.",
+        "- Course-wide first-principles essay layer: `first-principles.html` gives plain-language long-form explanations of the whole course, why-it-matters checkpoints, a structured cross-field application map, and an everyday glossary for core vocabulary.",
         "- Plain-language style gate: `scripts/audit_plain_language.py` rejects banned filler, shallow essay sections, missing everyday setup, and missing limits or mistake language.",
         "- First-principles concept integration: every concept page links back to relevant course essays, application maps, or glossary entries.",
         "- Reviewability: `review-guide.html` gives an explicit route for checking first-principles depth, lecture faithfulness, math clarity, reader practice, and publication state.",
@@ -110,7 +112,7 @@ def main() -> int:
         "",
         "## Current Conclusion",
         "",
-        "Local research/build readiness is stronger than the first committed pass: the atlas now has hand-authored synthesis for themes, subthemes, primitives, method families, evidence payloads, a course-wide first-principles essay layer, a structured cross-field application map, an everyday glossary, a reviewer-facing audit route, an explicit publication-status surface, and a root handoff, with validators that reject the older generic patterns.",
+        "Local research/build readiness is stronger than the first committed pass: the atlas now has hand-authored synthesis for themes, subthemes, primitives, method families, evidence payloads, a course-wide first-principles essay layer, why-it-matters checkpoints, a structured cross-field application map, an everyday glossary, a reviewer-facing audit route, an explicit publication-status surface, and a root handoff, with validators that reject the older generic patterns.",
         "",
     ]
     REPORT.parent.mkdir(parents=True, exist_ok=True)

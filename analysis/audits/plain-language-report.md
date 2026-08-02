@@ -6,6 +6,8 @@ This audit checks the first-principles layer for simple wording, everyday setup,
 
 - Essay cards: 16
 - Essay words: min 301, max 455
+- Why-it-matters checkpoints: 8
+- Why-it-matters words: min 98, max 128
 - Application map cards: 6
 - Application map words: min 150, max 192
 - Glossary terms: 20

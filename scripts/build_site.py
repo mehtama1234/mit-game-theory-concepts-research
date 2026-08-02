@@ -249,7 +249,7 @@ def build_index(concepts, themes, evidence, lectures):
     write(SITE / "index.html", page("Overview", body, "overview"))
 
 
-def build_first_principles_essays(essays, application_map, everyday_glossary, concept_by_id):
+def build_first_principles_essays(essays, why_matters, application_map, everyday_glossary, concept_by_id):
     cards = []
     for essay in essays:
         section_html = "".join(
@@ -273,6 +273,22 @@ def build_first_principles_essays(essays, application_map, everyday_glossary, co
   <div class="application-grid">{application_html}</div>
   <h3>Course Links</h3>
   <p class="chips">{concept_links or '<span class="chip muted">No direct concept links yet</span>'}</p>
+</article>""")
+    why_cards = []
+    for item in why_matters:
+        concept_links = "".join(
+            f'<a class="chip" href="concepts/{esc(concept_id)}.html">{esc(concept_by_id[concept_id]["name"])}</a>'
+            for concept_id in item.get("concept_ids", [])
+            if concept_id in concept_by_id
+        )
+        why_cards.append(f"""<article class="wide-card why-matters-card" id="{esc(item["id"])}">
+  <h2>{esc(item["title"])}</h2>
+  <p><strong>Everyday situation:</strong> {esc(item["everyday_situation"])}</p>
+  <p><strong>Mistaken reading:</strong> {esc(item["mistaken_reading"])}</p>
+  <p><strong>First-principles correction:</strong> {esc(item["first_principles_correction"])}</p>
+  <p><strong>Why it matters:</strong> {esc(item["why_it_matters"])}</p>
+  <p><strong>Where else it applies:</strong> {esc(item["where_else_it_applies"])}</p>
+  <p class="chips">{concept_links}</p>
 </article>""")
     application_cards = []
     for application in application_map:
@@ -316,6 +332,10 @@ def build_first_principles_essays(essays, application_map, everyday_glossary, co
   <h1>Game Theory In Everyday Words</h1>
   <p>These essays explain the course as a connected way of thinking: start with ordinary choice under pressure, then add timing, information, repetition, rules, knowledge, and applications outside economics.</p>
 </section>""" + "".join(cards) + """<section class="page-head">
+  <p class="eyebrow">Why it matters checkpoints</p>
+  <h1>What This Reasoning Changes</h1>
+  <p>These checkpoints show the practical difference between a surface reading and a first-principles reading. Each one names the mistaken interpretation, the correction, and the decision or diagnosis that changes.</p>
+</section>""" + "".join(why_cards) + """<section class="page-head">
   <p class="eyebrow">Cross-field application map</p>
   <h1>Where The Same Reasoning Travels</h1>
   <p>Each field below names the players or objects, choices, information, timing, outcome logic, importance, and limits. The point is to map the reasoning carefully, not to claim every field is secretly the same.</p>
@@ -1711,6 +1731,7 @@ def main():
     review_cards = load("analysis/throughlines/review-guide.json")
     publication_status = load("analysis/throughlines/publication-status.json")
     first_principles_essays = load("analysis/throughlines/first-principles-essays.json")
+    why_matters = load("analysis/throughlines/why-matters-checkpoints.json")
     application_map = load("analysis/throughlines/application-map.json")
     everyday_glossary = load("analysis/throughlines/everyday-glossary.json")
     lectures = load("analysis/lectures/lecture-path.json")
@@ -1734,7 +1755,7 @@ def main():
     proof_by_id = {item["id"]: item for item in proofs}
     assumption_by_id = {item["id"]: item for item in assumptions}
     build_index(concepts, themes, evidence, lectures)
-    build_first_principles_essays(first_principles_essays, application_map, everyday_glossary, concept_by_id)
+    build_first_principles_essays(first_principles_essays, why_matters, application_map, everyday_glossary, concept_by_id)
     build_review_guide(review_cards, concept_by_id, ev_by_id)
     build_publication_status(publication_status)
     build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_by_id)

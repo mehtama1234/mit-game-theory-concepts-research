@@ -128,6 +128,7 @@ def main() -> int:
     review_cards = json.loads((ROOT / "analysis/throughlines/review-guide.json").read_text(encoding="utf-8"))
     publication_status = json.loads((ROOT / "analysis/throughlines/publication-status.json").read_text(encoding="utf-8"))
     first_principles_essays = json.loads((ROOT / "analysis/throughlines/first-principles-essays.json").read_text(encoding="utf-8"))
+    why_matters = json.loads((ROOT / "analysis/throughlines/why-matters-checkpoints.json").read_text(encoding="utf-8"))
     application_map = json.loads((ROOT / "analysis/throughlines/application-map.json").read_text(encoding="utf-8"))
     everyday_glossary = json.loads((ROOT / "analysis/throughlines/everyday-glossary.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
@@ -305,6 +306,32 @@ def main() -> int:
     missing_application_fields = required_application_fields - seen_application_fields
     if missing_application_fields:
         errors.append(f"first-principles essays missing application fields: {', '.join(sorted(missing_application_fields))}")
+    why_matters_words = []
+    why_matters_concept_links = 0
+    why_fields = ["everyday_situation", "mistaken_reading", "first_principles_correction", "why_it_matters", "where_else_it_applies"]
+    if len(why_matters) < 8:
+        errors.append(f"why-it-matters checkpoints too few: {len(why_matters)}")
+    for item in why_matters:
+        text = " ".join(str(item.get(field, "")) for field in why_fields)
+        count = words(text)
+        why_matters_words.append(count)
+        if count < 95:
+            errors.append(f"why-it-matters checkpoint {item['id']} is shallow: {count} words")
+        if f'id="{item["id"]}"' not in first_principles_html:
+            errors.append(f"why-it-matters checkpoint not rendered: {item['id']}")
+        for field in why_fields:
+            value = str(item.get(field, ""))
+            if words(value) < 12:
+                errors.append(f"why-it-matters checkpoint {item['id']} shallow {field}")
+            if html_lib.escape(value, quote=True) not in first_principles_html:
+                errors.append(f"why-it-matters checkpoint {item['id']} {field} not rendered")
+        for concept_id in item.get("concept_ids", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"why-it-matters checkpoint {item['id']} unknown concept link: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' in first_principles_html:
+                why_matters_concept_links += 1
+            else:
+                errors.append(f"why-it-matters checkpoint {item['id']} concept link not rendered: {concept_id}")
     application_map_words = []
     application_map_concept_links = 0
     required_application_map_ids = {
@@ -1616,6 +1643,9 @@ def main() -> int:
         f"- First-principles essay words: min {min(essay_words) if essay_words else 0}, max {max(essay_words) if essay_words else 0}",
         f"- First-principles application cards: {essay_application_links}",
         f"- First-principles concept links: {essay_concept_links}",
+        f"- Why-it-matters checkpoints: {len(why_matters)}",
+        f"- Why-it-matters words: min {min(why_matters_words) if why_matters_words else 0}, max {max(why_matters_words) if why_matters_words else 0}",
+        f"- Why-it-matters concept links: {why_matters_concept_links}",
         f"- Cross-field application map cards: {len(application_map)}",
         f"- Cross-field application map words: min {min(application_map_words) if application_map_words else 0}, max {max(application_map_words) if application_map_words else 0}",
         f"- Cross-field application concept links: {application_map_concept_links}",

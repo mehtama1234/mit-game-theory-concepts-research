@@ -46,6 +46,7 @@ def main() -> int:
     review_cards = json.loads((ROOT / "analysis/throughlines/review-guide.json").read_text(encoding="utf-8"))
     publication_status = json.loads((ROOT / "analysis/throughlines/publication-status.json").read_text(encoding="utf-8"))
     first_principles_essays = json.loads((ROOT / "analysis/throughlines/first-principles-essays.json").read_text(encoding="utf-8"))
+    why_matters = json.loads((ROOT / "analysis/throughlines/why-matters-checkpoints.json").read_text(encoding="utf-8"))
     application_map = json.loads((ROOT / "analysis/throughlines/application-map.json").read_text(encoding="utf-8"))
     everyday_glossary = json.loads((ROOT / "analysis/throughlines/everyday-glossary.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
@@ -290,6 +291,25 @@ def main() -> int:
                 errors.append(f"first-principles essay links unknown concept: {essay['id']} -> {concept_id}")
             elif f'href="concepts/{concept_id}.html"' not in first_principles_html:
                 errors.append(f"first-principles page missing concept link: {essay['id']} -> {concept_id}")
+    if len(why_matters) < 8:
+        errors.append(f"why-it-matters checkpoints too few: {len(why_matters)}")
+    why_fields = ["everyday_situation", "mistaken_reading", "first_principles_correction", "why_it_matters", "where_else_it_applies"]
+    for item in why_matters:
+        if f'id="{item["id"]}"' not in first_principles_html:
+            errors.append(f"why-it-matters checkpoint not rendered: {item['id']}")
+        for field in why_fields:
+            value = str(item.get(field, ""))
+            if words(value) < 12:
+                errors.append(f"why-it-matters {item['id']} shallow {field}")
+            if html.escape(value, quote=True) not in first_principles_html:
+                errors.append(f"why-it-matters {item['id']} {field} not rendered")
+        if len(item.get("concept_ids", [])) < 4:
+            errors.append(f"why-it-matters {item['id']} has too few concept links")
+        for concept_id in item.get("concept_ids", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"why-it-matters {item['id']} links unknown concept: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in first_principles_html:
+                errors.append(f"why-it-matters {item['id']} concept link not rendered: {concept_id}")
     for item in review_cards:
         if f'id="{item["id"]}"' not in review_html:
             errors.append(f"review guide item not rendered: {item['id']}")

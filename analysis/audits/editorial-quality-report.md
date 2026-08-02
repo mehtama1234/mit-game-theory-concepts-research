@@ -25,6 +25,9 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - First-principles essay words: min 301, max 455
 - First-principles application cards: 32
 - First-principles concept links: 86
+- Why-it-matters checkpoints: 8
+- Why-it-matters words: min 98, max 128
+- Why-it-matters concept links: 32
 - Cross-field application map cards: 6
 - Cross-field application map words: min 150, max 192
 - Cross-field application concept links: 30

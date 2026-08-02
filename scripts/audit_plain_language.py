@@ -25,6 +25,7 @@ def main() -> int:
     errors: list[str] = []
     warnings: list[str] = []
     essays = load_json("analysis/throughlines/first-principles-essays.json")
+    why_matters = load_json("analysis/throughlines/why-matters-checkpoints.json")
     application_map = load_json("analysis/throughlines/application-map.json")
     glossary = load_json("analysis/throughlines/everyday-glossary.json")
 
@@ -122,6 +123,25 @@ def main() -> int:
                 technical_mentions += lower.count(term.lower())
 
     application_word_counts = []
+    why_matters_word_counts = []
+    why_fields = ["everyday_situation", "mistaken_reading", "first_principles_correction", "why_it_matters", "where_else_it_applies"]
+    for item in why_matters:
+        combined = " ".join(str(item.get(field, "")) for field in why_fields)
+        why_matters_word_counts.append(words(combined))
+        if words(combined) < 95:
+            errors.append(f"why-it-matters {item['id']} is shallow")
+        lower = combined.lower()
+        if "mistake" not in str(item.get("mistaken_reading", "")).lower():
+            errors.append(f"why-it-matters {item['id']} missing explicit mistake language")
+        if words(str(item.get("why_it_matters", ""))) < 14:
+            errors.append(f"why-it-matters {item['id']} has shallow why_it_matters")
+        for field in why_fields:
+            if words(str(item.get(field, ""))) < 12:
+                errors.append(f"why-it-matters {item['id']} shallow field: {field}")
+        for phrase in banned_phrases:
+            if phrase in lower:
+                errors.append(f"why-it-matters {item['id']} uses banned filler phrase: {phrase}")
+
     for item in application_map:
         combined = " ".join(
             str(item.get(field, ""))
@@ -169,6 +189,8 @@ def main() -> int:
         "",
         f"- Essay cards: {len(essays)}",
         f"- Essay words: min {min(essay_word_counts) if essay_word_counts else 0}, max {max(essay_word_counts) if essay_word_counts else 0}",
+        f"- Why-it-matters checkpoints: {len(why_matters)}",
+        f"- Why-it-matters words: min {min(why_matters_word_counts) if why_matters_word_counts else 0}, max {max(why_matters_word_counts) if why_matters_word_counts else 0}",
         f"- Application map cards: {len(application_map)}",
         f"- Application map words: min {min(application_word_counts) if application_word_counts else 0}, max {max(application_word_counts) if application_word_counts else 0}",
         f"- Glossary terms: {len(glossary)}",
@@ -185,7 +207,7 @@ def main() -> int:
     lines.extend(f"- {error}" for error in errors) if errors else lines.append("- None")
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"audited plain language for {len(essays)} essays, {len(application_map)} applications, {len(glossary)} glossary terms; errors: {len(errors)}")
+    print(f"audited plain language for {len(essays)} essays, {len(why_matters)} checkpoints, {len(application_map)} applications, {len(glossary)} glossary terms; errors: {len(errors)}")
     return 1 if errors else 0
 
 
