@@ -510,5 +510,549 @@
         "body": "A threat can deter action only when carrying it out later is believable. Subgame perfection makes that future check explicit and separates real deterrence from language that sounds strong early."
       }
     ]
+  },
+  {
+    "concept_id": "extensive_form_games",
+    "title": "Extensive Form Games As Keeping Time Visible",
+    "sections": [
+      {
+        "heading": "Start From A Situation That Unfolds",
+        "body": "An extensive form game is a way to draw a strategic situation as a tree. The everyday reason is simple: sometimes people do not choose all at once. One person moves, another person sees something, a later choice becomes available, and the meaning of an action depends on where the history has gone. A table can hide that timing. A tree keeps the order, the possible histories, and the later decision points visible."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Timing changes incentives. A threat, promise, offer, refusal, or signal can matter only because it happens before or after something else. Extensive form exists because the model needs to know who moves when, what each person sees, and which later choices remain possible. Without that structure, the course could confuse a simultaneous choice with a sequential one and then apply the wrong solution idea."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to think the tree is only a picture of the same information in a prettier form. It is not. A tree can represent facts that a payoff table may hide, such as whether a player observed an earlier move or whether two decision points are indistinguishable to that player. If the information sets or timing are wrong, backward induction and subgame perfection can answer the wrong question."
+      },
+      {
+        "heading": "Why It Matters Beyond Game Diagrams",
+        "body": "Extensive form matters in bargaining, trials, product launches, hiring, military planning, and software protocols because choices happen after histories. It also matters for topology and fixed-point work because the object being solved changes when histories and information sets are included. A fixed point in a strategic form representation may miss credibility problems that only appear once the time path is drawn. That is why the first modeling question is often not how to solve the game, but whether the tree has preserved the real order of action and observation."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Software protocols",
+        "body": "A protocol is a sequence of actions and observations. Drawing the order helps show which participant knows what before sending the next message."
+      },
+      {
+        "field": "Courtroom strategy",
+        "body": "Settlement, discovery, trial, and appeal happen in order. A legal strategy can only be judged after the later choices and costs are kept visible."
+      }
+    ]
+  },
+  {
+    "concept_id": "iterated_deletion",
+    "title": "Iterated Deletion As Repeatedly Cleaning The Choice Set",
+    "sections": [
+      {
+        "heading": "Start From Removing One Bad Move",
+        "body": "Iterated deletion begins with the same everyday thought as dominance: if one choice is never worth taking, remove it. Then the important part happens. Once that move is gone, the game has changed. A choice that was not clearly bad before may become bad after the first cleanup. The process repeats until no more moves can be removed by the rule being used."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Strategic reasoning often works in layers. A player may rule out an action for one opponent, then reason that the opponent will also rule out something else, and so on. Iterated deletion exists because beliefs about other players' rationality can shrink the set of possible behavior step by step. It gives the course a way to show how simple comparisons can have larger consequences after repeated use."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to delete carelessly and then treat the final survivor as unquestionably predicted. The result depends on the deletion rule. Strict dominance is safer than weak dominance. Weak deletion can depend on order and can remove behavior that matters under other beliefs. Iterated deletion is a reasoning tool, not a license to erase choices just because they look unlikely."
+      },
+      {
+        "heading": "Why It Matters Beyond Small Games",
+        "body": "Iterated deletion matters in market entry, voting, auctions, security planning, and algorithmic search because it shows how impossible or indefensible choices can be removed in rounds. In topology-heavy work, deletion can simplify the strategy space before deeper equilibrium reasoning begins, but it must not destroy the assumptions needed for existence or hide the behavior the model was supposed to explain. The method is useful only when every deletion is explained in everyday terms: which choice has lost its defense, and why no belief in the remaining model supports it."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Algorithmic search",
+        "body": "A search procedure can prune options, then prune again after the remaining options change. The same caution applies: the pruning rule must be justified."
+      },
+      {
+        "field": "Market strategy",
+        "body": "A firm may first rule out a price, then rule out another price after rivals are expected to rule out their own bad choices."
+      }
+    ]
+  },
+  {
+    "concept_id": "zero_sum_games",
+    "title": "Zero-Sum Games As Pure Conflict",
+    "sections": [
+      {
+        "heading": "Start From Opposed Payoffs",
+        "body": "A zero-sum game is a setting where one player's gain is exactly the other player's loss. The everyday picture is not every disagreement. It is a special kind of conflict where the total being divided is fixed inside the model. If I get more, you get less by the same amount. That sharp structure lets the course study protection, exploitation, and security in a cleaner way than general games allow."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Some strategic settings are close enough to pure conflict that cooperation or joint gains are not the main issue. In those settings, the central question is how to avoid being exploited by an opponent with opposite interests. Zero-sum games exist in the course because they give a clear home for minimax reasoning, mixed strategies, and the value of a game. They show what strategic stability looks like when interests are fully opposed."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to call every competitive situation zero-sum. Many markets, negotiations, and political settings have both conflict and shared gains. Two firms may fight over customers but also benefit from market growth. Two countries may compete while still gaining from trade. Calling a mixed-interest setting zero-sum can hide possible agreements, side payments, repeated cooperation, or rule changes that improve outcomes for both sides."
+      },
+      {
+        "heading": "Why It Matters Beyond The Course",
+        "body": "Zero-sum reasoning matters in games, security, litigation, sports, and adversarial machine learning. It also has a deep mathematical life because minimax theorems and fixed-point ideas are closely related. The topology connection should not obscure the plain meaning: the theorem gives protection in a model where payoffs are exactly opposed. If the world is not actually zero-sum, the clean mathematical result may be answering a narrower question."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Adversarial machine learning",
+        "body": "A defender and attacker can sometimes be modeled with opposed objectives. The zero-sum frame helps ask what defense limits worst-case damage."
+      },
+      {
+        "field": "Sports strategy",
+        "body": "One team's gain in a match can be the other team's loss. Mixed and minimax ideas can explain why predictable play is dangerous."
+      }
+    ]
+  },
+  {
+    "concept_id": "minimax",
+    "title": "Minimax As Protecting Against The Worst Case",
+    "sections": [
+      {
+        "heading": "Start From A Hostile Response",
+        "body": "Minimax asks a cautious everyday question: if the other side tries to hurt my payoff, which choice protects me best? The player looks at each possible action, finds the worst outcome the opponent can force against it, and then chooses the action whose worst case is least bad. This is not the same as hoping for the best. It is planning under hostile pressure."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "In zero-sum games, the opponent's gain is your loss, so it makes sense to ask how much damage the opponent can force. Minimax exists because a player may want a security guarantee rather than an optimistic forecast. It gives the course a way to define the value of a zero-sum game and to explain why randomization can be necessary when any fixed action can be exploited."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to use minimax whenever a problem feels risky. Minimax is deliberately pessimistic. It can be too conservative when the opponent is not fully hostile, when probabilities are known, or when both sides can gain together. Another mistake is to ignore the cost of protecting against rare or unrealistic attacks. The method is powerful when worst-case protection is the right goal, not when every tradeoff should be treated as a battle."
+      },
+      {
+        "heading": "Why It Matters Beyond Zero-Sum Tables",
+        "body": "Minimax matters in security, robust engineering, legal strategy, military planning, and algorithm design. It also connects to topology through minimax theorems and fixed-point arguments that prove when protective strategies and game values exist. The everyday meaning remains concrete: the player wants a floor under the outcome. The math is useful only after the analyst has justified why the worst-case frame fits the situation. That fit must be checked in plain language before the protective calculation is treated as a guide for action."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Robust engineering",
+        "body": "A system can be designed to survive the worst stress within a chosen range. The range must be honest or the guarantee misleads."
+      },
+      {
+        "field": "Legal negotiation",
+        "body": "A party may choose a settlement position by asking what trial outcome the other side could force. That is useful only if trial really is the threat."
+      }
+    ]
+  },
+  {
+    "concept_id": "one_shot_deviation",
+    "title": "One-Shot Deviation As A Local Credibility Check",
+    "sections": [
+      {
+        "heading": "Start From Changing One Move",
+        "body": "The one-shot deviation principle asks whether a player can gain by changing one action at one decision point while keeping the rest of the plan the same. The everyday idea is local checking. Instead of testing every possible rewritten strategy at once, ask whether any single moment contains a profitable small escape. If no such one-step escape exists under the right conditions, the whole plan passes an important credibility test."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Dynamic strategies can be long and complicated. A plan may say what to do after many histories. Checking every alternative plan directly can be overwhelming. The one-shot deviation principle exists because, in the right class of games, profitable mistakes can be detected through these local deviations. It lets the course inspect sequential rationality without turning every dynamic problem into an unmanageable list of complete strategy rewrites."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to treat the principle as a universal shortcut. It depends on conditions such as the structure of the game and payoff continuity or discounting. Another mistake is to check the intended path only. A strategy also says what happens after histories that might not occur. If an off-path continuation gives someone a profitable one-shot deviation, the proposed plan still has a credibility problem."
+      },
+      {
+        "heading": "Why It Matters Beyond Repeated Games",
+        "body": "The principle matters in contracts, organizational rules, repeated relationships, and policy enforcement because long plans often fail at one concrete future moment. It also links to fixed-point and dynamic programming ideas: local optimality checks can support a global strategic claim when the mathematical conditions are right. The plain lesson is that big promises must survive small later temptations. It is useful because many failures of cooperation are not grand redesigns of the whole plan; they are small moments where one actor quietly wants to do something else."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Contracts",
+        "body": "A long contract can fail because one party wants to deviate at one future clause or enforcement moment. Local checks reveal that pressure."
+      },
+      {
+        "field": "Organizations",
+        "body": "A workplace rule may look stable until a manager has a one-time incentive not to enforce it. The shortcut focuses attention there."
+      }
+    ]
+  },
+  {
+    "concept_id": "bargaining",
+    "title": "Bargaining As Dividing Surplus Under Pressure",
+    "sections": [
+      {
+        "heading": "Start From Two Sides Who Could Both Gain",
+        "body": "Bargaining begins when people can create value by reaching agreement, but they disagree about how to divide it. A buyer and seller may both prefer trade to no trade. Workers and firms may both prefer employment to separation. Countries may both prefer peace to conflict. The hard part is not only whether agreement is possible. It is who gets how much, who can wait, and what happens if talks fail."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Ordinary talk about fairness does not settle bargaining. Each side has an outside option, a cost of delay, private information, and a reason to push for a better share. Bargaining theory exists because agreement is strategic. An offer is not only a number; it is a test of what the other side will accept, how patient they are, and what they believe will happen later. Timing and information shape the division."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to say the parties should split the surplus evenly because that sounds reasonable. Equal split may happen in some models, but it is not automatic. A patient side, a side with a better outside option, or a side with private information may get more. Another mistake is to ignore delay. Waiting can be a bargaining weapon, but it can also destroy value."
+      },
+      {
+        "heading": "Why It Matters Beyond Negotiation Examples",
+        "body": "Bargaining matters in wages, mergers, settlements, household decisions, international agreements, and platform contracts. It also connects to topology because some bargaining solutions are existence or fixed-point claims about feasible sets and preferences. The mathematical object must still answer a plain question: which agreements are possible, which disagreement outcome matters, and why would each side accept the proposed division? The same structure appears whenever people can jointly gain but must decide who captures the gain and who bears the cost of delay."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Labor markets",
+        "body": "Wages depend not only on productivity but also on outside options, patience, replacement costs, and what each side believes the other will accept."
+      },
+      {
+        "field": "Legal settlement",
+        "body": "A settlement divides the expected surplus from avoiding trial. Delay, risk, and private information can prevent agreement even when settlement would save costs."
+      }
+    ]
+  },
+  {
+    "concept_id": "finitely_repeated_games",
+    "title": "Finitely Repeated Games As The Last Round Pushing Backward",
+    "sections": [
+      {
+        "heading": "Start From A Relationship With A Known End",
+        "body": "A finitely repeated game is a repeated relationship with a known last round. People meet more than once, but everyone knows when the interaction stops. That known ending changes the logic. In the last round, there is no future punishment left inside the model. If cooperation requires fear of later punishment, the last round may unravel first, and earlier rounds can be affected by that future endpoint."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Repeated play can support cooperation when the future matters, but a known final period weakens that force. The concept exists because the course needs to separate ongoing relationships from relationships with a fixed end. A worker near final review, a firm near the last contract, or a player near the final round may face different incentives. The end of the relationship can reach backward into present behavior."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to assume that repetition always helps cooperation. If everyone knows the final round and the stage game has a unique noncooperative equilibrium, backward reasoning can make cooperation unravel. Another mistake is to apply the stark unraveling result without checking the assumptions. Reputation, incomplete information, social norms, outside enforcement, or multiple equilibria can change the conclusion. The result is strongest when the endpoint is truly known, behavior is observed, and no outside relationship carries consequences beyond the modeled last round."
+      },
+      {
+        "heading": "Why It Matters Beyond Repeated Prisoners Dilemmas",
+        "body": "Finitely repeated games matter in employment contracts, supply relationships, political terms, school projects, and temporary alliances. They also clarify the boundary of fixed-point existence thinking. A stable plan in a repeated game must respect the known time horizon. The topology of the strategy space cannot make future punishment meaningful after the modeled future has ended. The lesson is practical: when a relationship has a visible end, the analyst should ask which incentives survive the end and which incentives vanish."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Term-limited politics",
+        "body": "A politician facing a final term may have weaker future electoral discipline. The known endpoint changes present incentives."
+      },
+      {
+        "field": "Project teams",
+        "body": "A group with a final deadline may cooperate early but slack near the end if no future response remains inside the relationship."
+      }
+    ]
+  },
+  {
+    "concept_id": "folk_theorem",
+    "title": "Folk Theorem As Many Outcomes When The Future Matters",
+    "sections": [
+      {
+        "heading": "Start From Future Punishment Supporting Today",
+        "body": "The folk theorem is a family of results about repeated games. The everyday idea is that patient players can sometimes sustain many different outcomes because future punishment makes today's temptation unattractive. If cheating now brings a short gain but triggers a long future loss, cooperation or other disciplined behavior may be stable. The theorem explains why repeated interaction can support much more than the one-shot game suggests."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Infinitely repeated games often have many possible equilibria. The course needs a way to say how large that set can be and what makes it possible. The folk theorem exists because future incentives can turn many feasible and individually acceptable payoff patterns into self-enforcing outcomes. It is not one prediction. It is a warning that repetition can create a wide menu of stable arrangements."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to treat the folk theorem as saying cooperation will happen. It does not. It says many outcomes can be sustained under strong enough patience and credible punishment conditions. That abundance can make prediction harder, not easier. Another mistake is to ignore monitoring. If players cannot observe cheating well enough, they may punish the wrong person or fail to punish the right one."
+      },
+      {
+        "heading": "Why It Matters Beyond The Theorem Statement",
+        "body": "The folk theorem matters in cartels, workplace norms, diplomacy, informal credit, online communities, and repeated platform behavior. It also has a mathematical side involving feasible payoff sets, discounting, and equilibrium construction. The topology or geometry of payoff sets can be elegant, but the plain lesson is practical: when the future is powerful, many behavior patterns may be stable, so extra institutional detail is needed for sharp prediction. It pushes the reader to ask which punishment, norm, or selection story chooses one outcome from the many that the repeated game can support."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Community norms",
+        "body": "A group can sustain many informal rules when future inclusion matters. The rule survives only if members observe and respond to violations."
+      },
+      {
+        "field": "International relations",
+        "body": "Repeated contact can support restraint, retaliation, or cooperation. The theorem warns that several stable patterns may fit the same basic incentives."
+      }
+    ]
+  },
+  {
+    "concept_id": "implicit_cartels",
+    "title": "Implicit Cartels As Cooperation Without A Spoken Deal",
+    "sections": [
+      {
+        "heading": "Start From Firms That Keep Meeting",
+        "body": "An implicit cartel is a situation where firms act as if they are restraining competition even without an explicit agreement. The everyday picture is repeated rivalry. Each firm may want to cut price today and steal customers, but it also knows rivals can respond tomorrow. High prices can survive when the future loss from retaliation outweighs the short-term gain from undercutting."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Competition policy cannot look only for written contracts or secret meetings. Firms may coordinate through repeated market behavior, public price changes, or mutual understanding of punishment. The concept exists because repeated-game incentives can make collusion self-enforcing without a formal cartel. The model asks whether each firm would rather keep the high-price pattern than cheat and face future punishment."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to treat every high price as proof of an implicit cartel. High prices can also come from costs, product quality, capacity limits, search frictions, or lawful differentiation. Another mistake is to ignore credibility. If firms cannot observe cheating or cannot punish profitably, the cartel-like outcome may not be stable. The repeated-game story needs evidence, not only suspicion."
+      },
+      {
+        "heading": "Why It Matters Beyond Antitrust",
+        "body": "Implicit cartel reasoning matters in platform markets, procurement, labor markets, and any repeated setting where rivals watch one another. It also shows why topology or fixed-point existence is not enough by itself. A stable collusive pattern may exist mathematically, but policy needs to know whether monitoring, punishment, and market institutions make that pattern realistic and harmful. The plain-language question is whether future rivalry supplies enough discipline to replace an explicit contract. This makes the concept useful but also dangerous: it can explain quiet coordination, yet it must be tied to market facts before accusing firms of collusion."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Antitrust review",
+        "body": "Regulators must separate lawful parallel behavior from repeated-game coordination. Evidence about monitoring and punishment is central. The review should ask who observes price cuts, how quickly rivals respond, and whether punishment would be profitable."
+      },
+      {
+        "field": "Procurement markets",
+        "body": "Repeated bidders may learn to rotate wins or avoid aggressive bids. The pattern can persist without a written agreement."
+      }
+    ]
+  },
+  {
+    "concept_id": "imperfect_competition",
+    "title": "Imperfect Competition As Firms With Market Power And Rivals",
+    "sections": [
+      {
+        "heading": "Start From The Middle Between Monopoly And Perfect Competition",
+        "body": "Imperfect competition is the middle case where a firm has some power over price or quantity, but it is not alone. A monopoly can act without a strategic rival inside the market. A perfectly competitive firm is too small to move the price. Imperfect competition is messier and more common: each firm matters, and each firm must think about how rivals respond."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "The course needs imperfect competition because real markets often have a few important firms. Profit depends on demand, cost, and rival behavior. A firm's best quantity in Cournot competition differs from its best price in Bertrand competition because the strategic variable changes. The concept exists to show that market power is not a single story. The model must say what firms choose and how those choices affect one another."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to say competition means price equals cost or monopoly means one firm, then force every market into those extremes. Many markets sit between them. Another mistake is to treat Cournot and Bertrand as interchangeable labels. Quantity competition and price competition can give different predictions. The representation is not cosmetic; it carries the strategic pressure. The analyst has to defend the market model before trusting the prediction that comes out of it."
+      },
+      {
+        "heading": "Why It Matters Beyond Industrial Organization",
+        "body": "Imperfect competition matters in tech platforms, hospitals, airlines, retail, labor markets, and energy markets. It also links to topology because equilibrium existence often depends on firms' strategy sets and payoff functions. The mathematical proof of a stable profile is useful only after the analyst has defended whether firms choose prices, quantities, capacity, quality, or some other strategic variable. That choice is a first-principles decision, not a technical afterthought, because it decides what rivalry means in the model."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Platform markets",
+        "body": "A platform may choose fees, ranking rules, or access terms while rivals do the same. Market power and strategic dependence operate together."
+      },
+      {
+        "field": "Healthcare markets",
+        "body": "Hospitals or insurers may have local market power while still facing rivals. Policy analysis must model both power and response."
+      }
+    ]
+  },
+  {
+    "concept_id": "types_and_beliefs",
+    "title": "Types And Beliefs As Naming Hidden Facts And Guesses",
+    "sections": [
+      {
+        "heading": "Start From What One Side Cannot See",
+        "body": "Types and beliefs separate two everyday things that are often mixed together. A type is the hidden fact: a bidder's value, a seller's quality, a worker's ability, or a firm's cost. A belief is someone else's probability story about that hidden fact. The distinction matters because truth and guess are not the same. The model needs both the hidden state and the way players reason about it."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Private information changes strategy. If a player knows their own type, their action may depend on it. If others do not know that type, they must act using beliefs. Types and beliefs exist because the course needs a clean place to store hidden information and a clean way to represent uncertainty about it. Without them, Bayesian games, signaling, screening, and perfect Bayesian equilibrium would collapse into vague talk about not knowing."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to treat type as a personality category or belief as a casual opinion. In the model, a type is the payoff-relevant private information, and a belief is a probability distribution used for choice. Another mistake is to choose types after seeing the desired answer. If the type space is badly chosen, the equilibrium may be internally consistent but explain the wrong hidden fact."
+      },
+      {
+        "heading": "Why It Matters Beyond Economics",
+        "body": "Types and beliefs matter in medicine, hiring, insurance, cybersecurity, law, and machine learning because decisions often turn on hidden states. They also matter in topology-based equilibrium proofs because beliefs can be part of the strategy space or state space. A fixed point over beliefs and actions is only meaningful when the type model honestly captures the uncertainty people face. The reader should always ask whether the hidden fact is real, payoff-relevant, and visible to the person whose type the model names."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Medicine",
+        "body": "A doctor may not know a patient's hidden condition and must use test results as evidence. The condition is like a type; the diagnosis is a belief."
+      },
+      {
+        "field": "Cybersecurity",
+        "body": "A defender may not know whether an observed actor is a casual user, bot, or attacker. The response depends on beliefs about that hidden type."
+      }
+    ]
+  },
+  {
+    "concept_id": "bayesian_nash_equilibrium",
+    "title": "Bayesian Nash Equilibrium As Stability For Each Type",
+    "sections": [
+      {
+        "heading": "Start From Each Type Having A Plan",
+        "body": "Bayesian Nash equilibrium extends the no-one-wants-to-move idea to games with hidden information. A strategy is no longer just one action for a player. It can be a plan for each possible type of that player. A high-value bidder may bid differently from a low-value bidder. A low-cost firm may choose differently from a high-cost firm. The equilibrium asks whether each type is best responding given beliefs about everyone else."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Nash equilibrium assumes the relevant payoff facts are known. Bayesian games do not. Bayesian Nash exists because every hidden type needs its own incentive check. The low type must not want to switch from its plan, and the high type must not want to switch from its plan, given beliefs and other players' type-contingent strategies. Stability must hold before private information is fully revealed."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to check only the player as a whole. In a Bayesian setting, each type is a different decision problem. Another mistake is to forget beliefs. A plan can look strange until the reader asks what the type thinks others are likely to be. Bayesian Nash equilibrium is not just Nash with extra vocabulary; it changes what a strategy is and where best-response checks happen."
+      },
+      {
+        "heading": "Why It Matters Beyond Auctions",
+        "body": "Bayesian Nash matters in auctions, insurance, hiring, procurement, security, and any setting where hidden facts shape action. It also connects to fixed-point reasoning because equilibrium may be proven over spaces of type-contingent strategies. The topology can show a self-consistent plan exists, but the plain question remains: is every type willing to follow its assigned plan under its beliefs? This makes the concept useful far beyond bidding: any hidden-information setting needs a plan that each possible type can defend."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Procurement",
+        "body": "Low-cost and high-cost firms may bid differently. Bayesian Nash checks whether each cost type is willing to follow its bidding rule."
+      },
+      {
+        "field": "Hiring",
+        "body": "Different worker types may choose different signals or applications. Employers respond using beliefs about which type they face."
+      }
+    ]
+  },
+  {
+    "concept_id": "screening_and_adverse_selection",
+    "title": "Screening And Adverse Selection As Rules Changing Who Shows Up",
+    "sections": [
+      {
+        "heading": "Start From Hidden Quality Or Cost",
+        "body": "Screening and adverse selection begin when one side knows something important that the other side cannot see. A seller knows product quality, a worker knows effort cost, an insured person knows risk, or a bargaining partner knows value. The uninformed side sets a price, contract, or rule. That rule does not just divide surplus. It changes which hidden types choose to participate."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Trade can fail even when trade would create value under full information. If a buyer offers an average price for used goods, high-quality sellers may leave, lowering the average quality of those who remain. Insurance prices can push low-risk people out, leaving a riskier pool. The concept exists because selection changes the group being analyzed. The average after people respond is not the same as the average before the rule."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to say there are gains from trade, so agreement should happen. Hidden information can block that simple logic. Another mistake is to ignore participation. A contract that looks profitable against the whole population may attract only the types that make it unprofitable. Screening tries to design choices that separate types, but it must give each type a reason to choose the intended option."
+      },
+      {
+        "heading": "Why It Matters Beyond Market Examples",
+        "body": "Screening and adverse selection matter in insurance, credit, hiring, college admissions, platform trust, medical markets, and regulation. They also connect to topology and equilibrium because participation rules can change the feasible set and the belief distribution. A stable outcome may exist, but the important question is which types remain in the market and which valuable trades disappear. The everyday warning is that the rule does not meet a fixed crowd; it helps create the crowd it will later face. This is why participation is part of the model rather than an afterthought; the people who accept the rule are selected by the rule itself."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Insurance",
+        "body": "A high premium may drive low-risk people away, leaving a riskier pool. The price changes who buys the contract."
+      },
+      {
+        "field": "Hiring",
+        "body": "A test or credential can screen applicants, but only if different worker types face different costs or benefits from completing it."
+      }
+    ]
+  },
+  {
+    "concept_id": "revenue_equivalence",
+    "title": "Revenue Equivalence As Same Expected Money Under Strong Conditions",
+    "sections": [
+      {
+        "heading": "Start From Different Auction Rules",
+        "body": "Revenue equivalence asks how different auction formats can sometimes give the seller the same expected revenue. A first-price auction and a second-price auction look different. In one, the winner pays their own bid. In the other, the winner pays someone else's bid. The surprise is that under specific assumptions, bidders adjust their strategies so expected payments line up."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "The theorem exists because surface rules do not tell the whole story. Bidders respond to rules. A first-price bidder shades the bid because paying the bid is costly. A second-price bidder may have a reason to bid truthfully under the standard assumptions. Revenue equivalence teaches the reader to compare allocation probabilities and expected payments, not just auction names. The same revenue can arise from different behavior."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to treat revenue equivalence as saying auction design does not matter. It says equivalence can hold when the assumptions line up. Change risk aversion, reserve prices, common values, bidder symmetry, entry, or the allocation rule, and the conclusion can fail. The theorem is useful partly because it tells the analyst which assumptions are doing the work. Those failures are not embarrassing exceptions; they show which economic force the simple theorem intentionally set aside."
+      },
+      {
+        "heading": "Why It Matters Beyond Auction Class",
+        "body": "Revenue equivalence matters in procurement, spectrum sales, online platforms, and mechanism design because it separates rule labels from incentive effects. It also has a mathematical lesson: two different-looking mechanisms can induce the same expected transfer when their payoff objects match. The topology or calculus behind the result is less important than the plain warning to inspect assumptions before comparing institutions. The result is a discipline for comparison: before saying one rule raises more money, ask whether bidders adjust in a way that offsets the surface difference."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Public auctions",
+        "body": "A government comparing auction formats must ask whether the theorem's assumptions fit the bidders and object. If not, revenue may differ sharply."
+      },
+      {
+        "field": "Platform design",
+        "body": "Online platforms often change reserve prices, quality scores, and entry rules. Those details can break equivalence even when formats look familiar."
+      }
+    ]
+  },
+  {
+    "concept_id": "ad_auctions",
+    "title": "Ad Auctions As Selling Attention Through Rules",
+    "sections": [
+      {
+        "heading": "Start From Ranked Attention",
+        "body": "Ad auctions sell attention, not a simple object on a shelf. A search page or feed has positions, and those positions differ in click probability and value. Advertisers have private values for clicks or conversions. The platform must decide who appears where and what each advertiser pays. The bid is only one piece of the story; quality, relevance, position, and user behavior may also matter."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Standard auction theory is not enough for online ads because the object is ranked, repeated, and measured through user response. A higher slot may get more clicks. A low-quality ad may harm users. A platform may use quality scores or generalized second-price rules to balance revenue and relevance. Ad auctions exist in the course because they show how clean auction ideas must be adapted when institutions become engineered systems."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to think the highest bid simply buys the best slot. Many platforms rank by bid times quality or use other scoring rules. Another mistake is to confuse price per click with value per click. Advertisers bid strategically based on expected profit, not just exposure. The platform's formula changes behavior, so the rule must be part of the model."
+      },
+      {
+        "heading": "Why It Matters Beyond Advertising",
+        "body": "Ad auctions matter for search, social media, app stores, creator markets, and any ranking system that allocates scarce visibility. They also connect to topology and equilibrium because advertisers repeatedly choose bids in response to a rule and to each other. A stable bidding profile may exist, but the policy question also asks whether the rule serves users, advertisers, and platform incentives in the intended way. That is why ad auctions sit between economics and product design: the rule changes money, information, and the quality of what users see. A good explanation must therefore follow the chain from bid to rank to click to payment, rather than stopping at the auction label."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Search platforms",
+        "body": "A search engine allocates visible slots by combining bids, predicted clicks, and quality. The design affects advertiser behavior and user experience."
+      },
+      {
+        "field": "Creator marketplaces",
+        "body": "Sponsored placement can work like an ad auction. The ranking rule decides whose attention is sold and how strategic bids change visibility."
+      }
+    ]
+  },
+  {
+    "concept_id": "perfect_bayesian_equilibrium",
+    "title": "Perfect Bayesian Equilibrium As Beliefs And Actions Moving Together",
+    "sections": [
+      {
+        "heading": "Start From A Dynamic Game With Hidden Information",
+        "body": "Perfect Bayesian equilibrium is used when a game has both time and private information. A player observes an action, but not always the hidden type that produced it. The player must form a belief, then choose a response. The sender or earlier mover must also want to act as planned given how later players will interpret the action. Beliefs and actions discipline each other."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Bayesian Nash handles hidden information in a more static way, and subgame perfection handles credibility in games with clearer information. Perfect Bayesian equilibrium exists because signaling and other dynamic information games need both checks at once. Players must act optimally after histories, and beliefs should be updated by Bayes' rule when the observed behavior makes that possible. A proposed story must explain both what people do and what they infer."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to state strategies without beliefs, or beliefs without checking whether actions are optimal under them. In a signaling game, a receiver's response depends on what the signal says about type. But the signal says something only if the sender types actually want to send different signals. PBE forces that loop to close. It does not let the analyst freely assign beliefs just to save a favorite outcome."
+      },
+      {
+        "heading": "Why It Matters Beyond Signaling Models",
+        "body": "Perfect Bayesian equilibrium matters in bargaining with incomplete information, reputation, education, warranties, regulation, and diplomacy. It also relates to fixed-point thinking because strategies and beliefs form a coupled object. The mathematical challenge is to find a self-consistent pair, but the everyday meaning is clear: after people observe behavior, their guesses and future actions must still make sense. This is why the concept is demanding: it does not let the story choose convenient beliefs after the fact."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Reputation",
+        "body": "A firm may act tough early so others believe it is a tough type. PBE asks whether that action and belief are mutually supported."
+      },
+      {
+        "field": "Warranties",
+        "body": "A warranty can change beliefs about product quality only if different seller types have different incentives to offer it."
+      }
+    ]
+  },
+  {
+    "concept_id": "cheap_talk",
+    "title": "Cheap Talk As Words That Need Incentive Support",
+    "sections": [
+      {
+        "heading": "Start From A Message That Costs Nothing",
+        "body": "Cheap talk is communication that is costless and nonbinding. A person can say a state is good, a project is safe, a product is high quality, or a policy will work. The message itself does not force truth. The receiver must ask why the sender would want to say that message in different states. Words can still matter, but they need incentive support."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Many strategic settings include advice, promises, recommendations, labels, and forecasts. Ignoring speech misses an important part of behavior, but trusting speech automatically is also wrong. Cheap talk exists because communication can change beliefs when sender and receiver incentives are aligned enough. When incentives are opposed, every type may want to send the same flattering message, and the message may reveal little."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to say cheap means useless. Costless talk can matter when the sender and receiver partly want the same action. Another mistake is to treat a message as evidence without checking incentives. If every sender type benefits when the receiver believes the best possible story, then the message may pool all types together. The model asks what each type would actually want to say."
+      },
+      {
+        "heading": "Why It Matters Beyond Simple Sender Receiver Games",
+        "body": "Cheap talk matters in management, medical advice, financial forecasts, politics, platform reviews, diplomacy, and everyday negotiation. It also connects to topology and equilibrium because possible communication rules can be part of a strategic fixed point: messages, beliefs, and actions must fit together. The plain lesson is that language changes outcomes only when the incentive structure lets listeners learn something useful. The model therefore treats speech as an action inside incentives, not as a separate layer floating above the game."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Management",
+        "body": "A manager's advice can guide a worker when both want the project to succeed. It becomes less informative when their goals diverge."
+      },
+      {
+        "field": "Politics",
+        "body": "Campaign messages are cheap talk unless voters can connect them to incentives, records, constraints, or costly commitments. Voters need reasons to believe the message, such as records, constraints, shared interests, or costly follow-through."
+      }
+    ]
   }
 ]
