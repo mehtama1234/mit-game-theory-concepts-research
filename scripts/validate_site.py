@@ -45,6 +45,7 @@ def main() -> int:
     capstones = json.loads((ROOT / "analysis/throughlines/capstone-self-test.json").read_text(encoding="utf-8"))
     review_cards = json.loads((ROOT / "analysis/throughlines/review-guide.json").read_text(encoding="utf-8"))
     publication_status = json.loads((ROOT / "analysis/throughlines/publication-status.json").read_text(encoding="utf-8"))
+    first_principles_essays = json.loads((ROOT / "analysis/throughlines/first-principles-essays.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_diagnostics = json.loads((ROOT / "analysis/editorial-overrides/concept-diagnostics.json").read_text(encoding="utf-8"))
@@ -60,7 +61,7 @@ def main() -> int:
     }
     supplemental_ids = {record["id"] for record in supplemental}
     themes = json.loads((ROOT / "analysis/themes/theme-map.json").read_text(encoding="utf-8"))
-    required = [SITE / name for name in ["index.html", "review-guide.html", "publication-status.html", "study-route.html", "recognition.html", "math-clinic.html", "drills.html", "solutions.html", "cases.html", "argument-chains.html", "repairs.html", "paper-reading.html", "jargon-decoder.html", "model-building.html", "proof-sketches.html", "assumptions.html", "worked-transfer.html", "capstone.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
+    required = [SITE / name for name in ["index.html", "first-principles.html", "review-guide.html", "publication-status.html", "study-route.html", "recognition.html", "math-clinic.html", "drills.html", "solutions.html", "cases.html", "argument-chains.html", "repairs.html", "paper-reading.html", "jargon-decoder.html", "model-building.html", "proof-sketches.html", "assumptions.html", "worked-transfer.html", "capstone.html", "cross-reference.html", "limits.html", "lectures.html", "concepts.html", "themes.html", "families.html", "primitives.html", "evidence.html", "assets/styles.css"]]
     required.extend(SITE / "concepts" / f"{c['id']}.html" for c in concepts)
     required.extend(SITE / "lectures" / f"{lecture['id']}.html" for lecture in lectures)
     for path in required:
@@ -89,8 +90,11 @@ def main() -> int:
     cross_html = (SITE / "cross-reference.html").read_text(encoding="utf-8") if (SITE / "cross-reference.html").exists() else ""
     limits_html = (SITE / "limits.html").read_text(encoding="utf-8") if (SITE / "limits.html").exists() else ""
     index_html = (SITE / "index.html").read_text(encoding="utf-8") if (SITE / "index.html").exists() else ""
+    first_principles_html = (SITE / "first-principles.html").read_text(encoding="utf-8") if (SITE / "first-principles.html").exists() else ""
     review_html = (SITE / "review-guide.html").read_text(encoding="utf-8") if (SITE / "review-guide.html").exists() else ""
     status_html = (SITE / "publication-status.html").read_text(encoding="utf-8") if (SITE / "publication-status.html").exists() else ""
+    if 'href="first-principles.html"' not in index_html:
+        errors.append("index page missing first-principles essay link")
     if 'href="review-guide.html"' not in index_html:
         errors.append("index page missing review guide link")
     if 'href="publication-status.html"' not in index_html:
@@ -141,6 +145,39 @@ def main() -> int:
         errors.append(f"expected 25 lectures, found {len(lectures)}")
     if len(review_cards) < 6:
         errors.append(f"review guide has too few cards: {len(review_cards)}")
+    if len(first_principles_essays) < 8:
+        errors.append(f"first-principles essay layer has too few essays: {len(first_principles_essays)}")
+    required_application_fields = {"Topology and mathematics", "Computer science", "Politics", "Biology", "Law and institutions", "Everyday life"}
+    seen_application_fields = {
+        application.get("field", "")
+        for essay in first_principles_essays
+        for application in essay.get("applications", [])
+    }
+    missing_application_fields = required_application_fields - seen_application_fields
+    if missing_application_fields:
+        errors.append(f"first-principles essays missing application fields: {', '.join(sorted(missing_application_fields))}")
+    for essay in first_principles_essays:
+        if f'id="{essay["id"]}"' not in first_principles_html:
+            errors.append(f"first-principles essay not rendered: {essay['id']}")
+        essay_text = " ".join(
+            [essay.get("plain_purpose", "")]
+            + [section.get("body", "") for section in essay.get("sections", [])]
+            + [application.get("body", "") for application in essay.get("applications", [])]
+        )
+        if words(essay_text) < 300:
+            errors.append(f"first-principles essay too short: {essay['id']}")
+        if len(essay.get("sections", [])) < 3:
+            errors.append(f"first-principles essay has too few sections: {essay['id']}")
+        if len(essay.get("applications", [])) < 2:
+            errors.append(f"first-principles essay has too few applications: {essay['id']}")
+        for phrase in ["crucial role", "complex dynamics", "provides insights", "real-world applications"]:
+            if phrase in essay_text.lower():
+                errors.append(f"first-principles essay uses banned filler phrase `{phrase}`: {essay['id']}")
+        for concept_id in essay.get("concept_ids", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"first-principles essay links unknown concept: {essay['id']} -> {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in first_principles_html:
+                errors.append(f"first-principles page missing concept link: {essay['id']} -> {concept_id}")
     for item in review_cards:
         if f'id="{item["id"]}"' not in review_html:
             errors.append(f"review guide item not rendered: {item['id']}")

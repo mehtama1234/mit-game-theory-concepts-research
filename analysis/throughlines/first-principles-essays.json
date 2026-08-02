@@ -1,0 +1,242 @@
+[
+  {
+    "id": "whole-course",
+    "title": "The Whole Course In Plain Language",
+    "plain_purpose": "Game theory starts from a simple problem: what happens to me depends on what someone else does, and that person is also thinking. The course is about making that loop clear enough to reason with.",
+    "sections": [
+      {
+        "heading": "Start with the ordinary problem",
+        "body": "Imagine two people choosing at the same time. One person cannot decide well by asking only what they like. They also have to ask what the other person may do. The other person faces the same problem. This is the root of the course. A choice is not good in isolation. A choice is good relative to other choices around it. That is why the course keeps returning to players, actions, payoffs, information, timing, and rules. Those words sound formal, but they name everyday things: who is involved, what each person can do, what each person cares about, what each person knows, when decisions happen, and what setting turns those decisions into results."
+      },
+      {
+        "heading": "Why equilibrium appears",
+        "body": "An equilibrium is not a claim that the result is fair, wise, or socially good. It is a check for mutual fit. If each person looked at what the others are doing and still would not want to switch, the choices fit together. That matters because many bad outcomes are stable. Two firms may keep prices high. Two drivers may both wait. Two countries may keep arming. Two bidders may shade bids. The model asks why the pattern can persist even when nobody planned the whole pattern from above."
+      },
+      {
+        "heading": "Why the course keeps adding structure",
+        "body": "A one-shot simultaneous game is a clean starting point, but it hides too much. Some decisions happen in order. Then timing matters. Some relationships repeat. Then the future can reward or punish present behavior. Some people know facts that others do not. Then beliefs matter. Some institutions set rules before people act. Then design matters. Some messages are cheap and some signals are costly. Then communication has to be read through incentives. The course is not a pile of separate topics. It is one question repeated under richer conditions: when each person reacts to others, what can we honestly predict, design, or explain?"
+      }
+    ],
+    "applications": [
+      {
+        "field": "Everyday life",
+        "body": "A roommate agreement, a salary negotiation, a group project, and a repeated friendship all have the same bones. There are people, choices, consequences, information, and memory. Game theory matters because it warns you not to explain behavior only by personality. Sometimes the setting makes distrust, delay, bluffing, or cooperation a predictable response."
+      },
+      {
+        "field": "Politics",
+        "body": "Campaigns, coalitions, threats, promises, and public goods problems all involve people reacting to expected reactions. A promise matters only if it will still be worth keeping later. A threat matters only if carrying it out will still make sense when the time comes."
+      }
+    ],
+    "concept_ids": ["strategic_form_games", "best_response", "nash_equilibrium", "extensive_form_games", "bayesian_games", "auctions"]
+  },
+  {
+    "id": "choice-payoff",
+    "title": "Choice, Payoff, And The Trap Of A Single Number",
+    "plain_purpose": "Before the course can talk about strategy, it needs a way to say what each person is trying to get. A payoff is a compact way to record that comparison, not a complete description of a human being.",
+    "sections": [
+      {
+        "heading": "What a payoff is doing",
+        "body": "A payoff number says how one person ranks outcomes inside the model. It does not mean money unless the model says money is the right object. It does not mean happiness in a full human sense. It is a tool for comparison. If one outcome gives a player 5 and another gives 2, the model says the player prefers the first outcome. That small move lets the course ask which action is better once other actions are fixed."
+      },
+      {
+        "heading": "Why this matters before any equilibrium",
+        "body": "If the payoff story is wrong, the later solution can be perfectly calculated and still useless. A model of bidding that ignores budgets may predict bids people cannot afford. A model of cooperation that ignores reputation may miss why someone sacrifices short-run money. A model of policy that hides fairness inside a welfare score may make a political conflict look like a technical calculation. First-principles reading means asking what the payoff is supposed to represent before trusting the answer."
+      },
+      {
+        "heading": "The beginner mistake",
+        "body": "The common mistake is to treat the payoff table as if it came from nature. It did not. Someone chose what counts. The table is useful because it forces the writer to be explicit. It is dangerous when the writer forgets what was left outside the table."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Law and institutions",
+        "body": "A fine, rule, or contract changes behavior only through the comparisons people face. If breaking a rule is profitable after expected punishment, the rule may look strict on paper and weak in practice."
+      },
+      {
+        "field": "Computer science",
+        "body": "Online platforms often turn user actions into scores, bids, rankings, or rewards. The same warning applies: if the score does not match the behavior the platform actually wants, strategic users can optimize the score while harming the system."
+      }
+    ],
+    "concept_ids": ["preferences", "utility", "expected_utility", "best_response", "dominance"]
+  },
+  {
+    "id": "stable-prediction",
+    "title": "Stable Prediction Is Not A Good Outcome",
+    "plain_purpose": "Equilibrium is a stability test. It asks whether each person's choice makes sense given the other choices. It does not promise that the result is good for the group.",
+    "sections": [
+      {
+        "heading": "The plain idea",
+        "body": "Suppose everyone can see the proposed pattern of behavior. If one person would rather change while the others stay put, the pattern is not stable. If nobody wants to change alone, the pattern passes the equilibrium test. This is useful because it separates wishful thinking from a prediction that survives individual incentives."
+      },
+      {
+        "heading": "Why bad outcomes can be stable",
+        "body": "People often expect rational choice to produce a good result. The course pushes against that. A stable outcome can waste resources, block cooperation, keep prices high, or leave everyone worse off than another possible outcome. The reason is simple: a better group result may require several people to move together, while each person deciding alone may be afraid to move first. That is why the model separates individual logic from group welfare. It lets the reader say, without contradiction, that each person is responding sensibly and the final pattern is still harmful."
+      },
+      {
+        "heading": "What changes when the setting changes",
+        "body": "In a simultaneous game, each person chooses without seeing the current move of the other. In a game with timing, a later person can react. In a game with hidden information, each person reacts to beliefs. In a repeated game, each person reacts to the future as well as the present. The word equilibrium stays, but the object being checked changes."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Biology",
+        "body": "A trait can persist because it does well against the traits around it, not because it is best in every possible world. This is the everyday meaning behind evolutionary stability: success is measured inside a population of interacting types."
+      },
+      {
+        "field": "Networks",
+        "body": "Traffic routes, platform choices, and communication standards can get stuck because each user responds to where others already are. A different arrangement may be better, but no single user can reach it alone."
+      }
+    ],
+    "concept_ids": ["nash_equilibrium", "mixed_strategies", "zero_sum_games", "minimax", "common_knowledge"]
+  },
+  {
+    "id": "time-credibility",
+    "title": "Time Turns Plans Into Promises That Must Survive Later",
+    "plain_purpose": "Once decisions happen in order, a plan is not enough. The later action must still be worth taking when the later moment arrives.",
+    "sections": [
+      {
+        "heading": "Why a threat can fail",
+        "body": "A person may announce a punishment to shape someone else's behavior. But if carrying out the punishment later would hurt the punisher, the announcement is weak. The other person may ignore it. This is the basic reason for backward induction and subgame perfection. The model starts at the later decision and asks what will actually be chosen there. Then it uses that answer to understand earlier choices."
+      },
+      {
+        "heading": "Why repetition changes the problem",
+        "body": "If people meet only once, the present choice carries the whole weight. If they meet again and again, a present action can change future rewards. Cooperation can become possible because cheating today may cause punishment tomorrow. But repetition does not magically create trust. The future must matter enough, bad behavior must be noticed enough, and the punishment must be strong enough. A repeated-game explanation should always name the reward for cooperating, the short-run gain from cheating, the chance cheating is detected, and the cost of the punishment that follows."
+      },
+      {
+        "heading": "The last-period lesson",
+        "body": "A known final round can unravel cooperation. In the last round, future punishment is gone. If cooperation needs future punishment, it may fail there. Once the last round is solved, the next-to-last round may also lose its discipline, and the logic can move backward. This is why finite and infinite repetition teach different lessons."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Business and markets",
+        "body": "A firm can promise low prices, high quality, or harsh retaliation. The question is whether the firm will still want to do that later. Repeated customers, reviews, and reputation can make future losses large enough to discipline present behavior."
+      },
+      {
+        "field": "International relations",
+        "body": "Arms control, sanctions, and alliances all depend on credibility. A public promise is weak if the later government would prefer to walk away. A commitment device matters because it changes later incentives, not because it sounds serious."
+      }
+    ],
+    "concept_ids": ["extensive_form_games", "backward_induction", "subgame_perfection", "finitely_repeated_games", "infinitely_repeated_games", "folk_theorem", "implicit_cartels"]
+  },
+  {
+    "id": "information-belief",
+    "title": "Hidden Information Makes Beliefs Part Of The Game",
+    "plain_purpose": "When people do not know the same facts, they do not only choose actions. They also form beliefs about the situation they are in.",
+    "sections": [
+      {
+        "heading": "The plain problem",
+        "body": "A buyer may not know product quality. A firm may not know a worker's skill. A bidder may not know another bidder's value. A platform may not know what a user really wants. In each case, behavior carries information. A high price, a costly education choice, a bid, or a message may change what others believe. The action does two jobs at once: it may directly affect payoffs, and it may tell other people what kind of situation they are facing."
+      },
+      {
+        "heading": "Why probability enters",
+        "body": "A belief is a disciplined guess. The model uses probabilities so the guess can be updated and used in payoff comparisons. This does not mean people are perfect calculators. It means the writer has to say what uncertain fact matters, what each person initially thinks, what signal is observed, and how that observation should change the story. Without that discipline, hidden information becomes a vague excuse. With it, the reader can ask whether the assumed prior, signal, or update is carrying too much of the conclusion."
+      },
+      {
+        "heading": "Messages are not all the same",
+        "body": "A costly signal can separate types because different people face different costs or benefits from sending it. Cheap talk is different. If a message is free and cannot be verified, it persuades only when incentives make truthful speech possible. The model asks when words change beliefs and when they are only noise."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Biology",
+        "body": "Signals such as displays, calls, or costly traits can matter because they change what others infer. The key question is why a low-quality type cannot cheaply mimic a high-quality type."
+      },
+      {
+        "field": "Online systems",
+        "body": "Ratings, badges, verification marks, bids, and recommendations all act as signals. They are useful only if the system makes manipulation costly enough or designs incentives so the signal still means something."
+      }
+    ],
+    "concept_ids": ["bayesian_games", "types_and_beliefs", "bayesian_nash_equilibrium", "signaling", "screening_and_adverse_selection", "perfect_bayesian_equilibrium", "cheap_talk"]
+  },
+  {
+    "id": "rules-design",
+    "title": "Rules Shape Behavior Before Anyone Chooses",
+    "plain_purpose": "Mechanism design and auctions ask a different question: instead of predicting behavior under fixed rules, how should the rules be built when people will respond strategically?",
+    "sections": [
+      {
+        "heading": "The design question",
+        "body": "A market rule is not neutral. It tells people what actions are allowed, what information is requested, how winners are chosen, and how payments are made. Once people know the rule, they adapt. The designer has to expect that adaptation. A good rule is not one that works when everyone behaves nicely. It is one that still works when each person follows their own incentives. This is why the course treats rules as part of the model rather than background scenery. The rule changes the meaning of each action."
+      },
+      {
+        "heading": "Why auctions are central",
+        "body": "An auction is a compact laboratory for hidden values, incentives, information, and rules. A first-price auction, second-price auction, common-value auction, reserve price, and ad auction all change what a bid means. The same person may bid differently under different rules because the payment rule changes the cost of winning."
+      },
+      {
+        "heading": "Why revenue equivalence is fragile",
+        "body": "Revenue equivalence is powerful because it says different auction formats can produce the same expected revenue under a tight set of assumptions. It is also easy to misuse. Change risk attitudes, budgets, entry, reserve prices, private values, common values, or collusion, and the result may no longer hold. The lesson is not that all auctions are the same. The lesson is to find exactly which assumptions are carrying the result."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Computer science",
+        "body": "Ad auctions, matching systems, routing rules, and platform marketplaces are mechanisms. The designer writes rules for strategic users and automated agents. The practical question is whether the rule still produces useful outcomes when participants learn how to respond."
+      },
+      {
+        "field": "Public policy",
+        "body": "School choice, spectrum auctions, procurement, and regulation all require rule design. The policy problem is not only what outcome the planner wants. It is whether the people inside the rule have reasons to reveal information and act in ways the rule needs."
+      }
+    ],
+    "concept_ids": ["auctions", "revenue_equivalence", "ad_auctions", "screening_and_adverse_selection", "common_knowledge"]
+  },
+  {
+    "id": "topology-math",
+    "title": "Where Topology And Mathematics Enter Honestly",
+    "plain_purpose": "Topology is not a slogan for game theory. It enters through careful existence questions: when does a stable point have to exist inside a space of possible choices?",
+    "sections": [
+      {
+        "heading": "The plain version of a fixed point",
+        "body": "A fixed point is a place where a rule sends you back to the same place. In game theory, the rough idea is this: take a possible description of what everyone might do, ask what each person would want to do in response, and look for a description that survives that response rule. If the response points back to the same description, you have a stable candidate."
+      },
+      {
+        "heading": "Why spaces of choices matter",
+        "body": "Some games may not have a stable answer if players can use only pure actions. Rock-paper-scissors is the everyday example: any pure choice can be beaten. Mixed strategies expand the space. Instead of choosing only one action, a player can choose probabilities over actions. That creates a smoother space of possible behavior. Existence theorems use facts about such spaces, such as being closed, bounded, and connected in the right way, to show that a fixed point exists."
+      },
+      {
+        "heading": "What existence does and does not give you",
+        "body": "An existence proof can be very important even when it does not tell you which equilibrium people will play or how quickly they will find it. It says the model is not empty. It also warns you to check uniqueness, learning, computation, and interpretation separately. A topological proof can guarantee a stable point under assumptions, but it cannot by itself tell you whether the stable point is good, easy to reach, or relevant to the real setting."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Topology and mathematics",
+        "body": "The honest connection is through continuity, compactness, convexity, and fixed points. These words describe the shape of the strategy space and the behavior of response rules. They matter because equilibrium existence often depends on shape, not on a single numerical trick."
+      },
+      {
+        "field": "Algorithms",
+        "body": "Once existence is known, computation becomes the next question. A stable point may exist but be hard to find. This is why computer science asks about algorithms, approximation, learning dynamics, and complexity rather than stopping at the theorem."
+      }
+    ],
+    "concept_ids": ["mixed_strategies", "nash_equilibrium", "best_response", "rationalizability", "minimax"]
+  },
+  {
+    "id": "why-important",
+    "title": "Why Any Of This Is Important",
+    "plain_purpose": "The course matters because it teaches a habit: explain outcomes by looking at the structure of choice, not only at intentions, morals, or labels.",
+    "sections": [
+      {
+        "heading": "It makes hidden pressure visible",
+        "body": "Many outcomes look confusing until you ask who can move, what they know, what they want, what they expect, and what happens later. Then the pressure becomes visible. A person may stay silent because speaking is not credible. A firm may keep a high price because rivals can punish cuts. A bidder may shade a bid because the payment rule makes winning expensive. A government may fail to cooperate because future enforcement is weak. The value is not that one model explains everything. The value is that the model forces the important pressure into the open."
+      },
+      {
+        "heading": "It improves criticism",
+        "body": "Game theory is useful even when you reject a model. It gives you precise questions for rejection. Which payoff is wrong? Which action was omitted? Which information assumption fails? Which future consequence was ignored? Which rule changes incentives? A vague objection says the model is unrealistic. A first-principles objection says exactly where the model loses the real problem."
+      },
+      {
+        "heading": "It helps design better settings",
+        "body": "If behavior responds to incentives, better outcomes often require better settings rather than louder wishes. Rules, timing, information, penalties, verification, repeated contact, and outside options can change what people find worth doing. The practical value of the course is not memorizing names. It is learning how to rebuild the situation so good behavior is easier to sustain."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Research",
+        "body": "A researcher can use the course as a checklist for a model: players, actions, information, timing, payoffs, solution concept, evidence, and limits. That checklist makes the argument easier to test."
+      },
+      {
+        "field": "Work and civic life",
+        "body": "The same habit helps outside research. Before blaming individuals, inspect the rules and incentives. Before trusting a policy, ask how people will respond. Before accepting a prediction, ask whether the prediction survives the choices of the people inside it."
+      }
+    ],
+    "concept_ids": ["common_knowledge", "auctions", "cheap_talk", "implicit_cartels", "bargaining"]
+  }
+]

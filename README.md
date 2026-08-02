@@ -16,5 +16,6 @@ The working standard is the Stanford course concept-atlas pattern:
 Current reviewer handoff:
 
 - `HANDOFF.md`
+- `site/first-principles.html`
 - `site/review-guide.html`
 - `site/publication-status.html`

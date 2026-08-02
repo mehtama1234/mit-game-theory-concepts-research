@@ -127,6 +127,7 @@ def main() -> int:
     capstones = json.loads((ROOT / "analysis/throughlines/capstone-self-test.json").read_text(encoding="utf-8"))
     review_cards = json.loads((ROOT / "analysis/throughlines/review-guide.json").read_text(encoding="utf-8"))
     publication_status = json.loads((ROOT / "analysis/throughlines/publication-status.json").read_text(encoding="utf-8"))
+    first_principles_essays = json.loads((ROOT / "analysis/throughlines/first-principles-essays.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_diagnostics = json.loads((ROOT / "analysis/editorial-overrides/concept-diagnostics.json").read_text(encoding="utf-8"))
@@ -217,6 +218,49 @@ def main() -> int:
     for phrase in FORBIDDEN:
         if phrase in site_text:
             errors.append(f"published site contains forbidden phrase: {phrase}")
+
+    first_principles_html = (SITE / "first-principles.html").read_text(encoding="utf-8") if (SITE / "first-principles.html").exists() else ""
+    essay_words = []
+    essay_application_links = 0
+    essay_concept_links = 0
+    required_application_fields = {"Topology and mathematics", "Computer science", "Politics", "Biology", "Law and institutions", "Everyday life"}
+    seen_application_fields = set()
+    for essay in first_principles_essays:
+        text = " ".join(
+            [essay.get("plain_purpose", "")]
+            + [section.get("body", "") for section in essay.get("sections", [])]
+            + [application.get("body", "") for application in essay.get("applications", [])]
+        )
+        count = words(text)
+        essay_words.append(count)
+        if count < 300:
+            errors.append(f"first-principles essay {essay['id']} is shallow: {count} words")
+        if f'id="{essay["id"]}"' not in first_principles_html:
+            errors.append(f"first-principles essay {essay['id']} not rendered")
+        for section in essay.get("sections", []):
+            if html_lib.escape(section.get("heading", ""), quote=True) not in first_principles_html:
+                errors.append(f"first-principles essay {essay['id']} section heading not rendered")
+            if html_lib.escape(section.get("body", ""), quote=True) not in first_principles_html:
+                errors.append(f"first-principles essay {essay['id']} section body not rendered")
+        for application in essay.get("applications", []):
+            seen_application_fields.add(application.get("field", ""))
+            if html_lib.escape(application.get("field", ""), quote=True) in first_principles_html:
+                essay_application_links += 1
+            else:
+                errors.append(f"first-principles essay {essay['id']} application not rendered: {application.get('field', '')}")
+        for concept_id in essay.get("concept_ids", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"first-principles essay {essay['id']} unknown concept link: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' in first_principles_html:
+                essay_concept_links += 1
+            else:
+                errors.append(f"first-principles essay {essay['id']} concept link not rendered: {concept_id}")
+        for phrase in ["crucial role", "complex dynamics", "provides insights", "real-world applications"]:
+            if phrase in text.lower():
+                errors.append(f"first-principles essay {essay['id']} uses banned filler phrase: {phrase}")
+    missing_application_fields = required_application_fields - seen_application_fields
+    if missing_application_fields:
+        errors.append(f"first-principles essays missing application fields: {', '.join(sorted(missing_application_fields))}")
 
     for field in [field for field in CONCEPT_FIELDS if field != "mathematical_principle"]:
         seen: dict[str, list[str]] = {}
@@ -1430,6 +1474,10 @@ def main() -> int:
         f"- Concept pages with derivation links: {concept_pages_with_derivations}",
         f"- Concept equation note words: min {min(equation_note_words) if equation_note_words else 0}, max {max(equation_note_words) if equation_note_words else 0}",
         f"- Concept worked-example card words: min {min(worked_example_words) if worked_example_words else 0}, max {max(worked_example_words) if worked_example_words else 0}",
+        f"- First-principles essay cards: {len(first_principles_essays)}",
+        f"- First-principles essay words: min {min(essay_words) if essay_words else 0}, max {max(essay_words) if essay_words else 0}",
+        f"- First-principles application cards: {essay_application_links}",
+        f"- First-principles concept links: {essay_concept_links}",
         f"- Lecture pages with derivation links: {lecture_pages_with_derivations}",
         f"- Method-family treatment words: min {min(family_words)}, max {max(family_words)}",
         f"- Method-family concept links: {family_concept_links}",

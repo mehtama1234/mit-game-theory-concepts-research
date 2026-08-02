@@ -10,8 +10,10 @@ The current deliverable is a local, remotely pushed, and Sites-deployed static r
 - 33 concept pages with plain-language first-principles explanations.
 - 66 transcript-backed evidence records.
 - 8 themes, 10 subthemes, 10 mathematical primitives, 9 derivation cards, and 3 method-family treatments.
+- A course-wide first-principles essay page that explains the bigger picture in everyday language, including applications beyond economics.
 - Reader surfaces for study route, recognition, math clinic, drills, solved cases, argument chains, misconception repairs, paper reading, model building, proof sketches, assumption audits, worked transfer, and capstone self-tests.
 - Review surfaces:
+  - `site/first-principles.html`
   - `site/review-guide.html`
   - `site/publication-status.html`
   - `analysis/audits/editorial-quality-report.md`
@@ -28,6 +30,7 @@ python3 -m http.server 8899 --directory site
 Open:
 
 - `http://127.0.0.1:8899/`
+- `http://127.0.0.1:8899/first-principles.html`
 - `http://127.0.0.1:8899/review-guide.html`
 - `http://127.0.0.1:8899/publication-status.html`
 - `http://127.0.0.1:8899/concepts/ad_auctions.html`
@@ -89,6 +92,7 @@ So the correct completion claim is:
 - `analysis/throughlines/primitives.json`
 - `analysis/throughlines/derivations.json`
 - `analysis/throughlines/method-families.json`
+- `analysis/throughlines/first-principles-essays.json`
 - `analysis/throughlines/review-guide.json`
 - `analysis/throughlines/publication-status.json`
 - `analysis/editorial-overrides/`
@@ -152,6 +156,7 @@ git ls-tree -r --name-only origin/gh-pages | rg '^(index.html|review-guide.html|
 
 ## What To Improve Next
 
+- Expand the first-principles essay layer into topic-specific long essays where each course topic gets a full plain-language treatment.
 - Manual qualitative review of the weakest concept pages listed in `analysis/audits/editorial-quality-report.md`.
 - More transcript-window spot checks for lecture faithfulness.
 - More worked examples where a page still teaches mainly through prose.

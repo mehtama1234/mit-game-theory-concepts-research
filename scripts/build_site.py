@@ -35,6 +35,7 @@ def page(title: str, body: str, active: str = "", depth: int = 0) -> str:
     prefix = "../" * depth
     nav = [
         ("index.html", "Overview", "overview"),
+        ("first-principles.html", "First Principles", "first-principles"),
         ("review-guide.html", "Review Guide", "review-guide"),
         ("publication-status.html", "Status", "publication-status"),
         ("study-route.html", "Study Route", "study-route"),
@@ -223,6 +224,7 @@ def build_index(concepts, themes, evidence, lectures):
   <aside class="stats"><strong>{len(lectures)}</strong><span>lectures</span><strong>{len(concepts)}</strong><span>concepts</span><strong>{len(evidence)}</strong><span>evidence records</span></aside>
 </section>
 <section><h2>The Big Throughline</h2><p>Game theory studies situations where choosing well means reasoning about other choosers. Equilibrium, credibility, beliefs, auctions, signaling, and common knowledge are different answers to the same pressure: my best move depends on what others do, know, want, and expect.</p></section>
+<section><h2>Read The Course In Plain Language</h2><p>The first-principles essays explain the whole course as one long argument about choice, incentives, beliefs, time, rules, knowledge, and why these ideas matter beyond economics.</p><p><a class="button" href="first-principles.html">Open first-principles essays</a></p></section>
 <section><h2>Review The Work</h2><p>The review guide gives a concrete audit path through the strongest and most failure-prone parts of the lab: first-principles depth, lecture faithfulness, math clarity, reader practice, and publication state.</p><p><a class="button" href="review-guide.html">Open the review guide</a></p></section>
 <section><h2>Check Publication State</h2><p>The status page separates what is proven locally, what is pushed remotely, what is on the generated site branch, and what is still blocked for public hosting.</p><p><a class="button" href="publication-status.html">Open publication status</a></p></section>
 <section><h2>Use The Study Route</h2><p>The route map gives a compact path through the course: choice, representation, equilibrium, time, information, and design.</p><p><a class="button" href="study-route.html">Open the study route</a></p></section>
@@ -245,6 +247,39 @@ def build_index(concepts, themes, evidence, lectures):
 <section><h2>Start With The Course Path</h2><p>The lecture path follows the MIT sequence while linking each session to atlas concepts and transcript evidence.</p><p><a class="button" href="lectures.html">Open the lecture path</a></p></section>
 <section><h2>Start With Concepts</h2><div class="grid">{''.join(concept_card(c, evidence_map(evidence)) for c in concepts[:6])}</div><p><a class="button" href="concepts.html">Open the full atlas</a></p></section>"""
     write(SITE / "index.html", page("Overview", body, "overview"))
+
+
+def build_first_principles_essays(essays, concept_by_id):
+    cards = []
+    for essay in essays:
+        section_html = "".join(
+            f'<section class="essay-section"><h3>{esc(section["heading"])}</h3><p>{esc(section["body"])}</p></section>'
+            for section in essay.get("sections", [])
+        )
+        application_html = "".join(
+            f'<article class="application-card"><h3>{esc(application["field"])}</h3><p>{esc(application["body"])}</p></article>'
+            for application in essay.get("applications", [])
+        )
+        concept_links = "".join(
+            f'<a class="chip" href="concepts/{esc(concept_id)}.html">{esc(concept_by_id[concept_id]["name"])}</a>'
+            for concept_id in essay.get("concept_ids", [])
+            if concept_id in concept_by_id
+        )
+        cards.append(f"""<article class="wide-card essay-card" id="{esc(essay["id"])}">
+  <h2>{esc(essay["title"])}</h2>
+  <p class="lead">{esc(essay["plain_purpose"])}</p>
+  {section_html}
+  <h3>Where The Same Reasoning Appears</h3>
+  <div class="application-grid">{application_html}</div>
+  <h3>Course Links</h3>
+  <p class="chips">{concept_links or '<span class="chip muted">No direct concept links yet</span>'}</p>
+</article>""")
+    body = """<section class="page-head">
+  <p class="eyebrow">Course-wide first principles</p>
+  <h1>Game Theory In Everyday Words</h1>
+  <p>These essays explain the course as a connected way of thinking: start with ordinary choice under pressure, then add timing, information, repetition, rules, knowledge, and applications outside economics.</p>
+</section>""" + "".join(cards)
+    write(SITE / "first-principles.html", page("First Principles", body, "first-principles"))
 
 
 def build_review_guide(review_cards, concept_by_id, ev_by_id):
@@ -1575,7 +1610,7 @@ def build_evidence(evidence, concept_by_id, subtheme_by_id, lecture_by_evidence_
 
 
 def build_assets():
-    css = """:root{--bg:#f8f7f2;--ink:#202124;--muted:#5f6673;--line:#d9d6ca;--accent:#8a4b16;--accent-dark:#6f3b10;--panel:#fff;--soft:#f4eadf}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.58}a{color:var(--accent-dark)}.topbar{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:14px 28px;border-bottom:1px solid var(--line);background:rgba(248,247,242,.94);backdrop-filter:blur(10px)}.brand{font-weight:800;text-decoration:none;color:var(--ink)}nav{display:flex;flex-wrap:wrap;gap:8px}nav a{padding:7px 9px;border-radius:6px;text-decoration:none;color:var(--muted);font-size:14px}nav a.active,nav a:hover{background:var(--soft);color:var(--accent-dark)}main{max-width:1180px;margin:0 auto;padding:28px}.hero{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:32px;align-items:center;min-height:520px;padding:42px 0 46px;border-bottom:1px solid var(--line)}h1{font-size:clamp(36px,5.2vw,62px);line-height:1.04;margin:0 0 20px;letter-spacing:0}h2{font-size:28px;margin:34px 0 12px}h3{font-size:20px;margin:0 0 10px}.lead{font-size:19px;color:var(--muted);max-width:780px}.eyebrow,.meta{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:0}.stats{display:grid;gap:2px;border-left:4px solid var(--accent);padding-left:18px}.stats strong{font-size:44px;line-height:1}.stats span{color:var(--muted);margin-bottom:14px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.concept-card,.wide-card,.evidence{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px}.concept-card h3 a{text-decoration:none;color:var(--ink)}dl{display:grid;gap:8px;margin:14px 0}dt{font-weight:800}dd{margin:0;color:var(--muted)}.page-head{max-width:840px;padding:26px 0 18px}.page-head h1{font-size:clamp(34px,5vw,58px)}.treatment{max-width:870px}.evidence-list{padding-left:18px;color:var(--muted)}.evidence-stack{display:grid;gap:14px}.wide-card{margin:14px 0}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip,.button{display:inline-flex;align-items:center;min-height:32px;padding:6px 10px;border-radius:6px;background:var(--soft);color:var(--accent-dark);text-decoration:none;font-size:14px}.button{background:var(--accent);color:white}blockquote{margin:12px 0 0;padding:12px 14px;border-left:4px solid var(--accent);background:#fbfaf7;color:var(--muted)}.learning-diagram{margin:18px 0 30px;padding:0;border:1px solid var(--line);border-radius:8px;background:var(--panel);overflow:hidden}.learning-diagram figcaption{padding:12px 16px;border-bottom:1px solid var(--line);color:var(--accent-dark);font-weight:800}.flow-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.flow-step{min-height:160px;padding:16px;border-right:1px solid var(--line);background:linear-gradient(180deg,#fff,#fbfaf7)}.flow-step:last-child{border-right:0}.flow-step span{display:inline-flex;margin-bottom:10px;padding:4px 8px;border-radius:6px;background:var(--soft);color:var(--accent-dark);font-size:13px;font-weight:800}.flow-step p{margin:0;color:var(--muted);font-size:14px;overflow-wrap:anywhere}@media(max-width:820px){.topbar{align-items:flex-start;flex-direction:column;padding:12px 18px}main{padding:18px}.hero,.grid{grid-template-columns:1fr}.hero{min-height:0;padding-top:32px}h1{font-size:clamp(34px,10vw,44px)}.flow-steps{grid-template-columns:1fr}.flow-step{min-height:0;border-right:0;border-bottom:1px solid var(--line)}.flow-step:last-child{border-bottom:0}}"""
+    css = """:root{--bg:#f8f7f2;--ink:#202124;--muted:#5f6673;--line:#d9d6ca;--accent:#8a4b16;--accent-dark:#6f3b10;--panel:#fff;--soft:#f4eadf}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.58}a{color:var(--accent-dark)}.topbar{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:14px 28px;border-bottom:1px solid var(--line);background:rgba(248,247,242,.94);backdrop-filter:blur(10px)}.brand{font-weight:800;text-decoration:none;color:var(--ink)}nav{display:flex;flex-wrap:wrap;gap:8px}nav a{padding:7px 9px;border-radius:6px;text-decoration:none;color:var(--muted);font-size:14px}nav a.active,nav a:hover{background:var(--soft);color:var(--accent-dark)}main{max-width:1180px;margin:0 auto;padding:28px}.hero{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:32px;align-items:center;min-height:520px;padding:42px 0 46px;border-bottom:1px solid var(--line)}h1{font-size:clamp(36px,5.2vw,62px);line-height:1.04;margin:0 0 20px;letter-spacing:0}h2{font-size:28px;margin:34px 0 12px}h3{font-size:20px;margin:0 0 10px}.lead{font-size:19px;color:var(--muted);max-width:780px}.eyebrow,.meta{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:0}.stats{display:grid;gap:2px;border-left:4px solid var(--accent);padding-left:18px}.stats strong{font-size:44px;line-height:1}.stats span{color:var(--muted);margin-bottom:14px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.concept-card,.wide-card,.evidence{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px}.concept-card h3 a{text-decoration:none;color:var(--ink)}dl{display:grid;gap:8px;margin:14px 0}dt{font-weight:800}dd{margin:0;color:var(--muted)}.page-head{max-width:840px;padding:26px 0 18px}.page-head h1{font-size:clamp(34px,5vw,58px)}.treatment{max-width:870px}.evidence-list{padding-left:18px;color:var(--muted)}.evidence-stack{display:grid;gap:14px}.wide-card{margin:14px 0}.essay-card{padding:28px}.essay-section{max-width:900px;margin:24px 0}.essay-section p{font-size:18px;color:#34373d}.application-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:14px 0 22px}.application-card{border:1px solid var(--line);border-radius:8px;padding:16px;background:#fbfaf7}.application-card p{margin:0;color:var(--muted)}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip,.button{display:inline-flex;align-items:center;min-height:32px;padding:6px 10px;border-radius:6px;background:var(--soft);color:var(--accent-dark);text-decoration:none;font-size:14px}.button{background:var(--accent);color:white}blockquote{margin:12px 0 0;padding:12px 14px;border-left:4px solid var(--accent);background:#fbfaf7;color:var(--muted)}.learning-diagram{margin:18px 0 30px;padding:0;border:1px solid var(--line);border-radius:8px;background:var(--panel);overflow:hidden}.learning-diagram figcaption{padding:12px 16px;border-bottom:1px solid var(--line);color:var(--accent-dark);font-weight:800}.flow-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.flow-step{min-height:160px;padding:16px;border-right:1px solid var(--line);background:linear-gradient(180deg,#fff,#fbfaf7)}.flow-step:last-child{border-right:0}.flow-step span{display:inline-flex;margin-bottom:10px;padding:4px 8px;border-radius:6px;background:var(--soft);color:var(--accent-dark);font-size:13px;font-weight:800}.flow-step p{margin:0;color:var(--muted);font-size:14px;overflow-wrap:anywhere}@media(max-width:820px){.topbar{align-items:flex-start;flex-direction:column;padding:12px 18px}main{padding:18px}.hero,.grid,.application-grid{grid-template-columns:1fr}.hero{min-height:0;padding-top:32px}h1{font-size:clamp(34px,10vw,44px)}.essay-card{padding:18px}.essay-section p{font-size:16px}.flow-steps{grid-template-columns:1fr}.flow-step{min-height:0;border-right:0;border-bottom:1px solid var(--line)}.flow-step:last-child{border-bottom:0}}"""
     write(SITE / "assets/styles.css", css)
 
 
@@ -1604,6 +1639,7 @@ def main():
     capstones = load("analysis/throughlines/capstone-self-test.json")
     review_cards = load("analysis/throughlines/review-guide.json")
     publication_status = load("analysis/throughlines/publication-status.json")
+    first_principles_essays = load("analysis/throughlines/first-principles-essays.json")
     lectures = load("analysis/lectures/lecture-path.json")
     equation_notes = load_optional("analysis/editorial-overrides/equation-walkthrough-notes.json", {})
     worked_examples = load_optional("analysis/editorial-overrides/worked-example-cards.json", {})
@@ -1625,6 +1661,7 @@ def main():
     proof_by_id = {item["id"]: item for item in proofs}
     assumption_by_id = {item["id"]: item for item in assumptions}
     build_index(concepts, themes, evidence, lectures)
+    build_first_principles_essays(first_principles_essays, concept_by_id)
     build_review_guide(review_cards, concept_by_id, ev_by_id)
     build_publication_status(publication_status)
     build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_by_id)

@@ -26,6 +26,7 @@ def main() -> int:
     primitives = json.loads((ROOT / "analysis/throughlines/primitives.json").read_text(encoding="utf-8"))
     derivations = json.loads((ROOT / "analysis/throughlines/derivations.json").read_text(encoding="utf-8"))
     families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
+    first_principles_essays = json.loads((ROOT / "analysis/throughlines/first-principles-essays.json").read_text(encoding="utf-8"))
     review_cards = json.loads((ROOT / "analysis/throughlines/review-guide.json").read_text(encoding="utf-8"))
     publication_status = json.loads((ROOT / "analysis/throughlines/publication-status.json").read_text(encoding="utf-8"))
     queue = json.loads((ROOT / "analysis/evidence/evidence-review-queue.json").read_text(encoding="utf-8"))
@@ -63,6 +64,7 @@ def main() -> int:
         f"- Mathematical primitives: {len(primitives)}",
         f"- Derivation cards: {len(derivations)}",
         f"- Method families: {len(families)}",
+        f"- First-principles essay cards: {len(first_principles_essays)}",
         f"- Review guide cards: {len(review_cards)}",
         f"- Publication status cards: {len(publication_status)}",
         f"- Root handoff present: {(ROOT / 'HANDOFF.md').exists()}",
@@ -80,6 +82,7 @@ def main() -> int:
         "- First-principles concept atlas: proven structurally by `scripts/validate_first_principles_atlas.py`; prose uses required hand-crafted overrides.",
         "- Evidence discipline: every concept has two transcript evidence records with local transcript windows and YouTube links.",
         "- Generic-template guard: validators reject the original template phrases in generated concept prose and published HTML.",
+        "- Course-wide first-principles essay layer: `first-principles.html` gives plain-language long-form explanations of the whole course, including topology/mathematics and other fields outside economics.",
         "- Reviewability: `review-guide.html` gives an explicit route for checking first-principles depth, lecture faithfulness, math clarity, reader practice, and publication state.",
         "- Publication status: `publication-status.html` separates local build proof, remote branch proof, generated-site-branch proof, and public-hosting proof.",
         "- Handoff: `HANDOFF.md` gives a durable root-level review and continuation guide.",
@@ -94,7 +97,7 @@ def main() -> int:
         "",
         "## Current Conclusion",
         "",
-        "Local research/build readiness is stronger than the first committed pass: the atlas now has hand-authored synthesis for themes, subthemes, primitives, method families, evidence payloads, a reviewer-facing audit route, an explicit publication-status surface, and a root handoff, with validators that reject the older generic patterns.",
+        "Local research/build readiness is stronger than the first committed pass: the atlas now has hand-authored synthesis for themes, subthemes, primitives, method families, evidence payloads, a course-wide first-principles essay layer, a reviewer-facing audit route, an explicit publication-status surface, and a root handoff, with validators that reject the older generic patterns.",
         "",
     ]
     REPORT.parent.mkdir(parents=True, exist_ok=True)
