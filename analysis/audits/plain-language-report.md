@@ -5,8 +5,10 @@ This audit checks the first-principles layer for simple wording, everyday setup,
 ## Summary
 
 - Essay cards: 16
-- Concept plain-language essays: 33
+- Concept plain-language essays: 33 of 33
 - Concept plain-language essay words: min 360, max 406
+- Concept plain-language application fields: 59
+- Concept plain-language topology/fixed-point mentions: 29
 - Essay words: min 301, max 455
 - Why-it-matters checkpoints: 8
 - Why-it-matters words: min 98, max 128

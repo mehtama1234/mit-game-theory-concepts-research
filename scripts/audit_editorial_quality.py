@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import html as html_lib
 import re
+from collections import Counter
 from pathlib import Path
 
 from derivation_link_map import expected_derivation_ids_for_concept, expected_derivation_ids_for_lecture
@@ -179,6 +180,7 @@ def main() -> int:
     worked_example_words = []
     concept_plain_essay_words = []
     concept_plain_essay_applications = 0
+    concept_plain_essay_application_fields: Counter[str] = Counter()
     concept_plain_essay_pages = 0
     concept_plain_essay_topology_links = 0
     for concept in concepts:
@@ -285,6 +287,7 @@ def main() -> int:
         for application in applications:
             field = str(application.get("field", ""))
             body = str(application.get("body", ""))
+            concept_plain_essay_application_fields[field] += 1
             parts.extend([field, body])
             if words(body) < 18:
                 errors.append(f"concept plain-language essay {concept_id} shallow application: {field}")
@@ -300,8 +303,14 @@ def main() -> int:
             errors.append(f"concept plain-language essay {concept_id} missing mistake language")
         if "concept-plain-essay" in html:
             concept_plain_essay_pages += 1
-        if "topology" in combined.lower() or "fixed point" in combined.lower():
+        if "topology" in combined.lower() or "fixed point" in combined.lower() or "fixed-point" in combined.lower():
             concept_plain_essay_topology_links += 1
+    if concept_plain_essay_pages != len(concept_by_id):
+        errors.append(f"only {concept_plain_essay_pages} concept pages render plain-language essays")
+    if len(concept_plain_essay_application_fields) < 30:
+        errors.append(f"only {len(concept_plain_essay_application_fields)} concept plain-language application fields")
+    if concept_plain_essay_topology_links < 20:
+        errors.append(f"only {concept_plain_essay_topology_links} concept essays mention topology or fixed points")
 
     site_text = "\n".join(path.read_text(encoding="utf-8", errors="ignore") for path in SITE.rglob("*.html")).lower()
     for phrase in FORBIDDEN:
@@ -1705,10 +1714,11 @@ def main() -> int:
         f"- Concept first-principles backlinks: {concept_first_principles_backlinks}",
         f"- Concept equation note words: min {min(equation_note_words) if equation_note_words else 0}, max {max(equation_note_words) if equation_note_words else 0}",
         f"- Concept worked-example card words: min {min(worked_example_words) if worked_example_words else 0}, max {max(worked_example_words) if worked_example_words else 0}",
-        f"- Concept plain-language essays: {len(concept_plain_essays)}",
+        f"- Concept plain-language essays: {len(concept_plain_essays)} of {len(concepts)}",
         f"- Concept plain-language essay words: min {min(concept_plain_essay_words) if concept_plain_essay_words else 0}, max {max(concept_plain_essay_words) if concept_plain_essay_words else 0}",
         f"- Concept pages with plain-language essays: {concept_plain_essay_pages}",
         f"- Concept plain-language applications: {concept_plain_essay_applications}",
+        f"- Concept plain-language application fields: {len(concept_plain_essay_application_fields)}",
         f"- Concept plain-language topology/fixed-point mentions: {concept_plain_essay_topology_links}",
         f"- First-principles essay cards: {len(first_principles_essays)}",
         f"- First-principles essay words: min {min(essay_words) if essay_words else 0}, max {max(essay_words) if essay_words else 0}",

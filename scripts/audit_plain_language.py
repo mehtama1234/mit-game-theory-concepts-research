@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import re
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,6 +25,7 @@ def load_json(path: str):
 def main() -> int:
     errors: list[str] = []
     warnings: list[str] = []
+    concepts = load_json("analysis/concepts/concept-atlas.json")
     essays = load_json("analysis/throughlines/first-principles-essays.json")
     why_matters = load_json("analysis/throughlines/why-matters-checkpoints.json")
     concept_plain_essays = load_json("analysis/throughlines/concept-plain-essays.json")
@@ -123,7 +125,20 @@ def main() -> int:
             if term.lower() in lower:
                 technical_mentions += lower.count(term.lower())
 
+    concept_by_id = {concept["id"]: concept for concept in concepts}
+    concept_plain_declared_ids = {str(essay.get("concept_id", "")) for essay in concept_plain_essays}
+    missing_concept_plain_essays = set(concept_by_id) - concept_plain_declared_ids
+    extra_concept_plain_essays = concept_plain_declared_ids - set(concept_by_id)
+    if missing_concept_plain_essays:
+        errors.append(f"concept essays missing concepts: {', '.join(sorted(missing_concept_plain_essays))}")
+    if extra_concept_plain_essays:
+        errors.append(f"concept essays reference non-atlas concepts: {', '.join(sorted(extra_concept_plain_essays))}")
+    if len(concept_plain_essays) != len(concept_by_id):
+        errors.append(f"concept essay count mismatch: {len(concept_plain_essays)} essays for {len(concept_by_id)} concepts")
+
     concept_plain_word_counts = []
+    concept_plain_application_fields: Counter[str] = Counter()
+    concept_plain_topology_mentions = 0
     for essay in concept_plain_essays:
         parts = [str(essay.get("title", ""))]
         for section in essay.get("sections", []):
@@ -138,6 +153,7 @@ def main() -> int:
                     warnings.append(f"long sentence in concept essay {essay['concept_id']}: {sentence[:90]}")
         for application in essay.get("applications", []):
             body = str(application.get("body", ""))
+            concept_plain_application_fields[str(application.get("field", ""))] += 1
             parts.append(str(application.get("field", "")))
             parts.append(body)
             if words(body) < 18:
@@ -147,6 +163,8 @@ def main() -> int:
         lower = text.lower()
         if words(text) < 360:
             errors.append(f"concept essay {essay['concept_id']} is shallow")
+        if "topology" in lower or "fixed point" in lower or "fixed-point" in lower:
+            concept_plain_topology_mentions += 1
         if "mistake" not in lower:
             errors.append(f"concept essay {essay['concept_id']} lacks explicit mistake language")
         if not any(marker in lower for marker in ["everyday", "imagine", "person", "people", "firm", "buyer", "bidder", "platform"]):
@@ -224,8 +242,10 @@ def main() -> int:
         "## Summary",
         "",
         f"- Essay cards: {len(essays)}",
-        f"- Concept plain-language essays: {len(concept_plain_essays)}",
+        f"- Concept plain-language essays: {len(concept_plain_essays)} of {len(concepts)}",
         f"- Concept plain-language essay words: min {min(concept_plain_word_counts) if concept_plain_word_counts else 0}, max {max(concept_plain_word_counts) if concept_plain_word_counts else 0}",
+        f"- Concept plain-language application fields: {len(concept_plain_application_fields)}",
+        f"- Concept plain-language topology/fixed-point mentions: {concept_plain_topology_mentions}",
         f"- Essay words: min {min(essay_word_counts) if essay_word_counts else 0}, max {max(essay_word_counts) if essay_word_counts else 0}",
         f"- Why-it-matters checkpoints: {len(why_matters)}",
         f"- Why-it-matters words: min {min(why_matters_word_counts) if why_matters_word_counts else 0}, max {max(why_matters_word_counts) if why_matters_word_counts else 0}",

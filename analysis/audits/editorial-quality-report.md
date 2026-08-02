@@ -21,11 +21,12 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Concept first-principles backlinks: 176
 - Concept equation note words: min 65, max 77
 - Concept worked-example card words: min 208, max 239
-- Concept plain-language essays: 33
+- Concept plain-language essays: 33 of 33
 - Concept plain-language essay words: min 360, max 406
 - Concept pages with plain-language essays: 33
 - Concept plain-language applications: 66
-- Concept plain-language topology/fixed-point mentions: 27
+- Concept plain-language application fields: 59
+- Concept plain-language topology/fixed-point mentions: 29
 - First-principles essay cards: 16
 - First-principles essay words: min 301, max 455
 - First-principles application cards: 32
