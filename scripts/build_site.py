@@ -1488,7 +1488,30 @@ def first_principles_backlinks(concept_id: str, essays, application_map, everyda
 </section>"""
 
 
-def build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examples, concept_diagnostics, first_principles_essays, application_map, everyday_glossary):
+def concept_plain_essay_block(concept_id, concept_plain_essays):
+    essay = concept_plain_essays.get(concept_id)
+    if not essay:
+        return ""
+    sections = "".join(
+        f"<h3>{esc(section['heading'])}</h3><p>{esc(section['body'])}</p>"
+        for section in essay.get("sections", [])
+    )
+    applications = "".join(
+        f"""<article class="card">
+  <h3>{esc(application['field'])}</h3>
+  <p>{esc(application['body'])}</p>
+</article>"""
+        for application in essay.get("applications", [])
+    )
+    return f"""<section class="treatment concept-plain-essay">
+  <h2>{esc(essay['title'])}</h2>
+  {sections}
+  <h2>Where This Shows Up Outside The Course</h2>
+  <div class="grid">{applications}</div>
+</section>"""
+
+
+def build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examples, concept_diagnostics, first_principles_essays, application_map, everyday_glossary, concept_plain_essays):
     ev_by_id = evidence_map(evidence)
     concept_ids = {c["id"] for c in concepts}
     body = f'<section class="page-head"><h1>Concept Atlas</h1><p>Each page explains the strategic pressure, the mathematical object, what breaks without it, and transcript evidence.</p></section><section class="grid">{"".join(concept_card(c, ev_by_id) for c in concepts)}</section>'
@@ -1529,10 +1552,12 @@ def build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examp
             ("Connected Concepts", concept["cross_course_connections"]),
         ]
         treatment = "".join(f"<h2>{esc(h)}</h2><p>{esc(text)}</p>" for h, text in sections)
+        plain_essay = concept_plain_essay_block(concept["id"], concept_plain_essays)
+        plain_essay_html = f"{plain_essay}\n" if plain_essay else ""
         body = f"""<section class="page-head"><p class="eyebrow">{esc(concept['theme_id']).replace('_', ' ')}</p><h1>{esc(concept['name'])}</h1><p>{esc(concept['plain_language_definition'])}</p></section>
 {diagram}
 <section class="treatment">{treatment}{worked_example_card(worked_card) if worked_card else ''}<h2>Equation Walkthroughs</h2>{f'<p>{esc(equation_note)}</p>' if equation_note else ''}<p class="chips">{deriv_html or '<span class="chip muted">No direct derivation cards yet</span>'}</p><p class="chips">{related}</p></section>
-{first_principles_backlinks(concept["id"], first_principles_essays, application_map, everyday_glossary)}
+{plain_essay_html}{first_principles_backlinks(concept["id"], first_principles_essays, application_map, everyday_glossary)}
 <section><h2>Transcript Evidence</h2><div class="evidence-stack">{ev_html}</div></section>"""
         write(SITE / "concepts" / f"{concept['id']}.html", page(concept["name"], body, "concepts", depth=1))
 
@@ -1734,6 +1759,7 @@ def main():
     why_matters = load("analysis/throughlines/why-matters-checkpoints.json")
     application_map = load("analysis/throughlines/application-map.json")
     everyday_glossary = load("analysis/throughlines/everyday-glossary.json")
+    concept_plain_essays = load("analysis/throughlines/concept-plain-essays.json")
     lectures = load("analysis/lectures/lecture-path.json")
     equation_notes = load_optional("analysis/editorial-overrides/equation-walkthrough-notes.json", {})
     worked_examples = load_optional("analysis/editorial-overrides/worked-example-cards.json", {})
@@ -1776,7 +1802,7 @@ def main():
     build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence)
     build_limits(concepts, themes, derivations)
     build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id)
-    build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examples, concept_diagnostics, first_principles_essays, application_map, everyday_glossary)
+    build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examples, concept_diagnostics, first_principles_essays, application_map, everyday_glossary, {essay["concept_id"]: essay for essay in concept_plain_essays})
     build_themes(themes, subthemes, concepts)
     build_primitives(primitives, derivations, concept_by_id)
     build_families(families, concept_by_id, ev_by_id)

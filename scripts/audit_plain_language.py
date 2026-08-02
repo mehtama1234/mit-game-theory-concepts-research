@@ -26,6 +26,7 @@ def main() -> int:
     warnings: list[str] = []
     essays = load_json("analysis/throughlines/first-principles-essays.json")
     why_matters = load_json("analysis/throughlines/why-matters-checkpoints.json")
+    concept_plain_essays = load_json("analysis/throughlines/concept-plain-essays.json")
     application_map = load_json("analysis/throughlines/application-map.json")
     glossary = load_json("analysis/throughlines/everyday-glossary.json")
 
@@ -122,6 +123,41 @@ def main() -> int:
             if term.lower() in lower:
                 technical_mentions += lower.count(term.lower())
 
+    concept_plain_word_counts = []
+    for essay in concept_plain_essays:
+        parts = [str(essay.get("title", ""))]
+        for section in essay.get("sections", []):
+            body = str(section.get("body", ""))
+            parts.append(str(section.get("heading", "")))
+            parts.append(body)
+            if words(body) < 60:
+                errors.append(f"concept essay {essay['concept_id']} section is shallow: {section.get('heading', '')}")
+            for sentence in sentences(body):
+                if words(sentence) > 42:
+                    long_sentence_count += 1
+                    warnings.append(f"long sentence in concept essay {essay['concept_id']}: {sentence[:90]}")
+        for application in essay.get("applications", []):
+            body = str(application.get("body", ""))
+            parts.append(str(application.get("field", "")))
+            parts.append(body)
+            if words(body) < 18:
+                errors.append(f"concept essay {essay['concept_id']} application is shallow: {application.get('field', '')}")
+        text = " ".join(parts)
+        concept_plain_word_counts.append(words(text))
+        lower = text.lower()
+        if words(text) < 360:
+            errors.append(f"concept essay {essay['concept_id']} is shallow")
+        if "mistake" not in lower:
+            errors.append(f"concept essay {essay['concept_id']} lacks explicit mistake language")
+        if not any(marker in lower for marker in ["everyday", "imagine", "person", "people", "firm", "buyer", "bidder", "platform"]):
+            errors.append(f"concept essay {essay['concept_id']} lacks an everyday setup marker")
+        for phrase in banned_phrases:
+            if phrase in lower:
+                errors.append(f"concept essay {essay['concept_id']} uses banned filler phrase: {phrase}")
+        for term in technical_terms:
+            if term.lower() in lower:
+                technical_mentions += lower.count(term.lower())
+
     application_word_counts = []
     why_matters_word_counts = []
     why_fields = ["everyday_situation", "mistaken_reading", "first_principles_correction", "why_it_matters", "where_else_it_applies"]
@@ -188,6 +224,8 @@ def main() -> int:
         "## Summary",
         "",
         f"- Essay cards: {len(essays)}",
+        f"- Concept plain-language essays: {len(concept_plain_essays)}",
+        f"- Concept plain-language essay words: min {min(concept_plain_word_counts) if concept_plain_word_counts else 0}, max {max(concept_plain_word_counts) if concept_plain_word_counts else 0}",
         f"- Essay words: min {min(essay_word_counts) if essay_word_counts else 0}, max {max(essay_word_counts) if essay_word_counts else 0}",
         f"- Why-it-matters checkpoints: {len(why_matters)}",
         f"- Why-it-matters words: min {min(why_matters_word_counts) if why_matters_word_counts else 0}, max {max(why_matters_word_counts) if why_matters_word_counts else 0}",
@@ -207,7 +245,7 @@ def main() -> int:
     lines.extend(f"- {error}" for error in errors) if errors else lines.append("- None")
     REPORT.parent.mkdir(parents=True, exist_ok=True)
     REPORT.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"audited plain language for {len(essays)} essays, {len(why_matters)} checkpoints, {len(application_map)} applications, {len(glossary)} glossary terms; errors: {len(errors)}")
+    print(f"audited plain language for {len(essays)} essays, {len(concept_plain_essays)} concept essays, {len(why_matters)} checkpoints, {len(application_map)} applications, {len(glossary)} glossary terms; errors: {len(errors)}")
     return 1 if errors else 0
 
 

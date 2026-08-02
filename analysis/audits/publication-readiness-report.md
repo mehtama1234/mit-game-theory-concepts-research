@@ -6,7 +6,7 @@ This report records local readiness evidence. Remote publication is verified by 
 
 ```text
 $ git log -1 --oneline
-62ec5d2 Add plain-language audit gate
+7166cd5 Add why-it-matters checkpoints
 
 $ git remote -v
 origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (fetch)
@@ -30,6 +30,7 @@ origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (pus
 - Derivation cards: 9
 - Method families: 3
 - First-principles essay cards: 16
+- Concept plain-language essays: 8
 - Why-it-matters checkpoints: 8
 - Cross-field application map cards: 6
 - Everyday glossary terms: 20
@@ -61,30 +62,30 @@ validated HANDOFF.md and README.md
 [2K
 transforming...✓ 213 modules transformed.
 rendering chunks...
-✓ built in 1.63s
+✓ built in 2.53s
 [2/5] analyze server references...
 [2K
 transforming...✓ 70 modules transformed.
 rendering chunks...
-✓ built in 519ms
+✓ built in 365ms
 [3/5] build rsc environment...
 [2K
 transforming...✓ 208 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 1.88s
+✓ built in 1.79s
 [4/5] build client environment...
 [2K
 transforming...✓ 117 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 1.41s
+✓ built in 1.06s
 [5/5] build ssr environment...
 [2K
 transforming...✓ 71 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 476ms
+✓ built in 366ms
 [0m
   Route (app)
   ─ ? /
@@ -98,7 +99,7 @@ computing gzip size...
   Build complete. Run `vinext start` to start the production server.
 
 audited editorial quality for 33 concepts; errors: 0
-audited plain language for 16 essays, 8 checkpoints, 6 applications, 20 glossary terms; errors: 0
+audited plain language for 16 essays, 8 concept essays, 8 checkpoints, 6 applications, 20 glossary terms; errors: 0
 render-audited 56 screenshots; errors: 0
 + python3 scripts/build_first_principles_atlas.py
 + python3 scripts/validate_first_principles_atlas.py
@@ -120,6 +121,7 @@ render-audited 56 screenshots; errors: 0
 - Evidence discipline: every concept has two transcript evidence records with local transcript windows and YouTube links.
 - Generic-template guard: validators reject the original template phrases in generated concept prose and published HTML.
 - Course-wide first-principles essay layer: `first-principles.html` gives plain-language long-form explanations of the whole course, why-it-matters checkpoints, a structured cross-field application map, and an everyday glossary for core vocabulary.
+- Concept essay layer: selected concept pages now carry long plain-language first-principles essays with outside-field applications, including topology or fixed-point connections where that is the right mathematical bridge.
 - Plain-language style gate: `scripts/audit_plain_language.py` rejects banned filler, shallow essay sections, missing everyday setup, and missing limits or mistake language.
 - First-principles concept integration: every concept page links back to relevant course essays, application maps, or glossary entries.
 - Reviewability: `review-guide.html` gives an explicit route for checking first-principles depth, lecture faithfulness, math clarity, reader practice, and publication state.
@@ -136,4 +138,4 @@ render-audited 56 screenshots; errors: 0
 
 ## Current Conclusion
 
-Local research/build readiness is stronger than the first committed pass: the atlas now has hand-authored synthesis for themes, subthemes, primitives, method families, evidence payloads, a course-wide first-principles essay layer, why-it-matters checkpoints, a structured cross-field application map, an everyday glossary, a reviewer-facing audit route, an explicit publication-status surface, and a root handoff, with validators that reject the older generic patterns.
+Local research/build readiness is stronger than the first committed pass: the atlas now has hand-authored synthesis for themes, subthemes, primitives, method families, evidence payloads, a course-wide first-principles essay layer, concept-level plain-language essays, why-it-matters checkpoints, a structured cross-field application map, an everyday glossary, a reviewer-facing audit route, an explicit publication-status surface, and a root handoff, with validators that reject the older generic patterns.

@@ -1,0 +1,258 @@
+[
+  {
+    "concept_id": "preferences",
+    "title": "Preferences As The Starting Point",
+    "sections": [
+      {
+        "heading": "Start From The Ordinary Choice",
+        "body": "A preference is the course's way of saying that a person can put possible outcomes in an order. The idea starts before strategy, before markets, and before any game table. If a student chooses coffee over tea, or a buyer chooses one apartment over another, the model needs a clear way to record that ordering. The course is not trying to read the person's feelings. It is asking what the person's choices treat as better or worse."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Without preferences, a payoff number has no honest source. A model could still place numbers in a table, but the numbers would float without a reason. Preferences give the model a discipline: first say what outcomes the person ranks above other outcomes, then use utility or payoffs as a compact way to carry that ranking into later problems. This matters because every later result depends on what each player is counted as trying to protect, gain, avoid, or trade away."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to treat preferences as deep psychology or as a claim that people always know exactly what they want. In this course, preferences are a modeling object. They say how the model will compare outcomes inside a chosen problem. That is narrower and more useful. It lets the reader ask whether the rankings are complete enough, whether they create cycles, and whether later payoff numbers really match the story being told."
+      },
+      {
+        "heading": "Why It Matters Beyond The First Lecture",
+        "body": "Preferences matter in bargaining because the surplus depends on what each side values. They matter in auctions because a bid makes sense only after the bidder has a value for winning. They matter in welfare comparisons because a policy cannot be judged without saying what counts as better for someone. In topology and fixed-point arguments, preferences often enter indirectly through continuous payoff or choice maps; the existence result only means something after the model has said what better means."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Public policy",
+        "body": "A policy model must say whose outcomes are being ranked and what tradeoffs count. Otherwise the policy conclusion can hide a value judgment inside a number."
+      },
+      {
+        "field": "Topology and existence proofs",
+        "body": "A fixed-point proof may show that a stable choice exists, but preferences and payoffs decide what the map is. Bad rankings make the beautiful proof answer the wrong question."
+      }
+    ]
+  },
+  {
+    "concept_id": "nash_equilibrium",
+    "title": "Nash Equilibrium As A No-One-Wants-To-Move Test",
+    "sections": [
+      {
+        "heading": "Start From A Settled Situation",
+        "body": "Nash equilibrium begins with a proposed situation, not with a promise that the situation is good. Imagine two firms choosing prices, two drivers choosing routes, or two roommates choosing chores. The question is simple: if everyone else keeps doing what the proposal says, does any one person want to change alone? If the answer is no for every player, the situation passes the Nash test. If even one player wants to move, the proposed story is not stable in this sense."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Strategic stories are easy to tell and hard to trust. Someone can say prices will stay high, both sides will cooperate, or each player will choose a certain action. Nash equilibrium forces that story through a personal incentive check. Each player gets to ask whether a different available action gives a better payoff, holding the others fixed. The concept exists because prediction in a game needs more than a nice story; it needs to survive the pressure of individual deviation."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to hear equilibrium and think fair, peaceful, efficient, or morally right. Nash equilibrium does not say any of that. A traffic jam can be stable because no one driver can improve by switching routes. A bad market outcome can be stable because each firm is already doing its best against the others. The test is narrow: given what everyone else is doing, does one player want to change alone?"
+      },
+      {
+        "heading": "Why It Matters Beyond The Course",
+        "body": "The idea matters because many systems settle into patterns that are hard to change one person at a time. In politics, a voting rule can hold a poor outcome because each voter faces the same incentives. In networks, people may stay on a platform because others are there. In topology, Nash existence proofs often use fixed-point reasoning: a best-response map points from expected behavior to chosen behavior, and a fixed point is a place where the map sends the behavior back to itself."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Platform markets",
+        "body": "A platform can be hard to dislodge because each user chooses based on where the other users already are. Stability can come from dependence, not quality."
+      },
+      {
+        "field": "Topology and fixed points",
+        "body": "The fixed point says there is a self-consistent profile under the assumptions. It does not say the profile is efficient, unique, or easy to find."
+      }
+    ]
+  },
+  {
+    "concept_id": "backward_induction",
+    "title": "Backward Induction As Solving The Future First",
+    "sections": [
+      {
+        "heading": "Start From The Last Real Choice",
+        "body": "Backward induction is the habit of walking to the end of a game tree before judging the beginning. If a later player will eventually choose between accepting and rejecting an offer, start there. Ask what that player will want at that later point. Then carry that answer one step earlier. The early player should not plan around a later threat or promise unless that later action will still make sense when the time comes."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Time changes strategy because words said early can become empty later. A person may threaten to punish, refuse, walk away, or fight, but the model has to ask whether the person will actually want to do that after the earlier choices have already happened. Backward induction exists to remove plans that depend on later actions no one would carry out. It replaces announced resolve with a step-by-step check of later incentives."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to take the first statement in a sequential game at face value. In everyday life, people often make threats that sound strong because they are spoken early. In the model, early speech does not settle credibility. A later decision maker will face a new choice with the past already fixed. Backward induction asks what that person wants then, not what sounded useful before."
+      },
+      {
+        "heading": "Why It Matters Beyond Bargaining",
+        "body": "Backward induction matters in negotiations, entry deterrence, litigation, war threats, hiring processes, and product launches. Any time a choice today is meant to shape a later response, the later response needs its own incentive check. The same idea appears in computer science when an algorithm solves a finite decision tree from the leaves back to the root. It appears in law and policy when a rule must predict how people will respond after enforcement becomes costly."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Law and settlement",
+        "body": "A lawsuit threat affects settlement only if trial would still be worth pursuing later. The later cost of carrying out the threat shapes the earlier bargain."
+      },
+      {
+        "field": "Computer science",
+        "body": "Finite decision trees can be solved from the end back to the start. The method is the same plain idea: later values guide earlier choices."
+      }
+    ]
+  },
+  {
+    "concept_id": "infinitely_repeated_games",
+    "title": "Infinite Repetition As The Future Pushing Back",
+    "sections": [
+      {
+        "heading": "Start From A Relationship That Continues",
+        "body": "An infinitely repeated game is not about literal immortality. It is about a relationship with no known final round inside the model. A firm expects to meet its rival again. A worker expects future reviews. A neighbor expects tomorrow to arrive after today. Because the relationship continues, today's gain from cheating may come with tomorrow's loss from punishment, distrust, or refusal to cooperate."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "One-shot reasoning can make cooperation look impossible because each person sees a short-term temptation. Repetition changes the calculation. If the future is valuable enough and actions are observed well enough, a player may give up a tempting gain today to protect future payoffs. The concept exists because many social and market settings are not one-time encounters. The same people, firms, or institutions keep meeting, and memory can discipline behavior."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to say repeated play automatically creates cooperation. It does not. The future must matter, the bad action must be noticed, and the punishment must be credible. If players are impatient, if monitoring is noisy, or if punishment hurts the punisher too much, cooperation can break. The repeated-game lesson is not optimism. It is a careful comparison between today's temptation and tomorrow's cost."
+      },
+      {
+        "heading": "Why It Matters Beyond Firms",
+        "body": "The idea matters in workplace trust, online reputation, community rules, supply chains, diplomacy, and climate agreements. It explains how present behavior can be shaped by expected future treatment. In biology, repeated interaction can help explain stable cooperation among organisms under the right conditions. In distributed systems, repeated contact and reputation can discourage harmful behavior when no single central enforcer controls every action."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Online marketplaces",
+        "body": "A seller may avoid a short-term scam because bad ratings harm future sales. The future is part of the present payoff calculation, and that only works when buyers can observe enough history to punish bad behavior."
+      },
+      {
+        "field": "Climate agreements",
+        "body": "Countries may cooperate when future trade, sanctions, monitoring, and reputation make cheating costly enough. The hard part is making those future responses believable, visible, and worth carrying out after the cheating has already happened."
+      }
+    ]
+  },
+  {
+    "concept_id": "bayesian_games",
+    "title": "Bayesian Games As Strategy With Hidden Facts",
+    "sections": [
+      {
+        "heading": "Start From Not Knowing Who You Face",
+        "body": "A Bayesian game begins when a player must choose without knowing some fact that matters. A bidder may not know other bidders' values. A firm may not know a rival's cost. A negotiator may not know whether the other side is patient or desperate. The model calls these hidden facts types. A type is not a personality label. It is the private information that changes payoffs, choices, or beliefs."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Complete-information games pretend that everyone knows the relevant payoff facts. Many important settings do not look like that. If hidden information changes what a player wants, the strategy must say what each possible type would do. Other players then choose using beliefs about which type they may be facing. Bayesian games exist because uncertainty about people is not a footnote; it changes the action that is best."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to average people together too quickly. If half the sellers have high quality and half have low quality, the buyer does not face one average seller in a simple way. The buyer faces uncertainty, and the seller's action may itself give information. A Bayesian model keeps the hidden states separate long enough to ask how each type acts and how others reason from those possible actions."
+      },
+      {
+        "heading": "Why It Matters Beyond Auctions",
+        "body": "Bayesian games matter in insurance, hiring, medical testing, cybersecurity, diplomacy, and any setting where one side knows something the other side must infer. They also matter for topology-based existence work because beliefs and type-contingent strategies enlarge the space in which fixed-point reasoning may be applied. The math can prove a self-consistent plan exists only after the model has clearly named the hidden facts and the belief structure. If those hidden facts are chosen carelessly, the proof may be clean while the lesson is pointed at the wrong uncertainty."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Hiring",
+        "body": "An employer does not observe worker fit directly. Schooling, references, interviews, and trial tasks become actions interpreted through beliefs about hidden ability."
+      },
+      {
+        "field": "Cybersecurity",
+        "body": "A defender may not know the attacker's type, patience, or target. Defensive choices depend on beliefs about hidden motives and costs."
+      }
+    ]
+  },
+  {
+    "concept_id": "auctions",
+    "title": "Auctions As Rules For Turning Private Values Into Bids",
+    "sections": [
+      {
+        "heading": "Start From A Simple Sale With Hidden Values",
+        "body": "An auction is a rule for deciding who gets an object and what they pay when bidders know their own values better than the seller does. The everyday picture is familiar: people want the same item, but each person has a different willingness to pay. The auction rule turns those private values into public bids. The important point is that a bid is not the same thing as a value. It is an action shaped by the payment rule and by competition."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "If a seller knew everyone's value, selling would be easier. With private values, the rule must draw information out through incentives. In a first-price auction, a high bid raises the chance of winning but also raises the price paid if the bidder wins. In a second-price auction, the payment rule changes that tradeoff. Auction theory exists because allocation, payment, belief, and strategic shading have to be studied together."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to think the highest-value bidder simply says the true value in every auction. That can be wrong. A bidder asks what bid gives the best expected surplus, not what bid sounds honest. Different rules change that calculation. Truthful bidding may be a result under special rules, not a natural default. The course makes the rule visible so the reader can see why bidding changes when payment changes."
+      },
+      {
+        "heading": "Why It Matters Beyond Selling Objects",
+        "body": "Auctions matter anywhere a scarce thing must be assigned under private information: spectrum licenses, online ads, school seats, organ exchange priorities, electricity markets, procurement contracts, and platform rankings. The larger lesson is that rules create behavior. A designer who changes the payment rule, reserve price, ranking formula, or information shown to bidders may change both revenue and who receives the object."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Public procurement",
+        "body": "Governments use bidding rules to buy work from firms with private costs. The rule affects both the winning firm and how much cost information the bids reveal."
+      },
+      {
+        "field": "Online platforms",
+        "body": "Ad slots and rankings are sold through repeated auctions. The design must account for clicks, quality, private value, and strategic bid shading."
+      }
+    ]
+  },
+  {
+    "concept_id": "signaling",
+    "title": "Signaling As Making Hidden Information Hard To Fake",
+    "sections": [
+      {
+        "heading": "Start From A Receiver Who Cannot See The Type",
+        "body": "Signaling starts with a simple problem: one side knows something and the other side cannot see it directly. A worker may know ability, a seller may know quality, and a firm may know whether it is strong or weak. The receiver observes an action, certificate, price, promise, or other sign. The question is not whether the sign looks impressive. The question is whether different hidden types have different incentives to send it."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Information does not move by magic. If a low-quality seller can cheaply copy the high-quality seller's sign, the sign may not separate anyone. Signaling exists because the model must ask whether imitation is profitable. A separating signal works only when each type prefers the action assigned to that type. A pooling signal leaves types together, so the receiver cannot learn much from the observed action."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to treat a signal as proof. A degree, warranty, public promise, expensive building, or high price may mean something, but only after the incentive check. Who would want to send this sign? Who would find it too costly or not worth copying? If the model skips those questions, it can mistake decoration for information. The receiver learns from incentives, not from the sign's appearance alone."
+      },
+      {
+        "heading": "Why It Matters Beyond Education",
+        "body": "Signaling matters in labor markets, product quality, finance, politics, biology, and online identity. It explains why costly actions can carry information and why cheap labels often fail. In biology, displays can signal fitness when weak types cannot easily fake them. In digital systems, verification badges, deposits, history, or costly commitments can help separate reliable participants from unreliable ones, but only when copying remains unattractive."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Product quality",
+        "body": "A long warranty can signal confidence only if low-quality sellers expect it to be too costly. The warranty works through incentives, not words."
+      },
+      {
+        "field": "Digital identity",
+        "body": "Badges, deposits, and verified histories can signal reliability when fake accounts cannot cheaply copy the same pattern, or when copying it would remove the gain from pretending online."
+      }
+    ]
+  },
+  {
+    "concept_id": "common_knowledge",
+    "title": "Common Knowledge As Shared Assurance",
+    "sections": [
+      {
+        "heading": "Start From A Fact Everyone May Need To Act On",
+        "body": "Common knowledge is about public assurance, not just information. A fact can be true, and each person can know it, but that may still be too weak for coordination. Each person may wonder whether others know it, whether others know that others know it, and whether everyone is reasoning from the same starting point. Common knowledge is the strong shared state where this ladder keeps going."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Coordination often requires more than private awareness. If a public rule change is announced to everyone at once, people can act knowing that others heard it too. If the same rule is sent privately to each person, the factual content may be identical, but the strategic effect can differ. Common knowledge exists because strategic action can depend on what people believe about other people's beliefs, not only on the first fact."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to say everyone knows and stop there. Everyone knowing can mean each person separately received the fact. It does not always mean each person knows that the others received it, or that this is itself known, and so on. The higher levels sound abstract, but they answer a practical question: can people safely coordinate because they know the fact is shared?"
+      },
+      {
+        "heading": "Why It Matters Beyond Classroom Puzzles",
+        "body": "Common knowledge matters in financial markets, legal announcements, software protocol changes, traffic conventions, political protests, and team work. Public announcements can move behavior because they change the shared reasoning environment. In topology and fixed-point models, common knowledge can affect which game is being solved: the set of strategies, beliefs, and feasible coordination patterns may change when information is public rather than private. The fact itself is only one part of the object; the public status of the fact can change the strategic space."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Software protocols",
+        "body": "A protocol update works only when participants can treat the rule and its adoption as shared. Private notice may leave coordination risk."
+      },
+      {
+        "field": "Financial markets",
+        "body": "Public news can move prices not only because traders learn the fact, but because they know other traders learned it too."
+      }
+    ]
+  }
+]

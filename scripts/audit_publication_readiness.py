@@ -28,6 +28,7 @@ def main() -> int:
     families = json.loads((ROOT / "analysis/throughlines/method-families.json").read_text(encoding="utf-8"))
     first_principles_essays = json.loads((ROOT / "analysis/throughlines/first-principles-essays.json").read_text(encoding="utf-8"))
     why_matters = json.loads((ROOT / "analysis/throughlines/why-matters-checkpoints.json").read_text(encoding="utf-8"))
+    concept_plain_essays = json.loads((ROOT / "analysis/throughlines/concept-plain-essays.json").read_text(encoding="utf-8"))
     application_map = json.loads((ROOT / "analysis/throughlines/application-map.json").read_text(encoding="utf-8"))
     everyday_glossary = json.loads((ROOT / "analysis/throughlines/everyday-glossary.json").read_text(encoding="utf-8"))
     review_cards = json.loads((ROOT / "analysis/throughlines/review-guide.json").read_text(encoding="utf-8"))
@@ -40,6 +41,7 @@ def main() -> int:
         for item in collection
         for concept_id in item.get("concept_ids", [])
     }
+    first_principles_coverage.update(essay.get("concept_id", "") for essay in concept_plain_essays)
 
     log_code, log = run(["git", "log", "-1", "--oneline"])
     remote_code, remote = run(["git", "remote", "-v"])
@@ -74,6 +76,7 @@ def main() -> int:
         f"- Derivation cards: {len(derivations)}",
         f"- Method families: {len(families)}",
         f"- First-principles essay cards: {len(first_principles_essays)}",
+        f"- Concept plain-language essays: {len(concept_plain_essays)}",
         f"- Why-it-matters checkpoints: {len(why_matters)}",
         f"- Cross-field application map cards: {len(application_map)}",
         f"- Everyday glossary terms: {len(everyday_glossary)}",
@@ -96,6 +99,7 @@ def main() -> int:
         "- Evidence discipline: every concept has two transcript evidence records with local transcript windows and YouTube links.",
         "- Generic-template guard: validators reject the original template phrases in generated concept prose and published HTML.",
         "- Course-wide first-principles essay layer: `first-principles.html` gives plain-language long-form explanations of the whole course, why-it-matters checkpoints, a structured cross-field application map, and an everyday glossary for core vocabulary.",
+        "- Concept essay layer: selected concept pages now carry long plain-language first-principles essays with outside-field applications, including topology or fixed-point connections where that is the right mathematical bridge.",
         "- Plain-language style gate: `scripts/audit_plain_language.py` rejects banned filler, shallow essay sections, missing everyday setup, and missing limits or mistake language.",
         "- First-principles concept integration: every concept page links back to relevant course essays, application maps, or glossary entries.",
         "- Reviewability: `review-guide.html` gives an explicit route for checking first-principles depth, lecture faithfulness, math clarity, reader practice, and publication state.",
@@ -112,7 +116,7 @@ def main() -> int:
         "",
         "## Current Conclusion",
         "",
-        "Local research/build readiness is stronger than the first committed pass: the atlas now has hand-authored synthesis for themes, subthemes, primitives, method families, evidence payloads, a course-wide first-principles essay layer, why-it-matters checkpoints, a structured cross-field application map, an everyday glossary, a reviewer-facing audit route, an explicit publication-status surface, and a root handoff, with validators that reject the older generic patterns.",
+        "Local research/build readiness is stronger than the first committed pass: the atlas now has hand-authored synthesis for themes, subthemes, primitives, method families, evidence payloads, a course-wide first-principles essay layer, concept-level plain-language essays, why-it-matters checkpoints, a structured cross-field application map, an everyday glossary, a reviewer-facing audit route, an explicit publication-status surface, and a root handoff, with validators that reject the older generic patterns.",
         "",
     ]
     REPORT.parent.mkdir(parents=True, exist_ok=True)

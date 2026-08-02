@@ -49,6 +49,7 @@ def main() -> int:
     why_matters = json.loads((ROOT / "analysis/throughlines/why-matters-checkpoints.json").read_text(encoding="utf-8"))
     application_map = json.loads((ROOT / "analysis/throughlines/application-map.json").read_text(encoding="utf-8"))
     everyday_glossary = json.loads((ROOT / "analysis/throughlines/everyday-glossary.json").read_text(encoding="utf-8"))
+    concept_plain_essays = json.loads((ROOT / "analysis/throughlines/concept-plain-essays.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_diagnostics = json.loads((ROOT / "analysis/editorial-overrides/concept-diagnostics.json").read_text(encoding="utf-8"))
@@ -1414,6 +1415,61 @@ def main() -> int:
             errors.append(f"concept page missing first-principles backlinks: {concept['id']}")
         if "Transcript Evidence" not in text:
             errors.append(f"concept page missing evidence section: {concept['id']}")
+    if len(concept_plain_essays) < 8:
+        errors.append(f"only {len(concept_plain_essays)} concept plain-language essays")
+    concept_plain_essay_ids = set()
+    concept_plain_total_words = 0
+    concept_plain_mentions_topology = False
+    for essay in concept_plain_essays:
+        concept_id = essay.get("concept_id", "")
+        if concept_id not in concept_by_id:
+            errors.append(f"concept plain-language essay references missing concept: {concept_id}")
+            continue
+        if concept_id in concept_plain_essay_ids:
+            errors.append(f"duplicate concept plain-language essay: {concept_id}")
+        concept_plain_essay_ids.add(concept_id)
+        page_text = (SITE / "concepts" / f"{concept_id}.html").read_text(encoding="utf-8")
+        if html.escape(essay.get("title", ""), quote=True) not in page_text:
+            errors.append(f"concept plain-language essay title not rendered: {concept_id}")
+        combined_parts = [essay.get("title", "")]
+        for section in essay.get("sections", []):
+            heading = str(section.get("heading", ""))
+            body = str(section.get("body", ""))
+            combined_parts.append(heading)
+            combined_parts.append(body)
+            if words(body) < 60:
+                errors.append(f"concept plain-language essay {concept_id} shallow section: {heading}")
+            if html.escape(heading, quote=True) not in page_text:
+                errors.append(f"concept plain-language essay {concept_id} heading not rendered: {heading}")
+            if html.escape(body, quote=True) not in page_text:
+                errors.append(f"concept plain-language essay {concept_id} body not rendered: {heading}")
+        applications = essay.get("applications", [])
+        if len(applications) < 2:
+            errors.append(f"concept plain-language essay {concept_id} needs at least 2 applications")
+        for application in applications:
+            field = str(application.get("field", ""))
+            body = str(application.get("body", ""))
+            combined_parts.append(field)
+            combined_parts.append(body)
+            if words(body) < 18:
+                errors.append(f"concept plain-language essay {concept_id} shallow application: {field}")
+            if html.escape(field, quote=True) not in page_text:
+                errors.append(f"concept plain-language essay {concept_id} application field not rendered: {field}")
+            if html.escape(body, quote=True) not in page_text:
+                errors.append(f"concept plain-language essay {concept_id} application body not rendered: {field}")
+        combined = " ".join(combined_parts)
+        concept_plain_total_words += words(combined)
+        lower = combined.lower()
+        if words(combined) < 360:
+            errors.append(f"concept plain-language essay {concept_id} is shallow")
+        if "mistake" not in lower:
+            errors.append(f"concept plain-language essay {concept_id} missing mistake language")
+        if not any(marker in lower for marker in ["topology", "fixed point"]):
+            concept_plain_mentions_topology = concept_plain_mentions_topology or False
+        else:
+            concept_plain_mentions_topology = True
+    if not concept_plain_mentions_topology:
+        errors.append("concept plain-language essays never mention topology or fixed points")
     for path in html_files:
         text = path.read_text(encoding="utf-8")
         if "<main>" not in text or "</main>" not in text:
