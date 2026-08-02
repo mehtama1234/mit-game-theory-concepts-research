@@ -6,7 +6,7 @@ This report records local readiness evidence. Remote publication is verified by 
 
 ```text
 $ git log -1 --oneline
-7166cd5 Add why-it-matters checkpoints
+24dcb89 Add concept plain-language essays
 
 $ git remote -v
 origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (fetch)
@@ -30,7 +30,7 @@ origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (pus
 - Derivation cards: 9
 - Method families: 3
 - First-principles essay cards: 16
-- Concept plain-language essays: 8
+- Concept plain-language essays: 16
 - Why-it-matters checkpoints: 8
 - Cross-field application map cards: 6
 - Everyday glossary terms: 20
@@ -62,30 +62,30 @@ validated HANDOFF.md and README.md
 [2K
 transforming...✓ 213 modules transformed.
 rendering chunks...
-✓ built in 2.53s
+✓ built in 2.20s
 [2/5] analyze server references...
 [2K
 transforming...✓ 70 modules transformed.
 rendering chunks...
-✓ built in 365ms
+✓ built in 855ms
 [3/5] build rsc environment...
 [2K
 transforming...✓ 208 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 1.79s
+✓ built in 1.95s
 [4/5] build client environment...
 [2K
 transforming...✓ 117 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 1.06s
+✓ built in 1.34s
 [5/5] build ssr environment...
 [2K
 transforming...✓ 71 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 366ms
+✓ built in 431ms
 [0m
   Route (app)
   ─ ? /
@@ -99,7 +99,7 @@ computing gzip size...
   Build complete. Run `vinext start` to start the production server.
 
 audited editorial quality for 33 concepts; errors: 0
-audited plain language for 16 essays, 8 concept essays, 8 checkpoints, 6 applications, 20 glossary terms; errors: 0
+audited plain language for 16 essays, 16 concept essays, 8 checkpoints, 6 applications, 20 glossary terms; errors: 0
 render-audited 56 screenshots; errors: 0
 + python3 scripts/build_first_principles_atlas.py
 + python3 scripts/validate_first_principles_atlas.py

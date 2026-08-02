@@ -254,5 +254,261 @@
         "body": "Public news can move prices not only because traders learn the fact, but because they know other traders learned it too."
       }
     ]
+  },
+  {
+    "concept_id": "utility",
+    "title": "Utility As A Number That Carries A Ranking",
+    "sections": [
+      {
+        "heading": "Start From Ranking Before Measuring",
+        "body": "Utility is easy to misunderstand because it uses numbers. The first idea is not that happiness has been measured like weight or height. The first idea is simpler: if a person ranks one outcome above another, the model can sometimes use numbers to carry that ranking. Higher utility means the model treats the outcome as better for that person inside the problem being studied. The number is a tool for comparison, not a claim that the person's inner life has been fully measured."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Game theory needs payoffs because strategic reasoning compares actions. A firm asks whether one price gives more profit than another. A bidder asks whether winning at a price is better than losing. A negotiator asks whether waiting is better than accepting. Utility gives the model a compact way to make those comparisons. Without it, later tools like best response and equilibrium would have nothing to maximize, and the model would only have loose words like wants or likes."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to treat utility as literal pleasure points. In this course, utility is usually a representation of ranked outcomes or payoffs. That difference matters. If the same ranking can be represented by many different number scales, the reader should not over-read the units. The important question is whether the numbers preserve the comparisons the model needs. A utility number is useful when it makes choices checkable without pretending to describe the whole person."
+      },
+      {
+        "heading": "Why It Matters Beyond The First Model",
+        "body": "Utility matters in economics, political science, law, computer science, public health, and design because models often need to compare tradeoffs. It also matters in topology and fixed-point existence proofs. A best-response map usually comes from players maximizing payoff over a choice set. If the utility function is continuous and the choice set has the right shape, the mathematics may prove a stable point exists. But the meaning of that point still depends on whether utility captured the right tradeoff."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Product design",
+        "body": "A design model must say what users are trading off, such as speed, privacy, cost, or ease. Utility records the tradeoff so choices can be compared."
+      },
+      {
+        "field": "Topology and optimization",
+        "body": "Existence results often need a well-behaved payoff function. The proof may be formal, but the payoff meaning comes from the modeled ranking."
+      }
+    ]
+  },
+  {
+    "concept_id": "expected_utility",
+    "title": "Expected Utility As Choosing Under Risk",
+    "sections": [
+      {
+        "heading": "Start From Not Knowing Which Outcome Will Happen",
+        "body": "Expected utility begins when a choice leads to several possible outcomes. A person may buy insurance, enter an auction, invest in a project, or choose a route before knowing the weather. The model cannot pretend the uncertainty is gone. It lists the possible outcomes, assigns probabilities, and averages the utility of those outcomes using those probabilities. The point is not to predict the exact outcome. The point is to compare choices before the uncertainty is resolved."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Many game-theory choices are made before a player knows what kind of opponent, value, cost, or state of the world they face. Expected utility gives the player a way to choose anyway. A bidder compares the chance of winning and the payoff if they win. A firm compares possible demand states. A player in a Bayesian game compares payoffs across possible types. Without expected utility, the course could not connect beliefs to action in a disciplined way."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to average money or outcomes directly without asking what the person values. If a person dislikes risk, a fifty-fifty chance of gaining or losing the same amount may not feel neutral in the model. Expected utility averages utility, not just dollars. Another mistake is to treat the expected value as the thing that will happen. It is a comparison device before the outcome is known, not a promise that the average result will appear."
+      },
+      {
+        "heading": "Why It Matters Beyond Lotteries",
+        "body": "Expected utility matters in insurance, medicine, finance, safety engineering, artificial intelligence, and public decisions under risk. It is also part of the bridge to topology-based equilibrium proofs in games with uncertainty. A player's best response can depend on an expected payoff over unknown states. If those expected payoff functions are well behaved, fixed-point methods can sometimes prove a self-consistent profile exists. The proof rests on the ordinary idea that uncertain outcomes still need a choice rule."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Medicine",
+        "body": "A treatment choice may compare possible benefits and harms before anyone knows which patient outcome will occur. Expected utility makes that uncertainty explicit."
+      },
+      {
+        "field": "Artificial intelligence",
+        "body": "An agent choosing under uncertainty needs a rule for trading off possible future states. Expected utility is one plain way to build that rule."
+      }
+    ]
+  },
+  {
+    "concept_id": "strategic_form_games",
+    "title": "Strategic Form Games As A Clean Table Of Mutual Dependence",
+    "sections": [
+      {
+        "heading": "Start From Choices Made Without Seeing Each Other",
+        "body": "A strategic form game is the course's compact table for situations where each player's payoff depends on the combination of everyone's choices. The everyday picture is two firms setting prices, two students choosing whether to contribute to a project, or two countries choosing policies without first seeing the other's exact move. The table is not decoration. It is the model's claim about who the players are, what choices they have, and what each outcome gives them."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Game theory needs a way to hold the whole strategic situation in one place. If my payoff depends only on my action, ordinary individual choice may be enough. If my payoff also depends on your action, the model needs a table or function that records the joint effect. Strategic form exists because dependence must be made visible before concepts like dominance, best response, and Nash equilibrium can be applied. The table turns a story into something that can be checked."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to fill in a payoff matrix as if it were obvious. The hardest part is often deciding what belongs in the table. Are players choosing prices, quantities, entry, effort, votes, or messages? Are payoffs money, utility, market share, reputation, or some mix? A strategic form game is only as good as those choices. A neat table can still be wrong if it hides timing, information, or a missing option."
+      },
+      {
+        "heading": "Why It Matters Beyond Simple Matrices",
+        "body": "Strategic form matters in economics, security, traffic routing, platform design, voting, and biology because it provides the first clean picture of mutual dependence. It also matters for topology because many equilibrium existence proofs start with a strategy space and payoff functions defined over action profiles. The fixed point is meaningful only after the strategic form has named the space and payoffs. A poor representation gives a poor map, even if the theorem is correct."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Security planning",
+        "body": "A defender's best plan depends on the attacker's plan, and the attacker's payoff depends on the defense. A table makes that dependence inspectable."
+      },
+      {
+        "field": "Biology",
+        "body": "Competing traits can be modeled by payoffs that depend on the traits around them. The table records fitness consequences from combinations, not isolated actions."
+      }
+    ]
+  },
+  {
+    "concept_id": "dominance",
+    "title": "Dominance As Removing A Move With No Good Defense",
+    "sections": [
+      {
+        "heading": "Start From Comparing Two Choices",
+        "body": "Dominance starts with a direct comparison. Take one player and compare two possible actions while holding fixed each possible thing the others might do. If one action is never worse and sometimes better, the worse action has no good defense in the model. The player should not need a detailed prediction about others to reject it. The dominated move is bad across the relevant cases."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Before solving a whole game, the course often asks whether some choices can be ruled out immediately. Dominance gives a first cleanup tool. It does not require a full equilibrium story. It only asks whether one action loses to another action across the board. This matters because large games can contain options that distract the reader. Removing a dominated action can reveal the real strategic pressure that remains."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to say an action is dominated because it looks unattractive in one likely case. That is not enough. Dominance is a strong claim about all relevant opponent actions. Another mistake is to treat weak and strict dominance as the same. Weak comparisons can be delicate because deleting a weakly dominated action may change what remains in ways that depend on the order of deletion or on fine details of belief."
+      },
+      {
+        "heading": "Why It Matters Beyond Classroom Tables",
+        "body": "Dominance matters in contract choices, bidding, product strategy, voting rules, and policy design because it identifies options that no reasonable model participant should need. In computer science and operations work, similar pruning ideas remove impossible or inferior branches before a search continues. In topology-heavy equilibrium work, dominance does not replace fixed-point reasoning, but it can simplify the strategy space before asking whether a stable point exists."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Search and planning",
+        "body": "A planner can discard choices that are never better than another available choice. That reduces clutter before deeper reasoning begins, while still forcing the planner to prove the comparison across all relevant cases."
+      },
+      {
+        "field": "Voting design",
+        "body": "A voting rule can create dominated voting actions. Finding them shows where the rule asks people to act strategically against their sincere ranking, and where a simpler rule might remove needless manipulation."
+      }
+    ]
+  },
+  {
+    "concept_id": "rationalizability",
+    "title": "Rationalizability As Asking What Belief Could Make This Sensible",
+    "sections": [
+      {
+        "heading": "Start From A Move That Looks Odd",
+        "body": "Rationalizability begins with a generous everyday question about people choosing under uncertainty. Suppose a player chooses an action that is not immediately ruled out. Could that action be the best response to some reasonable belief about what others will do? If yes, the action has a possible strategic explanation. It may not be the final prediction, and it may not be part of a Nash equilibrium, but it is not foolish inside every possible belief story."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Dominance removes actions that have no defense. Rationalizability studies the actions that survive a belief-based defense. The concept exists because a player's choice can only be judged after saying what they think others might do. A move that looks strange against one opponent action may be sensible against another expected action. Rationalizability keeps belief inside the analysis instead of pretending the analyst already knows the correct forecast."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to treat rationalizable as meaning likely, correct, or socially good. It means the action can be made optimal under some allowable belief. That is a weaker and broader idea than equilibrium. Another mistake is to let any wild belief justify anything. The course still disciplines beliefs through the deletion process and through the assumption that other players are also reasoning about best responses."
+      },
+      {
+        "heading": "Why It Matters Beyond Early Solution Concepts",
+        "body": "Rationalizability matters in legal reasoning, market interpretation, political analysis, and machine learning because observed behavior often has to be interpreted before the analyst knows the actor's beliefs. It also matters near topology because equilibrium can be seen as a stricter self-consistency point, while rationalizability marks a larger set of choices that survive belief-based reasoning. The distinction helps readers understand why fixed-point equilibrium is not the only way to talk about strategic plausibility."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Legal interpretation",
+        "body": "An action that seems unreasonable may make sense under one party's belief about the other party. The belief story must still be disciplined."
+      },
+      {
+        "field": "Machine learning",
+        "body": "When agents learn from each other, a move may be sensible under a mistaken but plausible belief. Rationalizability separates that from pure error."
+      }
+    ]
+  },
+  {
+    "concept_id": "best_response",
+    "title": "Best Response As The Move That Fits A Belief",
+    "sections": [
+      {
+        "heading": "Start From Freezing The Other Side",
+        "body": "A best response is the choice that gives a player the highest payoff after the player fixes a belief about what others will do. The idea is ordinary. If a rival sets a high price, one action may be best. If the rival sets a low price, another action may be best. A move is not best in the air. It is best against some expectation, opponent action, or probability story."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Best response is the hinge between individual choice and strategic prediction. Each player is still choosing for themselves, but the choice depends on others. Nash equilibrium is built by putting best responses together. Bayesian Nash uses best responses by type. Repeated games ask whether a continuation plan remains a best response after histories. The concept exists because strategic reasoning needs a local test before it can build a whole-system stability claim."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to call an action best without saying best against what. A price, bid, route, message, or threat can be good under one belief and poor under another. Another mistake is to think a best response must be unique. Sometimes several actions tie. That tie can be important, especially when mixed strategies or equilibrium selection enter. The best-response question is precise because it names the comparison being made."
+      },
+      {
+        "heading": "Why It Matters Beyond Game Tables",
+        "body": "Best responses matter in traffic systems, platform design, pricing, negotiation, cybersecurity, and political campaigns. They are also central to fixed-point reasoning in topology. A best-response correspondence maps what others do into the set of actions a player is willing to choose. An equilibrium is a place where all those response maps fit together. The mathematical theorem may sound abstract, but it is built from the everyday act of asking what choice fits a belief."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Traffic routing",
+        "body": "A driver's best route depends on where other drivers are expected to go. A route can be best at one traffic level and poor at another."
+      },
+      {
+        "field": "Cybersecurity",
+        "body": "A defender's best response depends on the expected attack path. Changing beliefs about the attacker can change the defense."
+      }
+    ]
+  },
+  {
+    "concept_id": "mixed_strategies",
+    "title": "Mixed Strategies As Randomness With A Strategic Job",
+    "sections": [
+      {
+        "heading": "Start From Being Too Predictable",
+        "body": "A mixed strategy means choosing randomly according to a planned probability. The everyday reason is not confusion. It is that predictability can be exploited. A tennis player who always serves left lets the returner prepare. A security team that always patrols the same route invites avoidance. Randomness can be useful when the other side benefits from knowing exactly what you will do."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Some games have no stable prediction in pure actions. If one player picks rock, the other wants paper; if paper, then scissors; if scissors, then rock. The cycle means no fixed pure move survives. Mixed strategies let the model search for stability in probabilities instead. A player may randomize so that the opponent is kept indifferent among certain actions, removing the profitable predictable response."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to treat mixing as a player being careless or unable to decide. In the model, mixing can be deliberate. Another mistake is to think any random probabilities work. Equilibrium mixing has a reason: the probabilities must make opponents willing to play the actions they are supposed to use. The exact numbers carry incentive work. They are not decorative uncertainty pasted onto a deterministic story."
+      },
+      {
+        "heading": "Why It Matters Beyond Games Of Chance",
+        "body": "Mixed strategies matter in sports, inspections, cybersecurity, military planning, pricing, and platform moderation. They also matter for topology because probability mixtures can make strategy sets convex, which is one reason fixed-point existence theorems can apply. The mathematical convenience has a plain meaning: the player is allowed to choose a probability plan rather than only a single action. That expanded space can create a stable point where no pure action profile could."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Inspections",
+        "body": "A regulator may randomize inspection times so firms cannot safely hide violations around a known schedule. The randomness creates discipline because the firm cannot make one clean plan around a predictable visit."
+      },
+      {
+        "field": "Cyber defense",
+        "body": "Rotating defenses can prevent attackers from exploiting a fixed pattern. The mix must still fit the cost and protection tradeoff, because random movement without purpose can waste effort and leave weak spots exposed."
+      }
+    ]
+  },
+  {
+    "concept_id": "subgame_perfection",
+    "title": "Subgame Perfection As Credibility At Every Later Point",
+    "sections": [
+      {
+        "heading": "Start From A Plan That Reaches The Future",
+        "body": "Subgame perfection asks whether an equilibrium plan remains sensible after every later point that could be reached. A plan can be a Nash equilibrium because nobody wants to change at the very start, yet it may rely on a threat that would be foolish later. Subgame perfection tightens the test. It says the strategy must pass the no-deviation logic not only from the beginning, but also inside each proper continuation of the game."
+      },
+      {
+        "heading": "Why The Idea Has To Exist",
+        "body": "Sequential games need a stronger credibility check than one-shot strategic-form games. A firm may threaten a price war after entry. A negotiator may threaten to reject a future offer. A parent, manager, or government may announce a punishment. The model has to ask whether that future action will be worthwhile once the later moment arrives. Subgame perfection exists because early incentives and later incentives can differ."
+      },
+      {
+        "heading": "The Common Mistake",
+        "body": "The mistake is to accept any Nash equilibrium in a game tree as a serious prediction. Some Nash equilibria survive only because they contain off-path threats that no one would actually carry out. Subgame perfection rejects those empty threats when the relevant subgame can be evaluated. It does not solve every dynamic information problem, but it teaches the reader to inspect credibility after histories, not just at the root."
+      },
+      {
+        "heading": "Why It Matters Beyond Entry Games",
+        "body": "Subgame perfection matters in bargaining, regulation, litigation, industrial organization, diplomacy, and organizational discipline. It also links to topology and fixed-point thinking through the larger family of equilibrium refinements. Existence of a stable point is not enough when the point is supported by unbelievable future behavior. The refinement asks whether the fixed point has the right internal structure along the time path."
+      }
+    ],
+    "applications": [
+      {
+        "field": "Regulation",
+        "body": "A regulator's announced punishment shapes behavior only if the regulator will still want to impose it later. Credibility changes compliance because firms reason about the later enforcement choice, not only the written rule."
+      },
+      {
+        "field": "Diplomacy",
+        "body": "A threat can deter action only when carrying it out later is believable. Subgame perfection makes that future check explicit and separates real deterrence from language that sounds strong early."
+      }
+    ]
   }
 ]
