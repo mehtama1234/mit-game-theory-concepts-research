@@ -5,7 +5,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 ## Summary
 
 - Concepts audited: 33
-- Concept teaching words: min 670, max 961
+- Concept teaching words: min 676, max 961
 - Evidence per concept: min 2, max 2
 - Theme treatment words: min 401, max 423
 - Subtheme treatment words: min 402, max 421
@@ -142,8 +142,9 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Limits concept cards: 33
 - Limits theme cards: 8
 - Limits derivation cards: 9
-- Limits concept words: min 411, max 612
+- Limits concept words: min 420, max 612
 - Evidence records with transcript teaching notes: 66
+- Generic evidence payloads remaining: 0
 - Evidence concept backlinks: 66
 - Evidence subtheme backlinks: 66
 - Evidence lecture backlinks: 66
@@ -153,21 +154,21 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Supplemental lecture evidence records: 8
 - Lectures below 2 total evidence anchors: 0
 - Lecture path treatment words: min 348, max 441
-- Lecture detail page words: min 1896, max 5890
+- Lecture detail page words: min 1895, max 5862
 - Errors: 0
 
 ## Lowest Concept Depth
 
-- rationalizability: 670 teaching words, 2 evidence records
-- cheap_talk: 673 teaching words, 2 evidence records
-- auctions: 674 teaching words, 2 evidence records
-- signaling: 675 teaching words, 2 evidence records
-- common_knowledge: 675 teaching words, 2 evidence records
 - revenue_equivalence: 676 teaching words, 2 evidence records
 - infinitely_repeated_games: 677 teaching words, 2 evidence records
 - implicit_cartels: 677 teaching words, 2 evidence records
 - extensive_form_games: 679 teaching words, 2 evidence records
 - backward_induction: 679 teaching words, 2 evidence records
+- folk_theorem: 679 teaching words, 2 evidence records
+- bayesian_games: 679 teaching words, 2 evidence records
+- ad_auctions: 680 teaching words, 2 evidence records
+- finitely_repeated_games: 681 teaching words, 2 evidence records
+- best_response: 682 teaching words, 2 evidence records
 
 ## Errors
 

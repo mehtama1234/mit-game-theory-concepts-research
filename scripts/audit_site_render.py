@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import json
 import os
 import socket
 import struct
@@ -151,12 +152,59 @@ def main() -> int:
     time.sleep(0.5)
     rows = []
     try:
+        pages_json = SCREENSHOTS / "render-pages.json"
+        result_json = SCREENSHOTS / "render-results.json"
+        runner = SCREENSHOTS / "render-runner.mjs"
+        pages_json.write_text(json.dumps(PAGES), encoding="utf-8")
+        runner.write_text(
+            """
+import { chromium } from 'playwright';
+import fs from 'node:fs/promises';
+
+const [port, pagesPath, resultPath, screenshotDir] = process.argv.slice(2);
+const pages = JSON.parse(await fs.readFile(pagesPath, 'utf8'));
+const browser = await chromium.launch({ headless: true });
+const results = [];
+try {
+  for (const [name, pagePath, viewport] of pages) {
+    const [width, height] = viewport.split(',').map(Number);
+    const page = await browser.newPage({ viewport: { width, height } });
+    await page.goto(`http://127.0.0.1:${port}/${pagePath}`, { waitUntil: 'networkidle', timeout: 30000 });
+    await page.waitForTimeout(500);
+    const target = `${screenshotDir}/${name}.png`;
+    await page.screenshot({ path: target });
+    await page.close();
+    results.push([name, pagePath, viewport, target]);
+  }
+} finally {
+  await browser.close();
+}
+await fs.writeFile(resultPath, JSON.stringify(results), 'utf8');
+""".strip()
+            + "\n",
+            encoding="utf-8",
+        )
+        code, output = run(
+            [
+                "node",
+                str(runner),
+                str(port),
+                str(pages_json),
+                str(result_json),
+                str(SCREENSHOTS),
+            ],
+            env=env,
+            timeout=300,
+        )
+        if code != 0:
+            errors.append(f"playwright batch failed: {output}")
+        rendered = json.loads(result_json.read_text(encoding="utf-8")) if result_json.exists() else []
+        rendered_by_name = {row[0]: row for row in rendered}
         for name, page, viewport in PAGES:
-            target = SCREENSHOTS / f"{name}.png"
-            code, output = run(["npx", "-y", "playwright", "screenshot", f"--viewport-size={viewport}", "--wait-for-timeout=500", f"http://127.0.0.1:{port}/{page}", str(target)], env=env, timeout=120)
-            if code != 0:
-                errors.append(f"{name} failed: {output}")
+            if name not in rendered_by_name:
+                errors.append(f"{name} screenshot missing from batch")
                 continue
+            target = Path(rendered_by_name[name][3])
             width, height = png_size(target)
             size = target.stat().st_size
             expected = tuple(int(x) for x in viewport.split(","))
@@ -165,6 +213,8 @@ def main() -> int:
             if size < 20_000:
                 errors.append(f"{name} screenshot suspiciously small: {size}")
             rows.append((name, page, viewport, width, height, size))
+        for temporary in [pages_json, result_json, runner]:
+            temporary.unlink(missing_ok=True)
     finally:
         server.terminate()
         try:

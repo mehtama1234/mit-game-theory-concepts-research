@@ -16,7 +16,7 @@
     "local_transcript_window": "who consistently maximize some sort of preference. So, we need to specify this agent's preferences. And in this case, their preferences are going to specify some ordering amongst",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "preference",
       "preferences",
@@ -29,7 +29,7 @@
       "ranking_outcomes"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Preferences: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is the first modeling commitment: before payoffs or predictions exist, the analyst must name what the chooser is trying to rank.",
     "transcript_teaching_note": "This anchor is strong for the first-principles setup of preferences. The transcript repeatedly says the agent preferences must be specified, which is the modeling move before any payoff table or equilibrium can exist. The teaching payload is that choice theory begins by naming the ordering that the agent is assumed to maximize.",
     "evidence_boundary": "The window supports preference specification and ordering. It does not prove completeness, transitivity, or representation by utility; those are broader conceptual steps handled in the concept treatment."
   },
@@ -50,7 +50,7 @@
     "local_transcript_window": "If I want to specify this problem, what have I not told you? Yeah? Preferences? right? And it's tempting to say, \"Oh, well, all",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "preference",
       "preferences",
@@ -63,7 +63,7 @@
       "ranking_outcomes"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Preferences: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is reuse of preferences as missing model structure: a game description is incomplete until the players rankings over outcomes are supplied.",
     "transcript_teaching_note": "This representation lecture anchor is useful because a student answer identifies the missing ingredient as preferences. That classroom moment reinforces that a game description is incomplete until the players rankings over consequences are named. The span shows preferences being reused as course machinery, not just introduced once in Lecture 1.",
     "evidence_boundary": "The evidence supports the need for preferences in model specification. The local window is short and conversational, so it should not be treated as a formal axiom statement."
   },
@@ -84,7 +84,7 @@
     "local_transcript_window": "to be cardinal utility functions or von Neumann utility functions rather than ordinal utility functions. And just to",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "utility",
       "utility function",
@@ -97,7 +97,7 @@
       "ranking_outcomes"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Utility: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is measurement discipline: utility numbers are not feelings; they are the representation needed when risk makes payoff arithmetic matter.",
     "transcript_teaching_note": "This utility anchor matters because it distinguishes cardinal or von Neumann utility from ordinal utility. The lecture is pointing out that some later calculations require more than a simple ranking. That is the first-principles reason utility representations must be handled carefully: the kind of number needed depends on the decision environment.",
     "evidence_boundary": "The span supports the ordinal/cardinal distinction. It is not a full construction of expected utility or utility representation, so the atlas should keep the broader explanation separate."
   },
@@ -118,7 +118,7 @@
     "local_transcript_window": "utilities over consequences. And that expected utility is going to be the new definition of the new utility function that we assign to the strategy profile.",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "utility",
       "utility function",
@@ -131,7 +131,7 @@
       "ranking_outcomes"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Utility: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is strategic reuse: utility becomes the quantity assigned to each strategy profile so later solution concepts have something to compare.",
     "transcript_teaching_note": "This second utility anchor shows expected utility being assigned to a strategy profile. That is a useful cross-lecture bridge: utility has become the numerical object used to evaluate strategic consequences. The transcript window supports the idea that utilities are not decorative; they are the quantities later strategy analysis computes with.",
     "evidence_boundary": "The span supports utility as a computed payoff object in games. It does not by itself explain why the utility function is valid or how the expectations were derived."
   },
@@ -152,7 +152,7 @@
     "local_transcript_window": "And similarly, the MBTA is a different lottery where with probability P, I get this outcome, and with probability 1 - P, I get this outcome. So, we need some",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "lottery",
       "probability"
@@ -164,7 +164,7 @@
       "ranking_outcomes"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Expected Utility: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is uncertainty made computable: a lottery becomes a probability-weighted package of consequences rather than one guessed outcome.",
     "transcript_teaching_note": "This expected-utility anchor is strong because it explicitly describes a lottery with probability P and probability one minus P. The lecture is making uncertainty into a mathematical object. The teaching point is that a choice under risk is not evaluated by one consequence, but by a probability-weighted package of possible consequences.",
     "evidence_boundary": "The span supports the lottery/probability setup. It does not contain the full expected-utility formula, but it gives the transcript basis for why probabilities must enter the payoff comparison."
   },
@@ -185,7 +185,7 @@
     "local_transcript_window": "that's indicative of it being hard, indeed with probability Q, but with probability 1 minus Q, you know, it's deceptively hard. It looks it's actually",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "probability"
     ],
@@ -196,7 +196,7 @@
       "ranking_outcomes"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Expected Utility: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is hidden-information arithmetic: when the state may be one of several types, expected utility is how action choice absorbs that uncertainty.",
     "transcript_teaching_note": "This Bayesian-games anchor shows the probability language reappearing when a type may be hard or deceptively hard. That reuse matters because expected utility is the arithmetic of choosing under hidden information. The player is not facing one known state; they are weighting possible states by probabilities before acting.",
     "evidence_boundary": "The span supports reuse of probability-weighted reasoning in Bayesian games. It is a partial anchor for expected utility, not a standalone derivation of Bayesian Nash equilibrium."
   },
@@ -251,7 +251,7 @@
     "local_transcript_window": "through introspection, you form your beliefs about what nature does, not what other players do. Okay, so one final thing is in the last",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "players"
     ],
@@ -262,7 +262,7 @@
       "tables_and_trees"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Strategic Form Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is the boundary between nature and strategic opponents: beliefs about weather are not the same as beliefs about another chooser.",
     "transcript_teaching_note": "This second anchor is weak for strategic form but useful as a contrast. The window distinguishes beliefs about nature from beliefs about other players. That distinction helps explain why strategic-form games are different from one-person decision problems: once other players enter, beliefs and payoffs depend on strategic interaction rather than only exogenous uncertainty.",
     "evidence_boundary": "The span should be marked as boundary evidence for strategic form. It supports the move from individual decision to strategic interaction, but not the full normal-form definition."
   },
@@ -283,7 +283,7 @@
     "local_transcript_window": "At this node, well, nothing has happened. So, the history is nothing. At this node, the history is player one chose C.",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "node",
       "history"
@@ -295,7 +295,7 @@
       "tables_and_trees"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Extensive Form Games: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is history as state: each node records what has happened so timing becomes part of the mathematical object.",
     "transcript_teaching_note": "This extensive-form anchor is strong because it uses node and history together. The transcript says that at one node nothing has happened and at another node the history is that player one chose C. That is the core teaching payload of a game tree: nodes are not just dots; they summarize histories of play.",
     "evidence_boundary": "The span supports the history/node structure of extensive form. It does not by itself cover information sets or backward induction, so those claims require other evidence or synthesis."
   },
@@ -316,7 +316,7 @@
     "local_transcript_window": "this to games of perfect information so that at any node we get to, we know that we're at that node and therefore we can compute the optimal play. If we're at a",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "node"
     ],
@@ -327,7 +327,7 @@
       "tables_and_trees"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Extensive Form Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is representation serving solution: knowing the current node lets a player compute what remains optimal from that point forward.",
     "transcript_teaching_note": "This backward-induction lecture anchor supports extensive form through perfect-information nodes. The transcript says that when the model reaches a node, the player knows they are at that node and can compute optimal play. That is the bridge from representation to solving: the tree must encode what is known at each point.",
     "evidence_boundary": "The span supports perfect-information extensive-form reasoning. It should not be generalized to imperfect-information trees where the player may not know which node has been reached."
   },
@@ -348,7 +348,7 @@
     "local_transcript_window": "see that in fact M is dominated. It's in fact strictly dominated, just not by a pure strategy. It's strictly dominated by a mixed strategy. So, let's formally",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "dominated",
       "strictly dominated"
@@ -360,7 +360,7 @@
       "eliminating_bad_moves"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Dominance: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is contingency-by-contingency rejection: an action is indefensible when another pure or mixed action beats it everywhere relevant.",
     "transcript_teaching_note": "The transcript window is useful because it catches the lecture moving beyond the beginner version of dominance. The instructor is not only saying one pure strategy beats another pure strategy; the phrase strictly dominated by a mixed strategy shows the deeper lesson that a randomized blend of alternatives can make a pure action indefensible. That matters for first principles because dominance is about payoff comparison across contingencies, not about whether the dominating object is itself a single action.",
     "evidence_boundary": "This anchor supports the dominance concept strongly for the mixed-strategy extension, but the local window is not a full derivation of the inequalities. The atlas should treat it as evidence for the lecture emphasis and rely on the concept page for the broader explanation."
   },
@@ -381,7 +381,7 @@
     "local_transcript_window": "pure strategy. We had to consider strict dominance by mixed strategies. So if it's strictly dominated by some mixed strategy. And what we showed last week is that",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "dominance",
       "dominated",
@@ -394,7 +394,7 @@
       "eliminating_bad_moves"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Dominance: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is dominance as reusable machinery: mixed-strategy domination becomes a building block for rationalizability rather than a one-off trick.",
     "transcript_teaching_note": "This second anchor matters because the rationalizability lecture reuses dominance by mixed strategies as prior machinery. That reuse is pedagogically important: the course is showing that dominance is not a one-off deletion trick from Lecture 3, but a building block for asking which strategies can survive as rational responses once beliefs enter.",
     "evidence_boundary": "The span supports cross-lecture reuse more than it supports a fresh dominance definition. It should not be read as the only place where dominance is introduced; it shows the concept being carried into rationalizability."
   },
@@ -448,7 +448,7 @@
     "local_transcript_window": "really needed to use is that players don't play strictly dominated strategies. They know their opponents don't play",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "dominated strategies"
     ],
@@ -459,7 +459,7 @@
       "eliminating_bad_moves"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Iterated Deletion: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is recursion over rationality: deletion is not only my cleanup step but also what I know other rational players can do.",
     "transcript_teaching_note": "This rationalizability anchor is much stronger: the transcript says players do not play strictly dominated strategies and know their opponents do not play them. That is the recursive idea behind deletion. The evidence shows how a dominance assumption becomes a higher-order reasoning process rather than a one-time cleanup step.",
     "evidence_boundary": "The span supports the rationality logic behind deletion. It does not specify a full deletion sequence, so examples with actual strategy removal remain synthesis unless separately anchored."
   },
@@ -480,7 +480,7 @@
     "local_transcript_window": "And let's remember what a belief is. A belief that player I has is a belief about the strategies chosen by all of",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "belief"
     ],
@@ -491,7 +491,7 @@
       "eliminating_bad_moves"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Rationalizability: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is belief support: rationalizability begins by turning expectations about other players strategies into the object that can justify an action.",
     "transcript_teaching_note": "This anchor directly supports rationalizability because it begins by recalling what a belief is: a belief about the strategies chosen by all other players. That is exactly the object rationalizability needs. A strategy survives when it can be a best response to some belief about others strategies.",
     "evidence_boundary": "The span supports the belief component of rationalizability. It does not complete the best-response test inside the window, so it is evidence for one necessary ingredient rather than the whole concept."
   },
@@ -512,7 +512,7 @@
     "local_transcript_window": "it's sunny.\" So, we'll assign beliefs, and in this case, let's represent our belief by the probability P that it's sunny,",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "belief",
       "beliefs"
@@ -524,7 +524,7 @@
       "eliminating_bad_moves"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Rationalizability: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is probability as explanation: the early weather example supplies the belief machinery later redirected from nature to strategic opponents.",
     "transcript_teaching_note": "This early belief anchor is useful because it shows beliefs represented by a probability P in an individual decision example. The later rationalizability lecture generalizes that move from nature to other players. The teaching payload is that beliefs are probability objects used before the true state or opponent action is known.",
     "evidence_boundary": "This is cross-topic support. It anchors belief representation, not rationalizability itself, so the connection to rationalizable strategies is synthesis across lectures."
   },
@@ -545,7 +545,7 @@
     "local_transcript_window": "And it's restrictive in that the player must be playing a best response to some belief. So the best response part of it is what imposes some restriction.",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "best response"
     ],
@@ -556,7 +556,7 @@
       "stable_predictions"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Best Response: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is the restrictive half of rationalizability: a belief can justify a strategy only if the strategy is actually optimal under it.",
     "transcript_teaching_note": "This rationalizability anchor is very strong for best response. The transcript says the player must be playing a best response to some belief, and that this requirement imposes restriction. That is the first-principles point: belief alone is not enough; the action must be optimal under the belief.",
     "evidence_boundary": "The span supports best response under beliefs. It does not require beliefs to be mutually consistent across players, so it should not be overread as Nash equilibrium evidence."
   },
@@ -577,7 +577,7 @@
     "local_transcript_window": "So, rationalizability means you have an explanation, you're behaving optimally given this explanation or given these beliefs, but there's no requirement that",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "given"
     ],
@@ -588,7 +588,7 @@
       "stable_predictions"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Best Response: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is the distinction between explanation and equilibrium: an action can be locally optimal under a belief before everyone beliefs line up.",
     "transcript_teaching_note": "This anchor supports best response by emphasizing optimal behavior given an explanation or given beliefs. It is useful because it separates rationalizability from equilibrium: the player has an optimizing explanation, but there is no requirement that everyone explanations line up.",
     "evidence_boundary": "The span supports conditional optimality. It is not a full best-response calculation and does not identify a payoff-maximizing action in a concrete matrix."
   },
@@ -609,7 +609,7 @@
     "local_transcript_window": "Exactly right. So, by the definition of Nash equilibrium, let me explain this. By the definition of Nash equilibrium, we know that SI star is a best response",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "Nash equilibrium",
       "equilibrium",
@@ -622,7 +622,7 @@
       "stable_predictions"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Nash Equilibrium: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is local optimality turned into a profile condition: every player action must already be a best response to the others.",
     "transcript_teaching_note": "The transcript window gives the core Nash payload in miniature: by definition, the proposed strategy must be a best response. The repeated phrase around Nash equilibrium and best response is exactly the local-to-global move the page teaches. A Nash profile is not a desirable social arrangement; it is a set of choices where each player’s local best-response condition is satisfied against the others.",
     "evidence_boundary": "The anchor supports the formal definition and best-response connection. The short window does not by itself cover inefficiency, multiplicity, or refinements, so those broader claims stay in atlas synthesis."
   },
@@ -643,7 +643,7 @@
     "local_transcript_window": "to make sure that every subgame perfect Nash equilibrium The point is we want it to be a Nash equilibrium and satisfy these stronger assumptions. So, it",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "Nash equilibrium",
       "equilibrium"
@@ -655,7 +655,7 @@
       "stable_predictions"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Nash Equilibrium: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is refinement logic: later dynamic concepts keep Nash as a baseline, then add credibility requirements inside the game tree.",
     "transcript_teaching_note": "This SPNE lecture anchor is valuable because it describes Nash as the baseline that a stronger dynamic concept must still satisfy. The phrase stronger assumptions marks the refinement logic: subgame perfection does not discard Nash; it adds credibility checks inside the game tree. That helps readers see Nash as a reusable primitive rather than a chapter sealed off in Lecture 5.",
     "evidence_boundary": "The span supports the relation between Nash and SPNE. It is not evidence that every Nash equilibrium is credible; in fact, the stronger-assumptions language points in the opposite direction."
   },
@@ -676,7 +676,7 @@
     "local_transcript_window": "use? Yeah? Mixed strategy. You'd use a mixed strategy, right? So, you you'd randomize and in this case, how do you think you",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "mixed strategy",
       "randomize"
@@ -688,7 +688,7 @@
       "stable_predictions"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Mixed Strategies: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is deliberate randomness: a probability distribution over actions can be the strategy, not merely noise around a strategy.",
     "transcript_teaching_note": "This Nash lecture anchor is strong because it explicitly identifies a mixed strategy and immediately glosses it as randomizing. The transcript shows the course introducing randomization as an answer to a strategic problem, not as accidental noise. That supports the page’s claim that a probability distribution can be a deliberate strategy.",
     "evidence_boundary": "The span supports the basic meaning and use of mixed strategies. It does not derive equilibrium mixing probabilities or the indifference condition by itself."
   },
@@ -709,7 +709,7 @@
     "local_transcript_window": "is a linear function. Um so that you are indifferent between say getting $10 for sure and a lottery that",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "indifferent"
     ],
@@ -720,7 +720,7 @@
       "stable_predictions"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Mixed Strategies: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is indifference as a calculation: mixing works when probabilities make opponents unable to gain by exploiting predictability.",
     "transcript_teaching_note": "This zero-sum anchor supports the indifference logic behind mixing. The transcript mentions being indifferent between a sure amount and a lottery, which is the same expected-utility idea needed when mixed strategies make opponents indifferent. It helps connect randomization to utility comparison under risk.",
     "evidence_boundary": "The span is indirect for mixed strategies because it is about lottery indifference. It supports the mathematical intuition, not a full mixed-equilibrium derivation."
   },
@@ -741,7 +741,7 @@
     "local_transcript_window": "things are often not zero-sum. Maybe I'll say rarely zero-sum. And that's why game theory has moved on a bit beyond zero-sum games and looked",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "zero-sum"
     ],
@@ -752,7 +752,7 @@
       "conflict_and_security"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Zero-Sum Games: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is pure conflict structure: one side gain is the other side loss, so each player must reason against an adversary objective.",
     "transcript_teaching_note": "This zero-sum anchor is valuable because the instructor explicitly warns that many things are not zero-sum and that game theory moved beyond zero-sum games. That boundary is pedagogically important. It prevents students from treating every conflict as exact payoff opposition.",
     "evidence_boundary": "The span supports the boundary of the concept more than the formal definition. It is evidence for when not to apply zero-sum reasoning."
   },
@@ -773,7 +773,7 @@
     "local_transcript_window": "and whoever's losing would rather change their behavior so that they could win. This is a zero-sum game in the in a formal sense that we'll talk about more",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "zero-sum"
     ],
@@ -784,7 +784,7 @@
       "conflict_and_security"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Zero-Sum Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is payoff conservation: the strategic question becomes how to protect value when whatever helps one player hurts the other.",
     "transcript_teaching_note": "This Nash lecture anchor gives the informal bridge into zero-sum games: whoever is losing wants to change behavior to win, and the instructor says this is zero-sum in the formal sense to be discussed later. It supports zero-sum as a special conflict structure introduced before the dedicated lecture.",
     "evidence_boundary": "The span supports setup and preview. The formal payoff condition is not fully developed in this window, so detailed minimax implications come from later lecture material."
   },
@@ -805,7 +805,7 @@
     "local_transcript_window": "if player one chooses the strategy that makes my loss as large as possible.\" So, we have a maximum here and a minimum here.",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "minimum",
       "maximum"
@@ -817,7 +817,7 @@
       "conflict_and_security"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Minimax: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is worst-case discipline: choose by asking what guarantee survives when the opponent selects the most damaging response.",
     "transcript_teaching_note": "This minimax anchor is strong because it states the nested maximum and minimum logic in ordinary words: one player chooses a strategy that makes the other loss as large as possible. The transcript window is exactly the adversarial optimization pattern the concept page explains.",
     "evidence_boundary": "The span supports minimax structure. It does not by itself solve a complete zero-sum game or prove a minimax theorem."
   },
@@ -873,7 +873,7 @@
     "local_transcript_window": "So the topic for today is going to be what's called backward induction, but I think the best way to go about it is",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "backward induction"
     ],
@@ -884,7 +884,7 @@
       "credible_time_paths"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Backward Induction: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is solving from the future backward: once the last decision is understood, earlier choices can anticipate it.",
     "transcript_teaching_note": "The window is introductory but still meaningful: the instructor names backward induction and immediately frames it as a topic best approached through examples. That matches the course’s teaching pattern for dynamic games. The idea is easier to understand by watching a tree collapse from the end than by memorizing the name first.",
     "evidence_boundary": "This is a setup anchor, not a complete worked backward-induction solution. It supports the page’s claim about lecture placement and topic introduction; later tree examples would be needed for a full derivation ledger."
   },
@@ -905,7 +905,7 @@
     "local_transcript_window": "So, within the set of nodes H, we'll say Z, which is a subset of H, these are the terminal nodes. And then H minus Z, these are the decision nodes.",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "terminal"
     ],
@@ -916,7 +916,7 @@
       "credible_time_paths"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Backward Induction: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is credibility at each node: a planned threat matters only if the player would still want to carry it out when reached.",
     "transcript_teaching_note": "This representation anchor supports backward induction by defining terminal nodes and decision nodes. Backward induction needs that distinction: terminal nodes provide payoffs, while decision nodes are where choices are made. The transcript is evidence for the tree structure that makes solving from the end possible.",
     "evidence_boundary": "The span supports the ingredients of backward induction, not the solving procedure itself. It should be paired with Lecture 8 evidence for the actual backward-solving method."
   },
@@ -937,7 +937,7 @@
     "local_transcript_window": "is to introduce a new solution concept of SPNE, which I wrote up here, subgame perfect Nash equilibrium, that is going to capture, so we'll say this in words,",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "subgame perfect",
       "subgame",
@@ -950,7 +950,7 @@
       "credible_time_paths"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Subgame-Perfect Nash Equilibrium: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is sequential discipline: equilibrium must pass the Nash test not only at the start but in every proper continuation game.",
     "transcript_teaching_note": "This anchor captures the explicit introduction of SPNE as a new solution concept. The words capture and say this in words are useful because they show the instructor marking a conceptual repair, not merely adding notation. The repair is that dynamic games need a solution concept that rules out continuation behavior that fails after a history is reached.",
     "evidence_boundary": "The span supports the motivation and naming of SPNE. It does not itself list every subgame or solve an example, so the evidence boundary is the concept introduction rather than full proof of the refinement."
   },
@@ -971,7 +971,7 @@
     "local_transcript_window": "don't, I'm going to punish you by flooding the market.\" Yes. How would this be a credible threat though because firm two loses money by flooding?",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "credible threat"
     ],
@@ -982,7 +982,7 @@
       "credible_time_paths"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Subgame-Perfect Nash Equilibrium: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is noncredible-threat removal: SPNE strengthens Nash by rejecting plans that unravel when the threatened node actually arrives.",
     "transcript_teaching_note": "This backward-induction anchor is strong for subgame perfection because it asks whether flooding the market is a credible threat if firm two loses money by doing it. That is the entire motivation for SPNE in plain language: threats matter only if carrying them out later is optimal.",
     "evidence_boundary": "The span supports the credibility problem behind subgame perfection. It does not name SPNE in the window, but it supplies the economic reason the refinement is needed."
   },
@@ -1003,7 +1003,7 @@
     "local_transcript_window": "And the key technical tool that we're going to introduce today is something called the one-shot deviation principle. So, I'll go into detail about what this is later in the class, but it's going to",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "one-shot deviation",
       "deviation principle"
@@ -1015,7 +1015,7 @@
       "credible_time_paths"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for One-Shot Deviation Principle: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is local testing for dynamic optimality: if no single immediate deviation helps, a strategy can pass a powerful consistency check.",
     "transcript_teaching_note": "This anchor introduces the one-shot deviation principle as the key technical tool of the lecture. That phrasing is useful because it positions the principle as a verification method for dynamic strategies. The instructor’s promise to go into detail later marks this as setup evidence for the concept.",
     "evidence_boundary": "The span supports lecture introduction and importance. It does not state the theorem conditions or demonstrate a deviation check. The local span names the tool and its role, but later transcript material is needed for the exact theorem statement, assumptions, and worked verification of a strategy profile."
   },
@@ -1036,7 +1036,7 @@
     "local_transcript_window": "in the sense of a monetary payoff, but in the sense of utilities. So, a profitable deviation is a deviation that gives me a higher utility, a strictly",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "profitable deviation"
     ],
@@ -1047,7 +1047,7 @@
       "credible_time_paths"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for One-Shot Deviation Principle: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is simplification without handwaving: dynamic incentive checks can be reduced to one-step deviations under the lecture assumptions.",
     "transcript_teaching_note": "This Nash lecture anchor defines profitable deviation in utility terms. That is important for one-shot deviation because a deviation is not merely a different action; it is a change that gives strictly higher utility. The record supports the payoff criterion used later in the dynamic shortcut.",
     "evidence_boundary": "The span supports the meaning of profitable deviation. It is not specific to one-shot deviations in dynamic games, so it should be treated as prerequisite evidence."
   },
@@ -1068,7 +1068,7 @@
     "local_transcript_window": "And the basic idea is that when two parties are bargaining and negotiating they often one party might make an offer and say let's do this and then the other",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "bargaining",
       "offer"
@@ -1080,7 +1080,7 @@
       "credible_time_paths"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Bargaining: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is disagreement as leverage: bargaining outcomes depend on what each side can get or endure if talks fail.",
     "transcript_teaching_note": "This negotiation anchor gives the everyday setup for bargaining: two parties negotiate, one makes an offer, and the other responds. The transcript supports the concept’s plain-language foundation before any formal alternating-offer or surplus-division model is introduced.",
     "evidence_boundary": "The span supports bargaining setup and offer-response structure. It does not yet specify payoffs, outside options, discounting, or equilibrium. The record should therefore be read as an everyday entry point into bargaining, not as evidence for a solved bargaining equilibrium or a particular division rule."
   },
@@ -1101,7 +1101,7 @@
     "local_transcript_window": "that this is our very last opportunity to negotiate and whoever makes an offer in that period has a lot of bargaining power. So, we want to kind of shut down",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "bargaining",
       "negotiate",
@@ -1114,7 +1114,7 @@
       "credible_time_paths"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Bargaining: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is time pressure in negotiation: delay, patience, and outside options reshape what a reasonable split looks like.",
     "transcript_teaching_note": "This later bargaining anchor is stronger because it connects the last opportunity to negotiate with bargaining power. The transcript shows how timing changes leverage: whoever can make an offer in the final negotiation period may have power because no later round remains to correct the split.",
     "evidence_boundary": "The span supports timing and bargaining power. It does not solve the full bargaining model, but it anchors why last-period structure matters."
   },
@@ -1135,7 +1135,7 @@
     "local_transcript_window": "cooperating in the future, right? Uh we'll see that in the finitely repeated game, the unique subgame perfect Nash equilibrium is actually uh always",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "finitely repeated",
       "repeated game"
@@ -1147,7 +1147,7 @@
       "future_as_discipline"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Finitely Repeated Games: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is horizon logic: a known final round removes future punishment there and can unravel cooperation backward.",
     "transcript_teaching_note": "This finite repeated-games anchor is strong because it states the surprising result: in the finitely repeated game, the unique subgame-perfect Nash equilibrium is always the one-shot logic. That is the endpoint-unraveling lesson the concept page teaches.",
     "evidence_boundary": "The span supports the finite-horizon result at a high level. It does not show the full backward-induction proof, so the proof remains synthesis from the lecture sequence."
   },
@@ -1168,7 +1168,7 @@
     "local_transcript_window": "in production capacity? I think the best way to make it credible would be to say it's a repeated game, and that's what we'll study later on, right? We're",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "repeated game"
     ],
@@ -1179,7 +1179,7 @@
       "future_as_discipline"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Finitely Repeated Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is backward induction applied to repetition: endgame incentives can travel backward through every earlier round.",
     "transcript_teaching_note": "This backward-induction anchor previews repeated games as a way to make threats credible. It is useful because it shows the course linking credibility failures in one-shot dynamic games to future repeated interaction. The repeated game is introduced as the later mechanism that may repair credibility.",
     "evidence_boundary": "The span supports cross-lecture motivation. It is not a finite repeated-game theorem statement and should be treated as preview evidence."
   },
@@ -1200,7 +1200,7 @@
     "local_transcript_window": "more commonly we'll write G of delta to indicate the infinitely repeated game uh with discount factor delta. I mean, more generally we could have G of",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "infinitely repeated",
       "discount factor"
@@ -1212,7 +1212,7 @@
       "future_as_discipline"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Infinitely Repeated Games: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is future discipline: with no known last round, promised future rewards or punishments can affect today choice.",
     "transcript_teaching_note": "The transcript window gives the key mathematical object for the repeated-game unit: G of delta, the infinitely repeated game with discount factor delta. The notation matters because it packages two things together, the repeated stage game and the value of future payoffs. First-principles reading: cooperation can be checked only after the future has a weight in the payoff calculation.",
     "evidence_boundary": "This anchor supports the formal object and discount-factor setup. It does not alone prove a cooperation result; the incentive inequality and punishment path require additional lecture material."
   },
@@ -1233,7 +1233,7 @@
     "local_transcript_window": "So, here, you may have seen this in other economics courses, delta is called our discount factor. And what this says is each period we",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "discount factor"
     ],
@@ -1244,7 +1244,7 @@
       "future_as_discipline"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Infinitely Repeated Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is discounted continuation value: patience converts future cooperation or punishment into a present incentive constraint.",
     "transcript_teaching_note": "This negotiation anchor introduces delta as the discount factor, which is one of the central objects in infinite repetition. The transcript says each period is weighted, giving the intuitive reason future payoffs can be compared with current payoffs. That is the mathematical bridge from patience to incentive constraints.",
     "evidence_boundary": "The span supports discount-factor interpretation. It does not itself distinguish finite from infinite repetition or prove cooperation, so those pieces need other anchors."
   },
@@ -1265,7 +1265,7 @@
     "local_transcript_window": "Right? Because with average, it's 1 minus delta times 1 today, 1 minus delta times delta tomorrow, 1 minus delta times delta squared in the future.",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "delta"
     ],
@@ -1276,7 +1276,7 @@
       "future_as_discipline"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Folk Theorem: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is multiplicity from future enforcement: many outcomes can be sustained when players are patient enough to punish deviations.",
     "transcript_teaching_note": "This window is mathematically dense because it shows the normalized discounted average: today receives weight 1 minus delta, tomorrow receives 1 minus delta times delta, and later periods receive higher powers of delta. That is the weighting system behind folk-theorem payoffs. The transcript is evidence for how the course turns patience into a payoff average rather than a vague statement about caring about the future.",
     "evidence_boundary": "The span supports the discounting arithmetic behind repeated-payoff averages. It is not by itself the folk theorem statement; feasibility, individual rationality, and punishment incentives are additional theorem conditions."
   },
@@ -1331,7 +1331,7 @@
     "local_transcript_window": "the market. So it's common for one drug cartel to say operate in the north of a country, another cartel to operate in the south of the country, and they have",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "cartel"
     ],
@@ -1342,7 +1342,7 @@
       "future_as_discipline"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Implicit Cartels: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is collusion without contracts: repeated interaction can discipline firms even when explicit agreement is unavailable or illegal.",
     "transcript_teaching_note": "This cartel lecture anchor introduces cartel examples using territorial division. Even though the example is not yet the formal repeated-price model, it grounds the lecture in the idea that cartels allocate markets and avoid direct competition. The teaching payload is that cartel behavior is strategic organization of competition.",
     "evidence_boundary": "The span supports application context for cartels. It does not by itself establish tacit collusion, repeated-game incentives, or price-war punishment."
   },
@@ -1466,7 +1466,7 @@
     "local_transcript_window": "interpretation is different. So we still have for player one two types, the hard type and the easy type. But now the hard type, we don't mean you know for certain",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "type",
       "types"
@@ -1478,7 +1478,7 @@
       "hidden_types"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Bayesian Games: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is private type as model state: each player may know something about themselves that others must reason about probabilistically.",
     "transcript_teaching_note": "The anchor shows the type language doing real work. The hard type and easy type are not personality labels; they are the hidden states that change interpretation and payoff reasoning. The phrase interpretation is different is especially useful: Bayesian games change the meaning of a strategy because the same player slot can contain different privately known types.",
     "evidence_boundary": "This evidence supports the type-space setup for Bayesian games. It does not specify the full prior or solve equilibrium in the window, so the atlas should not treat it as a complete Bayesian Nash calculation."
   },
@@ -1499,7 +1499,7 @@
     "local_transcript_window": "The idea would be if we don't know where the game starts, we don't know where we are, then there must be some prior move that we didn't observe, and we should",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "prior"
     ],
@@ -1510,7 +1510,7 @@
       "hidden_types"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Bayesian Games: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is uncertainty over opponents characteristics: strategy must be chosen before the player knows exactly which type they face.",
     "transcript_teaching_note": "This representation anchor is useful because it says that if the game start is unknown, there must be some prior move that was not observed. That is the extensive-form intuition behind hidden information: uncertainty can be modeled as an unobserved earlier move by nature.",
     "evidence_boundary": "The span supports prior/unobserved-move representation. It does not define a full Bayesian game with type-contingent strategies, but it explains where priors enter."
   },
@@ -1531,7 +1531,7 @@
     "local_transcript_window": "interpretation is different. So we still have for player one two types, the hard type and the easy type. But now the hard type, we don't mean you know for certain",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "type",
       "types"
@@ -1543,7 +1543,7 @@
       "hidden_types"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Types And Beliefs: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is hidden information bookkeeping: types name what is private, beliefs name how others reason about that privacy.",
     "transcript_teaching_note": "This anchor overlaps with Bayesian games because it is the clearest transcript window for types. The hard type and easy type show that a type is a hidden condition changing interpretation. The important teaching point is that type is not a label after the fact; it is part of the player’s strategic situation.",
     "evidence_boundary": "The span supports type language strongly. It does not fully separate prior beliefs from types in this window, so belief mechanics need the companion Bayes-rule evidence."
   },
@@ -1564,7 +1564,7 @@
     "local_transcript_window": "what belief we specify here. In this case, the belief is pinned down by Bayes' rule. tell us tells us what the belief has to be.",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "belief",
       "Bayes"
@@ -1576,7 +1576,7 @@
       "hidden_types"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Types And Beliefs: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is connecting belief to payoff-relevant differences: not every unknown fact matters, only facts that change incentives or feasible choices.",
     "transcript_teaching_note": "This PBE anchor is strong for beliefs because it says the belief is pinned down by Bayes rule. That is exactly the discipline the concept page needs: beliefs are not arbitrary whenever the observed path gives enough probability information to update them.",
     "evidence_boundary": "The span supports Bayes-rule discipline for beliefs. It does not cover all off-path cases where Bayes rule may not pin beliefs down."
   },
@@ -1597,7 +1597,7 @@
     "local_transcript_window": "Okay, so now I think the first step, so now our goal is solving for BNE. Bayes-Nash equilibrium. I think sometimes the hardest part, often the",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "BNE"
     ],
@@ -1608,7 +1608,7 @@
       "hidden_types"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Bayesian Nash Equilibrium: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is equilibrium before full revelation: each type strategy must be optimal given beliefs about others possible types and actions.",
     "transcript_teaching_note": "This BNE applications anchor explicitly says the goal is solving for Bayes-Nash equilibrium. It is useful because it marks the transition from defining Bayesian games to computing equilibrium behavior under type uncertainty. The transcript also hints that the hard part is often the setup, which matches the concept page’s emphasis.",
     "evidence_boundary": "The span supports lecture objective and BNE framing. It does not itself give the full equilibrium solution in the local window."
   },
@@ -1629,7 +1629,7 @@
     "local_transcript_window": "plus 1/2 times the utilities here, and that's going to give each player player's expected payoff from this strategy profile. That gives us two",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "expected payoff"
     ],
@@ -1640,7 +1640,7 @@
       "hidden_types"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Bayesian Nash Equilibrium: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is strategy-by-type consistency: one player plan is really a menu of actions, one for each private type they might be.",
     "transcript_teaching_note": "This representation anchor supports the expected-payoff arithmetic behind Bayesian Nash. The transcript combines utilities with one-half weights to produce each player’s expected payoff from a strategy profile. That is the calculation BNE uses once types or uncertainty enter.",
     "evidence_boundary": "The span supports expected-payoff computation. It is prerequisite evidence for BNE rather than a direct BNE definition. It helps explain the arithmetic behind type-contingent optimization, but the Bayes-Nash equilibrium definition and fixed-point requirement come from the later BNE lecture."
   },
@@ -1729,7 +1729,7 @@
     "local_transcript_window": "So I'm contemplating a deviation where instead of bidding B1, instead of bidding V1, I bid B1 prime. So I bid strictly higher than my true valuation.",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "bid",
       "bidding",
@@ -1742,7 +1742,7 @@
       "rules_for_bidding"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Auctions: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is deviation reasoning inside a mechanism: the lecture evaluates bids by asking whether a bidder wants to shade, raise, or report truthfully.",
     "transcript_teaching_note": "The auction anchor is strong because it centers on a deviation in bidding: instead of bidding the true valuation, the bidder considers another bid. That is the mechanism-design heart of the lecture. Auction rules are evaluated by asking what bid a participant wants to choose, not by assuming the bid truthfully reports value.",
     "evidence_boundary": "The span supports incentive and deviation reasoning in auctions. It mentions bidding above true valuation, but the full conclusion depends on the auction format and payoff comparison outside this short window."
   },
@@ -1763,7 +1763,7 @@
     "local_transcript_window": "worked out pretty well. Uh anyone else who want to share maybe a bid they're happy with, a bid they feel they made a mistake on? Um any",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "bid"
     ],
@@ -1774,7 +1774,7 @@
       "rules_for_bidding"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Auctions: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is bidding as lived strategic choice: students judge bids as good or mistaken before the course formalizes allocation and payment rules.",
     "transcript_teaching_note": "This early auction-like classroom anchor is useful as a behavioral setup: students discuss bids they were happy with or thought were mistakes. It grounds auctions in the practical experience of choosing a bid and then evaluating whether that bid was strategically good.",
     "evidence_boundary": "The span supports bidding as an action and reflection on mistakes. It does not establish a formal auction mechanism, valuation model, or equilibrium bidding rule."
   },
@@ -1795,7 +1795,7 @@
     "local_transcript_window": "amount that I pay is my probability of winning times my expected payment if I win, my expected payment conditional on winning, right? Now, if I win, how much",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "payment"
     ],
@@ -1806,7 +1806,7 @@
       "rules_for_bidding"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Revenue Equivalence: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is expected payment decomposition: seller revenue is built from winning probabilities and payments conditional on winning, not auction names.",
     "transcript_teaching_note": "This revenue-equivalence anchor is strong because it decomposes expected payment into probability of winning times expected payment conditional on winning. That is the kind of object revenue equivalence compares across auction formats. The teaching payload is that revenue is an expectation over strategic winning and payment events.",
     "evidence_boundary": "The span supports expected-payment decomposition. It does not state the full revenue-equivalence theorem or its assumptions. It anchors the payment object that the theorem compares, while allocation assumptions, bidder symmetry, and boundary conditions require the surrounding revenue-equivalence lecture."
   },
@@ -1827,7 +1827,7 @@
     "local_transcript_window": "the most gets the item. The difference from a first price auction is the payment rule. So in a second price auction, the winning bidder doesn't pay",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "payment"
     ],
@@ -1838,7 +1838,7 @@
       "rules_for_bidding"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Revenue Equivalence: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is payment-rule comparison: first-price and second-price formats differ in what winners pay, which changes equilibrium bidding incentives.",
     "transcript_teaching_note": "This auction anchor supports revenue equivalence by contrasting first-price and second-price auctions through the payment rule. The transcript says the difference is the payment rule, which is exactly why bidders alter strategies and why revenue comparison must account for equilibrium responses.",
     "evidence_boundary": "The span supports the payment-rule contrast. It does not prove equivalence; it supplies one mechanism difference that the theorem later analyzes."
   },
@@ -1859,7 +1859,7 @@
     "local_transcript_window": "difference. Yes Amy. But then doesn't Google lose out on pay per click if all the ads are pretty unpopular? Yeah I mean I guess",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "ads",
       "click"
@@ -1871,7 +1871,7 @@
       "rules_for_bidding"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Ad Auctions: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is platform allocation under attention: bids interact with clicks and ad quality, so the slot is not simply sold to the highest dollar.",
     "transcript_teaching_note": "This ad-auction anchor is strong because it raises pay per click and unpopular ads. That is a platform-design issue absent from simple auctions: the platform cares not just about bids but about clicks and ad relevance. The transcript captures why ranking ads is more than selling a slot to the highest bidder.",
     "evidence_boundary": "The span supports click-based platform incentives. It does not specify the full scoring or pricing rule used in an ad auction."
   },
@@ -1892,7 +1892,7 @@
     "local_transcript_window": "websites, right? So, if you go to the New York Times and you see ads, uh those ads are also, you know, managed through Google and the New York Times if they",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "ads"
     ],
@@ -1903,7 +1903,7 @@
       "rules_for_bidding"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Ad Auctions: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is ranked-position mechanism design: ad auctions allocate multiple positions whose values depend on click likelihood and user attention.",
     "transcript_teaching_note": "This BNE applications anchor gives real-world context for ad auctions by mentioning ads on websites and management through Google and publishers. It supports the course’s move from abstract auction models to platform-mediated advertising markets. The note is application context rather than mechanism proof: it tells readers why ad auctions matter as an economic institution before the later ad-auction lecture adds click, rank, quality, and payment details.",
     "evidence_boundary": "The span supports application context. It is not enough to anchor the ad-auction mechanism by itself because it does not discuss bids, clicks, quality, or pricing in this window."
   },
@@ -1924,7 +1924,7 @@
     "local_transcript_window": "perfect from here and the Bayes from here, and it's just called perfect Bayesian equilibrium. Um I guess maybe I'll give somewhat of a",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "perfect Bayesian"
     ],
@@ -1935,7 +1935,7 @@
       "hidden_types"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Perfect Bayesian Equilibrium: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is strategy plus belief as one object: after signals or histories, the model must track both actions and inferred information.",
     "transcript_teaching_note": "This PBE anchor explicitly names perfect Bayesian equilibrium and shows the term being assembled from perfect and Bayes. That matters pedagogically because the concept combines dynamic credibility with Bayesian belief discipline. The transcript marks PBE as a hybrid solution concept rather than a disconnected new label.",
     "evidence_boundary": "The span supports naming and conceptual lineage. It does not state all PBE conditions in this window. It is evidence for why the name combines credibility and Bayesian reasoning, while the formal strategy-belief assessment and consistency requirements need the companion PBE/signaling anchors."
   },
@@ -1956,7 +1956,7 @@
     "local_transcript_window": "So, remember an assessment is a strategy profile together with a belief system. So, we need to first say, let's look at",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "belief system"
     ],
@@ -1967,7 +1967,7 @@
       "hidden_types"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Perfect Bayesian Equilibrium: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is assessment discipline: PBE asks whether the strategy profile and belief system jointly make sense after possible observations.",
     "transcript_teaching_note": "This signaling lecture anchor is strong because it defines an assessment as a strategy profile together with a belief system. That is one of the clearest transcript supports for PBE: the equilibrium object must include what players do and what they believe after histories or signals.",
     "evidence_boundary": "The span supports the strategy-plus-belief-system object. It does not alone verify sequential rationality or Bayes consistency for a particular signaling equilibrium."
   },
@@ -1988,7 +1988,7 @@
     "local_transcript_window": "was kind of a simple example of signaling and today we're going to do a more involved application of signaling. So",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "signaling",
       "signal"
@@ -2000,7 +2000,7 @@
       "messages_and_shared_awareness"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Signaling: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is signaling as a reusable application family: the lecture moves from a simple example to richer hidden-information environments.",
     "transcript_teaching_note": "This opening signaling anchor establishes that the lecture is moving from a simple signaling example to a more involved application. That progression matters for the atlas because signaling is not just a definition of sender, receiver, and signal; it is a family of models where the same hidden-information primitive gets applied to richer incentive situations.",
     "evidence_boundary": "The span supports lecture framing and continuity. It is not a sufficient anchor for separating or pooling conditions by itself; those require later transcript spans where type incentives are compared."
   },
@@ -2056,7 +2056,7 @@
     "local_transcript_window": "And we're going to think of this is a game between a sender, we call them sender and receiver. But I want you to think these are abstract labels. I want you to think of",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "sender",
       "receiver"
@@ -2068,7 +2068,7 @@
       "messages_and_shared_awareness"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Cheap Talk: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is the sender-receiver skeleton: costless communication becomes a game because one side speaks and the other acts after interpreting speech.",
     "transcript_teaching_note": "The cheap-talk anchor introduces the sender-receiver abstraction. The important teaching move is that sender and receiver are abstract labels, which tells students not to overfit the model to one literal conversation. Cheap talk is a structure: one side sends a costless message, the other side chooses an action after interpreting it.",
     "evidence_boundary": "This span supports the model setup, not the full credibility result. The payoff-alignment condition that makes cheap talk informative must be supported by later parts of the lecture or by synthesis from the concept page."
   },
@@ -2123,7 +2123,7 @@
     "local_transcript_window": "might call We called this mutual knowledge. It's kind of first order mutual knowledge. This we might call second order mutual",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "knowledge",
       "mutual knowledge"
@@ -2135,7 +2135,7 @@
       "messages_and_shared_awareness"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the setup move for Common Knowledge: the lecture span identifies the ordinary strategic pressure before the atlas turns it into the formal concept.",
+    "conceptual_payload": "The payload is the knowledge ladder itself: mutual knowledge, first-order mutual knowledge, and second-order mutual knowledge are distinct strategic objects.",
     "transcript_teaching_note": "This common-knowledge anchor is valuable because it distinguishes levels of knowledge. The transcript moves from mutual knowledge to first-order mutual knowledge and then second-order mutual knowledge. That is the exact staircase the concept page explains: common knowledge is not just everyone knowing a fact, but the recursive awareness that others know it too.",
     "evidence_boundary": "The span supports the hierarchy-of-knowledge construction. It does not by itself show a full coordination application, so applications to public announcements or equilibrium selection remain synthesis unless separately anchored."
   },
@@ -2156,7 +2156,7 @@
     "local_transcript_window": "reasoning that captures what's often called higher order knowledge of rationality. So first order knowledge of rationality means I know other people are rational.",
     "evidence_basis": "local VTT timestamp span",
     "evidence_scope": "supports the listed concept and subtheme; broader analogies are synthesis",
-    "evidence_review_status": "hand_rewritten_concept_payload",
+    "evidence_review_status": "hand_rewritten_specific_payload",
     "matched_terms": [
       "knowledge"
     ],
@@ -2167,7 +2167,7 @@
       "messages_and_shared_awareness"
     ],
     "confidence": "moderate",
-    "conceptual_payload": "The payload is the follow-through move for Common Knowledge: the companion span shows how the same idea is reused, bounded, or connected after the initial setup.",
+    "conceptual_payload": "The payload is higher-order rationality: the rationalizability lecture uses the same recursive knowledge structure to describe what players know about rationality.",
     "transcript_teaching_note": "This rationalizability anchor is strong for the knowledge-recursion side of common knowledge. The transcript mentions higher-order knowledge of rationality and first-order knowledge of rationality. That is the same ladder of reasoning common knowledge formalizes, applied here to rationality assumptions.",
     "evidence_boundary": "The span supports higher-order knowledge, not common knowledge of a particular public event. It should be used for the recursion primitive rather than a full coordination application."
   }

@@ -77,6 +77,13 @@ FORBIDDEN = [
     "evidence comes from the listed concept pages",
 ]
 
+GENERIC_EVIDENCE_PAYLOAD_PATTERNS = [
+    re.compile(r"\bsetup move\b", re.IGNORECASE),
+    re.compile(r"\bfollow-through move\b", re.IGNORECASE),
+    re.compile(r"\blecture span identifies the ordinary strategic pressure\b", re.IGNORECASE),
+    re.compile(r"\bcompanion span shows how the same idea is reused\b", re.IGNORECASE),
+]
+
 
 def words(text: str) -> int:
     return len(re.findall(r"\b\w+\b", text))
@@ -1300,10 +1307,17 @@ def main() -> int:
         for record in evidence
         if record.get("confidence") == "weak" or "weak" in str(record.get("evidence_boundary", "")).lower()
     ]
+    generic_payload_records = [
+        record["id"]
+        for record in evidence
+        if any(pattern.search(str(record.get("conceptual_payload", ""))) for pattern in GENERIC_EVIDENCE_PAYLOAD_PATTERNS)
+    ]
     if len(deep_evidence) < len(evidence):
         errors.append(f"only {len(deep_evidence)} evidence records have transcript teaching notes")
     if weak_evidence:
         errors.append(f"{len(weak_evidence)} evidence records still marked weak")
+    if generic_payload_records:
+        errors.append(f"generic evidence payloads remain: {', '.join(generic_payload_records[:8])}")
     overlap_records = [record for record in evidence if repeated_adjacent_ngrams(record.get("local_transcript_window", ""))]
     if overlap_records:
         errors.append(f"{len(overlap_records)} evidence windows contain repeated caption overlap")
@@ -1542,6 +1556,7 @@ def main() -> int:
         f"- Limits derivation cards: {limit_derivation_cards}",
         f"- Limits concept words: min {min(limit_words) if limit_words else 0}, max {max(limit_words) if limit_words else 0}",
         f"- Evidence records with transcript teaching notes: {len(deep_evidence)}",
+        f"- Generic evidence payloads remaining: {len(generic_payload_records)}",
         f"- Evidence concept backlinks: {evidence_concept_backlinks}",
         f"- Evidence subtheme backlinks: {evidence_subtheme_backlinks}",
         f"- Evidence lecture backlinks: {evidence_lecture_backlinks}",
