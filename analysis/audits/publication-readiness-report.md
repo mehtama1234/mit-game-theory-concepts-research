@@ -6,7 +6,7 @@ This report records local readiness evidence. Remote publication is verified by 
 
 ```text
 $ git log -1 --oneline
-bb8e2d2 Refresh readiness report for application map
+066fb3b Add everyday first-principles glossary
 
 $ git remote -v
 origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (fetch)
@@ -32,6 +32,7 @@ origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (pus
 - First-principles essay cards: 16
 - Cross-field application map cards: 6
 - Everyday glossary terms: 20
+- Concepts covered by first-principles layer: 33
 - Review guide cards: 6
 - Publication status cards: 6
 - Root handoff present: True
@@ -59,30 +60,30 @@ validated HANDOFF.md and README.md
 [2K
 transforming...✓ 213 modules transformed.
 rendering chunks...
-✓ built in 1.56s
+✓ built in 1.82s
 [2/5] analyze server references...
 [2K
 transforming...✓ 70 modules transformed.
 rendering chunks...
-✓ built in 442ms
+✓ built in 504ms
 [3/5] build rsc environment...
 [2K
 transforming...✓ 208 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 2.10s
+✓ built in 1.72s
 [4/5] build client environment...
 [2K
 transforming...✓ 117 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 1.50s
+✓ built in 1.61s
 [5/5] build ssr environment...
 [2K
 transforming...✓ 71 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 472ms
+✓ built in 502ms
 [0m
   Route (app)
   ─ ? /
@@ -116,6 +117,7 @@ render-audited 56 screenshots; errors: 0
 - Evidence discipline: every concept has two transcript evidence records with local transcript windows and YouTube links.
 - Generic-template guard: validators reject the original template phrases in generated concept prose and published HTML.
 - Course-wide first-principles essay layer: `first-principles.html` gives plain-language long-form explanations of the whole course, a structured cross-field application map, and an everyday glossary for core vocabulary.
+- First-principles concept integration: every concept page links back to relevant course essays, application maps, or glossary entries.
 - Reviewability: `review-guide.html` gives an explicit route for checking first-principles depth, lecture faithfulness, math clarity, reader practice, and publication state.
 - Publication status: `publication-status.html` separates local build proof, remote branch proof, generated-site-branch proof, and public-hosting proof.
 - Handoff: `HANDOFF.md` gives a durable root-level review and continuation guide.

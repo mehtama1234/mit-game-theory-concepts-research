@@ -258,6 +258,16 @@ def main() -> int:
                 errors.append(f"everyday glossary {item['id']} links unknown concept: {concept_id}")
             elif f'href="concepts/{concept_id}.html"' not in first_principles_html:
                 errors.append(f"everyday glossary {item['id']} concept link not rendered: {concept_id}")
+    first_principles_coverage = {
+        concept_id
+        for collection in [first_principles_essays, application_map, everyday_glossary]
+        for item in collection
+        for concept_id in item.get("concept_ids", [])
+        if concept_id in concept_by_id
+    }
+    missing_first_principles_coverage = set(concept_by_id) - first_principles_coverage
+    if missing_first_principles_coverage:
+        errors.append(f"concepts missing first-principles coverage: {', '.join(sorted(missing_first_principles_coverage))}")
     for essay in first_principles_essays:
         if f'id="{essay["id"]}"' not in first_principles_html:
             errors.append(f"first-principles essay not rendered: {essay['id']}")
@@ -1378,6 +1388,10 @@ def main() -> int:
         for derivation_id in expected_derivations:
             if f'href="../primitives.html#{derivation_id}"' not in text:
                 errors.append(f"concept page {concept['id']} missing derivation link: {derivation_id}")
+        if "Plain-Language First-Principles Links" not in text:
+            errors.append(f"concept page missing first-principles backlink section: {concept['id']}")
+        if '../first-principles.html#' not in text:
+            errors.append(f"concept page missing first-principles backlinks: {concept['id']}")
         if "Transcript Evidence" not in text:
             errors.append(f"concept page missing evidence section: {concept['id']}")
     for path in html_files:

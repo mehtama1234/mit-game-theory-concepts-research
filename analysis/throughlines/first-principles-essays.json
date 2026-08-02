@@ -87,7 +87,7 @@
         "body": "Traffic routes, platform choices, and communication standards can get stuck because each user responds to where others already are. A different arrangement may be better, but no single user can reach it alone."
       }
     ],
-    "concept_ids": ["nash_equilibrium", "mixed_strategies", "zero_sum_games", "minimax", "common_knowledge"]
+    "concept_ids": ["nash_equilibrium", "mixed_strategies", "zero_sum_games", "minimax", "common_knowledge", "imperfect_competition"]
   },
   {
     "id": "time-credibility",

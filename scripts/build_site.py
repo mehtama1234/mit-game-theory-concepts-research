@@ -1443,7 +1443,32 @@ def worked_example_card(card: dict[str, Any]) -> str:
 </aside>"""
 
 
-def build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examples, concept_diagnostics):
+def first_principles_backlinks(concept_id: str, essays, application_map, everyday_glossary) -> str:
+    essay_links = "".join(
+        f'<a class="chip" href="../first-principles.html#{esc(item["id"])}">{esc(item["title"])}</a>'
+        for item in essays
+        if concept_id in item.get("concept_ids", [])
+    )
+    application_links = "".join(
+        f'<a class="chip" href="../first-principles.html#{esc(item["id"])}">{esc(item["field"])}</a>'
+        for item in application_map
+        if concept_id in item.get("concept_ids", [])
+    )
+    glossary_links = "".join(
+        f'<a class="chip" href="../first-principles.html#glossary-{esc(item["id"])}">{esc(item["term"])}</a>'
+        for item in everyday_glossary
+        if concept_id in item.get("concept_ids", [])
+    )
+    return f"""<section class="wide-card first-principles-links">
+  <h2>Plain-Language First-Principles Links</h2>
+  <p>Use these links when the formal page feels too compressed. They restate the same idea in everyday words, show where it travels, and name the vocabulary traps.</p>
+  <h3>Course Essays</h3><p class="chips">{essay_links or '<span class="chip muted">No essay link yet</span>'}</p>
+  <h3>Application Maps</h3><p class="chips">{application_links or '<span class="chip muted">No application map link yet</span>'}</p>
+  <h3>Glossary Terms</h3><p class="chips">{glossary_links or '<span class="chip muted">No glossary link yet</span>'}</p>
+</section>"""
+
+
+def build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examples, concept_diagnostics, first_principles_essays, application_map, everyday_glossary):
     ev_by_id = evidence_map(evidence)
     concept_ids = {c["id"] for c in concepts}
     body = f'<section class="page-head"><h1>Concept Atlas</h1><p>Each page explains the strategic pressure, the mathematical object, what breaks without it, and transcript evidence.</p></section><section class="grid">{"".join(concept_card(c, ev_by_id) for c in concepts)}</section>'
@@ -1487,6 +1512,7 @@ def build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examp
         body = f"""<section class="page-head"><p class="eyebrow">{esc(concept['theme_id']).replace('_', ' ')}</p><h1>{esc(concept['name'])}</h1><p>{esc(concept['plain_language_definition'])}</p></section>
 {diagram}
 <section class="treatment">{treatment}{worked_example_card(worked_card) if worked_card else ''}<h2>Equation Walkthroughs</h2>{f'<p>{esc(equation_note)}</p>' if equation_note else ''}<p class="chips">{deriv_html or '<span class="chip muted">No direct derivation cards yet</span>'}</p><p class="chips">{related}</p></section>
+{first_principles_backlinks(concept["id"], first_principles_essays, application_map, everyday_glossary)}
 <section><h2>Transcript Evidence</h2><div class="evidence-stack">{ev_html}</div></section>"""
         write(SITE / "concepts" / f"{concept['id']}.html", page(concept["name"], body, "concepts", depth=1))
 
@@ -1729,7 +1755,7 @@ def main():
     build_cross_reference(concepts, themes, subthemes, primitives, lectures, evidence)
     build_limits(concepts, themes, derivations)
     build_lectures(lectures, ev_by_id, concept_by_id, deriv_by_id)
-    build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examples, concept_diagnostics)
+    build_concepts(concepts, evidence, deriv_by_id, equation_notes, worked_examples, concept_diagnostics, first_principles_essays, application_map, everyday_glossary)
     build_themes(themes, subthemes, concepts)
     build_primitives(primitives, derivations, concept_by_id)
     build_families(families, concept_by_id, ev_by_id)

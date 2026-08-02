@@ -16,12 +16,15 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Primitive-to-concept backlinks: 47
 - Derivation-card words: min 347, max 440
 - Concept pages with derivation links: 30
+- Concepts covered by first-principles layer: 33
+- Concept pages with first-principles backlinks: 33
+- Concept first-principles backlinks: 176
 - Concept equation note words: min 65, max 77
 - Concept worked-example card words: min 208, max 239
 - First-principles essay cards: 16
 - First-principles essay words: min 301, max 436
 - First-principles application cards: 32
-- First-principles concept links: 85
+- First-principles concept links: 86
 - Cross-field application map cards: 6
 - Cross-field application map words: min 150, max 192
 - Cross-field application concept links: 30

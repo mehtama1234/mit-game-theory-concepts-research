@@ -156,6 +156,18 @@ def main() -> int:
 
     rows = []
     concept_pages_with_derivations = 0
+    concept_pages_with_first_principles_links = 0
+    concept_first_principles_backlinks = 0
+    first_principles_coverage = {
+        concept_id
+        for collection in [first_principles_essays, application_map, everyday_glossary]
+        for item in collection
+        for concept_id in item.get("concept_ids", [])
+        if concept_id in concept_by_id
+    }
+    missing_first_principles_coverage = set(concept_by_id) - first_principles_coverage
+    if missing_first_principles_coverage:
+        errors.append(f"concepts missing first-principles coverage: {', '.join(sorted(missing_first_principles_coverage))}")
     equation_note_words = []
     worked_example_words = []
     for concept in concepts:
@@ -214,6 +226,14 @@ def main() -> int:
                 errors.append(f"concept {concept['id']} equation walkthrough note not rendered")
         if linked_derivations:
             concept_pages_with_derivations += 1
+        backlink_count = html.count('../first-principles.html#')
+        concept_first_principles_backlinks += backlink_count
+        if "Plain-Language First-Principles Links" not in html:
+            errors.append(f"concept {concept['id']} missing first-principles backlink section")
+        elif backlink_count < 1:
+            errors.append(f"concept {concept['id']} missing first-principles backlinks")
+        else:
+            concept_pages_with_first_principles_links += 1
         rows.append((concept["id"], count, ev_count))
 
     site_text = "\n".join(path.read_text(encoding="utf-8", errors="ignore") for path in SITE.rglob("*.html")).lower()
@@ -1587,6 +1607,9 @@ def main() -> int:
         f"- Primitive-to-concept backlinks: {primitive_backlinks}",
         f"- Derivation-card words: min {min(derivation_words) if derivation_words else 0}, max {max(derivation_words) if derivation_words else 0}",
         f"- Concept pages with derivation links: {concept_pages_with_derivations}",
+        f"- Concepts covered by first-principles layer: {len(first_principles_coverage)}",
+        f"- Concept pages with first-principles backlinks: {concept_pages_with_first_principles_links}",
+        f"- Concept first-principles backlinks: {concept_first_principles_backlinks}",
         f"- Concept equation note words: min {min(equation_note_words) if equation_note_words else 0}, max {max(equation_note_words) if equation_note_words else 0}",
         f"- Concept worked-example card words: min {min(worked_example_words) if worked_example_words else 0}, max {max(worked_example_words) if worked_example_words else 0}",
         f"- First-principles essay cards: {len(first_principles_essays)}",

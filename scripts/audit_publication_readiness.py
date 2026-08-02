@@ -33,6 +33,12 @@ def main() -> int:
     publication_status = json.loads((ROOT / "analysis/throughlines/publication-status.json").read_text(encoding="utf-8"))
     queue = json.loads((ROOT / "analysis/evidence/evidence-review-queue.json").read_text(encoding="utf-8"))
     summary = json.loads((ROOT / "raw-material/youtube/summary.json").read_text(encoding="utf-8"))
+    first_principles_coverage = {
+        concept_id
+        for collection in [first_principles_essays, application_map, everyday_glossary]
+        for item in collection
+        for concept_id in item.get("concept_ids", [])
+    }
 
     log_code, log = run(["git", "log", "-1", "--oneline"])
     remote_code, remote = run(["git", "remote", "-v"])
@@ -69,6 +75,7 @@ def main() -> int:
         f"- First-principles essay cards: {len(first_principles_essays)}",
         f"- Cross-field application map cards: {len(application_map)}",
         f"- Everyday glossary terms: {len(everyday_glossary)}",
+        f"- Concepts covered by first-principles layer: {len(first_principles_coverage & {concept['id'] for concept in concepts})}",
         f"- Review guide cards: {len(review_cards)}",
         f"- Publication status cards: {len(publication_status)}",
         f"- Root handoff present: {(ROOT / 'HANDOFF.md').exists()}",
@@ -87,6 +94,7 @@ def main() -> int:
         "- Evidence discipline: every concept has two transcript evidence records with local transcript windows and YouTube links.",
         "- Generic-template guard: validators reject the original template phrases in generated concept prose and published HTML.",
         "- Course-wide first-principles essay layer: `first-principles.html` gives plain-language long-form explanations of the whole course, a structured cross-field application map, and an everyday glossary for core vocabulary.",
+        "- First-principles concept integration: every concept page links back to relevant course essays, application maps, or glossary entries.",
         "- Reviewability: `review-guide.html` gives an explicit route for checking first-principles depth, lecture faithfulness, math clarity, reader practice, and publication state.",
         "- Publication status: `publication-status.html` separates local build proof, remote branch proof, generated-site-branch proof, and public-hosting proof.",
         "- Handoff: `HANDOFF.md` gives a durable root-level review and continuation guide.",
