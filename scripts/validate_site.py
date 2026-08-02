@@ -1415,8 +1415,16 @@ def main() -> int:
             errors.append(f"concept page missing first-principles backlinks: {concept['id']}")
         if "Transcript Evidence" not in text:
             errors.append(f"concept page missing evidence section: {concept['id']}")
-    if len(concept_plain_essays) < 8:
-        errors.append(f"only {len(concept_plain_essays)} concept plain-language essays")
+    concept_plain_expected_ids = set(concept_by_id)
+    concept_plain_declared_ids = {str(essay.get("concept_id", "")) for essay in concept_plain_essays}
+    missing_concept_plain_essays = concept_plain_expected_ids - concept_plain_declared_ids
+    extra_concept_plain_essays = concept_plain_declared_ids - concept_plain_expected_ids
+    if missing_concept_plain_essays:
+        errors.append(f"concepts missing plain-language essays: {', '.join(sorted(missing_concept_plain_essays))}")
+    if extra_concept_plain_essays:
+        errors.append(f"plain-language essays reference non-atlas concepts: {', '.join(sorted(extra_concept_plain_essays))}")
+    if len(concept_plain_essays) != len(concept_by_id):
+        errors.append(f"concept plain-language essay count mismatch: {len(concept_plain_essays)} essays for {len(concept_by_id)} concepts")
     concept_plain_essay_ids = set()
     concept_plain_total_words = 0
     concept_plain_mentions_topology = False
