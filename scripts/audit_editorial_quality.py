@@ -223,6 +223,28 @@ def main() -> int:
     essay_words = []
     essay_application_links = 0
     essay_concept_links = 0
+    required_essay_ids = {
+        "whole-course",
+        "choice-payoff",
+        "stable-prediction",
+        "time-credibility",
+        "information-belief",
+        "rules-design",
+        "topology-math",
+        "why-important",
+        "strategic-representation",
+        "dominance-rationalizability",
+        "mixing-security-conflict",
+        "sequential-reasoning",
+        "repetition-cooperation",
+        "private-information-markets",
+        "auction-design-details",
+        "communication-knowledge-coordination",
+    }
+    essay_ids = {essay.get("id", "") for essay in first_principles_essays}
+    missing_essay_ids = required_essay_ids - essay_ids
+    if missing_essay_ids:
+        errors.append(f"first-principles essays missing required topics: {', '.join(sorted(missing_essay_ids))}")
     required_application_fields = {"Topology and mathematics", "Computer science", "Politics", "Biology", "Law and institutions", "Everyday life"}
     seen_application_fields = set()
     for essay in first_principles_essays:

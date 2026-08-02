@@ -6,7 +6,7 @@ This report records local readiness evidence. Remote publication is verified by 
 
 ```text
 $ git log -1 --oneline
-63b118f Add first-principles course essays
+0f3cbd2 Refresh readiness report for first-principles essays
 
 $ git remote -v
 origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (fetch)
@@ -29,7 +29,7 @@ origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (pus
 - Mathematical primitives: 10
 - Derivation cards: 9
 - Method families: 3
-- First-principles essay cards: 8
+- First-principles essay cards: 16
 - Review guide cards: 6
 - Publication status cards: 6
 - Root handoff present: True
@@ -57,30 +57,30 @@ validated HANDOFF.md and README.md
 [2K
 transforming...✓ 213 modules transformed.
 rendering chunks...
-✓ built in 1.10s
+✓ built in 2.62s
 [2/5] analyze server references...
 [2K
 transforming...✓ 70 modules transformed.
 rendering chunks...
-✓ built in 527ms
+✓ built in 596ms
 [3/5] build rsc environment...
 [2K
 transforming...✓ 208 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 1.58s
+✓ built in 2.22s
 [4/5] build client environment...
 [2K
 transforming...✓ 117 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 1.11s
+✓ built in 1.86s
 [5/5] build ssr environment...
 [2K
 transforming...✓ 71 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 397ms
+✓ built in 611ms
 [0m
   Route (app)
   ─ ? /

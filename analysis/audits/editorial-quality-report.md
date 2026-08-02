@@ -18,10 +18,10 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Concept pages with derivation links: 30
 - Concept equation note words: min 65, max 77
 - Concept worked-example card words: min 208, max 239
-- First-principles essay cards: 8
-- First-principles essay words: min 305, max 436
-- First-principles application cards: 16
-- First-principles concept links: 45
+- First-principles essay cards: 16
+- First-principles essay words: min 301, max 436
+- First-principles application cards: 32
+- First-principles concept links: 85
 - Lecture pages with derivation links: 25
 - Method-family treatment words: min 495, max 585
 - Method-family concept links: 15

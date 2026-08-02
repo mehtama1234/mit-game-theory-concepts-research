@@ -145,8 +145,30 @@ def main() -> int:
         errors.append(f"expected 25 lectures, found {len(lectures)}")
     if len(review_cards) < 6:
         errors.append(f"review guide has too few cards: {len(review_cards)}")
-    if len(first_principles_essays) < 8:
+    required_essay_ids = {
+        "whole-course",
+        "choice-payoff",
+        "stable-prediction",
+        "time-credibility",
+        "information-belief",
+        "rules-design",
+        "topology-math",
+        "why-important",
+        "strategic-representation",
+        "dominance-rationalizability",
+        "mixing-security-conflict",
+        "sequential-reasoning",
+        "repetition-cooperation",
+        "private-information-markets",
+        "auction-design-details",
+        "communication-knowledge-coordination",
+    }
+    essay_ids = {essay.get("id", "") for essay in first_principles_essays}
+    if len(first_principles_essays) < 16:
         errors.append(f"first-principles essay layer has too few essays: {len(first_principles_essays)}")
+    missing_essay_ids = required_essay_ids - essay_ids
+    if missing_essay_ids:
+        errors.append(f"first-principles essays missing required topics: {', '.join(sorted(missing_essay_ids))}")
     required_application_fields = {"Topology and mathematics", "Computer science", "Politics", "Biology", "Law and institutions", "Everyday life"}
     seen_application_fields = {
         application.get("field", "")
