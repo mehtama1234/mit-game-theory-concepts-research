@@ -129,6 +129,7 @@ def main() -> int:
     publication_status = json.loads((ROOT / "analysis/throughlines/publication-status.json").read_text(encoding="utf-8"))
     first_principles_essays = json.loads((ROOT / "analysis/throughlines/first-principles-essays.json").read_text(encoding="utf-8"))
     application_map = json.loads((ROOT / "analysis/throughlines/application-map.json").read_text(encoding="utf-8"))
+    everyday_glossary = json.loads((ROOT / "analysis/throughlines/everyday-glossary.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_diagnostics = json.loads((ROOT / "analysis/editorial-overrides/concept-diagnostics.json").read_text(encoding="utf-8"))
@@ -328,6 +329,53 @@ def main() -> int:
                 application_map_concept_links += 1
             else:
                 errors.append(f"application map {item['id']} concept link not rendered: {concept_id}")
+    glossary_words = []
+    glossary_concept_links = 0
+    required_glossary_terms = {
+        "Players",
+        "Actions",
+        "Strategy",
+        "Payoff",
+        "Belief",
+        "Best Response",
+        "Equilibrium",
+        "Dominance",
+        "Mixed Strategy",
+        "Credibility",
+        "Type",
+        "Signal",
+        "Auction",
+        "Mechanism",
+        "Cheap Talk",
+        "Common Knowledge",
+    }
+    glossary_terms = {item.get("term", "") for item in everyday_glossary}
+    missing_glossary_terms = required_glossary_terms - glossary_terms
+    if missing_glossary_terms:
+        errors.append(f"everyday glossary missing required terms: {', '.join(sorted(missing_glossary_terms))}")
+    if len(everyday_glossary) < 20:
+        errors.append(f"everyday glossary has too few terms: {len(everyday_glossary)}")
+    for item in everyday_glossary:
+        text = " ".join(str(item.get(field, "")) for field in ["everyday_definition", "why_word_exists", "beginner_mistake"])
+        count = words(text)
+        glossary_words.append(count)
+        if count < 35:
+            errors.append(f"everyday glossary {item['id']} is shallow: {count} words")
+        if f'id="glossary-{item["id"]}"' not in first_principles_html:
+            errors.append(f"everyday glossary term not rendered: {item['id']}")
+        for field in ["everyday_definition", "why_word_exists", "beginner_mistake"]:
+            value = str(item.get(field, ""))
+            if words(value) < 8:
+                errors.append(f"everyday glossary {item['id']} has shallow {field}")
+            if html_lib.escape(value, quote=True) not in first_principles_html:
+                errors.append(f"everyday glossary {item['id']} {field} not rendered")
+        for concept_id in item.get("concept_ids", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"everyday glossary {item['id']} unknown concept link: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' in first_principles_html:
+                glossary_concept_links += 1
+            else:
+                errors.append(f"everyday glossary {item['id']} concept link not rendered: {concept_id}")
 
     for field in [field for field in CONCEPT_FIELDS if field != "mathematical_principle"]:
         seen: dict[str, list[str]] = {}
@@ -1548,6 +1596,9 @@ def main() -> int:
         f"- Cross-field application map cards: {len(application_map)}",
         f"- Cross-field application map words: min {min(application_map_words) if application_map_words else 0}, max {max(application_map_words) if application_map_words else 0}",
         f"- Cross-field application concept links: {application_map_concept_links}",
+        f"- Everyday glossary terms: {len(everyday_glossary)}",
+        f"- Everyday glossary words: min {min(glossary_words) if glossary_words else 0}, max {max(glossary_words) if glossary_words else 0}",
+        f"- Everyday glossary concept links: {glossary_concept_links}",
         f"- Lecture pages with derivation links: {lecture_pages_with_derivations}",
         f"- Method-family treatment words: min {min(family_words)}, max {max(family_words)}",
         f"- Method-family concept links: {family_concept_links}",

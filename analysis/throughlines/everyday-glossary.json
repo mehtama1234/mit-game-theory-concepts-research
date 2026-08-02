@@ -1,0 +1,162 @@
+[
+  {
+    "id": "players",
+    "term": "Players",
+    "everyday_definition": "The people or organizations whose choices the model is tracking.",
+    "why_word_exists": "The word keeps the model honest about who can act. If the real decision maker is missing, the rest of the analysis may solve the wrong problem.",
+    "beginner_mistake": "Do not assume a player is always one person. A firm, platform, government, algorithm, bidder, or group can be a player if the model treats it as one chooser.",
+    "concept_ids": ["strategic_form_games", "extensive_form_games", "auctions"]
+  },
+  {
+    "id": "actions",
+    "term": "Actions",
+    "everyday_definition": "The moves a player can actually choose inside the model.",
+    "why_word_exists": "The word separates what someone wants from what someone can do. A model cannot explain choice until the available moves are clear.",
+    "beginner_mistake": "Do not include imaginary options just because they would be nice, and do not omit real options because they make the model harder.",
+    "concept_ids": ["strategic_form_games", "extensive_form_games", "best_response"]
+  },
+  {
+    "id": "strategy",
+    "term": "Strategy",
+    "everyday_definition": "A full plan for what a player would do whenever the model asks that player to choose.",
+    "why_word_exists": "A single visible move is too small in games with timing, surprises, or hidden information. The plan has to say what would happen off the main path too.",
+    "beginner_mistake": "Do not confuse the move that happened with the whole strategy. The unused branches often decide whether a threat or promise is credible.",
+    "concept_ids": ["extensive_form_games", "backward_induction", "subgame_perfection"]
+  },
+  {
+    "id": "payoff",
+    "term": "Payoff",
+    "everyday_definition": "The score the model uses to say how much a player likes one outcome compared with another.",
+    "why_word_exists": "The word turns wants into something that can be compared. Without a comparison, the model cannot say which action is better.",
+    "beginner_mistake": "Do not treat payoff as full human happiness or moral worth. It is the scoreboard chosen for this model.",
+    "concept_ids": ["preferences", "utility", "expected_utility"]
+  },
+  {
+    "id": "belief",
+    "term": "Belief",
+    "everyday_definition": "A player's disciplined guess about something they do not directly know.",
+    "why_word_exists": "Hidden information still affects choices. Beliefs let the model say how a player acts when quality, type, value, or intention is uncertain.",
+    "beginner_mistake": "Do not treat a belief as a fact. It is a probability story from the player's point of view.",
+    "concept_ids": ["types_and_beliefs", "bayesian_games", "perfect_bayesian_equilibrium"]
+  },
+  {
+    "id": "best-response",
+    "term": "Best Response",
+    "everyday_definition": "The move that works best for one player after holding the other players' behavior fixed.",
+    "why_word_exists": "Strategic choice is conditional. The same move can be smart against one rival action and foolish against another.",
+    "beginner_mistake": "Do not call something a best response without saying what it is responding to.",
+    "concept_ids": ["best_response", "nash_equilibrium", "rationalizability"]
+  },
+  {
+    "id": "equilibrium",
+    "term": "Equilibrium",
+    "everyday_definition": "A pattern where each player's choice makes sense given the choices around it.",
+    "why_word_exists": "The word closes the reasoning loop. My action fits yours, your action fits mine, and nobody has a profitable one-person move away under the stated rules.",
+    "beginner_mistake": "Do not read equilibrium as good, fair, efficient, inevitable, or easy to find. It is a stability check.",
+    "concept_ids": ["nash_equilibrium", "bayesian_nash_equilibrium", "subgame_perfection"]
+  },
+  {
+    "id": "dominance",
+    "term": "Dominance",
+    "everyday_definition": "One move is safely worse because another move does at least as well in every relevant case and better somewhere.",
+    "why_word_exists": "The word gives a justified way to remove bad choices before solving the whole game.",
+    "beginner_mistake": "Do not delete a move just because it looks unlikely. Dominance needs the all-cases comparison.",
+    "concept_ids": ["dominance", "iterated_deletion", "rationalizability"]
+  },
+  {
+    "id": "mixed-strategy",
+    "term": "Mixed Strategy",
+    "everyday_definition": "A planned lottery over actions, often used so the player is not easy to exploit.",
+    "why_word_exists": "Some games punish predictable choices. Probabilities can be the stable object when no single fixed action works.",
+    "beginner_mistake": "Do not think mixing means the player is confused. The randomness can be the strategy.",
+    "concept_ids": ["mixed_strategies", "zero_sum_games", "minimax"]
+  },
+  {
+    "id": "credibility",
+    "term": "Credibility",
+    "everyday_definition": "A promise or threat is credible when it will still be worth carrying out later.",
+    "why_word_exists": "Time separates what someone wants others to believe now from what that person will want to do when the later moment arrives.",
+    "beginner_mistake": "Do not treat an announced threat as real until the later incentive has been checked.",
+    "concept_ids": ["backward_induction", "subgame_perfection", "one_shot_deviation"]
+  },
+  {
+    "id": "subgame",
+    "term": "Subgame",
+    "everyday_definition": "A continuation problem that starts after some history and can be analyzed as its own smaller game.",
+    "why_word_exists": "The word lets the model test whether a plan remains sensible after earlier choices have already happened.",
+    "beginner_mistake": "Do not assume every branch is a subgame. The players must know enough at that point for the continuation problem to stand on its own.",
+    "concept_ids": ["extensive_form_games", "subgame_perfection", "backward_induction"]
+  },
+  {
+    "id": "discounting",
+    "term": "Discounting",
+    "everyday_definition": "Counting future payoffs, usually with less weight than payoffs today.",
+    "why_word_exists": "Repeated games need a way to compare a gain now with rewards or punishments later.",
+    "beginner_mistake": "Do not say the future disciplines behavior unless the future is valuable enough to change today's comparison.",
+    "concept_ids": ["finitely_repeated_games", "infinitely_repeated_games", "folk_theorem"]
+  },
+  {
+    "id": "type",
+    "term": "Type",
+    "everyday_definition": "A hidden fact about a player that changes what they want, know, or can profitably do.",
+    "why_word_exists": "The word lets the model handle private information without pretending everyone is the same.",
+    "beginner_mistake": "Do not treat a type as a personality label. It is the private feature that matters for this model.",
+    "concept_ids": ["types_and_beliefs", "bayesian_games", "signaling"]
+  },
+  {
+    "id": "signal",
+    "term": "Signal",
+    "everyday_definition": "An action or fact that changes what others believe about hidden information.",
+    "why_word_exists": "When people cannot directly observe type or quality, they may infer it from costly or visible behavior.",
+    "beginner_mistake": "Do not assume every message is a useful signal. A signal works only if the wrong type cannot cheaply copy it.",
+    "concept_ids": ["signaling", "screening_and_adverse_selection", "perfect_bayesian_equilibrium"]
+  },
+  {
+    "id": "screening",
+    "term": "Screening",
+    "everyday_definition": "Designing choices so different hidden types sort themselves by what they pick.",
+    "why_word_exists": "The uninformed side often cannot ask for truth directly. A menu can reveal information through incentives.",
+    "beginner_mistake": "Do not call a menu screening unless different types really prefer different options under the rule.",
+    "concept_ids": ["screening_and_adverse_selection", "types_and_beliefs", "bayesian_games"]
+  },
+  {
+    "id": "auction",
+    "term": "Auction",
+    "everyday_definition": "A rule that uses bids to decide who gets something and what gets paid.",
+    "why_word_exists": "The word names a compact setting where values, information, rules, and incentives all interact.",
+    "beginner_mistake": "Do not interpret a bid before checking the payment rule, value environment, and information available to bidders.",
+    "concept_ids": ["auctions", "revenue_equivalence", "ad_auctions"]
+  },
+  {
+    "id": "mechanism",
+    "term": "Mechanism",
+    "everyday_definition": "A rule system designed while expecting people to respond strategically.",
+    "why_word_exists": "Some problems are not only about predicting behavior. They are about building rules that still work when people adapt.",
+    "beginner_mistake": "Do not judge a mechanism by what would happen if everyone behaved nicely. Judge it by the incentives it creates.",
+    "concept_ids": ["auctions", "screening_and_adverse_selection", "ad_auctions"]
+  },
+  {
+    "id": "cheap-talk",
+    "term": "Cheap Talk",
+    "everyday_definition": "A costless, nonbinding message that may or may not change beliefs.",
+    "why_word_exists": "Words can matter in games, but only when incentives make the message useful to the receiver.",
+    "beginner_mistake": "Do not assume a message is informative just because it is clear. Ask why the sender would not lie.",
+    "concept_ids": ["cheap_talk", "signaling", "common_knowledge"]
+  },
+  {
+    "id": "common-knowledge",
+    "term": "Common Knowledge",
+    "everyday_definition": "A fact everyone knows, everyone knows everyone knows, and so on.",
+    "why_word_exists": "Some coordination problems require more than private awareness. People may need shared confidence that others saw the same thing.",
+    "beginner_mistake": "Do not confuse many people knowing something with common knowledge. The recursive shared-awareness part is the point.",
+    "concept_ids": ["common_knowledge", "nash_equilibrium", "cheap_talk"]
+  },
+  {
+    "id": "welfare",
+    "term": "Welfare",
+    "everyday_definition": "A way of scoring outcomes for a group, planner, or society rather than only one player.",
+    "why_word_exists": "A stable outcome can be bad for the group. Welfare language lets the reader separate private incentives from broader evaluation.",
+    "beginner_mistake": "Do not assume the welfare score is neutral. Someone chose what counts and whose interests enter.",
+    "concept_ids": ["utility", "preferences", "auctions"]
+  }
+]

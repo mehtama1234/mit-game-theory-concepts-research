@@ -47,6 +47,7 @@ def main() -> int:
     publication_status = json.loads((ROOT / "analysis/throughlines/publication-status.json").read_text(encoding="utf-8"))
     first_principles_essays = json.loads((ROOT / "analysis/throughlines/first-principles-essays.json").read_text(encoding="utf-8"))
     application_map = json.loads((ROOT / "analysis/throughlines/application-map.json").read_text(encoding="utf-8"))
+    everyday_glossary = json.loads((ROOT / "analysis/throughlines/everyday-glossary.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_diagnostics = json.loads((ROOT / "analysis/editorial-overrides/concept-diagnostics.json").read_text(encoding="utf-8"))
@@ -217,6 +218,46 @@ def main() -> int:
                 errors.append(f"application map {item['id']} links unknown concept: {concept_id}")
             elif f'href="concepts/{concept_id}.html"' not in first_principles_html:
                 errors.append(f"application map {item['id']} concept link not rendered: {concept_id}")
+    if len(everyday_glossary) < 20:
+        errors.append(f"everyday glossary has too few terms: {len(everyday_glossary)}")
+    required_glossary_terms = {
+        "Players",
+        "Actions",
+        "Strategy",
+        "Payoff",
+        "Belief",
+        "Best Response",
+        "Equilibrium",
+        "Dominance",
+        "Mixed Strategy",
+        "Credibility",
+        "Type",
+        "Signal",
+        "Auction",
+        "Mechanism",
+        "Cheap Talk",
+        "Common Knowledge",
+    }
+    glossary_terms = {item.get("term", "") for item in everyday_glossary}
+    missing_glossary_terms = required_glossary_terms - glossary_terms
+    if missing_glossary_terms:
+        errors.append(f"everyday glossary missing required terms: {', '.join(sorted(missing_glossary_terms))}")
+    for item in everyday_glossary:
+        if f'id="glossary-{item["id"]}"' not in first_principles_html:
+            errors.append(f"everyday glossary term not rendered: {item['id']}")
+        for field in ["everyday_definition", "why_word_exists", "beginner_mistake"]:
+            value = str(item.get(field, ""))
+            if words(value) < 8:
+                errors.append(f"everyday glossary {item['id']} has shallow {field}")
+            if html.escape(value, quote=True) not in first_principles_html:
+                errors.append(f"everyday glossary {item['id']} {field} not rendered")
+        if len(item.get("concept_ids", [])) < 3:
+            errors.append(f"everyday glossary {item['id']} has too few concept links")
+        for concept_id in item.get("concept_ids", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"everyday glossary {item['id']} links unknown concept: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in first_principles_html:
+                errors.append(f"everyday glossary {item['id']} concept link not rendered: {concept_id}")
     for essay in first_principles_essays:
         if f'id="{essay["id"]}"' not in first_principles_html:
             errors.append(f"first-principles essay not rendered: {essay['id']}")

@@ -249,7 +249,7 @@ def build_index(concepts, themes, evidence, lectures):
     write(SITE / "index.html", page("Overview", body, "overview"))
 
 
-def build_first_principles_essays(essays, application_map, concept_by_id):
+def build_first_principles_essays(essays, application_map, everyday_glossary, concept_by_id):
     cards = []
     for essay in essays:
         section_html = "".join(
@@ -295,6 +295,22 @@ def build_first_principles_essays(essays, application_map, concept_by_id):
   </dl>
   <p class="chips">{concept_links}</p>
 </article>""")
+    glossary_cards = []
+    for item in everyday_glossary:
+        concept_links = "".join(
+            f'<a class="chip" href="concepts/{esc(concept_id)}.html">{esc(concept_by_id[concept_id]["name"])}</a>'
+            for concept_id in item.get("concept_ids", [])
+            if concept_id in concept_by_id
+        )
+        glossary_cards.append(f"""<article class="concept-card glossary-card" id="glossary-{esc(item["id"])}">
+  <h3>{esc(item["term"])}</h3>
+  <p>{esc(item["everyday_definition"])}</p>
+  <dl>
+    <dt>Why this word exists</dt><dd>{esc(item["why_word_exists"])}</dd>
+    <dt>Beginner mistake</dt><dd>{esc(item["beginner_mistake"])}</dd>
+  </dl>
+  <p class="chips">{concept_links}</p>
+</article>""")
     body = """<section class="page-head">
   <p class="eyebrow">Course-wide first principles</p>
   <h1>Game Theory In Everyday Words</h1>
@@ -303,7 +319,11 @@ def build_first_principles_essays(essays, application_map, concept_by_id):
   <p class="eyebrow">Cross-field application map</p>
   <h1>Where The Same Reasoning Travels</h1>
   <p>Each field below names the players or objects, choices, information, timing, outcome logic, importance, and limits. The point is to map the reasoning carefully, not to claim every field is secretly the same.</p>
-</section>""" + "".join(application_cards)
+</section>""" + "".join(application_cards) + """<section class="page-head">
+  <p class="eyebrow">Everyday glossary</p>
+  <h1>Course Words Without The Fog</h1>
+  <p>These short entries translate recurring terms into ordinary language, explain why each word exists, and name the beginner mistake to avoid.</p>
+</section><section class="grid glossary-grid">""" + "".join(glossary_cards) + "</section>"
     write(SITE / "first-principles.html", page("First Principles", body, "first-principles"))
 
 
@@ -1666,6 +1686,7 @@ def main():
     publication_status = load("analysis/throughlines/publication-status.json")
     first_principles_essays = load("analysis/throughlines/first-principles-essays.json")
     application_map = load("analysis/throughlines/application-map.json")
+    everyday_glossary = load("analysis/throughlines/everyday-glossary.json")
     lectures = load("analysis/lectures/lecture-path.json")
     equation_notes = load_optional("analysis/editorial-overrides/equation-walkthrough-notes.json", {})
     worked_examples = load_optional("analysis/editorial-overrides/worked-example-cards.json", {})
@@ -1687,7 +1708,7 @@ def main():
     proof_by_id = {item["id"]: item for item in proofs}
     assumption_by_id = {item["id"]: item for item in assumptions}
     build_index(concepts, themes, evidence, lectures)
-    build_first_principles_essays(first_principles_essays, application_map, concept_by_id)
+    build_first_principles_essays(first_principles_essays, application_map, everyday_glossary, concept_by_id)
     build_review_guide(review_cards, concept_by_id, ev_by_id)
     build_publication_status(publication_status)
     build_study_route(route, lecture_by_id, concept_by_id, primitive_by_id, ev_by_id)
