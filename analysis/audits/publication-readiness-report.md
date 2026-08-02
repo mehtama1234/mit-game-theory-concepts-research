@@ -6,7 +6,7 @@ This report records local readiness evidence. Remote publication is verified by 
 
 ```text
 $ git log -1 --oneline
-5294e71 Expand first-principles topic essays
+426592b Refresh readiness report for topic essays
 
 $ git remote -v
 origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (fetch)
@@ -30,6 +30,7 @@ origin	https://github.com/mehtama1234/mit-game-theory-concepts-research.git (pus
 - Derivation cards: 9
 - Method families: 3
 - First-principles essay cards: 16
+- Cross-field application map cards: 6
 - Review guide cards: 6
 - Publication status cards: 6
 - Root handoff present: True
@@ -57,30 +58,30 @@ validated HANDOFF.md and README.md
 [2K
 transforming...✓ 213 modules transformed.
 rendering chunks...
-✓ built in 1.61s
+✓ built in 1.97s
 [2/5] analyze server references...
 [2K
 transforming...✓ 70 modules transformed.
 rendering chunks...
-✓ built in 626ms
+✓ built in 655ms
 [3/5] build rsc environment...
 [2K
 transforming...✓ 208 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 2.04s
+✓ built in 2.77s
 [4/5] build client environment...
 [2K
 transforming...✓ 117 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 2.67s
+✓ built in 1.67s
 [5/5] build ssr environment...
 [2K
 transforming...✓ 71 modules transformed.
 rendering chunks...
 computing gzip size...
-✓ built in 1.02s
+✓ built in 972ms
 [0m
   Route (app)
   ─ ? /
@@ -113,7 +114,7 @@ render-audited 56 screenshots; errors: 0
 - First-principles concept atlas: proven structurally by `scripts/validate_first_principles_atlas.py`; prose uses required hand-crafted overrides.
 - Evidence discipline: every concept has two transcript evidence records with local transcript windows and YouTube links.
 - Generic-template guard: validators reject the original template phrases in generated concept prose and published HTML.
-- Course-wide first-principles essay layer: `first-principles.html` gives plain-language long-form explanations of the whole course, including topology/mathematics and other fields outside economics.
+- Course-wide first-principles essay layer: `first-principles.html` gives plain-language long-form explanations of the whole course, including a structured cross-field application map for topology/mathematics and other fields outside economics.
 - Reviewability: `review-guide.html` gives an explicit route for checking first-principles depth, lecture faithfulness, math clarity, reader practice, and publication state.
 - Publication status: `publication-status.html` separates local build proof, remote branch proof, generated-site-branch proof, and public-hosting proof.
 - Handoff: `HANDOFF.md` gives a durable root-level review and continuation guide.
@@ -128,4 +129,4 @@ render-audited 56 screenshots; errors: 0
 
 ## Current Conclusion
 
-Local research/build readiness is stronger than the first committed pass: the atlas now has hand-authored synthesis for themes, subthemes, primitives, method families, evidence payloads, a course-wide first-principles essay layer, a reviewer-facing audit route, an explicit publication-status surface, and a root handoff, with validators that reject the older generic patterns.
+Local research/build readiness is stronger than the first committed pass: the atlas now has hand-authored synthesis for themes, subthemes, primitives, method families, evidence payloads, a course-wide first-principles essay layer, a structured cross-field application map, a reviewer-facing audit route, an explicit publication-status surface, and a root handoff, with validators that reject the older generic patterns.

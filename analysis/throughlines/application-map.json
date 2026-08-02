@@ -1,0 +1,80 @@
+[
+  {
+    "id": "topology-mathematics",
+    "field": "Topology And Mathematics",
+    "plain_question": "When does a stable answer have to exist inside a space of possible choices?",
+    "players_or_objects": "The objects are not always people. They can be strategy profiles, probability mixtures, response rules, and sets of possible choices.",
+    "choices": "A point in the space names one possible description of behavior, such as a probability mix over actions for each player.",
+    "information": "The mathematical proof usually abstracts away from psychology and asks whether the response rule is well behaved enough to point back into the same space.",
+    "timing": "Topology enters before any story about learning over time. It asks whether a stable point exists at all, not whether people will find it quickly.",
+    "outcome_logic": "Continuity, compactness, convexity, and fixed-point reasoning can guarantee an equilibrium candidate under specific assumptions.",
+    "why_it_matters": "This matters because some models would be empty without an existence result. The proof says the formal setup has at least one stable point, while leaving uniqueness, computation, welfare, and realism as separate questions.",
+    "where_it_breaks": "The connection breaks when a reader treats existence as prediction. A fixed point can exist while being hard to compute, hard to learn, one of many possible equilibria, or irrelevant because the real choice space violates the assumptions.",
+    "concept_ids": ["nash_equilibrium", "mixed_strategies", "best_response", "rationalizability", "minimax"]
+  },
+  {
+    "id": "computer-science-platforms",
+    "field": "Computer Science And Platforms",
+    "plain_question": "How should a system behave when users, attackers, bidders, or automated agents adapt to the rule?",
+    "players_or_objects": "Players can be users, advertisers, platforms, bots, attackers, protocols, or learning agents.",
+    "choices": "Choices include bids, routes, reports, attacks, moderation evasion, matching preferences, security checks, or algorithmic parameters.",
+    "information": "The system often sees partial signals: clicks, logs, bids, ratings, account history, or noisy reports rather than true motives.",
+    "timing": "Many platform games repeat. Users learn the rule, platforms update the rule, and automated agents respond faster than humans.",
+    "outcome_logic": "A design works only if the rule still behaves well after participants optimize against it.",
+    "why_it_matters": "This matters because platforms can accidentally reward the wrong behavior. If a score, auction, or ranking rule is the visible target, strategic agents may optimize that target while damaging the real goal.",
+    "where_it_breaks": "The analogy breaks when the model treats all agents as having the same objective or ignores computation, scale, privacy limits, and feedback loops.",
+    "concept_ids": ["ad_auctions", "auctions", "screening_and_adverse_selection", "signaling", "mixed_strategies"]
+  },
+  {
+    "id": "politics-institutions",
+    "field": "Politics And Institutions",
+    "plain_question": "Why do promises, threats, coalitions, and public announcements work in some settings and fail in others?",
+    "players_or_objects": "Players can be voters, parties, legislators, agencies, courts, governments, protest groups, or countries.",
+    "choices": "Choices include voting, bargaining, vetoing, joining a coalition, escalating, complying, defecting, or making a public commitment.",
+    "information": "Political actors may not know resolve, public support, private costs, future enforcement, or whether others saw the same signal.",
+    "timing": "Timing matters because today's promise is judged by whether tomorrow's actor will still want to keep it.",
+    "outcome_logic": "Stable political outcomes often depend on credible commitments, shared expectations, enforcement, and repeated interaction.",
+    "why_it_matters": "This matters because political failure is not always caused by ignorance or bad intent. Sometimes the rule gives each actor a reason to wait, defect, threaten, or block a better group outcome.",
+    "where_it_breaks": "The analogy breaks when the model hides ideology, law, identity, violence, administrative limits, or unequal power inside a simple payoff number.",
+    "concept_ids": ["bargaining", "common_knowledge", "subgame_perfection", "finitely_repeated_games", "cheap_talk"]
+  },
+  {
+    "id": "biology-evolution",
+    "field": "Biology And Evolution",
+    "plain_question": "Which behaviors or traits can persist when success depends on what other organisms do?",
+    "players_or_objects": "Players can be organisms, genes, types, populations, or strategies in an evolutionary model.",
+    "choices": "Choices are often modeled as inherited traits or behavioral rules, such as signaling, fighting, sharing, hiding, or cooperating.",
+    "information": "Information can be carried by signals, displays, location, repeated contact, kinship, or observable condition.",
+    "timing": "Evolutionary timing is not always deliberate choice. A strategy grows or shrinks over many encounters through survival and reproduction.",
+    "outcome_logic": "A trait can persist if it does well against the traits around it, even if another trait would be better in a different population. The comparison is local to the population and environment.",
+    "why_it_matters": "This matters because it explains why costly signals, conflict, cooperation, and mixed behavior can survive without assuming conscious calculation. It also helps separate individual advantage from group benefit, since a trait can spread while making the group worse off.",
+    "where_it_breaks": "The analogy breaks when biological fitness, learning, mutation, ecology, and population structure are flattened into a simple two-player payoff table.",
+    "concept_ids": ["mixed_strategies", "signaling", "nash_equilibrium", "infinitely_repeated_games", "zero_sum_games"]
+  },
+  {
+    "id": "law-contracts",
+    "field": "Law, Contracts, And Enforcement",
+    "plain_question": "What rule makes desired behavior worth choosing when people can adapt around the rule?",
+    "players_or_objects": "Players can be firms, workers, consumers, regulators, courts, police, agencies, or contracting parties.",
+    "choices": "Choices include complying, breaching, hiding information, reporting, suing, settling, auditing, or designing a contract menu.",
+    "information": "Legal systems often face hidden action, hidden type, costly verification, and noisy evidence.",
+    "timing": "The timing runs from rule design to action, detection, proof, punishment, and later reputation.",
+    "outcome_logic": "A rule changes behavior when expected rewards, penalties, detection, and future consequences change the person's comparison. The written command is only one part of the game; enforcement and proof shape the real payoff.",
+    "why_it_matters": "This matters because a law can be strong in words and weak in incentives. The practical question is what people expect to happen after each possible action. Good legal design therefore asks how people will respond before harm occurs, not only how punishment is described afterward.",
+    "where_it_breaks": "The analogy breaks when legality, legitimacy, rights, procedure, or moral constraints are treated as if they were only private payoffs.",
+    "concept_ids": ["screening_and_adverse_selection", "signaling", "subgame_perfection", "utility", "best_response"]
+  },
+  {
+    "id": "everyday-relationships",
+    "field": "Everyday Relationships And Work",
+    "plain_question": "Why do trust, silence, conflict, and cooperation often depend more on the setting than on one person's attitude?",
+    "players_or_objects": "Players can be friends, coworkers, managers, roommates, family members, buyers, sellers, or classmates.",
+    "choices": "Choices include sharing effort, telling the truth, waiting, apologizing, negotiating, punishing, helping, or walking away.",
+    "information": "People often do not know motives, outside options, patience, future plans, or whether the other person interpreted a message the same way.",
+    "timing": "Many everyday games repeat, so reputation and future interaction can support behavior that would not survive in a one-shot encounter.",
+    "outcome_logic": "A pattern can persist because each person is responding to what they expect from the other, even when both would prefer a different shared pattern.",
+    "why_it_matters": "This matters because it gives a practical way to improve a situation: change information, timing, outside options, or incentives instead of only asking people to be better.",
+    "where_it_breaks": "The analogy breaks when the model ignores care, identity, emotion, norms, or unequal vulnerability. Those may be central facts, not small details.",
+    "concept_ids": ["infinitely_repeated_games", "cheap_talk", "common_knowledge", "bargaining", "preferences"]
+  }
+]

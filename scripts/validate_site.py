@@ -46,6 +46,7 @@ def main() -> int:
     review_cards = json.loads((ROOT / "analysis/throughlines/review-guide.json").read_text(encoding="utf-8"))
     publication_status = json.loads((ROOT / "analysis/throughlines/publication-status.json").read_text(encoding="utf-8"))
     first_principles_essays = json.loads((ROOT / "analysis/throughlines/first-principles-essays.json").read_text(encoding="utf-8"))
+    application_map = json.loads((ROOT / "analysis/throughlines/application-map.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_diagnostics = json.loads((ROOT / "analysis/editorial-overrides/concept-diagnostics.json").read_text(encoding="utf-8"))
@@ -178,6 +179,44 @@ def main() -> int:
     missing_application_fields = required_application_fields - seen_application_fields
     if missing_application_fields:
         errors.append(f"first-principles essays missing application fields: {', '.join(sorted(missing_application_fields))}")
+    required_application_map_ids = {
+        "topology-mathematics",
+        "computer-science-platforms",
+        "politics-institutions",
+        "biology-evolution",
+        "law-contracts",
+        "everyday-relationships",
+    }
+    application_map_ids = {item.get("id", "") for item in application_map}
+    missing_application_map_ids = required_application_map_ids - application_map_ids
+    if missing_application_map_ids:
+        errors.append(f"application map missing required fields: {', '.join(sorted(missing_application_map_ids))}")
+    application_map_fields = [
+        "plain_question",
+        "players_or_objects",
+        "choices",
+        "information",
+        "timing",
+        "outcome_logic",
+        "why_it_matters",
+        "where_it_breaks",
+    ]
+    for item in application_map:
+        if f'id="{item["id"]}"' not in first_principles_html:
+            errors.append(f"application map item not rendered: {item['id']}")
+        if len(item.get("concept_ids", [])) < 4:
+            errors.append(f"application map item has too few concept links: {item['id']}")
+        for field in application_map_fields:
+            value = str(item.get(field, ""))
+            if words(value) < 12:
+                errors.append(f"application map {item['id']} has shallow {field}")
+            if html.escape(value, quote=True) not in first_principles_html:
+                errors.append(f"application map {item['id']} {field} not rendered")
+        for concept_id in item.get("concept_ids", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"application map {item['id']} links unknown concept: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' not in first_principles_html:
+                errors.append(f"application map {item['id']} concept link not rendered: {concept_id}")
     for essay in first_principles_essays:
         if f'id="{essay["id"]}"' not in first_principles_html:
             errors.append(f"first-principles essay not rendered: {essay['id']}")

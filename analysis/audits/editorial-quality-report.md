@@ -22,6 +22,9 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - First-principles essay words: min 301, max 436
 - First-principles application cards: 32
 - First-principles concept links: 85
+- Cross-field application map cards: 6
+- Cross-field application map words: min 150, max 192
+- Cross-field application concept links: 30
 - Lecture pages with derivation links: 25
 - Method-family treatment words: min 495, max 585
 - Method-family concept links: 15

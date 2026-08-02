@@ -128,6 +128,7 @@ def main() -> int:
     review_cards = json.loads((ROOT / "analysis/throughlines/review-guide.json").read_text(encoding="utf-8"))
     publication_status = json.loads((ROOT / "analysis/throughlines/publication-status.json").read_text(encoding="utf-8"))
     first_principles_essays = json.loads((ROOT / "analysis/throughlines/first-principles-essays.json").read_text(encoding="utf-8"))
+    application_map = json.loads((ROOT / "analysis/throughlines/application-map.json").read_text(encoding="utf-8"))
     equation_notes = json.loads((ROOT / "analysis/editorial-overrides/equation-walkthrough-notes.json").read_text(encoding="utf-8"))
     worked_examples = json.loads((ROOT / "analysis/editorial-overrides/worked-example-cards.json").read_text(encoding="utf-8"))
     concept_diagnostics = json.loads((ROOT / "analysis/editorial-overrides/concept-diagnostics.json").read_text(encoding="utf-8"))
@@ -283,6 +284,50 @@ def main() -> int:
     missing_application_fields = required_application_fields - seen_application_fields
     if missing_application_fields:
         errors.append(f"first-principles essays missing application fields: {', '.join(sorted(missing_application_fields))}")
+    application_map_words = []
+    application_map_concept_links = 0
+    required_application_map_ids = {
+        "topology-mathematics",
+        "computer-science-platforms",
+        "politics-institutions",
+        "biology-evolution",
+        "law-contracts",
+        "everyday-relationships",
+    }
+    application_map_ids = {item.get("id", "") for item in application_map}
+    missing_application_map_ids = required_application_map_ids - application_map_ids
+    if missing_application_map_ids:
+        errors.append(f"application map missing required fields: {', '.join(sorted(missing_application_map_ids))}")
+    application_map_fields = [
+        "plain_question",
+        "players_or_objects",
+        "choices",
+        "information",
+        "timing",
+        "outcome_logic",
+        "why_it_matters",
+        "where_it_breaks",
+    ]
+    for item in application_map:
+        count = words(" ".join(str(item.get(field, "")) for field in application_map_fields))
+        application_map_words.append(count)
+        if count < 150:
+            errors.append(f"application map {item['id']} is shallow: {count} words")
+        if f'id="{item["id"]}"' not in first_principles_html:
+            errors.append(f"application map item not rendered: {item['id']}")
+        for field in application_map_fields:
+            value = str(item.get(field, ""))
+            if words(value) < 12:
+                errors.append(f"application map {item['id']} has shallow {field}")
+            if html_lib.escape(value, quote=True) not in first_principles_html:
+                errors.append(f"application map {item['id']} {field} not rendered")
+        for concept_id in item.get("concept_ids", []):
+            if concept_id not in concept_by_id:
+                errors.append(f"application map {item['id']} unknown concept link: {concept_id}")
+            elif f'href="concepts/{concept_id}.html"' in first_principles_html:
+                application_map_concept_links += 1
+            else:
+                errors.append(f"application map {item['id']} concept link not rendered: {concept_id}")
 
     for field in [field for field in CONCEPT_FIELDS if field != "mathematical_principle"]:
         seen: dict[str, list[str]] = {}
@@ -1500,6 +1545,9 @@ def main() -> int:
         f"- First-principles essay words: min {min(essay_words) if essay_words else 0}, max {max(essay_words) if essay_words else 0}",
         f"- First-principles application cards: {essay_application_links}",
         f"- First-principles concept links: {essay_concept_links}",
+        f"- Cross-field application map cards: {len(application_map)}",
+        f"- Cross-field application map words: min {min(application_map_words) if application_map_words else 0}, max {max(application_map_words) if application_map_words else 0}",
+        f"- Cross-field application concept links: {application_map_concept_links}",
         f"- Lecture pages with derivation links: {lecture_pages_with_derivations}",
         f"- Method-family treatment words: min {min(family_words)}, max {max(family_words)}",
         f"- Method-family concept links: {family_concept_links}",
