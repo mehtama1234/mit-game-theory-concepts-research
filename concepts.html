@@ -170,7 +170,7 @@
   <p class="definition">Playing a stage game a known limited number of times.</p>
   <dl>
     <dt>Problem</dt><dd>The problem is whether repeating a game for a known number of rounds changes behavior relative to playing once.</dd>
-    <dt>Math</dt><dd>Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</dd>
+    <dt>Math</dt><dd>Backward induction works by thinking about the end first. Imagine the last period: no rounds follow it, so there are no future consequences. Once we know what happens in the last period, we can figure out what happens in the period before—knowing the endpoint lets us reason backward. The value at any point (call it V) is the best outcome you can get from making the smartest choice moving forward from that moment. At each decision point, a player picks the action that leads to the branch with the highest value of what comes next. This backward reasoning from the known end is the core idea.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-finitely_repeated_games-01">ev-finitely_repeated_games-01</a>: Lecture 12: Finitely Repeated Games</li><li><a href="evidence.html#ev-finitely_repeated_games-02">ev-finitely_repeated_games-02</a>: Lecture 8: Backward Induction</li></ul>
 </article><article class="concept-card" id="infinitely_repeated_games">
@@ -206,7 +206,7 @@
   <p class="definition">A market setting where a firm&#x27;s own price or quantity choice can move its payoff because rivals and buyers react.</p>
   <dl>
     <dt>Problem</dt><dd>The problem is that many real markets sit between a street market with countless sellers and a single monopolist. A firm may be large enough that its price or quantity choice moves the market, but it still has rivals whose choices push back.</dd>
-    <dt>Math</dt><dd>A payoff function u_i(a_i, a_-i) maps everyone&#x27;s actions to player i&#x27;s payoff. The useful relation is `u_i(a_i, a_-i).`. In plain language: i is one player; a_i is that player&#x27;s action; a_-i means everyone else&#x27;s actions; u_i is the payoff assigned to the whole action profile.</dd>
+    <dt>Math</dt><dd>A payoff function u_i(a_i, a_-i) maps everyone&#x27;s actions to player i&#x27;s payoff. The useful notation u_i(a_i, a_-i) says the following: i is one player; a_i is that player&#x27;s action; a_-i means everyone else&#x27;s actions; u_i is the payoff assigned to the whole action profile. This notation is the language we need because each firm&#x27;s profit now depends on both its own choice and all the rival choices at once.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-imperfect_competition-01">ev-imperfect_competition-01</a>: Lecture 6: Imperfect Competition</li><li><a href="evidence.html#ev-imperfect_competition-02">ev-imperfect_competition-02</a>: Lecture 11: One-Shot Deviation Principle and Bargaining</li></ul>
 </article><article class="concept-card" id="bayesian_games">
@@ -260,7 +260,7 @@
   <p class="definition">Different auction rules can produce the same expected seller revenue under specific assumptions.</p>
   <dl>
     <dt>Problem</dt><dd>The problem is comparing auction formats that look different: first-price, second-price, English, and others may create different bidding behavior.</dd>
-    <dt>Math</dt><dd>Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) &gt;= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.</dd>
+    <dt>Math</dt><dd>Truthful behavior must always be at least as good as any lie. The key relation is `u_i(truth) &gt;= u_i(claim)` for every alternative claim a bidder might make. This inequality simply says a bidder should never gain by switching from their true value to some other bid—if they did, they would not have been telling the truth in the first place. This is the foundation that ensures the bidding strategy is actually an equilibrium.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-revenue_equivalence-01">ev-revenue_equivalence-01</a>: Lecture 19: Revenue Equivalence</li><li><a href="evidence.html#ev-revenue_equivalence-02">ev-revenue_equivalence-02</a>: Lecture 18: Auctions</li></ul>
 </article><article class="concept-card" id="ad_auctions">
@@ -269,7 +269,7 @@
   <p class="definition">Auction design applied to online ad slots where position, clicks, and value interact.</p>
   <dl>
     <dt>Problem</dt><dd>The problem is selling attention slots, not a single physical object. Position affects clicks, quality affects usefulness, and bids interact with platform rules.</dd>
-    <dt>Math</dt><dd>Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) &gt;= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.</dd>
+    <dt>Math</dt><dd>Truthful behavior must give at least as much payoff as any lie. In other words, if an advertiser tells the truth about how much a click is worth, they should never be able to gain more money by instead reporting a different value. This is the core test of a well-designed auction—no one profits by fibbing.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-ad_auctions-01">ev-ad_auctions-01</a>: Lecture 20: Ad Auctions</li><li><a href="evidence.html#ev-ad_auctions-02">ev-ad_auctions-02</a>: Lecture 17: Bayesian Nash Equilibrium: Applications</li></ul>
 </article><article class="concept-card" id="perfect_bayesian_equilibrium">
