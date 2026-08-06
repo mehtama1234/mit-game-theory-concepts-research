@@ -28,7 +28,7 @@
   <p>The lecture studies exact conflict, where one player&#x27;s gain is the other&#x27;s loss. This special structure makes security reasoning natural: each player asks how to protect against the opponent&#x27;s best attack.</p>
   <h2>Where The Math Enters</h2>
   <p>The math enters through maxmin, minimax, and mixed strategies. The player compares worst-case payoffs and may randomize to avoid being exploited by a predictable action.</p>
-  <p>The mathematical object has to exist because pure actions cannot always carry stable predictions. A probability distribution over actions lets the player control predictability itself. The distribution becomes the strategy because it determines opponents’ expected payoffs before the random action is realized. The mathematical object has to exist because exact conflict has special structure. When one player’s payoff is the negative of the other’s, the model can collapse two objectives into one value seen from opposite sides. That structure justifies security and minimax tools that would be too strong in general games. The mathematical object has to exist because adversarial choice requires a guarantee. The player needs to compare strategies by what the opponent can force against them. Minimax turns that defensive question into a nested optimization: protect the worst case, then choose the best protection.</p>
+  <p>The mathematical object must exist because pure actions do not always allow stable predictions. A probability distribution over actions lets you control your own predictability. The distribution becomes your strategy because it decides your opponent&#x27;s expected payoffs before the random roll happens. The math must exist because exact opposition creates a special structure. When one player&#x27;s payoff is the negative of the other&#x27;s, the model collapses two separate goals into one number—the value of the game—seen from opposite sides. That is why security, protection, and minimax—finding the safest move—become the right tools. In games where both sides can gain or lose together, those tools would overlook crucial possibilities. The mathematical object must exist because adversarial choice needs a guarantee. You need to compare plans by what an opponent can force against you. Minimax turns that defensive question into layered math: secure the worst case, then pick the best security.</p>
   <h2>Equation Walkthroughs</h2>
   <p class="chips"><a class="chip derivation-link" href="../primitives.html#nash_equilibrium">Nash Equilibrium</a><a class="chip derivation-link" href="../primitives.html#expected_utility">Expected Utility</a><a class="chip derivation-link" href="../primitives.html#bayes_rule">Bayes Rule</a><a class="chip derivation-link" href="../primitives.html#best_response">Best Response</a></p>
   <h2>Worked Mini-Example</h2>
@@ -36,7 +36,7 @@
   <h2>Mistakes To Avoid</h2>
   <p>The mistake is to apply zero-sum intuition everywhere. Many economic games mix conflict with shared surplus, future cooperation, or side effects, so exact-opposition logic may overstate rivalry.</p>
   <p>The tempting shortcut is to use warlike intuition for all strategic settings. That fails because exact opposition creates security-value reasoning that does not automatically apply to bargaining, repeated relationships, or markets with possible gains from trade.</p>
-  <p>Students often get stuck by asking what the player “really” chooses. The answer is that the random device is part of the strategy; after it realizes an action, the distribution was still the planned commitment. Students often get stuck by calling any rivalry zero-sum. Many competitive economic settings still have joint gains, inefficiencies, or possibilities for collusion. Zero-sum is a payoff structure, not a mood. Students often get stuck by confusing minimax with pessimism. It is not a personality trait; it is the rational response to a modeled opponent whose payoff is opposed to yours.</p>
+  <p>Students ask: what does the player actually choose? The answer: the player chooses the distribution itself. Once the random device rolls—once an action happens—the distribution was already the commitment. The mix is the strategy, not a mistake. The trap: students call every rivalry zero-sum. But a price-cutting company might survive while a competitor exits, yet both could have done better by not cutting. A legal dispute costs both sides money; both might prefer settlement. Zero-sum means payoffs move in exact opposition, not just that one side wants to beat the other. Students often get confused by thinking minimax is just pessimism. It is not a mood; it is the rational response when your opponent is choosing to hurt your payoff.</p>
   <h2>Durable Lesson</h2>
   <p>The durable lesson is that zero-sum structure makes caution mathematically precise. A player can ask what payoff is guaranteed against the opponent&#x27;s best attack, and randomization can protect against being too predictable.</p>
   <h2>Reader Work</h2>
@@ -46,28 +46,28 @@
   <h2>How This Lecture Hands Off</h2>
   <p>This hands off to backward induction: after studying simultaneous exact conflict, the course turns to time, where future choices can make present promises or threats credible or empty.</p>
   <h2>How To Recognize This Later</h2>
-  <p>Look for indifference equations, randomized play, or models where predictable behavior would be punished. Look for adversarial models where maximizing my payoff is exactly minimizing yours. Look for worst-case guarantees, security levels, or saddle-point reasoning.</p>
+  <p>Look for indifference equations—places where the other player has no reason to prefer one response to another. Look for randomized play or models where any predictable behavior would be punished by someone who sees it. When you see a model where my score is always the negative of yours—my gain is your loss, my loss is your gain—you have found a zero-sum game. Spot these by checking: does one player&#x27;s best outcome match the other player&#x27;s worst outcome? Does cooperation create no new value? Then the tools of zero-sum games apply. Look for worst-case guarantees, security levels, or saddle-point reasoning.</p>
   <p class="chips"><a class="chip" href="../concepts/mixed_strategies.html">Mixed Strategies</a><a class="chip" href="../concepts/zero_sum_games.html">Zero-Sum Games</a><a class="chip" href="../concepts/minimax.html">Minimax</a></p>
 </section>
 <section>
   <h2>Concepts In This Lecture</h2>
   <article class="wide-card">
   <h3>Mixed Strategies</h3>
-  <p><strong>Problem:</strong> The problem is what to predict when choosing one pure action would make a player exploitable or when no pure-action equilibrium exists.</p>
-  <p><strong>Mathematical handle:</strong> The object is a probability distribution over pure strategies, often chosen so the other player has no strict favorite response.</p>
-  <p><strong>What breaks without it:</strong> Without mixed strategies, the course would falsely conclude that some games have no stable prediction simply because no pure action profile works. It would also miss why randomness can be chosen as discipline rather than noise.</p>
+  <p><strong>Problem:</strong> You face a jam: if you always pick one move, the other player learns this and beats you every time. But there might not be any single move you can stick to that is safe. So you need a way to stay unpredictable while still being smart about it.</p>
+  <p><strong>Mathematical handle:</strong> The mathematical object is a probability distribution: a list of your pure moves, each with a number between 0 and 1 (the chance you pick it), and they add up to 1. Often, the equilibrium distribution makes your opponent indifferent—unable to gain by switching between the moves they use.</p>
+  <p><strong>What breaks without it:</strong> The course would wrongly claim some games have no stable answer just because players cannot both pick fixed pure moves and stand still. It would also miss that randomness can be a choice, not just noise or confusion.</p>
   <p><a href="../concepts/mixed_strategies.html">Open concept page</a></p>
 </article><article class="wide-card">
   <h3>Zero-Sum Games</h3>
-  <p><strong>Problem:</strong> The problem is pure conflict: one side&#x27;s gain is the other side&#x27;s loss, so cooperation or joint surplus is not the issue.</p>
-  <p><strong>Mathematical handle:</strong> The object is a payoff function where player two&#x27;s payoff is the negative of player one&#x27;s payoff.</p>
-  <p><strong>What breaks without it:</strong> Without the zero-sum distinction, students may apply adversarial security logic to games where cooperation or joint surplus exists. The course needs this special case precisely because its conclusions are sharper than in general games.</p>
+  <p><strong>Problem:</strong> Pure conflict: one side&#x27;s success means the other side&#x27;s failure. Your win is my loss. There is no possibility to both do better together because the score is fixed and divides between us.</p>
+  <p><strong>Mathematical handle:</strong> The object is a payoff function where player two&#x27;s score is the negative of player one&#x27;s score. When player one gets 100, player two gets -100. Their interests are perfectly opposite, locked together by the game&#x27;s structure.</p>
+  <p><strong>What breaks without it:</strong> Without recognizing zero-sum games, a student might apply methods from games where both players can gain together to games where they cannot. A poker hand is zero-sum; a business partnership is not. You need to know the difference or you will use the wrong tools.</p>
   <p><a href="../concepts/zero_sum_games.html">Open concept page</a></p>
 </article><article class="wide-card">
   <h3>Minimax</h3>
-  <p><strong>Problem:</strong> The problem is choosing under hostile response: what can I guarantee if the other side tries to hurt me as much as possible?</p>
-  <p><strong>Mathematical handle:</strong> The object is a security calculation: maximize the minimum payoff you can be forced to accept, or minimize the maximum damage the opponent can impose.</p>
-  <p><strong>What breaks without it:</strong> Without minimax, the course could describe conflict but not the logic of protecting against exploitation. It would miss why randomization and worst-case evaluation can produce a stable value in zero-sum games.</p>
+  <p><strong>Problem:</strong> You are choosing when someone else wants to hurt you. The question: what is the best outcome I can guarantee, no matter how hard the other person tries to damage me?</p>
+  <p><strong>Mathematical handle:</strong> The object is a security calculation: find the highest lowest-payoff you can guarantee, or equivalently, find the lowest highest-payoff the opponent can force you into.</p>
+  <p><strong>What breaks without it:</strong> Without minimax, the course could describe conflict but not explain why you should think defensively. It would miss why mixing your moves unpredictably and measuring success by worst-case results can create stability in purely opposed games.</p>
   <p><a href="../concepts/minimax.html">Open concept page</a></p>
 </article>
 </section>

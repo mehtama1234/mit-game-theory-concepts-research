@@ -5,7 +5,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 ## Summary
 
 - Concepts audited: 33
-- Concept teaching words: min 677, max 1056
+- Concept teaching words: min 768, max 2029
 - Evidence per concept: min 2, max 2
 - Theme treatment words: min 401, max 423
 - Subtheme treatment words: min 402, max 421
@@ -164,7 +164,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Limits concept cards: 33
 - Limits theme cards: 8
 - Limits derivation cards: 9
-- Limits concept words: min 420, max 762
+- Limits concept words: min 475, max 1347
 - Evidence records with transcript teaching notes: 66
 - Generic evidence payloads remaining: 0
 - Evidence concept backlinks: 66
@@ -176,21 +176,21 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Supplemental lecture evidence records: 8
 - Lectures below 2 total evidence anchors: 0
 - Lecture path treatment words: min 348, max 441
-- Lecture detail page words: min 1904, max 5886
+- Lecture detail page words: min 1973, max 7379
 - Errors: 0
 
 ## Lowest Concept Depth
 
-- infinitely_repeated_games: 677 teaching words, 2 evidence records
-- implicit_cartels: 677 teaching words, 2 evidence records
-- extensive_form_games: 679 teaching words, 2 evidence records
-- backward_induction: 679 teaching words, 2 evidence records
-- folk_theorem: 679 teaching words, 2 evidence records
-- bayesian_games: 679 teaching words, 2 evidence records
-- best_response: 682 teaching words, 2 evidence records
-- mixed_strategies: 684 teaching words, 2 evidence records
-- types_and_beliefs: 684 teaching words, 2 evidence records
-- bargaining: 686 teaching words, 2 evidence records
+- minimax: 768 teaching words, 2 evidence records
+- expected_utility: 993 teaching words, 2 evidence records
+- mixed_strategies: 1049 teaching words, 2 evidence records
+- common_knowledge: 1050 teaching words, 2 evidence records
+- types_and_beliefs: 1066 teaching words, 2 evidence records
+- zero_sum_games: 1108 teaching words, 2 evidence records
+- dominance: 1127 teaching words, 2 evidence records
+- extensive_form_games: 1154 teaching words, 2 evidence records
+- utility: 1173 teaching words, 2 evidence records
+- finitely_repeated_games: 1177 teaching words, 2 evidence records
 
 ## Errors
 

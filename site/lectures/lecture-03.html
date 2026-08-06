@@ -28,7 +28,7 @@
   <p>The lecture introduces the first disciplined way to simplify a game. Instead of guessing what players believe, it asks whether one strategy is worse than another across the relevant possibilities and can therefore be removed.</p>
   <h2>Where The Math Enters</h2>
   <p>The math enters as an inequality across contingencies. A strategy is dominated when another strategy gives at least as much payoff in every relevant case and more in some case.</p>
-  <p>The mathematical object has to exist because some choices can be rejected without forecasting the opponent. The dominance comparison formalizes “no matter what they do” as a set of inequalities across contingencies. That makes deletion a proof about payoffs rather than a guess about likely behavior.</p>
+  <p>Math exists here because some moves can be thrown out by proof, not by guess. Dominance formalizes &#x27;no matter what the opponent does&#x27; as a list of inequalities. Each inequality is a check against one opponent move. If all the inequalities pass, you have a mathematical fact that the move is dominated, and no amount of belief-changing will fix it.</p>
   <h2>Equation Walkthroughs</h2>
   <p class="chips"><a class="chip derivation-link" href="../primitives.html#dominance_inequality">Dominance Inequality</a></p>
   <h2>Worked Mini-Example</h2>
@@ -36,7 +36,7 @@
   <h2>Mistakes To Avoid</h2>
   <p>The mistake is to delete strategies because they seem unlikely. Dominance is stronger: it requires a payoff comparison that survives all opponent actions covered by the model.</p>
   <p>The tempting shortcut is to delete actions because they look embarrassing, unlikely, or aggressive. That fails because game theory needs a reason that still holds when the opponent chooses differently from what we expected.</p>
-  <p>Students often get stuck by deleting strategies that are merely unattractive under their favorite prediction. That is not dominance. A strategy that is bad against one opponent move but useful against another is belief-dependent, not dominated.</p>
+  <p>A common trap is deleting a move because it performs badly when you guess the opponent will do something specific. That is not dominance. If the move is bad only against one opponent choice but good against others, it is not dominated — you just dislike it under your own prediction of what the opponent will do.</p>
   <h2>Durable Lesson</h2>
   <p>The durable lesson is that dominance is proof-based simplification. If another strategy always does better, the dominated strategy does not need a story about beliefs; it is removed because the payoff comparison itself rules it out.</p>
   <h2>Reader Work</h2>
@@ -46,16 +46,16 @@
   <h2>How This Lecture Hands Off</h2>
   <p>This hands off to rationalizability: many games do not have obvious dominated actions, so the next question is whether an action can be justified by some coherent belief about the other players.</p>
   <h2>How To Recognize This Later</h2>
-  <p>Look for arguments that rule out actions before equilibrium is computed because one action is never a best answer.</p>
+  <p>When you see an argument that crosses off a move before computing equilibrium — because one move always loses to another — you are seeing dominance at work.</p>
   <p class="chips"><a class="chip" href="../concepts/dominance.html">Dominance</a></p>
 </section>
 <section>
   <h2>Concepts In This Lecture</h2>
   <article class="wide-card">
   <h3>Dominance</h3>
-  <p><strong>Problem:</strong> The problem is that some choices are plainly bad no matter what the other side does. Keeping them in the analysis can distract from the strategic choices that actually need thought.</p>
-  <p><strong>Mathematical handle:</strong> The object is a binary relation between two strategies. It tracks whether one strategy beats or ties the other across every possible move by opponents. Formally, it is a pair (s, t) where s dominates t if all payoff entries in s are at least as good as the corresponding entries in t, with at least one strictly better. The dominance relation can be listed as a set of such pairs or visualized by marking dominated rows or columns in the game matrix.</p>
-  <p><strong>What breaks without it:</strong> Without dominance, every listed strategy would look equally alive even when some choices have no defensible reason to be played. The analysis would be noisier and less disciplined before equilibrium reasoning even begins.</p>
+  <p><strong>Problem:</strong> In any game, some moves are just worse. They lose to another move no matter what the other person tries. But if you list all possible moves, the bad ones can hide the real choices that matter. Dominance lets you cross off the hopeless ones first.</p>
+  <p><strong>Mathematical handle:</strong> The object is a pair of two moves, where one move wins against the other no matter what the opponent does. More formally: you can represent it as a relation, a set of ordered pairs (A, B) where move A dominates move B. To check if it works, look at your payoff table row by row (or column by column if you are the one being compared). If every number in row A is at least as large as the corresponding number in row B, and at least one number is strictly larger, then A dominates B. You can mark these pairs on the game matrix to see at a glance which moves are dead.</p>
+  <p><strong>What breaks without it:</strong> If you keep every possible move alive, the board stays cluttered. Some moves have no reason to exist, but they still sit in the analysis like noise. Without dominance, you would not know which moves to ignore first, so finding the real strategic solution gets harder before you ever reach concepts like best response.</p>
   <p><a href="../concepts/dominance.html">Open concept page</a></p>
 </article>
 </section>

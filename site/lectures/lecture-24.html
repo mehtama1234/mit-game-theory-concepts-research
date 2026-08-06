@@ -28,7 +28,7 @@
   <p>The lecture removes signal cost and asks what communication can still do. Messages are costless and nonbinding, so credibility must come from preference alignment and receiver response.</p>
   <h2>Where The Math Enters</h2>
   <p>The math enters through sender types or states, message rules, receiver actions, and incentive constraints that make truthful or partially informative messages self-enforcing.</p>
-  <p>The mathematical object has to exist because words alone do not reveal incentives. A sentence can sound informative even when every sender type would choose it. The model needs states, sender preferences, receiver actions, messages, and beliefs so it can check whether a proposed communication rule is self-enforcing. The hard part is not decoding the literal sentence. The hard part is asking whether the sender would still want to send that sentence in the state where it is supposed to be truthful.</p>
+  <p>Words alone do not reveal payoffs. A sentence like &quot;this option is best&quot; can sound equally reasonable from a speaker who genuinely believes it and from a speaker who just wants you to choose it regardless of the truth. The model has to exist because it holds the pieces: states (which one is true), messages (what is said), payoffs (who wants what), and beliefs (what the receiver thinks is true). Only then can you check whether a communication rule — a promise that certain messages come from certain truths — would actually stand up if everyone followed it. The hard part of the math is not decoding what is said; it is asking whether the speaker would still want to send that message in the situations where it is supposed to be the truth.</p>
   <h2>Equation Walkthroughs</h2>
   <p class="chips"><a class="chip derivation-link" href="../primitives.html#bayes_rule">Bayes Rule</a><a class="chip derivation-link" href="../primitives.html#expected_utility">Expected Utility</a><a class="chip derivation-link" href="../primitives.html#auction_expected_payment">Auction Expected Payment</a></p>
   <h2>Worked Mini-Example</h2>
@@ -36,7 +36,7 @@
   <h2>Mistakes To Avoid</h2>
   <p>The mistake is to say cheap talk is always useless or always informative. The lecture&#x27;s answer is conditional: speech works when incentives make the receiver&#x27;s interpretation defensible.</p>
   <p>The tempting shortcut is to label all cheap talk as empty persuasion. That fails when sender and receiver preferences are sufficiently aligned, because the sender may benefit from guiding the receiver toward a better action.</p>
-  <p>Students often get stuck by saying cheap talk is either always useless or always informative. The lecture point is conditional: credibility depends on payoff alignment and receiver response.</p>
+  <p>Students get stuck when they treat cheap talk as a single outcome instead of a logical condition. Some get trapped saying &quot;cheap talk always fails — if messages are free, they mean nothing.&quot; Others say &quot;cheap talk always works if interests overlap.&quot; The actual lesson is narrower: credibility exists only when the receiver can infer that the sender wants to tell the truth in exactly those situations, which depends on payoffs and the receiver&#x27;s response.</p>
   <h2>Durable Lesson</h2>
   <p>The durable lesson is that credibility can come from alignment, not only cost. A message works when the receiver can believe that the sender wanted to send it in exactly that state.</p>
   <h2>Reader Work</h2>
@@ -46,16 +46,16 @@
   <h2>How This Lecture Hands Off</h2>
   <p>This hands off to common knowledge: communication does not only transmit facts; public messages can change what everyone knows about what everyone else knows.</p>
   <h2>How To Recognize This Later</h2>
-  <p>Look for models where messages are nonbinding and the key question is whether incentives allow information transmission.</p>
+  <p>Look for situations where a message is free to send and the key question is whether the speaker&#x27;s payoffs would make honesty the best move. This pattern shows up in corporate advice, political claims, expert guidance, and any setting where the listener must decide whether to trust a costless message.</p>
   <p class="chips"><a class="chip" href="../concepts/cheap_talk.html">Cheap Talk</a></p>
 </section>
 <section>
   <h2>Concepts In This Lecture</h2>
   <article class="wide-card">
   <h3>Cheap Talk</h3>
-  <p><strong>Problem:</strong> The problem is whether costless messages can influence behavior when the speaker may want to mislead.</p>
-  <p><strong>Mathematical handle:</strong> The object is a sender-receiver game where messages do not directly change payoffs but can change beliefs and actions.</p>
-  <p><strong>What breaks without it:</strong> Without cheap talk, the course would treat all communication as either irrelevant noise or costly signaling. It would miss the middle case where aligned interests make some costless messages credible enough to affect actions.</p>
+  <p><strong>Problem:</strong> Can a message that costs nothing to send and cannot be enforced actually change what someone believes or does, especially when the speaker might benefit from lying?</p>
+  <p><strong>Mathematical handle:</strong> A sender-receiver game in which messages change what the receiver believes and how they act, but messages do not directly shift anyone&#x27;s score. The sender knows hidden information (which state is true), chooses a message, the receiver updates their belief about which state is true, and then the receiver chooses an action. The payoff depends on the true state and the action chosen, not on the message itself.</p>
+  <p><strong>What breaks without it:</strong> Without cheap talk, the course would treat all communication as either meaningless noise or as actions people pay a cost to signal (like buying a diploma to show you are smart). It would miss the middle ground where aligned interests can make costless words reliable.</p>
   <p><a href="../concepts/cheap_talk.html">Open concept page</a></p>
 </article>
 </section>
