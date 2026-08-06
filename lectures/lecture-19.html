@@ -28,7 +28,7 @@
   <p>The lecture asks when different auction formats become equivalent from the seller&#x27;s revenue perspective. It teaches that surface rules can differ while expected payments line up under strong assumptions.</p>
   <h2>Where The Math Enters</h2>
   <p>The math enters through expected payment functions and allocation probabilities. Under the theorem&#x27;s conditions, payment differences are pinned down by the same allocation rule and boundary condition.</p>
-  <p>The mathematical object has to exist because comparing auction formats requires more than comparing labels. Expected revenue depends on allocation probabilities, payment rules, and equilibrium bidding. Revenue equivalence formalizes the conditions under which those pieces line up across mechanisms.</p>
+  <p>Comparing auction formats is not a matter of opinion or intuition — it requires mathematics because the answer depends on how allocation, strategy, and payment timing interact. Revenue equivalence formalizes the conditions under which those pieces produce the same seller payoff across mechanisms. Without the theorem, you would have only case-by-case reasoning and no systematic principle.</p>
   <h2>Equation Walkthroughs</h2>
   <p class="chips"><a class="chip derivation-link" href="../primitives.html#auction_expected_payment">Auction Expected Payment</a></p>
   <h2>Worked Mini-Example</h2>
@@ -36,7 +36,7 @@
   <h2>Mistakes To Avoid</h2>
   <p>The mistake is to remember only the equivalence. The theorem is also a list of conditions; changing risk attitudes, values, symmetry, or allocation rules can break it.</p>
   <p>The tempting shortcut is to treat revenue equivalence as a universal law. That fails because the result depends on assumptions about values, risk, symmetry, allocation rules, and boundary payments.</p>
-  <p>Students often get stuck by comparing the rules while holding bids fixed. Equilibrium bids change with the auction format, and those strategic adjustments are exactly what the theorem accounts for.</p>
+  <p>Students often get stuck by comparing auction rules while pretending bidders use the same strategy in both formats. That is not how auctions work. Bidders change their bids when the rule changes. The theorem accounts for those strategic adjustments — it is not a comparison of fixed bids. Forgetting this leads to the false conclusion that different payment rules automatically create different revenues.</p>
   <h2>Durable Lesson</h2>
   <p>The durable lesson is that the theorem is a conditions machine. It teaches when surface format differences wash out and, just as importantly, which changes make the equivalence disappear.</p>
   <h2>Reader Work</h2>
@@ -46,16 +46,16 @@
   <h2>How This Lecture Hands Off</h2>
   <p>This hands off to ad auctions: real platform auctions modify the object being sold, the ranking rule, and the quality information, so the clean theorem becomes a reference point rather than the whole story.</p>
   <h2>How To Recognize This Later</h2>
-  <p>Look for auction comparisons where allocation sameness and bidder payoff normalization drive payment conclusions.</p>
+  <p>Look for auction comparisons where the author concludes that two mechanisms produce the same revenue. Check whether allocation is identical across formats and whether bidder payoffs are normalized to be the same at the lowest types. If those conditions hold and the assumptions match (risk-neutral, independent private values, symmetric bidders), revenue equivalence is likely at work.</p>
   <p class="chips"><a class="chip" href="../concepts/revenue_equivalence.html">Revenue Equivalence</a></p>
 </section>
 <section>
   <h2>Concepts In This Lecture</h2>
   <article class="wide-card">
   <h3>Revenue Equivalence</h3>
-  <p><strong>Problem:</strong> The problem is comparing auction formats that look different: first-price, second-price, English, and others may create different bidding behavior.</p>
-  <p><strong>Mathematical handle:</strong> The object is a theorem linking allocation rules and expected payments under assumptions such as risk neutrality, independent private values, and symmetric bidders.</p>
-  <p><strong>What breaks without it:</strong> Without revenue equivalence, every auction comparison would be treated as an isolated case. The course would miss the deeper structure that makes some formats equivalent and the assumptions that make equivalence fragile.</p>
+  <p><strong>Problem:</strong> You need to sell something. You could ask bidders to write down their best offer and pay what they bid (first-price). Or you could ask them to write down their best offer but then pay what the second-highest bidder bid (second-price). These rules look completely opposite. Do they produce different results, or can they actually be equivalent?</p>
+  <p><strong>Mathematical handle:</strong> The object is a theorem that links the way objects are allocated to the payments bidders expect to make. It depends on three core assumptions: bidders are risk-neutral (they care only about the size of their payoff, not how uncertain it is), each bidder knows their own value privately and nobody else learns it, and all bidders are treated symmetrically by the auction rules. Under these assumptions, expected revenue can be the same across different auction formats.</p>
+  <p><strong>What breaks without it:</strong> Without revenue equivalence, you would have to evaluate each auction type in isolation, comparing first-price to second-price to English to open-ascending one pair at a time with no systematic tool. You would miss the deeper structure that tells you which assumptions make formats equivalent and which breaks them. The course would become a memorization list instead of a set of principles.</p>
   <p><a href="../concepts/revenue_equivalence.html">Open concept page</a></p>
 </article>
 </section>

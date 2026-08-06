@@ -14,8 +14,8 @@
   <main><section class="page-head"><h1>Cross Index</h1><p>Every concept indexed by the problem pressure it answers, with direct jumps into lectures, subthemes, primitives, and transcript evidence.</p></section><article class="wide-card xref-card" id="xref-preferences">
   <p class="eyebrow">Choice Under Tradeoffs</p>
   <h2><a href="concepts/preferences.html">Preferences</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is that before we talk about strategy, we need a way to say what one person is trying to get. A person may like one outcome more than another even when dollars, risk, effort, and timing are mixed together.</p>
-  <p><strong>Mathematical handle:</strong> The object is a preference relation: a comparison rule over outcomes. When it is complete the person can compare any two outcomes; when it is transitive the comparisons do not cycle back on themselves.</p>
+  <p><strong>Problem pressure:</strong> Before anyone starts thinking strategically, we need a way to ask: which outcome does this person actually want? The catch is that outcomes are tangled up. One choice gives you more money but more risk. Another gives you less money but more free time. Before you can ask whether someone makes sense or does best for themselves, you need a way to say how they rank all these mixed-up options.</p>
+  <p><strong>Mathematical handle:</strong> The object is a preference relation: a rule that compares any two outcomes and says which one ranks higher (or if they tie). For this rule to be useful in a model, two things have to be true. First, completeness: you must be able to compare any two outcomes in the problem — no cases where you say I do not know. Second, transitivity: if you rank A above B and B above C, then you must rank A above C — no loops.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-01.html">Lecture 1: Introduction to Individual Decision-Making</a><a class="chip" href="lectures/lecture-02.html">Lecture 2: Representation of Games</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#ranking_outcomes">Ranking Outcomes</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#preference">Preference</a></p>
@@ -23,8 +23,8 @@
 </article><article class="wide-card xref-card" id="xref-utility">
   <p class="eyebrow">Choice Under Tradeoffs</p>
   <h2><a href="concepts/utility.html">Utility</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is that rankings are awkward to compute with. A payoff table, expected value, or equilibrium check needs numbers, not only verbal statements like this outcome is preferred.</p>
-  <p><strong>Mathematical handle:</strong> The object is a utility function u that assigns a number to each outcome while preserving the preference ordering. Higher utility means higher in the ranking, not necessarily more money or happiness.</p>
+  <p><strong>Problem pressure:</strong> When several people each chase what is best for them, you need to know whether one person will prefer outcome A or outcome B. But you cannot write down a math formula using the words &#x27;I like this more&#x27; — math works with numbers. So you have to turn &#x27;A is better than B&#x27; into numbers you can actually use in a calculation.</p>
+  <p><strong>Mathematical handle:</strong> A utility function u is a machine that takes an outcome (like &#x27;get pizza&#x27;) and outputs a number. That number is higher when the outcome ranks higher in someone&#x27;s preference list. The job of u is to preserve the order — nothing more, nothing less.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-01.html">Lecture 1: Introduction to Individual Decision-Making</a><a class="chip" href="lectures/lecture-02.html">Lecture 2: Representation of Games</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#ranking_outcomes">Ranking Outcomes</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#preference">Preference</a></p>
@@ -32,8 +32,8 @@
 </article><article class="wide-card xref-card" id="xref-expected_utility">
   <p class="eyebrow">Choice Under Tradeoffs</p>
   <h2><a href="concepts/expected_utility.html">Expected Utility</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is choosing when the outcome is uncertain: a bid might win or lose, a risky action might pay off or fail, and a type may be one of several possibilities.</p>
-  <p><strong>Mathematical handle:</strong> The object is expected utility: utility in each possible state weighted by that state&#x27;s probability. It compresses a risky situation into one comparison number.</p>
+  <p><strong>Problem pressure:</strong> You often must decide before you know what will happen: will a bid win or lose? Will a risky investment pay off or lose money? Will someone turn out to be honest or dishonest? You need a way to compare choices when the future is uncertain.</p>
+  <p><strong>Mathematical handle:</strong> Expected utility is the number you get when you weight each possible payoff by its probability and sum them. It squeezes a risky situation down to one score so you can compare choices.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-01.html">Lecture 1: Introduction to Individual Decision-Making</a><a class="chip" href="lectures/lecture-16.html">Lecture 16: Bayesian Games</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#ranking_outcomes">Ranking Outcomes</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#belief">Belief</a><a class="chip" href="primitives.html#preference">Preference</a></p>
@@ -41,8 +41,8 @@
 </article><article class="wide-card xref-card" id="xref-strategic_form_games">
   <p class="eyebrow">Strategic Dependence</p>
   <h2><a href="concepts/strategic_form_games.html">Strategic Form Games</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is representing a situation where everyone chooses without first seeing the others&#x27; choices, yet everyone&#x27;s payoff depends on the whole combination.</p>
-  <p><strong>Mathematical handle:</strong> The object is a normal-form game: players, action sets, and payoff functions collected into a table or payoff map.</p>
+  <p><strong>Problem pressure:</strong> Imagine you and your friend each need to choose something at the exact same moment, without knowing what the other chose. But once you both decide, what you get depends on both choices together. How do you show what&#x27;s really going on? You need a table that captures the fact that nobody gets to see the other&#x27;s choice before picking their own.</p>
+  <p><strong>Mathematical handle:</strong> The thing you build is called a normal-form game. It collects: a list of all players, the set of moves each player can pick, and a payoff function that assigns a score to each player for every possible profile (i.e., every combination of moves, one from each player).</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-01.html">Lecture 1: Introduction to Individual Decision-Making</a><a class="chip" href="lectures/lecture-02.html">Lecture 2: Representation of Games</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#tables_and_trees">Tables, Trees, And Strategic Dependence</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#payoff_mapping">Payoff Mapping</a></p>
@@ -50,8 +50,8 @@
 </article><article class="wide-card xref-card" id="xref-extensive_form_games">
   <p class="eyebrow">Time, Threats, And Credibility</p>
   <h2><a href="concepts/extensive_form_games.html">Extensive Form Games</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is that some games unfold over time. A later choice can depend on an earlier choice, and some players may know more about the history than others.</p>
-  <p><strong>Mathematical handle:</strong> The object is a game tree: decision nodes, branches, histories, information sets, and terminal payoffs.</p>
+  <p><strong>Problem pressure:</strong> In real conflicts, people move one at a time, not all at once. A choice made later can depend on what happened earlier. And sometimes you know more than the other person — or they know more than you. A flat table misses all of that.</p>
+  <p><strong>Mathematical handle:</strong> The object is a tree: starting point, branches for each choice, nodes where decisions happen, a record of what happened so far, sets of nodes that a player cannot tell apart (because they do not know which one they are in), and numbers at the endpoints showing each player&#x27;s score.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-02.html">Lecture 2: Representation of Games</a><a class="chip" href="lectures/lecture-08.html">Lecture 8: Backward Induction</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#tables_and_trees">Tables, Trees, And Strategic Dependence</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#backward_recursion">Backward Recursion</a></p>
@@ -59,8 +59,8 @@
 </article><article class="wide-card xref-card" id="xref-dominance">
   <p class="eyebrow">Strategic Dependence</p>
   <h2><a href="concepts/dominance.html">Dominance</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is that some choices are plainly bad no matter what the other side does. Keeping them in the analysis can distract from the strategic choices that actually need thought.</p>
-  <p><strong>Mathematical handle:</strong> The object is a binary relation between two strategies. It tracks whether one strategy beats or ties the other across every possible move by opponents. Formally, it is a pair (s, t) where s dominates t if all payoff entries in s are at least as good as the corresponding entries in t, with at least one strictly better. The dominance relation can be listed as a set of such pairs or visualized by marking dominated rows or columns in the game matrix.</p>
+  <p><strong>Problem pressure:</strong> In any game, some moves are just worse. They lose to another move no matter what the other person tries. But if you list all possible moves, the bad ones can hide the real choices that matter. Dominance lets you cross off the hopeless ones first.</p>
+  <p><strong>Mathematical handle:</strong> The object is a pair of two moves, where one move wins against the other no matter what the opponent does. More formally: you can represent it as a relation, a set of ordered pairs (A, B) where move A dominates move B. To check if it works, look at your payoff table row by row (or column by column if you are the one being compared). If every number in row A is at least as large as the corresponding number in row B, and at least one number is strictly larger, then A dominates B. You can mark these pairs on the game matrix to see at a glance which moves are dead.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-03.html">Lecture 3: Dominance</a><a class="chip" href="lectures/lecture-04.html">Lecture 4: Rationalizability</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#eliminating_bad_moves">Eliminating Bad Moves</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#pruning">Pruning</a></p>
@@ -68,8 +68,8 @@
 </article><article class="wide-card xref-card" id="xref-iterated_deletion">
   <p class="eyebrow">Strategic Dependence</p>
   <h2><a href="concepts/iterated_deletion.html">Iterated Deletion</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is that once obviously bad moves are removed, new moves may become obviously bad in the smaller game.</p>
-  <p><strong>Mathematical handle:</strong> The object is a reduced game created by repeated dominance pruning.</p>
+  <p><strong>Problem pressure:</strong> When you remove one bad move, the game changes—what was once a decent move might now be a bad move in the smaller game. This keeps happening in waves: you delete, the game shrinks, new bad moves appear, you delete again.</p>
+  <p><strong>Mathematical handle:</strong> The mathematical object is a game that gets smaller with each step—you start with all possible strategies, remove the dominated ones, and create a reduced game with only the surviving strategies, then repeat the dominance check on this reduced version.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-04.html">Lecture 4: Rationalizability</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#eliminating_bad_moves">Eliminating Bad Moves</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#pruning">Pruning</a></p>
@@ -77,8 +77,8 @@
 </article><article class="wide-card xref-card" id="xref-rationalizability">
   <p class="eyebrow">Strategic Dependence</p>
   <h2><a href="concepts/rationalizability.html">Rationalizability</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is deciding which strategies can be defended as sensible without requiring everyone to land on one exact equilibrium.</p>
-  <p><strong>Mathematical handle:</strong> The object is a set of strategies that survive because each can be a best response to some belief about the other players&#x27; surviving strategies.</p>
+  <p><strong>Problem pressure:</strong> Deciding which strategies make sense to consider without assuming everyone has reached one locked-in agreement about what will happen. You need a test that catches strategies people might reasonably choose before you check whether all their choices can fit together perfectly.</p>
+  <p><strong>Mathematical handle:</strong> A set—a list—of strategies where each surviving strategy has the property that it can be a best response to some belief about which of the other surviving strategies the other players will use. You build this set step by step: keep only strategies that are best responses to some probability distribution over the remaining strategies.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-01.html">Lecture 1: Introduction to Individual Decision-Making</a><a class="chip" href="lectures/lecture-04.html">Lecture 4: Rationalizability</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#eliminating_bad_moves">Eliminating Bad Moves</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#belief">Belief</a></p>
@@ -86,8 +86,8 @@
 </article><article class="wide-card xref-card" id="xref-best_response">
   <p class="eyebrow">Equilibrium As Mutual Consistency</p>
   <h2><a href="concepts/best_response.html">Best Response</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is that a strategy is not good in the abstract. It is good against a particular opponent action or belief.</p>
-  <p><strong>Mathematical handle:</strong> The object is the best-response set: all actions that maximize a player&#x27;s payoff given the other side&#x27;s action or belief.</p>
+  <p><strong>Problem pressure:</strong> When you are trying to decide what to do, you cannot just pick any move and say it is &#x27;good.&#x27; A move that works beautifully against one person&#x27;s choice can fail miserably against another. The same action is good or bad depending on what the other person does.</p>
+  <p><strong>Mathematical handle:</strong> The best-response set is a collection: all the actions that maximize a player&#x27;s payoff when everyone else&#x27;s actions (or the player&#x27;s beliefs about those actions) are pinned down. It stores the answer to the question: given that they do this, which of my moves is best?</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-04.html">Lecture 4: Rationalizability</a><a class="chip" href="lectures/lecture-05.html">Lecture 5: Nash Equilibrium</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#stable_predictions">Stable Predictions</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#best_response">Best Response</a></p>
@@ -95,8 +95,8 @@
 </article><article class="wide-card xref-card" id="xref-nash_equilibrium">
   <p class="eyebrow">Equilibrium As Mutual Consistency</p>
   <h2><a href="concepts/nash_equilibrium.html">Nash Equilibrium</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is making a prediction that does not immediately fall apart when each participant asks, given what the others are doing, should I switch?</p>
-  <p><strong>Mathematical handle:</strong> The object is an action or strategy profile where every player&#x27;s choice is a best response to the others&#x27; choices.</p>
+  <p><strong>Problem pressure:</strong> You are trying to predict what a group of people will do when they are all trying to outthink each other. The problem is: your prediction only works if, after each person sees what you said the others would do, that person does not regret their own choice and decide to change.</p>
+  <p><strong>Mathematical handle:</strong> The object is a profile—a list of each player&#x27;s move—where every player&#x27;s move is a best response to the others&#x27; moves. You can write it as a tuple or a list, but the key is that each component meets the best-response test.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-05.html">Lecture 5: Nash Equilibrium</a><a class="chip" href="lectures/lecture-10.html">Lecture 10: Subgame-Perfect Nash Equilibrium</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#stable_predictions">Stable Predictions</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#mutual_consistency">Mutual Consistency</a></p>
@@ -104,8 +104,8 @@
 </article><article class="wide-card xref-card" id="xref-mixed_strategies">
   <p class="eyebrow">Equilibrium As Mutual Consistency</p>
   <h2><a href="concepts/mixed_strategies.html">Mixed Strategies</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is what to predict when choosing one pure action would make a player exploitable or when no pure-action equilibrium exists.</p>
-  <p><strong>Mathematical handle:</strong> The object is a probability distribution over pure strategies, often chosen so the other player has no strict favorite response.</p>
+  <p><strong>Problem pressure:</strong> You face a jam: if you always pick one move, the other player learns this and beats you every time. But there might not be any single move you can stick to that is safe. So you need a way to stay unpredictable while still being smart about it.</p>
+  <p><strong>Mathematical handle:</strong> The mathematical object is a probability distribution: a list of your pure moves, each with a number between 0 and 1 (the chance you pick it), and they add up to 1. Often, the equilibrium distribution makes your opponent indifferent—unable to gain by switching between the moves they use.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-05.html">Lecture 5: Nash Equilibrium</a><a class="chip" href="lectures/lecture-07.html">Lecture 7: Zero-Sum Games</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#stable_predictions">Stable Predictions</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#belief">Belief</a><a class="chip" href="primitives.html#mutual_consistency">Mutual Consistency</a></p>
@@ -113,8 +113,8 @@
 </article><article class="wide-card xref-card" id="xref-zero_sum_games">
   <p class="eyebrow">Equilibrium As Mutual Consistency</p>
   <h2><a href="concepts/zero_sum_games.html">Zero-Sum Games</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is pure conflict: one side&#x27;s gain is the other side&#x27;s loss, so cooperation or joint surplus is not the issue.</p>
-  <p><strong>Mathematical handle:</strong> The object is a payoff function where player two&#x27;s payoff is the negative of player one&#x27;s payoff.</p>
+  <p><strong>Problem pressure:</strong> Pure conflict: one side&#x27;s success means the other side&#x27;s failure. Your win is my loss. There is no possibility to both do better together because the score is fixed and divides between us.</p>
+  <p><strong>Mathematical handle:</strong> The object is a payoff function where player two&#x27;s score is the negative of player one&#x27;s score. When player one gets 100, player two gets -100. Their interests are perfectly opposite, locked together by the game&#x27;s structure.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-05.html">Lecture 5: Nash Equilibrium</a><a class="chip" href="lectures/lecture-07.html">Lecture 7: Zero-Sum Games</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#conflict_and_security">Conflict And Security</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#mutual_consistency">Mutual Consistency</a></p>
@@ -122,8 +122,8 @@
 </article><article class="wide-card xref-card" id="xref-minimax">
   <p class="eyebrow">Equilibrium As Mutual Consistency</p>
   <h2><a href="concepts/minimax.html">Minimax</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is choosing under hostile response: what can I guarantee if the other side tries to hurt me as much as possible?</p>
-  <p><strong>Mathematical handle:</strong> The object is a security calculation: maximize the minimum payoff you can be forced to accept, or minimize the maximum damage the opponent can impose.</p>
+  <p><strong>Problem pressure:</strong> You are choosing when someone else wants to hurt you. The question: what is the best outcome I can guarantee, no matter how hard the other person tries to damage me?</p>
+  <p><strong>Mathematical handle:</strong> The object is a security calculation: find the highest lowest-payoff you can guarantee, or equivalently, find the lowest highest-payoff the opponent can force you into.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-07.html">Lecture 7: Zero-Sum Games</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#conflict_and_security">Conflict And Security</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#best_response">Best Response</a></p>
@@ -131,8 +131,8 @@
 </article><article class="wide-card xref-card" id="xref-backward_induction">
   <p class="eyebrow">Time, Threats, And Credibility</p>
   <h2><a href="concepts/backward_induction.html">Backward Induction</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is that early choices in a tree depend on what later players will actually do, not what they announce they might do.</p>
-  <p><strong>Mathematical handle:</strong> The object is a game tree with continuation values assigned from the terminal nodes backward.</p>
+  <p><strong>Problem pressure:</strong> When one person moves today and another person moves tomorrow, today&#x27;s person is trying to guess what tomorrow&#x27;s person will do—but people often say they&#x27;ll do something harsh later, then don&#x27;t do it when the moment comes. You need a way to figure out which future threats are real and which are bluffing.</p>
+  <p><strong>Mathematical handle:</strong> The mathematical object is a game tree: a diagram with nodes (decision points), branches (the choices available), and leaves (the final outcomes with scores). Backward induction assigns a strategic value to each node by starting at the leaves, figuring out what each player will choose at the nodes just before the leaves, and then replacing those pieces with their values, stepping back one layer at a time until the whole tree is solved.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-02.html">Lecture 2: Representation of Games</a><a class="chip" href="lectures/lecture-08.html">Lecture 8: Backward Induction</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#credible_time_paths">Credible Time Paths</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#backward_recursion">Backward Recursion</a></p>
@@ -140,8 +140,8 @@
 </article><article class="wide-card xref-card" id="xref-subgame_perfection">
   <p class="eyebrow">Time, Threats, And Credibility</p>
   <h2><a href="concepts/subgame_perfection.html">Subgame-Perfect Nash Equilibrium</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is that Nash equilibrium can allow plans based on threats that would not be carried out if the threatened moment arrived.</p>
-  <p><strong>Mathematical handle:</strong> The object starts with a Nash equilibrium but adds a new check: that same strategy profile must remain optimal in every proper subgame too. This is how we formalize the requirement that a plan only survives if it would still be chosen when a subgame actually arrives.</p>
+  <p><strong>Problem pressure:</strong> Sometimes a player says &#x27;I will do something painful to punish you.&#x27; That threat only works if the player would actually carry it out if the moment came. But if the painful thing hurts the player too, they might not do it. A plan built on such a hollow threat falls apart once you realize the threat is fake.</p>
+  <p><strong>Mathematical handle:</strong> Start with a Nash equilibrium — a plan where nobody wants to switch at the beginning. Now make a stronger requirement: that same plan must also be a Nash equilibrium inside every &#x27;subgame&#x27; — every piece of the game tree that can stand on its own as a complete game at some later point. If a plan fails this test anywhere, reject it.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-08.html">Lecture 8: Backward Induction</a><a class="chip" href="lectures/lecture-10.html">Lecture 10: Subgame-Perfect Nash Equilibrium</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#credible_time_paths">Credible Time Paths</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#backward_recursion">Backward Recursion</a><a class="chip" href="primitives.html#mutual_consistency">Mutual Consistency</a></p>
@@ -149,8 +149,8 @@
 </article><article class="wide-card xref-card" id="xref-one_shot_deviation">
   <p class="eyebrow">Time, Threats, And Credibility</p>
   <h2><a href="concepts/one_shot_deviation.html">One-Shot Deviation Principle</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is checking a whole dynamic strategy can be exhausting because a strategy describes what to do after many histories.</p>
-  <p><strong>Mathematical handle:</strong> The object is a local deviation test: change one action at one history while leaving the continuation strategy fixed.</p>
+  <p><strong>Problem pressure:</strong> Imagine you wrote down a complete plan for how to behave in a game that plays out over many moments — what you&#x27;d do after every possible thing that could happen. Checking whether someone would actually want to stick to that plan sounds simple: does anyone want to cheat? But there are so many moments and so many ways to cheat that checking all of them seems impossible.</p>
+  <p><strong>Mathematical handle:</strong> The object is a local change: you pick one decision point in the game, try a different action at that moment, and ask whether that one change (while everything else stays the same) improves the score. Formally: replace action a with action a&#x27; at history h, hold the rest of the plan fixed, and check if the new score is higher.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-05.html">Lecture 5: Nash Equilibrium</a><a class="chip" href="lectures/lecture-11.html">Lecture 11: One-Shot Deviation Principle and Bargaining</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#credible_time_paths">Credible Time Paths</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#backward_recursion">Backward Recursion</a></p>
@@ -158,8 +158,8 @@
 </article><article class="wide-card xref-card" id="xref-bargaining">
   <p class="eyebrow">Time, Threats, And Credibility</p>
   <h2><a href="concepts/bargaining.html">Bargaining</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is dividing gains from agreement when each side would like more of the surplus and can sometimes wait, reject, or walk away.</p>
-  <p><strong>Mathematical handle:</strong> The object is a bargaining game with offers, acceptance rules, disagreement payoffs, and sometimes discounting.</p>
+  <p><strong>Problem pressure:</strong> When a seller and buyer meet on a used car, both would prefer a deal to no deal. But the seller wants the price high, the buyer wants it low. Each can walk away. Each can wait. Each can reject offers. Bargaining asks: what price will actually stick, and how long will it take to agree?</p>
+  <p><strong>Mathematical handle:</strong> The bargaining game has several parts: who can make offers (and in what order), what happens if an offer is rejected (disagreement payoff or the next person&#x27;s chance to offer), how much delay costs each side (discounting—waiting this round gives you less value later), and sometimes private information (you do not know if the other side values the good at 5,000 or 20,000). The math model puts all these pieces together so you can solve which offers will be accepted.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-09.html">Lecture 9: Negotiation</a><a class="chip" href="lectures/lecture-11.html">Lecture 11: One-Shot Deviation Principle and Bargaining</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#credible_time_paths">Credible Time Paths</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#payoff_mapping">Payoff Mapping</a><a class="chip" href="primitives.html#discounting">Discounting</a></p>
@@ -167,8 +167,8 @@
 </article><article class="wide-card xref-card" id="xref-finitely_repeated_games">
   <p class="eyebrow">Repeated Interaction And Cooperation</p>
   <h2><a href="concepts/finitely_repeated_games.html">Finitely Repeated Games</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is whether repeating a game for a known number of rounds changes behavior relative to playing once.</p>
-  <p><strong>Mathematical handle:</strong> The object is a stage game repeated T times with a known final period.</p>
+  <p><strong>Problem pressure:</strong> Does playing something several times instead of once change how people act? Does knowing when it will end change the answer?</p>
+  <p><strong>Mathematical handle:</strong> A stage game (the single game people play) repeated T times, where T is known to everyone and is a fixed number.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-08.html">Lecture 8: Backward Induction</a><a class="chip" href="lectures/lecture-12.html">Lecture 12: Finitely Repeated Games</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#future_as_discipline">The Future As Discipline</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#backward_recursion">Backward Recursion</a></p>
@@ -176,8 +176,8 @@
 </article><article class="wide-card xref-card" id="xref-infinitely_repeated_games">
   <p class="eyebrow">Repeated Interaction And Cooperation</p>
   <h2><a href="concepts/infinitely_repeated_games.html">Infinitely Repeated Games</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is how cooperation can survive when each player is tempted to grab a short-run gain by cheating.</p>
-  <p><strong>Mathematical handle:</strong> The object is a repeated game with continuation payoffs and a discount factor that measures patience.</p>
+  <p><strong>Problem pressure:</strong> When you and someone else interact over and over, each of you wants to cheat today to get an instant reward — but you&#x27;re worried the other person will punish you tomorrow if you do.</p>
+  <p><strong>Mathematical handle:</strong> The object is a game played round after round, where your score today plus your discounted score tomorrow plus your discounted-twice score the day after is your total payoff. The discount factor delta measures how much you care about your future self.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-09.html">Lecture 9: Negotiation</a><a class="chip" href="lectures/lecture-13.html">Lecture 13: Infinitely Repeated Games</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#future_as_discipline">The Future As Discipline</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#discounting">Discounting</a></p>
@@ -185,8 +185,8 @@
 </article><article class="wide-card xref-card" id="xref-folk_theorem">
   <p class="eyebrow">Repeated Interaction And Cooperation</p>
   <h2><a href="concepts/folk_theorem.html">Folk Theorem</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is explaining why repeated interaction can support many outcomes, not just the one-shot equilibrium.</p>
-  <p><strong>Mathematical handle:</strong> The object is a set of feasible and individually rational payoffs that can be sustained by equilibrium strategies when the discount factor is high enough.</p>
+  <p><strong>Problem pressure:</strong> When two firms or countries play a game once, there is usually one outcome they will reach (the Nash equilibrium). But what happens when they meet repeatedly? Why would they stick to certain outcomes instead of always cheating? The folk theorem explains which outcomes people can keep stable through repeated interaction.</p>
+  <p><strong>Mathematical handle:</strong> The folk theorem describes a set — a collection of possible outcomes. Each outcome in the set has three properties: (1) it can be produced by actions in the game (it is feasible), (2) each player gets at least as much as they could guarantee if the other player tried to hurt them (individually rational), and (3) when the discount factor is high enough, equilibrium strategies can keep it stable through rewards and punishments.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-14.html">Lecture 14: Folk Theorem</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#future_as_discipline">The Future As Discipline</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#discounting">Discounting</a><a class="chip" href="primitives.html#mutual_consistency">Mutual Consistency</a></p>
@@ -194,8 +194,8 @@
 </article><article class="wide-card xref-card" id="xref-implicit_cartels">
   <p class="eyebrow">Repeated Interaction And Cooperation</p>
   <h2><a href="concepts/implicit_cartels.html">Implicit Cartels</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is how firms might keep prices high without signing an explicit cartel agreement.</p>
-  <p><strong>Mathematical handle:</strong> The object is a repeated oligopoly game comparing collusive profits, deviation profits, and future punishment profits.</p>
+  <p><strong>Problem pressure:</strong> Gas stations on the same street sometimes sell at nearly the same price, even though nobody wrote down &#x27;don&#x27;t cut price.&#x27; How does that happen? Do they need a secret phone call, or can each one figure out independently: if I cut, they will hurt me back?</p>
+  <p><strong>Mathematical handle:</strong> The object is a game where firms meet over many rounds. Each firm compares the profit it gets from quiet high prices with the profit it gets if it cheats once and then faces punishment (lower prices forever). The model calculates: is quiet cooperation worth more than cheating?</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-15.html">Lecture 15: Implicit Cartels</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#future_as_discipline">The Future As Discipline</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#discounting">Discounting</a><a class="chip" href="primitives.html#incentive_compatibility">Incentive Compatibility</a></p>
@@ -203,8 +203,8 @@
 </article><article class="wide-card xref-card" id="xref-imperfect_competition">
   <p class="eyebrow">Mechanisms, Auctions, And Markets</p>
   <h2><a href="concepts/imperfect_competition.html">Imperfect Competition</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is that many real markets sit between a street market with countless sellers and a single monopolist. A firm may be large enough that its price or quantity choice moves the market, but it still has rivals whose choices push back.</p>
-  <p><strong>Mathematical handle:</strong> The object is a profit function for each firm, such as price minus cost times quantity, together with a best-response rule that says which quantity or price is most profitable against rival behavior.</p>
+  <p><strong>Problem pressure:</strong> Many real markets fall between two extremes: a street market with hundreds of sellers who can&#x27;t move price alone, and a single monopolist who has no rivals. In between are markets with a handful of firms—each one big enough to matter, but each still facing pushback from the others. A coffee shop can raise its price and lose customers; an airline can add flights and depress fares. The question is: how do you figure out what each firm will do when all of them are playing this game at once?</p>
+  <p><strong>Mathematical handle:</strong> The object is a profit formula for each firm—typically something like (price minus cost) times the quantity sold, or a similar expression. Paired with that is a best-response rule—a statement of which quantity or price maximizes profit given what you expect a rival to do. The object is the interlock between payoff and choice.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-06.html">Lecture 6: Imperfect Competition</a><a class="chip" href="lectures/lecture-11.html">Lecture 11: One-Shot Deviation Principle and Bargaining</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#rules_for_bidding">Rules For Bidding</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#payoff_mapping">Payoff Mapping</a><a class="chip" href="primitives.html#best_response">Best Response</a></p>
@@ -212,8 +212,8 @@
 </article><article class="wide-card xref-card" id="xref-bayesian_games">
   <p class="eyebrow">Private Information And Beliefs</p>
   <h2><a href="concepts/bayesian_games.html">Bayesian Games</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is strategic choice when players do not know exactly who they are facing or what payoffs the other side has.</p>
-  <p><strong>Mathematical handle:</strong> The object is a game with types, priors over types, actions for each type, and payoff functions that may depend on type.</p>
+  <p><strong>Problem pressure:</strong> When you bid in an auction, you might know what an item is worth to you, but you do not know how much it is worth to your rivals. You must decide how much to bid, facing uncertainty about what they value. This is the core: strategic choice when you lack full information about who you are playing and what the other side cares about.</p>
+  <p><strong>Mathematical handle:</strong> The object has four pieces: a set of possible hidden types (for each player), a prior—a probability for each type, a set of actions each type can take, and payoff functions that depend on actions and types. All four must work together to define the game.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-02.html">Lecture 2: Representation of Games</a><a class="chip" href="lectures/lecture-16.html">Lecture 16: Bayesian Games</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#hidden_types">Hidden Types And Beliefs</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#belief">Belief</a></p>
@@ -221,8 +221,8 @@
 </article><article class="wide-card xref-card" id="xref-types_and_beliefs">
   <p class="eyebrow">Private Information And Beliefs</p>
   <h2><a href="concepts/types_and_beliefs.html">Types And Beliefs</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is keeping track of hidden facts and what players think those facts might be.</p>
-  <p><strong>Mathematical handle:</strong> The object is a type space plus probability beliefs over types or histories.</p>
+  <p><strong>Problem pressure:</strong> When someone knows something you do not, you have to guess what they know and what they will do based on that hidden information. The problem is tracking both the secret and everyone&#x27;s best guess about it in a way that explains behavior.</p>
+  <p><strong>Mathematical handle:</strong> The mathematical object is a type space—the set of all possible private facts—paired with a probability distribution over types or histories for each player.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-16.html">Lecture 16: Bayesian Games</a><a class="chip" href="lectures/lecture-21.html">Lecture 21: Perfect Bayesian Equilibrium</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#hidden_types">Hidden Types And Beliefs</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#belief">Belief</a></p>
@@ -230,8 +230,8 @@
 </article><article class="wide-card xref-card" id="xref-bayesian_nash_equilibrium">
   <p class="eyebrow">Private Information And Beliefs</p>
   <h2><a href="concepts/bayesian_nash_equilibrium.html">Bayesian Nash Equilibrium</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is predicting behavior when each possible type of a player may want a different action.</p>
-  <p><strong>Mathematical handle:</strong> The object is a strategy for every type of every player, where each type maximizes expected payoff given beliefs about other types and their strategies.</p>
+  <p><strong>Problem pressure:</strong> Imagine you are bidding for something, but sellers do not know if you will pay high or low, and you do not know if other bidders are rich or poor. Each person&#x27;s best move depends on what they guess about the hidden information around the table. The riddle: whose plan holds together when no one can see the full picture?</p>
+  <p><strong>Mathematical handle:</strong> The object is a full rulebook: for every type of every player, a move or distribution over moves that tells that type what to do. This rulebook is stable if every type, given its beliefs about what other players&#x27; types will do, and given its own payoff from the outcome, has no reason to deviate from its assigned move.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-02.html">Lecture 2: Representation of Games</a><a class="chip" href="lectures/lecture-17.html">Lecture 17: Bayesian Nash Equilibrium: Applications</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#hidden_types">Hidden Types And Beliefs</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#belief">Belief</a><a class="chip" href="primitives.html#mutual_consistency">Mutual Consistency</a></p>
@@ -239,8 +239,8 @@
 </article><article class="wide-card xref-card" id="xref-screening_and_adverse_selection">
   <p class="eyebrow">Private Information And Beliefs</p>
   <h2><a href="concepts/screening_and_adverse_selection.html">Screening And Adverse Selection</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is that a price or offer can change who shows up. A seller, insurer, or bargainer may set a rule thinking about an average customer, but the people who accept are not average; they are selected by the rule itself.</p>
-  <p><strong>Mathematical handle:</strong> The object is an expected payoff under a cutoff rule: a price or offer is accepted only by types for whom accepting is better than rejecting, so the distribution of accepted types changes with the price.</p>
+  <p><strong>Problem pressure:</strong> Imagine you are setting a price or a rule for a deal you are offering. You think through what the average person would do, and you set your offer accordingly. But here is the catch: once people hear your offer, the ones who accept it are not the average anymore—they are the ones for whom your offer looked like a good choice. That means the people who show up are a filtered group, not the typical one you planned for.</p>
+  <p><strong>Mathematical handle:</strong> The mathematical object is a payoff computed on a filtered group. You set a cutoff—a price, a contract clause, a rule—and only the types for whom accepting beats rejecting will take the offer. The types that accept form a new distribution, different from what you started with. Your payoff comes from serving only those accepted types, not the full population.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-16.html">Lecture 16: Bayesian Games</a><a class="chip" href="lectures/lecture-23.html">Lecture 23: Bargaining with Incomplete Information</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#hidden_types">Hidden Types And Beliefs</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#belief">Belief</a><a class="chip" href="primitives.html#incentive_compatibility">Incentive Compatibility</a></p>
@@ -248,8 +248,8 @@
 </article><article class="wide-card xref-card" id="xref-auctions">
   <p class="eyebrow">Mechanisms, Auctions, And Markets</p>
   <h2><a href="concepts/auctions.html">Auctions</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is allocating an object when people know their own values but the seller and rival bidders may not.</p>
-  <p><strong>Mathematical handle:</strong> The object is an auction mechanism: bidder values, bid spaces, allocation rules, and payment rules.</p>
+  <p><strong>Problem pressure:</strong> Suppose you want to sell your bicycle. Buyers know their own willingness to pay, but you do not. Also, each buyer does not know if someone else values the bike more. How do you run the sale so buyers bid honestly and you get a fair price?</p>
+  <p><strong>Mathematical handle:</strong> An auction is described by four things: the values each bidder privately holds, the range of bids each bidder can make, the rule that decides who wins for each set of bids, and the rule that decides how much the winner pays.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-01.html">Lecture 1: Introduction to Individual Decision-Making</a><a class="chip" href="lectures/lecture-18.html">Lecture 18: Auctions</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#rules_for_bidding">Rules For Bidding</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#incentive_compatibility">Incentive Compatibility</a><a class="chip" href="primitives.html#belief">Belief</a></p>
@@ -257,8 +257,8 @@
 </article><article class="wide-card xref-card" id="xref-revenue_equivalence">
   <p class="eyebrow">Mechanisms, Auctions, And Markets</p>
   <h2><a href="concepts/revenue_equivalence.html">Revenue Equivalence</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is comparing auction formats that look different: first-price, second-price, English, and others may create different bidding behavior.</p>
-  <p><strong>Mathematical handle:</strong> The object is a theorem linking allocation rules and expected payments under assumptions such as risk neutrality, independent private values, and symmetric bidders.</p>
+  <p><strong>Problem pressure:</strong> You need to sell something. You could ask bidders to write down their best offer and pay what they bid (first-price). Or you could ask them to write down their best offer but then pay what the second-highest bidder bid (second-price). These rules look completely opposite. Do they produce different results, or can they actually be equivalent?</p>
+  <p><strong>Mathematical handle:</strong> The object is a theorem that links the way objects are allocated to the payments bidders expect to make. It depends on three core assumptions: bidders are risk-neutral (they care only about the size of their payoff, not how uncertain it is), each bidder knows their own value privately and nobody else learns it, and all bidders are treated symmetrically by the auction rules. Under these assumptions, expected revenue can be the same across different auction formats.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-18.html">Lecture 18: Auctions</a><a class="chip" href="lectures/lecture-19.html">Lecture 19: Revenue Equivalence</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#rules_for_bidding">Rules For Bidding</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#incentive_compatibility">Incentive Compatibility</a></p>
@@ -266,8 +266,8 @@
 </article><article class="wide-card xref-card" id="xref-ad_auctions">
   <p class="eyebrow">Mechanisms, Auctions, And Markets</p>
   <h2><a href="concepts/ad_auctions.html">Ad Auctions</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is selling attention slots, not a single physical object. Position affects clicks, quality affects usefulness, and bids interact with platform rules.</p>
-  <p><strong>Mathematical handle:</strong> The object is a sponsored-search mechanism combining bids, click-through rates, quality scores, allocation order, and per-click payments.</p>
+  <p><strong>Problem pressure:</strong> You are running a website and have a row of ad spots to fill. Each advertiser wants their ad seen, but you can only show a few. You do not know which advertiser&#x27;s ad will actually get clicks—they know their own business better than you do. You need a fair way to pick winners, collect payment, and make sure advertisers tell you the truth about what their ads are worth to them.</p>
+  <p><strong>Mathematical handle:</strong> The object you work with is a mechanism that takes bids from advertisers, estimates how often each ad gets clicked, assigns each ad to a slot in the ranking, and calculates a price each advertiser pays per click.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-17.html">Lecture 17: Bayesian Nash Equilibrium: Applications</a><a class="chip" href="lectures/lecture-20.html">Lecture 20: Ad Auctions</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#rules_for_bidding">Rules For Bidding</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#incentive_compatibility">Incentive Compatibility</a><a class="chip" href="primitives.html#payoff_mapping">Payoff Mapping</a></p>
@@ -275,8 +275,8 @@
 </article><article class="wide-card xref-card" id="xref-perfect_bayesian_equilibrium">
   <p class="eyebrow">Private Information And Beliefs</p>
   <h2><a href="concepts/perfect_bayesian_equilibrium.html">Perfect Bayesian Equilibrium</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is dynamic play with hidden information: after observing actions, players must update beliefs and continue choosing rationally.</p>
-  <p><strong>Mathematical handle:</strong> The object is a strategy profile plus a belief system, with sequential rationality and belief consistency where Bayes&#x27; rule applies.</p>
+  <p><strong>Problem pressure:</strong> When a game happens step by step and players have secret information: after you see someone&#x27;s move, you must update your guess about what they know, then decide your own next move based on that updated guess. The puzzle is to find a state where everyone&#x27;s guesses make sense with what they&#x27;ve seen, and everyone&#x27;s actions are rational given their guesses.</p>
+  <p><strong>Mathematical handle:</strong> A settled state is a pair: a strategy for each player (a complete plan for all moves) plus a belief system (the guesses each player holds after each possible sequence of events they might see). This pair must satisfy two conditions: given their beliefs, each player&#x27;s moves are optimal—the best they can do; wherever the game path they actually follow gives enough history, their beliefs must update correctly by Bayes&#x27; rule.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-21.html">Lecture 21: Perfect Bayesian Equilibrium</a><a class="chip" href="lectures/lecture-22.html">Lecture 22: Signaling</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#hidden_types">Hidden Types And Beliefs</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#belief">Belief</a><a class="chip" href="primitives.html#backward_recursion">Backward Recursion</a></p>
@@ -284,8 +284,8 @@
 </article><article class="wide-card xref-card" id="xref-signaling">
   <p class="eyebrow">Communication And Knowledge</p>
   <h2><a href="concepts/signaling.html">Signaling</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is how someone with private information can convince others of it through an observable action.</p>
-  <p><strong>Mathematical handle:</strong> The object is a sender-receiver game with types, signals, receiver beliefs, and receiver actions.</p>
+  <p><strong>Problem pressure:</strong> Imagine you&#x27;re good at your job but a stranger doesn&#x27;t know it. How do you make them believe you? You can&#x27;t just say so — they&#x27;d expect a bad worker to say the same thing. You need to do something that a bad worker wouldn&#x27;t want to copy.</p>
+  <p><strong>Mathematical handle:</strong> The model is a game between a sender and a receiver. The sender has private information about their own type. The sender chooses an action. The receiver sees the action but not the type. The receiver forms a new belief about what type the sender is. The receiver then picks a response based on that new belief. The sender&#x27;s payoff depends on both their type and the receiver&#x27;s response.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-22.html">Lecture 22: Signaling</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#messages_and_shared_awareness">Messages And Shared Awareness</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#belief">Belief</a><a class="chip" href="primitives.html#incentive_compatibility">Incentive Compatibility</a></p>
@@ -293,8 +293,8 @@
 </article><article class="wide-card xref-card" id="xref-cheap_talk">
   <p class="eyebrow">Communication And Knowledge</p>
   <h2><a href="concepts/cheap_talk.html">Cheap Talk</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is whether costless messages can influence behavior when the speaker may want to mislead.</p>
-  <p><strong>Mathematical handle:</strong> The object is a sender-receiver game where messages do not directly change payoffs but can change beliefs and actions.</p>
+  <p><strong>Problem pressure:</strong> Can a message that costs nothing to send and cannot be enforced actually change what someone believes or does, especially when the speaker might benefit from lying?</p>
+  <p><strong>Mathematical handle:</strong> A sender-receiver game in which messages change what the receiver believes and how they act, but messages do not directly shift anyone&#x27;s score. The sender knows hidden information (which state is true), chooses a message, the receiver updates their belief about which state is true, and then the receiver chooses an action. The payoff depends on the true state and the action chosen, not on the message itself.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-24.html">Lecture 24: Cheap Talk</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#messages_and_shared_awareness">Messages And Shared Awareness</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#belief">Belief</a><a class="chip" href="primitives.html#incentive_compatibility">Incentive Compatibility</a></p>
@@ -302,8 +302,8 @@
 </article><article class="wide-card xref-card" id="xref-common_knowledge">
   <p class="eyebrow">Communication And Knowledge</p>
   <h2><a href="concepts/common_knowledge.html">Common Knowledge</a></h2>
-  <p><strong>Problem pressure:</strong> The problem is that coordinated action may require more than everyone privately knowing a fact. People may also need to know that others know it, and know that others know that others know it.</p>
-  <p><strong>Mathematical handle:</strong> The object is an infinite hierarchy: the event is known, everyone knows it is known, everyone knows everyone knows it is known, and so on.</p>
+  <p><strong>Problem pressure:</strong> Coordinating action sometimes needs more than just each person knowing a fact alone. People also need to know that others know it, and know that others know that others know it. Without that chain, people hesitate even though each one has the information.</p>
+  <p><strong>Mathematical handle:</strong> An infinite hierarchy: the event is known; then everyone knows the event is known; then everyone knows that everyone knows the event is known; and this nesting continues with no end.</p>
   <h3>Lectures</h3><p class="chips"><a class="chip" href="lectures/lecture-04.html">Lecture 4: Rationalizability</a><a class="chip" href="lectures/lecture-25.html">Lecture 25: Common Knowledge</a></p>
   <h3>Subthemes</h3><p class="chips"><a class="chip" href="themes.html#messages_and_shared_awareness">Messages And Shared Awareness</a></p>
   <h3>Primitives</h3><p class="chips"><a class="chip" href="primitives.html#knowledge_recursion">Knowledge Recursion</a></p>

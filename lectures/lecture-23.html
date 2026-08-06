@@ -28,7 +28,7 @@
   <p>The lecture revisits bargaining after adding hidden values, costs, or quality. Complete information predicted immediate agreement when gains from trade exist; hidden information can create screening, delay, disagreement, or adverse selection.</p>
   <h2>Where The Math Enters</h2>
   <p>The math enters through types, participation constraints, posted prices, posterior beliefs, and selected pools of participants. The payoff calculation must account for who accepts, not only what price is posted.</p>
-  <p>The mathematical object has to exist because ordinary average reasoning lies in selected populations. A cutoff, participation condition, or posterior distribution is needed to say who accepts, who rejects, and what the uninformed side should believe after observing that choice.</p>
+  <p>Ordinary reasoning with an average lie in filtered populations. If you set a price and only certain types accept, the people who say yes are not representative of everyone you offered to. You need a math object—a cutoff rule, a participation condition, or a posterior belief—to track who joins after the rule is made known. That object has to capture the idea that some types prefer in and some prefer out, and the payoff depends only on the ones who accept.</p>
   <h2>Equation Walkthroughs</h2>
   <p class="chips"><a class="chip derivation-link" href="../primitives.html#bayes_rule">Bayes Rule</a><a class="chip derivation-link" href="../primitives.html#expected_utility">Expected Utility</a><a class="chip derivation-link" href="../primitives.html#auction_expected_payment">Auction Expected Payment</a></p>
   <h2>Worked Mini-Example</h2>
@@ -36,7 +36,7 @@
   <h2>Mistakes To Avoid</h2>
   <p>The mistake is to reason from the original average population. Screening changes the composition of participants, so the relevant average after the offer may be very different.</p>
   <p>The tempting shortcut is to calculate from the average participant before the offer. That fails because an offer changes who accepts, so the relevant group after selection can be much riskier, cheaper, or more costly than the original population.</p>
-  <p>Students often get stuck by treating hidden information as just another probability. The lecture point is sharper: the action or price changes which hidden types remain in the game, so the probability distribution after participation is not the original distribution.</p>
+  <p>Students often slip into thinking of hidden information as just another source of randomness or uncertainty. But the tricky part is that the action—the price or offer—changes which types remain. The probability distribution after the action is not the same as before. Hidden information by itself is just hard to predict. But screening and adverse selection say: the prediction problem gets worse because your action filters out some types and leaves others.</p>
   <h2>Durable Lesson</h2>
   <p>The durable lesson is that private information changes both prices and populations. Bargaining and screening are not only about splitting surplus; they also determine which hidden types enter the transaction.</p>
   <h2>Reader Work</h2>
@@ -46,16 +46,16 @@
   <h2>How This Lecture Hands Off</h2>
   <p>This hands off to cheap talk: after costly or payoff-relevant signals, the course asks when pure messages can transmit information without direct cost or binding force.</p>
   <h2>How To Recognize This Later</h2>
-  <p>Look for models where an offer, price, contract, or test makes different hidden types sort themselves. If changing the rule changes the pool of participants, the screening/adverse-selection primitive is active.</p>
+  <p>Look for situations where an offer, price, contract term, or test makes people sort themselves based on what they know about themselves. If changing the offer changes who accepts it, and if the people who accept have different hidden types from the people who reject, then screening and adverse selection are operating. Watch for cases where a rule meant to apply to an average instead pulls in a selected population.</p>
   <p class="chips"><a class="chip" href="../concepts/screening_and_adverse_selection.html">Screening And Adverse Selection</a></p>
 </section>
 <section>
   <h2>Concepts In This Lecture</h2>
   <article class="wide-card">
   <h3>Screening And Adverse Selection</h3>
-  <p><strong>Problem:</strong> The problem is that a price or offer can change who shows up. A seller, insurer, or bargainer may set a rule thinking about an average customer, but the people who accept are not average; they are selected by the rule itself.</p>
-  <p><strong>Mathematical handle:</strong> The object is an expected payoff under a cutoff rule: a price or offer is accepted only by types for whom accepting is better than rejecting, so the distribution of accepted types changes with the price.</p>
-  <p><strong>What breaks without it:</strong> Without this concept, the course would predict trade whenever buyer value exceeds seller cost. It would miss the reason some trades fail: the terms that attract one type may drive away another or reveal information that changes future bargaining.</p>
+  <p><strong>Problem:</strong> Imagine you are setting a price or a rule for a deal you are offering. You think through what the average person would do, and you set your offer accordingly. But here is the catch: once people hear your offer, the ones who accept it are not the average anymore—they are the ones for whom your offer looked like a good choice. That means the people who show up are a filtered group, not the typical one you planned for.</p>
+  <p><strong>Mathematical handle:</strong> The mathematical object is a payoff computed on a filtered group. You set a cutoff—a price, a contract clause, a rule—and only the types for whom accepting beats rejecting will take the offer. The types that accept form a new distribution, different from what you started with. Your payoff comes from serving only those accepted types, not the full population.</p>
+  <p><strong>What breaks without it:</strong> Without this concept, the course would predict that whenever a buyer wants something more than the seller wants to keep it, they would simply agree on a price and trade. That is true when both sides know all the facts. But the concept shows why it is false when information is hidden: an offer attracts certain types and repels others, and the change in who accepts can destroy the gains from trade. The course would miss entire categories of real behavior—refusals to insure certain groups, haggling that breaks down, quality spirals in used-goods markets.</p>
   <p><a href="../concepts/screening_and_adverse_selection.html">Open concept page</a></p>
 </article>
 </section>

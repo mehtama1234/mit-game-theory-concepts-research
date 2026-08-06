@@ -14,298 +14,298 @@
   <main><section class="page-head"><h1>Concept Atlas</h1><p>Each page explains the strategic pressure, the mathematical object, what breaks without it, and transcript evidence.</p></section><section class="grid"><article class="concept-card" id="preferences">
   <p class="eyebrow">choice and payoff</p>
   <h3><a href="concepts/preferences.html">Preferences</a></h3>
-  <p class="definition">A way to say which outcomes a person ranks above others.</p>
+  <p class="definition">A rule that lets you write down which outcomes you like more than others — a scoreboard for how much you value each possible result.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is that before we talk about strategy, we need a way to say what one person is trying to get. A person may like one outcome more than another even when dollars, risk, effort, and timing are mixed together.</dd>
-    <dt>Math</dt><dd>A preference relation ranks outcomes, often represented by a utility function u(x). The useful relation is `x preferred to y means u(x) &gt; u(y).`. In plain language: x and y are possible outcomes; u assigns each outcome a number; the larger number records the option the person ranks higher.</dd>
+    <dt>Problem</dt><dd>Before anyone starts thinking strategically, we need a way to ask: which outcome does this person actually want? The catch is that outcomes are tangled up. One choice gives you more money but more risk. Another gives you less money but more free time. Before you can ask whether someone makes sense or does best for themselves, you need a way to say how they rank all these mixed-up options.</dd>
+    <dt>Math</dt><dd>A preference is a comparison rule over outcomes. You list each outcome and mark which ones rank above others. A utility function u(x) is a shortcut: instead of writing out all the rankings, you assign each outcome a number, and higher numbers mean ranks you like more. If outcome x gets a higher number than y, that means you prefer x to y — the numbers are just a way to write down the ranking.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-preferences-01">ev-preferences-01</a>: Lecture 1: Introduction to Individual Decision-Making</li><li><a href="evidence.html#ev-preferences-02">ev-preferences-02</a>: Lecture 2: Representation of Games</li></ul>
 </article><article class="concept-card" id="utility">
   <p class="eyebrow">choice and payoff</p>
   <h3><a href="concepts/utility.html">Utility</a></h3>
-  <p class="definition">A numerical representation of what someone is trying to get.</p>
+  <p class="definition">A number attached to each outcome that records how much someone wants it.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is that rankings are awkward to compute with. A payoff table, expected value, or equilibrium check needs numbers, not only verbal statements like this outcome is preferred.</dd>
-    <dt>Math</dt><dd>A preference relation ranks outcomes, often represented by a utility function u(x). The useful relation is `x preferred to y means u(x) &gt; u(y).`. In plain language: x and y are possible outcomes; u assigns each outcome a number; the larger number records the option the person ranks higher.</dd>
+    <dt>Problem</dt><dd>When several people each chase what is best for them, you need to know whether one person will prefer outcome A or outcome B. But you cannot write down a math formula using the words &#x27;I like this more&#x27; — math works with numbers. So you have to turn &#x27;A is better than B&#x27; into numbers you can actually use in a calculation.</dd>
+    <dt>Math</dt><dd>A preference is a ranking — &#x27;I like pizza more than salad.&#x27; A utility function is a way to turn that ranking into numbers so math can handle it. If u is a utility function, then u(pizza) = 10 and u(salad) = 5 means &#x27;pizza ranks higher.&#x27; The only rule is: a higher number must mean a higher ranking. The actual numbers are up to you — you could use 100 and 20 instead, and it works the same way for ordinary choice.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-utility-01">ev-utility-01</a>: Lecture 1: Introduction to Individual Decision-Making</li><li><a href="evidence.html#ev-utility-02">ev-utility-02</a>: Lecture 2: Representation of Games</li></ul>
 </article><article class="concept-card" id="expected_utility">
   <p class="eyebrow">choice and payoff</p>
   <h3><a href="concepts/expected_utility.html">Expected Utility</a></h3>
-  <p class="definition">Averaging possible payoffs by how likely they are.</p>
+  <p class="definition">When you face an uncertain choice, expected utility is the score you calculate by adding up (outcome score × its probability) for every possible result.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is choosing when the outcome is uncertain: a bid might win or lose, a risky action might pay off or fail, and a type may be one of several possibilities.</dd>
-    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+    <dt>Problem</dt><dd>You often must decide before you know what will happen: will a bid win or lose? Will a risky investment pay off or lose money? Will someone turn out to be honest or dishonest? You need a way to compare choices when the future is uncertain.</dd>
+    <dt>Math</dt><dd>Your belief about the unknown is shown as a probability distribution—a list of possible states or types with a number (the probability) for each. The calculation is E[u(a, θ)] = Σ_θ p(θ) u(a, θ). In plain terms: θ is the unknown state or type; p(θ) is how likely you think it is; multiply each payoff by its probability and add them all up.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-expected_utility-01">ev-expected_utility-01</a>: Lecture 1: Introduction to Individual Decision-Making</li><li><a href="evidence.html#ev-expected_utility-02">ev-expected_utility-02</a>: Lecture 16: Bayesian Games</li></ul>
 </article><article class="concept-card" id="strategic_form_games">
   <p class="eyebrow">strategic dependence</p>
   <h3><a href="concepts/strategic_form_games.html">Strategic Form Games</a></h3>
-  <p class="definition">A compact table of players, actions, and payoffs chosen at the same time.</p>
+  <p class="definition">A table where you write down all the players, all the moves each one can make, and the score each player gets from every possible combination of moves.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is representing a situation where everyone chooses without first seeing the others&#x27; choices, yet everyone&#x27;s payoff depends on the whole combination.</dd>
-    <dt>Math</dt><dd>A payoff function u_i(a_i, a_-i) maps everyone&#x27;s actions to player i&#x27;s payoff. The useful relation is `u_i(a_i, a_-i).`. In plain language: i is one player; a_i is that player&#x27;s action; a_-i means everyone else&#x27;s actions; u_i is the payoff assigned to the whole action profile.</dd>
+    <dt>Problem</dt><dd>Imagine you and your friend each need to choose something at the exact same moment, without knowing what the other chose. But once you both decide, what you get depends on both choices together. How do you show what&#x27;s really going on? You need a table that captures the fact that nobody gets to see the other&#x27;s choice before picking their own.</dd>
+    <dt>Math</dt><dd>A payoff function u_i(a_i, a_-i) assigns a score to player i. Here is what each symbol means: i is one player; a_i is that player&#x27;s action; a_-i means all the other players&#x27; actions taken together; u_i is the number (payoff) that player i receives. The full action profile is (a_i, a_-i) — everyone&#x27;s action at once — and that determines what score player i walks away with.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-strategic_form_games-01">ev-strategic_form_games-01</a>: Lecture 2: Representation of Games</li><li><a href="evidence.html#ev-strategic_form_games-02">ev-strategic_form_games-02</a>: Lecture 1: Introduction to Individual Decision-Making</li></ul>
 </article><article class="concept-card" id="extensive_form_games">
   <p class="eyebrow">time and credibility</p>
   <h3><a href="concepts/extensive_form_games.html">Extensive Form Games</a></h3>
-  <p class="definition">A game drawn as a tree so timing and information can be represented.</p>
+  <p class="definition">A game drawn as a tree diagram instead of a table, because the timing of moves and what each player knows at each moment matter.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is that some games unfold over time. A later choice can depend on an earlier choice, and some players may know more about the history than others.</dd>
-    <dt>Math</dt><dd>Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</dd>
+    <dt>Problem</dt><dd>In real conflicts, people move one at a time, not all at once. A choice made later can depend on what happened earlier. And sometimes you know more than the other person — or they know more than you. A flat table misses all of that.</dd>
+    <dt>Math</dt><dd>Backward induction starts at the end. At the final decision point, a player chooses the branch that gives the best score. Then move back one step: knowing what the later player will do, what should the earlier player choose? Keep going backward to the start. The formula is `V(node) = max_action V(next node)`, which means: the value of where you stand is the highest value you can reach by picking one of your moves.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-extensive_form_games-01">ev-extensive_form_games-01</a>: Lecture 2: Representation of Games</li><li><a href="evidence.html#ev-extensive_form_games-02">ev-extensive_form_games-02</a>: Lecture 8: Backward Induction</li></ul>
 </article><article class="concept-card" id="dominance">
   <p class="eyebrow">strategic dependence</p>
   <h3><a href="concepts/dominance.html">Dominance</a></h3>
-  <p class="definition">A way to rule out choices that are never better than another choice.</p>
+  <p class="definition">A test to cross off moves that are worse than some other move in every possible situation your opponent faces you with.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is that some choices are plainly bad no matter what the other side does. Keeping them in the analysis can distract from the strategic choices that actually need thought.</dd>
-    <dt>Math</dt><dd>Dominance compares one strategy against another across possible opponent choices. The useful relation is `s dominates t if u_i(s, a_-i) &gt;= u_i(t, a_-i) for all a_-i, with strict inequality somewhere.`. In plain language: The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.</dd>
+    <dt>Problem</dt><dd>In any game, some moves are just worse. They lose to another move no matter what the other person tries. But if you list all possible moves, the bad ones can hide the real choices that matter. Dominance lets you cross off the hopeless ones first.</dd>
+    <dt>Math</dt><dd>The math compares two moves by looking at what each one gives you against every possible opponent move. Write it as: move A dominates move B if your score from A is always at least as high as your score from B, and sometimes strictly higher. The inequality holds for every opponent choice; that is what makes it dominance.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-dominance-01">ev-dominance-01</a>: Lecture 3: Dominance</li><li><a href="evidence.html#ev-dominance-02">ev-dominance-02</a>: Lecture 4: Rationalizability</li></ul>
 </article><article class="concept-card" id="iterated_deletion">
   <p class="eyebrow">strategic dependence</p>
   <h3><a href="concepts/iterated_deletion.html">Iterated Deletion</a></h3>
-  <p class="definition">Repeatedly removing bad strategies and seeing what remains.</p>
+  <p class="definition">A process where you remove strategies that are clearly bad, then look at the smaller game left behind and remove new strategies that are now bad in this smaller game, and keep repeating until nothing more can be removed.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is that once obviously bad moves are removed, new moves may become obviously bad in the smaller game.</dd>
-    <dt>Math</dt><dd>Dominance compares one strategy against another across possible opponent choices. The useful relation is `s dominates t if u_i(s, a_-i) &gt;= u_i(t, a_-i) for all a_-i, with strict inequality somewhere.`. In plain language: The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.</dd>
+    <dt>Problem</dt><dd>When you remove one bad move, the game changes—what was once a decent move might now be a bad move in the smaller game. This keeps happening in waves: you delete, the game shrinks, new bad moves appear, you delete again.</dd>
+    <dt>Math</dt><dd>Dominance is comparing two strategies by checking whether one is always at least as good as the other across all the moves the other players might make. The technical check is: strategy s dominates strategy t if the score from s is always greater than or equal to the score from t, no matter what the other players choose, and sometimes strictly greater. In plain terms: one strategy beats another in every single scenario the other players create.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-iterated_deletion-01">ev-iterated_deletion-01</a>: Lecture 4: Rationalizability</li><li><a href="evidence.html#ev-iterated_deletion-02">ev-iterated_deletion-02</a>: Lecture 4: Rationalizability</li></ul>
 </article><article class="concept-card" id="rationalizability">
   <p class="eyebrow">strategic dependence</p>
   <h3><a href="concepts/rationalizability.html">Rationalizability</a></h3>
-  <p class="definition">A strategy is plausible if it can be optimal for some reasonable belief about others.</p>
+  <p class="definition">A strategy is defensible if there exists some reasonable belief about the other players that would make this strategy give you the highest possible payoff — the score or outcome you care about. Your move doesn&#x27;t have to be what experts predict. It just has to be what some rational expectation could justify.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is deciding which strategies can be defended as sensible without requiring everyone to land on one exact equilibrium.</dd>
-    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+    <dt>Problem</dt><dd>Deciding which strategies make sense to consider without assuming everyone has reached one locked-in agreement about what will happen. You need a test that catches strategies people might reasonably choose before you check whether all their choices can fit together perfectly.</dd>
+    <dt>Math</dt><dd>A belief is a probability assignment—a guess about how likely each possible situation or type is. The key formula is E[u(a, theta)] = sum_theta p(theta) u(a, theta). In plain words: &#x27;a&#x27; is your action; &#x27;theta&#x27; is the unknown situation; &#x27;p(theta)&#x27; is your guess about how likely that situation is; &#x27;u(a, theta)&#x27; is the score you get from action &#x27;a&#x27; when situation &#x27;theta&#x27; occurs. The expected value adds up: multiply each payoff by its probability, then sum. This tells you the average score you expect.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-rationalizability-01">ev-rationalizability-01</a>: Lecture 4: Rationalizability</li><li><a href="evidence.html#ev-rationalizability-02">ev-rationalizability-02</a>: Lecture 1: Introduction to Individual Decision-Making</li></ul>
 </article><article class="concept-card" id="best_response">
   <p class="eyebrow">equilibrium reasoning</p>
   <h3><a href="concepts/best_response.html">Best Response</a></h3>
-  <p class="definition">The move that works best against a specified belief or opponent action.</p>
+  <p class="definition">Your best move when you know (or guess) what someone else will do. It is the action that gives you the highest score given their move.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is that a strategy is not good in the abstract. It is good against a particular opponent action or belief.</dd>
-    <dt>Math</dt><dd>BR_i(a_-i) is the set of actions for player i that maximize u_i given others&#x27; actions. The useful relation is `BR_i(a_-i) = argmax_a u_i(a, a_-i).`. In plain language: argmax means choose the action a that makes player i&#x27;s payoff as large as possible when others choose a_-i.</dd>
+    <dt>Problem</dt><dd>When you are trying to decide what to do, you cannot just pick any move and say it is &#x27;good.&#x27; A move that works beautifully against one person&#x27;s choice can fail miserably against another. The same action is good or bad depending on what the other person does.</dd>
+    <dt>Math</dt><dd>The best-response set for player i, written BR_i(a_-i), is the collection of actions that maximize player i&#x27;s payoff when the other players choose a_-i. In symbols: BR_i(a_-i) = argmax_a u_i(a, a_-i). Here argmax is a command that means: look at all your available actions, calculate your payoff for each one, and pick the action (or actions) with the highest payoff.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-best_response-01">ev-best_response-01</a>: Lecture 4: Rationalizability</li><li><a href="evidence.html#ev-best_response-02">ev-best_response-02</a>: Lecture 5: Nash Equilibrium</li></ul>
 </article><article class="concept-card" id="nash_equilibrium">
   <p class="eyebrow">equilibrium reasoning</p>
   <h3><a href="concepts/nash_equilibrium.html">Nash Equilibrium</a></h3>
-  <p class="definition">A profile of strategies where no player wants to change alone.</p>
+  <p class="definition">A situation where each person&#x27;s chosen move is the best they can do given what everyone else is doing, so nobody has a reason to switch alone.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is making a prediction that does not immediately fall apart when each participant asks, given what the others are doing, should I switch?</dd>
-    <dt>Math</dt><dd>Equilibrium requires each strategy to be a best response to the others. The useful relation is `a_i in BR_i(a_-i) for every player i.`. In plain language: For each player i, their chosen action a_i must belong to the set of best responses against the other players&#x27; actions.</dd>
+    <dt>Problem</dt><dd>You are trying to predict what a group of people will do when they are all trying to outthink each other. The problem is: your prediction only works if, after each person sees what you said the others would do, that person does not regret their own choice and decide to change.</dd>
+    <dt>Math</dt><dd>The formal condition is: for every player i, their action a_i must be in the set BR_i(a_-i), meaning their action is among the best responses they could pick given what everyone else is doing. In other words, each player&#x27;s move is the highest-scoring option available to them, given the others&#x27; moves.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-nash_equilibrium-01">ev-nash_equilibrium-01</a>: Lecture 5: Nash Equilibrium</li><li><a href="evidence.html#ev-nash_equilibrium-02">ev-nash_equilibrium-02</a>: Lecture 10: Subgame-Perfect Nash Equilibrium</li></ul>
 </article><article class="concept-card" id="mixed_strategies">
   <p class="eyebrow">equilibrium reasoning</p>
   <h3><a href="concepts/mixed_strategies.html">Mixed Strategies</a></h3>
-  <p class="definition">Choosing randomly on purpose so opponents cannot exploit a predictable move.</p>
+  <p class="definition">You deliberately flip a coin or roll dice to decide your move, so the other player cannot predict what you will do and use that prediction against you.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is what to predict when choosing one pure action would make a player exploitable or when no pure-action equilibrium exists.</dd>
-    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+    <dt>Problem</dt><dd>You face a jam: if you always pick one move, the other player learns this and beats you every time. But there might not be any single move you can stick to that is safe. So you need a way to stay unpredictable while still being smart about it.</dd>
+    <dt>Math</dt><dd>When you do not know what the other player will do, you assign a probability—a chance—to each possibility. Then you add up your score across all those possibilities, weighted by how likely each is. In symbols: your expected payoff = (probability of outcome A) times (score from A) plus (probability of outcome B) times (score from B), and so on. This way you can compare your options by their average payoff, not just their best or worst case.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-mixed_strategies-01">ev-mixed_strategies-01</a>: Lecture 5: Nash Equilibrium</li><li><a href="evidence.html#ev-mixed_strategies-02">ev-mixed_strategies-02</a>: Lecture 7: Zero-Sum Games</li></ul>
 </article><article class="concept-card" id="zero_sum_games">
   <p class="eyebrow">equilibrium reasoning</p>
   <h3><a href="concepts/zero_sum_games.html">Zero-Sum Games</a></h3>
-  <p class="definition">A setting where one player&#x27;s gain is exactly the other&#x27;s loss.</p>
+  <p class="definition">A situation where what one player gains, the other loses exactly. Every dollar you win is a dollar your opponent loses. The total points available never change—who gets them does.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is pure conflict: one side&#x27;s gain is the other side&#x27;s loss, so cooperation or joint surplus is not the issue.</dd>
-    <dt>Math</dt><dd>Equilibrium requires each strategy to be a best response to the others. The useful relation is `a_i in BR_i(a_-i) for every player i.`. In plain language: For each player i, their chosen action a_i must belong to the set of best responses against the other players&#x27; actions.</dd>
+    <dt>Problem</dt><dd>Pure conflict: one side&#x27;s success means the other side&#x27;s failure. Your win is my loss. There is no possibility to both do better together because the score is fixed and divides between us.</dd>
+    <dt>Math</dt><dd>In a settled outcome, each player&#x27;s chosen move must be their best move given what everyone else is choosing. Formally: for every player, their move belongs to the set of moves that would give them the highest score against the others&#x27; choices. When you choose your move, you assume the others will play their settled moves, and you would not want to switch.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-zero_sum_games-01">ev-zero_sum_games-01</a>: Lecture 7: Zero-Sum Games</li><li><a href="evidence.html#ev-zero_sum_games-02">ev-zero_sum_games-02</a>: Lecture 5: Nash Equilibrium</li></ul>
 </article><article class="concept-card" id="minimax">
   <p class="eyebrow">equilibrium reasoning</p>
   <h3><a href="concepts/minimax.html">Minimax</a></h3>
-  <p class="definition">Choosing a strategy by protecting yourself against the worst response.</p>
+  <p class="definition">Picking a move that protects you against the worst thing the other side can do to you.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is choosing under hostile response: what can I guarantee if the other side tries to hurt me as much as possible?</dd>
-    <dt>Math</dt><dd>BR_i(a_-i) is the set of actions for player i that maximize u_i given others&#x27; actions. The useful relation is `BR_i(a_-i) = argmax_a u_i(a, a_-i).`. In plain language: argmax means choose the action a that makes player i&#x27;s payoff as large as possible when others choose a_-i.</dd>
+    <dt>Problem</dt><dd>You are choosing when someone else wants to hurt you. The question: what is the best outcome I can guarantee, no matter how hard the other person tries to damage me?</dd>
+    <dt>Math</dt><dd>BR_i(a_-i) is the set of moves for player i that give player i the highest score when others pick a_-i. Written as: BR_i(a_-i) = argmax_a u_i(a, a_-i). In plain words: argmax means select the move that makes player i&#x27;s score as high as possible given what others are doing.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-minimax-01">ev-minimax-01</a>: Lecture 7: Zero-Sum Games</li><li><a href="evidence.html#ev-minimax-02">ev-minimax-02</a>: Lecture 7: Zero-Sum Games</li></ul>
 </article><article class="concept-card" id="backward_induction">
   <p class="eyebrow">time and credibility</p>
   <h3><a href="concepts/backward_induction.html">Backward Induction</a></h3>
-  <p class="definition">Solving a sequential game by starting at the end.</p>
+  <p class="definition">A method for solving games where players move one after another: you start at the very last decision and work your way backward to the start, solving what each player will choose at each step.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is that early choices in a tree depend on what later players will actually do, not what they announce they might do.</dd>
-    <dt>Math</dt><dd>Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</dd>
+    <dt>Problem</dt><dd>When one person moves today and another person moves tomorrow, today&#x27;s person is trying to guess what tomorrow&#x27;s person will do—but people often say they&#x27;ll do something harsh later, then don&#x27;t do it when the moment comes. You need a way to figure out which future threats are real and which are bluffing.</dd>
+    <dt>Math</dt><dd>Backward induction works like this: at the very end, each player picks the choice that gives them the best score. You write down that score. Then you step back one choice: the player moving there now knows what happened at the end, so they pick the move that leads to the best score they saw written down. Keep stepping backward, and at each step the player picks the move leading to the best path they learned about. In symbols: the value V of a decision is the highest value available one step ahead. At each point, pick max_action V(next node).</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-backward_induction-01">ev-backward_induction-01</a>: Lecture 8: Backward Induction</li><li><a href="evidence.html#ev-backward_induction-02">ev-backward_induction-02</a>: Lecture 2: Representation of Games</li></ul>
 </article><article class="concept-card" id="subgame_perfection">
   <p class="eyebrow">time and credibility</p>
   <h3><a href="concepts/subgame_perfection.html">Subgame-Perfect Nash Equilibrium</a></h3>
-  <p class="definition">An equilibrium that remains sensible after every possible history.</p>
+  <p class="definition">A plan that still makes sense if the game jumps to any point partway through — not just from the start.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is that Nash equilibrium can allow plans based on threats that would not be carried out if the threatened moment arrived.</dd>
-    <dt>Math</dt><dd>Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</dd>
+    <dt>Problem</dt><dd>Sometimes a player says &#x27;I will do something painful to punish you.&#x27; That threat only works if the player would actually carry it out if the moment came. But if the painful thing hurts the player too, they might not do it. A plan built on such a hollow threat falls apart once you realize the threat is fake.</dd>
+    <dt>Math</dt><dd>Work backward from the end of the game. At each decision point, pick the move that gives the best score for what comes next. Write this as: the value at this point equals the highest score you can get from your next move onward. At each step, you choose the branch with the highest future score.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-subgame_perfection-01">ev-subgame_perfection-01</a>: Lecture 10: Subgame-Perfect Nash Equilibrium</li><li><a href="evidence.html#ev-subgame_perfection-02">ev-subgame_perfection-02</a>: Lecture 8: Backward Induction</li></ul>
 </article><article class="concept-card" id="one_shot_deviation">
   <p class="eyebrow">time and credibility</p>
   <h3><a href="concepts/one_shot_deviation.html">One-Shot Deviation Principle</a></h3>
-  <p class="definition">A shortcut for checking whether changing one move at one point can improve a strategy.</p>
+  <p class="definition">A test that cuts through checking endless strategy changes by asking one simple question: if a player changes what they do at just one moment, given that they stick to their plan everywhere else, can they get a better score?</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is checking a whole dynamic strategy can be exhausting because a strategy describes what to do after many histories.</dd>
-    <dt>Math</dt><dd>Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</dd>
+    <dt>Problem</dt><dd>Imagine you wrote down a complete plan for how to behave in a game that plays out over many moments — what you&#x27;d do after every possible thing that could happen. Checking whether someone would actually want to stick to that plan sounds simple: does anyone want to cheat? But there are so many moments and so many ways to cheat that checking all of them seems impossible.</dd>
+    <dt>Math</dt><dd>You work backward from the end of the game. At the last decision, you pick the move that gives the best score from that point on. Call that best continuation score V. At each earlier decision, you also pick the move that leads to the best continuation value from there. The formula is: at each point, the best value equals the best score you can get from your next move plus the continuation value after. In shorthand: V(now) = highest(score from next choice + V(what comes after)).</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-one_shot_deviation-01">ev-one_shot_deviation-01</a>: Lecture 11: One-Shot Deviation Principle and Bargaining</li><li><a href="evidence.html#ev-one_shot_deviation-02">ev-one_shot_deviation-02</a>: Lecture 5: Nash Equilibrium</li></ul>
 </article><article class="concept-card" id="bargaining">
   <p class="eyebrow">time and credibility</p>
   <h3><a href="concepts/bargaining.html">Bargaining</a></h3>
-  <p class="definition">Dividing a surplus when each side can accept, reject, or wait.</p>
+  <p class="definition">Two people (or groups, or countries) have something they could gain by working together. But they disagree on how to split that gain. One side wants more, the other wants more. Bargaining is the math of what actually happens when they negotiate—who gets what, and why some deals fall apart or take a long time.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is dividing gains from agreement when each side would like more of the surplus and can sometimes wait, reject, or walk away.</dd>
-    <dt>Math</dt><dd>A payoff function u_i(a_i, a_-i) maps everyone&#x27;s actions to player i&#x27;s payoff. The useful relation is `u_i(a_i, a_-i).`. In plain language: i is one player; a_i is that player&#x27;s action; a_-i means everyone else&#x27;s actions; u_i is the payoff assigned to the whole action profile.</dd>
+    <dt>Problem</dt><dd>When a seller and buyer meet on a used car, both would prefer a deal to no deal. But the seller wants the price high, the buyer wants it low. Each can walk away. Each can wait. Each can reject offers. Bargaining asks: what price will actually stick, and how long will it take to agree?</dd>
+    <dt>Math</dt><dd>A payoff function u_i(a_i, a_-i) assigns a player a score that depends on two things: that player&#x27;s action (a_i) and everyone else&#x27;s actions (a_-i). For bargaining: if a player rejects an offer, u_i drops to their outside option (their fallback payoff). If they accept, u_i becomes their share of the deal. The math ties each action to its score, so you can work backward from payoffs to figure out who will agree to what.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-bargaining-01">ev-bargaining-01</a>: Lecture 9: Negotiation</li><li><a href="evidence.html#ev-bargaining-02">ev-bargaining-02</a>: Lecture 11: One-Shot Deviation Principle and Bargaining</li></ul>
 </article><article class="concept-card" id="finitely_repeated_games">
   <p class="eyebrow">repetition and cooperation</p>
   <h3><a href="concepts/finitely_repeated_games.html">Finitely Repeated Games</a></h3>
-  <p class="definition">Playing a stage game a known limited number of times.</p>
+  <p class="definition">Playing the same game over a fixed number of rounds, where everyone knows how many rounds there will be.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is whether repeating a game for a known number of rounds changes behavior relative to playing once.</dd>
-    <dt>Math</dt><dd>Backward induction works by thinking about the end first. Imagine the last period: no rounds follow it, so there are no future consequences. Once we know what happens in the last period, we can figure out what happens in the period before—knowing the endpoint lets us reason backward. The value at any point (call it V) is the best outcome you can get from making the smartest choice moving forward from that moment. At each decision point, a player picks the action that leads to the branch with the highest value of what comes next. This backward reasoning from the known end is the core idea.</dd>
+    <dt>Problem</dt><dd>Does playing something several times instead of once change how people act? Does knowing when it will end change the answer?</dd>
+    <dt>Math</dt><dd>Start from the very last period and work backward. In the last round, no future exists, so no threat of later punishment works. Predict what happens there first. Then move to the second-to-last period—you now know what the last period will bring, so you can figure out what people do here, given what they know is coming next. Keep stepping backward. At any point in time, a player picks the choice that leads to the best outcome they can achieve from that moment onward. This backward chain from a known endpoint is how you predict behavior in finitely repeated games.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-finitely_repeated_games-01">ev-finitely_repeated_games-01</a>: Lecture 12: Finitely Repeated Games</li><li><a href="evidence.html#ev-finitely_repeated_games-02">ev-finitely_repeated_games-02</a>: Lecture 8: Backward Induction</li></ul>
 </article><article class="concept-card" id="infinitely_repeated_games">
   <p class="eyebrow">repetition and cooperation</p>
   <h3><a href="concepts/infinitely_repeated_games.html">Infinitely Repeated Games</a></h3>
-  <p class="definition">A relationship with no fixed last round, where future punishment can shape present behavior.</p>
+  <p class="definition">A relationship where you don&#x27;t know when it ends, so the threat of getting punished in the future can change what you do right now.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is how cooperation can survive when each player is tempted to grab a short-run gain by cheating.</dd>
-    <dt>Math</dt><dd>A discount factor delta weights future payoffs in an intertemporal sum. The useful relation is `U = u_0 + delta u_1 + delta^2 u_2 + ...`. In plain language: u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.</dd>
+    <dt>Problem</dt><dd>When you and someone else interact over and over, each of you wants to cheat today to get an instant reward — but you&#x27;re worried the other person will punish you tomorrow if you do.</dd>
+    <dt>Math</dt><dd>A discount factor delta (a number from 0 to 1) tells you how much today&#x27;s score matters compared to tomorrow&#x27;s score. The total score is: U = u_0 + delta*u_1 + delta^2*u_2 + ..., where u_t is the score in round t. If delta is close to 1, you care almost equally about today and tomorrow. If delta is close to 0, you only care about right now.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-infinitely_repeated_games-01">ev-infinitely_repeated_games-01</a>: Lecture 13: Infinitely Repeated Games</li><li><a href="evidence.html#ev-infinitely_repeated_games-02">ev-infinitely_repeated_games-02</a>: Lecture 9: Negotiation</li></ul>
 </article><article class="concept-card" id="folk_theorem">
   <p class="eyebrow">repetition and cooperation</p>
   <h3><a href="concepts/folk_theorem.html">Folk Theorem</a></h3>
-  <p class="definition">A result showing that many cooperative outcomes can be sustained when the future matters enough.</p>
+  <p class="definition">A mathematical result that shows: when people play the same game over and over with each other, and they care enough about the future, they can sustain many different outcomes — not just the one outcome you&#x27;d predict if they played once.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is explaining why repeated interaction can support many outcomes, not just the one-shot equilibrium.</dd>
-    <dt>Math</dt><dd>A discount factor delta weights future payoffs in an intertemporal sum. The useful relation is `U = u_0 + delta u_1 + delta^2 u_2 + ...`. In plain language: u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.</dd>
+    <dt>Problem</dt><dd>When two firms or countries play a game once, there is usually one outcome they will reach (the Nash equilibrium). But what happens when they meet repeatedly? Why would they stick to certain outcomes instead of always cheating? The folk theorem explains which outcomes people can keep stable through repeated interaction.</dd>
+    <dt>Math</dt><dd>Imagine a player earns payoff u_0 today, payoff u_1 tomorrow, payoff u_2 the day after, and so on. The total value they care about is `U = u_0 + delta × u_1 + delta² × u_2 + ...`. The number delta is between 0 and 1, and it measures how much they weigh the future. If delta is close to 1, they care a lot about tomorrow and next week (they are patient). If delta is close to 0, they only care about today. This discount factor delta is the key number: when delta is high enough, future punishment can be a real threat.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-folk_theorem-01">ev-folk_theorem-01</a>: Lecture 14: Folk Theorem</li><li><a href="evidence.html#ev-folk_theorem-02">ev-folk_theorem-02</a>: Lecture 14: Folk Theorem</li></ul>
 </article><article class="concept-card" id="implicit_cartels">
   <p class="eyebrow">repetition and cooperation</p>
   <h3><a href="concepts/implicit_cartels.html">Implicit Cartels</a></h3>
-  <p class="definition">Firms may keep prices high without an explicit agreement when future punishment disciplines cheating.</p>
+  <p class="definition">Firms keep prices high without a signed agreement because they are scared of what rivals will do to them later. If I cheat today by cutting my price, you will punish me tomorrow by cutting yours even more, which hurts both of us. So I stay quiet and we both keep prices up.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is how firms might keep prices high without signing an explicit cartel agreement.</dd>
-    <dt>Math</dt><dd>A discount factor delta weights future payoffs in an intertemporal sum. The useful relation is `U = u_0 + delta u_1 + delta^2 u_2 + ...`. In plain language: u_t is payoff in period t; delta between 0 and 1 controls how strongly the future matters.</dd>
+    <dt>Problem</dt><dd>Gas stations on the same street sometimes sell at nearly the same price, even though nobody wrote down &#x27;don&#x27;t cut price.&#x27; How does that happen? Do they need a secret phone call, or can each one figure out independently: if I cut, they will hurt me back?</dd>
+    <dt>Math</dt><dd>There is a number, written delta (δ), that says how much you care about tomorrow compared to today. If delta is close to 1, tomorrow feels almost as important as today. If delta is close to 0, tomorrow feels worthless and today is all that matters. The profit you get over many days looks like: payoff today + (delta × payoff tomorrow) + (delta² × payoff the next day) + and so on. This formula is what lets us write down when cheating is worth it or not worth it.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-implicit_cartels-01">ev-implicit_cartels-01</a>: Lecture 15: Implicit Cartels</li><li><a href="evidence.html#ev-implicit_cartels-02">ev-implicit_cartels-02</a>: Lecture 15: Implicit Cartels</li></ul>
 </article><article class="concept-card" id="imperfect_competition">
   <p class="eyebrow">mechanisms and markets</p>
   <h3><a href="concepts/imperfect_competition.html">Imperfect Competition</a></h3>
-  <p class="definition">A market setting where a firm&#x27;s own price or quantity choice can move its payoff because rivals and buyers react.</p>
+  <p class="definition">A market where a firm&#x27;s choice of price or how much to sell affects its payoff—the score it gets—because customers respond, rivals respond, and both change what the firm earns. In a truly competitive market, one seller&#x27;s choice doesn&#x27;t move the price. Here, it does.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is that many real markets sit between a street market with countless sellers and a single monopolist. A firm may be large enough that its price or quantity choice moves the market, but it still has rivals whose choices push back.</dd>
-    <dt>Math</dt><dd>A payoff function u_i(a_i, a_-i) maps everyone&#x27;s actions to player i&#x27;s payoff. The useful notation u_i(a_i, a_-i) says the following: i is one player; a_i is that player&#x27;s action; a_-i means everyone else&#x27;s actions; u_i is the payoff assigned to the whole action profile. This notation is the language we need because each firm&#x27;s profit now depends on both its own choice and all the rival choices at once.</dd>
+    <dt>Problem</dt><dd>Many real markets fall between two extremes: a street market with hundreds of sellers who can&#x27;t move price alone, and a single monopolist who has no rivals. In between are markets with a handful of firms—each one big enough to matter, but each still facing pushback from the others. A coffee shop can raise its price and lose customers; an airline can add flights and depress fares. The question is: how do you figure out what each firm will do when all of them are playing this game at once?</dd>
+    <dt>Math</dt><dd>You write a payoff function u_i(a_i, a_-i). Here is what each piece means: i is one player, one firm. a_i is what that firm chooses—a price, or a quantity to sell. a_-i means every other firm&#x27;s choices bundled together. u_i is the payoff score that firm i gets from the whole situation. The reason this notation is necessary is that each firm&#x27;s profit depends on both what it does and what all its rivals do at the same time. You cannot write down the profit formula without naming both parts.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-imperfect_competition-01">ev-imperfect_competition-01</a>: Lecture 6: Imperfect Competition</li><li><a href="evidence.html#ev-imperfect_competition-02">ev-imperfect_competition-02</a>: Lecture 11: One-Shot Deviation Principle and Bargaining</li></ul>
 </article><article class="concept-card" id="bayesian_games">
   <p class="eyebrow">private information</p>
   <h3><a href="concepts/bayesian_games.html">Bayesian Games</a></h3>
-  <p class="definition">A game where players may not know each other&#x27;s type, value, or payoff information.</p>
+  <p class="definition">A game where some players know things the others do not. You might know your own cost or value, but the other player only guesses at it using probabilities—and your move depends on what you think they believe you will do.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is strategic choice when players do not know exactly who they are facing or what payoffs the other side has.</dd>
-    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+    <dt>Problem</dt><dd>When you bid in an auction, you might know what an item is worth to you, but you do not know how much it is worth to your rivals. You must decide how much to bid, facing uncertainty about what they value. This is the core: strategic choice when you lack full information about who you are playing and what the other side cares about.</dd>
+    <dt>Math</dt><dd>A belief is your best guess, expressed as a probability distribution, over what the hidden facts are. The formula is expected utility: `E[u(a, theta)] = sum_theta p(theta) u(a, theta).` Breaking it down: theta represents the secret type or state you do not observe; p(theta) is the probability you assign to it; and the sum gives your average payoff across all the possibilities you face. You pick the action that maximizes this average.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-bayesian_games-01">ev-bayesian_games-01</a>: Lecture 16: Bayesian Games</li><li><a href="evidence.html#ev-bayesian_games-02">ev-bayesian_games-02</a>: Lecture 2: Representation of Games</li></ul>
 </article><article class="concept-card" id="types_and_beliefs">
   <p class="eyebrow">private information</p>
   <h3><a href="concepts/types_and_beliefs.html">Types And Beliefs</a></h3>
-  <p class="definition">Types store hidden information; beliefs describe what others think those types might be.</p>
+  <p class="definition">Types are hidden facts about a player—like their value, cost, or strength—that only they know. Beliefs are what the other players think about those hidden facts, written as probabilities. In strategic reasoning, we use types to record the secret, and beliefs to record the guess.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is keeping track of hidden facts and what players think those facts might be.</dd>
-    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+    <dt>Problem</dt><dd>When someone knows something you do not, you have to guess what they know and what they will do based on that hidden information. The problem is tracking both the secret and everyone&#x27;s best guess about it in a way that explains behavior.</dd>
+    <dt>Math</dt><dd>A belief is a list of probabilities—what is the chance the hidden fact is one value versus another? If theta stands for the hidden fact and p(theta) is the probability, then expected payoff is the sum: for each possible fact, multiply its payoff by its probability and add them all up. This averages the payoff over all the guesses.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-types_and_beliefs-01">ev-types_and_beliefs-01</a>: Lecture 16: Bayesian Games</li><li><a href="evidence.html#ev-types_and_beliefs-02">ev-types_and_beliefs-02</a>: Lecture 21: Perfect Bayesian Equilibrium</li></ul>
 </article><article class="concept-card" id="bayesian_nash_equilibrium">
   <p class="eyebrow">private information</p>
   <h3><a href="concepts/bayesian_nash_equilibrium.html">Bayesian Nash Equilibrium</a></h3>
-  <p class="definition">A plan for every type such that each type is best responding to its beliefs.</p>
+  <p class="definition">A locked-in plan where each hidden type of player does the best it can, given what it expects the others to do. When you don&#x27;t know someone&#x27;s goal or strength, you make a type-specific move—and in equilibrium, no type wants to abandon its assigned move.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is predicting behavior when each possible type of a player may want a different action.</dd>
-    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+    <dt>Problem</dt><dd>Imagine you are bidding for something, but sellers do not know if you will pay high or low, and you do not know if other bidders are rich or poor. Each person&#x27;s best move depends on what they guess about the hidden information around the table. The riddle: whose plan holds together when no one can see the full picture?</dd>
+    <dt>Math</dt><dd>A belief is a guess about what other people are like, written as odds—the probability of each possibility. When you have a hidden type (your strength, your goal), your score is an average over all the possible types of others you might face. The sum is: score = sum over all other types, each weighted by its probability times what you get from that matchup. In short: expected score = add up (chance of this type) times (what you earn if you meet this type), for all types.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-bayesian_nash_equilibrium-01">ev-bayesian_nash_equilibrium-01</a>: Lecture 17: Bayesian Nash Equilibrium: Applications</li><li><a href="evidence.html#ev-bayesian_nash_equilibrium-02">ev-bayesian_nash_equilibrium-02</a>: Lecture 2: Representation of Games</li></ul>
 </article><article class="concept-card" id="screening_and_adverse_selection">
   <p class="eyebrow">private information</p>
   <h3><a href="concepts/screening_and_adverse_selection.html">Screening And Adverse Selection</a></h3>
-  <p class="definition">A hidden-information problem where a rule or price changes who chooses to participate, sometimes making trade collapse.</p>
+  <p class="definition">When one person or firm offers a deal without knowing who the other person really is—their quality, health, or risk—they end up attracting a worse type of person than they expected. The reason: the deal itself acts like a filter, pulling in the people for whom the offer is most valuable, often because they stand to gain more from having it. That filtering can make trade fall apart.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is that a price or offer can change who shows up. A seller, insurer, or bargainer may set a rule thinking about an average customer, but the people who accept are not average; they are selected by the rule itself.</dd>
-    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+    <dt>Problem</dt><dd>Imagine you are setting a price or a rule for a deal you are offering. You think through what the average person would do, and you set your offer accordingly. But here is the catch: once people hear your offer, the ones who accept it are not the average anymore—they are the ones for whom your offer looked like a good choice. That means the people who show up are a filtered group, not the typical one you planned for.</dd>
+    <dt>Math</dt><dd>A belief—your guess about something you do not know—is a list of possible situations (called states or types) with a probability for each one. If you do not know the type but you guess the odds, the expected payoff is found by multiplying each payoff by its probability and adding them up: `E[u(a, theta)] = sum_theta p(theta) u(a, theta).` In this formula, theta stands for the unknown fact (which type the person is); p(theta) is how likely you think that type is; u(a, theta) is what you get if you act with choice a and the type is theta. Expected payoff is a weighted average.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-screening_and_adverse_selection-01">ev-screening_and_adverse_selection-01</a>: Lecture 16: Bayesian Games</li><li><a href="evidence.html#ev-screening_and_adverse_selection-02">ev-screening_and_adverse_selection-02</a>: Lecture 23: Bargaining with Incomplete Information</li></ul>
 </article><article class="concept-card" id="auctions">
   <p class="eyebrow">mechanisms and markets</p>
   <h3><a href="concepts/auctions.html">Auctions</a></h3>
-  <p class="definition">Rules for allocating an object when bidders have private values.</p>
+  <p class="definition">A system of rules for deciding who gets an object when several people want it and each person secretly knows how much they value it.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is allocating an object when people know their own values but the seller and rival bidders may not.</dd>
-    <dt>Math</dt><dd>Truthful behavior must give at least as much payoff as each profitable lie. The useful relation is `u_i(truth) &gt;= u_i(report) for every alternative report.`. In plain language: The inequality says a person should not gain by replacing the truthful action with another report.</dd>
+    <dt>Problem</dt><dd>Suppose you want to sell your bicycle. Buyers know their own willingness to pay, but you do not. Also, each buyer does not know if someone else values the bike more. How do you run the sale so buyers bid honestly and you get a fair price?</dd>
+    <dt>Math</dt><dd>If someone bids truthfully, they should get at least as much satisfaction as they would get by lying. In symbols: `u_i(truth) &gt;= u_i(lie)` for any lie they might tell. In plain terms: when the rules are set up right, telling the truth should make you happier than any false bid would.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-auctions-01">ev-auctions-01</a>: Lecture 18: Auctions</li><li><a href="evidence.html#ev-auctions-02">ev-auctions-02</a>: Lecture 1: Introduction to Individual Decision-Making</li></ul>
 </article><article class="concept-card" id="revenue_equivalence">
   <p class="eyebrow">mechanisms and markets</p>
   <h3><a href="concepts/revenue_equivalence.html">Revenue Equivalence</a></h3>
-  <p class="definition">Different auction rules can produce the same expected seller revenue under specific assumptions.</p>
+  <p class="definition">Auctions with completely different rules — how people bid, when they pay, who decides the winner — can end up giving the seller the same amount of money on average. This happens when bidders change their behavior enough to offset the rule differences.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is comparing auction formats that look different: first-price, second-price, English, and others may create different bidding behavior.</dd>
-    <dt>Math</dt><dd>Truthful behavior must always be at least as good as any lie. The key relation is `u_i(truth) &gt;= u_i(claim)` for every alternative claim a bidder might make. This inequality simply says a bidder should never gain by switching from their true value to some other bid—if they did, they would not have been telling the truth in the first place. This is the foundation that ensures the bidding strategy is actually an equilibrium.</dd>
+    <dt>Problem</dt><dd>You need to sell something. You could ask bidders to write down their best offer and pay what they bid (first-price). Or you could ask them to write down their best offer but then pay what the second-highest bidder bid (second-price). These rules look completely opposite. Do they produce different results, or can they actually be equivalent?</dd>
+    <dt>Math</dt><dd>A bidder&#x27;s true value is the highest amount they would pay rather than go home empty-handed. If a bidder claims a false value in a truthful auction, they cannot gain more from lying than from telling the truth. The rule is: the payoff from telling the truth must be at least as high as the payoff from any lie they might tell. Mathematically: u_i(truth) &gt;= u_i(claim) for every alternative claim the bidder might make. This inequality is what locks the bidding strategy into place — it is the foundation that makes the equilibrium actually work.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-revenue_equivalence-01">ev-revenue_equivalence-01</a>: Lecture 19: Revenue Equivalence</li><li><a href="evidence.html#ev-revenue_equivalence-02">ev-revenue_equivalence-02</a>: Lecture 18: Auctions</li></ul>
 </article><article class="concept-card" id="ad_auctions">
   <p class="eyebrow">mechanisms and markets</p>
   <h3><a href="concepts/ad_auctions.html">Ad Auctions</a></h3>
-  <p class="definition">Auction design applied to online ad slots where position, clicks, and value interact.</p>
+  <p class="definition">A system for selling advertising spots online where the best spot goes to whoever bids highest, but the system also rewards ads that people actually click on, and charges based on those real clicks.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is selling attention slots, not a single physical object. Position affects clicks, quality affects usefulness, and bids interact with platform rules.</dd>
-    <dt>Math</dt><dd>Truthful behavior must give at least as much payoff as any lie. In other words, if an advertiser tells the truth about how much a click is worth, they should never be able to gain more money by instead reporting a different value. This is the core test of a well-designed auction—no one profits by fibbing.</dd>
+    <dt>Problem</dt><dd>You are running a website and have a row of ad spots to fill. Each advertiser wants their ad seen, but you can only show a few. You do not know which advertiser&#x27;s ad will actually get clicks—they know their own business better than you do. You need a fair way to pick winners, collect payment, and make sure advertisers tell you the truth about what their ads are worth to them.</dd>
+    <dt>Math</dt><dd>Truthfulness must be rewarded: if an advertiser tells you the real value of a click to them, they should earn at least as much money as they would by lying. To test this, you build a pricing rule so a truthful bid always beats a false bid. This rule is what makes the auction fair and honest.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-ad_auctions-01">ev-ad_auctions-01</a>: Lecture 20: Ad Auctions</li><li><a href="evidence.html#ev-ad_auctions-02">ev-ad_auctions-02</a>: Lecture 17: Bayesian Nash Equilibrium: Applications</li></ul>
 </article><article class="concept-card" id="perfect_bayesian_equilibrium">
   <p class="eyebrow">private information</p>
   <h3><a href="concepts/perfect_bayesian_equilibrium.html">Perfect Bayesian Equilibrium</a></h3>
-  <p class="definition">An equilibrium for dynamic games with beliefs that stay consistent with observed behavior.</p>
+  <p class="definition">A settled state in a game that unfolds over time, where players know some things but not others, and their beliefs—their best guesses about the hidden facts—stay consistent with what they actually observe as the game unfolds.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is dynamic play with hidden information: after observing actions, players must update beliefs and continue choosing rationally.</dd>
-    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+    <dt>Problem</dt><dd>When a game happens step by step and players have secret information: after you see someone&#x27;s move, you must update your guess about what they know, then decide your own next move based on that updated guess. The puzzle is to find a state where everyone&#x27;s guesses make sense with what they&#x27;ve seen, and everyone&#x27;s actions are rational given their guesses.</dd>
+    <dt>Math</dt><dd>A guess about an unseen fact is a list of odds—like &#x27;this type has a 30% chance, that type has 70%.&#x27; When you calculate the payoff from a move, you average the payoff across all the secret possibilities, weighted by those odds. In symbols: theta stands for the unseen type or state; p(theta) is its probability in your guess; the payoff you expect is E[u(a, theta)] = sum_theta p(theta) u(a, theta)—you add up u(a, theta) for each possible theta, each weighted by how likely you think it is.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-perfect_bayesian_equilibrium-01">ev-perfect_bayesian_equilibrium-01</a>: Lecture 21: Perfect Bayesian Equilibrium</li><li><a href="evidence.html#ev-perfect_bayesian_equilibrium-02">ev-perfect_bayesian_equilibrium-02</a>: Lecture 22: Signaling</li></ul>
 </article><article class="concept-card" id="signaling">
   <p class="eyebrow">communication and knowledge</p>
   <h3><a href="concepts/signaling.html">Signaling</a></h3>
-  <p class="definition">Using an action or message to convey private information when others update beliefs from it.</p>
+  <p class="definition">When you have information that others don&#x27;t know, you can sometimes prove it by taking an action or sending a message. The trick: others believe your action only if different kinds of people would have different reasons to do it. This is part of game theory — the math of strategic decisions when everyone&#x27;s best move depends on guessing what others will do.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is how someone with private information can convince others of it through an observable action.</dd>
-    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+    <dt>Problem</dt><dd>Imagine you&#x27;re good at your job but a stranger doesn&#x27;t know it. How do you make them believe you? You can&#x27;t just say so — they&#x27;d expect a bad worker to say the same thing. You need to do something that a bad worker wouldn&#x27;t want to copy.</dd>
+    <dt>Math</dt><dd>In the math, a belief is a list of guesses about what hidden fact is true — expressed as probabilities that add to 100%. When you see an action, you update your guesses. The formula `E[u(a, theta)] = sum_theta p(theta) u(a, theta)` just means: your expected happiness from action &#x27;a&#x27; is the average of your happiness across all possible hidden states, weighted by how likely each one is.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-signaling-01">ev-signaling-01</a>: Lecture 22: Signaling</li><li><a href="evidence.html#ev-signaling-02">ev-signaling-02</a>: Lecture 22: Signaling</li></ul>
 </article><article class="concept-card" id="cheap_talk">
   <p class="eyebrow">communication and knowledge</p>
   <h3><a href="concepts/cheap_talk.html">Cheap Talk</a></h3>
-  <p class="definition">Costless messages that matter only when incentives make them credible enough to influence beliefs.</p>
+  <p class="definition">Costless messages that can influence what someone does, but only when the speaker&#x27;s interests are aligned with the listener&#x27;s in ways that make honesty itself the most rewarding choice.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is whether costless messages can influence behavior when the speaker may want to mislead.</dd>
-    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+    <dt>Problem</dt><dd>Can a message that costs nothing to send and cannot be enforced actually change what someone believes or does, especially when the speaker might benefit from lying?</dd>
+    <dt>Math</dt><dd>A belief is a guess about which possibility is true, written as a probability for each possibility. Expected payoff is the average score the speaker gets, weighted by how likely each possibility is: sum over all possibilities of (probability of that possibility) times (score the speaker gets if that possibility is true). The math captures how a speaker&#x27;s incentive to tell the truth depends on what state the world is in.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-cheap_talk-01">ev-cheap_talk-01</a>: Lecture 24: Cheap Talk</li><li><a href="evidence.html#ev-cheap_talk-02">ev-cheap_talk-02</a>: Lecture 24: Cheap Talk</li></ul>
 </article><article class="concept-card" id="common_knowledge">
   <p class="eyebrow">communication and knowledge</p>
   <h3><a href="concepts/common_knowledge.html">Common Knowledge</a></h3>
-  <p class="definition">A fact that everyone knows, everyone knows everyone knows, and so on.</p>
+  <p class="definition">Something everyone knows, and also everyone knows that everyone knows it, and everyone knows that everyone knows that everyone knows it, on and on forever. Not just true or privately known — shared in a way that everyone can reason from it together.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is that coordinated action may require more than everyone privately knowing a fact. People may also need to know that others know it, and know that others know that others know it.</dd>
-    <dt>Math</dt><dd>Common knowledge means everyone knows, everyone knows everyone knows, and the chain continues. The useful relation is `E, KE, KKE, KKKE, ...`. In plain language: E is the event; K means known by the players; repeated K&#x27;s represent higher-order knowledge.</dd>
+    <dt>Problem</dt><dd>Coordinating action sometimes needs more than just each person knowing a fact alone. People also need to know that others know it, and know that others know that others know it. Without that chain, people hesitate even though each one has the information.</dd>
+    <dt>Math</dt><dd>Write it as: E (the event), then K (known by players). The chain is E, KE, KKE, KKKE, going forever. In words: the event happens, then people know it; people know that people know it; people know that people know that people know it; and this chain never stops. Each time you add K, you go up one level of mutual awareness.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-common_knowledge-01">ev-common_knowledge-01</a>: Lecture 25: Common Knowledge</li><li><a href="evidence.html#ev-common_knowledge-02">ev-common_knowledge-02</a>: Lecture 4: Rationalizability</li></ul>
 </article></section></main>

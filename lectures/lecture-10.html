@@ -28,7 +28,7 @@
   <p>The lecture repairs Nash for dynamic settings. It requires strategies to remain equilibrium behavior after every proper subgame, so threats and promises must be credible at the histories where they matter.</p>
   <h2>Where The Math Enters</h2>
   <p>The math enters by applying Nash equilibrium inside each subgame. A full strategy profile must pass the no-deviation test not only at the start but after relevant histories.</p>
-  <p>The mathematical object has to exist because strategic prediction is circular. Each player’s best action depends on the others’ actions, so the model needs a profile where all those conditional choices fit together. Nash equilibrium is the formal closure of the best-response loop. The mathematical object has to exist because a dynamic strategy includes plans for histories that may not occur. Those plans can support threats, so they must be checked. Subgame perfection formalizes the demand that continuation behavior is itself equilibrium behavior wherever a real subgame begins.</p>
+  <p>Strategic prediction is circular. Each player&#x27;s best move depends on what others do, which depends on what each of them expects, which depends on what everyone expects the first player to do. The model needs a fixed point where all these expectations and moves fit together. Nash equilibrium is that fixed point—it is the formal answer to the question, &quot;What profile survives the logical loop of mutual best response?&quot; A strategy written down includes plans for futures that may never occur — branches of the tree the players hope to avoid. Those plans can look great on paper but be impossible to execute. Mathematics formalizes the requirement that every plan, even the ones hidden in branches that never happen, must still be a plan the player would choose if that branch actually arrived. Subgame perfection is the formal statement of this requirement.</p>
   <h2>Equation Walkthroughs</h2>
   <p class="chips"><a class="chip derivation-link" href="../primitives.html#nash_equilibrium">Nash Equilibrium</a><a class="chip derivation-link" href="../primitives.html#best_response">Best Response</a><a class="chip derivation-link" href="../primitives.html#backward_induction">Backward Induction</a></p>
   <h2>Worked Mini-Example</h2>
@@ -36,7 +36,7 @@
   <h2>Mistakes To Avoid</h2>
   <p>The mistake is to check only the opening node. A dynamic prediction can look stable initially while relying on later behavior no player would want to carry out.</p>
   <p>The tempting shortcut is to check incentives only before the game begins. That fails in dynamic games because threats and promises live at later histories, and those histories need their own rationality tests.</p>
-  <p>Students often get stuck by importing the everyday meaning of equilibrium as balance or goodness. Nash equilibrium can be inefficient or ugly. Its claim is narrower: no single player wants to move alone. Students often get stuck by ignoring histories that do not occur in equilibrium. Those histories are exactly where empty threats hide, so the course makes students inspect them.</p>
+  <p>A common trap is to confuse Nash equilibrium with a good outcome or a balanced state. Students hear equilibrium and imagine something stable and fair. But a Nash equilibrium can be the worst outcome available, unfair, or wasteful. It only guarantees one narrow thing: no single player can unilaterally improve. Do not expect it to be nice. Students get tripped up because they only check whether people want to deviate at the start. They ignore paths that &#x27;should not happen&#x27; in equilibrium. But threats only work by affecting what players expect to happen if they deviate. Those off-path scenarios are where hollow threats hide, so the course forces you to look.</p>
   <h2>Durable Lesson</h2>
   <p>The durable lesson is that credibility is local. A strategy must remain a Nash equilibrium inside every relevant subgame, so the solution concept rejects plans that survive only because impossible-looking histories were ignored.</p>
   <h2>Reader Work</h2>
@@ -46,22 +46,22 @@
   <h2>How This Lecture Hands Off</h2>
   <p>This hands off to the one-shot deviation principle: once dynamic credibility is the standard, the next problem is finding a practical way to check many possible deviations.</p>
   <h2>How To Recognize This Later</h2>
-  <p>Look for claims that a behavior pattern persists because no individual participant can gain by deviating alone. Look for dynamic games, off-path histories, or threats where the key question is whether the promised future action would really be optimal.</p>
+  <p>In new situations, look for a pattern of behavior where no single participant can improve their own outcome by changing their own move alone, given that everyone else keeps doing what they are doing. When you spot that pattern, you have identified a candidate Nash equilibrium. Watch for any strategic situation where someone makes a threat or promise, and ask: would they actually follow through? Watch for games that play out in stages. Watch for plans that include moves &#x27;just in case&#x27; on branches that should not happen. In all these cases, subgame perfection is the question: would the plan hold up even if that supposedly-impossible branch showed up?</p>
   <p class="chips"><a class="chip" href="../concepts/nash_equilibrium.html">Nash Equilibrium</a><a class="chip" href="../concepts/subgame_perfection.html">Subgame-Perfect Nash Equilibrium</a></p>
 </section>
 <section>
   <h2>Concepts In This Lecture</h2>
   <article class="wide-card">
   <h3>Nash Equilibrium</h3>
-  <p><strong>Problem:</strong> The problem is making a prediction that does not immediately fall apart when each participant asks, given what the others are doing, should I switch?</p>
-  <p><strong>Mathematical handle:</strong> The object is an action or strategy profile where every player&#x27;s choice is a best response to the others&#x27; choices.</p>
-  <p><strong>What breaks without it:</strong> Without Nash equilibrium, payoff tables would produce stories but not disciplined predictions. Any outcome could be proposed even if one participant has an obvious profitable deviation once everyone else behavior is named.</p>
+  <p><strong>Problem:</strong> You are trying to predict what a group of people will do when they are all trying to outthink each other. The problem is: your prediction only works if, after each person sees what you said the others would do, that person does not regret their own choice and decide to change.</p>
+  <p><strong>Mathematical handle:</strong> The object is a profile—a list of each player&#x27;s move—where every player&#x27;s move is a best response to the others&#x27; moves. You can write it as a tuple or a list, but the key is that each component meets the best-response test.</p>
+  <p><strong>What breaks without it:</strong> Without the Nash test, any outcome could be defended just by naming it. Someone could propose a pattern and offer no reason why each person would stick to it. Nash forces the question: if everyone else follows this pattern, does each individual want to follow it too?</p>
   <p><a href="../concepts/nash_equilibrium.html">Open concept page</a></p>
 </article><article class="wide-card">
   <h3>Subgame-Perfect Nash Equilibrium</h3>
-  <p><strong>Problem:</strong> The problem is that Nash equilibrium can allow plans based on threats that would not be carried out if the threatened moment arrived.</p>
-  <p><strong>Mathematical handle:</strong> The object starts with a Nash equilibrium but adds a new check: that same strategy profile must remain optimal in every proper subgame too. This is how we formalize the requirement that a plan only survives if it would still be chosen when a subgame actually arrives.</p>
-  <p><strong>What breaks without it:</strong> Without subgame perfection, dynamic models can rest on noncredible threats. A strategy profile may pass the initial Nash test only because it prescribes off-path behavior that nobody would actually choose later.</p>
+  <p><strong>Problem:</strong> Sometimes a player says &#x27;I will do something painful to punish you.&#x27; That threat only works if the player would actually carry it out if the moment came. But if the painful thing hurts the player too, they might not do it. A plan built on such a hollow threat falls apart once you realize the threat is fake.</p>
+  <p><strong>Mathematical handle:</strong> Start with a Nash equilibrium — a plan where nobody wants to switch at the beginning. Now make a stronger requirement: that same plan must also be a Nash equilibrium inside every &#x27;subgame&#x27; — every piece of the game tree that can stand on its own as a complete game at some later point. If a plan fails this test anywhere, reject it.</p>
+  <p><strong>What breaks without it:</strong> Without it, you can build strategies on promises you would never keep. A player might say &#x27;if you enter, I will fight back hard&#x27; — but if fighting back after entry would lose them money, they would never actually do it. The equilibrium survives only because it hides this broken promise.</p>
   <p><a href="../concepts/subgame_perfection.html">Open concept page</a></p>
 </article>
 </section>

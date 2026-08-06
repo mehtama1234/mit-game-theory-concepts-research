@@ -28,7 +28,7 @@
   <p>The lecture moves auction theory into platform markets. The object being allocated is attention or expected clicks across positions, so bids interact with ranking, quality, and click probabilities.</p>
   <h2>Where The Math Enters</h2>
   <p>The math enters through position values, click-through rates, bids, quality adjustments, and payment rules. A platform ranks ads by a score rather than by value alone.</p>
-  <p>The mathematical object has to exist because platform auctions allocate attention through rankings, clicks, and quality adjustments. A simple highest-bid object misses the product being sold. The ad-auction model keeps bid, position, click probability, and value in the same incentive calculation.</p>
+  <p>The mathematical model has to exist because ad slots are not simple objects. A painting is a painting no matter who owns it. But an ad slot generates clicks, and the number of clicks depends on the ad, the user, the position, and the time. You cannot describe the allocation and pricing with a simple highest-bid rule. You need a model that keeps bid, position, click probability, and payment rule all in the same calculation. Otherwise, you miss how they all push and pull on each other.</p>
   <h2>Equation Walkthroughs</h2>
   <p class="chips"><a class="chip derivation-link" href="../primitives.html#auction_expected_payment">Auction Expected Payment</a></p>
   <h2>Worked Mini-Example</h2>
@@ -36,7 +36,7 @@
   <h2>Mistakes To Avoid</h2>
   <p>The mistake is to treat ad auctions as ordinary object auctions. The platform allocates probabilistic attention, and the mechanism must account for user response as well as advertiser bids.</p>
   <p>The tempting shortcut is to rank advertisers only by bid. That fails because a high bid on an ad nobody clicks can be worse for the platform than a lower bid attached to a more useful or clickable ad.</p>
-  <p>Students often get stuck by seeing only bids. In sponsored search, the highest bid may not create the highest platform value if relevance and click probability differ.</p>
+  <p>Students often focus only on bids and think the highest bidder always wins. In sponsored search, this is wrong. The highest bid may come from an ad that hardly anyone clicks on. Meanwhile, a lower bid on a highly relevant ad produces more engagement. The auction is not a bidding contest; it is a ranking system that balances ambition—the bid—with real user behavior—the click rate.</p>
   <h2>Durable Lesson</h2>
   <p>The durable lesson is that mechanism design must respect the real resource. In ad markets, the platform allocates probabilistic attention while balancing advertiser incentives, user response, and revenue.</p>
   <h2>Reader Work</h2>
@@ -46,16 +46,16 @@
   <h2>How This Lecture Hands Off</h2>
   <p>This hands off to perfect Bayesian equilibrium: after mechanisms with hidden values, the course moves to dynamic settings where actions reveal information and beliefs must be updated over time.</p>
   <h2>How To Recognize This Later</h2>
-  <p>Look for markets with ranked slots, click probabilities, quality scores, and generalized second-price style rules.</p>
+  <p>Look for other markets with these features: a ranked list of options, payment based on actual engagement or outcome, quality or relevance scoring by the platform, and advertisers or competing players who bid or signal their value. Sponsored search is one example; recommendation ranking with monetization is another.</p>
   <p class="chips"><a class="chip" href="../concepts/ad_auctions.html">Ad Auctions</a></p>
 </section>
 <section>
   <h2>Concepts In This Lecture</h2>
   <article class="wide-card">
   <h3>Ad Auctions</h3>
-  <p><strong>Problem:</strong> The problem is selling attention slots, not a single physical object. Position affects clicks, quality affects usefulness, and bids interact with platform rules.</p>
-  <p><strong>Mathematical handle:</strong> The object is a sponsored-search mechanism combining bids, click-through rates, quality scores, allocation order, and per-click payments.</p>
-  <p><strong>What breaks without it:</strong> Without ad auctions, the course would leave mechanism design at textbook allocation. It would miss how online markets mix bidding strategy with measurement, ranking rules, and platform incentives.</p>
+  <p><strong>Problem:</strong> You are running a website and have a row of ad spots to fill. Each advertiser wants their ad seen, but you can only show a few. You do not know which advertiser&#x27;s ad will actually get clicks—they know their own business better than you do. You need a fair way to pick winners, collect payment, and make sure advertisers tell you the truth about what their ads are worth to them.</p>
+  <p><strong>Mathematical handle:</strong> The object you work with is a mechanism that takes bids from advertisers, estimates how often each ad gets clicked, assigns each ad to a slot in the ranking, and calculates a price each advertiser pays per click.</p>
+  <p><strong>What breaks without it:</strong> Without ad auctions in the course, mechanism design stays at the level of one-object sales: who gets the painting, how much do they pay. The course would never show you how theory applies to ranking systems, click prediction, or quality-based allocation. You would not see why bidding alone is not enough in a real platform.</p>
   <p><a href="../concepts/ad_auctions.html">Open concept page</a></p>
 </article>
 </section>

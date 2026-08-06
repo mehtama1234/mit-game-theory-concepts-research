@@ -44,55 +44,55 @@
 <section><h2>Start With Concepts</h2><div class="grid"><article class="concept-card" id="preferences">
   <p class="eyebrow">choice and payoff</p>
   <h3><a href="concepts/preferences.html">Preferences</a></h3>
-  <p class="definition">A way to say which outcomes a person ranks above others.</p>
+  <p class="definition">A rule that lets you write down which outcomes you like more than others — a scoreboard for how much you value each possible result.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is that before we talk about strategy, we need a way to say what one person is trying to get. A person may like one outcome more than another even when dollars, risk, effort, and timing are mixed together.</dd>
-    <dt>Math</dt><dd>A preference relation ranks outcomes, often represented by a utility function u(x). The useful relation is `x preferred to y means u(x) &gt; u(y).`. In plain language: x and y are possible outcomes; u assigns each outcome a number; the larger number records the option the person ranks higher.</dd>
+    <dt>Problem</dt><dd>Before anyone starts thinking strategically, we need a way to ask: which outcome does this person actually want? The catch is that outcomes are tangled up. One choice gives you more money but more risk. Another gives you less money but more free time. Before you can ask whether someone makes sense or does best for themselves, you need a way to say how they rank all these mixed-up options.</dd>
+    <dt>Math</dt><dd>A preference is a comparison rule over outcomes. You list each outcome and mark which ones rank above others. A utility function u(x) is a shortcut: instead of writing out all the rankings, you assign each outcome a number, and higher numbers mean ranks you like more. If outcome x gets a higher number than y, that means you prefer x to y — the numbers are just a way to write down the ranking.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-preferences-01">ev-preferences-01</a>: Lecture 1: Introduction to Individual Decision-Making</li><li><a href="evidence.html#ev-preferences-02">ev-preferences-02</a>: Lecture 2: Representation of Games</li></ul>
 </article><article class="concept-card" id="utility">
   <p class="eyebrow">choice and payoff</p>
   <h3><a href="concepts/utility.html">Utility</a></h3>
-  <p class="definition">A numerical representation of what someone is trying to get.</p>
+  <p class="definition">A number attached to each outcome that records how much someone wants it.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is that rankings are awkward to compute with. A payoff table, expected value, or equilibrium check needs numbers, not only verbal statements like this outcome is preferred.</dd>
-    <dt>Math</dt><dd>A preference relation ranks outcomes, often represented by a utility function u(x). The useful relation is `x preferred to y means u(x) &gt; u(y).`. In plain language: x and y are possible outcomes; u assigns each outcome a number; the larger number records the option the person ranks higher.</dd>
+    <dt>Problem</dt><dd>When several people each chase what is best for them, you need to know whether one person will prefer outcome A or outcome B. But you cannot write down a math formula using the words &#x27;I like this more&#x27; — math works with numbers. So you have to turn &#x27;A is better than B&#x27; into numbers you can actually use in a calculation.</dd>
+    <dt>Math</dt><dd>A preference is a ranking — &#x27;I like pizza more than salad.&#x27; A utility function is a way to turn that ranking into numbers so math can handle it. If u is a utility function, then u(pizza) = 10 and u(salad) = 5 means &#x27;pizza ranks higher.&#x27; The only rule is: a higher number must mean a higher ranking. The actual numbers are up to you — you could use 100 and 20 instead, and it works the same way for ordinary choice.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-utility-01">ev-utility-01</a>: Lecture 1: Introduction to Individual Decision-Making</li><li><a href="evidence.html#ev-utility-02">ev-utility-02</a>: Lecture 2: Representation of Games</li></ul>
 </article><article class="concept-card" id="expected_utility">
   <p class="eyebrow">choice and payoff</p>
   <h3><a href="concepts/expected_utility.html">Expected Utility</a></h3>
-  <p class="definition">Averaging possible payoffs by how likely they are.</p>
+  <p class="definition">When you face an uncertain choice, expected utility is the score you calculate by adding up (outcome score × its probability) for every possible result.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is choosing when the outcome is uncertain: a bid might win or lose, a risky action might pay off or fail, and a type may be one of several possibilities.</dd>
-    <dt>Math</dt><dd>A belief is a probability distribution over states, types, or histories. The useful relation is `E[u(a, theta)] = sum_theta p(theta) u(a, theta).`. In plain language: theta is the unknown type or state; p(theta) is its probability; expected utility averages payoffs across possibilities.</dd>
+    <dt>Problem</dt><dd>You often must decide before you know what will happen: will a bid win or lose? Will a risky investment pay off or lose money? Will someone turn out to be honest or dishonest? You need a way to compare choices when the future is uncertain.</dd>
+    <dt>Math</dt><dd>Your belief about the unknown is shown as a probability distribution—a list of possible states or types with a number (the probability) for each. The calculation is E[u(a, θ)] = Σ_θ p(θ) u(a, θ). In plain terms: θ is the unknown state or type; p(θ) is how likely you think it is; multiply each payoff by its probability and add them all up.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-expected_utility-01">ev-expected_utility-01</a>: Lecture 1: Introduction to Individual Decision-Making</li><li><a href="evidence.html#ev-expected_utility-02">ev-expected_utility-02</a>: Lecture 16: Bayesian Games</li></ul>
 </article><article class="concept-card" id="strategic_form_games">
   <p class="eyebrow">strategic dependence</p>
   <h3><a href="concepts/strategic_form_games.html">Strategic Form Games</a></h3>
-  <p class="definition">A compact table of players, actions, and payoffs chosen at the same time.</p>
+  <p class="definition">A table where you write down all the players, all the moves each one can make, and the score each player gets from every possible combination of moves.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is representing a situation where everyone chooses without first seeing the others&#x27; choices, yet everyone&#x27;s payoff depends on the whole combination.</dd>
-    <dt>Math</dt><dd>A payoff function u_i(a_i, a_-i) maps everyone&#x27;s actions to player i&#x27;s payoff. The useful relation is `u_i(a_i, a_-i).`. In plain language: i is one player; a_i is that player&#x27;s action; a_-i means everyone else&#x27;s actions; u_i is the payoff assigned to the whole action profile.</dd>
+    <dt>Problem</dt><dd>Imagine you and your friend each need to choose something at the exact same moment, without knowing what the other chose. But once you both decide, what you get depends on both choices together. How do you show what&#x27;s really going on? You need a table that captures the fact that nobody gets to see the other&#x27;s choice before picking their own.</dd>
+    <dt>Math</dt><dd>A payoff function u_i(a_i, a_-i) assigns a score to player i. Here is what each symbol means: i is one player; a_i is that player&#x27;s action; a_-i means all the other players&#x27; actions taken together; u_i is the number (payoff) that player i receives. The full action profile is (a_i, a_-i) — everyone&#x27;s action at once — and that determines what score player i walks away with.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-strategic_form_games-01">ev-strategic_form_games-01</a>: Lecture 2: Representation of Games</li><li><a href="evidence.html#ev-strategic_form_games-02">ev-strategic_form_games-02</a>: Lecture 1: Introduction to Individual Decision-Making</li></ul>
 </article><article class="concept-card" id="extensive_form_games">
   <p class="eyebrow">time and credibility</p>
   <h3><a href="concepts/extensive_form_games.html">Extensive Form Games</a></h3>
-  <p class="definition">A game drawn as a tree so timing and information can be represented.</p>
+  <p class="definition">A game drawn as a tree diagram instead of a table, because the timing of moves and what each player knows at each moment matter.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is that some games unfold over time. A later choice can depend on an earlier choice, and some players may know more about the history than others.</dd>
-    <dt>Math</dt><dd>Backward induction assigns optimal choices from terminal decision nodes back to the start. The useful relation is `V(node) = max_action V(next node).`. In plain language: V is continuation value; at each decision point the player chooses the next branch with the best continuation value.</dd>
+    <dt>Problem</dt><dd>In real conflicts, people move one at a time, not all at once. A choice made later can depend on what happened earlier. And sometimes you know more than the other person — or they know more than you. A flat table misses all of that.</dd>
+    <dt>Math</dt><dd>Backward induction starts at the end. At the final decision point, a player chooses the branch that gives the best score. Then move back one step: knowing what the later player will do, what should the earlier player choose? Keep going backward to the start. The formula is `V(node) = max_action V(next node)`, which means: the value of where you stand is the highest value you can reach by picking one of your moves.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-extensive_form_games-01">ev-extensive_form_games-01</a>: Lecture 2: Representation of Games</li><li><a href="evidence.html#ev-extensive_form_games-02">ev-extensive_form_games-02</a>: Lecture 8: Backward Induction</li></ul>
 </article><article class="concept-card" id="dominance">
   <p class="eyebrow">strategic dependence</p>
   <h3><a href="concepts/dominance.html">Dominance</a></h3>
-  <p class="definition">A way to rule out choices that are never better than another choice.</p>
+  <p class="definition">A test to cross off moves that are worse than some other move in every possible situation your opponent faces you with.</p>
   <dl>
-    <dt>Problem</dt><dd>The problem is that some choices are plainly bad no matter what the other side does. Keeping them in the analysis can distract from the strategic choices that actually need thought.</dd>
-    <dt>Math</dt><dd>Dominance compares one strategy against another across possible opponent choices. The useful relation is `s dominates t if u_i(s, a_-i) &gt;= u_i(t, a_-i) for all a_-i, with strict inequality somewhere.`. In plain language: The inequality checks every possible action by others; dominance means one strategy is never worse and sometimes better.</dd>
+    <dt>Problem</dt><dd>In any game, some moves are just worse. They lose to another move no matter what the other person tries. But if you list all possible moves, the bad ones can hide the real choices that matter. Dominance lets you cross off the hopeless ones first.</dd>
+    <dt>Math</dt><dd>The math compares two moves by looking at what each one gives you against every possible opponent move. Write it as: move A dominates move B if your score from A is always at least as high as your score from B, and sometimes strictly higher. The inequality holds for every opponent choice; that is what makes it dominance.</dd>
   </dl>
   <ul class="evidence-list"><li><a href="evidence.html#ev-dominance-01">ev-dominance-01</a>: Lecture 3: Dominance</li><li><a href="evidence.html#ev-dominance-02">ev-dominance-02</a>: Lecture 4: Rationalizability</li></ul>
 </article></div><p><a class="button" href="concepts.html">Open the full atlas</a></p></section></main>
