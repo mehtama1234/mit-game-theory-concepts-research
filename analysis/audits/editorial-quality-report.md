@@ -116,7 +116,7 @@ This static audit checks explanatory depth, required teaching sections, evidence
 - Model-building decoder links: 20
 - Model-building evidence links: 25
 - Proof-sketch lab cards: 8
-- Proof-sketch lab words: min 479, max 524
+- Proof-sketch lab words: min 479, max 532
 - Proof-sketch concept links: 32
 - Proof-sketch primitive links: 24
 - Proof-sketch math clinic links: 11
