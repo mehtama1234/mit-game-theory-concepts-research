@@ -1,0 +1,155 @@
+{
+  "id": "auctions",
+  "name": "Auctions",
+  "kick": "game theory · first principles · selling to self-interested bidders",
+  "title": "Auctions — rules that make honesty the best policy (or not)",
+  "lede": "You are selling one item and several people want it, each secretly knowing what it is worth to them. How should you run the sale to get a good price and pick a fair winner? The surprise is that the RULES you write shape how people bid, and a clever rule makes honesty safer than lying. Here is the idea, a real auction where we simulated two formats side by side, why rules drive behavior, where the theory breaks, and where billions of dollars ride on these principles every day.",
+  "arc": [
+    [
+      "problem",
+      "The problem"
+    ],
+    [
+      "reframe",
+      "The reframe"
+    ],
+    [
+      "run",
+      "Seen on a real run"
+    ],
+    [
+      "why",
+      "Why honesty beats shading"
+    ],
+    [
+      "weakness",
+      "The one real weakness"
+    ],
+    [
+      "surprise",
+      "The surprise"
+    ]
+  ],
+  "sections": [
+    {
+      "id": "problem",
+      "h2": "1 · The problem — how do you run a fair sale when bidders are self-interested?",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Imagine you are selling a single item to several people. Each person secretly knows what that item is worth to them — call it their <em>private value</em>. But you do not know anyone's private value, and the bidders do not know each other's. You want two things: a good price for yourself, and a fair process that picks a winner who actually values the item."
+        },
+        {
+          "t": "para",
+          "html": "The catch is that bidders are self-interested. If they think being honest (bidding what they truly value) will lose them money, they will lie. So the stakes are high: <strong>can you design the RULES of the auction in a way that makes honesty the safest bet, or at least as profitable as strategic lying?</strong>"
+        }
+      ]
+    },
+    {
+      "id": "reframe",
+      "h2": "2 · The reframe — design the rules as a game and predict how they play out",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Here is the key shift. Do not ask &lsquo;what price should I set?&rsquo; Instead, ask: <em>what rules should I write so that bidders' own self-interest makes them do what I want?</em> Think of the auction format itself as a game: each player chooses a bid; the rules say who wins and what they pay. Given those rules, what bid will a self-interested, strategic bidder actually choose?"
+        },
+        {
+          "t": "para",
+          "html": "This is the auction designer's version of mechanism design — the art of writing rules that guide self-interested players toward an outcome you want. Two classic formats show the principle starkly. In a <em>first-price auction</em>, the highest bidder wins and pays their own bid — so if you bid your true value, you get the item but make no profit. You must bid lower (called shading your bid) to leave yourself room. In a <em>second-price auction</em>, the highest bidder wins but pays the <em>runner-up's</em> bid (the second-highest), not their own — so if you bid too high you still pay only the second price, and if you bid too low you might miss out. The genius is that <strong>telling your true value is always safe: you pay only what the competition forces, so honesty cannot hurt you</strong>."
+        }
+      ]
+    },
+    {
+      "id": "run",
+      "h2": "3 · Seen on a real run — both formats raise the same revenue, despite different bidding behavior",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "We simulated two auctions side by side. Four bidders, each with a private value drawn randomly from 0 to 1. We ran a second-price auction (bidders bid their true value, the highest bidder wins and pays the second-highest bid) and a first-price auction (bidders shade their bids strategically, the highest bidder wins and pays their own bid). We repeated this many times and computed the expected revenue to the seller — the average amount paid across all auctions. Every number is the simulation's output."
+        },
+        {
+          "t": "table",
+          "headers": [
+            "auction format",
+            "how bidders act",
+            "expected revenue to seller"
+          ],
+          "rows": [
+            [
+              "second-price auction",
+              "bid your true value (honesty is safe)",
+              "0.600"
+            ],
+            [
+              "first-price auction",
+              "shade your bid strategically (bid less than true value)",
+              "0.600"
+            ]
+          ],
+          "caption": "Two completely different auction formats yield the same expected revenue: 0.600. The formats work through opposite incentives, yet the seller pockets the same amount."
+        },
+        {
+          "t": "insight",
+          "html": "<strong>The discovered fact: a second-price auction and a first-price auction both raise expected revenue of 0.600, even though bidders play in completely different ways.</strong> In the second-price format, bidders bid honestly; in the first-price format, they shade their bids below their true value. Yet the seller is equally well off. This is the Revenue Equivalence Theorem — formats that look completely different can drive the same expected revenue."
+        }
+      ]
+    },
+    {
+      "id": "why",
+      "h2": "4 · Why honesty beats shading in a second-price auction",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "The second-price rule works because of a single, powerful fact: <em>you pay the runner-up's price, not your own.</em> Think through what happens if you lie. Suppose your true value is 0.7 but you bid 0.8. Two cases. Case 1: you win, and the second-highest bid is 0.6. You pay 0.6 — you are better off than if you had bid 0.7 (still would have paid 0.6) and just as well off. Case 2: you lose, and the second-highest bid is 0.9. You do not pay anything — you would lose whether you bid 0.7 or 0.8. Now suppose you bid 0.6 when your value is 0.7. You pay only what someone else bid, so again, you cannot do worse than with the truth. The key insight: since you do not pay your own bid, your bid does not directly affect what you pay. Over-bidding or under-bidding can only cost you, not save you. <strong>Telling the truth is a dominant strategy — no matter what anyone else bids, you never regret bidding your true value.</strong>"
+        },
+        {
+          "t": "para",
+          "html": "In a first-price auction, the opposite is true. You pay your own bid. So shading is rational: bid high enough to win but low enough to leave yourself profit. The bids are strategically chosen, painful to calculate, and lower than true values."
+        }
+      ]
+    },
+    {
+      "id": "weakness",
+      "h2": "5 · The one real weakness — independent values and risk-neutral bidders are essential",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "The theory assumes each bidder's private value is independent — your value of the item does not hinge on what anyone else values it at. But in the real world, that is often false. In an oil-field auction, every bidder is bidding on the same deposit; if others are bidding high, that is a signal the field is richer than you thought. This is called a <em>common value</em>, and it breaks honesty. When others bid high, you realize you underestimated, so you regret bidding low — the &lsquo;winner's curse&rsquo; bites. The truthfulness of second-price auctions collapses."
+        },
+        {
+          "t": "para",
+          "html": "The theory also assumes bidders are risk-neutral — they only care about expected profit, not about the gamble itself. A risk-averse bidder might prefer the certainty of first-price (you know exactly what you pay), and a risk-loving bidder might prefer second-price (free option value). And the whole thing assumes bidders are rational and truthful. Bidders who are unsure of their values, bid emotionally, or form cartels shatter the model. The jewel of auction design is that second-price makes honesty optimal in the narrow sense; real people are wilder."
+        }
+      ]
+    },
+    {
+      "id": "surprise",
+      "h2": "6 · The surprise — auction theory runs the multi-billion-dollar modern economy",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "These principles — designing rules so self-interest guides behavior, and the equivalence of different formats — are not textbook curiosities. Google, Facebook, Amazon, and every advertising exchange on the internet run second-price-style auctions (or Vickrey auctions, the generalization) to sell ad slots. Your click is worth a secret number only to the advertiser; they bid that number; they win if highest; they pay the second-highest bid. The genius is that no one has incentive to lie, so the ads that matter most get the premium slots. Billions of dollars flow through these auctions every day, and they work because a game theorist centuries ago thought about how rules shape behavior."
+        },
+        {
+          "t": "para",
+          "html": "Radio spectrum auctions, US Treasury bond auctions, art house sales, and school matching systems all use these ideas. Before auction theory, governments would set arbitrary prices or allocate by lottery. Now they write rules that harness self-interest to find true value. When you see a mechanism that works because bidders are honest, or because people's choices reveal information, or because competing strategies yield stable prices, you are seeing game theory in the wild — the theory of how to design the rules of a game."
+        }
+      ]
+    }
+  ],
+  "related": [
+    [
+      "nash_equilibrium-deep.html",
+      "Nash equilibrium"
+    ],
+    [
+      "revenue_equivalence-deep.html",
+      "revenue equivalence"
+    ]
+  ],
+  "recipe": {
+    "summary": "Simulate two auction formats: second-price (where the winner pays the second-highest bid and bidding truthfully is dominant) and first-price (where the winner pays their own bid and bids are strategically shaded). Four bidders, values uniform on [0,1]. Run each auction many times, compute expected revenue (average payout to seller). No complex math — just bidding rules and arithmetic.",
+    "eq": "second-price: winner = argmax(bids), pays = second_max(bids)\nfirst-price: winner = argmax(bids), pays = max(bids)\nexpected revenue = mean payout across runs\n# Both formats yield same expected revenue despite opposite bidding strategies",
+    "note": "Full script: scripts/experiments/gametheory_run.py (EXP9). Numbers are the run's output verbatim."
+  }
+}

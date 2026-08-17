@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subgame-Perfect Equilibrium (deep) · MIT Game Theory</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+.arc{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.arc a{font-size:12.5px;color:var(--accent-dark);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:3px 10px;background:var(--panel)}
+.fp{border-top:1px solid var(--line);padding:22px 0 4px;margin-top:10px}
+.fp h2{margin:6px 0 10px}
+.kick{font-size:12px;color:var(--accent-dark);font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:6px 0}
+.lede{font-size:20px;color:#34373d;max-width:820px}
+.essay p{max-width:74ch;font-size:16.5px;margin:11px 0;color:#2c2f34}
+.barrow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:13px}
+.barrow .lab{width:150px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted);text-align:right}
+.bar{height:16px;border-radius:3px;background:var(--accent);min-width:2px}.bar.alt{background:#3f6f57}
+.barrow .val{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.eq{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin:12px 0;overflow-x:auto;white-space:pre-wrap}
+.insight{border-left:4px solid var(--accent);background:var(--soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:16px}
+details.math{border:1px solid var(--line);border-radius:8px;background:var(--panel);margin:14px 0}
+details.math summary{cursor:pointer;padding:10px 13px;color:var(--accent-dark);font-weight:750}
+details.math > div{border-top:1px solid var(--line);padding:4px 14px 12px}
+figure{margin:16px 0}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+table{border-collapse:collapse;width:100%;background:var(--panel);border:1px solid var(--line)}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14.5px}th{background:var(--soft)}
+.tw{overflow-x:auto}
+</style></head><body>
+<header class="topbar"><a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+<nav><a href="../index.html">Overview</a><a href="../concepts.html">Concepts</a><a class="active" href="../deep-track.html">Deep Track</a><a href="subgame_perfection.html">This concept</a></nav></header>
+<main>
+<div class="kick">game theory · credible threats · backward induction</div>
+<h1>Subgame-perfect equilibrium — when threats must actually work</h1>
+<p class="lede">Sometimes a threat can deter someone even though you'd never want to carry it out. You say 'enter my market and I'll destroy my own profit'—and the threat works, until the moment they actually enter. Then suddenly you wish you could take it back. Subgame perfection is Nash equilibrium with a teeth-check: it throws out equilibria propped up by threats you would never actually execute. Here is the idea, a game where we see it happen, why these empty threats matter, and where this kind of reasoning reappears in bargaining, reputation, and commitment.</p>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why credibility changes everything</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="subgame_perfection.html">Atlas card</a></div>
+
+    <section class="fp" id="problem">
+      <h2>1 · The problem — when are threats real?</h2>
+      <div class="essay">
+      <p>Imagine you own a market and a rival is thinking of entering. You could say: 'I'll fight you with everything I have if you come in—I'll cut prices, undercut you, drain both our profits to zero if I have to.' This threat deters the rival. But now imagine they enter anyway. You do the math: fighting costs you an enormous loss, while accommodating and sharing the market is painful but survivable. Do you actually want to carry out your threat? Probably not. So here's the problem: <strong>if your rival is smart, they reason that when the moment comes, you won't follow through. Your threat was a bluff, and a bluff doesn't deter a thinking opponent.</strong></p>
+      <p>Nash equilibrium does not catch this. A Nash equilibrium allows an outcome where you play 'Fight' in the threat, and your rival stays out because they believe you—and yes, given that they stay out, you would never encounter the moment where you have to prove it. But if they did enter, you'd rather accommodate. The whole equilibrium rests on a threat you wouldn't execute. How do we rule out this kind of fake resting point?</p>
+      </div>
+    </section>
+    <section class="fp" id="reframe">
+      <h2>2 · The reframe — demand credibility at every branch</h2>
+      <div class="essay">
+      <p>Here is the idea: a player's strategy must be a best choice not just overall, but at <em>every point the game could actually reach</em>. Even at branches you hope never happen. If a threat is part of your plan, you must actually want to carry it out when the moment comes.</p>
+      <p>The method is <strong>backward induction</strong>: start at the end of the game, work backward, and at each point pick the choice that is actually best for that player, given what comes after. This rules out promises and threats that are just hot air. A strategy that survives this backward check is <strong>subgame-perfect</strong>—it is not just a Nash equilibrium, it is also a best choice at every subgame, every smaller game that could branch off at any point.</p>
+      </div>
+    </section>
+    <section class="fp" id="run">
+      <h2>3 · Seen on a real run — the entry game where fighting fails</h2>
+      <div class="essay">
+      <p>We took a concrete game: an Entrant decides whether to Enter or Stay Out. If the Entrant chooses to Enter, the Incumbent then chooses to Fight or Accommodate. The numbers are fixed payoffs for each outcome. Working backward: first, we ask the Incumbent: if entry happens, do you want to Fight or Accommodate? Then we ask the Entrant: knowing the Incumbent's best response, should you Enter? Every number is the program's output.</p>
+      <div class="tw"><table><tr><th>outcome</th><th>entrant payoff</th><th>incumbent payoff</th><th>note</th></tr><tr><td>stay out</td><td>0</td><td>1</td><td>the status quo</td></tr><tr><td>enter, incumbent fights</td><td>-1</td><td>-1</td><td>both lose</td></tr><tr><td>enter, incumbent accommodates</td><td>2</td><td>2</td><td>both gain</td></tr></table></div><figcaption>The three possible endpoints of the entry game, with payoffs for each player.</figcaption>
+      <p>Now the backward check:</p>
+      <div class="tw"><table><tr><th>step</th><th>player's choice</th><th>reasoning</th><th>payoff for that player</th></tr><tr><td>1. At the end</td><td>Incumbent faced with entry</td><td>Accommodate (2) beats Fight (−1)</td><td>incumbent gets 2</td></tr><tr><td>2. One level up</td><td>Entrant, looking ahead</td><td>Enter, knowing incumbent will accommodate (2), beats Stay Out (0)</td><td>entrant gets 2</td></tr><tr><td>3. Result</td><td>—</td><td>Subgame-perfect outcome</td><td>both get 2</td></tr></table></div><figcaption>Backward induction: at each point, pick the choice that is actually best for that player, given what comes next.</figcaption>
+      <div class="insight"><strong>The discovered fact: backward induction gives outcome In/Accommodate with payoffs (2, 2).</strong> Compare this to what a naive threat would promise: 'I'll fight any entry!' would deter entry if the Entrant believed it, yielding the Incumbent payoff 1 (the status quo). But the threat is not credible. Once entry happens, the Incumbent prefers 2 (accommodate) to −1 (fight). At that moment, the threat breaks. Backward induction finds the only outcome where both players' choices remain best choices all the way through.</div>
+      </div>
+    </section>
+    <section class="fp" id="why">
+      <h2>4 · Why credibility changes everything</h2>
+      <div class="essay">
+      <p>A threat only deters if the player would actually carry it out. If the threat-maker is rational and the threatened player knows it, the threatened player can reason backward: 'Will that threat actually hurt them at the moment it would execute? If not, it's an empty bluff.' And a bluff doesn't deter a thinking opponent. Subgame perfection captures this: it says every choice, even ones in branches never reached, must be a best response at that moment—a choice the player would actually want to make if forced to.</p>
+      <p>This is why commitment devices are so powerful in the real world. If you can genuinely cut off your own escape route—burn a bridge, sign a contract, set a rule you can't break—you can make a threat credible. A central bank that genuinely cannot print money at will can credibly threaten to hold the line on inflation, even when it hurts short term. A parent who says 'we are leaving the park NOW' and actually leaves the park (even though the child is crying) can credibly enforce bedtime rules. Credibility requires that when the moment comes, you want to follow through. That is what subgame perfection demands.</p>
+      </div>
+    </section>
+    <section class="fp" id="weakness">
+      <h2>5 · The one real weakness — it assumes you can't commit</h2>
+      <div class="essay">
+      <p>Subgame perfection assumes each player must want to carry out every part of their strategy at the moment it is reached. But in the real world, people can commit. You can sign a contract. You can burn a bridge. You can set a policy you cannot overturn. If you can truly remove your own ability to back down, you can make a threat credible again—and change the whole game.</p>
+      <p>The entry game is a case in point. The Incumbent's naive threat 'I'll fight entry' is not credible without commitment. But if the Incumbent could somehow commit in advance—perhaps by signing an irrevocable pact to destroy profit-sharing revenue if entry occurs—the threat becomes real. The Incumbent would want to carry it out (because they already chose to) and cannot escape. Now the threat deters. Backward induction works perfectly in the absence of commitment; but the moment you add the ability to commit, the solution changes. The theory is honest about its own boundary.</p>
+      </div>
+    </section>
+    <section class="fp" id="surprise">
+      <h2>6 · The surprise — this reasoning shapes everything hidden</h2>
+      <div class="essay">
+      <p>The idea of subgame perfection—'every plan must be a best choice at every point it could execute'—is the foundation of a vast territory: <strong>bargaining theory</strong> (when two parties make offers back and forth, subgame perfection pins down the outcome they must reach to avoid a breakdown), <strong>reputation and repeated games</strong> (your threat to punish cheating only works if your opponent knows you'll want to punish, even at cost), and <strong>signaling</strong> (when you send a costly signal—a college degree, a warranty, a charitable donation—the signal only works if the receiver can reason backward and see you'd want to send it even if no one believed you). It also runs through mechanism design: auction rules, contract structures, and incentive schemes are built on the principle that no one should face a moment where they want to cheat.</p>
+      <p>Central to modern economics, biology, and computer science, this one idea—'search backward, make sure each choice is a real best response, discard hollow threats'—is the backbone of how we think about strategic commitment, reputation, and trust.</p>
+      </div>
+    </section>
+    <section class="fp"><p class="muted">Related: <a href="nash_equilibrium-deep.html">Nash equilibrium</a> · <a href="backward_induction-deep.html">backward induction</a></p></section>
+    <details class="math"><summary>the run recipe — reproduce every number above</summary><div>
+      <p class="muted">A sequential-move entry game: Entrant picks In/Out; if In, Incumbent picks Fight/Accommodate. Payoffs: (Out → 0,1), (In+Fight → −1,−1), (In+Accom → 2,2). Solve by backward induction: at each node, pick the best choice for that player. The result is the unique subgame-perfect equilibrium.</p>
+      <div class="eq">At Incumbent's node (after entry): Accommodate (2) &gt; Fight (−1).
+At Entrant's node (looking ahead): Enter with Accommodate (2) &gt; Stay Out (0).
+Subgame-perfect outcome: (In, Accommodate) with payoffs (2, 2).</div>
+      <p class="muted">Full script: scripts/experiments/gametheory_run.py (EXP8). Numbers are the run's output verbatim.</p>
+    </div></details>
+<footer style="color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding:22px 0 60px;margin-top:24px">MIT Game Theory · Subgame-Perfect Equilibrium deep dive · every equilibrium and payoff here is computed. Experiments in scripts/experiments/gametheory_run.py.</footer>
+</main></body></html>

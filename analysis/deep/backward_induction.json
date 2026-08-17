@@ -1,0 +1,184 @@
+{
+  "id": "backward_induction",
+  "name": "Backward Induction",
+  "kick": "game theory · sequential play · reason from the end",
+  "title": "Backward induction — solve the game by starting at the last move",
+  "lede": "When a game unfolds move by move — a negotiation, a chess match, an entrant challenging an incumbent — your first move's success depends on how everyone will respond later. To plan it, reason backward from the end: figure out the last mover's choice (when their options are clear), then step back one move knowing what will follow, and keep stepping back to the start. Here is the idea, a real entry game we solve this way, why it gives the right answer, where it breaks in the real world, and the surprising places it reappears.",
+  "arc": [
+    [
+      "problem",
+      "The problem"
+    ],
+    [
+      "reframe",
+      "The reframe"
+    ],
+    [
+      "run",
+      "Seen on a real run"
+    ],
+    [
+      "why",
+      "Why it works"
+    ],
+    [
+      "weakness",
+      "The one weakness"
+    ],
+    [
+      "surprise",
+      "The surprise"
+    ]
+  ],
+  "sections": [
+    {
+      "id": "problem",
+      "h2": "1 · The problem — your best move depends on future moves you don't control",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "In a game played in one shot, you make your choice and the payoff is done. But in real games — negotiations that happen over time, chess, a startup thinking about entering a market where an incumbent sits — you move, then they respond, then maybe you move again. Your payoff rides on a whole sequence of choices by different people at different moments."
+        },
+        {
+          "t": "para",
+          "html": "The trap: how do you decide your first move when it depends completely on what the other person will choose later? You have to think: if I enter, will they fight me or give up? If they'll fight, maybe I shouldn't enter. If they'll accommodate, then I should. So you need to know their future choice before you can pick your move now. But you don't see the future — you have to reason about it."
+        }
+      ]
+    },
+    {
+      "id": "reframe",
+      "h2": "2 · The reframe — turn the game backward and reason from the end",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Here is the insight. Instead of guessing what will happen in the future, <strong>start at the very last move in the game and figure out what the last player will do</strong> — their choice, stripped down to just their payoff, is usually clear. Then step backward one move. Now the second-to-last player knows what will happen if they choose each option, so they can pick their best move. Keep stepping backward through the game to the start. Only then do you play forward."
+        },
+        {
+          "t": "para",
+          "html": "This is <strong>backward induction</strong>: solve the game by reasoning from the end backward. At each step, the player who moves knows what will happen next (because you already solved it), so they pick the choice that gives them the best payoff, given that future. Since every player reasons this way, the only choices that survive are ones where every player is genuinely doing their best at every step."
+        }
+      ]
+    },
+    {
+      "id": "run",
+      "h2": "3 · Seen on a real run — the entry game solved backward",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "An entrant thinks about entering a market. The incumbent sits there already. The game: (1) the entrant chooses In or Out; (2) if the entrant chose In, the incumbent then chooses Fight or Accommodate. We write the payoffs (the numbers the players get) for each outcome, and then we solve it backward. The numbers here are all computed."
+        },
+        {
+          "t": "table",
+          "headers": [
+            "outcome",
+            "entrant payoff",
+            "incumbent payoff"
+          ],
+          "rows": [
+            [
+              "In, Fight",
+              "−1",
+              "−1"
+            ],
+            [
+              "In, Accommodate",
+              "2",
+              "2"
+            ],
+            [
+              "Out (incumbent is idle)",
+              "0",
+              "3"
+            ]
+          ],
+          "caption": "The payoff table for the entry game: what each player gets for each possible outcome."
+        },
+        {
+          "t": "para",
+          "html": "Now solve backward. Start at the last move: if entry has happened, the incumbent chooses between Fight (payoff −1) and Accommodate (payoff 2). Since 2 &gt; −1, the incumbent will Accommodate."
+        },
+        {
+          "t": "para",
+          "html": "Step back one move: the entrant knows the incumbent will Accommodate if entry happens. So the entrant compares: enter and get 2 (because accommodation follows), or stay out and get 0. Since 2 &gt; 0, the entrant enters."
+        },
+        {
+          "t": "para",
+          "html": "The outcome: the entrant enters (In), the incumbent accommodates (Accommodate), and the payoffs are **2 and 2**. Every step is rational given what comes next. The game is solved."
+        },
+        {
+          "t": "insight",
+          "html": "<strong>The discovered fact: backward induction found the outcome In, Accommodate with payoffs (2, 2).</strong> The incumbent wanted to threaten 'I'll fight any entry!' to scare the entrant. But the threat is hollow — once entry happens, fighting gives the incumbent −1 while accommodation gives 2, so the incumbent will not carry it out. The entrant, knowing this, enters anyway. The only sequence that survives scrutiny is the one where every player's choice is actually rational at that moment."
+        }
+      ]
+    },
+    {
+      "id": "why",
+      "h2": "4 · Why it works — every choice must hold up under real conditions",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Backward induction works because it filters out plans that fall apart when they meet reality. An outcome where someone says 'I'll do X in the future' but then won't actually do it when the moment comes is not credible — it can't happen in a game among people who reason ahead. By starting at the end and asking 'will they really do this?' you catch the bluff."
+        },
+        {
+          "t": "para",
+          "html": "It is also the only solution concept that respects subgames — smaller games-within-the-game. An equilibrium is credible only if, at every branching point the game reaches, each player is still doing their best. This is called subgame perfection, and backward induction is the algorithm to find it."
+        },
+        {
+          "t": "para",
+          "html": "And it mirrors how smart people naturally think. When you plan a multi-step move (a chess opening, a negotiation), you imagine how it ends, then work backward. If the ending is bad, you change your opening. Backward induction formalizes that everyday intuition."
+        }
+      ]
+    },
+    {
+      "id": "weakness",
+      "h2": "5 · The one real weakness — it assumes perfect forward-looking rationality at every step",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Backward induction requires that every player thinks all the way to the end, understands all the payoffs, and reasons perfectly. In a two-move game like entry, that's easy. In a game with many moves — say, a 30-move chess endgame or a multi-round negotiation — human beings simply do not compute all the way to the end. Real people stop thinking after a few steps, or they make mistakes, or they reason differently (maybe they're vengeful and fight even if it hurts them, just to punish the entrant)."
+        },
+        {
+          "t": "para",
+          "html": "The second weakness: the game must be a perfect-information game — everyone must know the payoffs and the order of moves. In poker or negotiation, some information is hidden, and backward induction cannot reason through it alone. The prediction fails most often in long games where people get tired or lazy, or in short games where payoffs are misunderstood."
+        }
+      ]
+    },
+    {
+      "id": "surprise",
+      "h2": "6 · The surprise — backward induction is a first principle that reappears everywhere",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "In economics, this backward-solving principle drives bargaining theory (how much of the surplus should each person get in a negotiated deal that happens over time) and pricing over time (how should a company set prices across seasons if it knows demand next season depends on today's price)."
+        },
+        {
+          "t": "para",
+          "html": "In computer science, dynamic programming is exactly backward induction in disguise: you solve a big problem by breaking it into smaller subproblems, solving the smallest one at the end (the boundary condition), then stepping backward to larger ones, building up solutions as you go. It is the engine behind computer vision (breaking a video into frames and stitching them together) and control (planning a robot's path by finding the best step from every position back to the goal)."
+        },
+        {
+          "t": "para",
+          "html": "In machine learning, reinforcement learning trains agents to solve sequential decision problems, and the algorithms (like Q-learning) are solving backward: they learn the value of taking an action at a state by looking ahead to the next state, then step backward through the sequence to optimize from the start. The same backward logic runs inside modern AI."
+        }
+      ]
+    }
+  ],
+  "related": [
+    [
+      "subgame_perfection-deep.html",
+      "subgame perfection"
+    ],
+    [
+      "best_response-deep.html",
+      "best response"
+    ],
+    [
+      "nash_equilibrium-deep.html",
+      "Nash equilibrium"
+    ]
+  ],
+  "recipe": {
+    "summary": "A sequential game: entrant chooses In or Out; if In, incumbent chooses Fight or Accommodate. A table of payoffs for each outcome (three outcomes total). To solve backward induction: (1) at the last move, find the incumbent's best choice (comparing payoffs for Fight vs Accommodate given entry). (2) One step back, the entrant, knowing the incumbent's choice, picks their best option (In vs Out). Comparisons only — no matrices needed. The outcome is the sequence of choices that survives backward reasoning.",
+    "eq": "For each outcome (incumbent's last choice):\n  if entry: incumbent picks max(Fight payoff, Accommodate payoff)\n  then entrant, knowing this, picks max(In payoff given that choice, Out payoff)\nThe sequence of choices that emerges is backward-induction equilibrium.",
+    "note": "Full script: scripts/experiments/gametheory_run.py (EXP8). Numbers are the run's output verbatim."
+  }
+}

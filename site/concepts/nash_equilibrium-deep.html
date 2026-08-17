@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nash Equilibrium (deep) · MIT Game Theory</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+.arc{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.arc a{font-size:12.5px;color:var(--accent-dark);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:3px 10px;background:var(--panel)}
+.fp{border-top:1px solid var(--line);padding:22px 0 4px;margin-top:10px}
+.fp h2{margin:6px 0 10px}
+.kick{font-size:12px;color:var(--accent-dark);font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:6px 0}
+.lede{font-size:20px;color:#34373d;max-width:820px}
+.essay p{max-width:74ch;font-size:16.5px;margin:11px 0;color:#2c2f34}
+.barrow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:13px}
+.barrow .lab{width:150px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted);text-align:right}
+.bar{height:16px;border-radius:3px;background:var(--accent);min-width:2px}.bar.alt{background:#3f6f57}
+.barrow .val{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.eq{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin:12px 0;overflow-x:auto;white-space:pre-wrap}
+.insight{border-left:4px solid var(--accent);background:var(--soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:16px}
+details.math{border:1px solid var(--line);border-radius:8px;background:var(--panel);margin:14px 0}
+details.math summary{cursor:pointer;padding:10px 13px;color:var(--accent-dark);font-weight:750}
+details.math > div{border-top:1px solid var(--line);padding:4px 14px 12px}
+figure{margin:16px 0}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+table{border-collapse:collapse;width:100%;background:var(--panel);border:1px solid var(--line)}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14.5px}th{background:var(--soft)}
+.tw{overflow-x:auto}
+</style></head><body>
+<header class="topbar"><a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+<nav><a href="../index.html">Overview</a><a href="../concepts.html">Concepts</a><a class="active" href="../deep-track.html">Deep Track</a><a href="nash_equilibrium.html">This concept</a></nav></header>
+<main>
+<div class="kick">game theory · first principles · when nobody wants to move</div>
+<h1>Nash equilibrium — a resting point no one alone wants to leave</h1>
+<p class="lede">When everyone's choice depends on everyone else's, is there any stable outcome — a set of choices where each person is content given what the others are doing? That resting point is a Nash equilibrium. Here is the idea, a real game where we compute one (and find two), why it is the natural notion of 'solved', where it goes wrong, and where it quietly runs the modern world.</p>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why it's the right idea</a><a href="#weakness">The one weakness</a><a href="#surprise">The surprise</a><a href="nash_equilibrium.html">Atlas card</a></div>
+
+    <section class="fp" id="problem">
+      <h2>1 · The problem — everyone's best move depends on everyone else's</h2>
+      <div class="essay">
+      <p>In a decision you make alone, &lsquo;best&rsquo; is clear: pick the option with the highest payoff. But most interesting situations are not solo. What price you should set depends on your rival's price; which side of the road to drive on depends on everyone else; whether to bluff depends on whether they'll call. Your best choice is a moving target that depends on choices other people are making at the same time — and theirs depend on yours.</p>
+      <p>So &lsquo;what should I do?&rsquo; has no answer in isolation. The sharper question is: <strong>is there a combination of everyone's choices that is stable — where, given what everyone else is doing, no single person wishes they had chosen differently?</strong></p>
+      </div>
+    </section>
+    <section class="fp" id="reframe">
+      <h2>2 · The reframe — look for a mutual best response</h2>
+      <div class="essay">
+      <p>Here is the idea, due to John Nash. First define a &lsquo;best response&rsquo;: for any fixed choices by everyone else, your best response is simply the option that pays you the most against them. Now look for a combination of choices in which <em>every</em> player is already playing a best response to the others. At such a point nobody can gain by changing their own choice alone — so nobody moves. That self-consistent, no-regret resting point is a <strong>Nash equilibrium</strong>. To find them you don't guess: you check every combination and keep the ones where each player's choice is a best response to the rest.</p>
+      </div>
+    </section>
+    <section class="fp" id="run">
+      <h2>3 · Seen on a real run — computing the equilibria of a game</h2>
+      <div class="essay">
+      <p>We took a small coordination game — two people who both want to end up doing the same thing (meet at the same place, adopt the same standard), but who each prefer a different one of the two options. We wrote out the payoffs and had the program check every combination for a mutual best response. Every number is its output.</p>
+      <div class="tw"><table><tr><th>combination of choices</th><th>is each player best-responding?</th><th>Nash equilibrium?</th></tr><tr><td>both pick Option X</td><td>yes — neither gains by switching alone</td><td>YES</td></tr><tr><td>both pick Option Y</td><td>yes — neither gains by switching alone</td><td>YES</td></tr><tr><td>one picks X, the other Y</td><td>no — the mismatched player wants to switch</td><td>no</td></tr><tr><td>the other mismatch</td><td>no — again someone wants to switch</td><td>no</td></tr></table></div><figcaption>Checking all four combinations for mutual best response turns up exactly two stable points.</figcaption>
+      <div class="insight"><strong>The discovered fact: this game has TWO Nash equilibria — both choose X, or both choose Y.</strong> Each is stable: once the two players are matched, neither can do better by unilaterally switching to the mismatched option, so neither moves. The two mismatched combinations are not equilibria — someone always regrets their choice and wants to change. Note what this already reveals: &lsquo;solved&rsquo; need not mean &lsquo;one answer&rsquo;.</div>
+      </div>
+    </section>
+    <section class="fp" id="why">
+      <h2>4 · Why it's the right idea</h2>
+      <div class="essay">
+      <p>A Nash equilibrium is exactly the outcome that can persist among rational players who understand each other. Any non-equilibrium combination contains at least one person who could do better by changing — so if people are even a little rational, that combination unravels the moment they realize it. Only the equilibria survive scrutiny. It is also the natural fixed point of learning: if players keep best-responding to what they saw last time, the process can only come to rest at a Nash equilibrium.</p>
+      <p>And Nash proved something remarkable: <em>every</em> finite game has at least one equilibrium, as long as you allow players to randomize their choices. There is always a resting point — you are never guaranteed it is unique or good, but one always exists.</p>
+      </div>
+    </section>
+    <section class="fp" id="weakness">
+      <h2>5 · The one real weakness — it says stable, not good, and not which one</h2>
+      <div class="essay">
+      <p>Equilibrium is a weak promise. It does not say the outcome is <em>good</em>: the Prisoner's Dilemma's only equilibrium is mutual defection, which both players hate. It does not say the outcome is <em>unique</em>: this very game had two, and Nash alone can't tell you which one the players will land on (that's a coordination problem). And it assumes everyone is rational, knows the payoffs, and reasons about each other perfectly — strip away those and real people can settle somewhere else entirely. Nash tells you where the resting points are; it does not promise you'll like them or reach the best one.</p>
+      </div>
+    </section>
+    <section class="fp" id="surprise">
+      <h2>6 · The surprise — this one idea runs the modern world</h2>
+      <div class="essay">
+      <p>The equilibrium concept is the hub the rest of the subject turns on. Refining it — which equilibria survive if we also demand that threats be credible (subgame perfection), or that beliefs be consistent (Bayesian equilibrium) — generates the whole theory of bargaining, signaling, and reputation. Computing it drives the design of auctions that raise billions, of matching systems that place students in schools and doctors in hospitals, and of the incentives inside markets and contracts.</p>
+      <p>It reaches past economics too: evolutionary biology reads stable populations as equilibria, and modern machine learning trains competing networks by chasing the equilibrium of a game. Learn to spot &lsquo;where would nobody want to move?&rsquo; and you have the master key to every situation where choices collide.</p>
+      </div>
+    </section>
+    <section class="fp"><p class="muted">Related: <a href="best_response-deep.html">best response</a> · <a href="mixed_strategies-deep.html">mixed strategies</a> · <a href="dominance-deep.html">dominance</a> · <a href="subgame_perfection-deep.html">subgame perfection</a></p></section>
+    <details class="math"><summary>the run recipe — reproduce every number above</summary><div>
+      <p class="muted">A 2x2 coordination game with row payoffs A and column payoffs B. Enumerate all four choice combinations; a cell is a pure Nash equilibrium when the row payoff is best in its column AND the column payoff is best in its row. numpy, really just comparisons.</p>
+      <div class="eq">cell (i,j) is Nash  iff  A[i,j] = max over rows of A[:,j]  and  B[i,j] = max over cols of B[i,:]
+# coordination game -&gt; two pure equilibria: (X,X) and (Y,Y)</div>
+      <p class="muted">Full script: scripts/experiments/gametheory_run.py (EXP2). Numbers are the run's output verbatim.</p>
+    </div></details>
+<footer style="color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding:22px 0 60px;margin-top:24px">MIT Game Theory · Nash Equilibrium deep dive · every equilibrium and payoff here is computed. Experiments in scripts/experiments/gametheory_run.py.</footer>
+</main></body></html>

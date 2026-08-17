@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rationalizability (deep) · MIT Game Theory</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+.arc{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.arc a{font-size:12.5px;color:var(--accent-dark);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:3px 10px;background:var(--panel)}
+.fp{border-top:1px solid var(--line);padding:22px 0 4px;margin-top:10px}
+.fp h2{margin:6px 0 10px}
+.kick{font-size:12px;color:var(--accent-dark);font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:6px 0}
+.lede{font-size:20px;color:#34373d;max-width:820px}
+.essay p{max-width:74ch;font-size:16.5px;margin:11px 0;color:#2c2f34}
+.barrow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:13px}
+.barrow .lab{width:150px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted);text-align:right}
+.bar{height:16px;border-radius:3px;background:var(--accent);min-width:2px}.bar.alt{background:#3f6f57}
+.barrow .val{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.eq{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin:12px 0;overflow-x:auto;white-space:pre-wrap}
+.insight{border-left:4px solid var(--accent);background:var(--soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:16px}
+details.math{border:1px solid var(--line);border-radius:8px;background:var(--panel);margin:14px 0}
+details.math summary{cursor:pointer;padding:10px 13px;color:var(--accent-dark);font-weight:750}
+details.math > div{border-top:1px solid var(--line);padding:4px 14px 12px}
+figure{margin:16px 0}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+table{border-collapse:collapse;width:100%;background:var(--panel);border:1px solid var(--line)}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14.5px}th{background:var(--soft)}
+.tw{overflow-x:auto}
+</style></head><body>
+<header class="topbar"><a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+<nav><a href="../index.html">Overview</a><a href="../concepts.html">Concepts</a><a class="active" href="../deep-track.html">Deep Track</a><a href="rationalizability.html">This concept</a></nav></header>
+<main>
+<div class="kick">game theory · first principles · what survives when everyone is rational</div>
+<h1>Rationalizability — the strategies that survive pure logic</h1>
+<p class="lede">Before you can pin down what players will do, you need to know what they could do without contradicting the fact that they are rational and everyone knows everyone is rational. Rationalizability is the set of choices that survive that filter: every strategy a player might pick must be best against some reasonable belief about what rational opponents will do. Here is the idea, why it's the weakest sensible prediction, a real game where we compute it, what you lose by being this conservative, and where this logic quietly anchors games where people think only a step or two ahead.</p>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why this is the weakest sensible prediction</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="rationalizability.html">Atlas card</a></div>
+
+    <section class="fp" id="problem">
+      <h2>1 · The problem — without an equilibrium, what can we say?</h2>
+      <div class="essay">
+      <p>Imagine you are in a game where you don't know what the other players will do, and they don't know what you will do. You want to choose a strategy — a plan of action. But what should you pick? Your best choice depends on theirs. And theirs depend on yours. You could assume they will reach an equilibrium with you, but that assumes they think the same way and will coordinate on the same answer you do. What if they don't? What if they reason differently or pick a different equilibrium?</p>
+      <p>So here is the sharper question: <strong>forget about equilibrium for a moment. Just using the fact that everyone is rational and knows everyone is rational, which strategies could possibly make sense?</strong> Not 'which one will happen,' but 'which ones are not obviously foolish?'</p>
+      </div>
+    </section>
+    <section class="fp" id="reframe">
+      <h2>2 · The reframe — keep only strategies you can justify by some rational opponent belief</h2>
+      <div class="essay">
+      <p>Here is the key idea. A strategy is 'rationalizable' if <em>there exists some belief about what your opponents will do</em> — and that belief must be consistent with them being rational — <em>such that your strategy is a best response to that belief.</em> In other words: you don't have to know what they'll do; you just have to be able to point to some scenario where rational opponents might do things that make your choice sensible.</p>
+      <p>You start by deleting any strategy that is strictly dominated — something you'd never pick because you have another option that beats it no matter what anyone else does. Then you ask: given that the other players are rational, they won't pick their dominated strategies either, so delete those. Then ask again: given that they deleted their dominated strategies, do you have any more dominated strategies? Keep going until nothing changes. <strong>What survives — what you cannot rule out by pure logic — is the set of rationalizable strategies.</strong></p>
+      </div>
+    </section>
+    <section class="fp" id="run">
+      <h2>3 · Seen on a real run — deleting the unjustifiable strategies</h2>
+      <div class="essay">
+      <p>We took a 3×3 game (three strategies for each player) and ran the deletion algorithm: remove any strategy a rational player would never use, then re-check. Every number is the computed output.</p>
+      <div class="tw"><table><tr><th>step</th><th>what happens</th><th>survivors (rows/columns)</th></tr><tr><td>start (no deletion)</td><td>all nine combinations are possible</td><td>rows {0, 1, 2} and columns {0, 1, 2}</td></tr><tr><td>round 1</td><td>row 2 is dominated by row 0 — delete it. Then column 2 is dominated by column 0 — delete it.</td><td>rows {0, 1} and columns {0, 1}</td></tr><tr><td>round 2</td><td>no more dominated strategies exist given {0,1} vs {0,1}</td><td>rounds stop here</td></tr></table></div><figcaption>Iterated deletion of dominated strategies shrinks the game step by step.</figcaption>
+      <div class="insight"><strong>The discovered fact: in this 3×3 game, only rows {0, 1} and columns {0, 1} are rationalizable — only the top-left 2×2 sub-game survives.</strong> Row 2 and column 2 cannot be justified: there is no belief about a rational opponent that makes them a best response. Once you delete them, no new dominated strategies emerge, so the survivors are final. These four strategies are the ones each player could potentially use and still claim 'I have a reason — some rational opponent's choice makes me best off picking this.'</div>
+      </div>
+    </section>
+    <section class="fp" id="why">
+      <h2>4 · Why this is the weakest sensible prediction</h2>
+      <div class="essay">
+      <p>Rationalizability uses only the weakest assumption: that everyone is rational, and everyone knows everyone is rational, and so on. It does not assume players coordinate on an equilibrium, do not assume they know the payoffs the same way, and does not require them to think like you. It asks: 'Can I rule this out by pure logic alone?'</p>
+      <p>That is why it is the weakest sensible prediction. Any strategy ruled out by rationalizability is ruled out by <em>every sensible solution concept</em> — whether it's Nash equilibrium, subgame perfection, or anything more refined. If you can't point to a rational belief that justifies a choice, then it should not happen. But rationalizability is also conservative: it keeps many strategies alive, so it narrows the game without pinning down a unique answer. An equilibrium is a stronger prediction — it narrows further — but it buys that narrowness by assuming more (like coordination or that everyone reasons the same way).</p>
+      </div>
+    </section>
+    <section class="fp" id="weakness">
+      <h2>5 · The one real weakness — it is often a very loose prediction</h2>
+      <div class="essay">
+      <p>Rationalizability can leave you with a lot of survivors. In our 3×3 example, four combinations survived; in larger games, the set can be much bigger, spanning many possible outcomes. You've ruled out the truly nonsensical, but you have not pinned down which outcome actually happens. A game with a unique Nash equilibrium gives a much tighter prediction — there is one outcome, take it or leave it. Rationalizability says 'any of these four could happen' — it is less of an answer.</p>
+      <p>There is a deeper issue too: rationalizability assumes people can reason through the entire chain 'I'm rational, you know I'm rational, you know I know you're rational, you know I know you know I'm rational...' and so on infinitely. In reality, humans think one or two steps ahead and then stop. That's why real people in coordination games often fail to coordinate even when mutual coordination is a Nash equilibrium — they think you might not think like them.</p>
+      </div>
+    </section>
+    <section class="fp" id="surprise">
+      <h2>6 · The surprise — levels of reasoning, and where real people actually stop</h2>
+      <div class="essay">
+      <p>The power of rationalizability shows up in a game called 'guess 2/3 of the average.' Everyone picks a number from 0 to 100; the person closest to two-thirds of the group average wins. The Nash equilibrium is for everyone to pick 0 — because if you reason one step ahead ('they'll pick a positive number, so the average is positive, so 2/3 of it is positive, so 0 is closer to 2/3 of a positive number than any positive number is'), you pick a smaller number. And if everyone reasons this way, everyone picks 0.</p>
+      <p>But actual people? Real contestants typically pick numbers in the 20–35 range. Why? Because they think one or two steps ahead, not infinitely many. Level-0 reasoning: 'I'll pick randomly.' Level-1: 'The average of random picks is about 50, so 2/3 of that is 33, so I pick 33.' Level-2: 'Others are Level-1 thinkers picking around 33, so 2/3 of the average is 22, so I pick 22.' And humans usually stop around Level 1 or 2. Rationalizability names the boundary: it marks the set of strategies that survive if you reason forever; when real people deviate from equilibrium, they are living in the gap between their limited steps of reasoning and the infinite chain. The concept becomes a lens for understanding why smart, rational people reach different outcomes than the theory predicts.</p>
+      </div>
+    </section>
+    <section class="fp"><p class="muted">Related: <a href="best_response-deep.html">best response</a> · <a href="dominance-deep.html">dominance</a> · <a href="nash_equilibrium-deep.html">Nash equilibrium</a> · <a href="iterated_deletion-deep.html">iterated deletion of dominated strategies</a></p></section>
+    <details class="math"><summary>the run recipe — reproduce every number above</summary><div>
+      <p class="muted">A 3×3 game where we iteratively delete strictly dominated strategies. A strategy for a player is strictly dominated if there exists another strategy that yields a higher payoff against any choice the opponent makes. We repeat until no more dominated strategies exist. The survivors are the rationalizable strategies.</p>
+      <div class="eq">for each strategy s_i of player 1, it is dominated if there exists s_i' such that payoff(s_i', opponent_j) &gt; payoff(s_i, opponent_j) for all opponent_j. Repeat for all players until fixed point.</div>
+      <p class="muted">Full script: scripts/experiments/gametheory_run.py (EXP4). Numbers are the run's output verbatim. Survivors after iterated deletion: rows {0,1} and columns {0,1}.</p>
+    </div></details>
+<footer style="color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding:22px 0 60px;margin-top:24px">MIT Game Theory · Rationalizability deep dive · every equilibrium and payoff here is computed. Experiments in scripts/experiments/gametheory_run.py.</footer>
+</main></body></html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mixed Strategies (deep) · MIT Game Theory</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+.arc{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.arc a{font-size:12.5px;color:var(--accent-dark);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:3px 10px;background:var(--panel)}
+.fp{border-top:1px solid var(--line);padding:22px 0 4px;margin-top:10px}
+.fp h2{margin:6px 0 10px}
+.kick{font-size:12px;color:var(--accent-dark);font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:6px 0}
+.lede{font-size:20px;color:#34373d;max-width:820px}
+.essay p{max-width:74ch;font-size:16.5px;margin:11px 0;color:#2c2f34}
+.barrow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:13px}
+.barrow .lab{width:150px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted);text-align:right}
+.bar{height:16px;border-radius:3px;background:var(--accent);min-width:2px}.bar.alt{background:#3f6f57}
+.barrow .val{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.eq{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin:12px 0;overflow-x:auto;white-space:pre-wrap}
+.insight{border-left:4px solid var(--accent);background:var(--soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:16px}
+details.math{border:1px solid var(--line);border-radius:8px;background:var(--panel);margin:14px 0}
+details.math summary{cursor:pointer;padding:10px 13px;color:var(--accent-dark);font-weight:750}
+details.math > div{border-top:1px solid var(--line);padding:4px 14px 12px}
+figure{margin:16px 0}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+table{border-collapse:collapse;width:100%;background:var(--panel);border:1px solid var(--line)}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14.5px}th{background:var(--soft)}
+.tw{overflow-x:auto}
+</style></head><body>
+<header class="topbar"><a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+<nav><a href="../index.html">Overview</a><a href="../concepts.html">Concepts</a><a class="active" href="../deep-track.html">Deep Track</a><a href="mixed_strategies.html">This concept</a></nav></header>
+<main>
+<div class="kick">game theory · first principles · when randomization is the best strategy</div>
+<h1>Mixed strategies — be deliberately random when any predictable choice can be exploited</h1>
+<p class="lede">In some games, announcing your choice in advance is a terrible idea. A penalty taker who always shoots to the right, a poker player who always bluffs the same hands, a computer system that always picks the same move — all get demolished by an opponent who sees the pattern. The solution is to randomize: choose a probability for each option, not an option. Here is the problem, the reframe, a real game where we compute the equilibrium (and find it requires 50/50 randomization), why this works, where it fails, and why Nash proved randomization is the key to existence itself.</p>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why randomizing wins</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="mixed_strategies.html">Atlas card</a></div>
+
+    <section class="fp" id="problem">
+      <h2>1 · The problem — any predictable choice can be read and exploited</h2>
+      <div class="essay">
+      <p>Suppose you play a game where the other player benefits from guessing what you will do. A penalty kick: the goalkeeper wants to dive where you'll shoot, and you want to shoot where they dive. If you always shoot left, they learn it and wait on the left. If you notice them waiting and switch to the right, they notice <em>you</em> noticing and switch back. There is no pure choice — no single direction — where you are safe: any fixed move can be read and counter-played.</p>
+      <p>This happens in many games of conflict. A card player who always bluffs on the river when they have a draw, a computer that always responds to a network attack with the same algorithm, a tennis player whose serve has a favored direction. Any choice you announce (even by habit) becomes information your opponent can exploit.</p>
+      <p>So the sharpest question is: <strong>is there a way to choose that makes your opponent unable to profit from guessing?</strong></p>
+      </div>
+    </section>
+    <section class="fp" id="reframe">
+      <h2>2 · The reframe — choose a probability, not an option</h2>
+      <div class="essay">
+      <p>Here is the reframe. Instead of picking one action — say, 'always shoot left' — pick a probability distribution over actions. You will shoot left some fraction of the time, right the rest, and you commit to choosing each shot by randomization: a coin flip, a random number generator, a practice routine that naturally divides your kicks without a pattern.</p>
+      <p>Now, why would the opponent guess? If you are truly randomizing 50/50, they gain nothing by diving left versus right — either way they face a 50% chance of a goal. The payoff is the same for every guess they make. At that point, they are indifferent. And when your opponent is indifferent, they cannot exploit you. Randomization is choosing a mix of probabilities such that <strong>your opponent has no incentive to deviate from their best response to your mix</strong>. This is called a mixed-strategy Nash equilibrium: each player's randomized choice makes the other player indifferent.</p>
+      </div>
+    </section>
+    <section class="fp" id="run">
+      <h2>3 · Seen on a real run — matching pennies has no pure equilibrium, only 50/50 randomization</h2>
+      <div class="essay">
+      <p>We took the simplest game of conflict: matching pennies. Two players reveal a coin face simultaneously. Player 1 wins if the faces match (both heads or both tails); Player 2 wins if they mismatch. We checked whether any pure strategy (always heads, always tails) forms a Nash equilibrium. Then we computed the unique mixed equilibrium.</p>
+      <div class="tw"><table><tr><th>strategy profile</th><th>Player 1 equilibrium?</th><th>Player 2 equilibrium?</th><th>Is it Nash?</th></tr><tr><td>both play Heads</td><td>no (they'd switch)</td><td>no (they'd switch)</td><td>no</td></tr><tr><td>both play Tails</td><td>no (they'd switch)</td><td>no (they'd switch)</td><td>no</td></tr><tr><td>1 Heads, 2 Tails</td><td>no (1 wants Tails)</td><td>no (2 wants Heads)</td><td>no</td></tr><tr><td>1 Tails, 2 Heads</td><td>no (1 wants Heads)</td><td>no (2 wants Tails)</td><td>no</td></tr></table></div><figcaption>Matching pennies: no pure strategy combination is stable — each player can always do better by switching.</figcaption>
+      <div class="insight"><strong>The discovered fact: matching pennies has NO pure-strategy Nash equilibrium. Its unique equilibrium is for each player to randomize 50/50 (Heads and Tails equally likely).</strong> If Player 1 deviates to Heads 70% of the time, Player 2 exploits the pattern: choose Heads 100%, winning 70% of the time instead of 50%. Tilting the mix costs you.</div>
+      </div>
+    </section>
+    <section class="fp" id="why">
+      <h2>4 · Why randomizing is optimal — you make them indifferent</h2>
+      <div class="essay">
+      <p>Here is the logic. Suppose you know your opponent's mix — they randomize 50/50. Now, can you do better by deviating? If you play Heads 100%, you win half the time (when they play Heads). If you play Tails 100%, you win half the time (when they play Tails). If you mix 40/60, you still win half the time on average. When your opponent mixes 50/50, <em>every</em> choice you make earns you the same payoff. They have rendered your choice irrelevant. You cannot improve, so you do not move.</p>
+      <p>This is the core of mixed-strategy equilibrium: each player randomizes in a way that makes the other indifferent. Once both are indifferent, neither can gain by changing — the mix is an equilibrium. And crucially, Nash proved something remarkable: <em>every</em> finite game has at least one equilibrium when you allow mixed strategies. Some games have pure equilibria (like the coordination game: both do X or both do Y); others have only mixed. But all of them have at least one.</p>
+      </div>
+    </section>
+    <section class="fp" id="weakness">
+      <h2>5 · The one real weakness — players must randomize, and the equilibrium mix can be delicate</h2>
+      <div class="essay">
+      <p>The first fragility: the analysis assumes players <em>can</em> and <em>do</em> randomize perfectly. But humans are notoriously bad at randomizing. If you ask someone to play rock-paper-scissors, they are more likely to pick rock first, and their &lsquo;random&rsquo; sequences have patterns an opponent can spot. Good players exploit these patterns — they are not indifferent; they are actively hunting for biases.</p>
+      <p>The second: even if everyone randomizes, the equilibrium mix can be delicate. In matching pennies, 50/50 is robust — a small deviation to 51/49 gives the opponent a small edge. But in some games the equilibrium mix is more sensitive, and coordinating on the exact probabilities is hard. If some players think the mix is 40/60 and others think it is 50/50, the equilibrium unravels and payoffs diverge.</p>
+      <p>In short: mixed equilibrium is elegant in theory. In practice, it requires players to randomize faithfully and to agree on the probabilities — both things real people struggle with, which real opponents exploit relentlessly.</p>
+      </div>
+    </section>
+    <section class="fp" id="surprise">
+      <h2>6 · The surprise — Nash's theorem: every finite game has an equilibrium in mixed strategies</h2>
+      <div class="essay">
+      <p>Here is the conceptual payoff. Nash proved that if you allow players to randomize, <em>every</em> finite game — no matter how many players or strategies — has at least one equilibrium. This is a guarantee of existence. It is what transforms game theory from a list of special cases into a complete theory: you can always ask 'where is the equilibrium?' and be assured an answer exists, even if it is hard to compute.</p>
+      <p>This one insight ripples far. It is why penalty-takers in soccer randomize their kicks (pure strategy gets exploited too often). It is why professional poker players randomize their bluffs at a calibrated rate — deviating to bluff too often or too rarely lets opponents exploit you. It is why randomized algorithms in computer science can beat deterministic adversaries: a network protocol that acts unpredictably frustrates an attacker who tried to learn its pattern. And it is why competing AI systems settle into mixed strategies when locked in adversarial games — randomization emerges as the path to survival.</p>
+      <p>The deeper truth: when your payoff depends on being unpredictable, being unpredictable IS the best strategy. And Nash showed you can always find the right mix to make it work.</p>
+      </div>
+    </section>
+    <section class="fp"><p class="muted">Related: <a href="nash_equilibrium-deep.html">Nash equilibrium</a> · <a href="best_response-deep.html">best response</a> · <a href="zero_sum_games-deep.html">zero-sum games</a> · <a href="dominance-deep.html">dominance</a></p></section>
+    <details class="math"><summary>the run recipe — reproduce every number above</summary><div>
+      <p class="muted">Matching pennies: Player 1 wants to match, Player 2 wants to mismatch. Check all four pure-strategy combinations for mutual best response (none exist). Then compute the unique mixed Nash equilibrium: each player randomizes 50/50. Verify that deviating to 70/30 is exploitable. Small numpy program using payoff matrices and best-response logic.</p>
+      <div class="eq">For each strategy profile (s1, s2), check if player 1's payoff is maximal in s1 given s2, AND player 2's payoff is maximal in s2 given s1. Mixed equilibrium solved by indifference: player's mixed strategy makes opponent indifferent over opponent's choices.</div>
+      <p class="muted">Full script: scripts/experiments/gametheory_run.py (EXP3). Numbers are the run's output verbatim — no pure equilibria, unique mixed equilibrium is 50/50, deviating to 70% is exploitable.</p>
+    </div></details>
+<footer style="color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding:22px 0 60px;margin-top:24px">MIT Game Theory · Mixed Strategies deep dive · every equilibrium and payoff here is computed. Experiments in scripts/experiments/gametheory_run.py.</footer>
+</main></body></html>

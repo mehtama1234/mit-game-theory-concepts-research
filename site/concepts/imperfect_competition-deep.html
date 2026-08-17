@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Imperfect Competition (deep) · MIT Game Theory</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+.arc{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.arc a{font-size:12.5px;color:var(--accent-dark);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:3px 10px;background:var(--panel)}
+.fp{border-top:1px solid var(--line);padding:22px 0 4px;margin-top:10px}
+.fp h2{margin:6px 0 10px}
+.kick{font-size:12px;color:var(--accent-dark);font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:6px 0}
+.lede{font-size:20px;color:#34373d;max-width:820px}
+.essay p{max-width:74ch;font-size:16.5px;margin:11px 0;color:#2c2f34}
+.barrow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:13px}
+.barrow .lab{width:150px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted);text-align:right}
+.bar{height:16px;border-radius:3px;background:var(--accent);min-width:2px}.bar.alt{background:#3f6f57}
+.barrow .val{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.eq{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin:12px 0;overflow-x:auto;white-space:pre-wrap}
+.insight{border-left:4px solid var(--accent);background:var(--soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:16px}
+details.math{border:1px solid var(--line);border-radius:8px;background:var(--panel);margin:14px 0}
+details.math summary{cursor:pointer;padding:10px 13px;color:var(--accent-dark);font-weight:750}
+details.math > div{border-top:1px solid var(--line);padding:4px 14px 12px}
+figure{margin:16px 0}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+table{border-collapse:collapse;width:100%;background:var(--panel);border:1px solid var(--line)}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14.5px}th{background:var(--soft)}
+.tw{overflow-x:auto}
+</style></head><body>
+<header class="topbar"><a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+<nav><a href="../index.html">Overview</a><a href="../concepts.html">Concepts</a><a class="active" href="../deep-track.html">Deep Track</a><a href="imperfect_competition.html">This concept</a></nav></header>
+<main>
+<div class="kick">game theory · first principles · the world between monopoly and chaos</div>
+<h1>Imperfect competition — a handful of rivals who shape the price together</h1>
+<p class="lede">Textbook economics draws two extremes: one all-powerful monopoly that raises prices and cuts output to maximize profit, or so many price-takers that no single firm matters. The real world is a handful of firms — big enough to move the price, small enough to feel competition. Each watches what the others make and adjusts its own output. Here is how that middle outcome emerges, why it sits between the two extremes, where the model cracks, and why it unlocks antitrust law.</p>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why the middle outcome emerges</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="imperfect_competition.html">Atlas card</a></div>
+
+    <section class="fp" id="problem">
+      <h2>1 · The problem — a few firms watching each other</h2>
+      <div class="essay">
+      <p>When one monopolist has a market, it thinks: 'more output means lower price for everyone, so I'll cut output and keep prices high and profit fat.' When there are infinitely many firms in perfect competition, each is so tiny it thinks 'the price is fixed; I'll just make as much as I can.' But the real world sits in the middle: two, three, maybe ten big firms dominating an industry. Each is big enough that its output moves the market price. But none is so big that it ignores the others. Each watches what rivals make and asks: 'Given what THEY are making, how much should I make?'</p>
+      <p>The puzzle: <strong>what is the equilibrium when a few big rivals each choose output knowing their choice moves the market price, knowing others are watching, and best-responding to each other?</strong> It won't be the monopoly's choice (that would need a cartel enforcing one firm's profit-maximizing quota). It won't be full competition either (that needs so many firms that no single one matters). Where do they settle?</p>
+      </div>
+    </section>
+    <section class="fp" id="reframe">
+      <h2>2 · The reframe — each firm best-responds to rivals' output</h2>
+      <div class="essay">
+      <p>Here is Cournot's 1838 insight. Define the market setup: there is a price curve (as industry output rises, the price everyone receives falls). Each firm knows that curve — it is public knowledge. Now define a firm's best response: given that your rivals will make some quantity, the amount YOU should make is the one that maximizes your own profit, given that rivals' output and the resulting price. In other words: you choose output to be best against what you think the others will do.</p>
+      <p>Now look for a resting point. A <strong>Cournot equilibrium</strong> is a choice of output by each firm such that every firm is playing its best response to every other firm's choice. Check each firm: 'Given what everyone else is making, could I do better by making more or less?' If the answer is no for every firm, you have found the stable outcome. It fell out of everyone thinking: 'I'll make what's best for me, given what they make.'</p>
+      </div>
+    </section>
+    <section class="fp" id="run">
+      <h2>3 · Seen on a real run — two rivals converge to 4 units each</h2>
+      <div class="essay">
+      <p>We built a simple duopoly: two identical firms, a downward-sloping price curve (the more total output, the lower the price), and payoffs are quantity times price minus cost. We started with a guess of each firm's output, computed each firm's best response to the other, updated to those best responses, and repeated. Here is what converged:</p>
+      <div class="tw"><table><tr><th>scenario</th><th>firm output</th><th>total output</th><th>interpretation</th></tr><tr><td>Cournot equilibrium (best-reply each round)</td><td>4.0 units each</td><td>8.0 units</td><td>Each firm maximizes profit given rival's output; both converge here and stop.</td></tr><tr><td>Monopoly (one firm, no rival)</td><td>6.0 units total</td><td>6.0 units</td><td>One firm cuts output to keep price high; profit per unit is fatter but output is smallest.</td></tr><tr><td>Full competition (infinitely many price-takers)</td><td>6.0 units each (example)</td><td>12.0 units</td><td>Each firm produces at marginal cost, taking the price as given; total output is largest, price is lowest.</td></tr></table></div><figcaption>Cournot equilibrium sits between monopoly (least output, highest price) and full competition (most output, lowest price).</figcaption>
+      <div class="insight"><strong>The discovered fact: two self-interested rivals, each choosing output to maximize its own profit given the other's choice, converge to 4.0 units each, totaling 8.0. This sits exactly between the monopoly outcome (6.0 total) and full competition (12.0 total).</strong> No firm wanted to choose 4.0 alone — if the other firm is making 4.0, I'd ideally make more to capture market share. But if both think that way, they both make more, the price falls for everyone, and 4.0 each is where that mutual best-responding stops.</div>
+      </div>
+    </section>
+    <section class="fp" id="why">
+      <h2>4 · Why the middle outcome emerges — the tragedy of ignoring the rival's pain</h2>
+      <div class="essay">
+      <p>Here is the mechanism. When I make an extra unit, I get the profit from selling it. But that extra unit pushes down the market price, and the LOWER price hits my rival's units too — they sell at a lower price than before. My extra output damages the rival's profit. But when I decide whether to make that extra unit, I count only my gain, not the damage I do to my rival. So from my selfish view, I underproduce compared to the outcome where I ignore the price curve entirely — but I overproduce compared to what I would make if I also had to eat the cost of lowering my rival's profit.</p>
+      <p>The result: each firm produces more than a profit-maximizing cartel would (because neither can commit to respect the other's profit), but less than full competition (because each firm still restrains output to protect its own price). The 4.0 units each is no firm's master plan. It is the intersection of two best-reply functions — the outcome that emerges when two rational rivals each optimizing their own profit bump into each other.</p>
+      </div>
+    </section>
+    <section class="fp" id="weakness">
+      <h2>5 · The one real weakness — it assumes competition on quantity, not price</h2>
+      <div class="essay">
+      <p>Cournot assumes firms compete on <em>quantity</em>: each picks how much to make, and the market price adjusts to clear that total. But in the real world, many firms set <em>price</em>, not quantity. Suppose two firms compete on price. The Bertrand model (named for Cournot's critic) says each firm cuts price to just undercut the rival and capture all the demand. If marginal cost is constant and firms have capacity to meet demand at that price, they race each other down to marginal cost — full competition's price and output, with zero profit. A tiny change in the model (each firm can commit to limited capacity) can flip the equilibrium entirely.</p>
+      <p>So the Cournot outcome depends on the specific game being played: quantity-setting produces one outcome, price-setting another. The model also assumes firms know each other's cost and demand curve perfectly. In reality, firms are uncertain about rivals' types, which can push them toward more aggressive or collusive play. The Cournot equilibrium is a powerful prediction of a quantity-setting game, but it is not universal.</p>
+      </div>
+    </section>
+    <section class="fp" id="surprise">
+      <h2>6 · The surprise — this one model is antitrust economics</h2>
+      <div class="essay">
+      <p>From Cournot's one insight, the entire modern enforcement of competition law follows. Why do regulators forbid a merger between two firms in an industry? Because a merger internalizes the price damage: the merged firm now sees that making more output hurts its SELF, not just a rival — so it cuts output and raises price. The Cournot model predicts exactly that: firms that merge move to a more monopoly-like output and price, and consumer harm follows. Every merger review in the world consults Cournot.</p>
+      <p>Why are cartels unstable? A cartel agrees to each make 3.0 units, splitting monopoly profit. But if you secretly make 4.0, exploiting the lower price the others are holding up, your profit jumps — the cartel unravels the instant everyone realizes the temptation to cheat. That instability is also Cournot: the best response to a cartel is to overproduce, so it is not a Nash equilibrium.</p>
+      <p>And Cournot reappears whenever humans or algorithms are learning to compete: bid-shading in ascending auctions, pricing bots in e-commerce, and machine learning agents trained to compete in a duopoly — they all converge to Cournot-like equilibria because they are each learning what to do when the other player's move is fixed. A 1838 pencil-and-paper model of two competing granaries now hums under the hood of modern industrial organization, auction theory, and even the control algorithms of competing AI systems.</p>
+      </div>
+    </section>
+    <section class="fp"><p class="muted">Related: <a href="best_response-deep.html">best response</a> · <a href="nash_equilibrium-deep.html">Nash equilibrium</a></p></section>
+    <details class="math"><summary>the run recipe — reproduce every number above</summary><div>
+      <p class="muted">Two firms with identical linear costs. Market price is P = 12 - (Q1 + Q2) where Q1, Q2 are firm outputs. Each firm's profit is (P - cost) * quantity. Compute each firm's best-response function: the output that maximizes profit given the rival's output. Find the intersection of the two best-response curves — the fixed point where both firms are best-responding to each other. Iterate best-reply: start with a guess of each firm's output, compute their best responses, update, repeat until convergence.</p>
+      <div class="eq">Firm i profit = (12 - Q_i - Q_-i - 1) * Q_i  [cost = 1]
+Best response: Q_i = argmax of this, given Q_-i
+Cournot equilibrium: Q_1* = Q_2* such that each is best response to other</div>
+      <p class="muted">Full script: scripts/experiments/gametheory_run.py (EXP7). Numbers are the run's output verbatim.</p>
+    </div></details>
+<footer style="color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding:22px 0 60px;margin-top:24px">MIT Game Theory · Imperfect Competition deep dive · every equilibrium and payoff here is computed. Experiments in scripts/experiments/gametheory_run.py.</footer>
+</main></body></html>

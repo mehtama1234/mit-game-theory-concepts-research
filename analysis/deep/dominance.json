@@ -1,0 +1,41 @@
+{
+  "id": "dominance",
+  "name": "Dominance",
+  "kick": "game theory · first principles · when one move is always best",
+  "title": "Dominance — a strategy that beats your alternatives no matter what others do",
+  "lede": "In most situations your best move depends on what the other person does. But sometimes one of your options beats all your others regardless — in every scenario the other player chooses. That is a dominant strategy. Rational players play it, often to everyone's loss. Here is the idea, the Prisoner's Dilemma that reveals it, why dominance is a rock-solid prediction, the sting it carries, and why it is the entry point to everything harder in game theory.",
+  "arc": [["problem","The problem"],["reframe","The reframe"],["run","Seen on a real run"],["why","Why dominance is a rock-solid prediction"],["weakness","The one real weakness"],["surprise","The surprise"]],
+  "sections": [
+    {"id":"problem","h2":"1 · The problem — your best move usually depends on theirs","blocks":[
+      {"t":"para","html":"When you decide alone, &lsquo;best&rsquo; is simple: pick the option that gives you the most. But when the other person's choice affects your payoff, the tables turn. What price you should set depends on your rival's price; whether to invest in training depends on what skill the job market demands; whether to defect on an agreement depends on whether they will. Your best choice is a moving target, pinned to theirs."},
+      {"t":"para","html":"So you face a puzzle: if your best move depends on theirs, and theirs depends on yours, how do you reason about what to do? What if one of your options was <em>always</em> best, regardless of their choice? That would be different — you would not have to guess what they are doing. You could simply play it."}
+    ]},
+    {"id":"reframe","h2":"2 · The reframe — check if one strategy beats your others in every column","blocks":[
+      {"t":"para","html":"Here is a simple check: for each choice the other player might make, ask which of <em>your</em> options pays you the most against it. Write down that option for each of their choices. If the same option of yours wins in <em>every</em> one of their choices — every column of the payoff table — then that option is <strong>dominant</strong>. It beats your alternatives no matter what."},
+      {"t":"para","html":"Dominant strategies are rare, but when they exist they are powerful: you do not need to know what the other person will do, or to imagine their thinking. A dominant strategy is simply better, full stop. Rational players play dominant strategies. If all players have one, the outcome is completely determined — no guessing, no need to know the other's mind."}
+    ]},
+    {"id":"run","h2":"3 · Seen on a real run — the Prisoner's Dilemma","blocks":[
+      {"t":"para","html":"We took the classic Prisoner's Dilemma and computed payoffs to see which strategies are dominant. Here are your options (rows): you can Cooperate or Defect. The other person has the same two options (columns). The table below shows your payoff (the row payoffs) for each combination."},
+      {"t":"table","headers":["your strategy","if they Cooperate","if they Defect"],"rows":[["Cooperate","you get 3","you get 0"],["Defect","you get 5","you get 1"]],"caption":"Your payoffs in the Prisoner's Dilemma against the other person's choice. Read it as: if they cooperate (first column), cooperate pays 3, defect pays 5. If they defect (second column), cooperate pays 0, defect pays 1."},
+      {"t":"insight","html":"<strong>The discovered fact: Defect dominates. It beats Cooperate in every column — 5 is better than 3 when they cooperate, and 1 is better than 0 when they defect. So Defect is best no matter what they do.</strong>"}
+    ]},
+    {"id":"why","h2":"4 · Why dominance is a rock-solid prediction","blocks":[
+      {"t":"para","html":"A dominant strategy is bulletproof because it does not depend on a guess. You do not need to predict what the other person will do, or to believe they are rational, or to know the payoffs from their viewpoint. You simply compare your own payoffs in each row. If one of your rows is bigger in every column, you play it — end of reasoning."},
+      {"t":"para","html":"If both players have a dominant strategy, the outcome is locked in. Both will play theirs, so the result is determined. You predict it without knowing anything about the other's thinking or reasoning, which makes dominance the most certain prediction in game theory — a prediction that survives even if your beliefs about the other person are wrong."}
+    ]},
+    {"id":"weakness","h2":"5 · The one real weakness — both playing dominant strategy lands on mutual disaster","blocks":[
+      {"t":"para","html":"Here is the sting. Both players play their dominant strategy — Defect in the Prisoner's Dilemma — and both receive 1. But if both had cooperated, each would get 3. The outcome from playing dominant strategies (1, 1) is worse than the outcome from mutual cooperation (3, 3)."},
+      {"t":"para","html":"This is why it is called a dilemma. Individual rationality — each player playing their best response to what the other does — produces a collectively terrible outcome. Nobody is making a mistake. Nobody could do better alone. Yet together they end up worse off than if they had both chosen differently. That gap between individual best choice and collective good is the root of countless failures: arms races where nations spend more and more on weapons but no one gets safer, overfishing where each boat catches more but the stock collapses, price wars where rival firms cut prices but profits vanish."}
+    ]},
+    {"id":"surprise","h2":"6 · The surprise — this is the entry point to everything harder","blocks":[
+      {"t":"para","html":"Dominance is the cleanest case in game theory. It requires no belief about the other player, no assumptions about rationality beyond self-interest, no common knowledge of payoffs. When it exists, it solves the game completely. That simplicity is why it is the starting point."},
+      {"t":"para","html":"But most games do not have dominant strategies — and that is what makes game theory necessary. When no dominant strategy exists, you have to reason about what the other person will do, which means reasoning about what they think you will do, and so on infinitely. That recursive thinking is what births every richer idea: best response, Nash equilibrium, mixed strategies, bargaining, signaling, reputation. All of them are ways to break the circle when dominance alone is not enough. Learn to spot the dominant strategy first, and you have the master key to spotting when the puzzle deepens."}
+    ]}
+  ],
+  "related": [["best_response-deep.html","best response"],["nash_equilibrium-deep.html","Nash equilibrium"],["mixed_strategies-deep.html","mixed strategies"],["iterated_deletion-deep.html","iterated deletion of dominated strategies"]],
+  "recipe": {
+    "summary": "A 2x2 game (Prisoner's Dilemma). For each strategy (row), compare its payoff against every opponent choice (column). A strategy is dominant if its payoff is strictly highest in every column. numpy, just payoff comparisons.",
+    "eq": "row i is dominant iff  payoff[i,j] > payoff[i',j]  for all other rows i' and all columns j\n# Prisoner's Dilemma: Defect dominates because it wins in both opponent columns",
+    "note": "Full script: scripts/experiments/gametheory_run.py (EXP1). Numbers are the run's output verbatim. Payoffs: Cooperate vs (Coop, Defect) = 3, 0; Defect vs (Coop, Defect) = 5, 1."
+  }
+}

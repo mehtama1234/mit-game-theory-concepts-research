@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dominance (deep) · MIT Game Theory</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+.arc{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.arc a{font-size:12.5px;color:var(--accent-dark);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:3px 10px;background:var(--panel)}
+.fp{border-top:1px solid var(--line);padding:22px 0 4px;margin-top:10px}
+.fp h2{margin:6px 0 10px}
+.kick{font-size:12px;color:var(--accent-dark);font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:6px 0}
+.lede{font-size:20px;color:#34373d;max-width:820px}
+.essay p{max-width:74ch;font-size:16.5px;margin:11px 0;color:#2c2f34}
+.barrow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:13px}
+.barrow .lab{width:150px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted);text-align:right}
+.bar{height:16px;border-radius:3px;background:var(--accent);min-width:2px}.bar.alt{background:#3f6f57}
+.barrow .val{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.eq{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin:12px 0;overflow-x:auto;white-space:pre-wrap}
+.insight{border-left:4px solid var(--accent);background:var(--soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:16px}
+details.math{border:1px solid var(--line);border-radius:8px;background:var(--panel);margin:14px 0}
+details.math summary{cursor:pointer;padding:10px 13px;color:var(--accent-dark);font-weight:750}
+details.math > div{border-top:1px solid var(--line);padding:4px 14px 12px}
+figure{margin:16px 0}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+table{border-collapse:collapse;width:100%;background:var(--panel);border:1px solid var(--line)}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14.5px}th{background:var(--soft)}
+.tw{overflow-x:auto}
+</style></head><body>
+<header class="topbar"><a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+<nav><a href="../index.html">Overview</a><a href="../concepts.html">Concepts</a><a class="active" href="../deep-track.html">Deep Track</a><a href="dominance.html">This concept</a></nav></header>
+<main>
+<div class="kick">game theory · first principles · when one move is always best</div>
+<h1>Dominance — a strategy that beats your alternatives no matter what others do</h1>
+<p class="lede">In most situations your best move depends on what the other person does. But sometimes one of your options beats all your others regardless — in every scenario the other player chooses. That is a dominant strategy. Rational players play it, often to everyone's loss. Here is the idea, the Prisoner's Dilemma that reveals it, why dominance is a rock-solid prediction, the sting it carries, and why it is the entry point to everything harder in game theory.</p>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why dominance is a rock-solid prediction</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="dominance.html">Atlas card</a></div>
+
+    <section class="fp" id="problem">
+      <h2>1 · The problem — your best move usually depends on theirs</h2>
+      <div class="essay">
+      <p>When you decide alone, &lsquo;best&rsquo; is simple: pick the option that gives you the most. But when the other person's choice affects your payoff, the tables turn. What price you should set depends on your rival's price; whether to invest in training depends on what skill the job market demands; whether to defect on an agreement depends on whether they will. Your best choice is a moving target, pinned to theirs.</p>
+      <p>So you face a puzzle: if your best move depends on theirs, and theirs depends on yours, how do you reason about what to do? What if one of your options was <em>always</em> best, regardless of their choice? That would be different — you would not have to guess what they are doing. You could simply play it.</p>
+      </div>
+    </section>
+    <section class="fp" id="reframe">
+      <h2>2 · The reframe — check if one strategy beats your others in every column</h2>
+      <div class="essay">
+      <p>Here is a simple check: for each choice the other player might make, ask which of <em>your</em> options pays you the most against it. Write down that option for each of their choices. If the same option of yours wins in <em>every</em> one of their choices — every column of the payoff table — then that option is <strong>dominant</strong>. It beats your alternatives no matter what.</p>
+      <p>Dominant strategies are rare, but when they exist they are powerful: you do not need to know what the other person will do, or to imagine their thinking. A dominant strategy is simply better, full stop. Rational players play dominant strategies. If all players have one, the outcome is completely determined — no guessing, no need to know the other's mind.</p>
+      </div>
+    </section>
+    <section class="fp" id="run">
+      <h2>3 · Seen on a real run — the Prisoner's Dilemma</h2>
+      <div class="essay">
+      <p>We took the classic Prisoner's Dilemma and computed payoffs to see which strategies are dominant. Here are your options (rows): you can Cooperate or Defect. The other person has the same two options (columns). The table below shows your payoff (the row payoffs) for each combination.</p>
+      <div class="tw"><table><tr><th>your strategy</th><th>if they Cooperate</th><th>if they Defect</th></tr><tr><td>Cooperate</td><td>you get 3</td><td>you get 0</td></tr><tr><td>Defect</td><td>you get 5</td><td>you get 1</td></tr></table></div><figcaption>Your payoffs in the Prisoner's Dilemma against the other person's choice. Read it as: if they cooperate (first column), cooperate pays 3, defect pays 5. If they defect (second column), cooperate pays 0, defect pays 1.</figcaption>
+      <div class="insight"><strong>The discovered fact: Defect dominates. It beats Cooperate in every column — 5 is better than 3 when they cooperate, and 1 is better than 0 when they defect. So Defect is best no matter what they do.</strong></div>
+      </div>
+    </section>
+    <section class="fp" id="why">
+      <h2>4 · Why dominance is a rock-solid prediction</h2>
+      <div class="essay">
+      <p>A dominant strategy is bulletproof because it does not depend on a guess. You do not need to predict what the other person will do, or to believe they are rational, or to know the payoffs from their viewpoint. You simply compare your own payoffs in each row. If one of your rows is bigger in every column, you play it — end of reasoning.</p>
+      <p>If both players have a dominant strategy, the outcome is locked in. Both will play theirs, so the result is determined. You predict it without knowing anything about the other's thinking or reasoning, which makes dominance the most certain prediction in game theory — a prediction that survives even if your beliefs about the other person are wrong.</p>
+      </div>
+    </section>
+    <section class="fp" id="weakness">
+      <h2>5 · The one real weakness — both playing dominant strategy lands on mutual disaster</h2>
+      <div class="essay">
+      <p>Here is the sting. Both players play their dominant strategy — Defect in the Prisoner's Dilemma — and both receive 1. But if both had cooperated, each would get 3. The outcome from playing dominant strategies (1, 1) is worse than the outcome from mutual cooperation (3, 3).</p>
+      <p>This is why it is called a dilemma. Individual rationality — each player playing their best response to what the other does — produces a collectively terrible outcome. Nobody is making a mistake. Nobody could do better alone. Yet together they end up worse off than if they had both chosen differently. That gap between individual best choice and collective good is the root of countless failures: arms races where nations spend more and more on weapons but no one gets safer, overfishing where each boat catches more but the stock collapses, price wars where rival firms cut prices but profits vanish.</p>
+      </div>
+    </section>
+    <section class="fp" id="surprise">
+      <h2>6 · The surprise — this is the entry point to everything harder</h2>
+      <div class="essay">
+      <p>Dominance is the cleanest case in game theory. It requires no belief about the other player, no assumptions about rationality beyond self-interest, no common knowledge of payoffs. When it exists, it solves the game completely. That simplicity is why it is the starting point.</p>
+      <p>But most games do not have dominant strategies — and that is what makes game theory necessary. When no dominant strategy exists, you have to reason about what the other person will do, which means reasoning about what they think you will do, and so on infinitely. That recursive thinking is what births every richer idea: best response, Nash equilibrium, mixed strategies, bargaining, signaling, reputation. All of them are ways to break the circle when dominance alone is not enough. Learn to spot the dominant strategy first, and you have the master key to spotting when the puzzle deepens.</p>
+      </div>
+    </section>
+    <section class="fp"><p class="muted">Related: <a href="best_response-deep.html">best response</a> · <a href="nash_equilibrium-deep.html">Nash equilibrium</a> · <a href="mixed_strategies-deep.html">mixed strategies</a> · <a href="iterated_deletion-deep.html">iterated deletion of dominated strategies</a></p></section>
+    <details class="math"><summary>the run recipe — reproduce every number above</summary><div>
+      <p class="muted">A 2x2 game (Prisoner's Dilemma). For each strategy (row), compare its payoff against every opponent choice (column). A strategy is dominant if its payoff is strictly highest in every column. numpy, just payoff comparisons.</p>
+      <div class="eq">row i is dominant iff  payoff[i,j] &gt; payoff[i',j]  for all other rows i' and all columns j
+# Prisoner's Dilemma: Defect dominates because it wins in both opponent columns</div>
+      <p class="muted">Full script: scripts/experiments/gametheory_run.py (EXP1). Numbers are the run's output verbatim. Payoffs: Cooperate vs (Coop, Defect) = 3, 0; Defect vs (Coop, Defect) = 5, 1.</p>
+    </div></details>
+<footer style="color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding:22px 0 60px;margin-top:24px">MIT Game Theory · Dominance deep dive · every equilibrium and payoff here is computed. Experiments in scripts/experiments/gametheory_run.py.</footer>
+</main></body></html>

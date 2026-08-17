@@ -1,0 +1,198 @@
+{
+  "id": "subgame_perfection",
+  "name": "Subgame-Perfect Equilibrium",
+  "kick": "game theory · credible threats · backward induction",
+  "title": "Subgame-perfect equilibrium — when threats must actually work",
+  "lede": "Sometimes a threat can deter someone even though you'd never want to carry it out. You say 'enter my market and I'll destroy my own profit'—and the threat works, until the moment they actually enter. Then suddenly you wish you could take it back. Subgame perfection is Nash equilibrium with a teeth-check: it throws out equilibria propped up by threats you would never actually execute. Here is the idea, a game where we see it happen, why these empty threats matter, and where this kind of reasoning reappears in bargaining, reputation, and commitment.",
+  "arc": [
+    [
+      "problem",
+      "The problem"
+    ],
+    [
+      "reframe",
+      "The reframe"
+    ],
+    [
+      "run",
+      "Seen on a real run"
+    ],
+    [
+      "why",
+      "Why credibility changes everything"
+    ],
+    [
+      "weakness",
+      "The one real weakness"
+    ],
+    [
+      "surprise",
+      "The surprise"
+    ]
+  ],
+  "sections": [
+    {
+      "id": "problem",
+      "h2": "1 · The problem — when are threats real?",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Imagine you own a market and a rival is thinking of entering. You could say: 'I'll fight you with everything I have if you come in—I'll cut prices, undercut you, drain both our profits to zero if I have to.' This threat deters the rival. But now imagine they enter anyway. You do the math: fighting costs you an enormous loss, while accommodating and sharing the market is painful but survivable. Do you actually want to carry out your threat? Probably not. So here's the problem: <strong>if your rival is smart, they reason that when the moment comes, you won't follow through. Your threat was a bluff, and a bluff doesn't deter a thinking opponent.</strong>"
+        },
+        {
+          "t": "para",
+          "html": "Nash equilibrium does not catch this. A Nash equilibrium allows an outcome where you play 'Fight' in the threat, and your rival stays out because they believe you—and yes, given that they stay out, you would never encounter the moment where you have to prove it. But if they did enter, you'd rather accommodate. The whole equilibrium rests on a threat you wouldn't execute. How do we rule out this kind of fake resting point?"
+        }
+      ]
+    },
+    {
+      "id": "reframe",
+      "h2": "2 · The reframe — demand credibility at every branch",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Here is the idea: a player's strategy must be a best choice not just overall, but at <em>every point the game could actually reach</em>. Even at branches you hope never happen. If a threat is part of your plan, you must actually want to carry it out when the moment comes."
+        },
+        {
+          "t": "para",
+          "html": "The method is <strong>backward induction</strong>: start at the end of the game, work backward, and at each point pick the choice that is actually best for that player, given what comes after. This rules out promises and threats that are just hot air. A strategy that survives this backward check is <strong>subgame-perfect</strong>—it is not just a Nash equilibrium, it is also a best choice at every subgame, every smaller game that could branch off at any point."
+        }
+      ]
+    },
+    {
+      "id": "run",
+      "h2": "3 · Seen on a real run — the entry game where fighting fails",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "We took a concrete game: an Entrant decides whether to Enter or Stay Out. If the Entrant chooses to Enter, the Incumbent then chooses to Fight or Accommodate. The numbers are fixed payoffs for each outcome. Working backward: first, we ask the Incumbent: if entry happens, do you want to Fight or Accommodate? Then we ask the Entrant: knowing the Incumbent's best response, should you Enter? Every number is the program's output."
+        },
+        {
+          "t": "table",
+          "headers": [
+            "outcome",
+            "entrant payoff",
+            "incumbent payoff",
+            "note"
+          ],
+          "rows": [
+            [
+              "stay out",
+              0,
+              1,
+              "the status quo"
+            ],
+            [
+              "enter, incumbent fights",
+              -1,
+              -1,
+              "both lose"
+            ],
+            [
+              "enter, incumbent accommodates",
+              2,
+              2,
+              "both gain"
+            ]
+          ],
+          "caption": "The three possible endpoints of the entry game, with payoffs for each player."
+        },
+        {
+          "t": "para",
+          "html": "Now the backward check:"
+        },
+        {
+          "t": "table",
+          "headers": [
+            "step",
+            "player's choice",
+            "reasoning",
+            "payoff for that player"
+          ],
+          "rows": [
+            [
+              "1. At the end",
+              "Incumbent faced with entry",
+              "Accommodate (2) beats Fight (−1)",
+              "incumbent gets 2"
+            ],
+            [
+              "2. One level up",
+              "Entrant, looking ahead",
+              "Enter, knowing incumbent will accommodate (2), beats Stay Out (0)",
+              "entrant gets 2"
+            ],
+            [
+              "3. Result",
+              "—",
+              "Subgame-perfect outcome",
+              "both get 2"
+            ]
+          ],
+          "caption": "Backward induction: at each point, pick the choice that is actually best for that player, given what comes next."
+        },
+        {
+          "t": "insight",
+          "html": "<strong>The discovered fact: backward induction gives outcome In/Accommodate with payoffs (2, 2).</strong> Compare this to what a naive threat would promise: 'I'll fight any entry!' would deter entry if the Entrant believed it, yielding the Incumbent payoff 1 (the status quo). But the threat is not credible. Once entry happens, the Incumbent prefers 2 (accommodate) to −1 (fight). At that moment, the threat breaks. Backward induction finds the only outcome where both players' choices remain best choices all the way through."
+        }
+      ]
+    },
+    {
+      "id": "why",
+      "h2": "4 · Why credibility changes everything",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "A threat only deters if the player would actually carry it out. If the threat-maker is rational and the threatened player knows it, the threatened player can reason backward: 'Will that threat actually hurt them at the moment it would execute? If not, it's an empty bluff.' And a bluff doesn't deter a thinking opponent. Subgame perfection captures this: it says every choice, even ones in branches never reached, must be a best response at that moment—a choice the player would actually want to make if forced to."
+        },
+        {
+          "t": "para",
+          "html": "This is why commitment devices are so powerful in the real world. If you can genuinely cut off your own escape route—burn a bridge, sign a contract, set a rule you can't break—you can make a threat credible. A central bank that genuinely cannot print money at will can credibly threaten to hold the line on inflation, even when it hurts short term. A parent who says 'we are leaving the park NOW' and actually leaves the park (even though the child is crying) can credibly enforce bedtime rules. Credibility requires that when the moment comes, you want to follow through. That is what subgame perfection demands."
+        }
+      ]
+    },
+    {
+      "id": "weakness",
+      "h2": "5 · The one real weakness — it assumes you can't commit",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Subgame perfection assumes each player must want to carry out every part of their strategy at the moment it is reached. But in the real world, people can commit. You can sign a contract. You can burn a bridge. You can set a policy you cannot overturn. If you can truly remove your own ability to back down, you can make a threat credible again—and change the whole game."
+        },
+        {
+          "t": "para",
+          "html": "The entry game is a case in point. The Incumbent's naive threat 'I'll fight entry' is not credible without commitment. But if the Incumbent could somehow commit in advance—perhaps by signing an irrevocable pact to destroy profit-sharing revenue if entry occurs—the threat becomes real. The Incumbent would want to carry it out (because they already chose to) and cannot escape. Now the threat deters. Backward induction works perfectly in the absence of commitment; but the moment you add the ability to commit, the solution changes. The theory is honest about its own boundary."
+        }
+      ]
+    },
+    {
+      "id": "surprise",
+      "h2": "6 · The surprise — this reasoning shapes everything hidden",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "The idea of subgame perfection—'every plan must be a best choice at every point it could execute'—is the foundation of a vast territory: <strong>bargaining theory</strong> (when two parties make offers back and forth, subgame perfection pins down the outcome they must reach to avoid a breakdown), <strong>reputation and repeated games</strong> (your threat to punish cheating only works if your opponent knows you'll want to punish, even at cost), and <strong>signaling</strong> (when you send a costly signal—a college degree, a warranty, a charitable donation—the signal only works if the receiver can reason backward and see you'd want to send it even if no one believed you). It also runs through mechanism design: auction rules, contract structures, and incentive schemes are built on the principle that no one should face a moment where they want to cheat."
+        },
+        {
+          "t": "para",
+          "html": "Central to modern economics, biology, and computer science, this one idea—'search backward, make sure each choice is a real best response, discard hollow threats'—is the backbone of how we think about strategic commitment, reputation, and trust."
+        }
+      ]
+    }
+  ],
+  "related": [
+    [
+      "nash_equilibrium-deep.html",
+      "Nash equilibrium"
+    ],
+    [
+      "backward_induction-deep.html",
+      "backward induction"
+    ]
+  ],
+  "recipe": {
+    "summary": "A sequential-move entry game: Entrant picks In/Out; if In, Incumbent picks Fight/Accommodate. Payoffs: (Out → 0,1), (In+Fight → −1,−1), (In+Accom → 2,2). Solve by backward induction: at each node, pick the best choice for that player. The result is the unique subgame-perfect equilibrium.",
+    "eq": "At Incumbent's node (after entry): Accommodate (2) > Fight (−1).\nAt Entrant's node (looking ahead): Enter with Accommodate (2) > Stay Out (0).\nSubgame-perfect outcome: (In, Accommodate) with payoffs (2, 2).",
+    "note": "Full script: scripts/experiments/gametheory_run.py (EXP8). Numbers are the run's output verbatim."
+  }
+}

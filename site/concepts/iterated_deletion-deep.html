@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iterated Deletion of Dominated Strategies (deep) · MIT Game Theory</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+.arc{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.arc a{font-size:12.5px;color:var(--accent-dark);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:3px 10px;background:var(--panel)}
+.fp{border-top:1px solid var(--line);padding:22px 0 4px;margin-top:10px}
+.fp h2{margin:6px 0 10px}
+.kick{font-size:12px;color:var(--accent-dark);font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:6px 0}
+.lede{font-size:20px;color:#34373d;max-width:820px}
+.essay p{max-width:74ch;font-size:16.5px;margin:11px 0;color:#2c2f34}
+.barrow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:13px}
+.barrow .lab{width:150px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted);text-align:right}
+.bar{height:16px;border-radius:3px;background:var(--accent);min-width:2px}.bar.alt{background:#3f6f57}
+.barrow .val{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.eq{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin:12px 0;overflow-x:auto;white-space:pre-wrap}
+.insight{border-left:4px solid var(--accent);background:var(--soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:16px}
+details.math{border:1px solid var(--line);border-radius:8px;background:var(--panel);margin:14px 0}
+details.math summary{cursor:pointer;padding:10px 13px;color:var(--accent-dark);font-weight:750}
+details.math > div{border-top:1px solid var(--line);padding:4px 14px 12px}
+figure{margin:16px 0}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+table{border-collapse:collapse;width:100%;background:var(--panel);border:1px solid var(--line)}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14.5px}th{background:var(--soft)}
+.tw{overflow-x:auto}
+</style></head><body>
+<header class="topbar"><a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+<nav><a href="../index.html">Overview</a><a href="../concepts.html">Concepts</a><a class="active" href="../deep-track.html">Deep Track</a><a href="iterated_deletion.html">This concept</a></nav></header>
+<main>
+<div class="kick">game theory · first principles · shrink by reasoning recursively</div>
+<h1>Iterated deletion — shrink a game by erasing strategies no one rational would play</h1>
+<p class="lede">A game with fifty strategies per player looks impossible to solve — too many combinations to check. But here is a shortcut: remove any strategy that some other strategy beats no matter what. Then, knowing your opponent has removed those, erase your strategies that fail against their smaller set. Keep going. What survives is every move a rational player might conceivably make, and this recursive pruning is the first move in solving any game and the hidden engine behind famous puzzles like 'guess two-thirds of the average'.</p>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why the chain works</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="iterated_deletion.html">Atlas card</a></div>
+
+    <section class="fp" id="problem">
+      <h2>1 · The problem — a big game drowns in combinations</h2>
+      <div class="essay">
+      <p>When a game has many strategies available to each player, checking every combination of choices to find equilibria feels hopeless. If two players each have 10 strategies, there are 100 combinations to evaluate. With 50 strategies each, it jumps to 2,500 — and that's just checking, not solving. You need a way to throw out the obvious junk first.</p>
+      <p>Here is the key insight: <strong>many strategies are not just bad in isolation — they are bad no matter what the other player does.</strong> Those are strictly dominated: some alternative choice of yours beats them in every single case. If you are even slightly rational, you will never play a dominated strategy. So why not just delete it?</p>
+      </div>
+    </section>
+    <section class="fp" id="reframe">
+      <h2>2 · The reframe — recursively delete strategies no one would play</h2>
+      <div class="essay">
+      <p>The procedure is simple. First, look at your own payoffs and erase any strategy that is beaten by another one of your strategies in every scenario — strictly dominated. Now your opponent knows you have erased that strategy. They face a smaller game. Looking at the smaller game, they can erase <em>their</em> strategies that are dominated against your remaining ones.</p>
+      <p>But now you know they erased those. So you can erase <em>your</em> strategies that were only kept before because you thought your opponent might play the ones they just deleted. You do this recursively: eliminate, shrink the game, let your opponent shrink it further, then shrink again. <strong>The process is called iterated deletion of dominated strategies.</strong> What survives at the end — if anything does — are strategies that can survive common knowledge of rationality: everyone is rational, everyone knows everyone is rational, everyone knows that everyone knows that, and so on.</p>
+      </div>
+    </section>
+    <section class="fp" id="run">
+      <h2>3 · Seen on a real run — a 3x3 game collapses</h2>
+      <div class="essay">
+      <p>We took a small 3x3 game (three options for each player) and applied the iterated deletion procedure step by step. Every number is computed from the run.</p>
+      <div class="tw"><table><tr><th>round</th><th>what gets deleted</th><th>rows remaining</th><th>columns remaining</th></tr><tr><td>start</td><td>—</td><td>3 rows: 0, 1, 2</td><td>3 columns: 0, 1, 2</td></tr><tr><td>round 1</td><td>row 2 (dominated by row 0)</td><td>2 rows: 0, 1</td><td>3 columns: 0, 1, 2</td></tr><tr><td>round 2</td><td>column 2 (dominated by column 0)</td><td>2 rows: 0, 1</td><td>2 columns: 0, 1</td></tr><tr><td>end</td><td>stable — nothing else dominated</td><td>2 rows: 0, 1</td><td>2 columns: 0, 1</td></tr></table></div><figcaption>A 3x3 game shrinks to 2x2 by erasing dominated strategies: row 2 first, then column 2.</figcaption>
+      <div class="insight"><strong>The discovered fact: this 3x3 game collapses to a 2x2 by deleting dominated strategies. In round 1, row 2 is dominated by row 0, so it disappears. With row 2 gone, column 2 becomes dominated by column 0, so it vanishes too. Then nothing else is dominated, and the process stops.</strong> The surviving strategies are rows 0 and 1, and columns 0 and 1. What remains is not necessarily small, but it is the set of strategies that pass the test of common knowledge of rationality.</div>
+      </div>
+    </section>
+    <section class="fp" id="why">
+      <h2>4 · Why the chain works — everyone knows everyone is rational</h2>
+      <div class="essay">
+      <p>The logic forms a chain. You are rational, so you will never play a dominated strategy — you will throw it out. Your opponent knows you are rational, so they know you threw it out. Knowing that, they can identify strategies of <em>theirs</em> that are dominated against what remains of your options. They throw those out too.</p>
+      <p>But now you know they know you are rational (and they know that you know). So you can look at the smaller game that results when you both drop dominated strategies, and you can drop <em>your</em> strategies that are dominated in that reduced game. Each step is forced by the previous one: rationality is common knowledge, a shared fact that both players can reason through. The iterated deletion process is what that reasoning looks like.</p>
+      <p>At each round, a strictly dominated strategy is erased because of a proof: some other strategy beats it in every outcome. That proof is public — it does not depend on beliefs or guesses about what the other player will do. So once both players have seen it, they both know the strategy is gone.</p>
+      </div>
+    </section>
+    <section class="fp" id="weakness">
+      <h2>5 · The one real weakness — it only works when dominance is strict</h2>
+      <div class="essay">
+      <p>The procedure has a hard limit: it erases a strategy only if another strategy beats it in <em>every</em> case — strict dominance. If Strategy A is better most of the time but ties with Strategy B in one scenario, A does not strictly dominate B. The tie means a player might play B (if that one scenario seems likely), so the deletion rule does not fire.</p>
+      <p>Many games contain no strictly dominated strategies at all. In those cases, iterated deletion stops at round one without deleting anything. The game remains as large as it started. You have not solved it — you have only confirmed that every strategy survives common knowledge of rationality. You still have to do the hard work of finding equilibria, solving via other methods, or running a simulation.</p>
+      </div>
+    </section>
+    <section class="fp" id="surprise">
+      <h2>6 · The surprise — what survives is 'rationalizable', and it reappears in guessing games</h2>
+      <div class="essay">
+      <p>The set of strategies that survive iterated deletion are precisely the <strong>rationalizable</strong> strategies: every move that can be justified by some belief about what your opponent will do, where your opponent's belief is similarly justified, and so on recursively. Rationalizability is a weaker condition than Nash equilibrium — an equilibrium strategy is always rationalizable, but a rationalizable strategy is not always played in equilibrium. Iterated deletion is the algorithm that finds the rationalizable set.</p>
+      <p>The idea reappears in one of game theory's most famous puzzles: 'Guess a number between 0 and 100 that is two-thirds of the average guess.' A number above 66 can never be two-thirds of any average of guesses in the range, so those strategies are dominated (by lower guesses) — delete them. Given the others know that, they know the average is at most 66, so numbers above 44 are dominated — delete them. This chain continues recursively until only 0 survives. But in real experiments, people guess much higher — they fail to iterate deletion far enough in their heads. The puzzle measures not rationality but depth of recursive reasoning, and iterated deletion is the theoretical answer the puzzle is checking.</p>
+      </div>
+    </section>
+    <section class="fp"><p class="muted">Related: <a href="dominance-deep.html">dominance</a> · <a href="best_response-deep.html">best response</a> · <a href="nash_equilibrium-deep.html">Nash equilibrium</a> · <a href="rationalizability-deep.html">rationalizability</a></p></section>
+    <details class="math"><summary>the run recipe — reproduce every number above</summary><div>
+      <p class="muted">A 3x3 game where row and column players each have three strategies. Check every strategy pair to find strict dominance (compare payoffs row-wise and column-wise). Iteratively delete dominated strategies for each player until none remain. numpy comparisons and a loop.</p>
+      <div class="eq">Round k: row i is dominated if exists row i' such that A[i',j] &gt; A[i,j] for all j in remaining columns. Then delete row i. Repeat for columns until no more deletions possible.</div>
+      <p class="muted">Full script: scripts/experiments/gametheory_run.py (EXP4). Numbers are the run's output verbatim.</p>
+    </div></details>
+<footer style="color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding:22px 0 60px;margin-top:24px">MIT Game Theory · Iterated Deletion of Dominated Strategies deep dive · every equilibrium and payoff here is computed. Experiments in scripts/experiments/gametheory_run.py.</footer>
+</main></body></html>
