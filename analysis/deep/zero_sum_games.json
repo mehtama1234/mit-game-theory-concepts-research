@@ -4,36 +4,192 @@
   "kick": "game theory · first principles · pure conflict with a single value",
   "title": "Zero-sum games — when one player wins exactly what the other loses",
   "lede": "Some situations are pure opposition: chess, a penalty kick, a price war to the death. Every dollar you gain is a dollar your opponent loses. In these zero-sum games there is no cooperation to model, no common interest to exploit — just clean, complete conflict. What does 'solved' mean in a world where interests are exactly opposed? Here is the idea, a real game where we compute the solution (the optimal mix and the guaranteed value), why both sides can lock in the same number, what this leaves out, and where this one narrow theory powered the birth of all game theory and still runs adversarial AI.",
-  "arc": [["problem","The problem"],["reframe","The reframe"],["run","Seen on a real run"],["value","Why there is a single value"],["weakness","The one real weakness"],["surprise","The surprise"]],
-  "sections": [
-    {"id":"problem","h2":"1 · The problem — pure opposition","blocks":[
-      {"t":"para","html":"In most decisions you face, success means you and your counterpart both gain something — a sale where buyer and seller both win, a contract where both sides make a bargain they prefer, a child with two parents who both love them. But some situations are different. In a penalty kick in soccer, the kicker scores and the goalkeeper does not — one wins, one loses. In a poker hand, every chip I win is a chip you lose. In a price war, my gain in market share is your loss. When the payoff for one player is the exact opposite of the payoff to the other, the game is called <strong>zero-sum</strong>: the sum of all payoffs is always zero. What you win, I lose, and vice versa."},
-      {"t":"para","html":"In such pure opposition, what does it even mean to 'solve' the game? If I announce my strategy, my opponent can exploit it perfectly — we are not cooperating or negotiating, we are just trying to beat each other. Is there a way to play that is genuinely safe, no matter what your opponent does?"}
-    ]},
-    {"id":"reframe","h2":"2 · The reframe — find the mix no one can exploit","blocks":[
-      {"t":"para","html":"Here is the insight that von Neumann discovered. In a zero-sum game, each player has the same goal: guarantee the best worst-case outcome. The first player wants to maximize the minimum payoff they can lock in (the 'maximin'). The second player wants to minimize the maximum payoff they have to give away (the 'minimax'). It turns out — and this is the surprise — in a zero-sum game, these two numbers are always equal. There is a single value that the first player can guarantee by playing the right mix, and the second player can hold them to by playing the right mix. Both sides agree on this number."},
-      {"t":"para","html":"The way to find it: each player randomizes their choices in just the right proportions so that the opponent gets the same payoff no matter what the opponent does. Once both are playing this unexploitable mix, neither can do better by changing alone, and the game locks in at a single guaranteed value. This is the <strong>minimax theorem</strong> — the reason zero-sum games have a 'solved' answer even though the players are pure enemies."}
-    ]},
-    {"id":"run","h2":"3 · Seen on a real run — the optimal mix and the guaranteed value","blocks":[
-      {"t":"para","html":"We took a simple 2x2 zero-sum game (one player wins what the other loses) and solved it. The first player chooses between two rows; the second player chooses between two columns. At each combination, the payoff to the row player is written, and the column player always gets minus that (because it is zero-sum). We found the optimal mix for each player and computed the value both can guarantee."},
-      {"t":"table","headers":["if row plays…","column's best response","payoff to row"],"rows":[["top row 100% of the time","column responds with left column","−1.0 (row gets −1.0)"],["bottom row 100% of the time","column responds with right column","−1.0 (row gets −1.0)"],["any predictable ratio","column can exploit the pattern","worse than the guaranteed value"]],"caption":"Pure strategies are exploitable — the column player can read the pattern and choose the best response."},
-      {"t":"insight","html":"<strong>The discovered fact: the first player can guarantee a payoff of 0.50 by playing the top row 50% of the time and the bottom row 50% of the time.</strong> When the first player follows this mix, the second player's best response does not matter — no matter whether the second player picks left 100% of the time, right 100% of the time, or any mix in between, the first player locks in an expected payoff of 0.50. Meanwhile, the second player can hold the first player to exactly 0.50 by also randomizing 50/50. This is the value of the game — the number both sides can lock in, no matter how the opponent plays."}
-    ]},
-    {"id":"value","h2":"4 · Why there is a single value — maximin equals minimax","blocks":[
-      {"t":"para","html":"The magic of zero-sum games is that two very different goals produce the same number. The first player asks: 'What is the best worst-case outcome I can guarantee?' They find the strategy that maximizes their minimum payoff — the 'maximin'. The second player asks: 'What is the worst best-case outcome I have to give away?' They find the strategy that minimizes their maximum loss — the 'minimax'. In any zero-sum game, these two numbers are equal."},
-      {"t":"para","html":"Why? Because of pure opposition. If the first player could guarantee more than the second player can hold them to, the second player would profit — but both their payoffs sum to zero, so that is impossible. If the second player could hold them to less, the first player could do better — but again, impossible by the zero-sum constraint. The only stable place is where maximin equals minimax, and both sides agree on a single value. This is von Neumann's minimax theorem, the foundation that zero-sum games are solvable in a way that mixed-motive games are not."}
-    ]},
-    {"id":"weakness","h2":"5 · The one real weakness — it solves only pure conflict","blocks":[
-      {"t":"para","html":"Zero-sum games are a complete theory. Once you know the value and the optimal mix, the game is solved — you know exactly what rational play looks like. But zero-sum games are also a rare bird. Almost every real situation has some shared interest: both a seller and a buyer want the sale to happen (even though they disagree on price); two companies both want the industry to grow (even though they compete for market share); two nations both want to avoid war (even though they disagree on terms). The moment there is any shared interest — any way one player's gain is not exactly your loss — the clean value breaks down. You need the messier concept of a Nash equilibrium instead, which can have multiple resting points, conflicts between different stable outcomes, and no guarantee that any of them is good."},
-      {"t":"para","html":"Because of this narrowness, zero-sum thinking is a trap in most real negotiations and conflicts. People who treat a business deal or a wage dispute as zero-sum often leave both sides worse off by refusing to find the cooperation that was there. But for truly competitive situations — sports, military strategy, algorithmic game-playing — zero-sum is the right frame and the minimax theorem gives you the answer."}
-    ]},
-    {"id":"surprise","h2":"6 · The surprise — this narrow theory launched game theory and still trains your adversary","blocks":[
-      {"t":"para","html":"Von Neumann proved the minimax theorem in 1928, and it was the spark that lit game theory. For decades, zero-sum games were the focus because they were the only games people knew how to solve. Today, game theory encompasses bargaining, signaling, repeated interaction, and mixed motives — but zero-sum games remain the clean, solved case that taught us the language of strategy, value, and equilibrium."},
-      {"t":"para","html":"Outside game theory, minimax thinking reappears everywhere. In machine learning, training a generative adversarial network (a GAN) is solving an approximation of a zero-sum game: the generator tries to maximize the discriminator's error (its loss), the discriminator tries to minimize its own error. The two chase each other's minimax equilibrium. In worst-case algorithm design, you prove an algorithm is good by showing it guarantees a value against an adversary that can play the hardest inputs. In data security and cryptography, the adversary assumes your opponent knows your strategy and will exploit it — the same paranoia that defines zero-sum play."},
-      {"t":"para","html":"Learn the minimax theorem and you see the ancestor of every competitive machine learning system, every robust algorithm, and every worst-case guarantee in computer science. Zero-sum is narrow, but what it shaped is vast."}
-    ]}
+  "arc": [
+    [
+      "problem",
+      "The problem"
+    ],
+    [
+      "reframe",
+      "The reframe"
+    ],
+    [
+      "run",
+      "Seen on a real run"
+    ],
+    [
+      "value",
+      "Why there is a single value"
+    ],
+    [
+      "weakness",
+      "The one real weakness"
+    ],
+    [
+      "surprise",
+      "The surprise"
+    ],
+    [
+      "practice",
+      "In practice"
+    ]
   ],
-  "related": [["minimax-deep.html","minimax"],["mixed_strategies-deep.html","mixed strategies"],["nash_equilibrium-deep.html","Nash equilibrium"],["best_response-deep.html","best response"]],
+  "sections": [
+    {
+      "id": "problem",
+      "h2": "1 · The problem — pure opposition",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "In most decisions you face, success means you and your counterpart both gain something — a sale where buyer and seller both win, a contract where both sides make a bargain they prefer, a child with two parents who both love them. But some situations are different. In a penalty kick in soccer, the kicker scores and the goalkeeper does not — one wins, one loses. In a poker hand, every chip I win is a chip you lose. In a price war, my gain in market share is your loss. When the payoff for one player is the exact opposite of the payoff to the other, the game is called <strong>zero-sum</strong>: the sum of all payoffs is always zero. What you win, I lose, and vice versa."
+        },
+        {
+          "t": "para",
+          "html": "In such pure opposition, what does it even mean to 'solve' the game? If I announce my strategy, my opponent can exploit it perfectly — we are not cooperating or negotiating, we are just trying to beat each other. Is there a way to play that is genuinely safe, no matter what your opponent does?"
+        }
+      ]
+    },
+    {
+      "id": "reframe",
+      "h2": "2 · The reframe — find the mix no one can exploit",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "The insight that von Neumann discovered. In a zero-sum game, each player has the same goal: guarantee the best worst-case outcome. The first player wants to maximize the minimum payoff they can lock in (the 'maximin'). The second player wants to minimize the maximum payoff they have to give away (the 'minimax'). It turns out — and this is the surprise — in a zero-sum game, these two numbers are always equal. There is a single value that the first player can guarantee by playing the right mix, and the second player can hold them to by playing the right mix. Both sides agree on this number."
+        },
+        {
+          "t": "para",
+          "html": "The way to find it: each player randomizes their choices in just the right proportions so that the opponent gets the same payoff no matter what the opponent does. Once both are playing this unexploitable mix, neither can do better by changing alone, and the game locks in at a single guaranteed value. This is the <strong>minimax theorem</strong> — the reason zero-sum games have a 'solved' answer even though the players are pure enemies."
+        },
+        {
+          "t": "para",
+          "html": "The hidden quantity is the value of the game &mdash; the single payoff the maximiser can guarantee and the minimiser can hold them to, meeting at a saddle point."
+        }
+      ]
+    },
+    {
+      "id": "run",
+      "h2": "3 · Seen on a real run — the optimal mix and the guaranteed value",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "We took a simple 2x2 zero-sum game (one player wins what the other loses) and solved it. The first player chooses between two rows; the second player chooses between two columns. At each combination, the payoff to the row player is written, and the column player always gets minus that (because it is zero-sum). We found the optimal mix for each player and computed the value both can guarantee."
+        },
+        {
+          "t": "table",
+          "headers": [
+            "if row plays…",
+            "column's best response",
+            "payoff to row"
+          ],
+          "rows": [
+            [
+              "top row 100% of the time",
+              "column responds with left column",
+              "−1.0 (row gets −1.0)"
+            ],
+            [
+              "bottom row 100% of the time",
+              "column responds with right column",
+              "−1.0 (row gets −1.0)"
+            ],
+            [
+              "any predictable ratio",
+              "column can exploit the pattern",
+              "worse than the guaranteed value"
+            ]
+          ],
+          "caption": "Pure strategies are exploitable — the column player can read the pattern and choose the best response."
+        },
+        {
+          "t": "insight",
+          "html": "<strong>The discovered fact: the first player can guarantee a payoff of 0.50 by playing the top row 50% of the time and the bottom row 50% of the time.</strong> When the first player follows this mix, the second player's best response does not matter — no matter whether the second player picks left 100% of the time, right 100% of the time, or any mix in between, the first player locks in an expected payoff of 0.50. Meanwhile, the second player can hold the first player to exactly 0.50 by also randomizing 50/50. This is the value of the game — the number both sides can lock in, no matter how the opponent plays."
+        }
+      ]
+    },
+    {
+      "id": "value",
+      "h2": "4 · Why there is a single value — maximin equals minimax",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "The key of zero-sum games is that two very different goals produce the same number. The first player asks: 'What is the best worst-case outcome I can guarantee?' They find the strategy that maximizes their minimum payoff — the 'maximin'. The second player asks: 'What is the worst best-case outcome I have to give away?' They find the strategy that minimizes their maximum loss — the 'minimax'. In any zero-sum game, these two numbers are equal."
+        },
+        {
+          "t": "para",
+          "html": "Why? Because of pure opposition. If the first player could guarantee more than the second player can hold them to, the second player would profit — but both their payoffs sum to zero, so that is impossible. If the second player could hold them to less, the first player could do better — but again, impossible by the zero-sum constraint. The only stable place is where maximin equals minimax, and both sides agree on a single value. This is von Neumann's minimax theorem, the foundation that zero-sum games are solvable in a way that mixed-motive games are not."
+        }
+      ]
+    },
+    {
+      "id": "weakness",
+      "h2": "5 · The one real weakness — it solves only pure conflict",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Zero-sum games are a complete theory. Once you know the value and the optimal mix, the game is solved — you know exactly what rational play looks like. But zero-sum games are also a rare bird. Almost every real situation has some shared interest: both a seller and a buyer want the sale to happen (even though they disagree on price); two companies both want the industry to grow (even though they compete for market share); two nations both want to avoid war (even though they disagree on terms). The moment there is any shared interest — any way one player's gain is not exactly your loss — the clean value breaks down. You need the messier concept of a Nash equilibrium instead, which can have multiple resting points, conflicts between different stable outcomes, and no guarantee that any of them is good."
+        },
+        {
+          "t": "para",
+          "html": "Because of this narrowness, zero-sum thinking is a trap in most real negotiations and conflicts. People who treat a business deal or a wage dispute as zero-sum often leave both sides worse off by refusing to find the cooperation that was there. But for truly competitive situations — sports, military strategy, algorithmic game-playing — zero-sum is the right frame and the minimax theorem gives you the answer."
+        }
+      ]
+    },
+    {
+      "id": "surprise",
+      "h2": "6 · The surprise — this narrow theory launched game theory and still trains your adversary",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Von Neumann proved the minimax theorem in 1928, and it was the spark that lit game theory. For decades, zero-sum games were the focus because they were the only games people knew how to solve. Today, game theory encompasses bargaining, signaling, repeated interaction, and mixed motives — but zero-sum games remain the clean, solved case that taught us the language of strategy, value, and equilibrium."
+        },
+        {
+          "t": "para",
+          "html": "Outside game theory, minimax thinking reappears everywhere. In machine learning, training a generative adversarial network (a GAN) is solving an approximation of a zero-sum game: the generator tries to maximize the discriminator's error (its loss), the discriminator tries to minimize its own error. The two chase each other's minimax equilibrium. In worst-case algorithm design, you prove an algorithm is good by showing it guarantees a value against an adversary that can play the hardest inputs. In data security and cryptography, the adversary assumes your opponent knows your strategy and will exploit it — the same paranoia that defines zero-sum play."
+        },
+        {
+          "t": "para",
+          "html": "Learn the minimax theorem and you see the ancestor of every competitive machine learning system, every robust algorithm, and every worst-case guarantee in computer science. Zero-sum is narrow, but what it shaped is vast."
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "h2": "7 · Where it is used in practice — When what you win is exactly what they lose",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Chess, poker, penalty kicks, price wars to the death—all are pure opposition where interests are completely opposed. Generative adversarial networks train by solving a zero-sum game: the generator tries to fool the discriminator, the discriminator tries to catch it. Worst-case algorithm design proves algorithms work by showing they guarantee a value against an adversary playing the hardest inputs. Cryptography assumes your opponent knows your strategy and will exploit it."
+        },
+        {
+          "t": "para",
+          "html": "Zero-sum games are solved by having each player randomize at proportions that make the opponent indifferent to any response. The value both can lock in—maximin for you, minimax for them—is always equal. Once both play the unexploitable mix, neither can improve by changing alone."
+        },
+        {
+          "t": "insight",
+          "html": "Zero-sum is the solved case, but it requires pure opposition; most real situations have shared interest and require Nash equilibrium."
+        }
+      ]
+    }
+  ],
+  "related": [
+    [
+      "minimax-deep.html",
+      "minimax"
+    ],
+    [
+      "mixed_strategies-deep.html",
+      "mixed strategies"
+    ],
+    [
+      "nash_equilibrium-deep.html",
+      "Nash equilibrium"
+    ],
+    [
+      "best_response-deep.html",
+      "best response"
+    ]
+  ],
   "recipe": {
     "summary": "A 2x2 zero-sum game: row player's payoff matrix A and column player's payoff matrix B = −A. For each pure strategy of the row player, find the column player's best response and the resulting payoff. For each pure strategy of the column player, find the row player's best response. Then compute the mixed strategy (probability of each row, probability of each column) that makes both players indifferent to the opponent's choice. The value is the payoff both can lock in.",
     "eq": "value_row = max_p  min_j  p·A[:,j]\nvalue_col = min_q  max_i  q·A[i,:]\nTheorem: value_row = value_col (minimax theorem)\n# EXP5: optimal mix is top row 50%, bottom row 50%; game value is 0.50",

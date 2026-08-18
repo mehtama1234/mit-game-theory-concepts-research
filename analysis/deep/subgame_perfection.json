@@ -28,6 +28,10 @@
     [
       "surprise",
       "The surprise"
+    ],
+    [
+      "practice",
+      "In practice"
     ]
   ],
   "sections": [
@@ -37,7 +41,7 @@
       "blocks": [
         {
           "t": "para",
-          "html": "Imagine you own a market and a rival is thinking of entering. You could say: 'I'll fight you with everything I have if you come in—I'll cut prices, undercut you, drain both our profits to zero if I have to.' This threat deters the rival. But now imagine they enter anyway. You do the math: fighting costs you an enormous loss, while accommodating and sharing the market is painful but survivable. Do you actually want to carry out your threat? Probably not. So here's the problem: <strong>if your rival is smart, they reason that when the moment comes, you won't follow through. Your threat was a bluff, and a bluff doesn't deter a thinking opponent.</strong>"
+          "html": "Consider you own a market and a rival is thinking of entering. You could say: 'I'll fight you with everything I have if you come in—I'll cut prices, undercut you, drain both our profits to zero if I have to.' This threat deters the rival. But now consider they enter anyway. You do the math: fighting costs you an enormous loss, while accommodating and sharing the market is painful but survivable. Do you actually want to carry out your threat? Probably not. So The problem: <strong>if your rival is smart, they reason that when the moment comes, you won't follow through. Your threat was a bluff, and a bluff doesn't deter a thinking opponent.</strong>"
         },
         {
           "t": "para",
@@ -51,11 +55,15 @@
       "blocks": [
         {
           "t": "para",
-          "html": "Here is the idea: a player's strategy must be a best choice not just overall, but at <em>every point the game could actually reach</em>. Even at branches you hope never happen. If a threat is part of your plan, you must actually want to carry it out when the moment comes."
+          "html": "The idea: a player's strategy must be a best choice not just overall, but at <em>every point the game could actually reach</em>. Even at branches you hope never happen. If a threat is part of your plan, you must actually want to carry it out when the moment comes."
         },
         {
           "t": "para",
           "html": "The method is <strong>backward induction</strong>: start at the end of the game, work backward, and at each point pick the choice that is actually best for that player, given what comes after. This rules out promises and threats that are just hot air. A strategy that survives this backward check is <strong>subgame-perfect</strong>—it is not just a Nash equilibrium, it is also a best choice at every subgame, every smaller game that could branch off at any point."
+        },
+        {
+          "t": "para",
+          "html": "The hidden quantity is whether each threatened move is actually optimal when its moment arrives; equilibria that rely on threats a player would not carry out are ruled out."
         }
       ]
     },
@@ -176,6 +184,24 @@
         {
           "t": "para",
           "html": "Central to modern economics, biology, and computer science, this one idea—'search backward, make sure each choice is a real best response, discard hollow threats'—is the backbone of how we think about strategic commitment, reputation, and trust."
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "h2": "7 · Where it is used in practice — Every threat must work when tested",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Market entry games: a monopoly threatens to fight any entrant with prices cut to the bone—but if entry happens, the incumbent prefers accommodation to mutual destruction. Only threats that would actually be carried out deter a thinking opponent. Central banks use commitment to make anti-inflation threats credible; they cannot print money at will so they can promise to hold the line. Parents who leave the park (even though the child cries) enforce bedtime rules through credible commitment."
+        },
+        {
+          "t": "para",
+          "html": "Use backward induction: start at the end of the game, work backward, and at each branch pick the choice that is actually best for that player given what comes next. A strategy is subgame-perfect if it remains a best choice at every node it could reach, even ones you hope never happen."
+        },
+        {
+          "t": "insight",
+          "html": "Threats only deter if rational opponents believe you will execute them; the moment decision comes, you must prefer to follow through."
         }
       ]
     }

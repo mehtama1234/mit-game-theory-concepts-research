@@ -4,35 +4,188 @@
   "kick": "game theory · first principles · what survives when everyone is rational",
   "title": "Rationalizability — the strategies that survive pure logic",
   "lede": "Before you can pin down what players will do, you need to know what they could do without contradicting the fact that they are rational and everyone knows everyone is rational. Rationalizability is the set of choices that survive that filter: every strategy a player might pick must be best against some reasonable belief about what rational opponents will do. Here is the idea, why it's the weakest sensible prediction, a real game where we compute it, what you lose by being this conservative, and where this logic quietly anchors games where people think only a step or two ahead.",
-  "arc": [["problem","The problem"],["reframe","The reframe"],["run","Seen on a real run"],["why","Why this is the weakest sensible prediction"],["weakness","The one real weakness"],["surprise","The surprise"]],
-  "sections": [
-    {"id":"problem","h2":"1 · The problem — without an equilibrium, what can we say?","blocks":[
-      {"t":"para","html":"Imagine you are in a game where you don't know what the other players will do, and they don't know what you will do. You want to choose a strategy — a plan of action. But what should you pick? Your best choice depends on theirs. And theirs depend on yours. You could assume they will reach an equilibrium with you, but that assumes they think the same way and will coordinate on the same answer you do. What if they don't? What if they reason differently or pick a different equilibrium?"},
-      {"t":"para","html":"So here is the sharper question: <strong>forget about equilibrium for a moment. Just using the fact that everyone is rational and knows everyone is rational, which strategies could possibly make sense?</strong> Not 'which one will happen,' but 'which ones are not obviously foolish?'"}
-    ]},
-    {"id":"reframe","h2":"2 · The reframe — keep only strategies you can justify by some rational opponent belief","blocks":[
-      {"t":"para","html":"Here is the key idea. A strategy is 'rationalizable' if <em>there exists some belief about what your opponents will do</em> — and that belief must be consistent with them being rational — <em>such that your strategy is a best response to that belief.</em> In other words: you don't have to know what they'll do; you just have to be able to point to some scenario where rational opponents might do things that make your choice sensible."},
-      {"t":"para","html":"You start by deleting any strategy that is strictly dominated — something you'd never pick because you have another option that beats it no matter what anyone else does. Then you ask: given that the other players are rational, they won't pick their dominated strategies either, so delete those. Then ask again: given that they deleted their dominated strategies, do you have any more dominated strategies? Keep going until nothing changes. <strong>What survives — what you cannot rule out by pure logic — is the set of rationalizable strategies.</strong>"}
-    ]},
-    {"id":"run","h2":"3 · Seen on a real run — deleting the unjustifiable strategies","blocks":[
-      {"t":"para","html":"We took a 3×3 game (three strategies for each player) and ran the deletion algorithm: remove any strategy a rational player would never use, then re-check. Every number is the computed output."},
-      {"t":"table","headers":["step","what happens","survivors (rows/columns)"],"rows":[["start (no deletion)","all nine combinations are possible","rows {0, 1, 2} and columns {0, 1, 2}"],["round 1","row 2 is dominated by row 0 — delete it. Then column 2 is dominated by column 0 — delete it.","rows {0, 1} and columns {0, 1}"],["round 2","no more dominated strategies exist given {0,1} vs {0,1}","rounds stop here"]],"caption":"Iterated deletion of dominated strategies shrinks the game step by step."},
-      {"t":"insight","html":"<strong>The discovered fact: in this 3×3 game, only rows {0, 1} and columns {0, 1} are rationalizable — only the top-left 2×2 sub-game survives.</strong> Row 2 and column 2 cannot be justified: there is no belief about a rational opponent that makes them a best response. Once you delete them, no new dominated strategies emerge, so the survivors are final. These four strategies are the ones each player could potentially use and still claim 'I have a reason — some rational opponent's choice makes me best off picking this.'"}
-    ]},
-    {"id":"why","h2":"4 · Why this is the weakest sensible prediction","blocks":[
-      {"t":"para","html":"Rationalizability uses only the weakest assumption: that everyone is rational, and everyone knows everyone is rational, and so on. It does not assume players coordinate on an equilibrium, do not assume they know the payoffs the same way, and does not require them to think like you. It asks: 'Can I rule this out by pure logic alone?'"},
-      {"t":"para","html":"That is why it is the weakest sensible prediction. Any strategy ruled out by rationalizability is ruled out by <em>every sensible solution concept</em> — whether it's Nash equilibrium, subgame perfection, or anything more refined. If you can't point to a rational belief that justifies a choice, then it should not happen. But rationalizability is also conservative: it keeps many strategies alive, so it narrows the game without pinning down a unique answer. An equilibrium is a stronger prediction — it narrows further — but it buys that narrowness by assuming more (like coordination or that everyone reasons the same way)."}
-    ]},
-    {"id":"weakness","h2":"5 · The one real weakness — it is often a very loose prediction","blocks":[
-      {"t":"para","html":"Rationalizability can leave you with a lot of survivors. In our 3×3 example, four combinations survived; in larger games, the set can be much bigger, spanning many possible outcomes. You've ruled out the truly nonsensical, but you have not pinned down which outcome actually happens. A game with a unique Nash equilibrium gives a much tighter prediction — there is one outcome, take it or leave it. Rationalizability says 'any of these four could happen' — it is less of an answer."},
-      {"t":"para","html":"There is a deeper issue too: rationalizability assumes people can reason through the entire chain 'I'm rational, you know I'm rational, you know I know you're rational, you know I know you know I'm rational...' and so on infinitely. In reality, humans think one or two steps ahead and then stop. That's why real people in coordination games often fail to coordinate even when mutual coordination is a Nash equilibrium — they think you might not think like them."}
-    ]},
-    {"id":"surprise","h2":"6 · The surprise — levels of reasoning, and where real people actually stop","blocks":[
-      {"t":"para","html":"The power of rationalizability shows up in a game called 'guess 2/3 of the average.' Everyone picks a number from 0 to 100; the person closest to two-thirds of the group average wins. The Nash equilibrium is for everyone to pick 0 — because if you reason one step ahead ('they'll pick a positive number, so the average is positive, so 2/3 of it is positive, so 0 is closer to 2/3 of a positive number than any positive number is'), you pick a smaller number. And if everyone reasons this way, everyone picks 0."},
-      {"t":"para","html":"But actual people? Real contestants typically pick numbers in the 20–35 range. Why? Because they think one or two steps ahead, not infinitely many. Level-0 reasoning: 'I'll pick randomly.' Level-1: 'The average of random picks is about 50, so 2/3 of that is 33, so I pick 33.' Level-2: 'Others are Level-1 thinkers picking around 33, so 2/3 of the average is 22, so I pick 22.' And humans usually stop around Level 1 or 2. Rationalizability names the boundary: it marks the set of strategies that survive if you reason forever; when real people deviate from equilibrium, they are living in the gap between their limited steps of reasoning and the infinite chain. The concept becomes a lens for understanding why smart, rational people reach different outcomes than the theory predicts."}
-    ]}
+  "arc": [
+    [
+      "problem",
+      "The problem"
+    ],
+    [
+      "reframe",
+      "The reframe"
+    ],
+    [
+      "run",
+      "Seen on a real run"
+    ],
+    [
+      "why",
+      "Why this is the weakest sensible prediction"
+    ],
+    [
+      "weakness",
+      "The one real weakness"
+    ],
+    [
+      "surprise",
+      "The surprise"
+    ],
+    [
+      "practice",
+      "In practice"
+    ]
   ],
-  "related": [["best_response-deep.html","best response"],["dominance-deep.html","dominance"],["nash_equilibrium-deep.html","Nash equilibrium"],["iterated_deletion-deep.html","iterated deletion of dominated strategies"]],
+  "sections": [
+    {
+      "id": "problem",
+      "h2": "1 · The problem — without an equilibrium, what can we say?",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Consider you are in a game where you don't know what the other players will do, and they don't know what you will do. You want to choose a strategy — a plan of action. But what should you pick? Your best choice depends on theirs. And theirs depend on yours. You could assume they will reach an equilibrium with you, but that assumes they think the same way and will coordinate on the same answer you do. What if they don't? What if they reason differently or pick a different equilibrium?"
+        },
+        {
+          "t": "para",
+          "html": "So The sharper question: <strong>forget about equilibrium for a moment. Just using the fact that everyone is rational and knows everyone is rational, which strategies could possibly make sense?</strong> Not 'which one will happen,' but 'which ones are not obviously foolish?'"
+        }
+      ]
+    },
+    {
+      "id": "reframe",
+      "h2": "2 · The reframe — keep only strategies you can justify by some rational opponent belief",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "The key idea. A strategy is 'rationalizable' if <em>there exists some belief about what your opponents will do</em> — and that belief must be consistent with them being rational — <em>such that your strategy is a best response to that belief.</em> In other words: you don't have to know what they'll do; you just have to be able to point to some scenario where rational opponents might do things that make your choice sensible."
+        },
+        {
+          "t": "para",
+          "html": "You start by deleting any strategy that is strictly dominated — something you'd never pick because you have another option that beats it no matter what anyone else does. Then you ask: given that the other players are rational, they won't pick their dominated strategies either, so delete those. Then ask again: given that they deleted their dominated strategies, do you have any more dominated strategies? Keep going until nothing changes. <strong>What survives — what you cannot rule out by pure logic — is the set of rationalizable strategies.</strong>"
+        },
+        {
+          "t": "para",
+          "html": "The hidden quantity is which strategies could ever be a best response to some belief about others that is itself reasonable &mdash; the widest set that common knowledge of rationality allows."
+        }
+      ]
+    },
+    {
+      "id": "run",
+      "h2": "3 · Seen on a real run — deleting the unjustifiable strategies",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "We took a 3×3 game (three strategies for each player) and ran the deletion algorithm: remove any strategy a rational player would never use, then re-check. Every number is the computed output."
+        },
+        {
+          "t": "table",
+          "headers": [
+            "step",
+            "what happens",
+            "survivors (rows/columns)"
+          ],
+          "rows": [
+            [
+              "start (no deletion)",
+              "all nine combinations are possible",
+              "rows {0, 1, 2} and columns {0, 1, 2}"
+            ],
+            [
+              "round 1",
+              "row 2 is dominated by row 0 — delete it. Then column 2 is dominated by column 0 — delete it.",
+              "rows {0, 1} and columns {0, 1}"
+            ],
+            [
+              "round 2",
+              "no more dominated strategies exist given {0,1} vs {0,1}",
+              "rounds stop here"
+            ]
+          ],
+          "caption": "Iterated deletion of dominated strategies shrinks the game step by step."
+        },
+        {
+          "t": "insight",
+          "html": "<strong>The discovered fact: in this 3×3 game, only rows {0, 1} and columns {0, 1} are rationalizable — only the top-left 2×2 sub-game survives.</strong> Row 2 and column 2 cannot be justified: there is no belief about a rational opponent that makes them a best response. Once you delete them, no new dominated strategies emerge, so the survivors are final. These four strategies are the ones each player could potentially use and still claim 'I have a reason — some rational opponent's choice makes me best off picking this.'"
+        }
+      ]
+    },
+    {
+      "id": "why",
+      "h2": "4 · Why this is the weakest sensible prediction",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Rationalizability uses only the weakest assumption: that everyone is rational, and everyone knows everyone is rational, and so on. It does not assume players coordinate on an equilibrium, do not assume they know the payoffs the same way, and does not require them to think like you. It asks: 'Can I rule this out by pure logic alone?'"
+        },
+        {
+          "t": "para",
+          "html": "That is why it is the weakest sensible prediction. Any strategy ruled out by rationalizability is ruled out by <em>every sensible solution concept</em> — whether it's Nash equilibrium, subgame perfection, or anything more refined. If you can't point to a rational belief that justifies a choice, then it should not happen. But rationalizability is also conservative: it keeps many strategies alive, so it narrows the game without pinning down a unique answer. An equilibrium is a stronger prediction — it narrows further — but it buys that narrowness by assuming more (like coordination or that everyone reasons the same way)."
+        }
+      ]
+    },
+    {
+      "id": "weakness",
+      "h2": "5 · The one real weakness — it is often a very loose prediction",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Rationalizability can leave you with a lot of survivors. In our 3×3 example, four combinations survived; in larger games, the set can be much bigger, spanning many possible outcomes. You've ruled out the truly nonsensical, but you have not pinned down which outcome actually happens. A game with a unique Nash equilibrium gives a much tighter prediction — there is one outcome, take it or leave it. Rationalizability says 'any of these four could happen' — it is less of an answer."
+        },
+        {
+          "t": "para",
+          "html": "There is a deeper issue too: rationalizability assumes people can reason through the entire chain 'I'm rational, you know I'm rational, you know I know you're rational, you know I know you know I'm rational...' and so on infinitely. In reality, humans think one or two steps ahead and then stop. That's why real people in coordination games often fail to coordinate even when mutual coordination is a Nash equilibrium — they think you might not think like them."
+        }
+      ]
+    },
+    {
+      "id": "surprise",
+      "h2": "6 · The surprise — levels of reasoning, and where real people actually stop",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "The power of rationalizability shows up in a game called 'guess 2/3 of the average.' Everyone picks a number from 0 to 100; the person closest to two-thirds of the group average wins. The Nash equilibrium is for everyone to pick 0 — because if you reason one step ahead ('they'll pick a positive number, so the average is positive, so 2/3 of it is positive, so 0 is closer to 2/3 of a positive number than any positive number is'), you pick a smaller number. And if everyone reasons this way, everyone picks 0."
+        },
+        {
+          "t": "para",
+          "html": "But actual people? Real contestants typically pick numbers in the 20–35 range. Why? Because they think one or two steps ahead, not infinitely many. Level-0 reasoning: 'I'll pick randomly.' Level-1: 'The average of random picks is about 50, so 2/3 of that is 33, so I pick 33.' Level-2: 'Others are Level-1 thinkers picking around 33, so 2/3 of the average is 22, so I pick 22.' And humans usually stop around Level 1 or 2. Rationalizability names the boundary: it marks the set of strategies that survive if you reason forever; when real people deviate from equilibrium, they are living in the gap between their limited steps of reasoning and the infinite chain. The concept becomes a lens for understanding why smart, rational people reach different outcomes than the theory predicts."
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "h2": "7 · Where it is used in practice — Keep only strategies you can logically justify",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "In the 'guess two-thirds of the average' game, most people pick numbers between twenty and thirty-five because they think one or two steps ahead, not infinitely. Rationalizability marks where that finite reasoning stops. Chess players use it to prune impossible moves early: if a move has no justification by any opponent belief, delete it and re-analyze. Auction designers use it to eliminate dominated bidding strategies."
+        },
+        {
+          "t": "para",
+          "html": "Start by deleting strategies that are strictly dominated—options you would never pick because some other option beats them no matter what the opponent does. Then recognize that if your opponent is rational, they also won't pick their dominated strategies, so delete those. Then repeat for yourself again. Keep going until no more strategies fall away."
+        },
+        {
+          "t": "insight",
+          "html": "What survives is the weakest sensible prediction: any strategy ruled out by rationalizability is ruled out by every solution concept, but many survivors may remain."
+        }
+      ]
+    }
+  ],
+  "related": [
+    [
+      "best_response-deep.html",
+      "best response"
+    ],
+    [
+      "dominance-deep.html",
+      "dominance"
+    ],
+    [
+      "nash_equilibrium-deep.html",
+      "Nash equilibrium"
+    ],
+    [
+      "iterated_deletion-deep.html",
+      "iterated deletion of dominated strategies"
+    ]
+  ],
   "recipe": {
     "summary": "A 3×3 game where we iteratively delete strictly dominated strategies. A strategy for a player is strictly dominated if there exists another strategy that yields a higher payoff against any choice the opponent makes. We repeat until no more dominated strategies exist. The survivors are the rationalizable strategies.",
     "eq": "for each strategy s_i of player 1, it is dominated if there exists s_i' such that payoff(s_i', opponent_j) > payoff(s_i, opponent_j) for all opponent_j. Repeat for all players until fixed point.",

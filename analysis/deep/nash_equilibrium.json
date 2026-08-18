@@ -4,33 +4,185 @@
   "kick": "game theory · first principles · when nobody wants to move",
   "title": "Nash equilibrium — a resting point no one alone wants to leave",
   "lede": "When everyone's choice depends on everyone else's, is there any stable outcome — a set of choices where each person is content given what the others are doing? That resting point is a Nash equilibrium. Here is the idea, a real game where we compute one (and find two), why it is the natural notion of 'solved', where it goes wrong, and where it quietly runs the modern world.",
-  "arc": [["problem","The problem"],["reframe","The reframe"],["run","Seen on a real run"],["why","Why it's the right idea"],["weakness","The one weakness"],["surprise","The surprise"]],
-  "sections": [
-    {"id":"problem","h2":"1 · The problem — everyone's best move depends on everyone else's","blocks":[
-      {"t":"para","html":"In a decision you make alone, &lsquo;best&rsquo; is clear: pick the option with the highest payoff. But most interesting situations are not solo. What price you should set depends on your rival's price; which side of the road to drive on depends on everyone else; whether to bluff depends on whether they'll call. Your best choice is a moving target that depends on choices other people are making at the same time — and theirs depend on yours."},
-      {"t":"para","html":"So &lsquo;what should I do?&rsquo; has no answer in isolation. The sharper question is: <strong>is there a combination of everyone's choices that is stable — where, given what everyone else is doing, no single person wishes they had chosen differently?</strong>"}
-    ]},
-    {"id":"reframe","h2":"2 · The reframe — look for a mutual best response","blocks":[
-      {"t":"para","html":"Here is the idea, due to John Nash. First define a &lsquo;best response&rsquo;: for any fixed choices by everyone else, your best response is simply the option that pays you the most against them. Now look for a combination of choices in which <em>every</em> player is already playing a best response to the others. At such a point nobody can gain by changing their own choice alone — so nobody moves. That self-consistent, no-regret resting point is a <strong>Nash equilibrium</strong>. To find them you don't guess: you check every combination and keep the ones where each player's choice is a best response to the rest."}
-    ]},
-    {"id":"run","h2":"3 · Seen on a real run — computing the equilibria of a game","blocks":[
-      {"t":"para","html":"We took a small coordination game — two people who both want to end up doing the same thing (meet at the same place, adopt the same standard), but who each prefer a different one of the two options. We wrote out the payoffs and had the program check every combination for a mutual best response. Every number is its output."},
-      {"t":"table","headers":["combination of choices","is each player best-responding?","Nash equilibrium?"],"rows":[["both pick Option X","yes — neither gains by switching alone","YES"],["both pick Option Y","yes — neither gains by switching alone","YES"],["one picks X, the other Y","no — the mismatched player wants to switch","no"],["the other mismatch","no — again someone wants to switch","no"]],"caption":"Checking all four combinations for mutual best response turns up exactly two stable points."},
-      {"t":"insight","html":"<strong>The discovered fact: this game has TWO Nash equilibria — both choose X, or both choose Y.</strong> Each is stable: once the two players are matched, neither can do better by unilaterally switching to the mismatched option, so neither moves. The two mismatched combinations are not equilibria — someone always regrets their choice and wants to change. Note what this already reveals: &lsquo;solved&rsquo; need not mean &lsquo;one answer&rsquo;."}
-    ]},
-    {"id":"why","h2":"4 · Why it's the right idea","blocks":[
-      {"t":"para","html":"A Nash equilibrium is exactly the outcome that can persist among rational players who understand each other. Any non-equilibrium combination contains at least one person who could do better by changing — so if people are even a little rational, that combination unravels the moment they realize it. Only the equilibria survive scrutiny. It is also the natural fixed point of learning: if players keep best-responding to what they saw last time, the process can only come to rest at a Nash equilibrium."},
-      {"t":"para","html":"And Nash proved something remarkable: <em>every</em> finite game has at least one equilibrium, as long as you allow players to randomize their choices. There is always a resting point — you are never guaranteed it is unique or good, but one always exists."}
-    ]},
-    {"id":"weakness","h2":"5 · The one real weakness — it says stable, not good, and not which one","blocks":[
-      {"t":"para","html":"Equilibrium is a weak promise. It does not say the outcome is <em>good</em>: the Prisoner's Dilemma's only equilibrium is mutual defection, which both players hate. It does not say the outcome is <em>unique</em>: this very game had two, and Nash alone can't tell you which one the players will land on (that's a coordination problem). And it assumes everyone is rational, knows the payoffs, and reasons about each other perfectly — strip away those and real people can settle somewhere else entirely. Nash tells you where the resting points are; it does not promise you'll like them or reach the best one."}
-    ]},
-    {"id":"surprise","h2":"6 · The surprise — this one idea runs the modern world","blocks":[
-      {"t":"para","html":"The equilibrium concept is the hub the rest of the subject turns on. Refining it — which equilibria survive if we also demand that threats be credible (subgame perfection), or that beliefs be consistent (Bayesian equilibrium) — generates the whole theory of bargaining, signaling, and reputation. Computing it drives the design of auctions that raise billions, of matching systems that place students in schools and doctors in hospitals, and of the incentives inside markets and contracts."},
-      {"t":"para","html":"It reaches past economics too: evolutionary biology reads stable populations as equilibria, and modern machine learning trains competing networks by chasing the equilibrium of a game. Learn to spot &lsquo;where would nobody want to move?&rsquo; and you have the master key to every situation where choices collide."}
-    ]}
+  "arc": [
+    [
+      "problem",
+      "The problem"
+    ],
+    [
+      "reframe",
+      "The reframe"
+    ],
+    [
+      "run",
+      "Seen on a real run"
+    ],
+    [
+      "why",
+      "Why it's the right idea"
+    ],
+    [
+      "weakness",
+      "The one weakness"
+    ],
+    [
+      "surprise",
+      "The surprise"
+    ],
+    [
+      "practice",
+      "In practice"
+    ]
   ],
-  "related": [["best_response-deep.html","best response"],["mixed_strategies-deep.html","mixed strategies"],["dominance-deep.html","dominance"],["subgame_perfection-deep.html","subgame perfection"]],
+  "sections": [
+    {
+      "id": "problem",
+      "h2": "1 · The problem — everyone's best move depends on everyone else's",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "In a decision you make alone, &lsquo;best&rsquo; is clear: pick the option with the highest payoff. But most interesting situations are not solo. What price you should set depends on your rival's price; which side of the road to drive on depends on everyone else; whether to bluff depends on whether they'll call. Your best choice is a moving target that depends on choices other people are making at the same time — and theirs depend on yours."
+        },
+        {
+          "t": "para",
+          "html": "So &lsquo;what should I do?&rsquo; has no answer in isolation. The sharper question is: <strong>is there a combination of everyone's choices that is stable — where, given what everyone else is doing, no single person wishes they had chosen differently?</strong>"
+        }
+      ]
+    },
+    {
+      "id": "reframe",
+      "h2": "2 · The reframe — look for a mutual best response",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "The idea, due to John Nash. First define a &lsquo;best response&rsquo;: for any fixed choices by everyone else, your best response is simply the option that pays you the most against them. Now look for a combination of choices in which <em>every</em> player is already playing a best response to the others. At such a point nobody can gain by changing their own choice alone — so nobody moves. That self-consistent, no-regret resting point is a <strong>Nash equilibrium</strong>. To find them you don't guess: you check every combination and keep the ones where each player's choice is a best response to the rest."
+        },
+        {
+          "t": "para",
+          "html": "The hidden quantity is whether anyone can gain by changing strategy alone; at equilibrium every player is already best-responding, so no one has a reason to move."
+        }
+      ]
+    },
+    {
+      "id": "run",
+      "h2": "3 · Seen on a real run — computing the equilibria of a game",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "We took a small coordination game — two people who both want to end up doing the same thing (meet at the same place, adopt the same standard), but who each prefer a different one of the two options. We wrote out the payoffs and had the program check every combination for a mutual best response. Every number is its output."
+        },
+        {
+          "t": "table",
+          "headers": [
+            "combination of choices",
+            "is each player best-responding?",
+            "Nash equilibrium?"
+          ],
+          "rows": [
+            [
+              "both pick Option X",
+              "yes — neither gains by switching alone",
+              "YES"
+            ],
+            [
+              "both pick Option Y",
+              "yes — neither gains by switching alone",
+              "YES"
+            ],
+            [
+              "one picks X, the other Y",
+              "no — the mismatched player wants to switch",
+              "no"
+            ],
+            [
+              "the other mismatch",
+              "no — again someone wants to switch",
+              "no"
+            ]
+          ],
+          "caption": "Checking all four combinations for mutual best response turns up exactly two stable points."
+        },
+        {
+          "t": "insight",
+          "html": "<strong>The discovered fact: this game has TWO Nash equilibria — both choose X, or both choose Y.</strong> Each is stable: once the two players are matched, neither can do better by unilaterally switching to the mismatched option, so neither moves. The two mismatched combinations are not equilibria — someone always regrets their choice and wants to change. Note what this already reveals: &lsquo;solved&rsquo; need not mean &lsquo;one answer&rsquo;."
+        }
+      ]
+    },
+    {
+      "id": "why",
+      "h2": "4 · Why it's the right idea",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "A Nash equilibrium is exactly the outcome that can persist among rational players who understand each other. Any non-equilibrium combination contains at least one person who could do better by changing — so if people are even a little rational, that combination unravels the moment they realize it. Only the equilibria survive scrutiny. It is also the natural fixed point of learning: if players keep best-responding to what they saw last time, the process can only come to rest at a Nash equilibrium."
+        },
+        {
+          "t": "para",
+          "html": "And Nash proved something remarkable: <em>every</em> finite game has at least one equilibrium, as long as you allow players to randomize their choices. There is always a resting point — you are never guaranteed it is unique or good, but one always exists."
+        }
+      ]
+    },
+    {
+      "id": "weakness",
+      "h2": "5 · The one real weakness — it says stable, not good, and not which one",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Equilibrium is a weak promise. It does not say the outcome is <em>good</em>: the Prisoner's Dilemma's only equilibrium is mutual defection, which both players hate. It does not say the outcome is <em>unique</em>: this very game had two, and Nash alone can't tell you which one the players will land on (that's a coordination problem). And it assumes everyone is rational, knows the payoffs, and reasons about each other perfectly — strip away those and real people can settle somewhere else entirely. Nash tells you where the resting points are; it does not promise you'll like them or reach the best one."
+        }
+      ]
+    },
+    {
+      "id": "surprise",
+      "h2": "6 · The surprise — this one idea runs the modern world",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "The equilibrium concept is the hub the rest of the subject turns on. Refining it — which equilibria survive if we also demand that threats be credible (subgame perfection), or that beliefs be consistent (Bayesian equilibrium) — generates the whole theory of bargaining, signaling, and reputation. Computing it drives the design of auctions that raise billions, of matching systems that place students in schools and doctors in hospitals, and of the incentives inside markets and contracts."
+        },
+        {
+          "t": "para",
+          "html": "It reaches past economics too: evolutionary biology reads stable populations as equilibria, and modern machine learning trains competing networks by chasing the equilibrium of a game. Learn to spot &lsquo;where would nobody want to move?&rsquo; and you have the master key to every situation where choices collide."
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "h2": "7 · Where it is used in practice — Find the stable point where nobody wants to move",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Matching platforms use it to design how students bid for schools and how doctors apply for hospitals. Companies set prices where each firm's choice is best given rivals' prices; moving alone costs market share. Evolutionary biologists read stable populations as equilibria—predators and prey lock in at numbers where neither can grow without hitting a bound."
+        },
+        {
+          "t": "para",
+          "html": "The method is to check every possible combination of choices and find the ones where each person's choice is a best response to everyone else. At that point, nobody can gain by changing alone, so nobody moves. Real people use learning: if they keep playing best responses to what happened last time, they drift toward an equilibrium."
+        },
+        {
+          "t": "insight",
+          "html": "It marks where rational play can rest, but says nothing about whether the outcome is good or which equilibrium real players reach."
+        }
+      ]
+    }
+  ],
+  "related": [
+    [
+      "best_response-deep.html",
+      "best response"
+    ],
+    [
+      "mixed_strategies-deep.html",
+      "mixed strategies"
+    ],
+    [
+      "dominance-deep.html",
+      "dominance"
+    ],
+    [
+      "subgame_perfection-deep.html",
+      "subgame perfection"
+    ]
+  ],
   "recipe": {
     "summary": "A 2x2 coordination game with row payoffs A and column payoffs B. Enumerate all four choice combinations; a cell is a pure Nash equilibrium when the row payoff is best in its column AND the column payoff is best in its row. numpy, really just comparisons.",
     "eq": "cell (i,j) is Nash  iff  A[i,j] = max over rows of A[:,j]  and  B[i,j] = max over cols of B[i,:]\n# coordination game -> two pure equilibria: (X,X) and (Y,Y)",

@@ -28,6 +28,10 @@
     [
       "surprise",
       "The surprise"
+    ],
+    [
+      "practice",
+      "In practice"
     ]
   ],
   "sections": [
@@ -51,11 +55,15 @@
       "blocks": [
         {
           "t": "para",
-          "html": "Here is the insight. Instead of guessing what will happen in the future, <strong>start at the very last move in the game and figure out what the last player will do</strong> — their choice, stripped down to just their payoff, is usually clear. Then step backward one move. Now the second-to-last player knows what will happen if they choose each option, so they can pick their best move. Keep stepping backward through the game to the start. Only then do you play forward."
+          "html": "The insight. Instead of guessing what will happen in the future, <strong>start at the very last move in the game and figure out what the last player will do</strong> — their choice, stripped down to just their payoff, is usually clear. Then step backward one move. Now the second-to-last player knows what will happen if they choose each option, so they can pick their best move. Keep stepping backward through the game to the start. Only then do you play forward."
         },
         {
           "t": "para",
           "html": "This is <strong>backward induction</strong>: solve the game by reasoning from the end backward. At each step, the player who moves knows what will happen next (because you already solved it), so they pick the choice that gives them the best payoff, given that future. Since every player reasons this way, the only choices that survive are ones where every player is genuinely doing their best at every step."
+        },
+        {
+          "t": "para",
+          "html": "The hidden quantity is the value of each position when both sides play optimally from the end backward; every earlier move is chosen against those already-solved futures."
         }
       ]
     },
@@ -125,7 +133,7 @@
         },
         {
           "t": "para",
-          "html": "And it mirrors how smart people naturally think. When you plan a multi-step move (a chess opening, a negotiation), you imagine how it ends, then work backward. If the ending is bad, you change your opening. Backward induction formalizes that everyday intuition."
+          "html": "And it mirrors how smart people naturally think. When you plan a multi-step move (a chess opening, a negotiation), you consider how it ends, then work backward. If the ending is bad, you change your opening. Backward induction formalizes that everyday intuition."
         }
       ]
     },
@@ -158,6 +166,24 @@
         {
           "t": "para",
           "html": "In machine learning, reinforcement learning trains agents to solve sequential decision problems, and the algorithms (like Q-learning) are solving backward: they learn the value of taking an action at a state by looking ahead to the next state, then step backward through the sequence to optimize from the start. The same backward logic runs inside modern AI."
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "h2": "7 · Where it is used in practice — Solve the game by reasoning from the end",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "A startup considering market entry asks whether the incumbent will fight or accommodate if they enter. A negotiator working toward a deal thinks through how many rounds of back-and-forth will happen before both sides settle. A chess player planning an opening considers what responses will follow each move, then works backward to the best opening. A central bank deciding on interest rates expects to read the market's reaction and anticipates multiple rounds of adjustment. A parent disciplining a child decides on punishment knowing the child will learn and adapt."
+        },
+        {
+          "t": "para",
+          "html": "Backward induction works by starting at the final decision point — the last move in the sequence — and figuring out what that player will actually do when facing a clear payoff comparison. Then step back one move and assume that player's choice is locked in; the second-to-last player, knowing what comes next, picks their best option given that future. Keep stepping back to the start. Every player, reasoning this way at their own step, knows what will follow, so they choose the move that is genuinely best for them at that moment."
+        },
+        {
+          "t": "insight",
+          "html": "It catches bluffs: promises of punishment or aggressive response that would actually hurt the threatener are revealed as hollow once you work backward."
         }
       ]
     }

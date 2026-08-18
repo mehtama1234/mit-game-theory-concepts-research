@@ -30,7 +30,7 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
 <div class="kick">game theory · first principles · when randomization is the best strategy</div>
 <h1>Mixed strategies — be deliberately random when any predictable choice can be exploited</h1>
 <p class="lede">In some games, announcing your choice in advance is a terrible idea. A penalty taker who always shoots to the right, a poker player who always bluffs the same hands, a computer system that always picks the same move — all get demolished by an opponent who sees the pattern. The solution is to randomize: choose a probability for each option, not an option. Here is the problem, the reframe, a real game where we compute the equilibrium (and find it requires 50/50 randomization), why this works, where it fails, and why Nash proved randomization is the key to existence itself.</p>
-<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why randomizing wins</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="mixed_strategies.html">Atlas card</a></div>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why randomizing wins</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="#practice">In practice</a><a href="mixed_strategies.html">Atlas card</a></div>
 
     <section class="fp" id="problem">
       <h2>1 · The problem — any predictable choice can be read and exploited</h2>
@@ -43,8 +43,9 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
     <section class="fp" id="reframe">
       <h2>2 · The reframe — choose a probability, not an option</h2>
       <div class="essay">
-      <p>Here is the reframe. Instead of picking one action — say, 'always shoot left' — pick a probability distribution over actions. You will shoot left some fraction of the time, right the rest, and you commit to choosing each shot by randomization: a coin flip, a random number generator, a practice routine that naturally divides your kicks without a pattern.</p>
+      <p>The reframe. Instead of picking one action — say, 'always shoot left' — pick a probability distribution over actions. You will shoot left some fraction of the time, right the rest, and you commit to choosing each shot by randomization: a coin flip, a random number generator, a practice routine that naturally divides your kicks without a pattern.</p>
       <p>Now, why would the opponent guess? If you are truly randomizing 50/50, they gain nothing by diving left versus right — either way they face a 50% chance of a goal. The payoff is the same for every guess they make. At that point, they are indifferent. And when your opponent is indifferent, they cannot exploit you. Randomization is choosing a mix of probabilities such that <strong>your opponent has no incentive to deviate from their best response to your mix</strong>. This is called a mixed-strategy Nash equilibrium: each player's randomized choice makes the other player indifferent.</p>
+      <p>The hidden quantity is the mix of probabilities that leaves the opponent exactly indifferent between their options &mdash; which is precisely what stops them from exploiting you.</p>
       </div>
     </section>
     <section class="fp" id="run">
@@ -58,7 +59,7 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
     <section class="fp" id="why">
       <h2>4 · Why randomizing is optimal — you make them indifferent</h2>
       <div class="essay">
-      <p>Here is the logic. Suppose you know your opponent's mix — they randomize 50/50. Now, can you do better by deviating? If you play Heads 100%, you win half the time (when they play Heads). If you play Tails 100%, you win half the time (when they play Tails). If you mix 40/60, you still win half the time on average. When your opponent mixes 50/50, <em>every</em> choice you make earns you the same payoff. They have rendered your choice irrelevant. You cannot improve, so you do not move.</p>
+      <p>The logic. Suppose you know your opponent's mix — they randomize 50/50. Now, can you do better by deviating? If you play Heads 100%, you win half the time (when they play Heads). If you play Tails 100%, you win half the time (when they play Tails). If you mix 40/60, you still win half the time on average. When your opponent mixes 50/50, <em>every</em> choice you make earns you the same payoff. They have rendered your choice irrelevant. You cannot improve, so you do not move.</p>
       <p>This is the core of mixed-strategy equilibrium: each player randomizes in a way that makes the other indifferent. Once both are indifferent, neither can gain by changing — the mix is an equilibrium. And crucially, Nash proved something remarkable: <em>every</em> finite game has at least one equilibrium when you allow mixed strategies. Some games have pure equilibria (like the coordination game: both do X or both do Y); others have only mixed. But all of them have at least one.</p>
       </div>
     </section>
@@ -73,9 +74,17 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
     <section class="fp" id="surprise">
       <h2>6 · The surprise — Nash's theorem: every finite game has an equilibrium in mixed strategies</h2>
       <div class="essay">
-      <p>Here is the conceptual payoff. Nash proved that if you allow players to randomize, <em>every</em> finite game — no matter how many players or strategies — has at least one equilibrium. This is a guarantee of existence. It is what transforms game theory from a list of special cases into a complete theory: you can always ask 'where is the equilibrium?' and be assured an answer exists, even if it is hard to compute.</p>
+      <p>The conceptual payoff. Nash proved that if you allow players to randomize, <em>every</em> finite game — no matter how many players or strategies — has at least one equilibrium. This is a guarantee of existence. It is what transforms game theory from a list of special cases into a complete theory: you can always ask 'where is the equilibrium?' and be assured an answer exists, even if it is hard to compute.</p>
       <p>This one insight ripples far. It is why penalty-takers in soccer randomize their kicks (pure strategy gets exploited too often). It is why professional poker players randomize their bluffs at a calibrated rate — deviating to bluff too often or too rarely lets opponents exploit you. It is why randomized algorithms in computer science can beat deterministic adversaries: a network protocol that acts unpredictably frustrates an attacker who tried to learn its pattern. And it is why competing AI systems settle into mixed strategies when locked in adversarial games — randomization emerges as the path to survival.</p>
       <p>The deeper truth: when your payoff depends on being unpredictable, being unpredictable IS the best strategy. And Nash showed you can always find the right mix to make it work.</p>
+      </div>
+    </section>
+    <section class="fp" id="practice">
+      <h2>7 · Where it is used in practice — Randomize to become unpredictable and unexploitable</h2>
+      <div class="essay">
+      <p>Professional poker players randomize their bluffs at a calibrated rate. Penalty takers in soccer kick left or right at a mix that makes the goalkeeper indifferent. Computer security uses randomized algorithms so that an attacker cannot learn a pattern and exploit it. Network protocols randomize their responses to frustrate hackers hunting for a signature.</p>
+      <p>The mechanism is to choose probabilities for each option such that your opponent cannot gain by guessing. If you randomize evenly, your opponent earns the same payoff whether they guess left or right—they are indifferent. Once they cannot gain by changing their guess, you have locked in your payoff and they cannot exploit you.</p>
+      <div class="insight">Nash proved every finite game has an equilibrium when players can randomize; pure predictability becomes a liability.</div>
       </div>
     </section>
     <section class="fp"><p class="muted">Related: <a href="nash_equilibrium-deep.html">Nash equilibrium</a> · <a href="best_response-deep.html">best response</a> · <a href="zero_sum_games-deep.html">zero-sum games</a> · <a href="dominance-deep.html">dominance</a></p></section>

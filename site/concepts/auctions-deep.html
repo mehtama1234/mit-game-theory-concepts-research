@@ -30,20 +30,21 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
 <div class="kick">game theory · first principles · selling to self-interested bidders</div>
 <h1>Auctions — rules that make honesty the best policy (or not)</h1>
 <p class="lede">You are selling one item and several people want it, each secretly knowing what it is worth to them. How should you run the sale to get a good price and pick a fair winner? The surprise is that the RULES you write shape how people bid, and a clever rule makes honesty safer than lying. Here is the idea, a real auction where we simulated two formats side by side, why rules drive behavior, where the theory breaks, and where billions of dollars ride on these principles every day.</p>
-<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why honesty beats shading</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="auctions.html">Atlas card</a></div>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why honesty beats shading</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="#practice">In practice</a><a href="auctions.html">Atlas card</a></div>
 
     <section class="fp" id="problem">
       <h2>1 · The problem — how do you run a fair sale when bidders are self-interested?</h2>
       <div class="essay">
-      <p>Imagine you are selling a single item to several people. Each person secretly knows what that item is worth to them — call it their <em>private value</em>. But you do not know anyone's private value, and the bidders do not know each other's. You want two things: a good price for yourself, and a fair process that picks a winner who actually values the item.</p>
+      <p>Consider you are selling a single item to several people. Each person secretly knows what that item is worth to them — call it their <em>private value</em>. But you do not know anyone's private value, and the bidders do not know each other's. You want two things: a good price for yourself, and a fair process that picks a winner who actually values the item.</p>
       <p>The catch is that bidders are self-interested. If they think being honest (bidding what they truly value) will lose them money, they will lie. So the stakes are high: <strong>can you design the RULES of the auction in a way that makes honesty the safest bet, or at least as profitable as strategic lying?</strong></p>
       </div>
     </section>
     <section class="fp" id="reframe">
       <h2>2 · The reframe — design the rules as a game and predict how they play out</h2>
       <div class="essay">
-      <p>Here is the key shift. Do not ask &lsquo;what price should I set?&rsquo; Instead, ask: <em>what rules should I write so that bidders' own self-interest makes them do what I want?</em> Think of the auction format itself as a game: each player chooses a bid; the rules say who wins and what they pay. Given those rules, what bid will a self-interested, strategic bidder actually choose?</p>
+      <p>The key shift. Do not ask &lsquo;what price should I set?&rsquo; Instead, ask: <em>what rules should I write so that bidders' own self-interest makes them do what I want?</em> Think of the auction format itself as a game: each player chooses a bid; the rules say who wins and what they pay. Given those rules, what bid will a self-interested, strategic bidder actually choose?</p>
       <p>This is the auction designer's version of mechanism design — the art of writing rules that guide self-interested players toward an outcome you want. Two classic formats show the principle starkly. In a <em>first-price auction</em>, the highest bidder wins and pays their own bid — so if you bid your true value, you get the item but make no profit. You must bid lower (called shading your bid) to leave yourself room. In a <em>second-price auction</em>, the highest bidder wins but pays the <em>runner-up's</em> bid (the second-highest), not their own — so if you bid too high you still pay only the second price, and if you bid too low you might miss out. The genius is that <strong>telling your true value is always safe: you pay only what the competition forces, so honesty cannot hurt you</strong>.</p>
+      <p>The hidden quantity is how much each bidder shades below their true value &mdash; set so the small gain from winning more often exactly balances the extra they would pay.</p>
       </div>
     </section>
     <section class="fp" id="run">
@@ -73,6 +74,14 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
       <div class="essay">
       <p>These principles — designing rules so self-interest guides behavior, and the equivalence of different formats — are not textbook curiosities. Google, Facebook, Amazon, and every advertising exchange on the internet run second-price-style auctions (or Vickrey auctions, the generalization) to sell ad slots. Your click is worth a secret number only to the advertiser; they bid that number; they win if highest; they pay the second-highest bid. The genius is that no one has incentive to lie, so the ads that matter most get the premium slots. Billions of dollars flow through these auctions every day, and they work because a game theorist centuries ago thought about how rules shape behavior.</p>
       <p>Radio spectrum auctions, US Treasury bond auctions, art house sales, and school matching systems all use these ideas. Before auction theory, governments would set arbitrary prices or allocate by lottery. Now they write rules that harness self-interest to find true value. When you see a mechanism that works because bidders are honest, or because people's choices reveal information, or because competing strategies yield stable prices, you are seeing game theory in the wild — the theory of how to design the rules of a game.</p>
+      </div>
+    </section>
+    <section class="fp" id="practice">
+      <h2>7 · Where it is used in practice — The billion-dollar rule that makes honesty safe</h2>
+      <div class="essay">
+      <p>Google and Facebook run second-price auctions every day to sell ad slots to advertisers. Each advertiser secretly knows how much a click is worth to them and bids that number. Spectrum regulators use sealed-bid auctions to allocate radio frequencies to telecommunications companies. Art houses and online resale platforms (eBay, NFT exchanges) run auctions to find prices for unique items. School matching systems use auction logic to assign students and doctors to residencies based on preference lists.</p>
+      <p>In each case, the auction design works by writing rules so that bidders' self-interest pushes them toward honesty. The platform sets who wins (highest bidder) and what they pay (second-highest bid in a Vickrey auction, or some variant). Given those rules, a bidder's safest move is to bid what the item is actually worth to them — no shading, no lying. If you bid higher you might win but still pay only the second price, so overbidding gains nothing. If you bid lower you might lose out. The rules channel honesty through incentive.</p>
+      <div class="insight">The genius is that no one has to guess how much rivals value the item — the auction format makes truthful bidding the dominant strategy.</div>
       </div>
     </section>
     <section class="fp"><p class="muted">Related: <a href="nash_equilibrium-deep.html">Nash equilibrium</a> · <a href="revenue_equivalence-deep.html">revenue equivalence</a></p></section>

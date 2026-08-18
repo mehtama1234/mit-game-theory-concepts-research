@@ -28,6 +28,10 @@
     [
       "surprise",
       "The surprise"
+    ],
+    [
+      "practice",
+      "In practice"
     ]
   ],
   "sections": [
@@ -56,6 +60,10 @@
         {
           "t": "para",
           "html": "Now look for a resting point. A <strong>Cournot equilibrium</strong> is a choice of output by each firm such that every firm is playing its best response to every other firm's choice. Check each firm: 'Given what everyone else is making, could I do better by making more or less?' If the answer is no for every firm, you have found the stable outcome. It fell out of everyone thinking: 'I'll make what's best for me, given what they make.'"
+        },
+        {
+          "t": "para",
+          "html": "The hidden quantity is each firm's profit-maximising quantity given what its rivals produce; the market settles where no firm wants to change its own output."
         }
       ]
     },
@@ -109,7 +117,7 @@
       "blocks": [
         {
           "t": "para",
-          "html": "Here is the mechanism. When I make an extra unit, I get the profit from selling it. But that extra unit pushes down the market price, and the LOWER price hits my rival's units too — they sell at a lower price than before. My extra output damages the rival's profit. But when I decide whether to make that extra unit, I count only my gain, not the damage I do to my rival. So from my selfish view, I underproduce compared to the outcome where I ignore the price curve entirely — but I overproduce compared to what I would make if I also had to eat the cost of lowering my rival's profit."
+          "html": "The mechanism. When I make an extra unit, I get the profit from selling it. But that extra unit pushes down the market price, and the LOWER price hits my rival's units too — they sell at a lower price than before. My extra output damages the rival's profit. But when I decide whether to make that extra unit, I count only my gain, not the damage I do to my rival. So from my selfish view, I underproduce compared to the outcome where I ignore the price curve entirely — but I overproduce compared to what I would make if I also had to eat the cost of lowering my rival's profit."
         },
         {
           "t": "para",
@@ -146,6 +154,24 @@
         {
           "t": "para",
           "html": "And Cournot reappears whenever humans or algorithms are learning to compete: bid-shading in ascending auctions, pricing bots in e-commerce, and machine learning agents trained to compete in a duopoly — they all converge to Cournot-like equilibria because they are each learning what to do when the other player's move is fixed. A 1838 pencil-and-paper model of two competing granaries now hums under the hood of modern industrial organization, auction theory, and even the control algorithms of competing AI systems."
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "h2": "7 · Where it is used in practice — The middle outcome: a few rivals shaping price together",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Duopolies in soft drinks, airlines, and semiconductors — two or three big firms dominate, each watches the others, and prices sit between pure monopoly and full competition. Oligopolies in oil production, where major producers coordinate implicitly, setting output to keep prices high enough to sustain margins. Retail markets with a handful of large chains (supermarkets, pharmacies, gas stations) competing by location, service, and advertising while watching rivals' prices and output. Telecom markets where a few carriers dominate and compete on data plans and coverage, each firm's choice moving the market price."
+        },
+        {
+          "t": "para",
+          "html": "Cournot competition models firms choosing output (how much to produce and sell), not price. Each firm maximizes its profit given rivals' current output, knowing that total output determines market price. When firms repeatedly best-respond to each other's output, they converge to a Cournot equilibrium: each firm produces more than a profit-maximizing cartel would (because no cartel enforces restraint) but less than perfect competition (because each firm still restrains output to protect price). The result sits between the two extremes."
+        },
+        {
+          "t": "insight",
+          "html": "Mergers are blocked because combining two firms internationalizes the price damage: a merged firm cuts output and raises price, harming consumers."
         }
       ]
     }

@@ -30,7 +30,7 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
 <div class="kick">game theory · auctions · hidden symmetry</div>
 <h1>Revenue equivalence — different auction rules raise the same money because bidders adjust</h1>
 <p class="lede">There are many ways to run an auction: pay what you bid, pay what the runner-up bid, an ascending clock. A seller might think some rules reward them more than others. But here is the surprise: once bidders adapt their bidding strategy to the rules, the expected revenue comes out the same. Here is the idea, why it happens, where we measured it on a real auction, what breaks it, and why auction houses actually care.</p>
-<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why the formats tie</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="revenue_equivalence.html">Atlas card</a></div>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why the formats tie</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="#practice">In practice</a><a href="revenue_equivalence.html">Atlas card</a></div>
 
     <section class="fp" id="problem">
       <h2>1 · The problem — which auction rule should a seller pick?</h2>
@@ -42,8 +42,9 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
     <section class="fp" id="reframe">
       <h2>2 · The reframe — compare outcomes after bidders adapt, not the rules themselves</h2>
       <div class="essay">
-      <p>Here is the key insight. You cannot compare auction rules by looking at the rules alone. You must compare the outcomes after each bidder has learned the rules and adjusted their strategy. A rule that looks greedy but makes bidders shade their bids low might end up collecting less than a rule that looks soft but gives bidders no reason to lie.</p>
+      <p>The key insight. You cannot compare auction rules by looking at the rules alone. You must compare the outcomes after each bidder has learned the rules and adjusted their strategy. A rule that looks greedy but makes bidders shade their bids low might end up collecting less than a rule that looks soft but gives bidders no reason to lie.</p>
       <p>When you do this comparison carefully — working out what each bidder's optimal strategy is under each rule, then computing the expected revenue that results — a stunning symmetry emerges. Under the same conditions (every bidder has a private value drawn from the same range, bidders care only about their own profit, there is no reserve price), the two main auction formats raise the <strong>same expected revenue</strong>. The shading in the first-price auction exactly offsets its steeper payment rule. This is the <strong>Revenue Equivalence Theorem</strong>: the format changes, the outcomes collapse to the same number.</p>
+      <p>The hidden quantity is the expected payment of each bidder, which under broad conditions is the same across very different auction rules &mdash; so they raise equal revenue on average.</p>
       </div>
     </section>
     <section class="fp" id="run">
@@ -58,7 +59,7 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
       <h2>4 · Why the formats tie — any format must award the item to the highest-valuer</h2>
       <div class="essay">
       <p>The deep reason lies in a simple fact: to be 'efficient' (to get the item to whoever values it most), an auction must award it to the highest bidder. And if the highest-valuer always wins, then by symmetry, each bidder's expected profit must depend only on their own value relative to the others — not on the payment rule.</p>
-      <p>Here is the chain of logic. Suppose the auction is fair: a zero-value bidder gets zero profit (they win nothing or pay nothing). And suppose all bidders are symmetric: each would bid the same way if their value were swapped with another's. Then any two auction rules that both award the item to the highest bidder and both pay a zero-value bidder nothing must yield the same expected revenue — because the revenue is pinned down by the law of the highest-value, not the payment rule.</p>
+      <p>The chain of logic. Suppose the auction is fair: a zero-value bidder gets zero profit (they win nothing or pay nothing). And suppose all bidders are symmetric: each would bid the same way if their value were swapped with another's. Then any two auction rules that both award the item to the highest bidder and both pay a zero-value bidder nothing must yield the same expected revenue — because the revenue is pinned down by the law of the highest-value, not the payment rule.</p>
       <p>The intuition: the revenue comes from selling an item to someone who values it. That sale is already determined by who has the highest value. The payment rule is just a scramble of how much of that value the seller captures — and under symmetry, all scrambles that keep the highest-bidder rule and the zero-profit guarantee lead to the same expected capture.</p>
       </div>
     </section>
@@ -77,6 +78,14 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
       <p>Spectrum auctions — governments selling radio licenses worth tens of billions — are designed by people who know this theorem cold. They use ascending-clock formats to handle risk aversion and common values (bidders see others' bids and update their estimates). They impose reserve prices. They sometimes run simultaneous auctions for linked licenses to handle correlation. Each of these tweaks is a deliberate exploit of one of the theorem's fragile assumptions.</p>
       <p>The same logic runs through ad auctions (Google, Facebook): they choose formats by asking which assumptions break in their market (common values — everyone wants popular ad slots more; risk aversion — advertisers hate unpredictability). And matching platforms use equilibrium analysis to design how students bid for schools and how doctors apply for jobs — they want to make sure the rules don't create perverse incentives.</p>
       <p>Learn to read the Revenue Equivalence Theorem and you can decode why a seller picked their format: ask which assumptions it's built to break.</p>
+      </div>
+    </section>
+    <section class="fp" id="practice">
+      <h2>7 · Where it is used in practice — Different auction formats can yield identical revenue</h2>
+      <div class="essay">
+      <p>Spectrum auctions—governments selling radio licenses worth tens of billions—choose ascending-clock formats to handle risk and common values rather than first-price sealed bids. Ad auctions at Google and Facebook use revenue equivalence reasoning to decide which format to pick: ask which assumptions their market breaks and design to exploit that. Matching platforms use it to design incentives so bidders tell the truth.</p>
+      <p>Revenue equivalence says first-price and second-price auctions raise the same money because bidders adjust their bids to the rules. In second-price you bid truthfully; in first-price you shade below your true value. The adjustments perfectly balance, washing out any revenue difference. This holds only when four conditions are met: independent private values, risk neutrality, symmetry, and no reserve.</p>
+      <div class="insight">Break one of those conditions—add risk aversion, a reserve price, or common values—and formats diverge; then designers can capture extra revenue.</div>
       </div>
     </section>
     <section class="fp"><p class="muted">Related: <a href="best_response-deep.html">best response</a> · <a href="nash_equilibrium-deep.html">Nash equilibrium</a> · <a href="auctions-deep.html">auctions</a></p></section>

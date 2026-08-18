@@ -30,7 +30,7 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
 <div class="kick">game theory · first principles · the world between monopoly and chaos</div>
 <h1>Imperfect competition — a handful of rivals who shape the price together</h1>
 <p class="lede">Textbook economics draws two extremes: one all-powerful monopoly that raises prices and cuts output to maximize profit, or so many price-takers that no single firm matters. The real world is a handful of firms — big enough to move the price, small enough to feel competition. Each watches what the others make and adjusts its own output. Here is how that middle outcome emerges, why it sits between the two extremes, where the model cracks, and why it unlocks antitrust law.</p>
-<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why the middle outcome emerges</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="imperfect_competition.html">Atlas card</a></div>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why the middle outcome emerges</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="#practice">In practice</a><a href="imperfect_competition.html">Atlas card</a></div>
 
     <section class="fp" id="problem">
       <h2>1 · The problem — a few firms watching each other</h2>
@@ -44,6 +44,7 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
       <div class="essay">
       <p>Here is Cournot's 1838 insight. Define the market setup: there is a price curve (as industry output rises, the price everyone receives falls). Each firm knows that curve — it is public knowledge. Now define a firm's best response: given that your rivals will make some quantity, the amount YOU should make is the one that maximizes your own profit, given that rivals' output and the resulting price. In other words: you choose output to be best against what you think the others will do.</p>
       <p>Now look for a resting point. A <strong>Cournot equilibrium</strong> is a choice of output by each firm such that every firm is playing its best response to every other firm's choice. Check each firm: 'Given what everyone else is making, could I do better by making more or less?' If the answer is no for every firm, you have found the stable outcome. It fell out of everyone thinking: 'I'll make what's best for me, given what they make.'</p>
+      <p>The hidden quantity is each firm's profit-maximising quantity given what its rivals produce; the market settles where no firm wants to change its own output.</p>
       </div>
     </section>
     <section class="fp" id="run">
@@ -57,7 +58,7 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
     <section class="fp" id="why">
       <h2>4 · Why the middle outcome emerges — the tragedy of ignoring the rival's pain</h2>
       <div class="essay">
-      <p>Here is the mechanism. When I make an extra unit, I get the profit from selling it. But that extra unit pushes down the market price, and the LOWER price hits my rival's units too — they sell at a lower price than before. My extra output damages the rival's profit. But when I decide whether to make that extra unit, I count only my gain, not the damage I do to my rival. So from my selfish view, I underproduce compared to the outcome where I ignore the price curve entirely — but I overproduce compared to what I would make if I also had to eat the cost of lowering my rival's profit.</p>
+      <p>The mechanism. When I make an extra unit, I get the profit from selling it. But that extra unit pushes down the market price, and the LOWER price hits my rival's units too — they sell at a lower price than before. My extra output damages the rival's profit. But when I decide whether to make that extra unit, I count only my gain, not the damage I do to my rival. So from my selfish view, I underproduce compared to the outcome where I ignore the price curve entirely — but I overproduce compared to what I would make if I also had to eat the cost of lowering my rival's profit.</p>
       <p>The result: each firm produces more than a profit-maximizing cartel would (because neither can commit to respect the other's profit), but less than full competition (because each firm still restrains output to protect its own price). The 4.0 units each is no firm's master plan. It is the intersection of two best-reply functions — the outcome that emerges when two rational rivals each optimizing their own profit bump into each other.</p>
       </div>
     </section>
@@ -74,6 +75,14 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
       <p>From Cournot's one insight, the entire modern enforcement of competition law follows. Why do regulators forbid a merger between two firms in an industry? Because a merger internalizes the price damage: the merged firm now sees that making more output hurts its SELF, not just a rival — so it cuts output and raises price. The Cournot model predicts exactly that: firms that merge move to a more monopoly-like output and price, and consumer harm follows. Every merger review in the world consults Cournot.</p>
       <p>Why are cartels unstable? A cartel agrees to each make 3.0 units, splitting monopoly profit. But if you secretly make 4.0, exploiting the lower price the others are holding up, your profit jumps — the cartel unravels the instant everyone realizes the temptation to cheat. That instability is also Cournot: the best response to a cartel is to overproduce, so it is not a Nash equilibrium.</p>
       <p>And Cournot reappears whenever humans or algorithms are learning to compete: bid-shading in ascending auctions, pricing bots in e-commerce, and machine learning agents trained to compete in a duopoly — they all converge to Cournot-like equilibria because they are each learning what to do when the other player's move is fixed. A 1838 pencil-and-paper model of two competing granaries now hums under the hood of modern industrial organization, auction theory, and even the control algorithms of competing AI systems.</p>
+      </div>
+    </section>
+    <section class="fp" id="practice">
+      <h2>7 · Where it is used in practice — The middle outcome: a few rivals shaping price together</h2>
+      <div class="essay">
+      <p>Duopolies in soft drinks, airlines, and semiconductors — two or three big firms dominate, each watches the others, and prices sit between pure monopoly and full competition. Oligopolies in oil production, where major producers coordinate implicitly, setting output to keep prices high enough to sustain margins. Retail markets with a handful of large chains (supermarkets, pharmacies, gas stations) competing by location, service, and advertising while watching rivals' prices and output. Telecom markets where a few carriers dominate and compete on data plans and coverage, each firm's choice moving the market price.</p>
+      <p>Cournot competition models firms choosing output (how much to produce and sell), not price. Each firm maximizes its profit given rivals' current output, knowing that total output determines market price. When firms repeatedly best-respond to each other's output, they converge to a Cournot equilibrium: each firm produces more than a profit-maximizing cartel would (because no cartel enforces restraint) but less than perfect competition (because each firm still restrains output to protect price). The result sits between the two extremes.</p>
+      <div class="insight">Mergers are blocked because combining two firms internationalizes the price damage: a merged firm cuts output and raises price, harming consumers.</div>
       </div>
     </section>
     <section class="fp"><p class="muted">Related: <a href="best_response-deep.html">best response</a> · <a href="nash_equilibrium-deep.html">Nash equilibrium</a></p></section>

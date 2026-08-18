@@ -30,7 +30,7 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
 <div class="kick">game theory · first principles · when nobody wants to move</div>
 <h1>Nash equilibrium — a resting point no one alone wants to leave</h1>
 <p class="lede">When everyone's choice depends on everyone else's, is there any stable outcome — a set of choices where each person is content given what the others are doing? That resting point is a Nash equilibrium. Here is the idea, a real game where we compute one (and find two), why it is the natural notion of 'solved', where it goes wrong, and where it quietly runs the modern world.</p>
-<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why it's the right idea</a><a href="#weakness">The one weakness</a><a href="#surprise">The surprise</a><a href="nash_equilibrium.html">Atlas card</a></div>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why it's the right idea</a><a href="#weakness">The one weakness</a><a href="#surprise">The surprise</a><a href="#practice">In practice</a><a href="nash_equilibrium.html">Atlas card</a></div>
 
     <section class="fp" id="problem">
       <h2>1 · The problem — everyone's best move depends on everyone else's</h2>
@@ -42,7 +42,8 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
     <section class="fp" id="reframe">
       <h2>2 · The reframe — look for a mutual best response</h2>
       <div class="essay">
-      <p>Here is the idea, due to John Nash. First define a &lsquo;best response&rsquo;: for any fixed choices by everyone else, your best response is simply the option that pays you the most against them. Now look for a combination of choices in which <em>every</em> player is already playing a best response to the others. At such a point nobody can gain by changing their own choice alone — so nobody moves. That self-consistent, no-regret resting point is a <strong>Nash equilibrium</strong>. To find them you don't guess: you check every combination and keep the ones where each player's choice is a best response to the rest.</p>
+      <p>The idea, due to John Nash. First define a &lsquo;best response&rsquo;: for any fixed choices by everyone else, your best response is simply the option that pays you the most against them. Now look for a combination of choices in which <em>every</em> player is already playing a best response to the others. At such a point nobody can gain by changing their own choice alone — so nobody moves. That self-consistent, no-regret resting point is a <strong>Nash equilibrium</strong>. To find them you don't guess: you check every combination and keep the ones where each player's choice is a best response to the rest.</p>
+      <p>The hidden quantity is whether anyone can gain by changing strategy alone; at equilibrium every player is already best-responding, so no one has a reason to move.</p>
       </div>
     </section>
     <section class="fp" id="run">
@@ -71,6 +72,14 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
       <div class="essay">
       <p>The equilibrium concept is the hub the rest of the subject turns on. Refining it — which equilibria survive if we also demand that threats be credible (subgame perfection), or that beliefs be consistent (Bayesian equilibrium) — generates the whole theory of bargaining, signaling, and reputation. Computing it drives the design of auctions that raise billions, of matching systems that place students in schools and doctors in hospitals, and of the incentives inside markets and contracts.</p>
       <p>It reaches past economics too: evolutionary biology reads stable populations as equilibria, and modern machine learning trains competing networks by chasing the equilibrium of a game. Learn to spot &lsquo;where would nobody want to move?&rsquo; and you have the master key to every situation where choices collide.</p>
+      </div>
+    </section>
+    <section class="fp" id="practice">
+      <h2>7 · Where it is used in practice — Find the stable point where nobody wants to move</h2>
+      <div class="essay">
+      <p>Matching platforms use it to design how students bid for schools and how doctors apply for hospitals. Companies set prices where each firm's choice is best given rivals' prices; moving alone costs market share. Evolutionary biologists read stable populations as equilibria—predators and prey lock in at numbers where neither can grow without hitting a bound.</p>
+      <p>The method is to check every possible combination of choices and find the ones where each person's choice is a best response to everyone else. At that point, nobody can gain by changing alone, so nobody moves. Real people use learning: if they keep playing best responses to what happened last time, they drift toward an equilibrium.</p>
+      <div class="insight">It marks where rational play can rest, but says nothing about whether the outcome is good or which equilibrium real players reach.</div>
       </div>
     </section>
     <section class="fp"><p class="muted">Related: <a href="best_response-deep.html">best response</a> · <a href="mixed_strategies-deep.html">mixed strategies</a> · <a href="dominance-deep.html">dominance</a> · <a href="subgame_perfection-deep.html">subgame perfection</a></p></section>

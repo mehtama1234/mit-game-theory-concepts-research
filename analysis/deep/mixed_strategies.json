@@ -4,38 +4,210 @@
   "kick": "game theory · first principles · when randomization is the best strategy",
   "title": "Mixed strategies — be deliberately random when any predictable choice can be exploited",
   "lede": "In some games, announcing your choice in advance is a terrible idea. A penalty taker who always shoots to the right, a poker player who always bluffs the same hands, a computer system that always picks the same move — all get demolished by an opponent who sees the pattern. The solution is to randomize: choose a probability for each option, not an option. Here is the problem, the reframe, a real game where we compute the equilibrium (and find it requires 50/50 randomization), why this works, where it fails, and why Nash proved randomization is the key to existence itself.",
-  "arc": [["problem","The problem"],["reframe","The reframe"],["run","Seen on a real run"],["why","Why randomizing wins"],["weakness","The one real weakness"],["surprise","The surprise"]],
-  "sections": [
-    {"id":"problem","h2":"1 · The problem — any predictable choice can be read and exploited","blocks":[
-      {"t":"para","html":"Suppose you play a game where the other player benefits from guessing what you will do. A penalty kick: the goalkeeper wants to dive where you'll shoot, and you want to shoot where they dive. If you always shoot left, they learn it and wait on the left. If you notice them waiting and switch to the right, they notice <em>you</em> noticing and switch back. There is no pure choice — no single direction — where you are safe: any fixed move can be read and counter-played."},
-      {"t":"para","html":"This happens in many games of conflict. A card player who always bluffs on the river when they have a draw, a computer that always responds to a network attack with the same algorithm, a tennis player whose serve has a favored direction. Any choice you announce (even by habit) becomes information your opponent can exploit."},
-      {"t":"para","html":"So the sharpest question is: <strong>is there a way to choose that makes your opponent unable to profit from guessing?</strong>"}
-    ]},
-    {"id":"reframe","h2":"2 · The reframe — choose a probability, not an option","blocks":[
-      {"t":"para","html":"Here is the reframe. Instead of picking one action — say, 'always shoot left' — pick a probability distribution over actions. You will shoot left some fraction of the time, right the rest, and you commit to choosing each shot by randomization: a coin flip, a random number generator, a practice routine that naturally divides your kicks without a pattern."},
-      {"t":"para","html":"Now, why would the opponent guess? If you are truly randomizing 50/50, they gain nothing by diving left versus right — either way they face a 50% chance of a goal. The payoff is the same for every guess they make. At that point, they are indifferent. And when your opponent is indifferent, they cannot exploit you. Randomization is choosing a mix of probabilities such that <strong>your opponent has no incentive to deviate from their best response to your mix</strong>. This is called a mixed-strategy Nash equilibrium: each player's randomized choice makes the other player indifferent."}
-    ]},
-    {"id":"run","h2":"3 · Seen on a real run — matching pennies has no pure equilibrium, only 50/50 randomization","blocks":[
-      {"t":"para","html":"We took the simplest game of conflict: matching pennies. Two players reveal a coin face simultaneously. Player 1 wins if the faces match (both heads or both tails); Player 2 wins if they mismatch. We checked whether any pure strategy (always heads, always tails) forms a Nash equilibrium. Then we computed the unique mixed equilibrium."},
-      {"t":"table","headers":["strategy profile","Player 1 equilibrium?","Player 2 equilibrium?","Is it Nash?"],"rows":[["both play Heads","no (they'd switch)","no (they'd switch)","no"],["both play Tails","no (they'd switch)","no (they'd switch)","no"],["1 Heads, 2 Tails","no (1 wants Tails)","no (2 wants Heads)","no"],["1 Tails, 2 Heads","no (1 wants Heads)","no (2 wants Tails)","no"]],"caption":"Matching pennies: no pure strategy combination is stable — each player can always do better by switching."},
-      {"t":"insight","html":"<strong>The discovered fact: matching pennies has NO pure-strategy Nash equilibrium. Its unique equilibrium is for each player to randomize 50/50 (Heads and Tails equally likely).</strong> If Player 1 deviates to Heads 70% of the time, Player 2 exploits the pattern: choose Heads 100%, winning 70% of the time instead of 50%. Tilting the mix costs you."}
-    ]},
-    {"id":"why","h2":"4 · Why randomizing is optimal — you make them indifferent","blocks":[
-      {"t":"para","html":"Here is the logic. Suppose you know your opponent's mix — they randomize 50/50. Now, can you do better by deviating? If you play Heads 100%, you win half the time (when they play Heads). If you play Tails 100%, you win half the time (when they play Tails). If you mix 40/60, you still win half the time on average. When your opponent mixes 50/50, <em>every</em> choice you make earns you the same payoff. They have rendered your choice irrelevant. You cannot improve, so you do not move."},
-      {"t":"para","html":"This is the core of mixed-strategy equilibrium: each player randomizes in a way that makes the other indifferent. Once both are indifferent, neither can gain by changing — the mix is an equilibrium. And crucially, Nash proved something remarkable: <em>every</em> finite game has at least one equilibrium when you allow mixed strategies. Some games have pure equilibria (like the coordination game: both do X or both do Y); others have only mixed. But all of them have at least one."}
-    ]},
-    {"id":"weakness","h2":"5 · The one real weakness — players must randomize, and the equilibrium mix can be delicate","blocks":[
-      {"t":"para","html":"The first fragility: the analysis assumes players <em>can</em> and <em>do</em> randomize perfectly. But humans are notoriously bad at randomizing. If you ask someone to play rock-paper-scissors, they are more likely to pick rock first, and their &lsquo;random&rsquo; sequences have patterns an opponent can spot. Good players exploit these patterns — they are not indifferent; they are actively hunting for biases."},
-      {"t":"para","html":"The second: even if everyone randomizes, the equilibrium mix can be delicate. In matching pennies, 50/50 is robust — a small deviation to 51/49 gives the opponent a small edge. But in some games the equilibrium mix is more sensitive, and coordinating on the exact probabilities is hard. If some players think the mix is 40/60 and others think it is 50/50, the equilibrium unravels and payoffs diverge."},
-      {"t":"para","html":"In short: mixed equilibrium is elegant in theory. In practice, it requires players to randomize faithfully and to agree on the probabilities — both things real people struggle with, which real opponents exploit relentlessly."}
-    ]},
-    {"id":"surprise","h2":"6 · The surprise — Nash's theorem: every finite game has an equilibrium in mixed strategies","blocks":[
-      {"t":"para","html":"Here is the conceptual payoff. Nash proved that if you allow players to randomize, <em>every</em> finite game — no matter how many players or strategies — has at least one equilibrium. This is a guarantee of existence. It is what transforms game theory from a list of special cases into a complete theory: you can always ask 'where is the equilibrium?' and be assured an answer exists, even if it is hard to compute."},
-      {"t":"para","html":"This one insight ripples far. It is why penalty-takers in soccer randomize their kicks (pure strategy gets exploited too often). It is why professional poker players randomize their bluffs at a calibrated rate — deviating to bluff too often or too rarely lets opponents exploit you. It is why randomized algorithms in computer science can beat deterministic adversaries: a network protocol that acts unpredictably frustrates an attacker who tried to learn its pattern. And it is why competing AI systems settle into mixed strategies when locked in adversarial games — randomization emerges as the path to survival."},
-      {"t":"para","html":"The deeper truth: when your payoff depends on being unpredictable, being unpredictable IS the best strategy. And Nash showed you can always find the right mix to make it work."}
-    ]}
+  "arc": [
+    [
+      "problem",
+      "The problem"
+    ],
+    [
+      "reframe",
+      "The reframe"
+    ],
+    [
+      "run",
+      "Seen on a real run"
+    ],
+    [
+      "why",
+      "Why randomizing wins"
+    ],
+    [
+      "weakness",
+      "The one real weakness"
+    ],
+    [
+      "surprise",
+      "The surprise"
+    ],
+    [
+      "practice",
+      "In practice"
+    ]
   ],
-  "related": [["nash_equilibrium-deep.html","Nash equilibrium"],["best_response-deep.html","best response"],["zero_sum_games-deep.html","zero-sum games"],["dominance-deep.html","dominance"]],
+  "sections": [
+    {
+      "id": "problem",
+      "h2": "1 · The problem — any predictable choice can be read and exploited",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Suppose you play a game where the other player benefits from guessing what you will do. A penalty kick: the goalkeeper wants to dive where you'll shoot, and you want to shoot where they dive. If you always shoot left, they learn it and wait on the left. If you notice them waiting and switch to the right, they notice <em>you</em> noticing and switch back. There is no pure choice — no single direction — where you are safe: any fixed move can be read and counter-played."
+        },
+        {
+          "t": "para",
+          "html": "This happens in many games of conflict. A card player who always bluffs on the river when they have a draw, a computer that always responds to a network attack with the same algorithm, a tennis player whose serve has a favored direction. Any choice you announce (even by habit) becomes information your opponent can exploit."
+        },
+        {
+          "t": "para",
+          "html": "So the sharpest question is: <strong>is there a way to choose that makes your opponent unable to profit from guessing?</strong>"
+        }
+      ]
+    },
+    {
+      "id": "reframe",
+      "h2": "2 · The reframe — choose a probability, not an option",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "The reframe. Instead of picking one action — say, 'always shoot left' — pick a probability distribution over actions. You will shoot left some fraction of the time, right the rest, and you commit to choosing each shot by randomization: a coin flip, a random number generator, a practice routine that naturally divides your kicks without a pattern."
+        },
+        {
+          "t": "para",
+          "html": "Now, why would the opponent guess? If you are truly randomizing 50/50, they gain nothing by diving left versus right — either way they face a 50% chance of a goal. The payoff is the same for every guess they make. At that point, they are indifferent. And when your opponent is indifferent, they cannot exploit you. Randomization is choosing a mix of probabilities such that <strong>your opponent has no incentive to deviate from their best response to your mix</strong>. This is called a mixed-strategy Nash equilibrium: each player's randomized choice makes the other player indifferent."
+        },
+        {
+          "t": "para",
+          "html": "The hidden quantity is the mix of probabilities that leaves the opponent exactly indifferent between their options &mdash; which is precisely what stops them from exploiting you."
+        }
+      ]
+    },
+    {
+      "id": "run",
+      "h2": "3 · Seen on a real run — matching pennies has no pure equilibrium, only 50/50 randomization",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "We took the simplest game of conflict: matching pennies. Two players reveal a coin face simultaneously. Player 1 wins if the faces match (both heads or both tails); Player 2 wins if they mismatch. We checked whether any pure strategy (always heads, always tails) forms a Nash equilibrium. Then we computed the unique mixed equilibrium."
+        },
+        {
+          "t": "table",
+          "headers": [
+            "strategy profile",
+            "Player 1 equilibrium?",
+            "Player 2 equilibrium?",
+            "Is it Nash?"
+          ],
+          "rows": [
+            [
+              "both play Heads",
+              "no (they'd switch)",
+              "no (they'd switch)",
+              "no"
+            ],
+            [
+              "both play Tails",
+              "no (they'd switch)",
+              "no (they'd switch)",
+              "no"
+            ],
+            [
+              "1 Heads, 2 Tails",
+              "no (1 wants Tails)",
+              "no (2 wants Heads)",
+              "no"
+            ],
+            [
+              "1 Tails, 2 Heads",
+              "no (1 wants Heads)",
+              "no (2 wants Tails)",
+              "no"
+            ]
+          ],
+          "caption": "Matching pennies: no pure strategy combination is stable — each player can always do better by switching."
+        },
+        {
+          "t": "insight",
+          "html": "<strong>The discovered fact: matching pennies has NO pure-strategy Nash equilibrium. Its unique equilibrium is for each player to randomize 50/50 (Heads and Tails equally likely).</strong> If Player 1 deviates to Heads 70% of the time, Player 2 exploits the pattern: choose Heads 100%, winning 70% of the time instead of 50%. Tilting the mix costs you."
+        }
+      ]
+    },
+    {
+      "id": "why",
+      "h2": "4 · Why randomizing is optimal — you make them indifferent",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "The logic. Suppose you know your opponent's mix — they randomize 50/50. Now, can you do better by deviating? If you play Heads 100%, you win half the time (when they play Heads). If you play Tails 100%, you win half the time (when they play Tails). If you mix 40/60, you still win half the time on average. When your opponent mixes 50/50, <em>every</em> choice you make earns you the same payoff. They have rendered your choice irrelevant. You cannot improve, so you do not move."
+        },
+        {
+          "t": "para",
+          "html": "This is the core of mixed-strategy equilibrium: each player randomizes in a way that makes the other indifferent. Once both are indifferent, neither can gain by changing — the mix is an equilibrium. And crucially, Nash proved something remarkable: <em>every</em> finite game has at least one equilibrium when you allow mixed strategies. Some games have pure equilibria (like the coordination game: both do X or both do Y); others have only mixed. But all of them have at least one."
+        }
+      ]
+    },
+    {
+      "id": "weakness",
+      "h2": "5 · The one real weakness — players must randomize, and the equilibrium mix can be delicate",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "The first fragility: the analysis assumes players <em>can</em> and <em>do</em> randomize perfectly. But humans are notoriously bad at randomizing. If you ask someone to play rock-paper-scissors, they are more likely to pick rock first, and their &lsquo;random&rsquo; sequences have patterns an opponent can spot. Good players exploit these patterns — they are not indifferent; they are actively hunting for biases."
+        },
+        {
+          "t": "para",
+          "html": "The second: even if everyone randomizes, the equilibrium mix can be delicate. In matching pennies, 50/50 is robust — a small deviation to 51/49 gives the opponent a small edge. But in some games the equilibrium mix is more sensitive, and coordinating on the exact probabilities is hard. If some players think the mix is 40/60 and others think it is 50/50, the equilibrium unravels and payoffs diverge."
+        },
+        {
+          "t": "para",
+          "html": "In short: mixed equilibrium is elegant in theory. In practice, it requires players to randomize faithfully and to agree on the probabilities — both things real people struggle with, which real opponents exploit relentlessly."
+        }
+      ]
+    },
+    {
+      "id": "surprise",
+      "h2": "6 · The surprise — Nash's theorem: every finite game has an equilibrium in mixed strategies",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "The conceptual payoff. Nash proved that if you allow players to randomize, <em>every</em> finite game — no matter how many players or strategies — has at least one equilibrium. This is a guarantee of existence. It is what transforms game theory from a list of special cases into a complete theory: you can always ask 'where is the equilibrium?' and be assured an answer exists, even if it is hard to compute."
+        },
+        {
+          "t": "para",
+          "html": "This one insight ripples far. It is why penalty-takers in soccer randomize their kicks (pure strategy gets exploited too often). It is why professional poker players randomize their bluffs at a calibrated rate — deviating to bluff too often or too rarely lets opponents exploit you. It is why randomized algorithms in computer science can beat deterministic adversaries: a network protocol that acts unpredictably frustrates an attacker who tried to learn its pattern. And it is why competing AI systems settle into mixed strategies when locked in adversarial games — randomization emerges as the path to survival."
+        },
+        {
+          "t": "para",
+          "html": "The deeper truth: when your payoff depends on being unpredictable, being unpredictable IS the best strategy. And Nash showed you can always find the right mix to make it work."
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "h2": "7 · Where it is used in practice — Randomize to become unpredictable and unexploitable",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Professional poker players randomize their bluffs at a calibrated rate. Penalty takers in soccer kick left or right at a mix that makes the goalkeeper indifferent. Computer security uses randomized algorithms so that an attacker cannot learn a pattern and exploit it. Network protocols randomize their responses to frustrate hackers hunting for a signature."
+        },
+        {
+          "t": "para",
+          "html": "The mechanism is to choose probabilities for each option such that your opponent cannot gain by guessing. If you randomize evenly, your opponent earns the same payoff whether they guess left or right—they are indifferent. Once they cannot gain by changing their guess, you have locked in your payoff and they cannot exploit you."
+        },
+        {
+          "t": "insight",
+          "html": "Nash proved every finite game has an equilibrium when players can randomize; pure predictability becomes a liability."
+        }
+      ]
+    }
+  ],
+  "related": [
+    [
+      "nash_equilibrium-deep.html",
+      "Nash equilibrium"
+    ],
+    [
+      "best_response-deep.html",
+      "best response"
+    ],
+    [
+      "zero_sum_games-deep.html",
+      "zero-sum games"
+    ],
+    [
+      "dominance-deep.html",
+      "dominance"
+    ]
+  ],
   "recipe": {
     "summary": "Matching pennies: Player 1 wants to match, Player 2 wants to mismatch. Check all four pure-strategy combinations for mutual best response (none exist). Then compute the unique mixed Nash equilibrium: each player randomizes 50/50. Verify that deviating to 70/30 is exploitable. Small numpy program using payoff matrices and best-response logic.",
     "eq": "For each strategy profile (s1, s2), check if player 1's payoff is maximal in s1 given s2, AND player 2's payoff is maximal in s2 given s1. Mixed equilibrium solved by indifference: player's mixed strategy makes opponent indifferent over opponent's choices.",

@@ -28,6 +28,10 @@
     [
       "surprise",
       "The surprise"
+    ],
+    [
+      "practice",
+      "In practice"
     ]
   ],
   "sections": [
@@ -51,11 +55,15 @@
       "blocks": [
         {
           "t": "para",
-          "html": "Here is the key insight. You cannot compare auction rules by looking at the rules alone. You must compare the outcomes after each bidder has learned the rules and adjusted their strategy. A rule that looks greedy but makes bidders shade their bids low might end up collecting less than a rule that looks soft but gives bidders no reason to lie."
+          "html": "The key insight. You cannot compare auction rules by looking at the rules alone. You must compare the outcomes after each bidder has learned the rules and adjusted their strategy. A rule that looks greedy but makes bidders shade their bids low might end up collecting less than a rule that looks soft but gives bidders no reason to lie."
         },
         {
           "t": "para",
           "html": "When you do this comparison carefully — working out what each bidder's optimal strategy is under each rule, then computing the expected revenue that results — a stunning symmetry emerges. Under the same conditions (every bidder has a private value drawn from the same range, bidders care only about their own profit, there is no reserve price), the two main auction formats raise the <strong>same expected revenue</strong>. The shading in the first-price auction exactly offsets its steeper payment rule. This is the <strong>Revenue Equivalence Theorem</strong>: the format changes, the outcomes collapse to the same number."
+        },
+        {
+          "t": "para",
+          "html": "The hidden quantity is the expected payment of each bidder, which under broad conditions is the same across very different auction rules &mdash; so they raise equal revenue on average."
         }
       ]
     },
@@ -104,7 +112,7 @@
         },
         {
           "t": "para",
-          "html": "Here is the chain of logic. Suppose the auction is fair: a zero-value bidder gets zero profit (they win nothing or pay nothing). And suppose all bidders are symmetric: each would bid the same way if their value were swapped with another's. Then any two auction rules that both award the item to the highest bidder and both pay a zero-value bidder nothing must yield the same expected revenue — because the revenue is pinned down by the law of the highest-value, not the payment rule."
+          "html": "The chain of logic. Suppose the auction is fair: a zero-value bidder gets zero profit (they win nothing or pay nothing). And suppose all bidders are symmetric: each would bid the same way if their value were swapped with another's. Then any two auction rules that both award the item to the highest bidder and both pay a zero-value bidder nothing must yield the same expected revenue — because the revenue is pinned down by the law of the highest-value, not the payment rule."
         },
         {
           "t": "para",
@@ -149,6 +157,24 @@
         {
           "t": "para",
           "html": "Learn to read the Revenue Equivalence Theorem and you can decode why a seller picked their format: ask which assumptions it's built to break."
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "h2": "7 · Where it is used in practice — Different auction formats can yield identical revenue",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Spectrum auctions—governments selling radio licenses worth tens of billions—choose ascending-clock formats to handle risk and common values rather than first-price sealed bids. Ad auctions at Google and Facebook use revenue equivalence reasoning to decide which format to pick: ask which assumptions their market breaks and design to exploit that. Matching platforms use it to design incentives so bidders tell the truth."
+        },
+        {
+          "t": "para",
+          "html": "Revenue equivalence says first-price and second-price auctions raise the same money because bidders adjust their bids to the rules. In second-price you bid truthfully; in first-price you shade below your true value. The adjustments perfectly balance, washing out any revenue difference. This holds only when four conditions are met: independent private values, risk neutrality, symmetry, and no reserve."
+        },
+        {
+          "t": "insight",
+          "html": "Break one of those conditions—add risk aversion, a reserve price, or common values—and formats diverge; then designers can capture extra revenue."
         }
       ]
     }

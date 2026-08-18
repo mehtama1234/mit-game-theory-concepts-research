@@ -30,7 +30,7 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
 <div class="kick">game theory · first principles · when one move is always best</div>
 <h1>Dominance — a strategy that beats your alternatives no matter what others do</h1>
 <p class="lede">In most situations your best move depends on what the other person does. But sometimes one of your options beats all your others regardless — in every scenario the other player chooses. That is a dominant strategy. Rational players play it, often to everyone's loss. Here is the idea, the Prisoner's Dilemma that reveals it, why dominance is a rock-solid prediction, the sting it carries, and why it is the entry point to everything harder in game theory.</p>
-<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why dominance is a rock-solid prediction</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="dominance.html">Atlas card</a></div>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why dominance is a rock-solid prediction</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="#practice">In practice</a><a href="dominance.html">Atlas card</a></div>
 
     <section class="fp" id="problem">
       <h2>1 · The problem — your best move usually depends on theirs</h2>
@@ -42,8 +42,9 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
     <section class="fp" id="reframe">
       <h2>2 · The reframe — check if one strategy beats your others in every column</h2>
       <div class="essay">
-      <p>Here is a simple check: for each choice the other player might make, ask which of <em>your</em> options pays you the most against it. Write down that option for each of their choices. If the same option of yours wins in <em>every</em> one of their choices — every column of the payoff table — then that option is <strong>dominant</strong>. It beats your alternatives no matter what.</p>
-      <p>Dominant strategies are rare, but when they exist they are powerful: you do not need to know what the other person will do, or to imagine their thinking. A dominant strategy is simply better, full stop. Rational players play dominant strategies. If all players have one, the outcome is completely determined — no guessing, no need to know the other's mind.</p>
+      <p>A simple check: for each choice the other player might make, ask which of <em>your</em> options pays you the most against it. Write down that option for each of their choices. If the same option of yours wins in <em>every</em> one of their choices — every column of the payoff table — then that option is <strong>dominant</strong>. It beats your alternatives no matter what.</p>
+      <p>Dominant strategies are rare, but when they exist they are powerful: you do not need to know what the other person will do, or to consider their thinking. A dominant strategy is simply better, full stop. Rational players play dominant strategies. If all players have one, the outcome is completely determined — no guessing, no need to know the other's mind.</p>
+      <p>The hidden quantity is whether a strategy is dominated &mdash; worse than some alternative against every possible opponent play &mdash; because a rational player never uses a dominated strategy.</p>
       </div>
     </section>
     <section class="fp" id="run">
@@ -64,7 +65,7 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
     <section class="fp" id="weakness">
       <h2>5 · The one real weakness — both playing dominant strategy lands on mutual disaster</h2>
       <div class="essay">
-      <p>Here is the sting. Both players play their dominant strategy — Defect in the Prisoner's Dilemma — and both receive 1. But if both had cooperated, each would get 3. The outcome from playing dominant strategies (1, 1) is worse than the outcome from mutual cooperation (3, 3).</p>
+      <p>The sting. Both players play their dominant strategy — Defect in the Prisoner's Dilemma — and both receive 1. But if both had cooperated, each would get 3. The outcome from playing dominant strategies (1, 1) is worse than the outcome from mutual cooperation (3, 3).</p>
       <p>This is why it is called a dilemma. Individual rationality — each player playing their best response to what the other does — produces a collectively terrible outcome. Nobody is making a mistake. Nobody could do better alone. Yet together they end up worse off than if they had both chosen differently. That gap between individual best choice and collective good is the root of countless failures: arms races where nations spend more and more on weapons but no one gets safer, overfishing where each boat catches more but the stock collapses, price wars where rival firms cut prices but profits vanish.</p>
       </div>
     </section>
@@ -73,6 +74,14 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
       <div class="essay">
       <p>Dominance is the cleanest case in game theory. It requires no belief about the other player, no assumptions about rationality beyond self-interest, no common knowledge of payoffs. When it exists, it solves the game completely. That simplicity is why it is the starting point.</p>
       <p>But most games do not have dominant strategies — and that is what makes game theory necessary. When no dominant strategy exists, you have to reason about what the other person will do, which means reasoning about what they think you will do, and so on infinitely. That recursive thinking is what births every richer idea: best response, Nash equilibrium, mixed strategies, bargaining, signaling, reputation. All of them are ways to break the circle when dominance alone is not enough. Learn to spot the dominant strategy first, and you have the master key to spotting when the puzzle deepens.</p>
+      </div>
+    </section>
+    <section class="fp" id="practice">
+      <h2>7 · Where it is used in practice — One move that beats all your alternatives always</h2>
+      <div class="essay">
+      <p>In the Prisoner's Dilemma, defection dominates cooperation — it pays more whether the other person cooperates or defects. In security and arms races, building more weapons is often dominant because it protects you no matter what an adversary does, leading to an escalatory trap. In competitive bidding, shading your bid (bidding below true value) can dominate truthful bidding in first-price auctions. In trade negotiations, threatening to leave can dominate staying at the table if the threat is costly enough to the other side and you're willing to walk away.</p>
+      <p>A dominant strategy beats your other options in every single scenario the other player might choose — no column of the payoff table is missed. If both players have a dominant strategy, the outcome is locked: both play it, the result is determined, and no guessing about the other's rationality is needed. The moment you identify a dominant strategy, you know a rational player will play it, period.</p>
+      <div class="insight">The trap: when both play their dominant strategy (often defection), the outcome can be worse for both than if they'd cooperated — individual rationality produces collective disaster.</div>
       </div>
     </section>
     <section class="fp"><p class="muted">Related: <a href="best_response-deep.html">best response</a> · <a href="nash_equilibrium-deep.html">Nash equilibrium</a> · <a href="mixed_strategies-deep.html">mixed strategies</a> · <a href="iterated_deletion-deep.html">iterated deletion of dominated strategies</a></p></section>

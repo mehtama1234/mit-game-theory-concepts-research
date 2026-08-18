@@ -28,6 +28,10 @@
     [
       "surprise",
       "The surprise"
+    ],
+    [
+      "practice",
+      "In practice"
     ]
   ],
   "sections": [
@@ -41,7 +45,7 @@
         },
         {
           "t": "para",
-          "html": "But now imagine playing that same game again, and again, and again. You remember what happened last round. You can punish someone who cheated on you — and they know it. Suddenly the arithmetic changes. <strong>The question becomes: if you repeat the game enough times, can the threat of punishment support cooperation as an equilibrium?</strong> And how much does the future have to matter for that to work?"
+          "html": "But now consider playing that same game again, and again, and again. You remember what happened last round. You can punish someone who cheated on you — and they know it. Suddenly the arithmetic changes. <strong>The question becomes: if you repeat the game enough times, can the threat of punishment support cooperation as an equilibrium?</strong> And how much does the future have to matter for that to work?"
         }
       ]
     },
@@ -51,15 +55,19 @@
       "blocks": [
         {
           "t": "para",
-          "html": "Here is the key idea. In a repeated game, a player's total payoff is the sum of payoffs across all rounds. The question is: how much do future rounds matter compared to today? That weight is called the discount factor — a number between 0 (today is all that counts, tomorrow is worthless) and 1 (future rounds count almost as much as today)."
+          "html": "The key idea. In a repeated game, a player's total payoff is the sum of payoffs across all rounds. The question is: how much do future rounds matter compared to today? That weight is called the discount factor — a number between 0 (today is all that counts, tomorrow is worthless) and 1 (future rounds count almost as much as today)."
         },
         {
           "t": "para",
-          "html": "Now imagine this strategy: play Cooperate every round, forever — unless someone defects, in which case, play Defect forever after as punishment. This is called a grim-trigger strategy. Is this an equilibrium of the repeated game?"
+          "html": "Now consider this strategy: play Cooperate every round, forever — unless someone defects, in which case, play Defect forever after as punishment. This is called a grim-trigger strategy. Is this an equilibrium of the repeated game?"
         },
         {
           "t": "para",
           "html": "To find out, ask: if everyone is playing it, does any player want to deviate? If you deviate and defect one round, you get a big one-time payoff of 5 (the temptation payoff). But then you're punished with 1 per round, forever. If the future matters enough, those future punishment rounds add up to more than that one-time 5 — so the threat works. You stay cooperating. <strong>That self-enforcing punishment is the heart of the folk theorem: with patient enough players, almost any outcome can be supported by some strategy pair and the threat of punishment for deviation.</strong>"
+        },
+        {
+          "t": "para",
+          "html": "The hidden quantity is the worst payoff a player can be forced down to (their punishment level); any outcome better than that for everyone can be held in place by the threat of falling back to it."
         }
       ]
     },
@@ -145,11 +153,11 @@
         },
         {
           "t": "para",
-          "html": "We ran an invasion test. Imagine a large population playing Tit-for-Tat — the strategy that copies the opponent's previous move (cooperate if they cooperated, defect if they defected). Now a mutant Defector enters. In a population of Tit-for-Tat players, the mutant Defector scores only 1.16 per round, while a native Tit-for-Tat player scores 2.81 per round. The mutant starves and cannot invade. Tit-for-Tat is evolutionarily stable."
+          "html": "We ran an invasion test. Consider a large population playing Tit-for-Tat — the strategy that copies the opponent's previous move (cooperate if they cooperated, defect if they defected). Now a mutant Defector enters. In a population of Tit-for-Tat players, the mutant Defector scores only 1.16 per round, while a native Tit-for-Tat player scores 2.81 per round. The mutant starves and cannot invade. Tit-for-Tat is evolutionarily stable."
         },
         {
           "t": "para",
-          "html": "But now imagine a naive All-Cooperate population. When a Defector invades, the cooperators score 3.02 per round and the defector scores 4.86 per round. The defector thrives, spreads, and wipes out the cooperators. All-Cooperate is NOT evolutionarily stable."
+          "html": "But now consider a naive All-Cooperate population. When a Defector invades, the cooperators score 3.02 per round and the defector scores 4.86 per round. The defector thrives, spreads, and wipes out the cooperators. All-Cooperate is NOT evolutionarily stable."
         },
         {
           "t": "table",
@@ -182,6 +190,24 @@
         {
           "t": "para",
           "html": "This connection between the folk theorem and evolutionary stability is not accidental. The folk theorem says repetition cracks open a space of possible equilibria. But not all equilibria are equally robust to invasion by mutant strategies. Evolutionary game theory narrows down which of those equilibria are actually selected by natural competition. Together, they explain both the possibility of cooperation and the specific forms it tends to take — reciprocal, suspicious of cheats, and willing to punish."
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "h2": "7 · Where it is used in practice — Repetition opens infinite equilibria, not just one",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "In repeated supplier relationships, buyers and suppliers maintain fair prices and quality standards even without contracts, because repeated encounters let them punish cheaters and reward honest partners. Cartels try to fix prices in an industry by having each firm agree to produce a certain amount; they last as long as members value future profit enough to resist the temptation to cheat and capture market share. Long-lived communities maintain norms (sharing labor, lending tools, respecting boundaries) without formal law because the threat of social exclusion is permanent. International treaties between nations persist when each nation values the ongoing relationship more than it values a one-time betrayal."
+        },
+        {
+          "t": "para",
+          "html": "The folk theorem says that in infinitely repeated games, a strategy like 'always cooperate but defect forever if betrayed' can be a Nash equilibrium if players value the future enough (discount factor high enough). That threat of permanent punishment makes the one-time temptation payoff not worth it. With patience, almost any division of the pie can be held up as equilibrium by some combination of strategy and punishment threat — as long as each player's share beats what they could guarantee themselves alone."
+        },
+        {
+          "t": "insight",
+          "html": "The embarrassment: if almost anything can be equilibrium, the theory predicts too much and cannot tell you which outcome actually emerges."
         }
       ]
     }

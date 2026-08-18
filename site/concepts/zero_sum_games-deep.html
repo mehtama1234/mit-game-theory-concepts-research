@@ -30,7 +30,7 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
 <div class="kick">game theory · first principles · pure conflict with a single value</div>
 <h1>Zero-sum games — when one player wins exactly what the other loses</h1>
 <p class="lede">Some situations are pure opposition: chess, a penalty kick, a price war to the death. Every dollar you gain is a dollar your opponent loses. In these zero-sum games there is no cooperation to model, no common interest to exploit — just clean, complete conflict. What does 'solved' mean in a world where interests are exactly opposed? Here is the idea, a real game where we compute the solution (the optimal mix and the guaranteed value), why both sides can lock in the same number, what this leaves out, and where this one narrow theory powered the birth of all game theory and still runs adversarial AI.</p>
-<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#value">Why there is a single value</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="zero_sum_games.html">Atlas card</a></div>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#value">Why there is a single value</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="#practice">In practice</a><a href="zero_sum_games.html">Atlas card</a></div>
 
     <section class="fp" id="problem">
       <h2>1 · The problem — pure opposition</h2>
@@ -42,8 +42,9 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
     <section class="fp" id="reframe">
       <h2>2 · The reframe — find the mix no one can exploit</h2>
       <div class="essay">
-      <p>Here is the insight that von Neumann discovered. In a zero-sum game, each player has the same goal: guarantee the best worst-case outcome. The first player wants to maximize the minimum payoff they can lock in (the 'maximin'). The second player wants to minimize the maximum payoff they have to give away (the 'minimax'). It turns out — and this is the surprise — in a zero-sum game, these two numbers are always equal. There is a single value that the first player can guarantee by playing the right mix, and the second player can hold them to by playing the right mix. Both sides agree on this number.</p>
+      <p>The insight that von Neumann discovered. In a zero-sum game, each player has the same goal: guarantee the best worst-case outcome. The first player wants to maximize the minimum payoff they can lock in (the 'maximin'). The second player wants to minimize the maximum payoff they have to give away (the 'minimax'). It turns out — and this is the surprise — in a zero-sum game, these two numbers are always equal. There is a single value that the first player can guarantee by playing the right mix, and the second player can hold them to by playing the right mix. Both sides agree on this number.</p>
       <p>The way to find it: each player randomizes their choices in just the right proportions so that the opponent gets the same payoff no matter what the opponent does. Once both are playing this unexploitable mix, neither can do better by changing alone, and the game locks in at a single guaranteed value. This is the <strong>minimax theorem</strong> — the reason zero-sum games have a 'solved' answer even though the players are pure enemies.</p>
+      <p>The hidden quantity is the value of the game &mdash; the single payoff the maximiser can guarantee and the minimiser can hold them to, meeting at a saddle point.</p>
       </div>
     </section>
     <section class="fp" id="run">
@@ -57,7 +58,7 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
     <section class="fp" id="value">
       <h2>4 · Why there is a single value — maximin equals minimax</h2>
       <div class="essay">
-      <p>The magic of zero-sum games is that two very different goals produce the same number. The first player asks: 'What is the best worst-case outcome I can guarantee?' They find the strategy that maximizes their minimum payoff — the 'maximin'. The second player asks: 'What is the worst best-case outcome I have to give away?' They find the strategy that minimizes their maximum loss — the 'minimax'. In any zero-sum game, these two numbers are equal.</p>
+      <p>The key of zero-sum games is that two very different goals produce the same number. The first player asks: 'What is the best worst-case outcome I can guarantee?' They find the strategy that maximizes their minimum payoff — the 'maximin'. The second player asks: 'What is the worst best-case outcome I have to give away?' They find the strategy that minimizes their maximum loss — the 'minimax'. In any zero-sum game, these two numbers are equal.</p>
       <p>Why? Because of pure opposition. If the first player could guarantee more than the second player can hold them to, the second player would profit — but both their payoffs sum to zero, so that is impossible. If the second player could hold them to less, the first player could do better — but again, impossible by the zero-sum constraint. The only stable place is where maximin equals minimax, and both sides agree on a single value. This is von Neumann's minimax theorem, the foundation that zero-sum games are solvable in a way that mixed-motive games are not.</p>
       </div>
     </section>
@@ -74,6 +75,14 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
       <p>Von Neumann proved the minimax theorem in 1928, and it was the spark that lit game theory. For decades, zero-sum games were the focus because they were the only games people knew how to solve. Today, game theory encompasses bargaining, signaling, repeated interaction, and mixed motives — but zero-sum games remain the clean, solved case that taught us the language of strategy, value, and equilibrium.</p>
       <p>Outside game theory, minimax thinking reappears everywhere. In machine learning, training a generative adversarial network (a GAN) is solving an approximation of a zero-sum game: the generator tries to maximize the discriminator's error (its loss), the discriminator tries to minimize its own error. The two chase each other's minimax equilibrium. In worst-case algorithm design, you prove an algorithm is good by showing it guarantees a value against an adversary that can play the hardest inputs. In data security and cryptography, the adversary assumes your opponent knows your strategy and will exploit it — the same paranoia that defines zero-sum play.</p>
       <p>Learn the minimax theorem and you see the ancestor of every competitive machine learning system, every robust algorithm, and every worst-case guarantee in computer science. Zero-sum is narrow, but what it shaped is vast.</p>
+      </div>
+    </section>
+    <section class="fp" id="practice">
+      <h2>7 · Where it is used in practice — When what you win is exactly what they lose</h2>
+      <div class="essay">
+      <p>Chess, poker, penalty kicks, price wars to the death—all are pure opposition where interests are completely opposed. Generative adversarial networks train by solving a zero-sum game: the generator tries to fool the discriminator, the discriminator tries to catch it. Worst-case algorithm design proves algorithms work by showing they guarantee a value against an adversary playing the hardest inputs. Cryptography assumes your opponent knows your strategy and will exploit it.</p>
+      <p>Zero-sum games are solved by having each player randomize at proportions that make the opponent indifferent to any response. The value both can lock in—maximin for you, minimax for them—is always equal. Once both play the unexploitable mix, neither can improve by changing alone.</p>
+      <div class="insight">Zero-sum is the solved case, but it requires pure opposition; most real situations have shared interest and require Nash equilibrium.</div>
       </div>
     </section>
     <section class="fp"><p class="muted">Related: <a href="minimax-deep.html">minimax</a> · <a href="mixed_strategies-deep.html">mixed strategies</a> · <a href="nash_equilibrium-deep.html">Nash equilibrium</a> · <a href="best_response-deep.html">best response</a></p></section>

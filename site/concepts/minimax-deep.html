@@ -30,7 +30,7 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
 <div class="kick">game theory · first principles · plan for the worst</div>
 <h1>Minimax — play to guarantee your best worst-case outcome</h1>
 <p class="lede">Against an opponent who wants you to lose, optimism is dangerous. How should you choose when someone is actively trying to make your choice backfire? The answer is minimax: for each of your options, assume the opponent will respond to hurt you most, and pick the option whose worst case is best. Here is the idea, a real game where we compute it, why the two bounds on your payoff collapse to a single value when mixing is allowed, where it falls short, and where it quietly powers game-playing engines and robust design.</p>
-<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why the two bounds meet</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="minimax.html">Atlas card</a></div>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why the two bounds meet</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="#practice">In practice</a><a href="minimax.html">Atlas card</a></div>
 
     <section class="fp" id="problem">
       <h2>1 · The problem — someone is actively trying to hurt you</h2>
@@ -42,10 +42,11 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
     <section class="fp" id="reframe">
       <h2>2 · The reframe — maximize your minimum payoff</h2>
       <div class="essay">
-      <p>Here is the idea. For each move you could make, imagine your opponent responds in the way that hurts you most. That response is your opponent's best reply to your move — the move that minimizes <em>your</em> payoff. So each of your options has a worst-case payoff, the minimum you will get if your opponent is smart and mean.</p>
+      <p>The idea. For each move you could make, consider your opponent responds in the way that hurts you most. That response is your opponent's best reply to your move — the move that minimizes <em>your</em> payoff. So each of your options has a worst-case payoff, the minimum you will get if your opponent is smart and mean.</p>
       <p>Now maximize over your options: pick the move whose minimum payoff is highest. That is <strong>maximin</strong> — the maximum of your minimum payoffs. This is the outcome you can guarantee yourself: no matter what your opponent does, you will get at least this much.</p>
       <p>Your opponent, looking forward, asks the mirror question: for each move they make, what is the worst payoff <em>they</em> can get if you respond optimally? That worst case is the minimum <em>they</em> can be held to. They will pick their move to maximize their own minimum. But from your vantage point, that's the minimum <em>they</em> can hold <em>you</em> to. That is <strong>minimax</strong> — your opponent's best move will limit you to a minimum payoff.</p>
       <p>The miracle is this: <strong>when both players are allowed to randomize — to mix their choices with some probability — the maximin equals the minimax.</strong> What you can guarantee yourself is exactly what your opponent can hold you to. There is one number: the <strong>value</em> of the game.</p>
+      <p>The hidden quantity is the payoff you can guarantee assuming the opponent does their worst &mdash; the floor a player can secure regardless of the other's play.</p>
       </div>
     </section>
     <section class="fp" id="run">
@@ -68,7 +69,7 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
       <h2>5 · The one real weakness — minimax is pessimistic by design</h2>
       <div class="essay">
       <p>Minimax assumes your opponent is a perfect, mean, all-knowing adversary. Against such an opponent, minimax is exactly right — it guarantees you cannot be surprised. But real opponents are often weak, predictable, or benign. If your opponent is bad at the game, or careless, or even trying to help you, playing minimax leaves money on the table.</p>
-      <p>Imagine playing minimax against a bumbling opponent who always picks the worst option for themselves, or one who has a tell — always plays Left first. You could exploit these weaknesses and do better than the value. But minimax, designed to work against the strongest adversary, does not. It is conservative by necessity, and that conservatism becomes inefficiency against anyone weaker than perfect.</p>
+      <p>Consider playing minimax against a bumbling opponent who always picks the worst option for themselves, or one who has a tell — always plays Left first. You could exploit these weaknesses and do better than the value. But minimax, designed to work against the strongest adversary, does not. It is conservative by necessity, and that conservatism becomes inefficiency against anyone weaker than perfect.</p>
       <p>So minimax is robust (you cannot be surprised) but not optimal in any game where the opponent is not trying their hardest. In the real world, you often know something about your opponent — their skill, their intent — and that knowledge should change your strategy. Minimax is the right tool only when you truly know nothing about their quality.</p>
       </div>
     </section>
@@ -79,6 +80,14 @@ th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14
       <p>It reaches into robust and worst-case optimization too. When engineers design an aircraft wing or a network protocol, they cannot afford to optimize for the average case — the airplane must fly in the worst weather the model predicts, the network must work even when adversaries are trying to break it. Minimax thinking — design to handle the worst case — is the principle that keeps you safe.</p>
       <p>And in modern machine learning, minimax is the foundation of adversarial training. When you train a neural network to be robust to attacks, you are solving a game: the network tries to classify correctly, and an adversary tries to fool it with imperceptible perturbations. The network's training objective is minimax — find weights that minimize the maximum attack loss. Train against the worst case and the network survives the real world.</p>
       <p>The notion is simple — plan for the worst — but it powers the most sophisticated competition detection and hardening in the world.</p>
+      </div>
+    </section>
+    <section class="fp" id="practice">
+      <h2>7 · Where it is used in practice — Plan for the worst, guarantee the best worst-case</h2>
+      <div class="essay">
+      <p>Minimax runs every chess engine and game-playing AI. Penalty takers in soccer use it to decide where to aim: you cannot predict the goalkeeper's dive, so you pick the kick whose worst-case outcome (if the goalkeeper guesses right) is still best. Aircraft engineers design wings with minimax: the plane must fly in the worst weather the model predicts, not the average. Networks must work even when adversaries attack.</p>
+      <p>The method is to list your options, imagine your opponent responds to hurt you most, and pick the option whose worst-case payoff is highest. In chess engines, this means searching ahead layer by layer: you minimize over your opponent's best moves, then maximize over your own, then minimize again, reaching backward to the present. In robust design, you solve 'what is the worst case I need to handle?' and build around that floor.</p>
+      <div class="insight">The payoff: when you can randomize, your guarantee (maximin) exactly equals what your opponent can hold you to (minimax) — one value locks in.</div>
       </div>
     </section>
     <section class="fp"><p class="muted">Related: <a href="zero_sum_games-deep.html">zero-sum games</a> · <a href="mixed_strategies-deep.html">mixed strategies</a> · <a href="best_response-deep.html">best response</a> · <a href="nash_equilibrium-deep.html">Nash equilibrium</a></p></section>

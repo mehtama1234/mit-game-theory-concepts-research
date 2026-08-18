@@ -28,6 +28,10 @@
     [
       "surprise",
       "The surprise"
+    ],
+    [
+      "practice",
+      "In practice"
     ]
   ],
   "sections": [
@@ -37,7 +41,7 @@
       "blocks": [
         {
           "t": "para",
-          "html": "Imagine you are selling a single item to several people. Each person secretly knows what that item is worth to them — call it their <em>private value</em>. But you do not know anyone's private value, and the bidders do not know each other's. You want two things: a good price for yourself, and a fair process that picks a winner who actually values the item."
+          "html": "Consider you are selling a single item to several people. Each person secretly knows what that item is worth to them — call it their <em>private value</em>. But you do not know anyone's private value, and the bidders do not know each other's. You want two things: a good price for yourself, and a fair process that picks a winner who actually values the item."
         },
         {
           "t": "para",
@@ -51,11 +55,15 @@
       "blocks": [
         {
           "t": "para",
-          "html": "Here is the key shift. Do not ask &lsquo;what price should I set?&rsquo; Instead, ask: <em>what rules should I write so that bidders' own self-interest makes them do what I want?</em> Think of the auction format itself as a game: each player chooses a bid; the rules say who wins and what they pay. Given those rules, what bid will a self-interested, strategic bidder actually choose?"
+          "html": "The key shift. Do not ask &lsquo;what price should I set?&rsquo; Instead, ask: <em>what rules should I write so that bidders' own self-interest makes them do what I want?</em> Think of the auction format itself as a game: each player chooses a bid; the rules say who wins and what they pay. Given those rules, what bid will a self-interested, strategic bidder actually choose?"
         },
         {
           "t": "para",
           "html": "This is the auction designer's version of mechanism design — the art of writing rules that guide self-interested players toward an outcome you want. Two classic formats show the principle starkly. In a <em>first-price auction</em>, the highest bidder wins and pays their own bid — so if you bid your true value, you get the item but make no profit. You must bid lower (called shading your bid) to leave yourself room. In a <em>second-price auction</em>, the highest bidder wins but pays the <em>runner-up's</em> bid (the second-highest), not their own — so if you bid too high you still pay only the second price, and if you bid too low you might miss out. The genius is that <strong>telling your true value is always safe: you pay only what the competition forces, so honesty cannot hurt you</strong>."
+        },
+        {
+          "t": "para",
+          "html": "The hidden quantity is how much each bidder shades below their true value &mdash; set so the small gain from winning more often exactly balances the extra they would pay."
         }
       ]
     },
@@ -133,6 +141,24 @@
         {
           "t": "para",
           "html": "Radio spectrum auctions, US Treasury bond auctions, art house sales, and school matching systems all use these ideas. Before auction theory, governments would set arbitrary prices or allocate by lottery. Now they write rules that harness self-interest to find true value. When you see a mechanism that works because bidders are honest, or because people's choices reveal information, or because competing strategies yield stable prices, you are seeing game theory in the wild — the theory of how to design the rules of a game."
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "h2": "7 · Where it is used in practice — The billion-dollar rule that makes honesty safe",
+      "blocks": [
+        {
+          "t": "para",
+          "html": "Google and Facebook run second-price auctions every day to sell ad slots to advertisers. Each advertiser secretly knows how much a click is worth to them and bids that number. Spectrum regulators use sealed-bid auctions to allocate radio frequencies to telecommunications companies. Art houses and online resale platforms (eBay, NFT exchanges) run auctions to find prices for unique items. School matching systems use auction logic to assign students and doctors to residencies based on preference lists."
+        },
+        {
+          "t": "para",
+          "html": "In each case, the auction design works by writing rules so that bidders' self-interest pushes them toward honesty. The platform sets who wins (highest bidder) and what they pay (second-highest bid in a Vickrey auction, or some variant). Given those rules, a bidder's safest move is to bid what the item is actually worth to them — no shading, no lying. If you bid higher you might win but still pay only the second price, so overbidding gains nothing. If you bid lower you might lose out. The rules channel honesty through incentive."
+        },
+        {
+          "t": "insight",
+          "html": "The genius is that no one has to guess how much rivals value the item — the auction format makes truthful bidding the dominant strategy."
         }
       ]
     }
