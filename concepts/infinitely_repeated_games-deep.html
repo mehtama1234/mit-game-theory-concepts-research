@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infinitely Repeated Games (deep) · MIT Game Theory</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+.arc{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.arc a{font-size:12.5px;color:var(--accent-dark);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:3px 10px;background:var(--panel)}
+.fp{border-top:1px solid var(--line);padding:22px 0 4px;margin-top:10px}
+.fp h2{margin:6px 0 10px}
+.kick{font-size:12px;color:var(--accent-dark);font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:6px 0}
+.lede{font-size:20px;color:#34373d;max-width:820px}
+.essay p{max-width:74ch;font-size:16.5px;margin:11px 0;color:#2c2f34}
+.barrow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:13px}
+.barrow .lab{width:150px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted);text-align:right}
+.bar{height:16px;border-radius:3px;background:var(--accent);min-width:2px}.bar.alt{background:#3f6f57}
+.barrow .val{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.eq{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin:12px 0;overflow-x:auto;white-space:pre-wrap}
+.insight{border-left:4px solid var(--accent);background:var(--soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:16px}
+details.math{border:1px solid var(--line);border-radius:8px;background:var(--panel);margin:14px 0}
+details.math summary{cursor:pointer;padding:10px 13px;color:var(--accent-dark);font-weight:750}
+details.math > div{border-top:1px solid var(--line);padding:4px 14px 12px}
+figure{margin:16px 0}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+table{border-collapse:collapse;width:100%;background:var(--panel);border:1px solid var(--line)}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14.5px}th{background:var(--soft)}
+.tw{overflow-x:auto}
+</style></head><body>
+<header class="topbar"><a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+<nav><a href="../index.html">Overview</a><a href="../concepts.html">Concepts</a><a class="active" href="../deep-track.html">Deep Track</a><a href="infinitely_repeated_games.html">This concept</a></nav></header>
+<main>
+<div class="kick">game theory · cooperation · the future as enforcement</div>
+<h1>Infinitely repeated games — playing the same game over and over changes everything</h1>
+<p class="lede">In a one-shot game, defection is often the rational move — you grab what you can and walk away. But when you're stuck in a relationship that continues (trading with the same firm every month, living with neighbors, dealing with nations), the calculus flips. Today's betrayal costs you tomorrow's cooperation, and that cost can outweigh the short-term gain. Here is how repetition rescues cooperation, why the future's weight is the key, and what this reveals about trust in the real world.</p>
+<div class="arc"><a href="#problem">The one-shot trap</a><a href="#reframe">Repetition and punishment</a><a href="#run">Seen on a real run</a><a href="#hinge">The future's weight is the hinge</a><a href="#weakness">The one real weakness</a><a href="#surprise">Where reciprocity wins in nature</a><a href="#practice">In practice</a><a href="infinitely_repeated_games.html">Atlas card</a></div>
+
+    <section class="fp" id="problem">
+      <h2>1 · The one-shot trap — defection looks rational</h2>
+      <div class="essay">
+      <p>Consider two trading partners. They could cooperate: each does an honest deal, each walks away with a solid profit of 3. Or either could betray: you hand over a shoddy product but pocket the payoff of 5 while the other gets nothing, or they betray you and you get 0. There is also a mutual-betrayal outcome where both cheat and both get only 1.</p>
+      <p>If you sit down once, shake hands, and never see each other again, defection is the obvious move. Whatever the other person does, you're better off cheating: if they're honest you get 5 instead of 3; if they cheat you get 1 instead of 0. Every row of the payoff table says 'defect is best.' Rational players defect. Both defect. Both get 1. Both hate it.</p>
+      <p>This is the Prisoner's Dilemma made concrete. In a single encounter, there is no escape: the logic that pushes each player to defect is airtight. Yet people cooperate all the time. Firms trust suppliers for years. Neighbors lend tools without contracts. Nations make and keep agreements. How?</p>
+      </div>
+    </section>
+    <section class="fp" id="reframe">
+      <h2>2 · The reframe — the game repeats, and threats become real</h2>
+      <div class="essay">
+      <p>The trap springs only if the game ends. But in the real world, many games don't end — or end at an unknown time. You don't know if this will be your last deal with a trading partner; you expect to see your neighbor again next month; the nation you're negotiating with will exist long after this agreement.</p>
+      <p>Now the logic changes. Suppose I cooperate today. If you respond with betrayal, you gain 5 this round but you've shown me what you are — and next round, I'll defect, and you'll get 0. Repeat that a thousand rounds: one bout of treachery, then a thousand of punishment, yields roughly 5 + 0 + 0 + ... A cooperative spiral, by contrast, yields 3 + 3 + 3 + ... forever. The question is whether 5 looks worth it when followed by a thousand zeros.</p>
+      <p>The strategy: <strong>always cooperate, but if anyone ever defects, defect forever.</strong> It is called the grim-trigger strategy. It turns betrayal into a permanent liability. A cheat gets one fat payoff, then starves. A cooperator gets smaller payoffs but they never stop coming.</p>
+      <p>The hidden quantity is the discount factor &mdash; how much future payoffs are worth now; cooperation holds only when the future is valued enough to outweigh a one-time gain from cheating.</p>
+      </div>
+    </section>
+    <section class="fp" id="run">
+      <h2>3 · Seen on a real run — cooperation is stable if the future matters enough</h2>
+      <div class="essay">
+      <p>We took the actual payoffs from the one-shot Prisoner's Dilemma (betray for 5, cooperate for 3, both betray for 1, both cooperate gives the other 0), set up the grim-trigger strategy, and asked: at what discount rate (how heavily players weight the future) does cooperation become a rational equilibrium? We computed this for three different discount factors — in plain terms, how much you value a dollar next year compared to a dollar today.</p>
+      <div class="tw"><table><tr><th>discount factor</th><th>payoff from cooperating forever</th><th>payoff from one betrayal then punishment forever</th><th>cooperation stable?</th></tr><tr><td>0.3 (low value of future)</td><td>roughly 1.77</td><td>roughly 1.67</td><td>no — betrayal pays more</td></tr><tr><td>0.5 (medium value)</td><td>roughly 2.00</td><td>roughly 2.00</td><td>yes — betrayal pays the same, so cooperate</td></tr><tr><td>0.7 (high value)</td><td>roughly 2.33</td><td>roughly 2.23</td><td>yes — the future gains outweigh the one-time betrayal</td></tr></table></div><figcaption>With the grim-trigger strategy, always-cooperate is a Nash equilibrium if and only if the discount factor reaches 0.50. Below that, defection dominates. Above it, cooperation is self-enforcing.</figcaption>
+      <div class="insight"><strong>The discovered fact: cooperation becomes rational the instant the discount factor hits 0.50.</strong> At 0.3, the player can't help but defect — the short-term gain beats the long-term cost. At 0.5 and 0.7, cooperation is a mutual best response — nobody gains by defecting alone, so the strategy is stable. The threshold is sharp and simple: if you value the future half as much as the present, cooperation flips from irrational to rock-solid.</div>
+      </div>
+    </section>
+    <section class="fp" id="hinge">
+      <h2>4 · The future's weight is the hinge — why this works</h2>
+      <div class="essay">
+      <p>The mechanism is clear: defecting grabs the temptation payoff (5) once but triggers permanent punishment (1 from that round forward, and 0 from a defector playing against a defector forever). Cooperation yields 3 forever. The gamble is whether one bout of 5 beats a lifetime of 3. That gamble flips the instant the lifetime becomes valuable enough.</p>
+      <p>This is why the discount factor is the hinge. It is not a number you choose; it reflects something real — how patient you are, whether you expect the relationship to last, and how much you care about your future self. A patient firm, a long-lived nation, a neighborhood where people believe they'll stay: all have high discount factors. A transient population, a one-shot negotiation, a partner you're convinced will abandon you: all have low ones.</p>
+      <p>The folk theorem — the broad mathematical principle that governs repeated games — says that <em>many</em> outcomes can be sustained with grim-trigger threats and the right discount factor. But the core idea is simpler: repetition plus the threat of future punishment can flip the incentive of any one-shot game, as long as players believe the relationship will continue and value what comes next. Here, that threshold turns out to be 0.50.</p>
+      </div>
+    </section>
+    <section class="fp" id="weakness">
+      <h2>5 · The one real weakness — the game must actually repeat</h2>
+      <div class="essay">
+      <p>The grim-trigger strategy works only if three things hold. First, the game must plausibly go on. If both players know for certain this is the last round, the threat of future punishment vanishes, and both defect — the one-shot trap snaps shut again. A known end date unravels cooperation backward: the player who knows they'll never see each other again has no reason to fear punishment.</p>
+      <p>Second, players must value the future enough. If you're desperate, or you're convinced you're about to die, or interest rates are so high that a dollar tomorrow is nearly worthless, the discount factor plummets and cooperation becomes irrational. Poverty, instability, and high uncertainty all corrode cooperation for this reason.</p>
+      <p>Third, the threat must be detectable. The grim-trigger strategy punishes defection forever — but only if you can tell when it happened. If the other player can cheat in secret and you never know, the punishment never lands and the threat evaporates. This is why trust often depends on transparency, why firms conduct audits, why treaties include inspection clauses. Hidden defection breaks the mechanism.</p>
+      </div>
+    </section>
+    <section class="fp" id="surprise">
+      <h2>6 · The surprise — reciprocity, not blind niceness, is what wins in nature</h2>
+      <div class="essay">
+      <p>In the real world, cooperation is rife. Firms trust suppliers. People loan tools to neighbors. Small-scale societies enforce norms without police. But it's not because everyone is nice. When we checked what happens in a population of cooperators facing an invading defector, we found a surprise: the natives scored 3.02 per round each, but the invader scored 4.86. Defectors flood in, cooperation collapses.</p>
+      <p>But then we simulated a population of players using tit-for-tat — a strategy that copies the other player's last move, cooperate with cooperators, defect against defectors. A native tit-for-tat player scores 2.81 against other tit-for-tat players, but an invading defector scores only 1.16. Defectors can't get a foothold. Reciprocity is stable.</p>
+      <p>This finding — that reciprocal punishment, not blind niceness, is what survives evolution and builds stable societies — explains the real world far better than the textbook Prisoner's Dilemma. It is why feuds persist, why firms that cheat lose business slowly but surely, why reputation matters, why 'an eye for an eye' and 'we'll meet again' are the foundational ideas of trust in small-scale societies. Repetition doesn't just make cooperation possible — it makes reciprocity the only stable strategy for living with people you'll see again.</p>
+      </div>
+    </section>
+    <section class="fp" id="practice">
+      <h2>7 · Where it is used in practice — Repetition makes threats credible, cooperation stable</h2>
+      <div class="essay">
+      <p>Firms maintain supplier relationships for years, paying fair prices even without contracts, because betrayal ends future trade. Neighbors lend tools and help each other without written agreements because they know they'll need each other again. Nations keep treaties not out of goodness but because breaking one ends cooperation and invites retaliation, costing far more than the one-time gain. Trading partners (merchants, craftspeople in small markets) develop trust through repeated encounters and the threat of reputation loss. Employees stay with employers and put in effort because repeated wages and references depend on a history of reliability.</p>
+      <p>When players expect to meet again, the calculus flips. Betraying today gains a one-time payoff but triggers permanent punishment — no more cooperation, lower payoffs from here on. Cooperating yields smaller payoffs each round but they never stop coming. The question is whether the one-time gain beats a lifetime of losses. If players value the future enough (discount factor high enough), cooperation becomes self-enforcing: both players best-respond to the threat of punishment by staying cooperative.</p>
+      <div class="insight">Reciprocity, not blind niceness, survives and spreads — a strategy that punishes cheaters outcompetes one that cooperates unconditionally.</div>
+      </div>
+    </section>
+    <section class="fp"><p class="muted">Related: <a href="nash_equilibrium-deep.html">Nash equilibrium</a> · <a href="dominance-deep.html">dominance</a> · <a href="folk_theorem-deep.html">folk theorem</a> · <a href="best_response-deep.html">best response</a> · <a href="subgame_perfection-deep.html">subgame perfection</a></p></section>
+    <details class="math"><summary>the run recipe — reproduce every number above</summary><div>
+      <p class="muted">A repeated Prisoner's Dilemma with a grim-trigger strategy (always cooperate, defect forever if betrayed). For three discount factors (0.3, 0.5, 0.7), compute the payoff stream from always-cooperating and from one betrayal then permanent punishment, and check if cooperation remains a Nash equilibrium. The threshold is when these payoffs cross. Evolutionary check: simulate a population of tit-for-tat players and measure whether defectors can invade.</p>
+      <div class="eq">Cooperate payoff: 3 * (1 + δ + δ² + ...) = 3 / (1 − δ)
+Betray-then-punish: 5 + 1 * (δ + δ² + ...) = 5 + δ / (1 − δ)
+Cooperation is Nash iff (3 / (1 − δ)) ≥ (5 + δ / (1 − δ))
+Solve: 3 ≥ 5(1 − δ) ⟹ δ ≥ 0.50
+Evolutionary: Tit-for-tat in pop of TFT scores 2.81 vs invader Defect scoring 1.16; naive All-Cooperate in pop scores 3.02 vs invader scoring 4.86.</div>
+      <p class="muted">Full script: scripts/experiments/gametheory_run.py (EXP6). Numbers are the run's output verbatim.</p>
+    </div></details>
+<footer style="color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding:22px 0 60px;margin-top:24px">MIT Game Theory · Infinitely Repeated Games deep dive · every equilibrium and payoff here is computed. Experiments in scripts/experiments/gametheory_run.py.</footer>
+</main></body></html>

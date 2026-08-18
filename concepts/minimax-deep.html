@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minimax (deep) · MIT Game Theory</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+.arc{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.arc a{font-size:12.5px;color:var(--accent-dark);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:3px 10px;background:var(--panel)}
+.fp{border-top:1px solid var(--line);padding:22px 0 4px;margin-top:10px}
+.fp h2{margin:6px 0 10px}
+.kick{font-size:12px;color:var(--accent-dark);font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:6px 0}
+.lede{font-size:20px;color:#34373d;max-width:820px}
+.essay p{max-width:74ch;font-size:16.5px;margin:11px 0;color:#2c2f34}
+.barrow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:13px}
+.barrow .lab{width:150px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted);text-align:right}
+.bar{height:16px;border-radius:3px;background:var(--accent);min-width:2px}.bar.alt{background:#3f6f57}
+.barrow .val{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.eq{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin:12px 0;overflow-x:auto;white-space:pre-wrap}
+.insight{border-left:4px solid var(--accent);background:var(--soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:16px}
+details.math{border:1px solid var(--line);border-radius:8px;background:var(--panel);margin:14px 0}
+details.math summary{cursor:pointer;padding:10px 13px;color:var(--accent-dark);font-weight:750}
+details.math > div{border-top:1px solid var(--line);padding:4px 14px 12px}
+figure{margin:16px 0}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+table{border-collapse:collapse;width:100%;background:var(--panel);border:1px solid var(--line)}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14.5px}th{background:var(--soft)}
+.tw{overflow-x:auto}
+</style></head><body>
+<header class="topbar"><a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+<nav><a href="../index.html">Overview</a><a href="../concepts.html">Concepts</a><a class="active" href="../deep-track.html">Deep Track</a><a href="minimax.html">This concept</a></nav></header>
+<main>
+<div class="kick">game theory · first principles · plan for the worst</div>
+<h1>Minimax — play to guarantee your best worst-case outcome</h1>
+<p class="lede">Against an opponent who wants you to lose, optimism is dangerous. How should you choose when someone is actively trying to make your choice backfire? The answer is minimax: for each of your options, assume the opponent will respond to hurt you most, and pick the option whose worst case is best. Here is the idea, a real game where we compute it, why the two bounds on your payoff collapse to a single value when mixing is allowed, where it falls short, and where it quietly powers game-playing engines and robust design.</p>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why the two bounds meet</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="#practice">In practice</a><a href="minimax.html">Atlas card</a></div>
+
+    <section class="fp" id="problem">
+      <h2>1 · The problem — someone is actively trying to hurt you</h2>
+      <div class="essay">
+      <p>Most decisions assume the world is not hostile. You pick the option with the highest expected payoff, and the world is either random or indifferent. But in a game against an opponent, that hope is naive. Your choice announces a target: they see what you do and respond to exploit it. If you always play the same option, they will exploit it. If you pick at random, they might still guess the bias and punish you.</p>
+      <p>The sharper question is: <strong>what is the best outcome you can <em>guarantee</em> yourself, no matter what your opponent does?</strong> You cannot guarantee the best possible payoff — your opponent will not give it to you. But for each choice you make, there is a worst-case response your opponent will throw at you. Pick the choice whose worst case is least bad.</p>
+      </div>
+    </section>
+    <section class="fp" id="reframe">
+      <h2>2 · The reframe — maximize your minimum payoff</h2>
+      <div class="essay">
+      <p>The idea. For each move you could make, consider your opponent responds in the way that hurts you most. That response is your opponent's best reply to your move — the move that minimizes <em>your</em> payoff. So each of your options has a worst-case payoff, the minimum you will get if your opponent is smart and mean.</p>
+      <p>Now maximize over your options: pick the move whose minimum payoff is highest. That is <strong>maximin</strong> — the maximum of your minimum payoffs. This is the outcome you can guarantee yourself: no matter what your opponent does, you will get at least this much.</p>
+      <p>Your opponent, looking forward, asks the mirror question: for each move they make, what is the worst payoff <em>they</em> can get if you respond optimally? That worst case is the minimum <em>they</em> can be held to. They will pick their move to maximize their own minimum. But from your vantage point, that's the minimum <em>they</em> can hold <em>you</em> to. That is <strong>minimax</strong> — your opponent's best move will limit you to a minimum payoff.</p>
+      <p>The miracle is this: <strong>when both players are allowed to randomize — to mix their choices with some probability — the maximin equals the minimax.</strong> What you can guarantee yourself is exactly what your opponent can hold you to. There is one number: the <strong>value</em> of the game.</p>
+      <p>The hidden quantity is the payoff you can guarantee assuming the opponent does their worst &mdash; the floor a player can secure regardless of the other's play.</p>
+      </div>
+    </section>
+    <section class="fp" id="run">
+      <h2>3 · Seen on a real run — maximin equals minimax at the value 0.50</h2>
+      <div class="essay">
+      <p>We took a 2×2 zero-sum game (the payoff table below shows what you earn; your opponent gets the negative). We computed the maximin — the best guaranteed payoff you can secure by picking one row — and the minimax — the least your opponent can hold you to. Then we computed the equilibrium mix: the randomized strategy that locks in the value.</p>
+      <div class="tw"><table><tr><th>your strategy</th><th>payoff if opponent picks Left</th><th>payoff if opponent picks Right</th><th>your worst case (minimum)</th></tr><tr><td>play Top pure</td><td>1.0</td><td>0.0</td><td>0.0</td></tr><tr><td>play Bottom pure</td><td>0.0</td><td>1.0</td><td>0.0</td></tr><tr><td>mix 50% Top, 50% Bottom</td><td>0.5</td><td>0.5</td><td>0.5</td></tr></table></div><figcaption>Playing pure (non-random) gives you a minimum payoff of 0. Mixing 50/50 locks in 0.5 against any opponent response.</figcaption>
+      <div class="insight"><strong>The discovered fact: the maximin (your best guarantee) and minimax (your opponent's best limit) meet at 0.50, achieved by mixing the top row 50% of the time.</strong> When you play this mix, your expected payoff is 0.50 no matter what your opponent does — Left or Right yields the same expected payoff. Your opponent cannot do better than holding you to 0.50, and you cannot guarantee more than 0.50. The two bounds collapse to one.</div>
+      </div>
+    </section>
+    <section class="fp" id="why">
+      <h2>4 · Why the two bounds meet — von Neumann's theorem</h2>
+      <div class="essay">
+      <p>Why does mixing solve this? The insight is that if you commit to a randomized strategy, your opponent cannot exploit you by predicting your choice — there is nothing to predict. If you announce you will play Top 50% of the time and Bottom 50%, your opponent is indifferent between Left and Right; both give them the same expected payoff against your mix. And because they are indifferent, your expected payoff is the same no matter what they do. You have locked in your payoff.</p>
+      <p>This goes both ways. Your opponent, adopting their optimal mix, also locks in their payoff. When both of you play your optimal mixes, each of you is indifferent between your options — you cannot gain by switching, they cannot gain by switching. Both of you are playing a best response to the other.</p>
+      <p>The mathematician John von Neumann proved this always works: in <em>any</em> two-player zero-sum game, when both players are allowed to randomize, there exists a pair of mixed strategies such that the maximin equals the minimax. That single number — the value — is the stable, no-regret outcome both sides can lock in. The pessimism of minimax (assume the worst) and the optimism of maximin (guarantee the best you can) meet exactly when mixing is allowed.</p>
+      </div>
+    </section>
+    <section class="fp" id="weakness">
+      <h2>5 · The one real weakness — minimax is pessimistic by design</h2>
+      <div class="essay">
+      <p>Minimax assumes your opponent is a perfect, mean, all-knowing adversary. Against such an opponent, minimax is exactly right — it guarantees you cannot be surprised. But real opponents are often weak, predictable, or benign. If your opponent is bad at the game, or careless, or even trying to help you, playing minimax leaves money on the table.</p>
+      <p>Consider playing minimax against a bumbling opponent who always picks the worst option for themselves, or one who has a tell — always plays Left first. You could exploit these weaknesses and do better than the value. But minimax, designed to work against the strongest adversary, does not. It is conservative by necessity, and that conservatism becomes inefficiency against anyone weaker than perfect.</p>
+      <p>So minimax is robust (you cannot be surprised) but not optimal in any game where the opponent is not trying their hardest. In the real world, you often know something about your opponent — their skill, their intent — and that knowledge should change your strategy. Minimax is the right tool only when you truly know nothing about their quality.</p>
+      </div>
+    </section>
+    <section class="fp" id="surprise">
+      <h2>6 · The surprise — minimax runs game-playing engines, robust optimization, and adversarial ML</h2>
+      <div class="essay">
+      <p>Minimax thinking is the engine of AlphaGo and every chess engine. These programs search ahead; at each node, they compute the minimum payoff that will result if the opponent plays optimally. They work backward, assuming each player maximizes. The algorithm is called <strong>minimax search</strong>: you minimize over your opponent's best responses, then maximize over your own moves, then minimize again, layer by layer back to the present.</p>
+      <p>It reaches into robust and worst-case optimization too. When engineers design an aircraft wing or a network protocol, they cannot afford to optimize for the average case — the airplane must fly in the worst weather the model predicts, the network must work even when adversaries are trying to break it. Minimax thinking — design to handle the worst case — is the principle that keeps you safe.</p>
+      <p>And in modern machine learning, minimax is the foundation of adversarial training. When you train a neural network to be robust to attacks, you are solving a game: the network tries to classify correctly, and an adversary tries to fool it with imperceptible perturbations. The network's training objective is minimax — find weights that minimize the maximum attack loss. Train against the worst case and the network survives the real world.</p>
+      <p>The notion is simple — plan for the worst — but it powers the most sophisticated competition detection and hardening in the world.</p>
+      </div>
+    </section>
+    <section class="fp" id="practice">
+      <h2>7 · Where it is used in practice — Plan for the worst, guarantee the best worst-case</h2>
+      <div class="essay">
+      <p>Minimax runs every chess engine and game-playing AI. Penalty takers in soccer use it to decide where to aim: you cannot predict the goalkeeper's dive, so you pick the kick whose worst-case outcome (if the goalkeeper guesses right) is still best. Aircraft engineers design wings with minimax: the plane must fly in the worst weather the model predicts, not the average. Networks must work even when adversaries attack.</p>
+      <p>The method is to list your options, imagine your opponent responds to hurt you most, and pick the option whose worst-case payoff is highest. In chess engines, this means searching ahead layer by layer: you minimize over your opponent's best moves, then maximize over your own, then minimize again, reaching backward to the present. In robust design, you solve 'what is the worst case I need to handle?' and build around that floor.</p>
+      <div class="insight">The payoff: when you can randomize, your guarantee (maximin) exactly equals what your opponent can hold you to (minimax) — one value locks in.</div>
+      </div>
+    </section>
+    <section class="fp"><p class="muted">Related: <a href="zero_sum_games-deep.html">zero-sum games</a> · <a href="mixed_strategies-deep.html">mixed strategies</a> · <a href="best_response-deep.html">best response</a> · <a href="nash_equilibrium-deep.html">Nash equilibrium</a></p></section>
+    <details class="math"><summary>the run recipe — reproduce every number above</summary><div>
+      <p class="muted">A 2×2 zero-sum game. For each of your pure strategies, compute the minimum payoff (worst opponent response). That is your maximin. For each opponent pure strategy, compute the minimum they can hold you to. That is your minimax. Then solve for the mixed-strategy equilibrium: find the probability p to play row 1 such that both column options yield the same expected payoff. The equilibrium mix, applied by both players, locks in the value.</p>
+      <div class="eq">maximin_payoff = max over your rows of (min over opponent columns of payoff[row,col])
+minimax_bound = min over opponent cols of (max over your rows of payoff[row,col])
+# equilibrium mix: solve for p such that p*payoff[1,1] + (1-p)*payoff[2,1] = p*payoff[1,2] + (1-p)*payoff[2,2]</div>
+      <p class="muted">Full script: scripts/experiments/gametheory_run.py (EXP5). Numbers are the run's output verbatim. The game value is 0.50, achieved by mixing the top row 50% of the time.</p>
+    </div></details>
+<footer style="color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding:22px 0 60px;margin-top:24px">MIT Game Theory · Minimax deep dive · every equilibrium and payoff here is computed. Experiments in scripts/experiments/gametheory_run.py.</footer>
+</main></body></html>

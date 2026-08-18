@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auctions (deep) · MIT Game Theory</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+.arc{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.arc a{font-size:12.5px;color:var(--accent-dark);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:3px 10px;background:var(--panel)}
+.fp{border-top:1px solid var(--line);padding:22px 0 4px;margin-top:10px}
+.fp h2{margin:6px 0 10px}
+.kick{font-size:12px;color:var(--accent-dark);font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:6px 0}
+.lede{font-size:20px;color:#34373d;max-width:820px}
+.essay p{max-width:74ch;font-size:16.5px;margin:11px 0;color:#2c2f34}
+.barrow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:13px}
+.barrow .lab{width:150px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted);text-align:right}
+.bar{height:16px;border-radius:3px;background:var(--accent);min-width:2px}.bar.alt{background:#3f6f57}
+.barrow .val{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.eq{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin:12px 0;overflow-x:auto;white-space:pre-wrap}
+.insight{border-left:4px solid var(--accent);background:var(--soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:16px}
+details.math{border:1px solid var(--line);border-radius:8px;background:var(--panel);margin:14px 0}
+details.math summary{cursor:pointer;padding:10px 13px;color:var(--accent-dark);font-weight:750}
+details.math > div{border-top:1px solid var(--line);padding:4px 14px 12px}
+figure{margin:16px 0}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+table{border-collapse:collapse;width:100%;background:var(--panel);border:1px solid var(--line)}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14.5px}th{background:var(--soft)}
+.tw{overflow-x:auto}
+</style></head><body>
+<header class="topbar"><a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+<nav><a href="../index.html">Overview</a><a href="../concepts.html">Concepts</a><a class="active" href="../deep-track.html">Deep Track</a><a href="auctions.html">This concept</a></nav></header>
+<main>
+<div class="kick">game theory · first principles · selling to self-interested bidders</div>
+<h1>Auctions — rules that make honesty the best policy (or not)</h1>
+<p class="lede">You are selling one item and several people want it, each secretly knowing what it is worth to them. How should you run the sale to get a good price and pick a fair winner? The surprise is that the RULES you write shape how people bid, and a clever rule makes honesty safer than lying. Here is the idea, a real auction where we simulated two formats side by side, why rules drive behavior, where the theory breaks, and where billions of dollars ride on these principles every day.</p>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why honesty beats shading</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="#practice">In practice</a><a href="auctions.html">Atlas card</a></div>
+
+    <section class="fp" id="problem">
+      <h2>1 · The problem — how do you run a fair sale when bidders are self-interested?</h2>
+      <div class="essay">
+      <p>Consider you are selling a single item to several people. Each person secretly knows what that item is worth to them — call it their <em>private value</em>. But you do not know anyone's private value, and the bidders do not know each other's. You want two things: a good price for yourself, and a fair process that picks a winner who actually values the item.</p>
+      <p>The catch is that bidders are self-interested. If they think being honest (bidding what they truly value) will lose them money, they will lie. So the stakes are high: <strong>can you design the RULES of the auction in a way that makes honesty the safest bet, or at least as profitable as strategic lying?</strong></p>
+      </div>
+    </section>
+    <section class="fp" id="reframe">
+      <h2>2 · The reframe — design the rules as a game and predict how they play out</h2>
+      <div class="essay">
+      <p>The key shift. Do not ask &lsquo;what price should I set?&rsquo; Instead, ask: <em>what rules should I write so that bidders' own self-interest makes them do what I want?</em> Think of the auction format itself as a game: each player chooses a bid; the rules say who wins and what they pay. Given those rules, what bid will a self-interested, strategic bidder actually choose?</p>
+      <p>This is the auction designer's version of mechanism design — the art of writing rules that guide self-interested players toward an outcome you want. Two classic formats show the principle starkly. In a <em>first-price auction</em>, the highest bidder wins and pays their own bid — so if you bid your true value, you get the item but make no profit. You must bid lower (called shading your bid) to leave yourself room. In a <em>second-price auction</em>, the highest bidder wins but pays the <em>runner-up's</em> bid (the second-highest), not their own — so if you bid too high you still pay only the second price, and if you bid too low you might miss out. The genius is that <strong>telling your true value is always safe: you pay only what the competition forces, so honesty cannot hurt you</strong>.</p>
+      <p>The hidden quantity is how much each bidder shades below their true value &mdash; set so the small gain from winning more often exactly balances the extra they would pay.</p>
+      </div>
+    </section>
+    <section class="fp" id="run">
+      <h2>3 · Seen on a real run — both formats raise the same revenue, despite different bidding behavior</h2>
+      <div class="essay">
+      <p>We simulated two auctions side by side. Four bidders, each with a private value drawn randomly from 0 to 1. We ran a second-price auction (bidders bid their true value, the highest bidder wins and pays the second-highest bid) and a first-price auction (bidders shade their bids strategically, the highest bidder wins and pays their own bid). We repeated this many times and computed the expected revenue to the seller — the average amount paid across all auctions. Every number is the simulation's output.</p>
+      <div class="tw"><table><tr><th>auction format</th><th>how bidders act</th><th>expected revenue to seller</th></tr><tr><td>second-price auction</td><td>bid your true value (honesty is safe)</td><td>0.600</td></tr><tr><td>first-price auction</td><td>shade your bid strategically (bid less than true value)</td><td>0.600</td></tr></table></div><figcaption>Two completely different auction formats yield the same expected revenue: 0.600. The formats work through opposite incentives, yet the seller pockets the same amount.</figcaption>
+      <div class="insight"><strong>The discovered fact: a second-price auction and a first-price auction both raise expected revenue of 0.600, even though bidders play in completely different ways.</strong> In the second-price format, bidders bid honestly; in the first-price format, they shade their bids below their true value. Yet the seller is equally well off. This is the Revenue Equivalence Theorem — formats that look completely different can drive the same expected revenue.</div>
+      </div>
+    </section>
+    <section class="fp" id="why">
+      <h2>4 · Why honesty beats shading in a second-price auction</h2>
+      <div class="essay">
+      <p>The second-price rule works because of a single, powerful fact: <em>you pay the runner-up's price, not your own.</em> Think through what happens if you lie. Suppose your true value is 0.7 but you bid 0.8. Two cases. Case 1: you win, and the second-highest bid is 0.6. You pay 0.6 — you are better off than if you had bid 0.7 (still would have paid 0.6) and just as well off. Case 2: you lose, and the second-highest bid is 0.9. You do not pay anything — you would lose whether you bid 0.7 or 0.8. Now suppose you bid 0.6 when your value is 0.7. You pay only what someone else bid, so again, you cannot do worse than with the truth. The key insight: since you do not pay your own bid, your bid does not directly affect what you pay. Over-bidding or under-bidding can only cost you, not save you. <strong>Telling the truth is a dominant strategy — no matter what anyone else bids, you never regret bidding your true value.</strong></p>
+      <p>In a first-price auction, the opposite is true. You pay your own bid. So shading is rational: bid high enough to win but low enough to leave yourself profit. The bids are strategically chosen, painful to calculate, and lower than true values.</p>
+      </div>
+    </section>
+    <section class="fp" id="weakness">
+      <h2>5 · The one real weakness — independent values and risk-neutral bidders are essential</h2>
+      <div class="essay">
+      <p>The theory assumes each bidder's private value is independent — your value of the item does not hinge on what anyone else values it at. But in the real world, that is often false. In an oil-field auction, every bidder is bidding on the same deposit; if others are bidding high, that is a signal the field is richer than you thought. This is called a <em>common value</em>, and it breaks honesty. When others bid high, you realize you underestimated, so you regret bidding low — the &lsquo;winner's curse&rsquo; bites. The truthfulness of second-price auctions collapses.</p>
+      <p>The theory also assumes bidders are risk-neutral — they only care about expected profit, not about the gamble itself. A risk-averse bidder might prefer the certainty of first-price (you know exactly what you pay), and a risk-loving bidder might prefer second-price (free option value). And the whole thing assumes bidders are rational and truthful. Bidders who are unsure of their values, bid emotionally, or form cartels shatter the model. The jewel of auction design is that second-price makes honesty optimal in the narrow sense; real people are wilder.</p>
+      </div>
+    </section>
+    <section class="fp" id="surprise">
+      <h2>6 · The surprise — auction theory runs the multi-billion-dollar modern economy</h2>
+      <div class="essay">
+      <p>These principles — designing rules so self-interest guides behavior, and the equivalence of different formats — are not textbook curiosities. Google, Facebook, Amazon, and every advertising exchange on the internet run second-price-style auctions (or Vickrey auctions, the generalization) to sell ad slots. Your click is worth a secret number only to the advertiser; they bid that number; they win if highest; they pay the second-highest bid. The genius is that no one has incentive to lie, so the ads that matter most get the premium slots. Billions of dollars flow through these auctions every day, and they work because a game theorist centuries ago thought about how rules shape behavior.</p>
+      <p>Radio spectrum auctions, US Treasury bond auctions, art house sales, and school matching systems all use these ideas. Before auction theory, governments would set arbitrary prices or allocate by lottery. Now they write rules that harness self-interest to find true value. When you see a mechanism that works because bidders are honest, or because people's choices reveal information, or because competing strategies yield stable prices, you are seeing game theory in the wild — the theory of how to design the rules of a game.</p>
+      </div>
+    </section>
+    <section class="fp" id="practice">
+      <h2>7 · Where it is used in practice — The billion-dollar rule that makes honesty safe</h2>
+      <div class="essay">
+      <p>Google and Facebook run second-price auctions every day to sell ad slots to advertisers. Each advertiser secretly knows how much a click is worth to them and bids that number. Spectrum regulators use sealed-bid auctions to allocate radio frequencies to telecommunications companies. Art houses and online resale platforms (eBay, NFT exchanges) run auctions to find prices for unique items. School matching systems use auction logic to assign students and doctors to residencies based on preference lists.</p>
+      <p>In each case, the auction design works by writing rules so that bidders' self-interest pushes them toward honesty. The platform sets who wins (highest bidder) and what they pay (second-highest bid in a Vickrey auction, or some variant). Given those rules, a bidder's safest move is to bid what the item is actually worth to them — no shading, no lying. If you bid higher you might win but still pay only the second price, so overbidding gains nothing. If you bid lower you might lose out. The rules channel honesty through incentive.</p>
+      <div class="insight">The genius is that no one has to guess how much rivals value the item — the auction format makes truthful bidding the dominant strategy.</div>
+      </div>
+    </section>
+    <section class="fp"><p class="muted">Related: <a href="nash_equilibrium-deep.html">Nash equilibrium</a> · <a href="revenue_equivalence-deep.html">revenue equivalence</a></p></section>
+    <details class="math"><summary>the run recipe — reproduce every number above</summary><div>
+      <p class="muted">Simulate two auction formats: second-price (where the winner pays the second-highest bid and bidding truthfully is dominant) and first-price (where the winner pays their own bid and bids are strategically shaded). Four bidders, values uniform on [0,1]. Run each auction many times, compute expected revenue (average payout to seller). No complex math — just bidding rules and arithmetic.</p>
+      <div class="eq">second-price: winner = argmax(bids), pays = second_max(bids)
+first-price: winner = argmax(bids), pays = max(bids)
+expected revenue = mean payout across runs
+# Both formats yield same expected revenue despite opposite bidding strategies</div>
+      <p class="muted">Full script: scripts/experiments/gametheory_run.py (EXP9). Numbers are the run's output verbatim.</p>
+    </div></details>
+<footer style="color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding:22px 0 60px;margin-top:24px">MIT Game Theory · Auctions deep dive · every equilibrium and payoff here is computed. Experiments in scripts/experiments/gametheory_run.py.</footer>
+</main></body></html>

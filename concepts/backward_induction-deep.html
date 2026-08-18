@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Backward Induction (deep) · MIT Game Theory</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+.arc{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.arc a{font-size:12.5px;color:var(--accent-dark);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:3px 10px;background:var(--panel)}
+.fp{border-top:1px solid var(--line);padding:22px 0 4px;margin-top:10px}
+.fp h2{margin:6px 0 10px}
+.kick{font-size:12px;color:var(--accent-dark);font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:6px 0}
+.lede{font-size:20px;color:#34373d;max-width:820px}
+.essay p{max-width:74ch;font-size:16.5px;margin:11px 0;color:#2c2f34}
+.barrow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:13px}
+.barrow .lab{width:150px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted);text-align:right}
+.bar{height:16px;border-radius:3px;background:var(--accent);min-width:2px}.bar.alt{background:#3f6f57}
+.barrow .val{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.eq{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin:12px 0;overflow-x:auto;white-space:pre-wrap}
+.insight{border-left:4px solid var(--accent);background:var(--soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:16px}
+details.math{border:1px solid var(--line);border-radius:8px;background:var(--panel);margin:14px 0}
+details.math summary{cursor:pointer;padding:10px 13px;color:var(--accent-dark);font-weight:750}
+details.math > div{border-top:1px solid var(--line);padding:4px 14px 12px}
+figure{margin:16px 0}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+table{border-collapse:collapse;width:100%;background:var(--panel);border:1px solid var(--line)}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14.5px}th{background:var(--soft)}
+.tw{overflow-x:auto}
+</style></head><body>
+<header class="topbar"><a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+<nav><a href="../index.html">Overview</a><a href="../concepts.html">Concepts</a><a class="active" href="../deep-track.html">Deep Track</a><a href="backward_induction.html">This concept</a></nav></header>
+<main>
+<div class="kick">game theory · sequential play · reason from the end</div>
+<h1>Backward induction — solve the game by starting at the last move</h1>
+<p class="lede">When a game unfolds move by move — a negotiation, a chess match, an entrant challenging an incumbent — your first move's success depends on how everyone will respond later. To plan it, reason backward from the end: figure out the last mover's choice (when their options are clear), then step back one move knowing what will follow, and keep stepping back to the start. Here is the idea, a real entry game we solve this way, why it gives the right answer, where it breaks in the real world, and the surprising places it reappears.</p>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#why">Why it works</a><a href="#weakness">The one weakness</a><a href="#surprise">The surprise</a><a href="#practice">In practice</a><a href="backward_induction.html">Atlas card</a></div>
+
+    <section class="fp" id="problem">
+      <h2>1 · The problem — your best move depends on future moves you don't control</h2>
+      <div class="essay">
+      <p>In a game played in one shot, you make your choice and the payoff is done. But in real games — negotiations that happen over time, chess, a startup thinking about entering a market where an incumbent sits — you move, then they respond, then maybe you move again. Your payoff rides on a whole sequence of choices by different people at different moments.</p>
+      <p>The trap: how do you decide your first move when it depends completely on what the other person will choose later? You have to think: if I enter, will they fight me or give up? If they'll fight, maybe I shouldn't enter. If they'll accommodate, then I should. So you need to know their future choice before you can pick your move now. But you don't see the future — you have to reason about it.</p>
+      </div>
+    </section>
+    <section class="fp" id="reframe">
+      <h2>2 · The reframe — turn the game backward and reason from the end</h2>
+      <div class="essay">
+      <p>The insight. Instead of guessing what will happen in the future, <strong>start at the very last move in the game and figure out what the last player will do</strong> — their choice, stripped down to just their payoff, is usually clear. Then step backward one move. Now the second-to-last player knows what will happen if they choose each option, so they can pick their best move. Keep stepping backward through the game to the start. Only then do you play forward.</p>
+      <p>This is <strong>backward induction</strong>: solve the game by reasoning from the end backward. At each step, the player who moves knows what will happen next (because you already solved it), so they pick the choice that gives them the best payoff, given that future. Since every player reasons this way, the only choices that survive are ones where every player is genuinely doing their best at every step.</p>
+      <p>The hidden quantity is the value of each position when both sides play optimally from the end backward; every earlier move is chosen against those already-solved futures.</p>
+      </div>
+    </section>
+    <section class="fp" id="run">
+      <h2>3 · Seen on a real run — the entry game solved backward</h2>
+      <div class="essay">
+      <p>An entrant thinks about entering a market. The incumbent sits there already. The game: (1) the entrant chooses In or Out; (2) if the entrant chose In, the incumbent then chooses Fight or Accommodate. We write the payoffs (the numbers the players get) for each outcome, and then we solve it backward. The numbers here are all computed.</p>
+      <div class="tw"><table><tr><th>outcome</th><th>entrant payoff</th><th>incumbent payoff</th></tr><tr><td>In, Fight</td><td>−1</td><td>−1</td></tr><tr><td>In, Accommodate</td><td>2</td><td>2</td></tr><tr><td>Out (incumbent is idle)</td><td>0</td><td>3</td></tr></table></div><figcaption>The payoff table for the entry game: what each player gets for each possible outcome.</figcaption>
+      <p>Now solve backward. Start at the last move: if entry has happened, the incumbent chooses between Fight (payoff −1) and Accommodate (payoff 2). Since 2 &gt; −1, the incumbent will Accommodate.</p>
+      <p>Step back one move: the entrant knows the incumbent will Accommodate if entry happens. So the entrant compares: enter and get 2 (because accommodation follows), or stay out and get 0. Since 2 &gt; 0, the entrant enters.</p>
+      <p>The outcome: the entrant enters (In), the incumbent accommodates (Accommodate), and the payoffs are **2 and 2**. Every step is rational given what comes next. The game is solved.</p>
+      <div class="insight"><strong>The discovered fact: backward induction found the outcome In, Accommodate with payoffs (2, 2).</strong> The incumbent wanted to threaten 'I'll fight any entry!' to scare the entrant. But the threat is hollow — once entry happens, fighting gives the incumbent −1 while accommodation gives 2, so the incumbent will not carry it out. The entrant, knowing this, enters anyway. The only sequence that survives scrutiny is the one where every player's choice is actually rational at that moment.</div>
+      </div>
+    </section>
+    <section class="fp" id="why">
+      <h2>4 · Why it works — every choice must hold up under real conditions</h2>
+      <div class="essay">
+      <p>Backward induction works because it filters out plans that fall apart when they meet reality. An outcome where someone says 'I'll do X in the future' but then won't actually do it when the moment comes is not credible — it can't happen in a game among people who reason ahead. By starting at the end and asking 'will they really do this?' you catch the bluff.</p>
+      <p>It is also the only solution concept that respects subgames — smaller games-within-the-game. An equilibrium is credible only if, at every branching point the game reaches, each player is still doing their best. This is called subgame perfection, and backward induction is the algorithm to find it.</p>
+      <p>And it mirrors how smart people naturally think. When you plan a multi-step move (a chess opening, a negotiation), you consider how it ends, then work backward. If the ending is bad, you change your opening. Backward induction formalizes that everyday intuition.</p>
+      </div>
+    </section>
+    <section class="fp" id="weakness">
+      <h2>5 · The one real weakness — it assumes perfect forward-looking rationality at every step</h2>
+      <div class="essay">
+      <p>Backward induction requires that every player thinks all the way to the end, understands all the payoffs, and reasons perfectly. In a two-move game like entry, that's easy. In a game with many moves — say, a 30-move chess endgame or a multi-round negotiation — human beings simply do not compute all the way to the end. Real people stop thinking after a few steps, or they make mistakes, or they reason differently (maybe they're vengeful and fight even if it hurts them, just to punish the entrant).</p>
+      <p>The second weakness: the game must be a perfect-information game — everyone must know the payoffs and the order of moves. In poker or negotiation, some information is hidden, and backward induction cannot reason through it alone. The prediction fails most often in long games where people get tired or lazy, or in short games where payoffs are misunderstood.</p>
+      </div>
+    </section>
+    <section class="fp" id="surprise">
+      <h2>6 · The surprise — backward induction is a first principle that reappears everywhere</h2>
+      <div class="essay">
+      <p>In economics, this backward-solving principle drives bargaining theory (how much of the surplus should each person get in a negotiated deal that happens over time) and pricing over time (how should a company set prices across seasons if it knows demand next season depends on today's price).</p>
+      <p>In computer science, dynamic programming is exactly backward induction in disguise: you solve a big problem by breaking it into smaller subproblems, solving the smallest one at the end (the boundary condition), then stepping backward to larger ones, building up solutions as you go. It is the engine behind computer vision (breaking a video into frames and stitching them together) and control (planning a robot's path by finding the best step from every position back to the goal).</p>
+      <p>In machine learning, reinforcement learning trains agents to solve sequential decision problems, and the algorithms (like Q-learning) are solving backward: they learn the value of taking an action at a state by looking ahead to the next state, then step backward through the sequence to optimize from the start. The same backward logic runs inside modern AI.</p>
+      </div>
+    </section>
+    <section class="fp" id="practice">
+      <h2>7 · Where it is used in practice — Solve the game by reasoning from the end</h2>
+      <div class="essay">
+      <p>A startup considering market entry asks whether the incumbent will fight or accommodate if they enter. A negotiator working toward a deal thinks through how many rounds of back-and-forth will happen before both sides settle. A chess player planning an opening considers what responses will follow each move, then works backward to the best opening. A central bank deciding on interest rates expects to read the market's reaction and anticipates multiple rounds of adjustment. A parent disciplining a child decides on punishment knowing the child will learn and adapt.</p>
+      <p>Backward induction works by starting at the final decision point — the last move in the sequence — and figuring out what that player will actually do when facing a clear payoff comparison. Then step back one move and assume that player's choice is locked in; the second-to-last player, knowing what comes next, picks their best option given that future. Keep stepping back to the start. Every player, reasoning this way at their own step, knows what will follow, so they choose the move that is genuinely best for them at that moment.</p>
+      <div class="insight">It catches bluffs: promises of punishment or aggressive response that would actually hurt the threatener are revealed as hollow once you work backward.</div>
+      </div>
+    </section>
+    <section class="fp"><p class="muted">Related: <a href="subgame_perfection-deep.html">subgame perfection</a> · <a href="best_response-deep.html">best response</a> · <a href="nash_equilibrium-deep.html">Nash equilibrium</a></p></section>
+    <details class="math"><summary>the run recipe — reproduce every number above</summary><div>
+      <p class="muted">A sequential game: entrant chooses In or Out; if In, incumbent chooses Fight or Accommodate. A table of payoffs for each outcome (three outcomes total). To solve backward induction: (1) at the last move, find the incumbent's best choice (comparing payoffs for Fight vs Accommodate given entry). (2) One step back, the entrant, knowing the incumbent's choice, picks their best option (In vs Out). Comparisons only — no matrices needed. The outcome is the sequence of choices that survives backward reasoning.</p>
+      <div class="eq">For each outcome (incumbent's last choice):
+  if entry: incumbent picks max(Fight payoff, Accommodate payoff)
+  then entrant, knowing this, picks max(In payoff given that choice, Out payoff)
+The sequence of choices that emerges is backward-induction equilibrium.</div>
+      <p class="muted">Full script: scripts/experiments/gametheory_run.py (EXP8). Numbers are the run's output verbatim.</p>
+    </div></details>
+<footer style="color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding:22px 0 60px;margin-top:24px">MIT Game Theory · Backward Induction deep dive · every equilibrium and payoff here is computed. Experiments in scripts/experiments/gametheory_run.py.</footer>
+</main></body></html>

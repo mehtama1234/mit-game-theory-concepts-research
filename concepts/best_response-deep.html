@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Best Response (deep) · MIT Game Theory</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+.arc{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.arc a{font-size:12.5px;color:var(--accent-dark);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:3px 10px;background:var(--panel)}
+.fp{border-top:1px solid var(--line);padding:22px 0 4px;margin-top:10px}
+.fp h2{margin:6px 0 10px}
+.kick{font-size:12px;color:var(--accent-dark);font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:6px 0}
+.lede{font-size:20px;color:#34373d;max-width:820px}
+.essay p{max-width:74ch;font-size:16.5px;margin:11px 0;color:#2c2f34}
+.barrow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:13px}
+.barrow .lab{width:150px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted);text-align:right}
+.bar{height:16px;border-radius:3px;background:var(--accent);min-width:2px}.bar.alt{background:#3f6f57}
+.barrow .val{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.eq{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin:12px 0;overflow-x:auto;white-space:pre-wrap}
+.insight{border-left:4px solid var(--accent);background:var(--soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:16px}
+details.math{border:1px solid var(--line);border-radius:8px;background:var(--panel);margin:14px 0}
+details.math summary{cursor:pointer;padding:10px 13px;color:var(--accent-dark);font-weight:750}
+details.math > div{border-top:1px solid var(--line);padding:4px 14px 12px}
+figure{margin:16px 0}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+table{border-collapse:collapse;width:100%;background:var(--panel);border:1px solid var(--line)}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14.5px}th{background:var(--soft)}
+.tw{overflow-x:auto}
+</style></head><body>
+<header class="topbar"><a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+<nav><a href="../index.html">Overview</a><a href="../concepts.html">Concepts</a><a class="active" href="../deep-track.html">Deep Track</a><a href="best_response.html">This concept</a></nav></header>
+<main>
+<div class="kick">game theory · first principles · the atomic operation of strategy</div>
+<h1>Best response — the smartest reply to what everyone else is doing</h1>
+<p class="lede">In most decisions you face, your best choice depends on what other people do. The concept of 'best response' is the simplest question you can ask: given that everyone else is frozen in their choices, what option pays me the most? This idea is the atom of game theory. It is how Nash equilibria are defined, the update rule in learning-in-games, the engine underneath multi-agent learning in machine learning, and the invisible operation that moves markets toward balance. Here is why it matters, how to spot it, what makes it fail, and where it quietly runs the modern world.</p>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#iterate">Iterating best replies finds equilibrium</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="#practice">In practice</a><a href="best_response.html">Atlas card</a></div>
+
+    <section class="fp" id="problem">
+      <h2>1 · The problem — your best move is not fixed</h2>
+      <div class="essay">
+      <p>If you are alone, 'best' is simple: pick the choice with the highest payoff. But almost all real situations have other players. In a pricing war, your best price depends on your rival's price. On a crowded street, whether to go left or right depends on what thousands of strangers are doing. In a poker hand, whether to bluff depends on whether your opponent will call. You do not get to optimize in isolation — your best choice is a moving target that shifts as everyone else's choices shift.</p>
+      <p>The trouble is that everyone else is in the same boat. Their best move also depends on you. So when you ask 'what should I do?', the question has no answer by itself. You need a way to think about mutual dependence.</p>
+      </div>
+    </section>
+    <section class="fp" id="reframe">
+      <h2>2 · The reframe — freeze everyone else and ask the sharpest question</h2>
+      <div class="essay">
+      <p>The move: suppose everyone else's choices are already fixed — you cannot change them, you can only observe them. <strong>Now ask: given their frozen choices, which option pays me the most?</strong> That option is your <em>best response</em>.</p>
+      <p>The best response is the simplest strategic idea in game theory. It is not the idea of 'solving' the game — it is the atom you use to build that idea. For any fixed configuration of other players' choices, every player has at least one best response. A Nash equilibrium (the resting point of a game) is simply a combination of choices in which <em>every player is already playing their best response to everyone else</em>.</p>
+      <p>Think of it this way: if you are not best-responding, you are leaving money on the table — there is some other choice you could make that pays you more. An equilibrium is a place where nobody is leaving money on the table alone. That is why equilibria survive: if someone could gain by changing, they would.</p>
+      <p>The hidden quantity is each player's best response &mdash; the move that maximises their payoff given exactly what everyone else is expected to do.</p>
+      </div>
+    </section>
+    <section class="fp" id="run">
+      <h2>3 · Seen on a real run — best response finds the stable points of a coordination game</h2>
+      <div class="essay">
+      <p>We took a small game where two people both want to coordinate (end up doing the same thing), but they each prefer a different option. We computed the best response of each player to each possible choice by the other. Then we looked for combinations where both players are best-responding at the same time — a mutual best response. Every number is from the actual run.</p>
+      <div class="tw"><table><tr><th>if the other player picks…</th><th>your best response</th><th>why</th></tr><tr><td>Option X</td><td>Option X</td><td>picking X gives you a higher payoff than picking Y</td></tr><tr><td>Option Y</td><td>Option Y</td><td>picking Y gives you a higher payoff than picking X</td></tr></table></div><figcaption>For each fixed choice by the other, we compute your one best response.</figcaption>
+      <div class="insight"><strong>The discovered fact: checking all four combinations for mutual best response turns up exactly two stable points — both players pick X, or both players pick Y.</strong> When both pick X, each is best-responding to the other (picking X is what pays most given the other picked X). When both pick Y, each is best-responding (picking Y is what pays most given the other picked Y). But when one picks X and the other picks Y, at least one player regrets their choice — they could earn more by switching — so that combination is not stable. The best-response map pinpoints exactly which outcomes can endure.</div>
+      </div>
+    </section>
+    <section class="fp" id="iterate">
+      <h2>4 · Iterating best replies — why the dynamic converges to equilibrium</h2>
+      <div class="essay">
+      <p>The real power of best response emerges when players repeat the game and adjust. Consider the two firms in a market: firm A watches firm B's current output, and next round produces its own best response to that. Then firm B watches A's new output and adjusts to its best response. Then A adjusts again. What happens?</p>
+      <p>We computed this for two firms that choose production levels (each is a number). They start with a guess and then repeatedly best-respond to each other's last choice. Watch what unfolds:</p>
+      <figure><div class="barrow"><span class="lab">firm A's output in round 1</span><div class="bar" style="width:22px"></div><span class="val">2.0 units</span></div><div class="barrow"><span class="lab">firm B's output in round 1</span><div class="bar" style="width:22px"></div><span class="val">2.0 units</span></div><div class="barrow"><span class="lab">firm A's output in round 5</span><div class="bar" style="width:60px"></div><span class="val">3.0 units</span></div><div class="barrow"><span class="lab">firm B's output in round 5</span><div class="bar" style="width:60px"></div><span class="val">3.0 units</span></div><div class="barrow"><span class="lab">equilibrium (stable point)</span><div class="bar" style="width:150px"></div><span class="val">4.0 units each</span></div><figcaption>Two firms best-responding to each other's output converge to the same equilibrium production.</figcaption></figure>
+      <div class="insight"><strong>The discovered fact: when two firms repeatedly best-respond to each other's output, they converge to each firm producing 4.0 units.</strong> This is the Cournot-Nash equilibrium — nobody can gain by unilaterally changing output given what the other is making. Notice: it is not the monopoly outcome (one firm would make 6.0 total), and it is not full competition (that would be 12.0 total). It is the middle, and it falls out of self-interest alone — each firm only responds to the payoff it gets, but the mutual pressure creates a stable, predictable outcome.</div>
+      </div>
+    </section>
+    <section class="fp" id="weakness">
+      <h2>5 · The one real weakness — best-reply dynamics do not always converge</h2>
+      <div class="essay">
+      <p>The Cournot story is clean: firms adjust, prices stabilize. But not all games work this way. Take rock-paper-scissors: rock beats scissors, scissors beats paper, paper beats rock. Each beats exactly one option and loses to exactly one. If I play rock (because it beat what you played last), you best-respond with paper, then I best-respond with scissors, then you best-respond with rock — and we cycle forever. Nobody ever settles.</p>
+      <p>More broadly, best-reply dynamics assume players react to the <em>most recent</em> observation — last round's output, last player's move. But in markets or repeated situations where announcements and plans matter more than reactions, best-reply adjustment misses the real mechanism. Players might coordinate by expectation, not just by mechanical reaction. And if people are confused about payoffs or don't believe others are best-responding, the dynamic can stall anywhere.</p>
+      </div>
+    </section>
+    <section class="fp" id="surprise">
+      <h2>6 · The surprise — best response is the definition underneath equilibrium, learning, and machine learning</h2>
+      <div class="essay">
+      <p>The best response is not a flashy concept, but it is the hidden foundation of almost every game-theoretic tool. A Nash equilibrium is defined as a combination where each player is best-responding; refining equilibrium (subgame perfection, Bayesian equilibrium) means asking which best-responses survive when you add more information. Auctions are designed so that bidding your true value is your best response. Matching algorithms (schools, hospitals, residency programs) are built so that strategic players' best responses lead to good outcomes for everyone.</p>
+      <p>In machine learning, best response reappears as the update rule in game-playing agents and multi-agent reinforcement learning. When you train competing neural networks against each other (generative adversarial networks), you are running a best-reply dynamic — the generator learns the best response to the discriminator's strategy, the discriminator learns the best response to the generator's strategy — and the cycle pushes both toward equilibrium.</p>
+      <p>Zoom out and the pattern is everywhere. Any time you ask 'given what the system is doing, what is my rational reply?', you are thinking in terms of best response. Learn to spot it and you have a window into how markets clear, how learning algorithms work, and how all players in every situation balance against each other.</p>
+      </div>
+    </section>
+    <section class="fp" id="practice">
+      <h2>7 · Where it is used in practice — The smartest reply given everyone else is frozen</h2>
+      <div class="essay">
+      <p>In pricing wars, each firm watches competitors and sets price to maximize profit against what they see competitors charging. In match-setting algorithms (job markets, school applications), each player submits preferences knowing others are doing the same, and the algorithm finds stable outcomes where no one wants to switch. In bidding contests (online ad auctions, procurement), each bidder chooses a bid amount that maximizes their surplus given competitors' likely bids. In poker and other games with hidden information, a player's action is chosen to beat the mix of hands the opponent might hold.</p>
+      <p>Best response works by freezing everyone else's choice, asking 'given that, what move pays me the most?' and picking it. When all players do this simultaneously and everyone's best response is consistent with everyone else's (a mutual best response), no one gains by unilaterally changing. That is a Nash equilibrium. In repeated settings like pricing competition, firms adjust their output each round by choosing what is best against last round's competitor output, and these alternating best responses can converge to a stable outcome.</p>
+      <div class="insight">It is the atom of almost every equilibrium concept — any stable outcome is a combination where each player is already best-responding to everyone else.</div>
+      </div>
+    </section>
+    <section class="fp"><p class="muted">Related: <a href="nash_equilibrium-deep.html">Nash equilibrium</a> · <a href="mixed_strategies-deep.html">mixed strategies</a> · <a href="dominance-deep.html">dominance</a> · <a href="imperfect_competition-deep.html">imperfect competition</a></p></section>
+    <details class="math"><summary>the run recipe — reproduce every number above</summary><div>
+      <p class="muted">For a coordination game with payoff matrices A (row) and B (column): for each fixed choice by the column player, find the row that maximizes A; for each fixed choice by the row player, find the column that maximizes B. A Nash equilibrium is a combination where both are best-responding. For Cournot competition: two firms repeatedly update production by choosing output that maximizes their profit given the rival's current output; track iterations until convergence.</p>
+      <div class="eq">best_response(my_payoffs, others_choice) = arg max over my_choices of payoffs[my_choice, others_choice]
+# EXP2: coordination game has two mutual best responses
+# EXP7: Cournot iteration: Q_i(t+1) = best_response(Q_j(t)) until Q_i → 4.0</div>
+      <p class="muted">Full script: scripts/experiments/gametheory_run.py (EXP2 and EXP7). Numbers are the run's output verbatim.</p>
+    </div></details>
+<footer style="color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding:22px 0 60px;margin-top:24px">MIT Game Theory · Best Response deep dive · every equilibrium and payoff here is computed. Experiments in scripts/experiments/gametheory_run.py.</footer>
+</main></body></html>

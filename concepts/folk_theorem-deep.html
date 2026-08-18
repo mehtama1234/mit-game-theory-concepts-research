@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Folk Theorem (deep) · MIT Game Theory</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+.arc{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.arc a{font-size:12.5px;color:var(--accent-dark);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:3px 10px;background:var(--panel)}
+.fp{border-top:1px solid var(--line);padding:22px 0 4px;margin-top:10px}
+.fp h2{margin:6px 0 10px}
+.kick{font-size:12px;color:var(--accent-dark);font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:6px 0}
+.lede{font-size:20px;color:#34373d;max-width:820px}
+.essay p{max-width:74ch;font-size:16.5px;margin:11px 0;color:#2c2f34}
+.barrow{display:flex;align-items:center;gap:10px;margin:5px 0;font-size:13px}
+.barrow .lab{width:150px;font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted);text-align:right}
+.bar{height:16px;border-radius:3px;background:var(--accent);min-width:2px}.bar.alt{background:#3f6f57}
+.barrow .val{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+.eq{font-family:ui-monospace,Menlo,monospace;font-size:13.5px;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin:12px 0;overflow-x:auto;white-space:pre-wrap}
+.insight{border-left:4px solid var(--accent);background:var(--soft);padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0;font-size:16px}
+details.math{border:1px solid var(--line);border-radius:8px;background:var(--panel);margin:14px 0}
+details.math summary{cursor:pointer;padding:10px 13px;color:var(--accent-dark);font-weight:750}
+details.math > div{border-top:1px solid var(--line);padding:4px 14px 12px}
+figure{margin:16px 0}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+table{border-collapse:collapse;width:100%;background:var(--panel);border:1px solid var(--line)}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;font-size:14.5px}th{background:var(--soft)}
+.tw{overflow-x:auto}
+</style></head><body>
+<header class="topbar"><a class="brand" href="../index.html">MIT Game Theory Concept Lab</a>
+<nav><a href="../index.html">Overview</a><a href="../concepts.html">Concepts</a><a class="active" href="../deep-track.html">Deep Track</a><a href="folk_theorem.html">This concept</a></nav></header>
+<main>
+<div class="kick">game theory · repeated games · when the future saves us</div>
+<h1>The folk theorem — repetition cracks open an embarrassment of equilibria</h1>
+<p class="lede">Play a game once, and the outcome is locked in by the payoffs. But play the same game again and again, and suddenly cooperation becomes possible — even in a Prisoner's Dilemma. The folk theorem says something wild: once players value the future enough, almost ANY reasonable outcome can be held up as an equilibrium by some combination of strategies and threats. Here is why that works, what it actually predicts on a real repeated game, why it raises a new problem, and how it led to a deeper question: which of all those equilibria actually survives?</p>
+<div class="arc"><a href="#problem">The problem</a><a href="#reframe">The reframe</a><a href="#run">Seen on a real run</a><a href="#anything">Why almost anything goes</a><a href="#weakness">The one real weakness</a><a href="#surprise">The surprise</a><a href="#practice">In practice</a><a href="folk_theorem.html">Atlas card</a></div>
+
+    <section class="fp" id="problem">
+      <h2>1 · The problem — a one-shot game and a repeated game are completely different</h2>
+      <div class="essay">
+      <p>If you play the Prisoner's Dilemma once, the math is brutal. You each get a temptation payoff of 5 if you defect while the other cooperates, a reward of 3 if you both cooperate, a punishment of 1 if you both defect, and a sucker payoff of 0 if you cooperate and they defect. No matter what you think the other person will do, defection is your best move — so you both defect, you each get 1, and you both leave money on the table.</p>
+      <p>But now consider playing that same game again, and again, and again. You remember what happened last round. You can punish someone who cheated on you — and they know it. Suddenly the arithmetic changes. <strong>The question becomes: if you repeat the game enough times, can the threat of punishment support cooperation as an equilibrium?</strong> And how much does the future have to matter for that to work?</p>
+      </div>
+    </section>
+    <section class="fp" id="reframe">
+      <h2>2 · The reframe — when the future matters, punishment can be a credible threat</h2>
+      <div class="essay">
+      <p>The key idea. In a repeated game, a player's total payoff is the sum of payoffs across all rounds. The question is: how much do future rounds matter compared to today? That weight is called the discount factor — a number between 0 (today is all that counts, tomorrow is worthless) and 1 (future rounds count almost as much as today).</p>
+      <p>Now consider this strategy: play Cooperate every round, forever — unless someone defects, in which case, play Defect forever after as punishment. This is called a grim-trigger strategy. Is this an equilibrium of the repeated game?</p>
+      <p>To find out, ask: if everyone is playing it, does any player want to deviate? If you deviate and defect one round, you get a big one-time payoff of 5 (the temptation payoff). But then you're punished with 1 per round, forever. If the future matters enough, those future punishment rounds add up to more than that one-time 5 — so the threat works. You stay cooperating. <strong>That self-enforcing punishment is the heart of the folk theorem: with patient enough players, almost any outcome can be supported by some strategy pair and the threat of punishment for deviation.</strong></p>
+      <p>The hidden quantity is the worst payoff a player can be forced down to (their punishment level); any outcome better than that for everyone can be held in place by the threat of falling back to it.</p>
+      </div>
+    </section>
+    <section class="fp" id="run">
+      <h2>3 · Seen on a real run — cooperation emerges once the discount factor crosses a threshold</h2>
+      <div class="essay">
+      <p>We took the Prisoner's Dilemma payoffs and ran a program that computed whether always-cooperate (backed by grim-trigger punishment) is a Nash equilibrium of the repeated game, for different discount factors. Here is what happens:</p>
+      <div class="tw"><table><tr><th>discount factor (future matters how much)</th><th>is cooperation a Nash equilibrium?</th><th>why</th></tr><tr><td>0.3 (future barely counts)</td><td>NO</td><td>defecting once (payoff 5) then being punished (1 per round) is better than always cooperating (3 per round). The temptation is worth it.</td></tr><tr><td>0.5 (future counts as much as today)</td><td>YES</td><td>the punishment stream (1 per round forever) totals exactly enough to make the one-time temptation not worth breaking. Equilibrium changes.</td></tr><tr><td>0.7 (future matters heavily)</td><td>YES</td><td>punishment is even more devastating. Cooperation is strongly supported.</td></tr></table></div><figcaption>The computed threshold: cooperation as a Nash equilibrium of the Prisoner's Dilemma repeated game requires discount factor at least 0.50.</figcaption>
+      <div class="insight"><strong>The discovered fact: cooperation becomes a Nash equilibrium of the infinitely repeated Prisoner's Dilemma once the discount factor reaches 0.50.</strong> Below that, the one-time temptation payoff of 5 beats the discounted stream of punishment. At the threshold and beyond, the threat of future punishment is credible enough that no one deviates. This single number — 0.50 — is where a one-shot dilemma flips into a cooperative regime.</div>
+      </div>
+    </section>
+    <section class="fp" id="anything">
+      <h2>4 · Why almost anything goes — any individually rational outcome can be an equilibrium</h2>
+      <div class="essay">
+      <p>Here is why the folk theorem is called a theorem at all. In the one-shot Prisoner's Dilemma, defection dominates and there is only one Nash equilibrium: both defect, each gets 1. But in the repeated game, with discount 0.70, the program can construct a punishment strategy to support almost ANY outcome — not just 3, but 2.5 per round, or 2, or rotating payoffs where one player gets 4 this round and 1 next round, as long as (a) the average payoff is at least as high as what each player can guarantee alone, and (b) the discount factor is high enough that deviations are too costly.</p>
+      <p>Why? Because in an infinitely repeated game, the threat of eternal punishment is terrifying. If you deviate, you get a temporary gain but then lose the entire cooperative surplus forever. With that club hanging over your head, you'll accept almost any division of the pie, as long as it pays you more than you could guarantee yourself.</p>
+      <p>That is the folk theorem's most famous result: <strong>with patient enough players (discount factor high enough), almost any individually rational outcome — meaning, any outcome that pays each player at least as much as their minimax value, the amount they can guarantee themselves in a worst-case scenario — can be supported as a Nash equilibrium of the repeated game by some combination of strategy and punishment threat.</strong></p>
+      </div>
+    </section>
+    <section class="fp" id="weakness">
+      <h2>5 · The one real weakness — the theorem predicts too much, so it can't tell you what actually happens</h2>
+      <div class="essay">
+      <p>This is the folk theorem's deepest embarrassment. It says almost anything can be an equilibrium — which sounds powerful, but it actually means the theory almost says nothing useful. If cooperation, partial cooperation, collusion, rotating payoffs, and more can all be equilibria, then knowing the equilibrium set doesn't tell you which outcome will actually emerge. It's like a theory that predicts the solution will be between 0 and 100; technically true, but not informative.</p>
+      <p>Moreover, the theorem assumes perfect rationality and perfect information. Real players learn over time, observe only imperfect signals, sometimes care about fairness or punishment beyond what payoffs alone suggest, and coordinate on norms. The folk theorem says what CAN happen; it doesn't say what WILL.</p>
+      </div>
+    </section>
+    <section class="fp" id="surprise">
+      <h2>6 · The surprise — reciprocity, not blind niceness, wins in evolutionary competition</h2>
+      <div class="essay">
+      <p>The folk theorem opened a new question: if all these equilibria are possible, which strategies actually survive when populations of players interact and compete? That led to evolutionary game theory, and to a striking discovery about which repeated-game strategies are robust.</p>
+      <p>We ran an invasion test. Consider a large population playing Tit-for-Tat — the strategy that copies the opponent's previous move (cooperate if they cooperated, defect if they defected). Now a mutant Defector enters. In a population of Tit-for-Tat players, the mutant Defector scores only 1.16 per round, while a native Tit-for-Tat player scores 2.81 per round. The mutant starves and cannot invade. Tit-for-Tat is evolutionarily stable.</p>
+      <p>But now consider a naive All-Cooperate population. When a Defector invades, the cooperators score 3.02 per round and the defector scores 4.86 per round. The defector thrives, spreads, and wipes out the cooperators. All-Cooperate is NOT evolutionarily stable.</p>
+      <div class="tw"><table><tr><th>strategy in population</th><th>native's payoff per round</th><th>invading defector's payoff per round</th><th>does the defector survive and spread?</th></tr><tr><td>Tit-for-Tat (punishes cheats)</td><td>2.81</td><td>1.16</td><td>NO — invasion fails</td></tr><tr><td>All-Cooperate (always nice)</td><td>3.02</td><td>4.86</td><td>YES — defectors take over</td></tr></table></div><figcaption>Evolutionary stability test: Tit-for-Tat resists invasion while blind niceness does not.</figcaption>
+      <div class="insight"><strong>The discovered fact: Tit-for-Tat is evolutionarily stable (native 2.81 beats invader 1.16), while All-Cooperate is not (native 3.02 loses to invader 4.86).</strong> This is why reciprocity — the willingness to cooperate IF the other cooperates, and punish IF they defect — is more robust than unilateral niceness. Reciprocity changes the incentive structure: if a Defector enters a Tit-for-Tat population, it gets punished immediately and can't spread. The folk theorem explains why cooperation CAN exist; evolution explains why reciprocity, not blindness, is what actually DOES exist.</div>
+      <p>This connection between the folk theorem and evolutionary stability is not accidental. The folk theorem says repetition cracks open a space of possible equilibria. But not all equilibria are equally robust to invasion by mutant strategies. Evolutionary game theory narrows down which of those equilibria are actually selected by natural competition. Together, they explain both the possibility of cooperation and the specific forms it tends to take — reciprocal, suspicious of cheats, and willing to punish.</p>
+      </div>
+    </section>
+    <section class="fp" id="practice">
+      <h2>7 · Where it is used in practice — Repetition opens infinite equilibria, not just one</h2>
+      <div class="essay">
+      <p>In repeated supplier relationships, buyers and suppliers maintain fair prices and quality standards even without contracts, because repeated encounters let them punish cheaters and reward honest partners. Cartels try to fix prices in an industry by having each firm agree to produce a certain amount; they last as long as members value future profit enough to resist the temptation to cheat and capture market share. Long-lived communities maintain norms (sharing labor, lending tools, respecting boundaries) without formal law because the threat of social exclusion is permanent. International treaties between nations persist when each nation values the ongoing relationship more than it values a one-time betrayal.</p>
+      <p>The folk theorem says that in infinitely repeated games, a strategy like 'always cooperate but defect forever if betrayed' can be a Nash equilibrium if players value the future enough (discount factor high enough). That threat of permanent punishment makes the one-time temptation payoff not worth it. With patience, almost any division of the pie can be held up as equilibrium by some combination of strategy and punishment threat — as long as each player's share beats what they could guarantee themselves alone.</p>
+      <div class="insight">The embarrassment: if almost anything can be equilibrium, the theory predicts too much and cannot tell you which outcome actually emerges.</div>
+      </div>
+    </section>
+    <section class="fp"><p class="muted">Related: <a href="infinitely_repeated_games-deep.html">infinitely repeated games</a> · <a href="best_response-deep.html">best response</a> · <a href="nash_equilibrium-deep.html">Nash equilibrium</a> · <a href="subgame_perfection-deep.html">subgame perfection</a></p></section>
+    <details class="math"><summary>the run recipe — reproduce every number above</summary><div>
+      <p class="muted">Compute whether grim-trigger cooperation is a Nash equilibrium of the infinitely repeated Prisoner's Dilemma, as a function of discount factor. For each discount factor (0.3, 0.5, 0.7), check if a one-time defection payoff of 5 is outweighed by the discounted sum of punishment payoffs (1 per round forever). Then run an evolutionary invasion test: in a population of Tit-for-Tat or All-Cooperate, compute the payoff of a native vs. an invading Defector and determine whether the invader spreads. numpy comparisons and discounted sums.</p>
+      <div class="eq">cooperation is Nash iff Temptation &lt; Reward / (1 - discount_factor)
+5 &lt; 3 / (1 - δ)
+# at δ = 0.50: 5 &lt; 3 / 0.50 = 6 (TRUE; cooperation is equilibrium)
+# at δ = 0.30: 5 &lt; 3 / 0.70 ≈ 4.3 (FALSE; defection is best response)
+
+# invasion test: native_payoff_per_round &gt; invader_payoff_per_round for evolutionary stability
+# Tit-for-Tat population: native 2.81 &gt; invader 1.16 (stable)
+# All-Cooperate population: native 3.02 &lt; invader 4.86 (unstable, invaded)</div>
+      <p class="muted">Full script: scripts/experiments/gametheory_run.py (EXP6). Numbers are the run's output verbatim.</p>
+    </div></details>
+<footer style="color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding:22px 0 60px;margin-top:24px">MIT Game Theory · The Folk Theorem deep dive · every equilibrium and payoff here is computed. Experiments in scripts/experiments/gametheory_run.py.</footer>
+</main></body></html>
